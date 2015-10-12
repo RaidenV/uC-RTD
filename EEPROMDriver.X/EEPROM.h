@@ -1,0 +1,64 @@
+/* 
+ * File:   EEPROM.h
+ * Author: raidenv
+ *
+ * Created on August 23, 2015, 5:32 PM
+ */
+
+#ifndef EEPROM_H
+#define	EEPROM_H
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
+    
+#include <pic18f8722.h>
+#include <EEP.h>
+    
+/* The following definitions allow more flexibility in the main body of code in
+ * the event, let's say, that a double does not happen to be 8 bytes (there's
+ * no guarantee of the size of the double);
+ */
+#define LASTCOMPOSloc 0x00
+#define KPPARAMloc 0x03
+#define KIPARAMloc 0x06
+#define KDPARAMloc 0x09
+#define PORTAloc 0x0C
+#define PORTBloc 0x0D
+#define PORTCloc 0x0E
+#define PORTDloc 0x0F
+#define PORTEloc 0x10
+#define PORTFloc 0x11
+#define PORTGloc 0x12
+#define PORTHloc 0x13
+#define PORTJloc 0x14
+#define PIDENABLEloc 0x15
+    
+    extern unsigned char DDouble[3];
+    extern unsigned char* DoublePtr;
+    extern double Kp;
+    extern double Ki;
+    extern double Kd;
+    extern double SetAngle;
+    extern double CurrentAngle;
+    extern double CurrentVelocity;
+    extern unsigned char PIDEnableFlag;
+
+    void EEPROMInit(void);
+    
+    void EEDisassembleDouble(double);
+    double EEReassembleDouble(void);
+    void EEWriteDouble(unsigned char, double);
+    double EEReadDouble(unsigned char);
+
+    void EEWriteChar(unsigned char, unsigned char);
+    char EEReadChar(unsigned char);
+
+    void SHUTDOWN(void);
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif	/* EEPROM_H */
+

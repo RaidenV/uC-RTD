@@ -1,0 +1,1043 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
+                                                                                               Sat Aug 22 21:20:17 2015
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
+     1                           	processor	18F8722
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     9                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    15                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    16                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    17  0000                     _ADCON0	set	4034
+    18  0000                     _ADCON0bits	set	4034
+    19  0000                     _ADCON1	set	4033
+    20  0000                     _ADCON2	set	4032
+    21  0000                     _ADRESH	set	4036
+    22  0000                     _ADRESL	set	4035
+    23  0000                     _CCP3CONbits	set	4023
+    24  0000                     _CCPR3L	set	4024
+    25  0000                     _INTCON	set	4082
+    26  0000                     _INTCON2bits	set	4081
+    27  0000                     _INTCON3bits	set	4080
+    28  0000                     _PORTAbits	set	3968
+    29  0000                     _PORTBbits	set	3969
+    30  0000                     _PORTD	set	3971
+    31  0000                     _PORTEbits	set	3972
+    32  0000                     _PORTH	set	3975
+    33  0000                     _TRISAbits	set	3986
+    34  0000                     _TRISD	set	3989
+    35  0000                     _TRISEbits	set	3990
+    36  0000                     _TRISH	set	3993
+    37  0000                     _TRISJbits	set	3994
+    38                           
+    39                           ; 0 bytes @ 0xA
+    40 ;;
+    41 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    42 ;;
+    43 ;; *************** function _main *****************
+    44 ;; Defined at:
+    45 ;;		line 7 in file "RTDuC.c"
+    46 ;; Parameters:    Size  Location     Type
+    47 ;;		None
+    48 ;; Auto vars:     Size  Location     Type
+    49 ;;		None
+    50 ;; Return value:  Size  Location     Type
+    51 ;;		None               void
+    52 ;; Registers used:
+    53 ;;		wreg, status,2, status,0, cstack
+    54 ;; Tracked objects:
+    55 ;;		On entry : 0/0
+    56 ;;		On exit  : 0/0
+    57 ;;		Unchanged: 0/0
+    58 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+    59 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+    60 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+    61 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+    62 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+    63 ;;Total ram usage:        0 bytes
+    64 ;; Hardware stack levels required when called:    2
+    65 ;; This function calls:
+    66 ;;		_DetectJoystick
+    67 ;;		_DetectMovement
+    68 ;;		_ImplementJSMotion
+    69 ;;		_JoystickInit
+    70 ;;		_RTDInit
+    71 ;; This function is called by:
+    72 ;;		Startup code after reset
+    73 ;; This function uses a non-reentrant model
+    74 ;;
+    75                           
+    76                           	psect	text0
+    77  01FEA0                     __ptext0:
+    78                           	opt stack 0
+    79  01FEA0                     _main:
+    80                           	opt stack 29
+    81                           
+    82                           ;RTDuC.c: 9: JoystickInit();
+    83                           
+    84                           ;incstack = 0
+    85  01FEA0  EC64  F0FF         	call	_JoystickInit	;wreg free
+    86                           
+    87                           ;RTDuC.c: 10: RTDInit();
+    88  01FEA4  EC24  F0FF         	call	_RTDInit	;wreg free
+    89                           
+    90                           ;RTDuC.c: 11: INTCON = 0xC0;
+    91  01FEA8  0EC0               	movlw	192
+    92  01FEAA  6EF2               	movwf	intcon,c	;volatile
+    93  01FEAC  D000               	goto	l881
+    94  01FEAE                     l881:
+    95                           
+    96                           ;RTDuC.c: 13: {
+    97                           ;RTDuC.c: 14: DetectJoystick();
+    98  01FEAE  EC2F  F0FF         	call	_DetectJoystick	;wreg free
+    99                           
+   100                           ;RTDuC.c: 15: ImplementJSMotion(DetectMovement());
+   101  01FEB2  EC7E  F0FF         	call	_DetectMovement	;wreg free
+   102  01FEB6  C001  F005         	movff	?_DetectMovement,ImplementJSMotion@JoystickValue
+   103  01FEBA  C002  F006         	movff	?_DetectMovement+1,ImplementJSMotion@JoystickValue+1
+   104  01FEBE  ECB0  F0FF         	call	_ImplementJSMotion	;wreg free
+   105  01FEC2  D7F5               	goto	l881
+   106  01FEC4  EF00  F000         	goto	start
+   107  01FEC8                     __end_of_main:
+   108                           	opt stack 0
+   109                           intcon	equ	0xFF2
+   110                           
+   111                           	psect	cinit
+   112  01FE3E                     __pcinit:
+   113                           	opt stack 0
+   114  01FE3E                     start_initialization:
+   115                           	opt stack 0
+   116  01FE3E                     __initialization:
+   117                           	opt stack 0
+   118                           
+   119                           ; Clear objects allocated to COMRAM (2 bytes)
+   120  01FE3E  6A0C               	clrf	(__pbssCOMRAM+1)& (0+255),c
+   121  01FE40  6A0B               	clrf	__pbssCOMRAM& (0+255),c
+   122  01FE42                     end_of_initialization:
+   123                           	opt stack 0
+   124  01FE42                     __end_of__initialization:
+   125                           	opt stack 0
+   126  01FE42  0100               	movlb	0
+   127  01FE44  EF50  F0FF         	goto	_main	;jump to C main() function
+   128                           intcon	equ	0xFF2
+   129                           
+   130                           	psect	bssCOMRAM
+   131  00000B                     __pbssCOMRAM:
+   132                           	opt stack 0
+   133  00000B                     _JSEnableFlag:
+   134                           	opt stack 0
+   135  00000B                     	ds	1
+   136  00000C                     _PIDEnableFlag:
+   137                           	opt stack 0
+   138  00000C                     	ds	1
+   139                           intcon	equ	0xFF2
+   140                           
+   141                           	psect	cstackCOMRAM
+   142  000001                     __pcstackCOMRAM:
+   143                           	opt stack 0
+   144  000001                     ?_DetectMovement:
+   145                           	opt stack 0
+   146  000001                     ?_abs:
+   147                           	opt stack 0
+   148  000001                     abs@a:
+   149                           	opt stack 0
+   150                           
+   151                           ; 2 bytes @ 0x0
+   152  000001                     	ds	2
+   153  000003                     ??_abs:
+   154  000003                     DetectMovement@JoystickResult:
+   155                           	opt stack 0
+   156                           
+   157                           ; 2 bytes @ 0x2
+   158  000003                     	ds	2
+   159  000005                     ImplementJSMotion@JoystickValue:
+   160                           	opt stack 0
+   161                           
+   162                           ; 2 bytes @ 0x4
+   163  000005                     	ds	2
+   164  000007                     ??_ImplementJSMotion:
+   165                           
+   166                           ; 0 bytes @ 0x6
+   167  000007                     	ds	2
+   168  000009                     ImplementJSMotion@CCPinput:
+   169                           	opt stack 0
+   170                           
+   171                           ; 2 bytes @ 0x8
+   172  000009                     	ds	2
+   173  00000B                     intcon	equ	0xFF2
+   174                           
+   175 ;; *************** function _RTDInit *****************
+   176 ;; Defined at:
+   177 ;;		line 4 in file "ResolverToDigital.c"
+   178 ;; Parameters:    Size  Location     Type
+   179 ;;		None
+   180 ;; Auto vars:     Size  Location     Type
+   181 ;;		None
+   182 ;; Return value:  Size  Location     Type
+   183 ;;		None               void
+   184 ;; Registers used:
+   185 ;;		None
+   186 ;; Tracked objects:
+   187 ;;		On entry : 0/0
+   188 ;;		On exit  : 0/0
+   189 ;;		Unchanged: 0/0
+   190 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   191 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   192 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   193 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   194 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   195 ;;Total ram usage:        0 bytes
+   196 ;; Hardware stack levels used:    1
+   197 ;; This function calls:
+   198 ;;		Nothing
+   199 ;; This function is called by:
+   200 ;;		_main
+   201 ;; This function uses a non-reentrant model
+   202 ;;
+   203                           
+   204                           	psect	text1
+   205  01FE48                     __ptext1:
+   206                           	opt stack 0
+   207  01FE48                     _RTDInit:
+   208                           	opt stack 30
+   209                           
+   210                           ;ResolverToDigital.c: 6: TRISD = 0xFF;
+   211                           
+   212                           ;incstack = 0
+   213  01FE48  6895               	setf	3989,c	;volatile
+   214                           
+   215                           ;ResolverToDigital.c: 7: TRISH = 0xFF;
+   216  01FE4A  6899               	setf	3993,c	;volatile
+   217                           
+   218                           ;ResolverToDigital.c: 8: TRISEbits.RE0 = 0;
+   219  01FE4C  9096               	bcf	3990,0,c	;volatile
+   220                           
+   221                           ;ResolverToDigital.c: 9: TRISEbits.RE1 = 0;
+   222  01FE4E  9296               	bcf	3990,1,c	;volatile
+   223                           
+   224                           ;ResolverToDigital.c: 10: TRISEbits.RE2 = 0;
+   225  01FE50  9496               	bcf	3990,2,c	;volatile
+   226                           
+   227                           ;ResolverToDigital.c: 11: TRISJbits.RJ0 = 0;
+   228  01FE52  909A               	bcf	3994,0,c	;volatile
+   229                           
+   230                           ;ResolverToDigital.c: 12: TRISEbits.RE5 = 1;
+   231  01FE54  8A96               	bsf	3990,5,c	;volatile
+   232                           
+   233                           ;ResolverToDigital.c: 13: TRISEbits.RE6 = 1;
+   234  01FE56  8C96               	bsf	3990,6,c	;volatile
+   235                           
+   236                           ;ResolverToDigital.c: 14: TRISEbits.RE7 = 1;
+   237  01FE58  8E96               	bsf	3990,7,c	;volatile
+   238                           
+   239                           ;ResolverToDigital.c: 15: PORTEbits.RE2 = 0;
+   240  01FE5A  9484               	bcf	3972,2,c	;volatile
+   241  01FE5C  0012               	return		;funcret
+   242  01FE5E                     __end_of_RTDInit:
+   243                           	opt stack 0
+   244                           intcon	equ	0xFF2
+   245                           
+   246 ;; *************** function _JoystickInit *****************
+   247 ;; Defined at:
+   248 ;;		line 9 in file "Joystick.c"
+   249 ;; Parameters:    Size  Location     Type
+   250 ;;		None
+   251 ;; Auto vars:     Size  Location     Type
+   252 ;;		None
+   253 ;; Return value:  Size  Location     Type
+   254 ;;		None               void
+   255 ;; Registers used:
+   256 ;;		wreg, status,2, status,0
+   257 ;; Tracked objects:
+   258 ;;		On entry : 0/0
+   259 ;;		On exit  : 0/0
+   260 ;;		Unchanged: 0/0
+   261 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   262 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   263 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   264 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   265 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   266 ;;Total ram usage:        0 bytes
+   267 ;; Hardware stack levels used:    1
+   268 ;; This function calls:
+   269 ;;		Nothing
+   270 ;; This function is called by:
+   271 ;;		_main
+   272 ;; This function uses a non-reentrant model
+   273 ;;
+   274                           
+   275                           	psect	text2
+   276  01FEC8                     __ptext2:
+   277                           	opt stack 0
+   278  01FEC8                     _JoystickInit:
+   279                           	opt stack 30
+   280                           
+   281                           ;Joystick.c: 11: INTCON3bits.INT1IE = 1;
+   282                           
+   283                           ;incstack = 0
+   284  01FEC8  86F0               	bsf	intcon3,3,c	;volatile
+   285                           
+   286                           ;Joystick.c: 12: TRISAbits.RA1 = 0;
+   287  01FECA  9292               	bcf	3986,1,c	;volatile
+   288                           
+   289                           ;Joystick.c: 13: if (PORTBbits.RB1 == 1)
+   290  01FECC  A281               	btfss	3969,1,c	;volatile
+   291  01FECE  D005               	goto	l86
+   292                           
+   293                           ;Joystick.c: 14: {
+   294                           ;Joystick.c: 15: PORTAbits.RA1 = 1;
+   295  01FED0  8280               	bsf	3968,1,c	;volatile
+   296                           
+   297                           ;Joystick.c: 16: INTCON2bits.INTEDG1 = 0;
+   298  01FED2  9AF1               	bcf	intcon2,5,c	;volatile
+   299                           
+   300                           ;Joystick.c: 17: ADCON0bits.ADON = 1;
+   301  01FED4  80C2               	bsf	4034,0,c	;volatile
+   302                           
+   303                           ;Joystick.c: 18: JSEnableFlag = 1;
+   304  01FED6  0E01               	movlw	1
+   305  01FED8  D006               	goto	L1
+   306  01FEDA                     l86:
+   307                           
+   308                           ;Joystick.c: 20: else if (PORTBbits.RB1 == 0)
+   309  01FEDA  B281               	btfsc	3969,1,c	;volatile
+   310  01FEDC  D006               	goto	l715
+   311                           
+   312                           ;Joystick.c: 21: {
+   313                           ;Joystick.c: 22: PORTAbits.RA1 = 0;
+   314  01FEDE  9280               	bcf	3968,1,c	;volatile
+   315                           
+   316                           ;Joystick.c: 23: INTCON2bits.INTEDG1 = 1;
+   317  01FEE0  8AF1               	bsf	intcon2,5,c	;volatile
+   318                           
+   319                           ;Joystick.c: 24: ADCON0bits.ADON = 0;
+   320  01FEE2  90C2               	bcf	4034,0,c	;volatile
+   321                           
+   322                           ;Joystick.c: 25: JSEnableFlag = 0;
+   323  01FEE4  0E00               	movlw	0
+   324  01FEE6                     L1:
+   325  01FEE6  6E0B               	movwf	_JSEnableFlag,c
+   326  01FEE8  D000               	goto	l715
+   327  01FEEA                     l715:
+   328                           
+   329                           ;Joystick.c: 26: }
+   330                           ;Joystick.c: 28: INTCON3bits.INT1IP = 0;
+   331  01FEEA  9CF0               	bcf	intcon3,6,c	;volatile
+   332                           
+   333                           ;Joystick.c: 29: ADCON0 = ADCON0 & 0x01;
+   334  01FEEC  50C2               	movf	4034,w,c	;volatile
+   335  01FEEE  0B01               	andlw	1
+   336  01FEF0  6EC2               	movwf	4034,c	;volatile
+   337                           
+   338                           ;Joystick.c: 30: ADCON1 = 0x07;
+   339  01FEF2  0E07               	movlw	7
+   340  01FEF4  6EC1               	movwf	4033,c	;volatile
+   341                           
+   342                           ;Joystick.c: 31: ADCON2 = 0xB4;
+   343  01FEF6  0EB4               	movlw	180
+   344  01FEF8  6EC0               	movwf	4032,c	;volatile
+   345  01FEFA  0012               	return		;funcret
+   346  01FEFC                     __end_of_JoystickInit:
+   347                           	opt stack 0
+   348                           intcon	equ	0xFF2
+   349                           intcon2	equ	0xFF1
+   350                           intcon3	equ	0xFF0
+   351                           
+   352 ;; *************** function _ImplementJSMotion *****************
+   353 ;; Defined at:
+   354 ;;		line 71 in file "Joystick.c"
+   355 ;; Parameters:    Size  Location     Type
+   356 ;;  JoystickValu    2    4[COMRAM] int 
+   357 ;; Auto vars:     Size  Location     Type
+   358 ;;  CCPinput        2    8[COMRAM] unsigned int 
+   359 ;; Return value:  Size  Location     Type
+   360 ;;		None               void
+   361 ;; Registers used:
+   362 ;;		wreg, status,2, status,0, cstack
+   363 ;; Tracked objects:
+   364 ;;		On entry : 0/0
+   365 ;;		On exit  : 0/0
+   366 ;;		Unchanged: 0/0
+   367 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   368 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   369 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   370 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   371 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   372 ;;Total ram usage:        6 bytes
+   373 ;; Hardware stack levels used:    1
+   374 ;; Hardware stack levels required when called:    1
+   375 ;; This function calls:
+   376 ;;		_abs
+   377 ;; This function is called by:
+   378 ;;		_main
+   379 ;; This function uses a non-reentrant model
+   380 ;;
+   381                           
+   382                           	psect	text3
+   383  01FF60                     __ptext3:
+   384                           	opt stack 0
+   385  01FF60                     _ImplementJSMotion:
+   386                           	opt stack 29
+   387                           
+   388                           ;Joystick.c: 73: unsigned int CCPinput;
+   389                           ;Joystick.c: 74: PIDEnableFlag = 0;
+   390                           
+   391                           ;incstack = 0
+   392  01FF60  0E00               	movlw	0
+   393  01FF62  6E0C               	movwf	_PIDEnableFlag,c
+   394                           
+   395                           ;Joystick.c: 75: if(JoystickValue < -10)
+   396  01FF64  AE06               	btfss	ImplementJSMotion@JoystickValue+1,7,c
+   397  01FF66  D008               	goto	l857
+   398  01FF68  0EF6               	movlw	246
+   399  01FF6A  5C05               	subwf	ImplementJSMotion@JoystickValue,w,c
+   400  01FF6C  0EFF               	movlw	255
+   401  01FF6E  5806               	subwfb	ImplementJSMotion@JoystickValue+1,w,c
+   402  01FF70  B0D8               	btfsc	status,0,c
+   403  01FF72  D002               	goto	l857
+   404                           
+   405                           ;Joystick.c: 76: {
+   406                           ;Joystick.c: 77: CCP3CONbits.P3M1 = 1;
+   407  01FF74  8EB7               	bsf	4023,7,c	;volatile
+   408                           
+   409                           ;Joystick.c: 78: }
+   410  01FF76  D01F               	goto	l867
+   411  01FF78                     l857:
+   412                           
+   413                           ;Joystick.c: 79: else if(JoystickValue > 10)
+   414  01FF78  BE06               	btfsc	ImplementJSMotion@JoystickValue+1,7,c
+   415  01FF7A  D008               	goto	l861
+   416  01FF7C  5006               	movf	ImplementJSMotion@JoystickValue+1,w,c
+   417  01FF7E  E104               	bnz	u220
+   418  01FF80  0E0B               	movlw	11
+   419  01FF82  5C05               	subwf	ImplementJSMotion@JoystickValue,w,c
+   420  01FF84  A0D8               	btfss	status,0,c
+   421  01FF86  D002               	goto	l861
+   422  01FF88                     u220:
+   423                           
+   424                           ;Joystick.c: 80: {
+   425                           ;Joystick.c: 81: CCP3CONbits.P3M1 = 0;
+   426  01FF88  9EB7               	bcf	4023,7,c	;volatile
+   427                           
+   428                           ;Joystick.c: 82: }
+   429  01FF8A  D015               	goto	l867
+   430  01FF8C                     l861:
+   431                           
+   432                           ;Joystick.c: 83: else if (JoystickValue <= 10 && JoystickValue >= -10)
+   433  01FF8C  BE06               	btfsc	ImplementJSMotion@JoystickValue+1,7,c
+   434  01FF8E  D006               	goto	l863
+   435  01FF90  5006               	movf	ImplementJSMotion@JoystickValue+1,w,c
+   436  01FF92  E111               	bnz	l867
+   437  01FF94  0E0B               	movlw	11
+   438  01FF96  5C05               	subwf	ImplementJSMotion@JoystickValue,w,c
+   439  01FF98  B0D8               	btfsc	status,0,c
+   440  01FF9A  D00D               	goto	l867
+   441  01FF9C                     l863:
+   442  01FF9C  AE06               	btfss	ImplementJSMotion@JoystickValue+1,7,c
+   443  01FF9E  D006               	goto	l865
+   444  01FFA0  0EF6               	movlw	246
+   445  01FFA2  5C05               	subwf	ImplementJSMotion@JoystickValue,w,c
+   446  01FFA4  0EFF               	movlw	255
+   447  01FFA6  5806               	subwfb	ImplementJSMotion@JoystickValue+1,w,c
+   448  01FFA8  A0D8               	btfss	status,0,c
+   449  01FFAA  D005               	goto	l867
+   450  01FFAC                     l865:
+   451                           
+   452                           ;Joystick.c: 84: {
+   453                           ;Joystick.c: 85: CCPR3L = 0x00;
+   454  01FFAC  0E00               	movlw	0
+   455  01FFAE  6EB8               	movwf	4024,c	;volatile
+   456                           
+   457                           ;Joystick.c: 86: CCP3CONbits.DC3B = 0x00;
+   458  01FFB0  0ECF               	movlw	-49
+   459  01FFB2  16B7               	andwf	4023,f,c	;volatile
+   460  01FFB4  D000               	goto	l867
+   461  01FFB6                     l867:
+   462                           
+   463                           ;Joystick.c: 87: }
+   464                           ;Joystick.c: 89: JoystickValue = abs(JoystickValue);
+   465  01FFB6  C005  F001         	movff	ImplementJSMotion@JoystickValue,abs@a
+   466  01FFBA  C006  F002         	movff	ImplementJSMotion@JoystickValue+1,abs@a+1
+   467  01FFBE  EC3C  F0FF         	call	_abs	;wreg free
+   468  01FFC2  C001  F005         	movff	?_abs,ImplementJSMotion@JoystickValue
+   469  01FFC6  C002  F006         	movff	?_abs+1,ImplementJSMotion@JoystickValue+1
+   470                           
+   471                           ;Joystick.c: 90: CCPinput = JoystickValue;
+   472  01FFCA  C005  F009         	movff	ImplementJSMotion@JoystickValue,ImplementJSMotion@CCPinput
+   473  01FFCE  C006  F00A         	movff	ImplementJSMotion@JoystickValue+1,ImplementJSMotion@CCPinput+1
+   474                           
+   475                           ;Joystick.c: 91: CCPR3L = (CCPinput >> 2) & 0xFF;
+   476  01FFD2  C009  F007         	movff	ImplementJSMotion@CCPinput,??_ImplementJSMotion
+   477  01FFD6  C00A  F008         	movff	ImplementJSMotion@CCPinput+1,??_ImplementJSMotion+1
+   478  01FFDA  90D8               	bcf	status,0,c
+   479  01FFDC  3208               	rrcf	??_ImplementJSMotion+1,f,c
+   480  01FFDE  3207               	rrcf	??_ImplementJSMotion,f,c
+   481  01FFE0  90D8               	bcf	status,0,c
+   482  01FFE2  3208               	rrcf	??_ImplementJSMotion+1,f,c
+   483  01FFE4  3207               	rrcf	??_ImplementJSMotion,f,c
+   484  01FFE6  5007               	movf	??_ImplementJSMotion,w,c
+   485  01FFE8  6EB8               	movwf	4024,c	;volatile
+   486                           
+   487                           ;Joystick.c: 92: CCP3CONbits.DC3B = (CCPinput & 0x03);
+   488  01FFEA  C009  F007         	movff	ImplementJSMotion@CCPinput,??_ImplementJSMotion
+   489  01FFEE  0E03               	movlw	3
+   490  01FFF0  1607               	andwf	??_ImplementJSMotion,f,c
+   491  01FFF2  3A07               	swapf	??_ImplementJSMotion,f,c
+   492  01FFF4  50B7               	movf	4023,w,c	;volatile
+   493  01FFF6  1807               	xorwf	??_ImplementJSMotion,w,c
+   494  01FFF8  0BCF               	andlw	-49
+   495  01FFFA  1807               	xorwf	??_ImplementJSMotion,w,c
+   496  01FFFC  6EB7               	movwf	4023,c	;volatile
+   497  01FFFE  0012               	return		;funcret
+   498  020000                     __end_of_ImplementJSMotion:
+   499                           	opt stack 0
+   500                           intcon	equ	0xFF2
+   501                           intcon2	equ	0xFF1
+   502                           intcon3	equ	0xFF0
+   503                           status	equ	0xFD8
+   504                           
+   505 ;; *************** function _abs *****************
+   506 ;; Defined at:
+   507 ;;		line 4 in file "/opt/microchip/xc8/v1.34/sources/common/abs.c"
+   508 ;; Parameters:    Size  Location     Type
+   509 ;;  a               2    0[COMRAM] int 
+   510 ;; Auto vars:     Size  Location     Type
+   511 ;;		None
+   512 ;; Return value:  Size  Location     Type
+   513 ;;                  2    0[COMRAM] int 
+   514 ;; Registers used:
+   515 ;;		wreg, status,2, status,0
+   516 ;; Tracked objects:
+   517 ;;		On entry : 0/0
+   518 ;;		On exit  : 0/0
+   519 ;;		Unchanged: 0/0
+   520 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   521 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   522 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   523 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   524 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   525 ;;Total ram usage:        4 bytes
+   526 ;; Hardware stack levels used:    1
+   527 ;; This function calls:
+   528 ;;		Nothing
+   529 ;; This function is called by:
+   530 ;;		_ImplementJSMotion
+   531 ;; This function uses a non-reentrant model
+   532 ;;
+   533                           
+   534                           	psect	text4
+   535  01FE78                     __ptext4:
+   536                           	opt stack 0
+   537  01FE78                     _abs:
+   538                           	opt stack 29
+   539                           
+   540                           ;incstack = 0
+   541  01FE78  AE02               	btfss	abs@a+1,7,c
+   542  01FE7A  D00D               	goto	l163
+   543  01FE7C  C001  F003         	movff	abs@a,??_abs
+   544  01FE80  C002  F004         	movff	abs@a+1,??_abs+1
+   545  01FE84  1E03               	comf	??_abs,f,c
+   546  01FE86  1E04               	comf	??_abs+1,f,c
+   547  01FE88  4A03               	infsnz	??_abs,f,c
+   548  01FE8A  2A04               	incf	??_abs+1,f,c
+   549  01FE8C  C003  F001         	movff	??_abs,?_abs
+   550  01FE90  C004  F002         	movff	??_abs+1,?_abs+1
+   551  01FE94  D004               	goto	l164
+   552  01FE96                     l163:
+   553  01FE96  C001  F001         	movff	abs@a,?_abs
+   554  01FE9A  C002  F002         	movff	abs@a+1,?_abs+1
+   555  01FE9E                     l164:
+   556  01FE9E  0012               	return		;funcret
+   557  01FEA0                     __end_of_abs:
+   558                           	opt stack 0
+   559                           intcon	equ	0xFF2
+   560                           intcon2	equ	0xFF1
+   561                           intcon3	equ	0xFF0
+   562                           status	equ	0xFD8
+   563                           
+   564 ;; *************** function _DetectMovement *****************
+   565 ;; Defined at:
+   566 ;;		line 51 in file "Joystick.c"
+   567 ;; Parameters:    Size  Location     Type
+   568 ;;		None
+   569 ;; Auto vars:     Size  Location     Type
+   570 ;;  JoystickResu    2    2[COMRAM] int 
+   571 ;; Return value:  Size  Location     Type
+   572 ;;                  2    0[COMRAM] int 
+   573 ;; Registers used:
+   574 ;;		wreg, status,2, status,0
+   575 ;; Tracked objects:
+   576 ;;		On entry : 0/0
+   577 ;;		On exit  : 0/0
+   578 ;;		Unchanged: 0/0
+   579 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   580 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   581 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   582 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   583 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   584 ;;Total ram usage:        4 bytes
+   585 ;; Hardware stack levels used:    1
+   586 ;; This function calls:
+   587 ;;		Nothing
+   588 ;; This function is called by:
+   589 ;;		_main
+   590 ;; This function uses a non-reentrant model
+   591 ;;
+   592                           
+   593                           	psect	text5
+   594  01FEFC                     __ptext5:
+   595                           	opt stack 0
+   596  01FEFC                     _DetectMovement:
+   597                           	opt stack 30
+   598                           
+   599                           ;Joystick.c: 53: int JoystickResult;
+   600                           ;Joystick.c: 55: ADCON0bits.GODONE = 1;
+   601                           
+   602                           ;incstack = 0
+   603  01FEFC  82C2               	bsf	4034,1,c	;volatile
+   604                           
+   605                           ;Joystick.c: 56: while (ADCON0bits.GO_NOT_DONE == 1);
+   606  01FEFE  D000               	goto	l98
+   607  01FF00                     l98:
+   608  01FF00  B2C2               	btfsc	4034,1,c	;volatile
+   609  01FF02  D7FE               	goto	l98
+   610                           
+   611                           ;Joystick.c: 58: JoystickResult = ADRESH;
+   612  01FF04  CFC4 F003          	movff	4036,DetectMovement@JoystickResult	;volatile
+   613  01FF08  6A04               	clrf	DetectMovement@JoystickResult+1,c
+   614                           
+   615                           ;Joystick.c: 59: JoystickResult = JoystickResult << 8;
+   616  01FF0A  5003               	movf	DetectMovement@JoystickResult,w,c
+   617  01FF0C  6E04               	movwf	DetectMovement@JoystickResult+1,c
+   618  01FF0E  6A03               	clrf	DetectMovement@JoystickResult,c
+   619                           
+   620                           ;Joystick.c: 60: JoystickResult = JoystickResult | ADRESL;
+   621  01FF10  5003               	movf	DetectMovement@JoystickResult,w,c
+   622  01FF12  10C3               	iorwf	4035,w,c	;volatile
+   623  01FF14  6E03               	movwf	DetectMovement@JoystickResult,c
+   624  01FF16  5004               	movf	DetectMovement@JoystickResult+1,w,c
+   625  01FF18  6E04               	movwf	DetectMovement@JoystickResult+1,c
+   626                           
+   627                           ;Joystick.c: 61: JoystickResult = JoystickResult - 512;
+   628  01FF1A  0E00               	movlw	0
+   629  01FF1C  2403               	addwf	DetectMovement@JoystickResult,w,c
+   630  01FF1E  6E03               	movwf	DetectMovement@JoystickResult,c
+   631  01FF20  0EFE               	movlw	254
+   632  01FF22  2004               	addwfc	DetectMovement@JoystickResult+1,w,c
+   633  01FF24  6E04               	movwf	DetectMovement@JoystickResult+1,c
+   634                           
+   635                           ;Joystick.c: 63: if ((JoystickResult > 10) || (JoystickResult < -10))
+   636  01FF26  BE04               	btfsc	DetectMovement@JoystickResult+1,7,c
+   637  01FF28  D006               	goto	l837
+   638  01FF2A  5004               	movf	DetectMovement@JoystickResult+1,w,c
+   639  01FF2C  E10C               	bnz	l839
+   640  01FF2E  0E0B               	movlw	11
+   641  01FF30  5C03               	subwf	DetectMovement@JoystickResult,w,c
+   642  01FF32  B0D8               	btfsc	status,0,c
+   643  01FF34  D008               	goto	l839
+   644  01FF36                     l837:
+   645  01FF36  AE04               	btfss	DetectMovement@JoystickResult+1,7,c
+   646  01FF38  D00D               	goto	l847
+   647  01FF3A  0EF6               	movlw	246
+   648  01FF3C  5C03               	subwf	DetectMovement@JoystickResult,w,c
+   649  01FF3E  0EFF               	movlw	255
+   650  01FF40  5804               	subwfb	DetectMovement@JoystickResult+1,w,c
+   651  01FF42  B0D8               	btfsc	status,0,c
+   652  01FF44  D007               	goto	l847
+   653  01FF46                     l839:
+   654                           
+   655                           ;Joystick.c: 64: {
+   656                           ;Joystick.c: 65: PIDEnableFlag = 0;
+   657  01FF46  0E00               	movlw	0
+   658  01FF48  6E0C               	movwf	_PIDEnableFlag,c
+   659                           
+   660                           ;Joystick.c: 66: return JoystickResult;
+   661  01FF4A  C003  F001         	movff	DetectMovement@JoystickResult,?_DetectMovement
+   662  01FF4E  C004  F002         	movff	DetectMovement@JoystickResult+1,?_DetectMovement+1
+   663                           
+   664                           ;Joystick.c: 67: }
+   665  01FF52  D005               	goto	l104
+   666  01FF54                     l847:
+   667                           
+   668                           ;Joystick.c: 68: else
+   669                           ;Joystick.c: 69: return 0;
+   670  01FF54  0E00               	movlw	0
+   671  01FF56  6E02               	movwf	?_DetectMovement+1,c
+   672  01FF58  0E00               	movlw	0
+   673  01FF5A  6E01               	movwf	?_DetectMovement,c
+   674  01FF5C  D000               	goto	l104
+   675  01FF5E                     l104:
+   676  01FF5E  0012               	return		;funcret
+   677  01FF60                     __end_of_DetectMovement:
+   678                           	opt stack 0
+   679                           intcon	equ	0xFF2
+   680                           intcon2	equ	0xFF1
+   681                           intcon3	equ	0xFF0
+   682                           status	equ	0xFD8
+   683                           
+   684 ;; *************** function _DetectJoystick *****************
+   685 ;; Defined at:
+   686 ;;		line 34 in file "Joystick.c"
+   687 ;; Parameters:    Size  Location     Type
+   688 ;;		None
+   689 ;; Auto vars:     Size  Location     Type
+   690 ;;		None
+   691 ;; Return value:  Size  Location     Type
+   692 ;;		None               void
+   693 ;; Registers used:
+   694 ;;		wreg
+   695 ;; Tracked objects:
+   696 ;;		On entry : 0/0
+   697 ;;		On exit  : 0/0
+   698 ;;		Unchanged: 0/0
+   699 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   700 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   701 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   702 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   703 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   704 ;;Total ram usage:        0 bytes
+   705 ;; Hardware stack levels used:    1
+   706 ;; This function calls:
+   707 ;;		Nothing
+   708 ;; This function is called by:
+   709 ;;		_main
+   710 ;; This function uses a non-reentrant model
+   711 ;;
+   712                           
+   713                           	psect	text6
+   714  01FE5E                     __ptext6:
+   715                           	opt stack 0
+   716  01FE5E                     _DetectJoystick:
+   717                           	opt stack 30
+   718                           
+   719                           ;Joystick.c: 36: if (INTCON2bits.INTEDG1 == 0)
+   720                           
+   721                           ;incstack = 0
+   722  01FE5E  BAF1               	btfsc	intcon2,5,c	;volatile
+   723  01FE60  D004               	goto	l92
+   724                           
+   725                           ;Joystick.c: 37: {
+   726                           ;Joystick.c: 38: INTCON2bits.INTEDG1 == 1;
+   727  01FE62  50F1               	movf	intcon2,w,c	;volatile
+   728                           
+   729                           ;Joystick.c: 39: ADCON0bits.ADON = 0;
+   730  01FE64  90C2               	bcf	4034,0,c	;volatile
+   731                           
+   732                           ;Joystick.c: 40: PORTAbits.RA1 = 0;
+   733  01FE66  9280               	bcf	3968,1,c	;volatile
+   734                           
+   735                           ;Joystick.c: 41: }
+   736  01FE68  D006               	goto	l95
+   737  01FE6A                     l92:
+   738                           
+   739                           ;Joystick.c: 43: else if (INTCON2bits.INTEDG1 == 1)
+   740  01FE6A  AAF1               	btfss	intcon2,5,c	;volatile
+   741  01FE6C  D004               	goto	l95
+   742                           
+   743                           ;Joystick.c: 44: {
+   744                           ;Joystick.c: 45: INTCON2bits.INTEDG1 = 0;
+   745  01FE6E  9AF1               	bcf	intcon2,5,c	;volatile
+   746                           
+   747                           ;Joystick.c: 46: ADCON0bits.ADON = 1;
+   748  01FE70  80C2               	bsf	4034,0,c	;volatile
+   749                           
+   750                           ;Joystick.c: 47: PORTAbits.RA1 = 1;
+   751  01FE72  8280               	bsf	3968,1,c	;volatile
+   752  01FE74  D000               	goto	l95
+   753  01FE76                     l95:
+   754  01FE76  0012               	return		;funcret
+   755  01FE78                     __end_of_DetectJoystick:
+   756                           	opt stack 0
+   757  0000                     intcon	equ	0xFF2
+   758                           intcon2	equ	0xFF1
+   759                           intcon3	equ	0xFF0
+   760                           status	equ	0xFD8
+   761                           intcon	equ	0xFF2
+   762                           intcon2	equ	0xFF1
+   763                           intcon3	equ	0xFF0
+   764                           status	equ	0xFD8
+   765                           
+   766                           	psect	rparam
+   767  0000                     intcon	equ	0xFF2
+   768                           intcon2	equ	0xFF1
+   769                           intcon3	equ	0xFF0
+   770                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         2
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     10      12
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+    BANK13          256      0       0
+    BANK14          256      0       0
+    BANK15           96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_ImplementJSMotion
+    _ImplementJSMotion->_DetectMovement
+    _ImplementJSMotion->_abs
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Critical Paths under _main in BANK13
+
+    None.
+
+Critical Paths under _main in BANK14
+
+    None.
+
+Critical Paths under _main in BANK15
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     466
+                     _DetectJoystick
+                     _DetectMovement
+                  _ImplementJSMotion
+                       _JoystickInit
+                            _RTDInit
+ ---------------------------------------------------------------------------------
+ (1) _RTDInit                                              0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _JoystickInit                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _ImplementJSMotion                                    6     4      2     330
+                                              4 COMRAM     6     4      2
+                     _DetectMovement (ARG)
+                                _abs
+ ---------------------------------------------------------------------------------
+ (2) _abs                                                  4     2      2     109
+                                              0 COMRAM     4     2      2
+ ---------------------------------------------------------------------------------
+ (1) _DetectMovement                                       4     2      2     136
+                                              0 COMRAM     4     2      2
+ ---------------------------------------------------------------------------------
+ (1) _DetectJoystick                                       0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _DetectJoystick
+   _DetectMovement
+   _ImplementJSMotion
+     _DetectMovement (ARG)
+     _abs (ARG)
+   _JoystickInit
+   _RTDInit
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             F5F      0       0      37        0.0%
+EEDATA             400      0       0       0        0.0%
+BITBANK14          100      0       0      33        0.0%
+BANK14             100      0       0      34        0.0%
+BITBANK13          100      0       0      30        0.0%
+BANK13             100      0       0      31        0.0%
+BITBANK12          100      0       0      28        0.0%
+BANK12             100      0       0      29        0.0%
+BITBANK11          100      0       0      26        0.0%
+BANK11             100      0       0      27        0.0%
+BITBANK10          100      0       0      24        0.0%
+BANK10             100      0       0      25        0.0%
+BITBANK9           100      0       0      22        0.0%
+BANK9              100      0       0      23        0.0%
+BITBANK8           100      0       0      20        0.0%
+BANK8              100      0       0      21        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK15           60      0       0      35        0.0%
+BANK15              60      0       0      36        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F      A       C       1       12.6%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0       C      32        0.0%
+DATA                 0      0       C       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
+Symbol Table                                                                                   Sat Aug 22 21:20:17 2015
+
+                            l92 FE6A                              l86 FEDA                              l95 FE76  
+                            l98 FF00       ImplementJSMotion@CCPinput 0009                             l104 FF5E  
+                           l163 FE96                             l164 FE9E                             l715 FEEA  
+                           l837 FF36                             l861 FF8C                             l847 FF54  
+                           l839 FF46                             l863 FF9C                             l865 FFAC  
+                           l857 FF78                             l881 FEAE                             l867 FFB6  
+                           u220 FF88                             _abs FE78                            ?_abs 0001  
+ImplementJSMotion@JoystickValue 0005                            abs@a 0001                            _main FEA0  
+               __end_of_RTDInit FE5E                            start 0000                    ___param_bank 000010  
+                         ??_abs 0003                           ?_main 0001                           _PORTD 000F83  
+                         _PORTH 000F87                           _TRISD 000F95                           _TRISH 000F99  
+                         status 000FD8      __size_of_ImplementJSMotion 00A0                 __initialization FE3E  
+                  __end_of_main FEC8                  _DetectJoystick FE5E                  _DetectMovement FEFC  
+                        ??_main 000B                   __activetblptr 000000                          _ADCON0 000FC2  
+                        _ADCON1 000FC1                          _ADCON2 000FC0                          _ADRESH 000FC4  
+                        _ADRESL 000FC3                       ??_RTDInit 0001                          _CCPR3L 000FB8  
+                        _INTCON 000FF2          __end_of_DetectJoystick FE78          __end_of_DetectMovement FF60  
+                    __accesstop 0060         __end_of__initialization FE42                   ___rparam_used 000001  
+               ?_DetectJoystick 0001                 ?_DetectMovement 0001                  __pcstackCOMRAM 0001  
+                 ?_JoystickInit 0001                   _PIDEnableFlag 000C                         _RTDInit FE48  
+                ??_JoystickInit 0001                         __Hparam 0000                         __Lparam 0000  
+                       __pcinit FE3E                         __ramtop 1000                         __ptext0 FEA0  
+                       __ptext1 FE48                         __ptext2 FEC8                         __ptext3 FF60  
+                       __ptext4 FE78                         __ptext5 FEFC                         __ptext6 FE5E  
+                  __size_of_abs 0028            end_of_initialization FE42                       _PORTAbits 000F80  
+                     _PORTBbits 000F81                       _PORTEbits 000F84                       _TRISAbits 000F92  
+                     _TRISEbits 000F96                       _TRISJbits 000F9A                ??_DetectJoystick 0001  
+              ??_DetectMovement 0003                     _CCP3CONbits 000FB7            __end_of_JoystickInit FEFC  
+           start_initialization FE3E                     __end_of_abs FEA0                     __pbssCOMRAM 000B  
+                      ?_RTDInit 0001           __size_of_JoystickInit 0034                      _ADCON0bits 000FC2  
+                   _INTCON2bits 000FF1                     _INTCON3bits 000FF0                __size_of_RTDInit 0016  
+                  _JoystickInit FEC8                        __Hrparam 0000                        __Lrparam 0000  
+                  _JSEnableFlag 000B                   __size_of_main 0028    DetectMovement@JoystickResult 0003  
+             _ImplementJSMotion FF60              ?_ImplementJSMotion 0005         __size_of_DetectJoystick 001A  
+       __size_of_DetectMovement 0064             ??_ImplementJSMotion 0007       __end_of_ImplementJSMotion 0000  

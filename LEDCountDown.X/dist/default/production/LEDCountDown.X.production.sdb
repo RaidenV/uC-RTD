@@ -1,0 +1,65 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F8722 ]
+[d frameptr 4065 ]
+"63 /opt/microchip/xc8/v1.34/sources/common/double.c
+[v ___flpack __flpack `(d  1 e 3 0 ]
+"88 /opt/microchip/xc8/v1.34/sources/common/fladd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"54 /opt/microchip/xc8/v1.34/sources/common/fldiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.34/sources/common/flmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.34/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.34/sources/common/flsub.c
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.34/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 /opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.34/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.34/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.34/sources/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"8 /opt/microchip/xc8/v1.34/sources/pic18/d1ktcyx.c
+[v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
+"18 /opt/microchip/xc8/v1.34/sources/pic18/plib/USART/u1baud.c
+[v _baud1USART baud1USART `(v  1 e 0 0 ]
+"11 /home/raidenv/MPLABXProjects/LEDCountDown.X/LEDCountdown.c
+[v _main main `(v  1 e 0 0 ]
+"2193 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @3966 ]
+"3189
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+"6362
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"12975
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"11 /home/raidenv/MPLABXProjects/LEDCountDown.X/LEDCountdown.c
+[v _main main `(v  1 e 0 0 ]
+{
+"18
+[v main@x x `uc  1 a 1 1 ]
+"31
+} 0
+"18 /opt/microchip/xc8/v1.34/sources/pic18/plib/USART/u1baud.c
+[v _baud1USART baud1USART `(v  1 e 0 0 ]
+{
+[v baud1USART@baudconfig baudconfig `uc  1 a 1 wreg ]
+[v baud1USART@baudconfig baudconfig `uc  1 a 1 wreg ]
+"20
+[v baud1USART@baudconfig baudconfig `uc  1 a 1 0 ]
+"21
+} 0
+"8 /opt/microchip/xc8/v1.34/sources/pic18/d1ktcyx.c
+[v _Delay1KTCYx Delay1KTCYx `(v  1 e 0 0 ]
+{
+[v Delay1KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay1KTCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay1KTCYx@unit unit `uc  1 a 1 0 ]
+"13
+} 0

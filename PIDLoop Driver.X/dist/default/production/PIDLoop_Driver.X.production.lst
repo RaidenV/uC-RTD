@@ -1,0 +1,2707 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
+                                                                                               Sun Oct 11 04:17:40 2015
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
+     1                           	processor	18F8722
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	nvCOMRAM,global,class=COMRAM,space=1,delta=1
+     6                           	psect	nvBANK0,global,class=BANK0,space=1,delta=1
+     7                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     8                           	psect	bssCOMRAM,global,class=COMRAM,space=1,delta=1
+     9                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+    10                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+    11                           	psect	text0,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    13                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    14                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text5,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text6,global,reloc=2,class=CODE,delta=1
+    18                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    19                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    20                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    21                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    22                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    23  0000                     
+    24 ;; Function _ReadRTDpos is unused but had its address taken
+    25  0000                     
+    26                           	psect	nvCOMRAM
+    27  00005D                     __pnvCOMRAM:
+    28                           	opt stack 0
+    29  00005D                     _err:
+    30                           	opt stack 0
+    31  00005D                     	ds	3
+    32                           
+    33                           	psect	nvBANK0
+    34  00006C                     __pnvBANK0:
+    35                           	opt stack 0
+    36  00006C                     _intErr:
+    37                           	opt stack 0
+    38  00006C                     	ds	3
+    39  00006F                     _prevErr:
+    40                           	opt stack 0
+    41  00006F                     	ds	3
+    42  0000                     _CCP3CON	set	4023
+    43  0000                     _CCP3CONbits	set	4023
+    44  0000                     _CCPR3L	set	4024
+    45  0000                     _INTCON2bits	set	4081
+    46  0000                     _INTCONbits	set	4082
+    47  0000                     _PORTAbits	set	3968
+    48  0000                     _PORTD	set	3971
+    49  0000                     _PORTEbits	set	3972
+    50  0000                     _PORTH	set	3975
+    51  0000                     _PORTJbits	set	3976
+    52  0000                     _PR2	set	4043
+    53  0000                     _T0CON	set	4053
+    54  0000                     _T2CON	set	4042
+    55  0000                     _T3CON	set	4017
+    56  0000                     _TMR0H	set	4055
+    57  0000                     _TMR0L	set	4054
+    58  0000                     _TRISAbits	set	3986
+    59  0000                     _TRISBbits	set	3987
+    60  0000                     _TRISD	set	3989
+    61  0000                     _TRISEbits	set	3990
+    62  0000                     _TRISGbits	set	3992
+    63  0000                     _TRISH	set	3993
+    64  0000                     _TRISJbits	set	3994
+    65                           
+    66                           ; #config settings
+    67                           
+    68                           	psect	cinit
+    69  01F242                     __pcinit:
+    70                           	opt stack 0
+    71  01F242                     start_initialization:
+    72                           	opt stack 0
+    73  01F242                     __initialization:
+    74                           	opt stack 0
+    75                           
+    76                           ; Clear objects allocated to BANK0 (12 bytes)
+    77  01F242  EE00  F060         	lfsr	0,__pbssBANK0
+    78  01F246  0E0C               	movlw	12
+    79  01F248                     clear_0:
+    80  01F248  6AEE               	clrf	postinc0,c
+    81  01F24A  06E8               	decf	wreg,f,c
+    82  01F24C  E1FD               	bnz	clear_0
+    83                           
+    84                           ; Clear objects allocated to COMRAM (9 bytes)
+    85  01F24E  EE00  F054         	lfsr	0,__pbssCOMRAM
+    86  01F252  0E09               	movlw	9
+    87  01F254                     clear_1:
+    88  01F254  6AEE               	clrf	postinc0,c
+    89  01F256  06E8               	decf	wreg,f,c
+    90  01F258  E1FD               	bnz	clear_1
+    91  01F25A                     end_of_initialization:
+    92                           	opt stack 0
+    93  01F25A                     __end_of__initialization:
+    94                           	opt stack 0
+    95  01F25A  0100               	movlb	0
+    96  01F25C  EF42  F0F9         	goto	_main	;jump to C main() function
+    97                           postinc0	equ	0xFEE
+    98                           wreg	equ	0xFE8
+    99                           
+   100                           	psect	bssCOMRAM
+   101  000054                     __pbssCOMRAM:
+   102                           	opt stack 0
+   103  000054                     _SetAngle:
+   104                           	opt stack 0
+   105  000054                     	ds	3
+   106  000057                     _StartAngle:
+   107                           	opt stack 0
+   108  000057                     	ds	3
+   109  00005A                     _motorInput:
+   110                           	opt stack 0
+   111  00005A                     	ds	2
+   112  00005C                     _PIDEnableFlag:
+   113                           	opt stack 0
+   114  00005C                     	ds	1
+   115                           postinc0	equ	0xFEE
+   116                           wreg	equ	0xFE8
+   117                           
+   118                           	psect	bssBANK0
+   119  000060                     __pbssBANK0:
+   120                           	opt stack 0
+   121  000060                     _CurrentAngle:
+   122                           	opt stack 0
+   123  000060                     	ds	3
+   124  000063                     _Kd:
+   125                           	opt stack 0
+   126  000063                     	ds	3
+   127  000066                     _Ki:
+   128                           	opt stack 0
+   129  000066                     	ds	3
+   130  000069                     _Kp:
+   131                           	opt stack 0
+   132  000069                     	ds	3
+   133                           postinc0	equ	0xFEE
+   134                           wreg	equ	0xFE8
+   135                           
+   136                           	psect	cstackCOMRAM
+   137  000001                     __pcstackCOMRAM:
+   138                           	opt stack 0
+   139  000001                     ?___ftpack:
+   140                           	opt stack 0
+   141  000001                     ?___ftneg:
+   142                           	opt stack 0
+   143  000001                     ___ftpack@arg:
+   144                           	opt stack 0
+   145  000001                     ___ftneg@f1:
+   146                           	opt stack 0
+   147                           
+   148                           ; 3 bytes @ 0x0
+   149  000001                     	ds	3
+   150  000004                     ___ftpack@exp:
+   151                           	opt stack 0
+   152                           
+   153                           ; 1 bytes @ 0x3
+   154  000004                     	ds	1
+   155  000005                     ___ftpack@sign:
+   156                           	opt stack 0
+   157                           
+   158                           ; 1 bytes @ 0x4
+   159  000005                     	ds	1
+   160  000006                     ??___ftpack:
+   161                           
+   162                           ; 0 bytes @ 0x5
+   163  000006                     	ds	3
+   164  000009                     ?___ftdiv:
+   165                           	opt stack 0
+   166  000009                     ___ftdiv@f1:
+   167                           	opt stack 0
+   168                           
+   169                           ; 3 bytes @ 0x8
+   170  000009                     	ds	3
+   171  00000C                     ___ftdiv@f2:
+   172                           	opt stack 0
+   173                           
+   174                           ; 3 bytes @ 0xB
+   175  00000C                     	ds	3
+   176  00000F                     ??___ftdiv:
+   177                           
+   178                           ; 0 bytes @ 0xE
+   179  00000F                     	ds	3
+   180  000012                     ___ftdiv@cntr:
+   181                           	opt stack 0
+   182                           
+   183                           ; 1 bytes @ 0x11
+   184  000012                     	ds	1
+   185  000013                     ___ftdiv@f3:
+   186                           	opt stack 0
+   187                           
+   188                           ; 3 bytes @ 0x12
+   189  000013                     	ds	3
+   190  000016                     ___ftdiv@exp:
+   191                           	opt stack 0
+   192                           
+   193                           ; 1 bytes @ 0x15
+   194  000016                     	ds	1
+   195  000017                     ___ftdiv@sign:
+   196                           	opt stack 0
+   197                           
+   198                           ; 1 bytes @ 0x16
+   199  000017                     	ds	1
+   200  000018                     ?___ftmul:
+   201                           	opt stack 0
+   202  000018                     ___ftmul@f1:
+   203                           	opt stack 0
+   204                           
+   205                           ; 3 bytes @ 0x17
+   206  000018                     	ds	3
+   207  00001B                     ___ftmul@f2:
+   208                           	opt stack 0
+   209                           
+   210                           ; 3 bytes @ 0x1A
+   211  00001B                     	ds	3
+   212  00001E                     ??___ftmul:
+   213                           
+   214                           ; 0 bytes @ 0x1D
+   215  00001E                     	ds	3
+   216  000021                     ___ftmul@exp:
+   217                           	opt stack 0
+   218                           
+   219                           ; 1 bytes @ 0x20
+   220  000021                     	ds	1
+   221  000022                     ___ftmul@f3_as_product:
+   222                           	opt stack 0
+   223                           
+   224                           ; 3 bytes @ 0x21
+   225  000022                     	ds	3
+   226  000025                     ___ftmul@cntr:
+   227                           	opt stack 0
+   228                           
+   229                           ; 1 bytes @ 0x24
+   230  000025                     	ds	1
+   231  000026                     ___ftmul@sign:
+   232                           	opt stack 0
+   233                           
+   234                           ; 1 bytes @ 0x25
+   235  000026                     	ds	1
+   236  000027                     ?___ftadd:
+   237                           	opt stack 0
+   238  000027                     ___ftadd@f1:
+   239                           	opt stack 0
+   240                           
+   241                           ; 3 bytes @ 0x26
+   242  000027                     	ds	3
+   243  00002A                     ___ftadd@f2:
+   244                           	opt stack 0
+   245                           
+   246                           ; 3 bytes @ 0x29
+   247  00002A                     	ds	3
+   248  00002D                     ??___ftadd:
+   249                           
+   250                           ; 0 bytes @ 0x2C
+   251  00002D                     	ds	3
+   252  000030                     ___ftadd@sign:
+   253                           	opt stack 0
+   254                           
+   255                           ; 1 bytes @ 0x2F
+   256  000030                     	ds	1
+   257  000031                     ___ftadd@exp2:
+   258                           	opt stack 0
+   259                           
+   260                           ; 1 bytes @ 0x30
+   261  000031                     	ds	1
+   262  000032                     ___ftadd@exp1:
+   263                           	opt stack 0
+   264                           
+   265                           ; 1 bytes @ 0x31
+   266  000032                     	ds	1
+   267  000033                     ?___fttol:
+   268                           	opt stack 0
+   269  000033                     ___ftge@ff1:
+   270                           	opt stack 0
+   271  000033                     ___fttol@f1:
+   272                           	opt stack 0
+   273                           
+   274                           ; 3 bytes @ 0x32
+   275  000033                     	ds	3
+   276  000036                     ___ftge@ff2:
+   277                           	opt stack 0
+   278                           
+   279                           ; 3 bytes @ 0x35
+   280  000036                     	ds	1
+   281  000037                     ??___fttol:
+   282                           
+   283                           ; 0 bytes @ 0x36
+   284  000037                     	ds	2
+   285  000039                     ??___ftge:
+   286                           
+   287                           ; 0 bytes @ 0x38
+   288  000039                     	ds	3
+   289  00003C                     ___fttol@sign1:
+   290                           	opt stack 0
+   291                           
+   292                           ; 1 bytes @ 0x3B
+   293  00003C                     	ds	1
+   294  00003D                     ___fttol@lval:
+   295                           	opt stack 0
+   296                           
+   297                           ; 4 bytes @ 0x3C
+   298  00003D                     	ds	4
+   299  000041                     ___fttol@exp1:
+   300                           	opt stack 0
+   301                           
+   302                           ; 1 bytes @ 0x40
+   303  000041                     	ds	1
+   304  000042                     calculatePID@angle:
+   305                           	opt stack 0
+   306                           
+   307                           ; 3 bytes @ 0x41
+   308  000042                     	ds	3
+   309  000045                     calculatePID@setpoint:
+   310                           	opt stack 0
+   311                           
+   312                           ; 3 bytes @ 0x44
+   313  000045                     	ds	3
+   314  000048                     calculatePID@derErr:
+   315                           	opt stack 0
+   316                           
+   317                           ; 3 bytes @ 0x47
+   318  000048                     	ds	3
+   319  00004B                     _calculatePID$1481:
+   320                           	opt stack 0
+   321                           
+   322                           ; 3 bytes @ 0x4A
+   323  00004B                     	ds	3
+   324  00004E                     _calculatePID$1482:
+   325                           	opt stack 0
+   326                           
+   327                           ; 3 bytes @ 0x4D
+   328  00004E                     	ds	3
+   329  000051                     _calculatePID$1480:
+   330                           	opt stack 0
+   331                           
+   332                           ; 3 bytes @ 0x50
+   333  000051                     	ds	3
+   334  000054                     postinc0	equ	0xFEE
+   335                           wreg	equ	0xFE8
+   336                           
+   337                           ; 0 bytes @ 0x53
+   338 ;;
+   339 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   340 ;;
+   341 ;; *************** function _main *****************
+   342 ;; Defined at:
+   343 ;;		line 5 in file "PIDLoop.c"
+   344 ;; Parameters:    Size  Location     Type
+   345 ;;		None
+   346 ;; Auto vars:     Size  Location     Type
+   347 ;;		None
+   348 ;; Return value:  Size  Location     Type
+   349 ;;		None               void
+   350 ;; Registers used:
+   351 ;;		wreg, status,2, status,0, cstack
+   352 ;; Tracked objects:
+   353 ;;		On entry : 0/0
+   354 ;;		On exit  : 0/0
+   355 ;;		Unchanged: 0/0
+   356 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   357 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   358 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   359 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   360 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   361 ;;Total ram usage:        0 bytes
+   362 ;; Hardware stack levels required when called:    3
+   363 ;; This function calls:
+   364 ;;		_PIDInit
+   365 ;;		_calculatePID
+   366 ;; This function is called by:
+   367 ;;		Startup code after reset
+   368 ;; This function uses a non-reentrant model
+   369 ;;
+   370                           
+   371                           	psect	text0
+   372  01F284                     __ptext0:
+   373                           	opt stack 0
+   374  01F284                     _main:
+   375                           	opt stack 28
+   376                           
+   377                           ;PIDLoop.c: 7: PIDInit();
+   378                           
+   379                           ; BSR set to: 0
+   380                           ;incstack = 0
+   381  01F284  EC54  F0F9         	call	_PIDInit	;wreg free
+   382                           
+   383                           ;PIDLoop.c: 8: calculatePID(SetAngle, CurrentAngle);
+   384  01F288  C054  F042         	movff	_SetAngle,calculatePID@angle
+   385  01F28C  C055  F043         	movff	_SetAngle+1,calculatePID@angle+1
+   386  01F290  C056  F044         	movff	_SetAngle+2,calculatePID@angle+2
+   387  01F294  C060  F045         	movff	_CurrentAngle,calculatePID@setpoint
+   388  01F298  C061  F046         	movff	_CurrentAngle+1,calculatePID@setpoint+1
+   389  01F29C  C062  F047         	movff	_CurrentAngle+2,calculatePID@setpoint+2
+   390  01F2A0  EC65  F0FC         	call	_calculatePID	;wreg free
+   391  01F2A4  EF00  F000         	goto	start
+   392  01F2A8                     __end_of_main:
+   393                           	opt stack 0
+   394                           postinc0	equ	0xFEE
+   395                           wreg	equ	0xFE8
+   396                           
+   397 ;; *************** function _calculatePID *****************
+   398 ;; Defined at:
+   399 ;;		line 28 in file "PID.c"
+   400 ;; Parameters:    Size  Location     Type
+   401 ;;  angle           3   65[COMRAM] 
+   402 ;;  setpoint        3   68[COMRAM] 
+   403 ;; Auto vars:     Size  Location     Type
+   404 ;;  derErr          3   71[COMRAM] 
+   405 ;; Return value:  Size  Location     Type
+   406 ;;		None               void
+   407 ;; Registers used:
+   408 ;;		wreg, status,2, status,0, cstack
+   409 ;; Tracked objects:
+   410 ;;		On entry : 0/0
+   411 ;;		On exit  : 0/0
+   412 ;;		Unchanged: 0/0
+   413 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+   414 ;;      Params:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   415 ;;      Locals:        12       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   416 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   417 ;;      Totals:        18       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+   418 ;;Total ram usage:       18 bytes
+   419 ;; Hardware stack levels used:    1
+   420 ;; Hardware stack levels required when called:    2
+   421 ;; This function calls:
+   422 ;;		___ftadd
+   423 ;;		___ftdiv
+   424 ;;		___ftge
+   425 ;;		___ftmul
+   426 ;;		___ftneg
+   427 ;;		___fttol
+   428 ;; This function is called by:
+   429 ;;		_main
+   430 ;;		_TMR0Int
+   431 ;; This function uses a non-reentrant model
+   432 ;;
+   433                           
+   434                           	psect	text1
+   435  01F8CA                     __ptext1:
+   436                           	opt stack 0
+   437  01F8CA                     _calculatePID:
+   438                           	opt stack 28
+   439                           
+   440                           ;PID.c: 30: double derErr;
+   441                           ;PID.c: 31: if((PIDEnableFlag & 0x02) == 0x02)
+   442                           
+   443                           ;incstack = 0
+   444  01F8CA  A25C               	btfss	_PIDEnableFlag,1,c
+   445  01F8CC  D022               	goto	l1555
+   446                           
+   447                           ;PID.c: 32: {
+   448                           ;PID.c: 33: StartAngle = angle;
+   449  01F8CE  C042  F057         	movff	calculatePID@angle,_StartAngle
+   450  01F8D2  C043  F058         	movff	calculatePID@angle+1,_StartAngle+1
+   451  01F8D6  C044  F059         	movff	calculatePID@angle+2,_StartAngle+2
+   452                           
+   453                           ;PID.c: 34: err = 0;
+   454  01F8DA  0E00               	movlw	0
+   455  01F8DC  6E5D               	movwf	_err,c
+   456  01F8DE  0E00               	movlw	0
+   457  01F8E0  6E5E               	movwf	_err+1,c
+   458  01F8E2  0E00               	movlw	0
+   459  01F8E4  6E5F               	movwf	_err+2,c
+   460                           
+   461                           ;PID.c: 35: prevErr = 0;
+   462  01F8E6  0E00               	movlw	0
+   463  01F8E8  0100               	movlb	0	; () banked
+   464  01F8EA  6F6F               	movwf	_prevErr& (0+255),b
+   465  01F8EC  0E00               	movlw	0
+   466  01F8EE  0100               	movlb	0	; () banked
+   467  01F8F0  6F70               	movwf	(_prevErr+1)& (0+255),b
+   468  01F8F2  0E00               	movlw	0
+   469  01F8F4  0100               	movlb	0	; () banked
+   470  01F8F6  6F71               	movwf	(_prevErr+2)& (0+255),b
+   471                           
+   472                           ;PID.c: 36: intErr = 0;
+   473  01F8F8  0E00               	movlw	0
+   474  01F8FA  0100               	movlb	0	; () banked
+   475  01F8FC  6F6C               	movwf	_intErr& (0+255),b
+   476  01F8FE  0E00               	movlw	0
+   477  01F900  0100               	movlb	0	; () banked
+   478  01F902  6F6D               	movwf	(_intErr+1)& (0+255),b
+   479  01F904  0E00               	movlw	0
+   480  01F906  0100               	movlb	0	; () banked
+   481  01F908  6F6E               	movwf	(_intErr+2)& (0+255),b
+   482                           
+   483                           ; BSR set to: 0
+   484                           ;PID.c: 37: PIDEnableFlag = PIDEnableFlag & 0x01;
+   485  01F90A  505C               	movf	_PIDEnableFlag,w,c
+   486  01F90C  0B01               	andlw	1
+   487  01F90E  6E5C               	movwf	_PIDEnableFlag,c
+   488  01F910  D000               	goto	l1555
+   489  01F912                     l1555:
+   490                           
+   491                           ;PID.c: 38: }
+   492                           ;PID.c: 40: if(((StartAngle - setpoint) > 180) || ((StartAngle - setpoint) < -180))
+   493  01F912  0E00               	movlw	0
+   494  01F914  6E33               	movwf	___ftge@ff1,c
+   495  01F916  0E34               	movlw	52
+   496  01F918  6E34               	movwf	___ftge@ff1+1,c
+   497  01F91A  0E43               	movlw	67
+   498  01F91C  6E35               	movwf	___ftge@ff1+2,c
+   499  01F91E  C057  F02A         	movff	_StartAngle,___ftadd@f2
+   500  01F922  C058  F02B         	movff	_StartAngle+1,___ftadd@f2+1
+   501  01F926  C059  F02C         	movff	_StartAngle+2,___ftadd@f2+2
+   502  01F92A  C045  F001         	movff	calculatePID@setpoint,___ftneg@f1
+   503  01F92E  C046  F002         	movff	calculatePID@setpoint+1,___ftneg@f1+1
+   504  01F932  C047  F003         	movff	calculatePID@setpoint+2,___ftneg@f1+2
+   505  01F936  EC30  F0F9         	call	___ftneg	;wreg free
+   506  01F93A  C001  F027         	movff	?___ftneg,___ftadd@f1
+   507  01F93E  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   508  01F942  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   509  01F946  EC83  F0FB         	call	___ftadd	;wreg free
+   510  01F94A  C027  F036         	movff	?___ftadd,___ftge@ff2
+   511  01F94E  C028  F037         	movff	?___ftadd+1,___ftge@ff2+1
+   512  01F952  C029  F038         	movff	?___ftadd+2,___ftge@ff2+2
+   513  01F956  EC75  F0F9         	call	___ftge	;wreg free
+   514  01F95A  A0D8               	btfss	status,0,c
+   515  01F95C  D026               	goto	l1559
+   516  01F95E  C057  F02A         	movff	_StartAngle,___ftadd@f2
+   517  01F962  C058  F02B         	movff	_StartAngle+1,___ftadd@f2+1
+   518  01F966  C059  F02C         	movff	_StartAngle+2,___ftadd@f2+2
+   519  01F96A  C045  F001         	movff	calculatePID@setpoint,___ftneg@f1
+   520  01F96E  C046  F002         	movff	calculatePID@setpoint+1,___ftneg@f1+1
+   521  01F972  C047  F003         	movff	calculatePID@setpoint+2,___ftneg@f1+2
+   522  01F976  EC30  F0F9         	call	___ftneg	;wreg free
+   523  01F97A  C001  F027         	movff	?___ftneg,___ftadd@f1
+   524  01F97E  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   525  01F982  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   526  01F986  EC83  F0FB         	call	___ftadd	;wreg free
+   527  01F98A  C027  F033         	movff	?___ftadd,___ftge@ff1
+   528  01F98E  C028  F034         	movff	?___ftadd+1,___ftge@ff1+1
+   529  01F992  C029  F035         	movff	?___ftadd+2,___ftge@ff1+2
+   530  01F996  0E00               	movlw	0
+   531  01F998  6E36               	movwf	___ftge@ff2,c
+   532  01F99A  0E34               	movlw	52
+   533  01F99C  6E37               	movwf	___ftge@ff2+1,c
+   534  01F99E  0EC3               	movlw	195
+   535  01F9A0  6E38               	movwf	___ftge@ff2+2,c
+   536  01F9A2  EC75  F0F9         	call	___ftge	;wreg free
+   537  01F9A6  B0D8               	btfsc	status,0,c
+   538  01F9A8  D0F2               	goto	l1575
+   539  01F9AA                     l1559:
+   540                           
+   541                           ;PID.c: 41: {
+   542                           ;PID.c: 42: if((StartAngle - setpoint) > 180)
+   543  01F9AA  0E00               	movlw	0
+   544  01F9AC  6E33               	movwf	___ftge@ff1,c
+   545  01F9AE  0E34               	movlw	52
+   546  01F9B0  6E34               	movwf	___ftge@ff1+1,c
+   547  01F9B2  0E43               	movlw	67
+   548  01F9B4  6E35               	movwf	___ftge@ff1+2,c
+   549  01F9B6  C057  F02A         	movff	_StartAngle,___ftadd@f2
+   550  01F9BA  C058  F02B         	movff	_StartAngle+1,___ftadd@f2+1
+   551  01F9BE  C059  F02C         	movff	_StartAngle+2,___ftadd@f2+2
+   552  01F9C2  C045  F001         	movff	calculatePID@setpoint,___ftneg@f1
+   553  01F9C6  C046  F002         	movff	calculatePID@setpoint+1,___ftneg@f1+1
+   554  01F9CA  C047  F003         	movff	calculatePID@setpoint+2,___ftneg@f1+2
+   555  01F9CE  EC30  F0F9         	call	___ftneg	;wreg free
+   556  01F9D2  C001  F027         	movff	?___ftneg,___ftadd@f1
+   557  01F9D6  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   558  01F9DA  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   559  01F9DE  EC83  F0FB         	call	___ftadd	;wreg free
+   560  01F9E2  C027  F036         	movff	?___ftadd,___ftge@ff2
+   561  01F9E6  C028  F037         	movff	?___ftadd+1,___ftge@ff2+1
+   562  01F9EA  C029  F038         	movff	?___ftadd+2,___ftge@ff2+2
+   563  01F9EE  EC75  F0F9         	call	___ftge	;wreg free
+   564  01F9F2  B0D8               	btfsc	status,0,c
+   565  01F9F4  D053               	goto	l1567
+   566                           
+   567                           ;PID.c: 43: {
+   568                           ;PID.c: 44: if(angle > StartAngle)
+   569  01F9F6  C057  F033         	movff	_StartAngle,___ftge@ff1
+   570  01F9FA  C058  F034         	movff	_StartAngle+1,___ftge@ff1+1
+   571  01F9FE  C059  F035         	movff	_StartAngle+2,___ftge@ff1+2
+   572  01FA02  C042  F036         	movff	calculatePID@angle,___ftge@ff2
+   573  01FA06  C043  F037         	movff	calculatePID@angle+1,___ftge@ff2+1
+   574  01FA0A  C044  F038         	movff	calculatePID@angle+2,___ftge@ff2+2
+   575  01FA0E  EC75  F0F9         	call	___ftge	;wreg free
+   576  01FA12  B0D8               	btfsc	status,0,c
+   577  01FA14  D02B               	goto	l1565
+   578                           
+   579                           ;PID.c: 45: err = 360 - angle + setpoint;
+   580  01FA16  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   581  01FA1A  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   582  01FA1E  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   583  01FA22  C042  F001         	movff	calculatePID@angle,___ftneg@f1
+   584  01FA26  C043  F002         	movff	calculatePID@angle+1,___ftneg@f1+1
+   585  01FA2A  C044  F003         	movff	calculatePID@angle+2,___ftneg@f1+2
+   586  01FA2E  EC30  F0F9         	call	___ftneg	;wreg free
+   587  01FA32  C001  F027         	movff	?___ftneg,___ftadd@f1
+   588  01FA36  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   589  01FA3A  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   590  01FA3E  EC83  F0FB         	call	___ftadd	;wreg free
+   591  01FA42  C027  F051         	movff	?___ftadd,_calculatePID$1480
+   592  01FA46  C028  F052         	movff	?___ftadd+1,_calculatePID$1480+1
+   593  01FA4A  C029  F053         	movff	?___ftadd+2,_calculatePID$1480+2
+   594                           
+   595                           ;PID.c: 45: err = 360 - angle + setpoint;
+   596  01FA4E  C051  F027         	movff	_calculatePID$1480,___ftadd@f1
+   597  01FA52  C052  F028         	movff	_calculatePID$1480+1,___ftadd@f1+1
+   598  01FA56  C053  F029         	movff	_calculatePID$1480+2,___ftadd@f1+2
+   599  01FA5A  0E00               	movlw	0
+   600  01FA5C  6E2A               	movwf	___ftadd@f2,c
+   601  01FA5E  0EB4               	movlw	180
+   602  01FA60  6E2B               	movwf	___ftadd@f2+1,c
+   603  01FA62  0E43               	movlw	67
+   604  01FA64  6E2C               	movwf	___ftadd@f2+2,c
+   605  01FA66  EC83  F0FB         	call	___ftadd	;wreg free
+   606  01FA6A  D1FD               	goto	L7
+   607  01FA6C                     l1565:
+   608                           
+   609                           ;PID.c: 46: else
+   610                           ;PID.c: 47: err = setpoint - angle;
+   611  01FA6C  C042  F001         	movff	calculatePID@angle,___ftneg@f1
+   612  01FA70  C043  F002         	movff	calculatePID@angle+1,___ftneg@f1+1
+   613  01FA74  C044  F003         	movff	calculatePID@angle+2,___ftneg@f1+2
+   614  01FA78  EC30  F0F9         	call	___ftneg	;wreg free
+   615  01FA7C  C001  F027         	movff	?___ftneg,___ftadd@f1
+   616  01FA80  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   617  01FA84  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   618  01FA88  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   619  01FA8C  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   620  01FA90  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   621  01FA94  EC83  F0FB         	call	___ftadd	;wreg free
+   622  01FA98  D1E6               	goto	L7
+   623                           
+   624                           ;PID.c: 48: }
+   625  01FA9A  D1EC               	goto	l55
+   626  01FA9C                     l1567:
+   627                           
+   628                           ;PID.c: 49: else if((StartAngle - setpoint) < -180)
+   629  01FA9C  C057  F02A         	movff	_StartAngle,___ftadd@f2
+   630  01FAA0  C058  F02B         	movff	_StartAngle+1,___ftadd@f2+1
+   631  01FAA4  C059  F02C         	movff	_StartAngle+2,___ftadd@f2+2
+   632  01FAA8  C045  F001         	movff	calculatePID@setpoint,___ftneg@f1
+   633  01FAAC  C046  F002         	movff	calculatePID@setpoint+1,___ftneg@f1+1
+   634  01FAB0  C047  F003         	movff	calculatePID@setpoint+2,___ftneg@f1+2
+   635  01FAB4  EC30  F0F9         	call	___ftneg	;wreg free
+   636  01FAB8  C001  F027         	movff	?___ftneg,___ftadd@f1
+   637  01FABC  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   638  01FAC0  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   639  01FAC4  EC83  F0FB         	call	___ftadd	;wreg free
+   640  01FAC8  C027  F033         	movff	?___ftadd,___ftge@ff1
+   641  01FACC  C028  F034         	movff	?___ftadd+1,___ftge@ff1+1
+   642  01FAD0  C029  F035         	movff	?___ftadd+2,___ftge@ff1+2
+   643  01FAD4  0E00               	movlw	0
+   644  01FAD6  6E36               	movwf	___ftge@ff2,c
+   645  01FAD8  0E34               	movlw	52
+   646  01FADA  6E37               	movwf	___ftge@ff2+1,c
+   647  01FADC  0EC3               	movlw	195
+   648  01FADE  6E38               	movwf	___ftge@ff2+2,c
+   649  01FAE0  EC75  F0F9         	call	___ftge	;wreg free
+   650  01FAE4  B0D8               	btfsc	status,0,c
+   651  01FAE6  D1C6               	goto	l55
+   652                           
+   653                           ;PID.c: 50: {
+   654                           ;PID.c: 51: if(angle < StartAngle)
+   655  01FAE8  C042  F033         	movff	calculatePID@angle,___ftge@ff1
+   656  01FAEC  C043  F034         	movff	calculatePID@angle+1,___ftge@ff1+1
+   657  01FAF0  C044  F035         	movff	calculatePID@angle+2,___ftge@ff1+2
+   658  01FAF4  C057  F036         	movff	_StartAngle,___ftge@ff2
+   659  01FAF8  C058  F037         	movff	_StartAngle+1,___ftge@ff2+1
+   660  01FAFC  C059  F038         	movff	_StartAngle+2,___ftge@ff2+2
+   661  01FB00  EC75  F0F9         	call	___ftge	;wreg free
+   662  01FB04  B0D8               	btfsc	status,0,c
+   663  01FB06  D02B               	goto	l1573
+   664                           
+   665                           ;PID.c: 52: err = setpoint - 360 - angle;
+   666  01FB08  0E00               	movlw	0
+   667  01FB0A  6E2A               	movwf	___ftadd@f2,c
+   668  01FB0C  0EB4               	movlw	180
+   669  01FB0E  6E2B               	movwf	___ftadd@f2+1,c
+   670  01FB10  0E43               	movlw	67
+   671  01FB12  6E2C               	movwf	___ftadd@f2+2,c
+   672  01FB14  C042  F027         	movff	calculatePID@angle,___ftadd@f1
+   673  01FB18  C043  F028         	movff	calculatePID@angle+1,___ftadd@f1+1
+   674  01FB1C  C044  F029         	movff	calculatePID@angle+2,___ftadd@f1+2
+   675  01FB20  EC83  F0FB         	call	___ftadd	;wreg free
+   676  01FB24  C027  F001         	movff	?___ftadd,___ftneg@f1
+   677  01FB28  C028  F002         	movff	?___ftadd+1,___ftneg@f1+1
+   678  01FB2C  C029  F003         	movff	?___ftadd+2,___ftneg@f1+2
+   679  01FB30  EC30  F0F9         	call	___ftneg	;wreg free
+   680  01FB34  C001  F051         	movff	?___ftneg,_calculatePID$1480
+   681  01FB38  C002  F052         	movff	?___ftneg+1,_calculatePID$1480+1
+   682  01FB3C  C003  F053         	movff	?___ftneg+2,_calculatePID$1480+2
+   683                           
+   684                           ;PID.c: 52: err = setpoint - 360 - angle;
+   685  01FB40  C051  F027         	movff	_calculatePID$1480,___ftadd@f1
+   686  01FB44  C052  F028         	movff	_calculatePID$1480+1,___ftadd@f1+1
+   687  01FB48  C053  F029         	movff	_calculatePID$1480+2,___ftadd@f1+2
+   688  01FB4C  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   689  01FB50  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   690  01FB54  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   691  01FB58  EC83  F0FB         	call	___ftadd	;wreg free
+   692  01FB5C  D184               	goto	L7
+   693  01FB5E                     l1573:
+   694                           
+   695                           ;PID.c: 53: else
+   696                           ;PID.c: 54: err = setpoint - angle;
+   697  01FB5E  C042  F001         	movff	calculatePID@angle,___ftneg@f1
+   698  01FB62  C043  F002         	movff	calculatePID@angle+1,___ftneg@f1+1
+   699  01FB66  C044  F003         	movff	calculatePID@angle+2,___ftneg@f1+2
+   700  01FB6A  EC30  F0F9         	call	___ftneg	;wreg free
+   701  01FB6E  C001  F027         	movff	?___ftneg,___ftadd@f1
+   702  01FB72  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   703  01FB76  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   704  01FB7A  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   705  01FB7E  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   706  01FB82  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   707  01FB86  EC83  F0FB         	call	___ftadd	;wreg free
+   708  01FB8A  D16D               	goto	L7
+   709                           
+   710                           ;PID.c: 55: }
+   711                           ;PID.c: 56: }
+   712  01FB8C  D173               	goto	l55
+   713  01FB8E                     l1575:
+   714                           
+   715                           ;PID.c: 57: else if(((StartAngle - setpoint) <= 180) && ((StartAngle - setpoint) > -180)
+      +                          )
+   716  01FB8E  0E00               	movlw	0
+   717  01FB90  6E33               	movwf	___ftge@ff1,c
+   718  01FB92  0E34               	movlw	52
+   719  01FB94  6E34               	movwf	___ftge@ff1+1,c
+   720  01FB96  0E43               	movlw	67
+   721  01FB98  6E35               	movwf	___ftge@ff1+2,c
+   722  01FB9A  C057  F02A         	movff	_StartAngle,___ftadd@f2
+   723  01FB9E  C058  F02B         	movff	_StartAngle+1,___ftadd@f2+1
+   724  01FBA2  C059  F02C         	movff	_StartAngle+2,___ftadd@f2+2
+   725  01FBA6  C045  F001         	movff	calculatePID@setpoint,___ftneg@f1
+   726  01FBAA  C046  F002         	movff	calculatePID@setpoint+1,___ftneg@f1+1
+   727  01FBAE  C047  F003         	movff	calculatePID@setpoint+2,___ftneg@f1+2
+   728  01FBB2  EC30  F0F9         	call	___ftneg	;wreg free
+   729  01FBB6  C001  F027         	movff	?___ftneg,___ftadd@f1
+   730  01FBBA  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   731  01FBBE  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   732  01FBC2  EC83  F0FB         	call	___ftadd	;wreg free
+   733  01FBC6  C027  F036         	movff	?___ftadd,___ftge@ff2
+   734  01FBCA  C028  F037         	movff	?___ftadd+1,___ftge@ff2+1
+   735  01FBCE  C029  F038         	movff	?___ftadd+2,___ftge@ff2+2
+   736  01FBD2  EC75  F0F9         	call	___ftge	;wreg free
+   737  01FBD6  A0D8               	btfss	status,0,c
+   738  01FBD8  D14D               	goto	l55
+   739  01FBDA  0E00               	movlw	0
+   740  01FBDC  6E33               	movwf	___ftge@ff1,c
+   741  01FBDE  0E34               	movlw	52
+   742  01FBE0  6E34               	movwf	___ftge@ff1+1,c
+   743  01FBE2  0EC3               	movlw	195
+   744  01FBE4  6E35               	movwf	___ftge@ff1+2,c
+   745  01FBE6  C057  F02A         	movff	_StartAngle,___ftadd@f2
+   746  01FBEA  C058  F02B         	movff	_StartAngle+1,___ftadd@f2+1
+   747  01FBEE  C059  F02C         	movff	_StartAngle+2,___ftadd@f2+2
+   748  01FBF2  C045  F001         	movff	calculatePID@setpoint,___ftneg@f1
+   749  01FBF6  C046  F002         	movff	calculatePID@setpoint+1,___ftneg@f1+1
+   750  01FBFA  C047  F003         	movff	calculatePID@setpoint+2,___ftneg@f1+2
+   751  01FBFE  EC30  F0F9         	call	___ftneg	;wreg free
+   752  01FC02  C001  F027         	movff	?___ftneg,___ftadd@f1
+   753  01FC06  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   754  01FC0A  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   755  01FC0E  EC83  F0FB         	call	___ftadd	;wreg free
+   756  01FC12  C027  F036         	movff	?___ftadd,___ftge@ff2
+   757  01FC16  C028  F037         	movff	?___ftadd+1,___ftge@ff2+1
+   758  01FC1A  C029  F038         	movff	?___ftadd+2,___ftge@ff2+2
+   759  01FC1E  EC75  F0F9         	call	___ftge	;wreg free
+   760  01FC22  B0D8               	btfsc	status,0,c
+   761  01FC24  D127               	goto	l55
+   762                           
+   763                           ;PID.c: 58: {
+   764                           ;PID.c: 59: if(((setpoint - StartAngle) > -180) && (setpoint - StartAngle < 0))
+   765  01FC26  0E00               	movlw	0
+   766  01FC28  6E33               	movwf	___ftge@ff1,c
+   767  01FC2A  0E34               	movlw	52
+   768  01FC2C  6E34               	movwf	___ftge@ff1+1,c
+   769  01FC2E  0EC3               	movlw	195
+   770  01FC30  6E35               	movwf	___ftge@ff1+2,c
+   771  01FC32  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   772  01FC36  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   773  01FC3A  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   774  01FC3E  C057  F001         	movff	_StartAngle,___ftneg@f1
+   775  01FC42  C058  F002         	movff	_StartAngle+1,___ftneg@f1+1
+   776  01FC46  C059  F003         	movff	_StartAngle+2,___ftneg@f1+2
+   777  01FC4A  EC30  F0F9         	call	___ftneg	;wreg free
+   778  01FC4E  C001  F027         	movff	?___ftneg,___ftadd@f1
+   779  01FC52  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   780  01FC56  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   781  01FC5A  EC83  F0FB         	call	___ftadd	;wreg free
+   782  01FC5E  C027  F036         	movff	?___ftadd,___ftge@ff2
+   783  01FC62  C028  F037         	movff	?___ftadd+1,___ftge@ff2+1
+   784  01FC66  C029  F038         	movff	?___ftadd+2,___ftge@ff2+2
+   785  01FC6A  EC75  F0F9         	call	___ftge	;wreg free
+   786  01FC6E  B0D8               	btfsc	status,0,c
+   787  01FC70  D06B               	goto	l1589
+   788  01FC72  C057  F001         	movff	_StartAngle,___ftneg@f1
+   789  01FC76  C058  F002         	movff	_StartAngle+1,___ftneg@f1+1
+   790  01FC7A  C059  F003         	movff	_StartAngle+2,___ftneg@f1+2
+   791  01FC7E  EC30  F0F9         	call	___ftneg	;wreg free
+   792  01FC82  C001  F027         	movff	?___ftneg,___ftadd@f1
+   793  01FC86  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   794  01FC8A  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   795  01FC8E  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   796  01FC92  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   797  01FC96  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   798  01FC9A  EC83  F0FB         	call	___ftadd	;wreg free
+   799  01FC9E  AE29               	btfss	?___ftadd+2,7,c
+   800  01FCA0  D053               	goto	l1589
+   801                           
+   802                           ;PID.c: 60: {
+   803                           ;PID.c: 61: if(angle <= StartAngle)
+   804  01FCA2  C057  F033         	movff	_StartAngle,___ftge@ff1
+   805  01FCA6  C058  F034         	movff	_StartAngle+1,___ftge@ff1+1
+   806  01FCAA  C059  F035         	movff	_StartAngle+2,___ftge@ff1+2
+   807  01FCAE  C042  F036         	movff	calculatePID@angle,___ftge@ff2
+   808  01FCB2  C043  F037         	movff	calculatePID@angle+1,___ftge@ff2+1
+   809  01FCB6  C044  F038         	movff	calculatePID@angle+2,___ftge@ff2+2
+   810  01FCBA  EC75  F0F9         	call	___ftge	;wreg free
+   811  01FCBE  A0D8               	btfss	status,0,c
+   812  01FCC0  D017               	goto	l1587
+   813                           
+   814                           ;PID.c: 62: err = setpoint - angle;
+   815  01FCC2  C042  F001         	movff	calculatePID@angle,___ftneg@f1
+   816  01FCC6  C043  F002         	movff	calculatePID@angle+1,___ftneg@f1+1
+   817  01FCCA  C044  F003         	movff	calculatePID@angle+2,___ftneg@f1+2
+   818  01FCCE  EC30  F0F9         	call	___ftneg	;wreg free
+   819  01FCD2  C001  F027         	movff	?___ftneg,___ftadd@f1
+   820  01FCD6  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   821  01FCDA  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   822  01FCDE  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   823  01FCE2  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   824  01FCE6  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   825  01FCEA  EC83  F0FB         	call	___ftadd	;wreg free
+   826  01FCEE  D0BB               	goto	L7
+   827  01FCF0                     l1587:
+   828                           
+   829                           ;PID.c: 63: else
+   830                           ;PID.c: 64: err = setpoint + 360 - angle;
+   831  01FCF0  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   832  01FCF4  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   833  01FCF8  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   834  01FCFC  C042  F001         	movff	calculatePID@angle,___ftneg@f1
+   835  01FD00  C043  F002         	movff	calculatePID@angle+1,___ftneg@f1+1
+   836  01FD04  C044  F003         	movff	calculatePID@angle+2,___ftneg@f1+2
+   837  01FD08  EC30  F0F9         	call	___ftneg	;wreg free
+   838  01FD0C  C001  F027         	movff	?___ftneg,___ftadd@f1
+   839  01FD10  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   840  01FD14  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   841  01FD18  EC83  F0FB         	call	___ftadd	;wreg free
+   842  01FD1C  C027  F051         	movff	?___ftadd,_calculatePID$1480
+   843  01FD20  C028  F052         	movff	?___ftadd+1,_calculatePID$1480+1
+   844  01FD24  C029  F053         	movff	?___ftadd+2,_calculatePID$1480+2
+   845                           
+   846                           ;PID.c: 63: else
+   847                           ;PID.c: 64: err = setpoint + 360 - angle;
+   848  01FD28  C051  F027         	movff	_calculatePID$1480,___ftadd@f1
+   849  01FD2C  C052  F028         	movff	_calculatePID$1480+1,___ftadd@f1+1
+   850  01FD30  C053  F029         	movff	_calculatePID$1480+2,___ftadd@f1+2
+   851  01FD34  0E00               	movlw	0
+   852  01FD36  6E2A               	movwf	___ftadd@f2,c
+   853  01FD38  0EB4               	movlw	180
+   854  01FD3A  6E2B               	movwf	___ftadd@f2+1,c
+   855  01FD3C  0E43               	movlw	67
+   856  01FD3E  6E2C               	movwf	___ftadd@f2+2,c
+   857  01FD40  EC83  F0FB         	call	___ftadd	;wreg free
+   858  01FD44  D090               	goto	L7
+   859                           
+   860                           ;PID.c: 65: }
+   861  01FD46  D096               	goto	l55
+   862  01FD48                     l1589:
+   863                           
+   864                           ;PID.c: 66: else if(((setpoint - StartAngle) < 180) && (setpoint - StartAngle >= 0))
+   865  01FD48  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   866  01FD4C  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   867  01FD50  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   868  01FD54  C057  F001         	movff	_StartAngle,___ftneg@f1
+   869  01FD58  C058  F002         	movff	_StartAngle+1,___ftneg@f1+1
+   870  01FD5C  C059  F003         	movff	_StartAngle+2,___ftneg@f1+2
+   871  01FD60  EC30  F0F9         	call	___ftneg	;wreg free
+   872  01FD64  C001  F027         	movff	?___ftneg,___ftadd@f1
+   873  01FD68  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   874  01FD6C  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   875  01FD70  EC83  F0FB         	call	___ftadd	;wreg free
+   876  01FD74  C027  F033         	movff	?___ftadd,___ftge@ff1
+   877  01FD78  C028  F034         	movff	?___ftadd+1,___ftge@ff1+1
+   878  01FD7C  C029  F035         	movff	?___ftadd+2,___ftge@ff1+2
+   879  01FD80  0E00               	movlw	0
+   880  01FD82  6E36               	movwf	___ftge@ff2,c
+   881  01FD84  0E34               	movlw	52
+   882  01FD86  6E37               	movwf	___ftge@ff2+1,c
+   883  01FD88  0E43               	movlw	67
+   884  01FD8A  6E38               	movwf	___ftge@ff2+2,c
+   885  01FD8C  EC75  F0F9         	call	___ftge	;wreg free
+   886  01FD90  B0D8               	btfsc	status,0,c
+   887  01FD92  D070               	goto	l55
+   888  01FD94  C057  F001         	movff	_StartAngle,___ftneg@f1
+   889  01FD98  C058  F002         	movff	_StartAngle+1,___ftneg@f1+1
+   890  01FD9C  C059  F003         	movff	_StartAngle+2,___ftneg@f1+2
+   891  01FDA0  EC30  F0F9         	call	___ftneg	;wreg free
+   892  01FDA4  C001  F027         	movff	?___ftneg,___ftadd@f1
+   893  01FDA8  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   894  01FDAC  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   895  01FDB0  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   896  01FDB4  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   897  01FDB8  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   898  01FDBC  EC83  F0FB         	call	___ftadd	;wreg free
+   899  01FDC0  BE29               	btfsc	?___ftadd+2,7,c
+   900  01FDC2  D058               	goto	l55
+   901                           
+   902                           ;PID.c: 67: {
+   903                           ;PID.c: 68: if(angle <= StartAngle)
+   904  01FDC4  C057  F033         	movff	_StartAngle,___ftge@ff1
+   905  01FDC8  C058  F034         	movff	_StartAngle+1,___ftge@ff1+1
+   906  01FDCC  C059  F035         	movff	_StartAngle+2,___ftge@ff1+2
+   907  01FDD0  C042  F036         	movff	calculatePID@angle,___ftge@ff2
+   908  01FDD4  C043  F037         	movff	calculatePID@angle+1,___ftge@ff2+1
+   909  01FDD8  C044  F038         	movff	calculatePID@angle+2,___ftge@ff2+2
+   910  01FDDC  EC75  F0F9         	call	___ftge	;wreg free
+   911  01FDE0  A0D8               	btfss	status,0,c
+   912  01FDE2  D017               	goto	l1597
+   913                           
+   914                           ;PID.c: 69: err = setpoint - angle;
+   915  01FDE4  C042  F001         	movff	calculatePID@angle,___ftneg@f1
+   916  01FDE8  C043  F002         	movff	calculatePID@angle+1,___ftneg@f1+1
+   917  01FDEC  C044  F003         	movff	calculatePID@angle+2,___ftneg@f1+2
+   918  01FDF0  EC30  F0F9         	call	___ftneg	;wreg free
+   919  01FDF4  C001  F027         	movff	?___ftneg,___ftadd@f1
+   920  01FDF8  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   921  01FDFC  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   922  01FE00  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   923  01FE04  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   924  01FE08  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   925  01FE0C  EC83  F0FB         	call	___ftadd	;wreg free
+   926  01FE10  D02A               	goto	L7
+   927  01FE12                     l1597:
+   928                           
+   929                           ;PID.c: 70: else
+   930                           ;PID.c: 71: err = setpoint - 360 - angle;
+   931  01FE12  0E00               	movlw	0
+   932  01FE14  6E2A               	movwf	___ftadd@f2,c
+   933  01FE16  0EB4               	movlw	180
+   934  01FE18  6E2B               	movwf	___ftadd@f2+1,c
+   935  01FE1A  0E43               	movlw	67
+   936  01FE1C  6E2C               	movwf	___ftadd@f2+2,c
+   937  01FE1E  C042  F027         	movff	calculatePID@angle,___ftadd@f1
+   938  01FE22  C043  F028         	movff	calculatePID@angle+1,___ftadd@f1+1
+   939  01FE26  C044  F029         	movff	calculatePID@angle+2,___ftadd@f1+2
+   940  01FE2A  EC83  F0FB         	call	___ftadd	;wreg free
+   941  01FE2E  C027  F001         	movff	?___ftadd,___ftneg@f1
+   942  01FE32  C028  F002         	movff	?___ftadd+1,___ftneg@f1+1
+   943  01FE36  C029  F003         	movff	?___ftadd+2,___ftneg@f1+2
+   944  01FE3A  EC30  F0F9         	call	___ftneg	;wreg free
+   945  01FE3E  C001  F051         	movff	?___ftneg,_calculatePID$1480
+   946  01FE42  C002  F052         	movff	?___ftneg+1,_calculatePID$1480+1
+   947  01FE46  C003  F053         	movff	?___ftneg+2,_calculatePID$1480+2
+   948                           
+   949                           ;PID.c: 70: else
+   950                           ;PID.c: 71: err = setpoint - 360 - angle;
+   951  01FE4A  C051  F027         	movff	_calculatePID$1480,___ftadd@f1
+   952  01FE4E  C052  F028         	movff	_calculatePID$1480+1,___ftadd@f1+1
+   953  01FE52  C053  F029         	movff	_calculatePID$1480+2,___ftadd@f1+2
+   954  01FE56  C045  F02A         	movff	calculatePID@setpoint,___ftadd@f2
+   955  01FE5A  C046  F02B         	movff	calculatePID@setpoint+1,___ftadd@f2+1
+   956  01FE5E  C047  F02C         	movff	calculatePID@setpoint+2,___ftadd@f2+2
+   957  01FE62  EC83  F0FB         	call	___ftadd	;wreg free
+   958  01FE66                     L7:
+   959  01FE66  C027  F05D         	movff	?___ftadd,_err
+   960  01FE6A  C028  F05E         	movff	?___ftadd+1,_err+1
+   961  01FE6E  C029  F05F         	movff	?___ftadd+2,_err+2
+   962  01FE72  D000               	goto	l55
+   963  01FE74                     l55:
+   964                           
+   965                           ;PID.c: 72: }
+   966                           ;PID.c: 73: }
+   967                           ;PID.c: 75: intErr = err + prevErr;
+   968  01FE74  C05D  F027         	movff	_err,___ftadd@f1
+   969  01FE78  C05E  F028         	movff	_err+1,___ftadd@f1+1
+   970  01FE7C  C05F  F029         	movff	_err+2,___ftadd@f1+2
+   971  01FE80  C06F  F02A         	movff	_prevErr,___ftadd@f2
+   972  01FE84  C070  F02B         	movff	_prevErr+1,___ftadd@f2+1
+   973  01FE88  C071  F02C         	movff	_prevErr+2,___ftadd@f2+2
+   974  01FE8C  EC83  F0FB         	call	___ftadd	;wreg free
+   975  01FE90  C027  F06C         	movff	?___ftadd,_intErr
+   976  01FE94  C028  F06D         	movff	?___ftadd+1,_intErr+1
+   977  01FE98  C029  F06E         	movff	?___ftadd+2,_intErr+2
+   978                           
+   979                           ;PID.c: 76: derErr = err - prevErr;
+   980  01FE9C  C06F  F001         	movff	_prevErr,___ftneg@f1
+   981  01FEA0  C070  F002         	movff	_prevErr+1,___ftneg@f1+1
+   982  01FEA4  C071  F003         	movff	_prevErr+2,___ftneg@f1+2
+   983  01FEA8  EC30  F0F9         	call	___ftneg	;wreg free
+   984  01FEAC  C001  F027         	movff	?___ftneg,___ftadd@f1
+   985  01FEB0  C002  F028         	movff	?___ftneg+1,___ftadd@f1+1
+   986  01FEB4  C003  F029         	movff	?___ftneg+2,___ftadd@f1+2
+   987  01FEB8  C05D  F02A         	movff	_err,___ftadd@f2
+   988  01FEBC  C05E  F02B         	movff	_err+1,___ftadd@f2+1
+   989  01FEC0  C05F  F02C         	movff	_err+2,___ftadd@f2+2
+   990  01FEC4  EC83  F0FB         	call	___ftadd	;wreg free
+   991  01FEC8  C027  F048         	movff	?___ftadd,calculatePID@derErr
+   992  01FECC  C028  F049         	movff	?___ftadd+1,calculatePID@derErr+1
+   993  01FED0  C029  F04A         	movff	?___ftadd+2,calculatePID@derErr+2
+   994                           
+   995                           ;PID.c: 78: motorInput = Kp * err + (Ki * intErr * 0.03) + (Kd * (derErr/0.03));
+   996  01FED4  C06C  F01B         	movff	_intErr,___ftmul@f2
+   997  01FED8  C06D  F01C         	movff	_intErr+1,___ftmul@f2+1
+   998  01FEDC  C06E  F01D         	movff	_intErr+2,___ftmul@f2+2
+   999  01FEE0  C066  F018         	movff	_Ki,___ftmul@f1
+  1000  01FEE4  C067  F019         	movff	_Ki+1,___ftmul@f1+1
+  1001  01FEE8  C068  F01A         	movff	_Ki+2,___ftmul@f1+2
+  1002  01FEEC  EC07  F0FB         	call	___ftmul	;wreg free
+  1003  01FEF0  C018  F04B         	movff	?___ftmul,_calculatePID$1481
+  1004  01FEF4  C019  F04C         	movff	?___ftmul+1,_calculatePID$1481+1
+  1005  01FEF8  C01A  F04D         	movff	?___ftmul+2,_calculatePID$1481+2
+  1006                           
+  1007                           ;PID.c: 78: motorInput = Kp * err + (Ki * intErr * 0.03) + (Kd * (derErr/0.03));
+  1008  01FEFC  0EC3               	movlw	195
+  1009  01FEFE  6E1B               	movwf	___ftmul@f2,c
+  1010  01FF00  0EF5               	movlw	245
+  1011  01FF02  6E1C               	movwf	___ftmul@f2+1,c
+  1012  01FF04  0E3C               	movlw	60
+  1013  01FF06  6E1D               	movwf	___ftmul@f2+2,c
+  1014  01FF08  C04B  F018         	movff	_calculatePID$1481,___ftmul@f1
+  1015  01FF0C  C04C  F019         	movff	_calculatePID$1481+1,___ftmul@f1+1
+  1016  01FF10  C04D  F01A         	movff	_calculatePID$1481+2,___ftmul@f1+2
+  1017  01FF14  EC07  F0FB         	call	___ftmul	;wreg free
+  1018  01FF18  C018  F02A         	movff	?___ftmul,___ftadd@f2
+  1019  01FF1C  C019  F02B         	movff	?___ftmul+1,___ftadd@f2+1
+  1020  01FF20  C01A  F02C         	movff	?___ftmul+2,___ftadd@f2+2
+  1021  01FF24  C05D  F01B         	movff	_err,___ftmul@f2
+  1022  01FF28  C05E  F01C         	movff	_err+1,___ftmul@f2+1
+  1023  01FF2C  C05F  F01D         	movff	_err+2,___ftmul@f2+2
+  1024  01FF30  C069  F018         	movff	_Kp,___ftmul@f1
+  1025  01FF34  C06A  F019         	movff	_Kp+1,___ftmul@f1+1
+  1026  01FF38  C06B  F01A         	movff	_Kp+2,___ftmul@f1+2
+  1027  01FF3C  EC07  F0FB         	call	___ftmul	;wreg free
+  1028  01FF40  C018  F027         	movff	?___ftmul,___ftadd@f1
+  1029  01FF44  C019  F028         	movff	?___ftmul+1,___ftadd@f1+1
+  1030  01FF48  C01A  F029         	movff	?___ftmul+2,___ftadd@f1+2
+  1031  01FF4C  EC83  F0FB         	call	___ftadd	;wreg free
+  1032  01FF50  C027  F04E         	movff	?___ftadd,_calculatePID$1482
+  1033  01FF54  C028  F04F         	movff	?___ftadd+1,_calculatePID$1482+1
+  1034  01FF58  C029  F050         	movff	?___ftadd+2,_calculatePID$1482+2
+  1035                           
+  1036                           ;PID.c: 78: motorInput = Kp * err + (Ki * intErr * 0.03) + (Kd * (derErr/0.03));
+  1037  01FF5C  C063  F01B         	movff	_Kd,___ftmul@f2
+  1038  01FF60  C064  F01C         	movff	_Kd+1,___ftmul@f2+1
+  1039  01FF64  C065  F01D         	movff	_Kd+2,___ftmul@f2+2
+  1040  01FF68  0EC3               	movlw	195
+  1041  01FF6A  6E0C               	movwf	___ftdiv@f2,c
+  1042  01FF6C  0EF5               	movlw	245
+  1043  01FF6E  6E0D               	movwf	___ftdiv@f2+1,c
+  1044  01FF70  0E3C               	movlw	60
+  1045  01FF72  6E0E               	movwf	___ftdiv@f2+2,c
+  1046  01FF74  C048  F009         	movff	calculatePID@derErr,___ftdiv@f1
+  1047  01FF78  C049  F00A         	movff	calculatePID@derErr+1,___ftdiv@f1+1
+  1048  01FF7C  C04A  F00B         	movff	calculatePID@derErr+2,___ftdiv@f1+2
+  1049  01FF80  EC23  F0FA         	call	___ftdiv	;wreg free
+  1050  01FF84  C009  F018         	movff	?___ftdiv,___ftmul@f1
+  1051  01FF88  C00A  F019         	movff	?___ftdiv+1,___ftmul@f1+1
+  1052  01FF8C  C00B  F01A         	movff	?___ftdiv+2,___ftmul@f1+2
+  1053  01FF90  EC07  F0FB         	call	___ftmul	;wreg free
+  1054  01FF94  C018  F02A         	movff	?___ftmul,___ftadd@f2
+  1055  01FF98  C019  F02B         	movff	?___ftmul+1,___ftadd@f2+1
+  1056  01FF9C  C01A  F02C         	movff	?___ftmul+2,___ftadd@f2+2
+  1057  01FFA0  C04E  F027         	movff	_calculatePID$1482,___ftadd@f1
+  1058  01FFA4  C04F  F028         	movff	_calculatePID$1482+1,___ftadd@f1+1
+  1059  01FFA8  C050  F029         	movff	_calculatePID$1482+2,___ftadd@f1+2
+  1060  01FFAC  EC83  F0FB         	call	___ftadd	;wreg free
+  1061  01FFB0  C027  F033         	movff	?___ftadd,___fttol@f1
+  1062  01FFB4  C028  F034         	movff	?___ftadd+1,___fttol@f1+1
+  1063  01FFB8  C029  F035         	movff	?___ftadd+2,___fttol@f1+2
+  1064  01FFBC  EC94  F0FA         	call	___fttol	;wreg free
+  1065  01FFC0  C033  F05A         	movff	?___fttol,_motorInput
+  1066  01FFC4  C034  F05B         	movff	?___fttol+1,_motorInput+1
+  1067                           
+  1068                           ;PID.c: 80: if(motorInput > 255)
+  1069  01FFC8  BE5B               	btfsc	_motorInput+1,7,c
+  1070  01FFCA  D007               	goto	l1603
+  1071  01FFCC  045B               	decf	_motorInput+1,w,c
+  1072  01FFCE  A0D8               	btfss	status,0,c
+  1073  01FFD0  D004               	goto	l1603
+  1074                           
+  1075                           ;PID.c: 81: motorInput = 255;
+  1076  01FFD2  0E00               	movlw	0
+  1077  01FFD4  6E5B               	movwf	_motorInput+1,c
+  1078  01FFD6  685A               	setf	_motorInput,c
+  1079  01FFD8  D00C               	goto	l1607
+  1080  01FFDA                     l1603:
+  1081                           
+  1082                           ;PID.c: 82: else if (motorInput < -255)
+  1083  01FFDA  AE5B               	btfss	_motorInput+1,7,c
+  1084  01FFDC  D00A               	goto	l1607
+  1085  01FFDE  045A               	decf	_motorInput,w,c
+  1086  01FFE0  0EFF               	movlw	255
+  1087  01FFE2  585B               	subwfb	_motorInput+1,w,c
+  1088  01FFE4  B0D8               	btfsc	status,0,c
+  1089  01FFE6  D005               	goto	l1607
+  1090                           
+  1091                           ;PID.c: 83: motorInput = -255;
+  1092  01FFE8  0EFF               	movlw	255
+  1093  01FFEA  6E5B               	movwf	_motorInput+1,c
+  1094  01FFEC  0E01               	movlw	1
+  1095  01FFEE  6E5A               	movwf	_motorInput,c
+  1096  01FFF0  D000               	goto	l1607
+  1097  01FFF2                     l1607:
+  1098                           
+  1099                           ;PID.c: 85: prevErr = err;
+  1100  01FFF2  C05D  F06F         	movff	_err,_prevErr
+  1101  01FFF6  C05E  F070         	movff	_err+1,_prevErr+1
+  1102  01FFFA  C05F  F071         	movff	_err+2,_prevErr+2
+  1103  01FFFE  0012               	return		;funcret
+  1104  020000                     __end_of_calculatePID:
+  1105                           	opt stack 0
+  1106                           postinc0	equ	0xFEE
+  1107                           wreg	equ	0xFE8
+  1108                           status	equ	0xFD8
+  1109                           
+  1110 ;; *************** function ___fttol *****************
+  1111 ;; Defined at:
+  1112 ;;		line 44 in file "/opt/microchip/xc8/v1.34/sources/common/fttol.c"
+  1113 ;; Parameters:    Size  Location     Type
+  1114 ;;  f1              3   50[COMRAM] float 
+  1115 ;; Auto vars:     Size  Location     Type
+  1116 ;;  lval            4   60[COMRAM] unsigned long 
+  1117 ;;  exp1            1   64[COMRAM] unsigned char 
+  1118 ;;  sign1           1   59[COMRAM] unsigned char 
+  1119 ;; Return value:  Size  Location     Type
+  1120 ;;                  4   50[COMRAM] long 
+  1121 ;; Registers used:
+  1122 ;;		wreg, status,2, status,0
+  1123 ;; Tracked objects:
+  1124 ;;		On entry : 0/0
+  1125 ;;		On exit  : 0/0
+  1126 ;;		Unchanged: 0/0
+  1127 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  1128 ;;      Params:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1129 ;;      Locals:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1130 ;;      Temps:          5       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1131 ;;      Totals:        15       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1132 ;;Total ram usage:       15 bytes
+  1133 ;; Hardware stack levels used:    1
+  1134 ;; This function calls:
+  1135 ;;		Nothing
+  1136 ;; This function is called by:
+  1137 ;;		_calculatePID
+  1138 ;; This function uses a non-reentrant model
+  1139 ;;
+  1140                           
+  1141                           	psect	text2
+  1142  01F528                     __ptext2:
+  1143                           	opt stack 0
+  1144  01F528                     ___fttol:
+  1145                           	opt stack 29
+  1146                           
+  1147                           ;incstack = 0
+  1148  01F528  C035  F037         	movff	___fttol@f1+2,??___fttol
+  1149  01F52C  6A38               	clrf	(??___fttol+1)& (0+255),c
+  1150  01F52E  6A39               	clrf	(??___fttol+2)& (0+255),c
+  1151  01F530  3434               	rlcf	___fttol@f1+1,w,c
+  1152  01F532  3637               	rlcf	??___fttol& (0+255),f,c
+  1153  01F534  E301               	bnc	u1301
+  1154  01F536  8038               	bsf	(??___fttol+1)& (0+255),0,c
+  1155  01F538                     u1301:
+  1156  01F538  5037               	movf	??___fttol,w,c
+  1157  01F53A  6E41               	movwf	___fttol@exp1,c
+  1158  01F53C  5041               	movf	___fttol@exp1,w,c
+  1159  01F53E  A4D8               	btfss	status,2,c
+  1160  01F540  D002               	goto	l1501
+  1161  01F542  D039               	goto	l1525
+  1162  01F544  D063               	goto	l614
+  1163  01F546                     l1501:
+  1164  01F546  0E17               	movlw	23
+  1165  01F548  6E37               	movwf	??___fttol& (0+255),c
+  1166  01F54A  C033  F038         	movff	___fttol@f1,??___fttol+1
+  1167  01F54E  C034  F039         	movff	___fttol@f1+1,??___fttol+2
+  1168  01F552  C035  F03A         	movff	___fttol@f1+2,??___fttol+3
+  1169  01F556  2837               	incf	??___fttol,w,c
+  1170  01F558  6E3B               	movwf	(??___fttol+4)& (0+255),c
+  1171  01F55A  D004               	goto	u1320
+  1172  01F55C                     u1325:
+  1173  01F55C  90D8               	bcf	status,0,c
+  1174  01F55E  323A               	rrcf	??___fttol+3,f,c
+  1175  01F560  3239               	rrcf	??___fttol+2,f,c
+  1176  01F562  3238               	rrcf	??___fttol+1,f,c
+  1177  01F564                     u1320:
+  1178  01F564  2E3B               	decfsz	(??___fttol+4)& (0+255),f,c
+  1179  01F566  D7FA               	goto	u1325
+  1180  01F568  5038               	movf	??___fttol+1,w,c
+  1181  01F56A  6E3C               	movwf	___fttol@sign1,c
+  1182  01F56C  8E34               	bsf	___fttol@f1+1,7,c
+  1183  01F56E  0EFF               	movlw	255
+  1184  01F570  1633               	andwf	___fttol@f1,f,c
+  1185  01F572  0EFF               	movlw	255
+  1186  01F574  1634               	andwf	___fttol@f1+1,f,c
+  1187  01F576  0E00               	movlw	0
+  1188  01F578  1635               	andwf	___fttol@f1+2,f,c
+  1189  01F57A  5033               	movf	___fttol@f1,w,c
+  1190  01F57C  6E3D               	movwf	___fttol@lval,c
+  1191  01F57E  5034               	movf	___fttol@f1+1,w,c
+  1192  01F580  6E3E               	movwf	___fttol@lval+1,c
+  1193  01F582  5035               	movf	___fttol@f1+2,w,c
+  1194  01F584  6E3F               	movwf	___fttol@lval+2,c
+  1195  01F586  6A40               	clrf	___fttol@lval+3,c
+  1196  01F588  0E8E               	movlw	142
+  1197  01F58A  5E41               	subwf	___fttol@exp1,f,c
+  1198  01F58C  AE41               	btfss	___fttol@exp1,7,c
+  1199  01F58E  D010               	goto	l1523
+  1200  01F590  5041               	movf	___fttol@exp1,w,c
+  1201  01F592  0A80               	xorlw	128
+  1202  01F594  0F8F               	addlw	143
+  1203  01F596  B0D8               	btfsc	status,0,c
+  1204  01F598  D003               	goto	l1519
+  1205  01F59A  D00D               	goto	l1525
+  1206  01F59C  D037               	goto	l614
+  1207  01F59E  D000               	goto	l1519
+  1208  01F5A0                     l1519:
+  1209  01F5A0  90D8               	bcf	status,0,c
+  1210  01F5A2  3240               	rrcf	___fttol@lval+3,f,c
+  1211  01F5A4  323F               	rrcf	___fttol@lval+2,f,c
+  1212  01F5A6  323E               	rrcf	___fttol@lval+1,f,c
+  1213  01F5A8  323D               	rrcf	___fttol@lval,f,c
+  1214  01F5AA  3E41               	incfsz	___fttol@exp1,f,c
+  1215  01F5AC  D7F9               	goto	l1519
+  1216  01F5AE  D019               	goto	l1533
+  1217  01F5B0                     l1523:
+  1218  01F5B0  0E17               	movlw	23
+  1219  01F5B2  6441               	cpfsgt	___fttol@exp1,c
+  1220  01F5B4  D011               	goto	l1531
+  1221  01F5B6                     l1525:
+  1222  01F5B6  0E00               	movlw	0
+  1223  01F5B8  6E33               	movwf	?___fttol,c
+  1224  01F5BA  0E00               	movlw	0
+  1225  01F5BC  6E34               	movwf	?___fttol+1,c
+  1226  01F5BE  0E00               	movlw	0
+  1227  01F5C0  6E35               	movwf	?___fttol+2,c
+  1228  01F5C2  0E00               	movlw	0
+  1229  01F5C4  6E36               	movwf	?___fttol+3,c
+  1230  01F5C6  D022               	goto	l614
+  1231  01F5C8  D007               	goto	l1531
+  1232  01F5CA                     l1529:
+  1233  01F5CA  90D8               	bcf	status,0,c
+  1234  01F5CC  363D               	rlcf	___fttol@lval,f,c
+  1235  01F5CE  363E               	rlcf	___fttol@lval+1,f,c
+  1236  01F5D0  363F               	rlcf	___fttol@lval+2,f,c
+  1237  01F5D2  3640               	rlcf	___fttol@lval+3,f,c
+  1238  01F5D4  0641               	decf	___fttol@exp1,f,c
+  1239  01F5D6  D000               	goto	l1531
+  1240  01F5D8                     l1531:
+  1241  01F5D8  5041               	movf	___fttol@exp1,w,c
+  1242  01F5DA  B4D8               	btfsc	status,2,c
+  1243  01F5DC  D002               	goto	l1533
+  1244  01F5DE  D7F5               	goto	l1529
+  1245  01F5E0  D000               	goto	l1533
+  1246  01F5E2                     l1533:
+  1247  01F5E2  503C               	movf	___fttol@sign1,w,c
+  1248  01F5E4  B4D8               	btfsc	status,2,c
+  1249  01F5E6  D009               	goto	l1537
+  1250  01F5E8  1E40               	comf	___fttol@lval+3,f,c
+  1251  01F5EA  1E3F               	comf	___fttol@lval+2,f,c
+  1252  01F5EC  1E3E               	comf	___fttol@lval+1,f,c
+  1253  01F5EE  6C3D               	negf	___fttol@lval,c
+  1254  01F5F0  0E00               	movlw	0
+  1255  01F5F2  223E               	addwfc	___fttol@lval+1,f,c
+  1256  01F5F4  223F               	addwfc	___fttol@lval+2,f,c
+  1257  01F5F6  2240               	addwfc	___fttol@lval+3,f,c
+  1258  01F5F8  D000               	goto	l1537
+  1259  01F5FA                     l1537:
+  1260  01F5FA  C03D  F033         	movff	___fttol@lval,?___fttol
+  1261  01F5FE  C03E  F034         	movff	___fttol@lval+1,?___fttol+1
+  1262  01F602  C03F  F035         	movff	___fttol@lval+2,?___fttol+2
+  1263  01F606  C040  F036         	movff	___fttol@lval+3,?___fttol+3
+  1264  01F60A  D000               	goto	l614
+  1265  01F60C                     l614:
+  1266  01F60C  0012               	return		;funcret
+  1267  01F60E                     __end_of___fttol:
+  1268                           	opt stack 0
+  1269                           postinc0	equ	0xFEE
+  1270                           wreg	equ	0xFE8
+  1271                           status	equ	0xFD8
+  1272                           
+  1273 ;; *************** function ___ftneg *****************
+  1274 ;; Defined at:
+  1275 ;;		line 15 in file "/opt/microchip/xc8/v1.34/sources/common/ftneg.c"
+  1276 ;; Parameters:    Size  Location     Type
+  1277 ;;  f1              3    0[COMRAM] float 
+  1278 ;; Auto vars:     Size  Location     Type
+  1279 ;;		None
+  1280 ;; Return value:  Size  Location     Type
+  1281 ;;                  3    0[COMRAM] float 
+  1282 ;; Registers used:
+  1283 ;;		wreg, status,2, status,0
+  1284 ;; Tracked objects:
+  1285 ;;		On entry : 0/0
+  1286 ;;		On exit  : 0/0
+  1287 ;;		Unchanged: 0/0
+  1288 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  1289 ;;      Params:         3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1290 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1291 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1292 ;;      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1293 ;;Total ram usage:        3 bytes
+  1294 ;; Hardware stack levels used:    1
+  1295 ;; This function calls:
+  1296 ;;		Nothing
+  1297 ;; This function is called by:
+  1298 ;;		_calculatePID
+  1299 ;; This function uses a non-reentrant model
+  1300 ;;
+  1301                           
+  1302                           	psect	text3
+  1303  01F260                     __ptext3:
+  1304                           	opt stack 0
+  1305  01F260                     ___ftneg:
+  1306                           	opt stack 29
+  1307                           
+  1308                           ;incstack = 0
+  1309  01F260  5001               	movf	___ftneg@f1,w,c
+  1310  01F262  1002               	iorwf	___ftneg@f1+1,w,c
+  1311  01F264  1003               	iorwf	___ftneg@f1+2,w,c
+  1312  01F266  B4D8               	btfsc	status,2,c
+  1313  01F268  D006               	goto	l603
+  1314  01F26A  0E00               	movlw	0
+  1315  01F26C  1A01               	xorwf	___ftneg@f1,f,c
+  1316  01F26E  0E00               	movlw	0
+  1317  01F270  1A02               	xorwf	___ftneg@f1+1,f,c
+  1318  01F272  0E80               	movlw	128
+  1319  01F274  1A03               	xorwf	___ftneg@f1+2,f,c
+  1320  01F276                     l603:
+  1321  01F276  C001  F001         	movff	___ftneg@f1,?___ftneg
+  1322  01F27A  C002  F002         	movff	___ftneg@f1+1,?___ftneg+1
+  1323  01F27E  C003  F003         	movff	___ftneg@f1+2,?___ftneg+2
+  1324  01F282  0012               	return		;funcret
+  1325  01F284                     __end_of___ftneg:
+  1326                           	opt stack 0
+  1327                           postinc0	equ	0xFEE
+  1328                           wreg	equ	0xFE8
+  1329                           status	equ	0xFD8
+  1330                           
+  1331 ;; *************** function ___ftmul *****************
+  1332 ;; Defined at:
+  1333 ;;		line 62 in file "/opt/microchip/xc8/v1.34/sources/common/ftmul.c"
+  1334 ;; Parameters:    Size  Location     Type
+  1335 ;;  f1              3   23[COMRAM] float 
+  1336 ;;  f2              3   26[COMRAM] float 
+  1337 ;; Auto vars:     Size  Location     Type
+  1338 ;;  f3_as_produc    3   33[COMRAM] unsigned um
+  1339 ;;  sign            1   37[COMRAM] unsigned char 
+  1340 ;;  cntr            1   36[COMRAM] unsigned char 
+  1341 ;;  exp             1   32[COMRAM] unsigned char 
+  1342 ;; Return value:  Size  Location     Type
+  1343 ;;                  3   23[COMRAM] float 
+  1344 ;; Registers used:
+  1345 ;;		wreg, status,2, status,0, cstack
+  1346 ;; Tracked objects:
+  1347 ;;		On entry : 0/0
+  1348 ;;		On exit  : 0/0
+  1349 ;;		Unchanged: 0/0
+  1350 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  1351 ;;      Params:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1352 ;;      Locals:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1353 ;;      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1354 ;;      Totals:        15       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1355 ;;Total ram usage:       15 bytes
+  1356 ;; Hardware stack levels used:    1
+  1357 ;; Hardware stack levels required when called:    1
+  1358 ;; This function calls:
+  1359 ;;		___ftpack
+  1360 ;; This function is called by:
+  1361 ;;		_calculatePID
+  1362 ;;		_RTD2Angle
+  1363 ;; This function uses a non-reentrant model
+  1364 ;;
+  1365                           
+  1366                           	psect	text4
+  1367  01F60E                     __ptext4:
+  1368                           	opt stack 0
+  1369  01F60E                     ___ftmul:
+  1370                           	opt stack 28
+  1371                           
+  1372                           ;incstack = 0
+  1373  01F60E  C01A  F01E         	movff	___ftmul@f1+2,??___ftmul
+  1374  01F612  6A1F               	clrf	(??___ftmul+1)& (0+255),c
+  1375  01F614  6A20               	clrf	(??___ftmul+2)& (0+255),c
+  1376  01F616  3419               	rlcf	___ftmul@f1+1,w,c
+  1377  01F618  361E               	rlcf	??___ftmul& (0+255),f,c
+  1378  01F61A  E301               	bnc	u1201
+  1379  01F61C  801F               	bsf	(??___ftmul+1)& (0+255),0,c
+  1380  01F61E                     u1201:
+  1381  01F61E  501E               	movf	??___ftmul,w,c
+  1382  01F620  6E21               	movwf	___ftmul@exp,c
+  1383  01F622  5021               	movf	___ftmul@exp,w,c
+  1384  01F624  A4D8               	btfss	status,2,c
+  1385  01F626  D002               	goto	l1431
+  1386  01F628  D00E               	goto	l1433
+  1387  01F62A  D06C               	goto	l593
+  1388  01F62C                     l1431:
+  1389  01F62C  C01D  F01E         	movff	___ftmul@f2+2,??___ftmul
+  1390  01F630  6A1F               	clrf	(??___ftmul+1)& (0+255),c
+  1391  01F632  6A20               	clrf	(??___ftmul+2)& (0+255),c
+  1392  01F634  341C               	rlcf	___ftmul@f2+1,w,c
+  1393  01F636  361E               	rlcf	??___ftmul& (0+255),f,c
+  1394  01F638  E301               	bnc	u1221
+  1395  01F63A  801F               	bsf	(??___ftmul+1)& (0+255),0,c
+  1396  01F63C                     u1221:
+  1397  01F63C  501E               	movf	??___ftmul,w,c
+  1398  01F63E  6E26               	movwf	___ftmul@sign,c
+  1399  01F640  5026               	movf	___ftmul@sign,w,c
+  1400  01F642  A4D8               	btfss	status,2,c
+  1401  01F644  D007               	goto	l1437
+  1402  01F646                     l1433:
+  1403  01F646  0E00               	movlw	0
+  1404  01F648  6E18               	movwf	?___ftmul,c
+  1405  01F64A  0E00               	movlw	0
+  1406  01F64C  6E19               	movwf	?___ftmul+1,c
+  1407  01F64E  0E00               	movlw	0
+  1408  01F650  6E1A               	movwf	?___ftmul+2,c
+  1409  01F652  D058               	goto	l593
+  1410  01F654                     l1437:
+  1411  01F654  5026               	movf	___ftmul@sign,w,c
+  1412  01F656  0F7B               	addlw	123
+  1413  01F658  2621               	addwf	___ftmul@exp,f,c
+  1414  01F65A  C01A  F026         	movff	___ftmul@f1+2,___ftmul@sign
+  1415  01F65E  501D               	movf	___ftmul@f2+2,w,c
+  1416  01F660  1A26               	xorwf	___ftmul@sign,f,c
+  1417  01F662  0E80               	movlw	128
+  1418  01F664  1626               	andwf	___ftmul@sign,f,c
+  1419  01F666  8E19               	bsf	___ftmul@f1+1,7,c
+  1420  01F668  8E1C               	bsf	___ftmul@f2+1,7,c
+  1421  01F66A  0EFF               	movlw	255
+  1422  01F66C  161B               	andwf	___ftmul@f2,f,c
+  1423  01F66E  0EFF               	movlw	255
+  1424  01F670  161C               	andwf	___ftmul@f2+1,f,c
+  1425  01F672  0E00               	movlw	0
+  1426  01F674  161D               	andwf	___ftmul@f2+2,f,c
+  1427  01F676  0E00               	movlw	0
+  1428  01F678  6E22               	movwf	___ftmul@f3_as_product,c
+  1429  01F67A  0E00               	movlw	0
+  1430  01F67C  6E23               	movwf	___ftmul@f3_as_product+1,c
+  1431  01F67E  0E00               	movlw	0
+  1432  01F680  6E24               	movwf	___ftmul@f3_as_product+2,c
+  1433  01F682  0E07               	movlw	7
+  1434  01F684  6E25               	movwf	___ftmul@cntr,c
+  1435  01F686  D000               	goto	l1451
+  1436  01F688                     l1451:
+  1437  01F688  A018               	btfss	___ftmul@f1,0,c
+  1438  01F68A  D007               	goto	l1455
+  1439  01F68C  501B               	movf	___ftmul@f2,w,c
+  1440  01F68E  2622               	addwf	___ftmul@f3_as_product,f,c
+  1441  01F690  501C               	movf	___ftmul@f2+1,w,c
+  1442  01F692  2223               	addwfc	___ftmul@f3_as_product+1,f,c
+  1443  01F694  501D               	movf	___ftmul@f2+2,w,c
+  1444  01F696  2224               	addwfc	___ftmul@f3_as_product+2,f,c
+  1445  01F698  D000               	goto	l1455
+  1446  01F69A                     l1455:
+  1447  01F69A  90D8               	bcf	status,0,c
+  1448  01F69C  321A               	rrcf	___ftmul@f1+2,f,c
+  1449  01F69E  3219               	rrcf	___ftmul@f1+1,f,c
+  1450  01F6A0  3218               	rrcf	___ftmul@f1,f,c
+  1451  01F6A2  90D8               	bcf	status,0,c
+  1452  01F6A4  361B               	rlcf	___ftmul@f2,f,c
+  1453  01F6A6  361C               	rlcf	___ftmul@f2+1,f,c
+  1454  01F6A8  361D               	rlcf	___ftmul@f2+2,f,c
+  1455  01F6AA  2E25               	decfsz	___ftmul@cntr,f,c
+  1456  01F6AC  D7ED               	goto	l1451
+  1457  01F6AE  D000               	goto	l1459
+  1458  01F6B0                     l1459:
+  1459  01F6B0  0E09               	movlw	9
+  1460  01F6B2  6E25               	movwf	___ftmul@cntr,c
+  1461  01F6B4  D000               	goto	l1461
+  1462  01F6B6                     l1461:
+  1463  01F6B6  A018               	btfss	___ftmul@f1,0,c
+  1464  01F6B8  D007               	goto	l1465
+  1465  01F6BA  501B               	movf	___ftmul@f2,w,c
+  1466  01F6BC  2622               	addwf	___ftmul@f3_as_product,f,c
+  1467  01F6BE  501C               	movf	___ftmul@f2+1,w,c
+  1468  01F6C0  2223               	addwfc	___ftmul@f3_as_product+1,f,c
+  1469  01F6C2  501D               	movf	___ftmul@f2+2,w,c
+  1470  01F6C4  2224               	addwfc	___ftmul@f3_as_product+2,f,c
+  1471  01F6C6  D000               	goto	l1465
+  1472  01F6C8                     l1465:
+  1473  01F6C8  90D8               	bcf	status,0,c
+  1474  01F6CA  321A               	rrcf	___ftmul@f1+2,f,c
+  1475  01F6CC  3219               	rrcf	___ftmul@f1+1,f,c
+  1476  01F6CE  3218               	rrcf	___ftmul@f1,f,c
+  1477  01F6D0  90D8               	bcf	status,0,c
+  1478  01F6D2  3224               	rrcf	___ftmul@f3_as_product+2,f,c
+  1479  01F6D4  3223               	rrcf	___ftmul@f3_as_product+1,f,c
+  1480  01F6D6  3222               	rrcf	___ftmul@f3_as_product,f,c
+  1481  01F6D8  2E25               	decfsz	___ftmul@cntr,f,c
+  1482  01F6DA  D7ED               	goto	l1461
+  1483  01F6DC  D000               	goto	l1469
+  1484  01F6DE                     l1469:
+  1485  01F6DE  C022  F001         	movff	___ftmul@f3_as_product,___ftpack@arg
+  1486  01F6E2  C023  F002         	movff	___ftmul@f3_as_product+1,___ftpack@arg+1
+  1487  01F6E6  C024  F003         	movff	___ftmul@f3_as_product+2,___ftpack@arg+2
+  1488  01F6EA  C021  F004         	movff	___ftmul@exp,___ftpack@exp
+  1489  01F6EE  C026  F005         	movff	___ftmul@sign,___ftpack@sign
+  1490  01F6F2  ECC0  F0F9         	call	___ftpack	;wreg free
+  1491  01F6F6  C001  F018         	movff	?___ftpack,?___ftmul
+  1492  01F6FA  C002  F019         	movff	?___ftpack+1,?___ftmul+1
+  1493  01F6FE  C003  F01A         	movff	?___ftpack+2,?___ftmul+2
+  1494  01F702  D000               	goto	l593
+  1495  01F704                     l593:
+  1496  01F704  0012               	return		;funcret
+  1497  01F706                     __end_of___ftmul:
+  1498                           	opt stack 0
+  1499                           postinc0	equ	0xFEE
+  1500                           wreg	equ	0xFE8
+  1501                           status	equ	0xFD8
+  1502                           
+  1503 ;; *************** function ___ftge *****************
+  1504 ;; Defined at:
+  1505 ;;		line 4 in file "/opt/microchip/xc8/v1.34/sources/common/ftge.c"
+  1506 ;; Parameters:    Size  Location     Type
+  1507 ;;  ff1             3   50[COMRAM] float 
+  1508 ;;  ff2             3   53[COMRAM] float 
+  1509 ;; Auto vars:     Size  Location     Type
+  1510 ;;		None
+  1511 ;; Return value:  Size  Location     Type
+  1512 ;;		None               void
+  1513 ;; Registers used:
+  1514 ;;		wreg, status,2, status,0
+  1515 ;; Tracked objects:
+  1516 ;;		On entry : 0/0
+  1517 ;;		On exit  : 0/0
+  1518 ;;		Unchanged: 0/0
+  1519 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  1520 ;;      Params:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1521 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1522 ;;      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1523 ;;      Totals:         9       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1524 ;;Total ram usage:        9 bytes
+  1525 ;; Hardware stack levels used:    1
+  1526 ;; This function calls:
+  1527 ;;		Nothing
+  1528 ;; This function is called by:
+  1529 ;;		_calculatePID
+  1530 ;; This function uses a non-reentrant model
+  1531 ;;
+  1532                           
+  1533                           	psect	text5
+  1534  01F2EA                     __ptext5:
+  1535                           	opt stack 0
+  1536  01F2EA                     ___ftge:
+  1537                           	opt stack 29
+  1538                           
+  1539                           ;incstack = 0
+  1540  01F2EA  AE35               	btfss	___ftge@ff1+2,7,c
+  1541  01F2EC  D017               	goto	l1477
+  1542  01F2EE  C033  F039         	movff	___ftge@ff1,??___ftge
+  1543  01F2F2  C034  F03A         	movff	___ftge@ff1+1,??___ftge+1
+  1544  01F2F6  C035  F03B         	movff	___ftge@ff1+2,??___ftge+2
+  1545  01F2FA  1E39               	comf	??___ftge,f,c
+  1546  01F2FC  1E3A               	comf	??___ftge+1,f,c
+  1547  01F2FE  1E3B               	comf	??___ftge+2,f,c
+  1548  01F300  2A39               	incf	??___ftge,f,c
+  1549  01F302  0E00               	movlw	0
+  1550  01F304  223A               	addwfc	??___ftge+1,f,c
+  1551  01F306  223B               	addwfc	??___ftge+2,f,c
+  1552  01F308  0E00               	movlw	0
+  1553  01F30A  2439               	addwf	??___ftge,w,c
+  1554  01F30C  6E33               	movwf	___ftge@ff1,c
+  1555  01F30E  0E00               	movlw	0
+  1556  01F310  203A               	addwfc	??___ftge+1,w,c
+  1557  01F312  6E34               	movwf	___ftge@ff1+1,c
+  1558  01F314  0E80               	movlw	128
+  1559  01F316  203B               	addwfc	??___ftge+2,w,c
+  1560  01F318  6E35               	movwf	___ftge@ff1+2,c
+  1561  01F31A  D000               	goto	l1477
+  1562  01F31C                     l1477:
+  1563  01F31C  AE38               	btfss	___ftge@ff2+2,7,c
+  1564  01F31E  D017               	goto	l1481
+  1565  01F320  C036  F039         	movff	___ftge@ff2,??___ftge
+  1566  01F324  C037  F03A         	movff	___ftge@ff2+1,??___ftge+1
+  1567  01F328  C038  F03B         	movff	___ftge@ff2+2,??___ftge+2
+  1568  01F32C  1E39               	comf	??___ftge,f,c
+  1569  01F32E  1E3A               	comf	??___ftge+1,f,c
+  1570  01F330  1E3B               	comf	??___ftge+2,f,c
+  1571  01F332  2A39               	incf	??___ftge,f,c
+  1572  01F334  0E00               	movlw	0
+  1573  01F336  223A               	addwfc	??___ftge+1,f,c
+  1574  01F338  223B               	addwfc	??___ftge+2,f,c
+  1575  01F33A  0E00               	movlw	0
+  1576  01F33C  2439               	addwf	??___ftge,w,c
+  1577  01F33E  6E36               	movwf	___ftge@ff2,c
+  1578  01F340  0E00               	movlw	0
+  1579  01F342  203A               	addwfc	??___ftge+1,w,c
+  1580  01F344  6E37               	movwf	___ftge@ff2+1,c
+  1581  01F346  0E80               	movlw	128
+  1582  01F348  203B               	addwfc	??___ftge+2,w,c
+  1583  01F34A  6E38               	movwf	___ftge@ff2+2,c
+  1584  01F34C  D000               	goto	l1481
+  1585  01F34E                     l1481:
+  1586  01F34E  0E00               	movlw	0
+  1587  01F350  1A33               	xorwf	___ftge@ff1,f,c
+  1588  01F352  0E00               	movlw	0
+  1589  01F354  1A34               	xorwf	___ftge@ff1+1,f,c
+  1590  01F356  0E80               	movlw	128
+  1591  01F358  1A35               	xorwf	___ftge@ff1+2,f,c
+  1592  01F35A  0E00               	movlw	0
+  1593  01F35C  1A36               	xorwf	___ftge@ff2,f,c
+  1594  01F35E  0E00               	movlw	0
+  1595  01F360  1A37               	xorwf	___ftge@ff2+1,f,c
+  1596  01F362  0E80               	movlw	128
+  1597  01F364  1A38               	xorwf	___ftge@ff2+2,f,c
+  1598  01F366  5036               	movf	___ftge@ff2,w,c
+  1599  01F368  5C33               	subwf	___ftge@ff1,w,c
+  1600  01F36A  5037               	movf	___ftge@ff2+1,w,c
+  1601  01F36C  5834               	subwfb	___ftge@ff1+1,w,c
+  1602  01F36E  5038               	movf	___ftge@ff2+2,w,c
+  1603  01F370  5835               	subwfb	___ftge@ff1+2,w,c
+  1604  01F372  B0D8               	btfsc	status,0,c
+  1605  01F374  D002               	goto	l1487
+  1606  01F376  90D8               	bcf	status,0,c
+  1607  01F378  D002               	goto	l587
+  1608  01F37A                     l1487:
+  1609  01F37A  80D8               	bsf	status,0,c
+  1610  01F37C  D000               	goto	l587
+  1611  01F37E                     l587:
+  1612  01F37E  0012               	return		;funcret
+  1613  01F380                     __end_of___ftge:
+  1614                           	opt stack 0
+  1615                           postinc0	equ	0xFEE
+  1616                           wreg	equ	0xFE8
+  1617                           status	equ	0xFD8
+  1618                           
+  1619 ;; *************** function ___ftdiv *****************
+  1620 ;; Defined at:
+  1621 ;;		line 54 in file "/opt/microchip/xc8/v1.34/sources/common/ftdiv.c"
+  1622 ;; Parameters:    Size  Location     Type
+  1623 ;;  f1              3    8[COMRAM] float 
+  1624 ;;  f2              3   11[COMRAM] float 
+  1625 ;; Auto vars:     Size  Location     Type
+  1626 ;;  f3              3   18[COMRAM] float 
+  1627 ;;  sign            1   22[COMRAM] unsigned char 
+  1628 ;;  exp             1   21[COMRAM] unsigned char 
+  1629 ;;  cntr            1   17[COMRAM] unsigned char 
+  1630 ;; Return value:  Size  Location     Type
+  1631 ;;                  3    8[COMRAM] float 
+  1632 ;; Registers used:
+  1633 ;;		wreg, status,2, status,0, cstack
+  1634 ;; Tracked objects:
+  1635 ;;		On entry : 0/0
+  1636 ;;		On exit  : 0/0
+  1637 ;;		Unchanged: 0/0
+  1638 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  1639 ;;      Params:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1640 ;;      Locals:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1641 ;;      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1642 ;;      Totals:        15       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1643 ;;Total ram usage:       15 bytes
+  1644 ;; Hardware stack levels used:    1
+  1645 ;; Hardware stack levels required when called:    1
+  1646 ;; This function calls:
+  1647 ;;		___ftpack
+  1648 ;; This function is called by:
+  1649 ;;		_calculatePID
+  1650 ;; This function uses a non-reentrant model
+  1651 ;;
+  1652                           
+  1653                           	psect	text6
+  1654  01F446                     __ptext6:
+  1655                           	opt stack 0
+  1656  01F446                     ___ftdiv:
+  1657                           	opt stack 28
+  1658                           
+  1659                           ;incstack = 0
+  1660  01F446  C00B  F00F         	movff	___ftdiv@f1+2,??___ftdiv
+  1661  01F44A  6A10               	clrf	(??___ftdiv+1)& (0+255),c
+  1662  01F44C  6A11               	clrf	(??___ftdiv+2)& (0+255),c
+  1663  01F44E  340A               	rlcf	___ftdiv@f1+1,w,c
+  1664  01F450  360F               	rlcf	??___ftdiv& (0+255),f,c
+  1665  01F452  E301               	bnc	u1151
+  1666  01F454  8010               	bsf	(??___ftdiv+1)& (0+255),0,c
+  1667  01F456                     u1151:
+  1668  01F456  500F               	movf	??___ftdiv,w,c
+  1669  01F458  6E16               	movwf	___ftdiv@exp,c
+  1670  01F45A  5016               	movf	___ftdiv@exp,w,c
+  1671  01F45C  A4D8               	btfss	status,2,c
+  1672  01F45E  D002               	goto	l1385
+  1673  01F460  D00E               	goto	l1387
+  1674  01F462  D061               	goto	l578
+  1675  01F464                     l1385:
+  1676  01F464  C00E  F00F         	movff	___ftdiv@f2+2,??___ftdiv
+  1677  01F468  6A10               	clrf	(??___ftdiv+1)& (0+255),c
+  1678  01F46A  6A11               	clrf	(??___ftdiv+2)& (0+255),c
+  1679  01F46C  340D               	rlcf	___ftdiv@f2+1,w,c
+  1680  01F46E  360F               	rlcf	??___ftdiv& (0+255),f,c
+  1681  01F470  E301               	bnc	u1171
+  1682  01F472  8010               	bsf	(??___ftdiv+1)& (0+255),0,c
+  1683  01F474                     u1171:
+  1684  01F474  500F               	movf	??___ftdiv,w,c
+  1685  01F476  6E17               	movwf	___ftdiv@sign,c
+  1686  01F478  5017               	movf	___ftdiv@sign,w,c
+  1687  01F47A  A4D8               	btfss	status,2,c
+  1688  01F47C  D007               	goto	l1391
+  1689  01F47E                     l1387:
+  1690  01F47E  0E00               	movlw	0
+  1691  01F480  6E09               	movwf	?___ftdiv,c
+  1692  01F482  0E00               	movlw	0
+  1693  01F484  6E0A               	movwf	?___ftdiv+1,c
+  1694  01F486  0E00               	movlw	0
+  1695  01F488  6E0B               	movwf	?___ftdiv+2,c
+  1696  01F48A  D04D               	goto	l578
+  1697  01F48C                     l1391:
+  1698  01F48C  0E00               	movlw	0
+  1699  01F48E  6E13               	movwf	___ftdiv@f3,c
+  1700  01F490  0E00               	movlw	0
+  1701  01F492  6E14               	movwf	___ftdiv@f3+1,c
+  1702  01F494  0E00               	movlw	0
+  1703  01F496  6E15               	movwf	___ftdiv@f3+2,c
+  1704  01F498  5017               	movf	___ftdiv@sign,w,c
+  1705  01F49A  0F89               	addlw	137
+  1706  01F49C  5E16               	subwf	___ftdiv@exp,f,c
+  1707  01F49E  C00B  F017         	movff	___ftdiv@f1+2,___ftdiv@sign
+  1708  01F4A2  500E               	movf	___ftdiv@f2+2,w,c
+  1709  01F4A4  1A17               	xorwf	___ftdiv@sign,f,c
+  1710  01F4A6  0E80               	movlw	128
+  1711  01F4A8  1617               	andwf	___ftdiv@sign,f,c
+  1712  01F4AA  8E0A               	bsf	___ftdiv@f1+1,7,c
+  1713  01F4AC  0EFF               	movlw	255
+  1714  01F4AE  1609               	andwf	___ftdiv@f1,f,c
+  1715  01F4B0  0EFF               	movlw	255
+  1716  01F4B2  160A               	andwf	___ftdiv@f1+1,f,c
+  1717  01F4B4  0E00               	movlw	0
+  1718  01F4B6  160B               	andwf	___ftdiv@f1+2,f,c
+  1719  01F4B8  8E0D               	bsf	___ftdiv@f2+1,7,c
+  1720  01F4BA  0EFF               	movlw	255
+  1721  01F4BC  160C               	andwf	___ftdiv@f2,f,c
+  1722  01F4BE  0EFF               	movlw	255
+  1723  01F4C0  160D               	andwf	___ftdiv@f2+1,f,c
+  1724  01F4C2  0E00               	movlw	0
+  1725  01F4C4  160E               	andwf	___ftdiv@f2+2,f,c
+  1726  01F4C6  0E18               	movlw	24
+  1727  01F4C8  6E12               	movwf	___ftdiv@cntr,c
+  1728  01F4CA  D000               	goto	l1411
+  1729  01F4CC                     l1411:
+  1730  01F4CC  90D8               	bcf	status,0,c
+  1731  01F4CE  3613               	rlcf	___ftdiv@f3,f,c
+  1732  01F4D0  3614               	rlcf	___ftdiv@f3+1,f,c
+  1733  01F4D2  3615               	rlcf	___ftdiv@f3+2,f,c
+  1734  01F4D4  500C               	movf	___ftdiv@f2,w,c
+  1735  01F4D6  5C09               	subwf	___ftdiv@f1,w,c
+  1736  01F4D8  500D               	movf	___ftdiv@f2+1,w,c
+  1737  01F4DA  580A               	subwfb	___ftdiv@f1+1,w,c
+  1738  01F4DC  500E               	movf	___ftdiv@f2+2,w,c
+  1739  01F4DE  580B               	subwfb	___ftdiv@f1+2,w,c
+  1740  01F4E0  A0D8               	btfss	status,0,c
+  1741  01F4E2  D007               	goto	l581
+  1742  01F4E4  500C               	movf	___ftdiv@f2,w,c
+  1743  01F4E6  5E09               	subwf	___ftdiv@f1,f,c
+  1744  01F4E8  500D               	movf	___ftdiv@f2+1,w,c
+  1745  01F4EA  5A0A               	subwfb	___ftdiv@f1+1,f,c
+  1746  01F4EC  500E               	movf	___ftdiv@f2+2,w,c
+  1747  01F4EE  5A0B               	subwfb	___ftdiv@f1+2,f,c
+  1748  01F4F0  8013               	bsf	___ftdiv@f3,0,c
+  1749  01F4F2                     l581:
+  1750  01F4F2  90D8               	bcf	status,0,c
+  1751  01F4F4  3609               	rlcf	___ftdiv@f1,f,c
+  1752  01F4F6  360A               	rlcf	___ftdiv@f1+1,f,c
+  1753  01F4F8  360B               	rlcf	___ftdiv@f1+2,f,c
+  1754  01F4FA  2E12               	decfsz	___ftdiv@cntr,f,c
+  1755  01F4FC  D7E7               	goto	l1411
+  1756  01F4FE  D000               	goto	l1421
+  1757  01F500                     l1421:
+  1758  01F500  C013  F001         	movff	___ftdiv@f3,___ftpack@arg
+  1759  01F504  C014  F002         	movff	___ftdiv@f3+1,___ftpack@arg+1
+  1760  01F508  C015  F003         	movff	___ftdiv@f3+2,___ftpack@arg+2
+  1761  01F50C  C016  F004         	movff	___ftdiv@exp,___ftpack@exp
+  1762  01F510  C017  F005         	movff	___ftdiv@sign,___ftpack@sign
+  1763  01F514  ECC0  F0F9         	call	___ftpack	;wreg free
+  1764  01F518  C001  F009         	movff	?___ftpack,?___ftdiv
+  1765  01F51C  C002  F00A         	movff	?___ftpack+1,?___ftdiv+1
+  1766  01F520  C003  F00B         	movff	?___ftpack+2,?___ftdiv+2
+  1767  01F524  D000               	goto	l578
+  1768  01F526                     l578:
+  1769  01F526  0012               	return		;funcret
+  1770  01F528                     __end_of___ftdiv:
+  1771                           	opt stack 0
+  1772                           postinc0	equ	0xFEE
+  1773                           wreg	equ	0xFE8
+  1774                           status	equ	0xFD8
+  1775                           
+  1776 ;; *************** function ___ftadd *****************
+  1777 ;; Defined at:
+  1778 ;;		line 86 in file "/opt/microchip/xc8/v1.34/sources/common/ftadd.c"
+  1779 ;; Parameters:    Size  Location     Type
+  1780 ;;  f1              3   38[COMRAM] float 
+  1781 ;;  f2              3   41[COMRAM] float 
+  1782 ;; Auto vars:     Size  Location     Type
+  1783 ;;  exp1            1   49[COMRAM] unsigned char 
+  1784 ;;  exp2            1   48[COMRAM] unsigned char 
+  1785 ;;  sign            1   47[COMRAM] unsigned char 
+  1786 ;; Return value:  Size  Location     Type
+  1787 ;;                  3   38[COMRAM] float 
+  1788 ;; Registers used:
+  1789 ;;		wreg, status,2, status,0, cstack
+  1790 ;; Tracked objects:
+  1791 ;;		On entry : 0/0
+  1792 ;;		On exit  : 0/0
+  1793 ;;		Unchanged: 0/0
+  1794 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  1795 ;;      Params:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1796 ;;      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1797 ;;      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1798 ;;      Totals:        12       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1799 ;;Total ram usage:       12 bytes
+  1800 ;; Hardware stack levels used:    1
+  1801 ;; Hardware stack levels required when called:    1
+  1802 ;; This function calls:
+  1803 ;;		___ftpack
+  1804 ;; This function is called by:
+  1805 ;;		_calculatePID
+  1806 ;; This function uses a non-reentrant model
+  1807 ;;
+  1808                           
+  1809                           	psect	text7
+  1810  01F706                     __ptext7:
+  1811                           	opt stack 0
+  1812  01F706                     ___ftadd:
+  1813                           	opt stack 28
+  1814                           
+  1815                           ;incstack = 0
+  1816  01F706  C029  F02D         	movff	___ftadd@f1+2,??___ftadd
+  1817  01F70A  6A2E               	clrf	(??___ftadd+1)& (0+255),c
+  1818  01F70C  6A2F               	clrf	(??___ftadd+2)& (0+255),c
+  1819  01F70E  3428               	rlcf	___ftadd@f1+1,w,c
+  1820  01F710  362D               	rlcf	??___ftadd& (0+255),f,c
+  1821  01F712  E301               	bnc	u941
+  1822  01F714  802E               	bsf	(??___ftadd+1)& (0+255),0,c
+  1823  01F716                     u941:
+  1824  01F716  502D               	movf	??___ftadd,w,c
+  1825  01F718  6E32               	movwf	___ftadd@exp1,c
+  1826  01F71A  C02C  F02D         	movff	___ftadd@f2+2,??___ftadd
+  1827  01F71E  6A2E               	clrf	(??___ftadd+1)& (0+255),c
+  1828  01F720  6A2F               	clrf	(??___ftadd+2)& (0+255),c
+  1829  01F722  342B               	rlcf	___ftadd@f2+1,w,c
+  1830  01F724  362D               	rlcf	??___ftadd& (0+255),f,c
+  1831  01F726  E301               	bnc	u951
+  1832  01F728  802E               	bsf	(??___ftadd+1)& (0+255),0,c
+  1833  01F72A                     u951:
+  1834  01F72A  502D               	movf	??___ftadd,w,c
+  1835  01F72C  6E31               	movwf	___ftadd@exp2,c
+  1836  01F72E  5032               	movf	___ftadd@exp1,w,c
+  1837  01F730  B4D8               	btfsc	status,2,c
+  1838  01F732  D00B               	goto	l546
+  1839  01F734  5031               	movf	___ftadd@exp2,w,c
+  1840  01F736  5C32               	subwf	___ftadd@exp1,w,c
+  1841  01F738  B0D8               	btfsc	status,0,c
+  1842  01F73A  D00E               	goto	l1317
+  1843  01F73C  5032               	movf	___ftadd@exp1,w,c
+  1844  01F73E  0800               	sublw	0
+  1845  01F740  2431               	addwf	___ftadd@exp2,w,c
+  1846  01F742  6E2D               	movwf	??___ftadd& (0+255),c
+  1847  01F744  0E18               	movlw	24
+  1848  01F746  642D               	cpfsgt	??___ftadd,c
+  1849  01F748  D007               	goto	l1317
+  1850  01F74A                     l546:
+  1851  01F74A  C02A  F027         	movff	___ftadd@f2,?___ftadd
+  1852  01F74E  C02B  F028         	movff	___ftadd@f2+1,?___ftadd+1
+  1853  01F752  C02C  F029         	movff	___ftadd@f2+2,?___ftadd+2
+  1854  01F756  D0B8               	goto	l547
+  1855  01F758                     l1317:
+  1856  01F758  5031               	movf	___ftadd@exp2,w,c
+  1857  01F75A  B4D8               	btfsc	status,2,c
+  1858  01F75C  D00B               	goto	l550
+  1859  01F75E  5032               	movf	___ftadd@exp1,w,c
+  1860  01F760  5C31               	subwf	___ftadd@exp2,w,c
+  1861  01F762  B0D8               	btfsc	status,0,c
+  1862  01F764  D00E               	goto	l1323
+  1863  01F766  5031               	movf	___ftadd@exp2,w,c
+  1864  01F768  0800               	sublw	0
+  1865  01F76A  2432               	addwf	___ftadd@exp1,w,c
+  1866  01F76C  6E2D               	movwf	??___ftadd& (0+255),c
+  1867  01F76E  0E18               	movlw	24
+  1868  01F770  642D               	cpfsgt	??___ftadd,c
+  1869  01F772  D007               	goto	l1323
+  1870  01F774                     l550:
+  1871  01F774  C027  F027         	movff	___ftadd@f1,?___ftadd
+  1872  01F778  C028  F028         	movff	___ftadd@f1+1,?___ftadd+1
+  1873  01F77C  C029  F029         	movff	___ftadd@f1+2,?___ftadd+2
+  1874  01F780  D0A3               	goto	l547
+  1875  01F782                     l1323:
+  1876  01F782  0E06               	movlw	6
+  1877  01F784  6E30               	movwf	___ftadd@sign,c
+  1878  01F786  AE29               	btfss	___ftadd@f1+2,7,c
+  1879  01F788  D002               	goto	l1329
+  1880  01F78A  8E30               	bsf	___ftadd@sign,7,c
+  1881  01F78C  D000               	goto	l1329
+  1882  01F78E                     l1329:
+  1883  01F78E  BE2C               	btfsc	___ftadd@f2+2,7,c
+  1884  01F790  8C30               	bsf	___ftadd@sign,6,c
+  1885  01F792  8E28               	bsf	___ftadd@f1+1,7,c
+  1886  01F794  0EFF               	movlw	255
+  1887  01F796  1627               	andwf	___ftadd@f1,f,c
+  1888  01F798  0EFF               	movlw	255
+  1889  01F79A  1628               	andwf	___ftadd@f1+1,f,c
+  1890  01F79C  0E00               	movlw	0
+  1891  01F79E  1629               	andwf	___ftadd@f1+2,f,c
+  1892  01F7A0  8E2B               	bsf	___ftadd@f2+1,7,c
+  1893  01F7A2  0EFF               	movlw	255
+  1894  01F7A4  162A               	andwf	___ftadd@f2,f,c
+  1895  01F7A6  0EFF               	movlw	255
+  1896  01F7A8  162B               	andwf	___ftadd@f2+1,f,c
+  1897  01F7AA  0E00               	movlw	0
+  1898  01F7AC  162C               	andwf	___ftadd@f2+2,f,c
+  1899  01F7AE  5031               	movf	___ftadd@exp2,w,c
+  1900  01F7B0  5C32               	subwf	___ftadd@exp1,w,c
+  1901  01F7B2  B0D8               	btfsc	status,0,c
+  1902  01F7B4  D01E               	goto	l1349
+  1903  01F7B6                     l1339:
+  1904  01F7B6  90D8               	bcf	status,0,c
+  1905  01F7B8  362A               	rlcf	___ftadd@f2,f,c
+  1906  01F7BA  362B               	rlcf	___ftadd@f2+1,f,c
+  1907  01F7BC  362C               	rlcf	___ftadd@f2+2,f,c
+  1908  01F7BE  0631               	decf	___ftadd@exp2,f,c
+  1909  01F7C0  5032               	movf	___ftadd@exp1,w,c
+  1910  01F7C2  1831               	xorwf	___ftadd@exp2,w,c
+  1911  01F7C4  B4D8               	btfsc	status,2,c
+  1912  01F7C6  D00F               	goto	l1347
+  1913  01F7C8  0630               	decf	___ftadd@sign,f,c
+  1914  01F7CA  C030  F02D         	movff	___ftadd@sign,??___ftadd
+  1915  01F7CE  0E07               	movlw	7
+  1916  01F7D0  162D               	andwf	??___ftadd,f,c
+  1917  01F7D2  B4D8               	btfsc	status,2,c
+  1918  01F7D4  D008               	goto	l1347
+  1919  01F7D6  D7EF               	goto	l1339
+  1920  01F7D8  D006               	goto	l1347
+  1921  01F7DA                     l1345:
+  1922  01F7DA  90D8               	bcf	status,0,c
+  1923  01F7DC  3229               	rrcf	___ftadd@f1+2,f,c
+  1924  01F7DE  3228               	rrcf	___ftadd@f1+1,f,c
+  1925  01F7E0  3227               	rrcf	___ftadd@f1,f,c
+  1926  01F7E2  2A32               	incf	___ftadd@exp1,f,c
+  1927  01F7E4  D000               	goto	l1347
+  1928  01F7E6                     l1347:
+  1929  01F7E6  5031               	movf	___ftadd@exp2,w,c
+  1930  01F7E8  1832               	xorwf	___ftadd@exp1,w,c
+  1931  01F7EA  B4D8               	btfsc	status,2,c
+  1932  01F7EC  D024               	goto	l561
+  1933  01F7EE  D7F5               	goto	l1345
+  1934  01F7F0  D022               	goto	l561
+  1935  01F7F2                     l1349:
+  1936  01F7F2  5032               	movf	___ftadd@exp1,w,c
+  1937  01F7F4  5C31               	subwf	___ftadd@exp2,w,c
+  1938  01F7F6  B0D8               	btfsc	status,0,c
+  1939  01F7F8  D01E               	goto	l561
+  1940  01F7FA                     l1351:
+  1941  01F7FA  90D8               	bcf	status,0,c
+  1942  01F7FC  3627               	rlcf	___ftadd@f1,f,c
+  1943  01F7FE  3628               	rlcf	___ftadd@f1+1,f,c
+  1944  01F800  3629               	rlcf	___ftadd@f1+2,f,c
+  1945  01F802  0632               	decf	___ftadd@exp1,f,c
+  1946  01F804  5032               	movf	___ftadd@exp1,w,c
+  1947  01F806  1831               	xorwf	___ftadd@exp2,w,c
+  1948  01F808  B4D8               	btfsc	status,2,c
+  1949  01F80A  D00F               	goto	l1359
+  1950  01F80C  0630               	decf	___ftadd@sign,f,c
+  1951  01F80E  C030  F02D         	movff	___ftadd@sign,??___ftadd
+  1952  01F812  0E07               	movlw	7
+  1953  01F814  162D               	andwf	??___ftadd,f,c
+  1954  01F816  B4D8               	btfsc	status,2,c
+  1955  01F818  D008               	goto	l1359
+  1956  01F81A  D7EF               	goto	l1351
+  1957  01F81C  D006               	goto	l1359
+  1958  01F81E                     l1357:
+  1959  01F81E  90D8               	bcf	status,0,c
+  1960  01F820  322C               	rrcf	___ftadd@f2+2,f,c
+  1961  01F822  322B               	rrcf	___ftadd@f2+1,f,c
+  1962  01F824  322A               	rrcf	___ftadd@f2,f,c
+  1963  01F826  2A31               	incf	___ftadd@exp2,f,c
+  1964  01F828  D000               	goto	l1359
+  1965  01F82A                     l1359:
+  1966  01F82A  5031               	movf	___ftadd@exp2,w,c
+  1967  01F82C  1832               	xorwf	___ftadd@exp1,w,c
+  1968  01F82E  B4D8               	btfsc	status,2,c
+  1969  01F830  D002               	goto	l561
+  1970  01F832  D7F5               	goto	l1357
+  1971  01F834  D000               	goto	l561
+  1972  01F836                     l561:
+  1973  01F836  AE30               	btfss	___ftadd@sign,7,c
+  1974  01F838  D00C               	goto	l570
+  1975  01F83A  0EFF               	movlw	255
+  1976  01F83C  1A27               	xorwf	___ftadd@f1,f,c
+  1977  01F83E  0EFF               	movlw	255
+  1978  01F840  1A28               	xorwf	___ftadd@f1+1,f,c
+  1979  01F842  0EFF               	movlw	255
+  1980  01F844  1A29               	xorwf	___ftadd@f1+2,f,c
+  1981  01F846  0E01               	movlw	1
+  1982  01F848  2627               	addwf	___ftadd@f1,f,c
+  1983  01F84A  0E00               	movlw	0
+  1984  01F84C  2228               	addwfc	___ftadd@f1+1,f,c
+  1985  01F84E  0E00               	movlw	0
+  1986  01F850  2229               	addwfc	___ftadd@f1+2,f,c
+  1987  01F852                     l570:
+  1988  01F852  AC30               	btfss	___ftadd@sign,6,c
+  1989  01F854  D00D               	goto	l1365
+  1990  01F856  0EFF               	movlw	255
+  1991  01F858  1A2A               	xorwf	___ftadd@f2,f,c
+  1992  01F85A  0EFF               	movlw	255
+  1993  01F85C  1A2B               	xorwf	___ftadd@f2+1,f,c
+  1994  01F85E  0EFF               	movlw	255
+  1995  01F860  1A2C               	xorwf	___ftadd@f2+2,f,c
+  1996  01F862  0E01               	movlw	1
+  1997  01F864  262A               	addwf	___ftadd@f2,f,c
+  1998  01F866  0E00               	movlw	0
+  1999  01F868  222B               	addwfc	___ftadd@f2+1,f,c
+  2000  01F86A  0E00               	movlw	0
+  2001  01F86C  222C               	addwfc	___ftadd@f2+2,f,c
+  2002  01F86E  D000               	goto	l1365
+  2003  01F870                     l1365:
+  2004  01F870  0E00               	movlw	0
+  2005  01F872  6E30               	movwf	___ftadd@sign,c
+  2006  01F874  5027               	movf	___ftadd@f1,w,c
+  2007  01F876  262A               	addwf	___ftadd@f2,f,c
+  2008  01F878  5028               	movf	___ftadd@f1+1,w,c
+  2009  01F87A  222B               	addwfc	___ftadd@f2+1,f,c
+  2010  01F87C  5029               	movf	___ftadd@f1+2,w,c
+  2011  01F87E  222C               	addwfc	___ftadd@f2+2,f,c
+  2012  01F880  AE2C               	btfss	___ftadd@f2+2,7,c
+  2013  01F882  D00F               	goto	l1375
+  2014  01F884  0EFF               	movlw	255
+  2015  01F886  1A2A               	xorwf	___ftadd@f2,f,c
+  2016  01F888  0EFF               	movlw	255
+  2017  01F88A  1A2B               	xorwf	___ftadd@f2+1,f,c
+  2018  01F88C  0EFF               	movlw	255
+  2019  01F88E  1A2C               	xorwf	___ftadd@f2+2,f,c
+  2020  01F890  0E01               	movlw	1
+  2021  01F892  262A               	addwf	___ftadd@f2,f,c
+  2022  01F894  0E00               	movlw	0
+  2023  01F896  222B               	addwfc	___ftadd@f2+1,f,c
+  2024  01F898  0E00               	movlw	0
+  2025  01F89A  222C               	addwfc	___ftadd@f2+2,f,c
+  2026  01F89C  0E01               	movlw	1
+  2027  01F89E  6E30               	movwf	___ftadd@sign,c
+  2028  01F8A0  D000               	goto	l1375
+  2029  01F8A2                     l1375:
+  2030  01F8A2  C02A  F001         	movff	___ftadd@f2,___ftpack@arg
+  2031  01F8A6  C02B  F002         	movff	___ftadd@f2+1,___ftpack@arg+1
+  2032  01F8AA  C02C  F003         	movff	___ftadd@f2+2,___ftpack@arg+2
+  2033  01F8AE  C032  F004         	movff	___ftadd@exp1,___ftpack@exp
+  2034  01F8B2  C030  F005         	movff	___ftadd@sign,___ftpack@sign
+  2035  01F8B6  ECC0  F0F9         	call	___ftpack	;wreg free
+  2036  01F8BA  C001  F027         	movff	?___ftpack,?___ftadd
+  2037  01F8BE  C002  F028         	movff	?___ftpack+1,?___ftadd+1
+  2038  01F8C2  C003  F029         	movff	?___ftpack+2,?___ftadd+2
+  2039  01F8C6  D000               	goto	l547
+  2040  01F8C8                     l547:
+  2041  01F8C8  0012               	return		;funcret
+  2042  01F8CA                     __end_of___ftadd:
+  2043                           	opt stack 0
+  2044                           postinc0	equ	0xFEE
+  2045                           wreg	equ	0xFE8
+  2046                           status	equ	0xFD8
+  2047                           
+  2048 ;; *************** function ___ftpack *****************
+  2049 ;; Defined at:
+  2050 ;;		line 62 in file "/opt/microchip/xc8/v1.34/sources/common/float.c"
+  2051 ;; Parameters:    Size  Location     Type
+  2052 ;;  arg             3    0[COMRAM] unsigned um
+  2053 ;;  exp             1    3[COMRAM] unsigned char 
+  2054 ;;  sign            1    4[COMRAM] unsigned char 
+  2055 ;; Auto vars:     Size  Location     Type
+  2056 ;;		None
+  2057 ;; Return value:  Size  Location     Type
+  2058 ;;                  3    0[COMRAM] float 
+  2059 ;; Registers used:
+  2060 ;;		wreg, status,2, status,0
+  2061 ;; Tracked objects:
+  2062 ;;		On entry : 0/0
+  2063 ;;		On exit  : 0/0
+  2064 ;;		Unchanged: 0/0
+  2065 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  2066 ;;      Params:         5       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2067 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2068 ;;      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2069 ;;      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2070 ;;Total ram usage:        8 bytes
+  2071 ;; Hardware stack levels used:    1
+  2072 ;; This function calls:
+  2073 ;;		Nothing
+  2074 ;; This function is called by:
+  2075 ;;		___ftadd
+  2076 ;;		___ftdiv
+  2077 ;;		___ftmul
+  2078 ;;		___lwtoft
+  2079 ;; This function uses a non-reentrant model
+  2080 ;;
+  2081                           
+  2082                           	psect	text8
+  2083  01F380                     __ptext8:
+  2084                           	opt stack 0
+  2085  01F380                     ___ftpack:
+  2086                           	opt stack 28
+  2087                           
+  2088                           ;incstack = 0
+  2089  01F380  5004               	movf	___ftpack@exp,w,c
+  2090  01F382  B4D8               	btfsc	status,2,c
+  2091  01F384  D005               	goto	l1277
+  2092  01F386  5001               	movf	___ftpack@arg,w,c
+  2093  01F388  1002               	iorwf	___ftpack@arg+1,w,c
+  2094  01F38A  1003               	iorwf	___ftpack@arg+2,w,c
+  2095  01F38C  A4D8               	btfss	status,2,c
+  2096  01F38E  D00E               	goto	l1283
+  2097  01F390                     l1277:
+  2098  01F390  0E00               	movlw	0
+  2099  01F392  6E01               	movwf	?___ftpack,c
+  2100  01F394  0E00               	movlw	0
+  2101  01F396  6E02               	movwf	?___ftpack+1,c
+  2102  01F398  0E00               	movlw	0
+  2103  01F39A  6E03               	movwf	?___ftpack+2,c
+  2104  01F39C  D053               	goto	l506
+  2105  01F39E  D006               	goto	l1283
+  2106  01F3A0                     l1281:
+  2107  01F3A0  2A04               	incf	___ftpack@exp,f,c
+  2108  01F3A2  90D8               	bcf	status,0,c
+  2109  01F3A4  3203               	rrcf	___ftpack@arg+2,f,c
+  2110  01F3A6  3202               	rrcf	___ftpack@arg+1,f,c
+  2111  01F3A8  3201               	rrcf	___ftpack@arg,f,c
+  2112  01F3AA  D000               	goto	l1283
+  2113  01F3AC                     l1283:
+  2114  01F3AC  0E00               	movlw	0
+  2115  01F3AE  1401               	andwf	___ftpack@arg,w,c
+  2116  01F3B0  6E06               	movwf	??___ftpack& (0+255),c
+  2117  01F3B2  0E00               	movlw	0
+  2118  01F3B4  1402               	andwf	___ftpack@arg+1,w,c
+  2119  01F3B6  6E07               	movwf	(??___ftpack+1)& (0+255),c
+  2120  01F3B8  0EFE               	movlw	254
+  2121  01F3BA  1403               	andwf	___ftpack@arg+2,w,c
+  2122  01F3BC  6E08               	movwf	(??___ftpack+2)& (0+255),c
+  2123  01F3BE  5006               	movf	??___ftpack,w,c
+  2124  01F3C0  1007               	iorwf	??___ftpack+1,w,c
+  2125  01F3C2  1008               	iorwf	??___ftpack+2,w,c
+  2126  01F3C4  B4D8               	btfsc	status,2,c
+  2127  01F3C6  D00E               	goto	l1289
+  2128  01F3C8  D7EB               	goto	l1281
+  2129  01F3CA  D00C               	goto	l1289
+  2130  01F3CC                     l1285:
+  2131  01F3CC  2A04               	incf	___ftpack@exp,f,c
+  2132  01F3CE  0E01               	movlw	1
+  2133  01F3D0  2601               	addwf	___ftpack@arg,f,c
+  2134  01F3D2  0E00               	movlw	0
+  2135  01F3D4  2202               	addwfc	___ftpack@arg+1,f,c
+  2136  01F3D6  0E00               	movlw	0
+  2137  01F3D8  2203               	addwfc	___ftpack@arg+2,f,c
+  2138  01F3DA  90D8               	bcf	status,0,c
+  2139  01F3DC  3203               	rrcf	___ftpack@arg+2,f,c
+  2140  01F3DE  3202               	rrcf	___ftpack@arg+1,f,c
+  2141  01F3E0  3201               	rrcf	___ftpack@arg,f,c
+  2142  01F3E2  D000               	goto	l1289
+  2143  01F3E4                     l1289:
+  2144  01F3E4  0E00               	movlw	0
+  2145  01F3E6  1401               	andwf	___ftpack@arg,w,c
+  2146  01F3E8  6E06               	movwf	??___ftpack& (0+255),c
+  2147  01F3EA  0E00               	movlw	0
+  2148  01F3EC  1402               	andwf	___ftpack@arg+1,w,c
+  2149  01F3EE  6E07               	movwf	(??___ftpack+1)& (0+255),c
+  2150  01F3F0  0EFF               	movlw	255
+  2151  01F3F2  1403               	andwf	___ftpack@arg+2,w,c
+  2152  01F3F4  6E08               	movwf	(??___ftpack+2)& (0+255),c
+  2153  01F3F6  5006               	movf	??___ftpack,w,c
+  2154  01F3F8  1007               	iorwf	??___ftpack+1,w,c
+  2155  01F3FA  1008               	iorwf	??___ftpack+2,w,c
+  2156  01F3FC  B4D8               	btfsc	status,2,c
+  2157  01F3FE  D008               	goto	l1293
+  2158  01F400  D7E5               	goto	l1285
+  2159  01F402  D006               	goto	l1293
+  2160  01F404                     l1291:
+  2161  01F404  0604               	decf	___ftpack@exp,f,c
+  2162  01F406  90D8               	bcf	status,0,c
+  2163  01F408  3601               	rlcf	___ftpack@arg,f,c
+  2164  01F40A  3602               	rlcf	___ftpack@arg+1,f,c
+  2165  01F40C  3603               	rlcf	___ftpack@arg+2,f,c
+  2166  01F40E  D000               	goto	l1293
+  2167  01F410                     l1293:
+  2168  01F410  BE02               	btfsc	___ftpack@arg+1,7,c
+  2169  01F412  D004               	goto	l517
+  2170  01F414  0E02               	movlw	2
+  2171  01F416  6004               	cpfslt	___ftpack@exp,c
+  2172  01F418  D7F5               	goto	l1291
+  2173  01F41A  D000               	goto	l517
+  2174  01F41C                     l517:
+  2175  01F41C  B004               	btfsc	___ftpack@exp,0,c
+  2176  01F41E  D002               	goto	l1299
+  2177  01F420  9E02               	bcf	___ftpack@arg+1,7,c
+  2178  01F422  D000               	goto	l1299
+  2179  01F424                     l1299:
+  2180  01F424  90D8               	bcf	status,0,c
+  2181  01F426  3204               	rrcf	___ftpack@exp,f,c
+  2182  01F428  5004               	movf	___ftpack@exp,w,c
+  2183  01F42A  1203               	iorwf	___ftpack@arg+2,f,c
+  2184  01F42C  5005               	movf	___ftpack@sign,w,c
+  2185  01F42E  B4D8               	btfsc	status,2,c
+  2186  01F430  D002               	goto	l1305
+  2187  01F432  8E03               	bsf	___ftpack@arg+2,7,c
+  2188  01F434  D000               	goto	l1305
+  2189  01F436                     l1305:
+  2190  01F436  C001  F001         	movff	___ftpack@arg,?___ftpack
+  2191  01F43A  C002  F002         	movff	___ftpack@arg+1,?___ftpack+1
+  2192  01F43E  C003  F003         	movff	___ftpack@arg+2,?___ftpack+2
+  2193  01F442  D000               	goto	l506
+  2194  01F444                     l506:
+  2195  01F444  0012               	return		;funcret
+  2196  01F446                     __end_of___ftpack:
+  2197                           	opt stack 0
+  2198                           postinc0	equ	0xFEE
+  2199                           wreg	equ	0xFE8
+  2200                           status	equ	0xFD8
+  2201                           
+  2202 ;; *************** function _PIDInit *****************
+  2203 ;; Defined at:
+  2204 ;;		line 15 in file "PID.c"
+  2205 ;; Parameters:    Size  Location     Type
+  2206 ;;		None
+  2207 ;; Auto vars:     Size  Location     Type
+  2208 ;;		None
+  2209 ;; Return value:  Size  Location     Type
+  2210 ;;		None               void
+  2211 ;; Registers used:
+  2212 ;;		wreg, status,2
+  2213 ;; Tracked objects:
+  2214 ;;		On entry : 0/0
+  2215 ;;		On exit  : 0/0
+  2216 ;;		Unchanged: 0/0
+  2217 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  2218 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2219 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2220 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2221 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  2222 ;;Total ram usage:        0 bytes
+  2223 ;; Hardware stack levels used:    1
+  2224 ;; This function calls:
+  2225 ;;		Nothing
+  2226 ;; This function is called by:
+  2227 ;;		_main
+  2228 ;; This function uses a non-reentrant model
+  2229 ;;
+  2230                           
+  2231                           	psect	text9
+  2232  01F2A8                     __ptext9:
+  2233                           	opt stack 0
+  2234  01F2A8                     _PIDInit:
+  2235                           	opt stack 30
+  2236                           
+  2237                           ;PID.c: 18: err = 0;
+  2238                           
+  2239                           ;incstack = 0
+  2240  01F2A8  0E00               	movlw	0
+  2241  01F2AA  6E5D               	movwf	_err,c
+  2242  01F2AC  0E00               	movlw	0
+  2243  01F2AE  6E5E               	movwf	_err+1,c
+  2244  01F2B0  0E00               	movlw	0
+  2245  01F2B2  6E5F               	movwf	_err+2,c
+  2246                           
+  2247                           ;PID.c: 19: prevErr = 0;
+  2248  01F2B4  0E00               	movlw	0
+  2249  01F2B6  0100               	movlb	0	; () banked
+  2250  01F2B8  6F6F               	movwf	_prevErr& (0+255),b
+  2251  01F2BA  0E00               	movlw	0
+  2252  01F2BC  0100               	movlb	0	; () banked
+  2253  01F2BE  6F70               	movwf	(_prevErr+1)& (0+255),b
+  2254  01F2C0  0E00               	movlw	0
+  2255  01F2C2  0100               	movlb	0	; () banked
+  2256  01F2C4  6F71               	movwf	(_prevErr+2)& (0+255),b
+  2257                           
+  2258                           ;PID.c: 20: intErr = 0;
+  2259  01F2C6  0E00               	movlw	0
+  2260  01F2C8  0100               	movlb	0	; () banked
+  2261  01F2CA  6F6C               	movwf	_intErr& (0+255),b
+  2262  01F2CC  0E00               	movlw	0
+  2263  01F2CE  0100               	movlb	0	; () banked
+  2264  01F2D0  6F6D               	movwf	(_intErr+1)& (0+255),b
+  2265  01F2D2  0E00               	movlw	0
+  2266  01F2D4  0100               	movlb	0	; () banked
+  2267  01F2D6  6F6E               	movwf	(_intErr+2)& (0+255),b
+  2268                           
+  2269                           ; BSR set to: 0
+  2270                           ;PID.c: 21: INTCONbits.TMR0IE = 1;
+  2271  01F2D8  8AF2               	bsf	intcon,5,c	;volatile
+  2272                           
+  2273                           ; BSR set to: 0
+  2274                           ;PID.c: 22: INTCON2bits.TMR0IP = 1;
+  2275  01F2DA  84F1               	bsf	intcon2,2,c	;volatile
+  2276                           
+  2277                           ;PID.c: 23: T0CON = 0x84;
+  2278  01F2DC  0E84               	movlw	132
+  2279  01F2DE  6ED5               	movwf	4053,c	;volatile
+  2280                           
+  2281                           ;PID.c: 24: TMR0H = 0xDB;
+  2282  01F2E0  0EDB               	movlw	219
+  2283  01F2E2  6ED7               	movwf	4055,c	;volatile
+  2284                           
+  2285                           ;PID.c: 25: TMR0L = 0x60;
+  2286  01F2E4  0E60               	movlw	96
+  2287  01F2E6  6ED6               	movwf	4054,c	;volatile
+  2288                           
+  2289                           ; BSR set to: 0
+  2290  01F2E8  0012               	return		;funcret
+  2291  01F2EA                     __end_of_PIDInit:
+  2292                           	opt stack 0
+  2293  0000                     intcon	equ	0xFF2
+  2294                           intcon2	equ	0xFF1
+  2295                           postinc0	equ	0xFEE
+  2296                           wreg	equ	0xFE8
+  2297                           status	equ	0xFD8
+  2298                           intcon	equ	0xFF2
+  2299                           intcon2	equ	0xFF1
+  2300                           postinc0	equ	0xFEE
+  2301                           wreg	equ	0xFE8
+  2302                           status	equ	0xFD8
+  2303                           
+  2304                           	psect	rparam
+  2305  0000                     intcon	equ	0xFF2
+  2306                           intcon2	equ	0xFF1
+  2307                           postinc0	equ	0xFEE
+  2308                           wreg	equ	0xFE8
+  2309                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         21
+    Persistent  9
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95     83      95
+    BANK0           160      0      18
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+    BANK8           256      0       0
+    BANK9           256      0       0
+    BANK10          256      0       0
+    BANK11          256      0       0
+    BANK12          256      0       0
+    BANK13          256      0       0
+    BANK14          256      0       0
+    BANK15           96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_calculatePID
+    _calculatePID->___fttol
+    ___fttol->___ftadd
+    ___ftmul->___ftdiv
+    ___ftge->___ftadd
+    ___ftdiv->___ftpack
+    ___ftadd->___ftmul
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Critical Paths under _main in BANK13
+
+    None.
+
+Critical Paths under _main in BANK14
+
+    None.
+
+Critical Paths under _main in BANK15
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0   16676
+                            _PIDInit
+                       _calculatePID
+ ---------------------------------------------------------------------------------
+ (1) _calculatePID                                        27    21      6   16676
+                                             65 COMRAM    18    12      6
+                            ___ftadd
+                            ___ftdiv
+                             ___ftge
+                            ___ftmul
+                            ___ftneg
+                            ___fttol
+ ---------------------------------------------------------------------------------
+ (2) ___fttol                                             15    11      4     316
+                                             50 COMRAM    15    11      4
+                            ___ftadd (ARG)
+                            ___ftdiv (ARG)
+                            ___ftmul (ARG)
+ ---------------------------------------------------------------------------------
+ (2) ___ftneg                                              3     0      3    1261
+                                              0 COMRAM     3     0      3
+ ---------------------------------------------------------------------------------
+ (2) ___ftmul                                             15     9      6    3102
+                                             23 COMRAM    15     9      6
+                            ___ftdiv (ARG)
+                           ___ftpack
+ ---------------------------------------------------------------------------------
+ (2) ___ftge                                               9     3      6    1672
+                                             50 COMRAM     9     3      6
+                            ___ftadd (ARG)
+                            ___ftneg (ARG)
+ ---------------------------------------------------------------------------------
+ (2) ___ftdiv                                             15     9      6    2544
+                                              8 COMRAM    15     9      6
+                           ___ftpack
+ ---------------------------------------------------------------------------------
+ (2) ___ftadd                                             12     6      6    6406
+                                             38 COMRAM    12     6      6
+                            ___ftdiv (ARG)
+                            ___ftmul (ARG)
+                            ___ftneg (ARG)
+                           ___ftpack
+ ---------------------------------------------------------------------------------
+ (3) ___ftpack                                             8     3      5    2034
+                                              0 COMRAM     8     3      5
+ ---------------------------------------------------------------------------------
+ (1) _PIDInit                                              0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _PIDInit
+   _calculatePID
+     ___ftadd
+       ___ftdiv (ARG)
+         ___ftpack
+       ___ftmul (ARG)
+         ___ftdiv (ARG)
+           ___ftpack
+         ___ftpack (ARG)
+       ___ftneg (ARG)
+       ___ftpack (ARG)
+     ___ftdiv
+       ___ftpack
+     ___ftge
+       ___ftadd (ARG)
+         ___ftdiv (ARG)
+           ___ftpack
+         ___ftmul (ARG)
+           ___ftdiv (ARG)
+             ___ftpack
+           ___ftpack (ARG)
+         ___ftneg (ARG)
+         ___ftpack (ARG)
+       ___ftneg (ARG)
+     ___ftmul
+       ___ftdiv (ARG)
+         ___ftpack
+       ___ftpack (ARG)
+     ___ftneg
+     ___fttol
+       ___ftadd (ARG)
+         ___ftdiv (ARG)
+           ___ftpack
+         ___ftmul (ARG)
+           ___ftdiv (ARG)
+             ___ftpack
+           ___ftpack (ARG)
+         ___ftneg (ARG)
+         ___ftpack (ARG)
+       ___ftdiv (ARG)
+         ___ftpack
+       ___ftmul (ARG)
+         ___ftdiv (ARG)
+           ___ftpack
+         ___ftpack (ARG)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             F5F      0       0      37        0.0%
+EEDATA             400      0       0       0        0.0%
+BITBANK14          100      0       0      33        0.0%
+BANK14             100      0       0      34        0.0%
+BITBANK13          100      0       0      30        0.0%
+BANK13             100      0       0      31        0.0%
+BITBANK12          100      0       0      28        0.0%
+BANK12             100      0       0      29        0.0%
+BITBANK11          100      0       0      26        0.0%
+BANK11             100      0       0      27        0.0%
+BITBANK10          100      0       0      24        0.0%
+BANK10             100      0       0      25        0.0%
+BITBANK9           100      0       0      22        0.0%
+BANK9              100      0       0      23        0.0%
+BITBANK8           100      0       0      20        0.0%
+BANK8              100      0       0      21        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0      12       5       11.2%
+BITBANK15           60      0       0      35        0.0%
+BANK15              60      0       0      36        0.0%
+BITCOMRAM           5F      0       0       0        0.0%
+COMRAM              5F     53      5F       1      100.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      71      32        0.0%
+DATA                 0      0      71       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
+Symbol Table                                                                                   Sun Oct 11 04:17:40 2015
+
+                     l55 FE74                       _Kd 0063                       _Ki 0066  
+                     _Kp 0069             ___ftadd@exp1 0032             ___ftadd@exp2 0031  
+           ___ftadd@sign 0030                      l506 F444                      l603 F276  
+                    l517 F41C                      l550 F774                      l614 F60C  
+                    l561 F836                      l570 F852                      l546 F74A  
+                    l547 F8C8                      l581 F4F2                      l593 F704  
+                    l578 F526                      l587 F37E                      _PR2 000FCB  
+                    u941 F716                      u951 F72A                      _err 005D  
+                    wreg 000FE8             ___ftdiv@cntr 0012             ___ftdiv@sign 0017  
+                   l1305 F436                     l1323 F782                     l1411 F4CC  
+                   l1317 F758                     l1421 F500                     l1501 F546  
+                   l1351 F7FA                     l1431 F62C                     l1281 F3A0  
+                   l1345 F7DA                     l1329 F78E                     l1433 F646  
+                   l1291 F404                     l1283 F3AC                     l1347 F7E6  
+                   l1339 F7B6                     l1451 F688                     l1531 F5D8  
+                   l1523 F5B0                     l1603 FFDA                     l1293 F410  
+                   l1285 F3CC                     l1277 F390                     l1365 F870  
+                   l1357 F81E                     l1349 F7F2                     l1461 F6B6  
+                   l1437 F654                     l1525 F5B6                     l1533 F5E2  
+                   l1375 F8A2                     l1359 F82A                     l1391 F48C  
+                   l1455 F69A                     l1519 F5A0                     l1607 FFF2  
+                   l1289 F3E4                     l1385 F464                     l1481 F34E  
+                   l1465 F6C8                     l1537 F5FA                     l1529 F5CA  
+                   l1299 F424                     l1387 F47E                     l1459 F6B0  
+                   l1555 F912                     l1477 F31C                     l1469 F6DE  
+                   l1573 FB5E                     l1565 FA6C                     l1487 F37A  
+                   l1567 FA9C                     l1575 FB8E                     l1559 F9AA  
+                   l1587 FCF0                     l1597 FE12                     l1589 FD48  
+                   u1201 F61E                     u1221 F63C                     u1301 F538  
+                   u1151 F456                     u1320 F564                     u1171 F474  
+                   u1325 F55C          __end_of_PIDInit F2EA                     _main F284  
+           ___ftpack@arg 0001             ___ftpack@exp 0004                     start 0000  
+           ___ftmul@cntr 0025             ___param_bank 000010             ___ftmul@sign 0026  
+           ___fttol@exp1 0041             ___fttol@lval 003D                    ?_main 0001  
+        __end_of___ftadd F8CA          __end_of___ftdiv F528          __end_of___ftneg F284  
+        __end_of___ftmul F706                    _T0CON 000FD5          __end_of___fttol F60E  
+                  _T2CON 000FCA                    _T3CON 000FB1                    _TMR0H 000FD7  
+                  _TMR0L 000FD6                    _PORTD 000F83                    _PORTH 000F87  
+                  _TRISD 000F95                    _TRISH 000F99            ___ftpack@sign 0005  
+                  status 000FD8               _ReadRTDpos 000000          __initialization F242  
+           __end_of_main F2A8                   ??_main 0054            ___fttol@sign1 003C  
+          __activetblptr 000000                ??_PIDInit 0001                   _CCPR3L 000FB8  
+       __end_of___ftpack F446    __size_of_calculatePID 0736                   ___ftge F2EA  
+              ??___ftadd 002D                ??___ftdiv 000F                ??___ftneg 0004  
+              ??___ftmul 001E                ??___fttol 0037                   _intErr 006C  
+                 clear_0 F248                   clear_1 F254    ___ftmul@f3_as_product 0022  
+           _calculatePID F8CA        _calculatePID$1480 0051        _calculatePID$1481 004B  
+      _calculatePID$1482 004E               _StartAngle 0057               __accesstop 0060  
+__end_of__initialization F25A               ___ftadd@f1 0027               ___ftadd@f2 002A  
+             ___ftge@ff1 0033               ___ftge@ff2 0036            ___rparam_used 000001  
+             ___ftdiv@f1 0009               ___ftdiv@f2 000C               ___ftdiv@f3 0013  
+             ___ftneg@f1 0001               ___ftmul@f1 0018               ___ftmul@f2 001B  
+             ___fttol@f1 0033           __pcstackCOMRAM 0001               __pbssBANK0 0060  
+             __pnvCOMRAM 005D                  ?___ftge 0033                  _CCP3CON 000FB7  
+              ?___ftpack 0001                  _PIDInit F2A8            _PIDEnableFlag 005C  
+                __Hparam 0000                  __Lparam 0000          __size_of___ftge 0096  
+                ___ftadd F706                  ___ftdiv F446                  ___ftneg F260  
+                ___ftmul F60E                  ___fttol F528                  __pcinit F242  
+             ??___ftpack 0006                  __ramtop 1000                  __ptext0 F284  
+                __ptext1 F8CA                  __ptext2 F528                  __ptext3 F260  
+                __ptext4 F60E                  __ptext5 F2EA                  __ptext6 F446  
+                __ptext7 F706                  __ptext8 F380                  __ptext9 F2A8  
+                _prevErr 006F     end_of_initialization F25A               _motorInput 005A  
+                postinc0 000FEE                _PORTAbits 000F80                _PORTEbits 000F84  
+              _PORTJbits 000F88                _TRISAbits 000F92                _TRISBbits 000F93  
+              _TRISEbits 000F96                _TRISGbits 000F98                _TRISJbits 000F9A  
+            ___ftdiv@exp 0016              _CCP3CONbits 000FB7              ___ftmul@exp 0021  
+         __end_of___ftge F380      start_initialization F242             _CurrentAngle 0060  
+   calculatePID@setpoint 0045                 ??___ftge 0039        __size_of___ftpack 00C6  
+            __pbssCOMRAM 0054                 ?_PIDInit 0001       calculatePID@derErr 0048  
+              __pnvBANK0 006C                 ?___ftadd 0027                 ?___ftdiv 0009  
+               ?___ftneg 0001                 ?___ftmul 0018                 ?___fttol 0033  
+          ?_calculatePID 0042         __size_of_PIDInit 0042              _INTCON2bits 000FF1  
+               _SetAngle 0054                 __Hrparam 0000                 __Lrparam 0000  
+       __size_of___ftadd 01C4         __size_of___ftdiv 00E2         __size_of___ftneg 0024  
+       __size_of___ftmul 00F8         __size_of___fttol 00E6                 ___ftpack F380  
+      calculatePID@angle 0042           ??_calculatePID 0048            __size_of_main 0024  
+             _INTCONbits 000FF2     __end_of_calculatePID 0000  

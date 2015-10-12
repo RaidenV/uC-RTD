@@ -1,0 +1,359 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F8722 ]
+[d frameptr 4065 ]
+"63 /opt/microchip/xc8/v1.34/sources/common/double.c
+[v ___flpack __flpack `(d  1 e 3 0 ]
+"88 /opt/microchip/xc8/v1.34/sources/common/fladd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"54 /opt/microchip/xc8/v1.34/sources/common/fldiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.34/sources/common/flmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.34/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.34/sources/common/flsub.c
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.34/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 /opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.34/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.34/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.34/sources/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"12 /opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
+[v _Busy_eep Busy_eep `(v  1 e 0 0 ]
+"35 /opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+[v _Read_b_eep Read_b_eep `(uc  1 e 1 0 ]
+"49 /opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+[v _Write_b_eep Write_b_eep `(v  1 e 0 0 ]
+"13 /home/raidenv/MPLABXProjects/EEPROMDriver.X/EEPROM.c
+[v _EEPROMInit EEPROMInit `(v  1 e 0 0 ]
+"28
+[v _EEDisassembleDouble EEDisassembleDouble `(v  1 e 0 0 ]
+"41
+[v _EEReassembleDouble EEReassembleDouble `(d  1 e 3 0 ]
+"59
+[v _EEWriteDouble EEWriteDouble `(v  1 e 0 0 ]
+"81
+[v _EEReadDouble EEReadDouble `(d  1 e 3 0 ]
+"101
+[v _EEWriteChar EEWriteChar `(v  1 e 0 0 ]
+"114
+[v _EEReadChar EEReadChar `(uc  1 e 1 0 ]
+"14 /home/raidenv/MPLABXProjects/EEPROMDriver.X/EEPROMDriver.c
+[v _main main `(v  1 e 0 0 ]
+"40
+[v _initialize initialize `(v  1 e 0 0 ]
+"19 /home/raidenv/MPLABXProjects/EEPROMDriver.X/SerComm.c
+[v _SerInit SerInit `(v  1 e 0 0 ]
+"32
+[v _SerTx SerTx `(v  1 e 0 0 ]
+"41
+[v _SerTxStr SerTxStr `(v  1 e 0 0 ]
+"2193 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[v _BAUDCON1 BAUDCON1 `VEuc  1 e 1 @3966 ]
+"2635
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+"2782
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"2935
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+"3189
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+"3407
+[v _PORTE PORTE `VEuc  1 e 1 @3972 ]
+"3790
+[v _PORTF PORTF `VEuc  1 e 1 @3973 ]
+"3957
+[v _PORTG PORTG `VEuc  1 e 1 @3974 ]
+"4135
+[v _PORTH PORTH `VEuc  1 e 1 @3975 ]
+"4345
+[v _PORTJ PORTJ `VEuc  1 e 1 @3976 ]
+[s S246 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 PSPIE 1 0 :1:7 
+]
+"7763
+[s S255 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+]
+[u S260 . 1 `S246 1 . 1 0 `S255 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES260  1 e 1 @3997 ]
+[s S279 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"7845
+[s S288 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+[u S293 . 1 `S279 1 . 1 0 `S288 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES293  1 e 1 @3998 ]
+[s S102 . 1 `uc 1 CCP2IE 1 0 :1:0 
+`uc 1 TMR3IE 1 0 :1:1 
+`uc 1 HLVDIE 1 0 :1:2 
+`uc 1 BCL1IE 1 0 :1:3 
+`uc 1 EEIE 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CMIE 1 0 :1:6 
+`uc 1 OSCFIE 1 0 :1:7 
+]
+"8008
+[s S111 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIE 1 0 :1:2 
+`uc 1 BCLIE 1 0 :1:3 
+]
+[u S115 . 1 `S102 1 . 1 0 `S111 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES115  1 e 1 @4000 ]
+[s S132 . 1 `uc 1 CCP2IP 1 0 :1:0 
+`uc 1 TMR3IP 1 0 :1:1 
+`uc 1 HLVDIP 1 0 :1:2 
+`uc 1 BCL1IP 1 0 :1:3 
+`uc 1 EEIP 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CMIP 1 0 :1:6 
+`uc 1 OSCFIP 1 0 :1:7 
+]
+"8150
+[s S141 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LVDIP 1 0 :1:2 
+`uc 1 BCLIP 1 0 :1:3 
+]
+[u S145 . 1 `S132 1 . 1 0 `S141 1 . 1 0 ]
+[v _IPR2bits IPR2bits `VES145  1 e 1 @4002 ]
+[s S73 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CFGS 1 0 :1:6 
+`uc 1 EEPGD 1 0 :1:7 
+]
+"8501
+[s S82 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 EEFS 1 0 :1:6 
+]
+[u S85 . 1 `S73 1 . 1 0 `S82 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES85  1 e 1 @4006 ]
+"8545
+[v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
+"8551
+[v _EEDATA EEDATA `VEuc  1 e 1 @4008 ]
+"8557
+[v _EEADR EEADR `VEuc  1 e 1 @4009 ]
+"8563
+[v _EEADRH EEADRH `VEuc  1 e 1 @4010 ]
+"8569
+[v _RCSTA1 RCSTA1 `VEuc  1 e 1 @4011 ]
+"8892
+[v _TXSTA1 TXSTA1 `VEuc  1 e 1 @4012 ]
+"9179
+[v _TXREG1 TXREG1 `VEuc  1 e 1 @4013 ]
+"9190
+[v _RCREG1 RCREG1 `VEuc  1 e 1 @4014 ]
+"9206
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"12704
+[v _HLVDCON HLVDCON `VEuc  1 e 1 @4050 ]
+"13587
+[v _INTCON INTCON `VEuc  1 e 1 @4082 ]
+[s S399 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"13639
+[s S408 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S417 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[s S426 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S435 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S439 . 1 `S399 1 . 1 0 `S408 1 . 1 0 `S417 1 . 1 0 `S426 1 . 1 0 `S435 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES439  1 e 1 @4082 ]
+"3 /home/raidenv/MPLABXProjects/EEPROMDriver.X/EEPROM.c
+[v _DDouble DDouble `[3]uc  1 e 3 0 ]
+"4
+[v _DoublePtr DoublePtr `*.39uc  1 e 2 0 ]
+"5
+[v _Kp Kp `d  1 e 3 0 ]
+"6
+[v _Ki Ki `d  1 e 3 0 ]
+"7
+[v _Kd Kd `d  1 e 3 0 ]
+"8
+[v _SetAngle SetAngle `d  1 e 3 0 ]
+"11
+[v _PIDEnableFlag PIDEnableFlag `uc  1 e 1 0 ]
+"11 /home/raidenv/MPLABXProjects/EEPROMDriver.X/EEPROMDriver.c
+[v _hello hello `d  1 e 3 0 ]
+"12
+[v _ch ch `uc  1 e 1 0 ]
+"14
+[v _main main `(v  1 e 0 0 ]
+{
+"38
+} 0
+"40
+[v _initialize initialize `(v  1 e 0 0 ]
+{
+"44
+} 0
+"19 /home/raidenv/MPLABXProjects/EEPROMDriver.X/SerComm.c
+[v _SerInit SerInit `(v  1 e 0 0 ]
+{
+"27
+} 0
+"13 /home/raidenv/MPLABXProjects/EEPROMDriver.X/EEPROM.c
+[v _EEPROMInit EEPROMInit `(v  1 e 0 0 ]
+{
+"22
+} 0
+"41 /home/raidenv/MPLABXProjects/EEPROMDriver.X/SerComm.c
+[v _SerTxStr SerTxStr `(v  1 e 0 0 ]
+{
+[v SerTxStr@string string `*.35uc  1 p 2 1 ]
+"45
+} 0
+"32
+[v _SerTx SerTx `(v  1 e 0 0 ]
+{
+[v SerTx@c c `uc  1 a 1 wreg ]
+[v SerTx@c c `uc  1 a 1 wreg ]
+"34
+[v SerTx@c c `uc  1 a 1 0 ]
+"36
+} 0
+"59 /home/raidenv/MPLABXProjects/EEPROMDriver.X/EEPROM.c
+[v _EEWriteDouble EEWriteDouble `(v  1 e 0 0 ]
+{
+[v EEWriteDouble@location location `uc  1 a 1 wreg ]
+"61
+[v EEWriteDouble@x x `uc  1 a 1 8 ]
+"59
+[v EEWriteDouble@location location `uc  1 a 1 wreg ]
+[v EEWriteDouble@dub dub `d  1 p 3 4 ]
+"63
+[v EEWriteDouble@location location `uc  1 a 1 7 ]
+"75
+} 0
+"28
+[v _EEDisassembleDouble EEDisassembleDouble `(v  1 e 0 0 ]
+{
+[v EEDisassembleDouble@dub dub `d  1 p 3 0 ]
+"34
+} 0
+"101
+[v _EEWriteChar EEWriteChar `(v  1 e 0 0 ]
+{
+[v EEWriteChar@location location `uc  1 a 1 wreg ]
+[v EEWriteChar@location location `uc  1 a 1 wreg ]
+[v EEWriteChar@ch ch `uc  1 p 1 4 ]
+"103
+[v EEWriteChar@location location `uc  1 a 1 5 ]
+"109
+} 0
+"49 /opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+[v _Write_b_eep Write_b_eep `(v  1 e 0 0 ]
+{
+"51
+[v Write_b_eep@GIE_BIT_VAL GIE_BIT_VAL `uc  1 a 1 3 ]
+"49
+[v Write_b_eep@badd badd `ui  1 p 2 0 ]
+[v Write_b_eep@bdat bdat `uc  1 p 1 2 ]
+"66
+} 0
+"12 /opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
+[v _Busy_eep Busy_eep `(v  1 e 0 0 ]
+{
+"15
+} 0
+"81 /home/raidenv/MPLABXProjects/EEPROMDriver.X/EEPROM.c
+[v _EEReadDouble EEReadDouble `(d  1 e 3 0 ]
+{
+[v EEReadDouble@location location `uc  1 a 1 wreg ]
+"83
+[v EEReadDouble@x x `uc  1 a 1 19 ]
+"81
+[v EEReadDouble@location location `uc  1 a 1 wreg ]
+"85
+[v EEReadDouble@location location `uc  1 a 1 18 ]
+"95
+} 0
+"41
+[v _EEReassembleDouble EEReassembleDouble `(d  1 e 3 0 ]
+{
+"43
+[v EEReassembleDouble@dub dub `d  1 a 3 11 ]
+"45
+[v EEReassembleDouble@x x `uc  1 a 1 14 ]
+"53
+} 0
+"114
+[v _EEReadChar EEReadChar `(uc  1 e 1 0 ]
+{
+[v EEReadChar@location location `uc  1 a 1 wreg ]
+"116
+[v EEReadChar@ch ch `uc  1 a 1 3 ]
+"114
+[v EEReadChar@location location `uc  1 a 1 wreg ]
+"118
+[v EEReadChar@location location `uc  1 a 1 2 ]
+"125
+} 0
+"35 /opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+[v _Read_b_eep Read_b_eep `(uc  1 e 1 0 ]
+{
+[v Read_b_eep@badd badd `ui  1 p 2 0 ]
+"45
+} 0

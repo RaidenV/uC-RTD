@@ -1,0 +1,96 @@
+#include <pic18f8722.h>
+#include <spi.h>
+#include "LCD.h"
+
+#pragma config OSC = HSPLL
+#pragma config FCMEN = OFF
+#pragma config WDT = OFF
+
+void initialize(void);
+void interrupt ISR(void);
+void SPIInt(void);
+unsigned char receiveI2C(void);
+void ADC(unsigned char*);
+void breakINT(unsigned char*);
+
+unsigned char counter = 0;
+unsigned char x;
+unsigned char array[2];
+
+void main(void)
+{
+    initialize();
+    lcdGoTo(0x00);
+    lcdWriteString("Voltage:");
+
+
+    while (1);
+}
+
+void initialize(void)
+{
+    lcdInit();
+    OpenSPI2(SLV_SSOFF, MODE_00, SMPMID);
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE3bits.SSP2IE = 1; //Enable the MSSP1 Interrupt on byte received;
+    ADCON0 = 0x01; //Set the channel to AN0, and turn the ADC module on;
+    ADCON1 = 0x0E; //Enable AN0 as an analog input, using AVdd and AVss as positive/negative references;
+    ADCON2 = 0xB4; //Right justified ADC result format, TAD is set to 16, the Fosc is set to /4;
+}
+
+void interrupt ISR(void)
+{
+    if (PIR3bits.SSP2IF == 1)
+    {
+        SPIInt();
+    }
+}
+
+void SPIInt(void)
+{
+    unsigned char temp;
+    temp = ReadSPI2();
+    ADC(array);
+    if (temp == 0xF5)
+    {
+        putsSPI2(array);
+        breakINT(array);  
+    }
+    PIR3bits.SSP2IF = 0;
+}
+
+    void ADC(unsigned char* someArray)
+    {
+        ADCON0 = (ADCON0 | 0x02); //ADCON0 now = 0b00CCCC11 (ADC has started)
+        while ((ADCON0 & 0x02) == 0x02); //Because I'm not familiar with interrupts yet, we're going to poll the output;
+        someArray[0] = ADRESH; //Record the values;
+        someArray[1] = ADRESL; //Shift the high value 8 spaces to the right;
+    }
+
+    void breakINT(unsigned char* someArray)
+    {
+        unsigned int Value = 0;
+        double temporaryShit;
+        unsigned char temp1, temp2;
+
+        Value = Value | someArray[0] << 8;
+        Value = Value | someArray[1];
+
+        temporaryShit = (Value * 0.0048828125) * 1000;
+        Value = temporaryShit;
+
+        lcdGoTo(0x40);
+
+        temp1 = Value / 1000;
+        lcdChar(temp1 + 0x30);
+        temp2 = Value % 1000;
+        temp1 = temp2 / 100;
+        lcdChar('.');
+        lcdChar(temp1 + 0x30);
+        temp2 = temp2 % 100;
+        temp1 = temp2 / 10;
+        lcdChar(temp1 + 0x30);
+        temp2 = temp2 % 10;
+        lcdChar(temp2 + 0x30);
+    }

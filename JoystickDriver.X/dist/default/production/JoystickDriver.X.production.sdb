@@ -1,0 +1,766 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F8722 ]
+[d frameptr 4065 ]
+"4 /opt/microchip/xc8/v1.34/sources/common/abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"32 /opt/microchip/xc8/v1.34/sources/common/awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"63 /opt/microchip/xc8/v1.34/sources/common/double.c
+[v ___flpack __flpack `(d  1 e 3 0 ]
+"88 /opt/microchip/xc8/v1.34/sources/common/fladd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"54 /opt/microchip/xc8/v1.34/sources/common/fldiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.34/sources/common/flmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.34/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.34/sources/common/flsub.c
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"86 /opt/microchip/xc8/v1.34/sources/common/ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 /opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 /opt/microchip/xc8/v1.34/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 /opt/microchip/xc8/v1.34/sources/common/ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 /opt/microchip/xc8/v1.34/sources/common/fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"28 /opt/microchip/xc8/v1.34/sources/common/lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"15 /opt/microchip/xc8/v1.34/sources/common/Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"8 /opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
+[v _Delay10TCYx Delay10TCYx `(v  1 e 0 0 ]
+"13 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+[v _OpenSPI1 OpenSPI1 `(v  1 e 0 0 ]
+"13 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1writ.c
+[v _WriteSPI1 WriteSPI1 `(c  1 e 1 0 ]
+"9 /home/raidenv/MPLABXProjects/JoystickDriver.X/Joystick.c
+[v _JoystickInit JoystickInit `(v  1 e 0 0 ]
+"32
+[v _DetectJoystick DetectJoystick `(v  1 e 0 0 ]
+"49
+[v _DetectMovement DetectMovement `(i  1 e 2 0 ]
+"72
+[v _ImplementJSMotion ImplementJSMotion `(v  1 e 0 0 ]
+"15 /home/raidenv/MPLABXProjects/JoystickDriver.X/JoystickDriver.c
+[v _main main `(v  1 e 0 0 ]
+"28
+[v _initialize initialize `(v  1 e 0 0 ]
+"32 /home/raidenv/MPLABXProjects/JoystickDriver.X/LCD.h
+[v _setGPIO setGPIO `(v  1 e 0 0 ]
+"43
+[v _setIODIR setIODIR `(v  1 e 0 0 ]
+"52
+[v _lcdCommand lcdCommand `(v  1 e 0 0 ]
+"64
+[v _lcdChar lcdChar `(v  1 e 0 0 ]
+"76
+[v _lcdGoTo lcdGoTo `(v  1 e 0 0 ]
+"82
+[v _lcdWriteString lcdWriteString `(v  1 e 0 0 ]
+"110
+[v _lcdInit lcdInit `(v  1 e 0 0 ]
+"3 /home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+[v _MotorDriverInit MotorDriverInit `(v  1 e 0 0 ]
+[s S21 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"2678 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[s S30 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 VREFM 1 0 :1:2 
+`uc 1 VREFP 1 0 :1:3 
+`uc 1 T0CKI 1 0 :1:4 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[s S36 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 AN3 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 AN4 1 0 :1:5 
+]
+[s S43 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 HLVDIN 1 0 :1:5 
+]
+[s S46 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RJPU 1 0 :1:7 
+]
+[s S49 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+]
+[u S51 . 1 `S21 1 . 1 0 `S30 1 . 1 0 `S36 1 . 1 0 `S43 1 . 1 0 `S46 1 . 1 0 `S49 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES51  1 e 1 @3968 ]
+[s S252 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"2826
+[s S292 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 INT3 1 0 :1:3 
+`uc 1 KBI0 1 0 :1:4 
+`uc 1 KBI1 1 0 :1:5 
+`uc 1 KBI2 1 0 :1:6 
+`uc 1 KBI3 1 0 :1:7 
+]
+[s S301 . 1 `uc 1 FLT0 1 0 :1:0 
+`uc 1 . 1 0 :2:1 
+`uc 1 ECCP2 1 0 :1:3 
+]
+[s S305 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2 1 0 :1:3 
+]
+[s S308 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 P2A 1 0 :1:3 
+]
+[s S311 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S314 . 1 `S252 1 . 1 0 `S292 1 . 1 0 `S301 1 . 1 0 `S305 1 . 1 0 `S308 1 . 1 0 `S311 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES314  1 e 1 @3969 ]
+"3189
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+[s S646 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+`uc 1 RE4 1 0 :1:4 
+`uc 1 RE5 1 0 :1:5 
+`uc 1 RE6 1 0 :1:6 
+`uc 1 RE7 1 0 :1:7 
+]
+"3531
+[s S790 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 CS 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 ECCP2 1 0 :1:7 
+]
+[s S796 . 1 `uc 1 NOT_RD 1 0 :1:0 
+]
+[s S798 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_WR 1 0 :1:1 
+]
+[s S801 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_CS 1 0 :1:2 
+]
+[s S804 . 1 `uc 1 nRD 1 0 :1:0 
+`uc 1 nWR 1 0 :1:1 
+`uc 1 nCS 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 CCP2 1 0 :1:7 
+]
+[s S810 . 1 `uc 1 AD8 1 0 :1:0 
+`uc 1 AD9 1 0 :1:1 
+`uc 1 AD10 1 0 :1:2 
+`uc 1 AD11 1 0 :1:3 
+`uc 1 AD12 1 0 :1:4 
+`uc 1 AD13 1 0 :1:5 
+`uc 1 AD14 1 0 :1:6 
+`uc 1 AD15 1 0 :1:7 
+]
+[s S819 . 1 `uc 1 P2D 1 0 :1:0 
+`uc 1 P2C 1 0 :1:1 
+`uc 1 P2B 1 0 :1:2 
+`uc 1 P3C 1 0 :1:3 
+`uc 1 P3B 1 0 :1:4 
+`uc 1 P1C 1 0 :1:5 
+`uc 1 P1B 1 0 :1:6 
+`uc 1 P2A 1 0 :1:7 
+]
+[s S828 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CCP10 1 0 :1:2 
+]
+[s S831 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 CCP2E 1 0 :1:7 
+]
+[s S834 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CCP6E 1 0 :1:6 
+]
+[s S837 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 CCP7E 1 0 :1:5 
+]
+[s S840 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CCP8E 1 0 :1:4 
+]
+[s S843 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP9E 1 0 :1:3 
+]
+[s S846 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 PA2E 1 0 :1:7 
+]
+[s S849 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 PB1E 1 0 :1:6 
+]
+[s S852 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PB2 1 0 :1:2 
+]
+[s S855 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 PB3E 1 0 :1:4 
+]
+[s S858 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 PC1E 1 0 :1:5 
+]
+[s S861 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 PC2 1 0 :1:1 
+]
+[s S864 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 PC3E 1 0 :1:3 
+]
+[s S867 . 1 `uc 1 PD2 1 0 :1:0 
+]
+[s S869 . 1 `uc 1 RDE 1 0 :1:0 
+]
+[s S871 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 WRE 1 0 :1:1 
+]
+[u S874 . 1 `S646 1 . 1 0 `S790 1 . 1 0 `S796 1 . 1 0 `S798 1 . 1 0 `S801 1 . 1 0 `S804 1 . 1 0 `S810 1 . 1 0 `S819 1 . 1 0 `S828 1 . 1 0 `S831 1 . 1 0 `S834 1 . 1 0 `S837 1 . 1 0 `S840 1 . 1 0 `S843 1 . 1 0 `S846 1 . 1 0 `S849 1 . 1 0 `S852 1 . 1 0 `S855 1 . 1 0 `S858 1 . 1 0 `S861 1 . 1 0 `S864 1 . 1 0 `S867 1 . 1 0 `S869 1 . 1 0 `S871 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES874  1 e 1 @3972 ]
+"4135
+[v _PORTH PORTH `VEuc  1 e 1 @3975 ]
+[s S99 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+`uc 1 TRISA7 1 0 :1:7 
+]
+"5731
+[u S117 . 1 `S99 1 . 1 0 `S21 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES117  1 e 1 @3986 ]
+[s S243 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"5952
+[u S261 . 1 `S243 1 . 1 0 `S252 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES261  1 e 1 @3987 ]
+[s S1372 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"6173
+[s S1381 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S1390 . 1 `S1372 1 . 1 0 `S1381 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1390  1 e 1 @3988 ]
+"6362
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+[s S637 . 1 `uc 1 TRISE0 1 0 :1:0 
+`uc 1 TRISE1 1 0 :1:1 
+`uc 1 TRISE2 1 0 :1:2 
+`uc 1 TRISE3 1 0 :1:3 
+`uc 1 TRISE4 1 0 :1:4 
+`uc 1 TRISE5 1 0 :1:5 
+`uc 1 TRISE6 1 0 :1:6 
+`uc 1 TRISE7 1 0 :1:7 
+]
+"6615
+[u S655 . 1 `S637 1 . 1 0 `S646 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES655  1 e 1 @3990 ]
+[s S1332 . 1 `uc 1 TRISF0 1 0 :1:0 
+`uc 1 TRISF1 1 0 :1:1 
+`uc 1 TRISF2 1 0 :1:2 
+`uc 1 TRISF3 1 0 :1:3 
+`uc 1 TRISF4 1 0 :1:4 
+`uc 1 TRISF5 1 0 :1:5 
+`uc 1 TRISF6 1 0 :1:6 
+`uc 1 TRISF7 1 0 :1:7 
+]
+"6836
+[s S1341 . 1 `uc 1 RF0 1 0 :1:0 
+`uc 1 RF1 1 0 :1:1 
+`uc 1 RF2 1 0 :1:2 
+`uc 1 RF3 1 0 :1:3 
+`uc 1 RF4 1 0 :1:4 
+`uc 1 RF5 1 0 :1:5 
+`uc 1 RF6 1 0 :1:6 
+`uc 1 RF7 1 0 :1:7 
+]
+[u S1350 . 1 `S1332 1 . 1 0 `S1341 1 . 1 0 ]
+[v _TRISFbits TRISFbits `VES1350  1 e 1 @3991 ]
+[s S609 . 1 `uc 1 TRISG0 1 0 :1:0 
+`uc 1 TRISG1 1 0 :1:1 
+`uc 1 TRISG2 1 0 :1:2 
+`uc 1 TRISG3 1 0 :1:3 
+`uc 1 TRISG4 1 0 :1:4 
+]
+"7051
+[s S615 . 1 `uc 1 RG0 1 0 :1:0 
+`uc 1 RG1 1 0 :1:1 
+`uc 1 RG2 1 0 :1:2 
+`uc 1 RG3 1 0 :1:3 
+`uc 1 RG4 1 0 :1:4 
+]
+[u S621 . 1 `S609 1 . 1 0 `S615 1 . 1 0 ]
+[v _TRISGbits TRISGbits `VES621  1 e 1 @3992 ]
+"7174
+[v _TRISH TRISH `VEuc  1 e 1 @3993 ]
+[s S741 . 1 `uc 1 TRISJ0 1 0 :1:0 
+`uc 1 TRISJ1 1 0 :1:1 
+`uc 1 TRISJ2 1 0 :1:2 
+`uc 1 TRISJ3 1 0 :1:3 
+`uc 1 TRISJ4 1 0 :1:4 
+`uc 1 TRISJ5 1 0 :1:5 
+`uc 1 TRISJ6 1 0 :1:6 
+`uc 1 TRISJ7 1 0 :1:7 
+]
+"7427
+[s S750 . 1 `uc 1 RJ0 1 0 :1:0 
+`uc 1 RJ1 1 0 :1:1 
+`uc 1 RJ2 1 0 :1:2 
+`uc 1 RJ3 1 0 :1:3 
+`uc 1 RJ4 1 0 :1:4 
+`uc 1 RJ5 1 0 :1:5 
+`uc 1 RJ6 1 0 :1:6 
+`uc 1 RJ7 1 0 :1:7 
+]
+[u S759 . 1 `S741 1 . 1 0 `S750 1 . 1 0 ]
+[v _TRISJbits TRISJbits `VES759  1 e 1 @3994 ]
+[s S1446 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 PSPIF 1 0 :1:7 
+]
+"7845
+[s S1455 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+]
+[u S1460 . 1 `S1446 1 . 1 0 `S1455 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES1460  1 e 1 @3998 ]
+"9250
+[v _T3CON T3CON `VEuc  1 e 1 @4017 ]
+"9694
+[v _CCP3CON CCP3CON `VEuc  1 e 1 @4023 ]
+[s S511 . 1 `uc 1 CCP3M 1 0 :4:0 
+`uc 1 DC3B 1 0 :2:4 
+`uc 1 P3M 1 0 :2:6 
+]
+"9726
+[s S515 . 1 `uc 1 CCP3M0 1 0 :1:0 
+`uc 1 CCP3M1 1 0 :1:1 
+`uc 1 CCP3M2 1 0 :1:2 
+`uc 1 CCP3M3 1 0 :1:3 
+`uc 1 DC3B0 1 0 :1:4 
+`uc 1 DC3B1 1 0 :1:5 
+`uc 1 P3M0 1 0 :1:6 
+`uc 1 P3M1 1 0 :1:7 
+]
+[s S524 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CCP3Y 1 0 :1:4 
+`uc 1 CCP3X 1 0 :1:5 
+]
+[u S528 . 1 `S511 1 . 1 0 `S515 1 . 1 0 `S524 1 . 1 0 ]
+[v _CCP3CONbits CCP3CONbits `VES528  1 e 1 @4023 ]
+"9891
+[v _CCPR3L CCPR3L `VEuc  1 e 1 @4024 ]
+"10321
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @4032 ]
+"10391
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"10481
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+[s S391 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_NOT_DONE 1 0 :1:1 
+]
+"10529
+[s S394 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS 1 0 :4:2 
+]
+[s S401 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 DONE 1 0 :1:1 
+]
+[s S404 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO_DONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+]
+[s S411 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[s S414 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_DONE 1 0 :1:1 
+]
+[s S417 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 nDONE 1 0 :1:1 
+]
+[s S420 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GODONE 1 0 :1:1 
+]
+[u S423 . 1 `S391 1 . 1 0 `S394 1 . 1 0 `S391 1 . 1 0 `S401 1 . 1 0 `S404 1 . 1 0 `S411 1 . 1 0 `S414 1 . 1 0 `S417 1 . 1 0 `S420 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES423  1 e 1 @4034 ]
+"10609
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"10615
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"11064
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @4038 ]
+[s S1252 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"11120
+[s S1258 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[s S1263 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CKP1 1 0 :1:4 
+]
+[s S1266 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SSPEN1 1 0 :1:5 
+]
+[s S1269 . 1 `uc 1 SSPM01 1 0 :1:0 
+]
+[s S1271 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 SSPM11 1 0 :1:1 
+]
+[s S1274 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 SSPM21 1 0 :1:2 
+]
+[s S1277 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPM31 1 0 :1:3 
+]
+[s S1280 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 SSPOV1 1 0 :1:6 
+]
+[s S1283 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 WCOL1 1 0 :1:7 
+]
+[u S1286 . 1 `S1252 1 . 1 0 `S1258 1 . 1 0 `S1263 1 . 1 0 `S1266 1 . 1 0 `S1269 1 . 1 0 `S1271 1 . 1 0 `S1274 1 . 1 0 `S1277 1 . 1 0 `S1280 1 . 1 0 `S1283 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES1286  1 e 1 @4038 ]
+"11343
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @4039 ]
+[s S1025 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"11481
+[s S1028 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S1031 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S1046 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S1051 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DAT 1 0 :1:5 
+]
+[s S1057 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S1062 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S1065 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S1068 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S1073 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S1078 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S1083 . 1 `uc 1 BF1 1 0 :1:0 
+]
+[s S1085 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 CKE1 1 0 :1:6 
+]
+[s S1088 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 DA 1 0 :1:5 
+]
+[s S1091 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 DA1 1 0 :1:5 
+]
+[s S1094 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+]
+[s S1097 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW1 1 0 :1:2 
+]
+[s S1100 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 SMP1 1 0 :1:7 
+]
+[s S1103 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 START 1 0 :1:3 
+]
+[s S1106 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 START1 1 0 :1:3 
+]
+[s S1109 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 STOP 1 0 :1:4 
+]
+[s S1112 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 STOP1 1 0 :1:4 
+]
+[s S1115 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 UA1 1 0 :1:1 
+]
+[s S1118 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W 1 0 :1:2 
+]
+[s S1121 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_A 1 0 :1:5 
+]
+[u S1124 . 1 `S1025 1 . 1 0 `S1028 1 . 1 0 `S1031 1 . 1 0 `S1025 1 . 1 0 `S1028 1 . 1 0 `S1046 1 . 1 0 `S1051 1 . 1 0 `S1057 1 . 1 0 `S1062 1 . 1 0 `S1065 1 . 1 0 `S1068 1 . 1 0 `S1073 1 . 1 0 `S1078 1 . 1 0 `S1083 1 . 1 0 `S1085 1 . 1 0 `S1088 1 . 1 0 `S1091 1 . 1 0 `S1094 1 . 1 0 `S1097 1 . 1 0 `S1100 1 . 1 0 `S1103 1 . 1 0 `S1106 1 . 1 0 `S1109 1 . 1 0 `S1112 1 . 1 0 `S1115 1 . 1 0 `S1118 1 . 1 0 `S1121 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES1124  1 e 1 @4039 ]
+"12321
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @4041 ]
+"12332
+[v _T2CON T2CON `VEuc  1 e 1 @4042 ]
+"12402
+[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
+[s S469 . 1 `uc 1 INT1IF 1 0 :1:0 
+`uc 1 INT2IF 1 0 :1:1 
+`uc 1 INT3IF 1 0 :1:2 
+`uc 1 INT1IE 1 0 :1:3 
+`uc 1 INT2IE 1 0 :1:4 
+`uc 1 INT3IE 1 0 :1:5 
+`uc 1 INT1IP 1 0 :1:6 
+`uc 1 INT2IP 1 0 :1:7 
+]
+"13411
+[s S478 . 1 `uc 1 INT1F 1 0 :1:0 
+`uc 1 INT2F 1 0 :1:1 
+`uc 1 INT3F 1 0 :1:2 
+`uc 1 INT1E 1 0 :1:3 
+`uc 1 INT2E 1 0 :1:4 
+`uc 1 INT3E 1 0 :1:5 
+`uc 1 INT1P 1 0 :1:6 
+`uc 1 INT2P 1 0 :1:7 
+]
+[u S487 . 1 `S469 1 . 1 0 `S478 1 . 1 0 ]
+[v _INTCON3bits INTCON3bits `VES487  1 e 1 @4080 ]
+"13587
+[v _INTCON INTCON `VEuc  1 e 1 @4082 ]
+"6 /home/raidenv/MPLABXProjects/JoystickDriver.X/Joystick.c
+[v _PIDEnableFlag PIDEnableFlag `uc  1 e 1 0 ]
+"7
+[v _JSEnableFlag JSEnableFlag `uc  1 e 1 0 ]
+"15 /home/raidenv/MPLABXProjects/JoystickDriver.X/JoystickDriver.c
+[v _main main `(v  1 e 0 0 ]
+{
+"25
+} 0
+"28
+[v _initialize initialize `(v  1 e 0 0 ]
+{
+"35
+} 0
+"110 /home/raidenv/MPLABXProjects/JoystickDriver.X/LCD.h
+[v _lcdInit lcdInit `(v  1 e 0 0 ]
+{
+"130
+} 0
+"43
+[v _setIODIR setIODIR `(v  1 e 0 0 ]
+{
+[v setIODIR@address address `uc  1 a 1 wreg ]
+[v setIODIR@address address `uc  1 a 1 wreg ]
+[v setIODIR@dir dir `uc  1 p 1 2 ]
+"45
+[v setIODIR@address address `uc  1 a 1 3 ]
+"50
+} 0
+"52
+[v _lcdCommand lcdCommand `(v  1 e 0 0 ]
+{
+[v lcdCommand@command command `uc  1 a 1 wreg ]
+[v lcdCommand@command command `uc  1 a 1 wreg ]
+"54
+[v lcdCommand@command command `uc  1 a 1 4 ]
+"62
+} 0
+"32
+[v _setGPIO setGPIO `(v  1 e 0 0 ]
+{
+[v setGPIO@address address `uc  1 a 1 wreg ]
+[v setGPIO@address address `uc  1 a 1 wreg ]
+[v setGPIO@value value `uc  1 p 1 2 ]
+"34
+[v setGPIO@address address `uc  1 a 1 3 ]
+"41
+} 0
+"13 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1writ.c
+[v _WriteSPI1 WriteSPI1 `(c  1 e 1 0 ]
+{
+[v WriteSPI1@data_out data_out `uc  1 a 1 wreg ]
+"15
+[v WriteSPI1@TempVar TempVar `uc  1 a 1 0 ]
+"13
+[v WriteSPI1@data_out data_out `uc  1 a 1 wreg ]
+"16
+[v WriteSPI1@data_out data_out `uc  1 a 1 1 ]
+"26
+} 0
+"8 /opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
+[v _Delay10TCYx Delay10TCYx `(v  1 e 0 0 ]
+{
+[v Delay10TCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay10TCYx@unit unit `uc  1 a 1 wreg ]
+[v Delay10TCYx@unit unit `uc  1 a 1 0 ]
+"13
+} 0
+"13 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+[v _OpenSPI1 OpenSPI1 `(v  1 e 0 0 ]
+{
+[v OpenSPI1@sync_mode sync_mode `uc  1 a 1 wreg ]
+[v OpenSPI1@sync_mode sync_mode `uc  1 a 1 wreg ]
+[v OpenSPI1@bus_mode bus_mode `uc  1 p 1 0 ]
+[v OpenSPI1@smp_phase smp_phase `uc  1 p 1 1 ]
+"15
+[v OpenSPI1@sync_mode sync_mode `uc  1 a 1 2 ]
+"59
+} 0
+"3 /home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+[v _MotorDriverInit MotorDriverInit `(v  1 e 0 0 ]
+{
+"16
+} 0
+"9 /home/raidenv/MPLABXProjects/JoystickDriver.X/Joystick.c
+[v _JoystickInit JoystickInit `(v  1 e 0 0 ]
+{
+"30
+} 0
+"72
+[v _ImplementJSMotion ImplementJSMotion `(v  1 e 0 0 ]
+{
+"74
+[v ImplementJSMotion@CCPinput CCPinput `ui  1 a 2 52 ]
+"72
+[v ImplementJSMotion@JoystickValue JoystickValue `i  1 p 2 48 ]
+"94
+} 0
+"4 /opt/microchip/xc8/v1.34/sources/common/abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 0 ]
+"9
+} 0
+"49 /home/raidenv/MPLABXProjects/JoystickDriver.X/Joystick.c
+[v _DetectMovement DetectMovement `(i  1 e 2 0 ]
+{
+"51
+[v DetectMovement@ADCresult ADCresult `ui  1 a 2 46 ]
+"52
+[v DetectMovement@JoystickResult JoystickResult `i  1 a 2 44 ]
+"71
+} 0
+"44 /opt/microchip/xc8/v1.34/sources/common/fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 37 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 41 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 36 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 27 ]
+"73
+} 0
+"62 /opt/microchip/xc8/v1.34/sources/common/ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 22 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 26 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 25 ]
+[v ___ftmul@exp exp `uc  1 a 1 21 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 12 ]
+[v ___ftmul@f2 f2 `f  1 p 3 15 ]
+"157
+} 0
+"32 /opt/microchip/xc8/v1.34/sources/common/awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+{
+"34
+[v ___awtoft@sign sign `uc  1 a 1 11 ]
+"32
+[v ___awtoft@c c `i  1 p 2 8 ]
+"42
+} 0
+"62 /opt/microchip/xc8/v1.34/sources/common/float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
+} 0
+"32 /home/raidenv/MPLABXProjects/JoystickDriver.X/Joystick.c
+[v _DetectJoystick DetectJoystick `(v  1 e 0 0 ]
+{
+"47
+} 0
