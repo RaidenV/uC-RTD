@@ -2,7 +2,7 @@
  * File:   SPIMaster.h
  * Author: raidenv
  *
- * Created on September 2, 2015, 8:13 PM
+ * Created on October 11, 2015, 7:28 PM
  */
 
 #ifndef SPIMASTER_H
@@ -12,8 +12,11 @@
 extern "C" {
 #endif
 
-#include <pic18f2620.h>
+#include <xc.h>
 #include <spi.h>
+#include <stdlib.h>
+#include "KeyValue.h"
+#include "SerComm.h"
 #include <delays.h>
 
 #define SlaveReady1 PORTAbits.RA1
@@ -21,26 +24,21 @@ extern "C" {
 #define SlaveSelect1 PORTAbits.RA3
 #define SlaveSelect2 PORTAbits.RA4
 
-#define GetPOS 0x02
+    extern unsigned char RCflag;
+    extern unsigned char ReceivedChar;
+    extern unsigned char* DoublePtr;
+    extern unsigned char DoubleSPIM[4];
 
-    extern unsigned char AZEL;
-    //These Variables are here temporarily in order to drive the SPI routine;
-    extern double Kp;
-    extern double Ki;
-    extern double Kd;
-    extern double SetAngle;
-    extern double CurrentAngle;
-    extern double CurrentVelocity;
-    extern unsigned char* DoublePtrSPI;
-    extern unsigned char DoubleSPI[3];
-
-    void SPIMInit(void);
+    void SPIInitM(void);
     unsigned char MReceiveSPI(void);
-    void MWriteSPI(unsigned char);
-    void M_RW_Routine(unsigned char);
-
-    void SPIDisassembleDouble(double);
     double SPIReassembleDouble(void);
+    void MSendSPI(unsigned char, unsigned char);
+    void MReceiveStrSPI(unsigned char*, unsigned char);
+    unsigned char checksum(void);
+
+    void SPIDisassembleDouble(double dub);
+    unsigned char MGenerateChecksum(void);
+
 
 #ifdef	__cplusplus
 }

@@ -95,8 +95,8 @@ void keyValue(unsigned char* str, unsigned short length)
         for (y = 0; str[x + 1] != NULL; y++) //The str[x+1] is to avoid an off-by-one error where x is increased to null;
         {
             x++;
-           // if (isspace(str[x]) == 0) //If the character is not a space, tab, line feed, or carriage return;
-                value[y] = str[x]; //The value is equal to the contents of the "received" string after the delimiter, but before the end of the string (when str[x+1] = NULL);
+            // if (isspace(str[x]) == 0) //If the character is not a space, tab, line feed, or carriage return;
+            value[y] = str[x]; //The value is equal to the contents of the "received" string after the delimiter, but before the end of the string (when str[x+1] = NULL);
         }
         SerTxStr("   Value: ");
         SerTxStr(value);
@@ -137,8 +137,8 @@ void keyValue(unsigned char* str, unsigned short length)
         y = 0;
         while (str[y] != carriageReturn)
         {
-          //  if (isspace(str[y]) == 0) //If the character is not a space, tab, line feed, or carriage return;
-                key[y] = str[y]; // The key is equal to the contents of the "received" string before the delimiter;
+            //  if (isspace(str[y]) == 0) //If the character is not a space, tab, line feed, or carriage return;
+            key[y] = str[y]; // The key is equal to the contents of the "received" string before the delimiter;
             y++;
         }
 
@@ -156,14 +156,14 @@ void keyValue(unsigned char* str, unsigned short length)
             AZEL = 2; //If so, set the AZEL command to indicate Elevation;
             SerTx(';');
         }
-        
+
         else if ((strcmp(key, "POS") == 0) || (strcmp(key, "pos") == 0))
         {
             StrippedKey = 0x02;
             SerTx(';');
         }
-        
-        else if((strcmp(key, "VEL") == 0) || (strcmp(key, "vel") == 0))
+
+        else if ((strcmp(key, "VEL") == 0) || (strcmp(key, "vel") == 0))
         {
             StrippedKey = 0x03;
             SerTx(';');

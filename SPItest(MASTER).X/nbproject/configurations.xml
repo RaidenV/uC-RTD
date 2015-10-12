@@ -8,6 +8,8 @@
       <itemPath>SerComm.h</itemPath>
       <itemPath>KeyValue.c</itemPath>
       <itemPath>KeyValue.h</itemPath>
+      <itemPath>SPIMaster.c</itemPath>
+      <itemPath>SPIMaster.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

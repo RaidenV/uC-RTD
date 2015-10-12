@@ -65,27 +65,27 @@
 [v i2_SerTxStr SerTxStr `(v  1 e 0 0 ]
 "80
 [v _breakDouble breakDouble `(v  1 e 0 0 ]
-"33 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-[v _main main `(v  1 e 0 0 ]
-"107
-[v _ISR ISR `II(v  1 e 0 0 ]
-"115
-[v _initialize initialize `(v  1 e 0 0 ]
-"125
+"16 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
 [v _MSendSPI MSendSPI `(v  1 e 0 0 ]
-"138
+"45
 [v _MReceiveSPI MReceiveSPI `(uc  1 e 1 0 ]
-"148
+"55
 [v _MReceiveStrSPI MReceiveStrSPI `(v  1 e 0 0 ]
-"174
+"81
 [v _SPIReassembleDouble SPIReassembleDouble `(d  1 e 3 0 ]
-"184
+"91
 [v _checksum checksum `(uc  1 e 1 0 ]
-"195
+"102
 [v _SPIDisassembleDouble SPIDisassembleDouble `(v  1 e 0 0 ]
-"204
+"111
 [v _MGenerateChecksum MGenerateChecksum `(uc  1 e 1 0 ]
-[s S238 . 1 `uc 1 RA0 1 0 :1:0 
+"13 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+[v _main main `(v  1 e 0 0 ]
+"151
+[v _ISR ISR `II(v  1 e 0 0 ]
+"159
+[v _initialize initialize `(v  1 e 0 0 ]
+[s S339 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -95,33 +95,33 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "98 /opt/microchip/xc8/v1.34/include/pic18f2620.h
-[s S247 . 1 `uc 1 . 1 0 :4:0 
+[s S348 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T0CKI 1 0 :1:4 
 `uc 1 AN4 1 0 :1:5 
 ]
-[s S251 . 1 `uc 1 . 1 0 :5:0 
+[s S352 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SS 1 0 :1:5 
 ]
-[s S254 . 1 `uc 1 . 1 0 :5:0 
+[s S355 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_SS 1 0 :1:5 
 ]
-[s S257 . 1 `uc 1 . 1 0 :5:0 
+[s S358 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 nSS 1 0 :1:5 
 ]
-[s S260 . 1 `uc 1 . 1 0 :5:0 
+[s S361 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S263 . 1 `uc 1 . 1 0 :5:0 
+[s S364 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S266 . 1 `uc 1 . 1 0 :7:0 
+[s S367 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[s S269 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S370 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 ]
-[u S271 . 1 `S238 1 . 1 0 `S247 1 . 1 0 `S251 1 . 1 0 `S254 1 . 1 0 `S257 1 . 1 0 `S260 1 . 1 0 `S263 1 . 1 0 `S266 1 . 1 0 `S269 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES271  1 e 1 @3968 ]
-[s S468 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S372 . 1 `S339 1 . 1 0 `S348 1 . 1 0 `S352 1 . 1 0 `S355 1 . 1 0 `S358 1 . 1 0 `S361 1 . 1 0 `S364 1 . 1 0 `S367 1 . 1 0 `S370 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES372  1 e 1 @3968 ]
+[s S594 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -131,29 +131,8 @@
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1231
-[u S486 . 1 `S468 1 . 1 0 `S238 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES486  1 e 1 @3986 ]
-[s S860 . 1 `uc 1 TRISC0 1 0 :1:0 
-`uc 1 TRISC1 1 0 :1:1 
-`uc 1 TRISC2 1 0 :1:2 
-`uc 1 TRISC3 1 0 :1:3 
-`uc 1 TRISC4 1 0 :1:4 
-`uc 1 TRISC5 1 0 :1:5 
-`uc 1 TRISC6 1 0 :1:6 
-`uc 1 TRISC7 1 0 :1:7 
-]
-"1673
-[s S869 . 1 `uc 1 RC0 1 0 :1:0 
-`uc 1 RC1 1 0 :1:1 
-`uc 1 RC2 1 0 :1:2 
-`uc 1 RC3 1 0 :1:3 
-`uc 1 RC4 1 0 :1:4 
-`uc 1 RC5 1 0 :1:5 
-`uc 1 RC6 1 0 :1:6 
-`uc 1 RC7 1 0 :1:7 
-]
-[u S878 . 1 `S860 1 . 1 0 `S869 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES878  1 e 1 @3988 ]
+[u S612 . 1 `S594 1 . 1 0 `S339 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES612  1 e 1 @3986 ]
 [s S125 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
@@ -219,91 +198,6 @@
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
 "3446
 [v _BAUDCON BAUDCON `VEuc  1 e 1 @4024 ]
-"4170
-[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
-[s S834 . 1 `uc 1 SSPM 1 0 :4:0 
-`uc 1 CKP 1 0 :1:4 
-`uc 1 SSPEN 1 0 :1:5 
-`uc 1 SSPOV 1 0 :1:6 
-`uc 1 WCOL 1 0 :1:7 
-]
-"4190
-[s S840 . 1 `uc 1 SSPM0 1 0 :1:0 
-`uc 1 SSPM1 1 0 :1:1 
-`uc 1 SSPM2 1 0 :1:2 
-`uc 1 SSPM3 1 0 :1:3 
-]
-[u S845 . 1 `S834 1 . 1 0 `S840 1 . 1 0 ]
-[v _SSPCON1bits SSPCON1bits `VES845  1 e 1 @4038 ]
-"4239
-[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
-[s S674 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 R_NOT_W 1 0 :1:2 
-]
-"4334
-[s S677 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 D_NOT_A 1 0 :1:5 
-]
-[s S680 . 1 `uc 1 BF 1 0 :1:0 
-`uc 1 UA 1 0 :1:1 
-`uc 1 R_nW 1 0 :1:2 
-`uc 1 S 1 0 :1:3 
-`uc 1 P 1 0 :1:4 
-`uc 1 D_nA 1 0 :1:5 
-`uc 1 CKE 1 0 :1:6 
-`uc 1 SMP 1 0 :1:7 
-]
-[s S695 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 R 1 0 :1:2 
-`uc 1 . 1 0 :2:3 
-`uc 1 D 1 0 :1:5 
-]
-[s S700 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 W 1 0 :1:2 
-`uc 1 . 1 0 :2:3 
-`uc 1 A 1 0 :1:5 
-]
-[s S705 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 nW 1 0 :1:2 
-`uc 1 . 1 0 :2:3 
-`uc 1 nA 1 0 :1:5 
-]
-[s S710 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 R_W 1 0 :1:2 
-`uc 1 . 1 0 :2:3 
-`uc 1 D_A 1 0 :1:5 
-]
-[s S715 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 NOT_WRITE 1 0 :1:2 
-]
-[s S718 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 NOT_ADDRESS 1 0 :1:5 
-]
-[s S721 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 nWRITE 1 0 :1:2 
-`uc 1 . 1 0 :2:3 
-`uc 1 nADDRESS 1 0 :1:5 
-]
-[s S726 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 DA 1 0 :1:5 
-]
-[s S729 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 RW 1 0 :1:2 
-]
-[s S732 . 1 `uc 1 . 1 0 :3:0 
-`uc 1 START 1 0 :1:3 
-]
-[s S735 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 STOP 1 0 :1:4 
-]
-[s S738 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 NOT_W 1 0 :1:2 
-]
-[s S741 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 NOT_A 1 0 :1:5 
-]
-[u S744 . 1 `S674 1 . 1 0 `S677 1 . 1 0 `S680 1 . 1 0 `S674 1 . 1 0 `S677 1 . 1 0 `S695 1 . 1 0 `S700 1 . 1 0 `S705 1 . 1 0 `S710 1 . 1 0 `S715 1 . 1 0 `S718 1 . 1 0 `S721 1 . 1 0 `S726 1 . 1 0 `S729 1 . 1 0 `S732 1 . 1 0 `S735 1 . 1 0 `S738 1 . 1 0 `S741 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES744  1 e 1 @4039 ]
 "4484
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
 [s S25 . 1 `uc 1 NOT_BOR 1 0 :1:0 
@@ -338,7 +232,7 @@
 ]
 [u S54 . 1 `S25 1 . 1 0 `S27 1 . 1 0 `S30 1 . 1 0 `S33 1 . 1 0 `S36 1 . 1 0 `S39 1 . 1 0 `S48 1 . 1 0 ]
 [v _RCONbits RCONbits `VES54  1 e 1 @4048 ]
-[s S381 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S476 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -348,7 +242,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "5846
-[s S390 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S485 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -357,7 +251,7 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S399 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S494 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -366,7 +260,7 @@
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[s S408 . 1 `uc 1 . 1 0 :1:0 
+[s S503 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -375,12 +269,12 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S417 . 1 `uc 1 . 1 0 :6:0 
+[s S512 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S421 . 1 `S381 1 . 1 0 `S390 1 . 1 0 `S399 1 . 1 0 `S408 1 . 1 0 `S417 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES421  1 e 1 @4082 ]
+[u S516 . 1 `S476 1 . 1 0 `S485 1 . 1 0 `S494 1 . 1 0 `S503 1 . 1 0 `S512 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES516  1 e 1 @4082 ]
 "3 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
 [v _StrippedValue StrippedValue `d  1 e 3 0 ]
 "4
@@ -393,8 +287,6 @@
 [v _value value `[10]uc  1 e 10 0 ]
 "8
 [v _received received `[30]uc  1 e 30 0 ]
-"9
-[v _RCflag RCflag `uc  1 e 1 0 ]
 "12
 [v _Kp Kp `d  1 e 3 0 ]
 "13
@@ -407,21 +299,23 @@
 [v _CurrentAngle CurrentAngle `d  1 e 3 0 ]
 "17
 [v _CurrentVelocity CurrentVelocity `d  1 e 3 0 ]
-"30 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+"4 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+[v _RCflag RCflag `uc  1 e 1 0 ]
+"6
 [v _DoublePtr DoublePtr `*.39uc  1 e 2 0 ]
-"31
+"7
 [v _DoubleSPIM DoubleSPIM `[4]uc  1 e 4 0 ]
-"33
+"13 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
 [v _main main `(v  1 e 0 0 ]
 {
-"35
+"15
 [v main@x x `uc  1 a 1 52 ]
-"105
+"149
 } 0
-"115
+"159
 [v _initialize initialize `(v  1 e 0 0 ]
 {
-"123
+"164
 } 0
 "19 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
 [v _SerInit SerInit `(v  1 e 0 0 ]
@@ -434,62 +328,54 @@
 [v SerTxStr@string string `*.35uc  1 p 2 1 ]
 "54
 } 0
-"14 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
-[v _OpenSPI OpenSPI `(v  1 e 0 0 ]
-{
-[v OpenSPI@sync_mode sync_mode `uc  1 a 1 wreg ]
-[v OpenSPI@sync_mode sync_mode `uc  1 a 1 wreg ]
-[v OpenSPI@bus_mode bus_mode `uc  1 p 1 0 ]
-[v OpenSPI@smp_phase smp_phase `uc  1 p 1 1 ]
-"16
-[v OpenSPI@sync_mode sync_mode `uc  1 a 1 2 ]
-"102
-} 0
-"184 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+"91 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
 [v _checksum checksum `(uc  1 e 1 0 ]
 {
-"186
+"93
 [v checksum@y y `uc  1 a 1 5 ]
 [v checksum@sum sum `uc  1 a 1 4 ]
-"193
+"100
 } 0
-"195
+"102
 [v _SPIDisassembleDouble SPIDisassembleDouble `(v  1 e 0 0 ]
 {
 [v SPIDisassembleDouble@dub dub `d  1 p 3 2 ]
-"202
+"109
 } 0
-"204
+"111
 [v _MGenerateChecksum MGenerateChecksum `(uc  1 e 1 0 ]
 {
-"206
+"113
 [v MGenerateChecksum@z z `uc  1 a 1 1 ]
 [v MGenerateChecksum@sum sum `uc  1 a 1 0 ]
-"210
+"117
 } 0
-"125
+"16
 [v _MSendSPI MSendSPI `(v  1 e 0 0 ]
 {
 [v MSendSPI@data data `uc  1 a 1 wreg ]
-"129
-[v MSendSPI@tempChar tempChar `uc  1 a 1 1 ]
-"125
+"35
+[v MSendSPI@tempChar_722 tempChar `uc  1 a 1 3 ]
+"22
+[v MSendSPI@tempChar tempChar `uc  1 a 1 2 ]
+"16
 [v MSendSPI@data data `uc  1 a 1 wreg ]
-"127
-[v MSendSPI@data data `uc  1 a 1 2 ]
-"136
+[v MSendSPI@Slave Slave `uc  1 p 1 1 ]
+"18
+[v MSendSPI@data data `uc  1 a 1 4 ]
+"43
 } 0
-"148
+"55
 [v _MReceiveStrSPI MReceiveStrSPI `(v  1 e 0 0 ]
 {
-"163
-[v MReceiveStrSPI@x_567 x `uc  1 a 1 51 ]
-"152
+"70
+[v MReceiveStrSPI@x_731 x `uc  1 a 1 51 ]
+"59
 [v MReceiveStrSPI@x x `uc  1 a 1 50 ]
-"148
+"55
 [v MReceiveStrSPI@str str `*.39uc  1 p 2 47 ]
 [v MReceiveStrSPI@Slave Slave `uc  1 p 1 49 ]
-"172
+"79
 } 0
 "80 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
 [v _breakDouble breakDouble `(v  1 e 0 0 ]
@@ -568,19 +454,19 @@
 [v SerTx@c c `uc  1 a 1 0 ]
 "45
 } 0
-"174 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+"81 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
 [v _SPIReassembleDouble SPIReassembleDouble `(d  1 e 3 0 ]
 {
-"176
+"83
 [v SPIReassembleDouble@dub dub `d  1 a 3 3 ]
-"182
+"89
 } 0
-"138
+"45
 [v _MReceiveSPI MReceiveSPI `(uc  1 e 1 0 ]
 {
-"140
+"47
 [v MReceiveSPI@tempCH tempCH `uc  1 a 1 0 ]
-"146
+"53
 } 0
 "8 /opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
 [v _Delay10TCYx Delay10TCYx `(v  1 e 0 0 ]
@@ -590,10 +476,10 @@
 [v Delay10TCYx@unit unit `uc  1 a 1 0 ]
 "13
 } 0
-"107 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+"151 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
 [v _ISR ISR `II(v  1 e 0 0 ]
 {
-"113
+"157
 } 0
 "19 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
 [v _RCInt RCInt `(v  1 e 0 0 ]
@@ -636,9 +522,9 @@
 "35 /opt/microchip/xc8/v1.34/sources/common/atof.c
 [v _strtod strtod `(d  1 e 3 0 ]
 {
-[u S1124 . 4 `d 1 _l 3 0 `l 1 _v 4 0 ]
+[u S1194 . 4 `d 1 _l 3 0 `l 1 _v 4 0 ]
 "62
-[v strtod@_u _u `S1124  1 a 4 31 ]
+[v strtod@_u _u `S1194  1 a 4 31 ]
 "48
 [v strtod@expon expon `c  1 a 1 30 ]
 "37

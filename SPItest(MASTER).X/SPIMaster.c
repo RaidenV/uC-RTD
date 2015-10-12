@@ -1,276 +1,117 @@
+
 #include "SPIMaster.h"
 
-unsigned char AZEL;
-unsigned char* DoublePtrSPI;
-unsigned char DoubleSPI[3];
-//These Variables are here temporarily in order to drive the SPI routine;
-double Kp;
-double Ki;
-double Kd;
-double SetAngle;
-double CurrentAngle;
-double CurrentVelocity;
+unsigned char RCflag = 0;
+unsigned char ReceivedChar;
+unsigned char* DoublePtr;
+unsigned char DoubleSPIM[4];
 
-void SPIMInit(void)
+void SPIInitM(void)
 {
-    OpenSPI(SPI_FOSC_4, MODE_00, SMPMID); //Open with the communication frequency being 10 MHz (TCY);
-    TRISAbits.RA1 = 1; //Slave 1 Ready;
-    TRISAbits.RA2 = 1; //Slave 2 Ready;
-    TRISAbits.RA3 = 0; //Slave 1 Chip Select;
-    TRISAbits.RA4 = 0; //Slave 2 Chip Select;
+    OpenSPI(SPI_FOSC_4, MODE_00, SMPMID);
+    TRISAbits.RA1 = 1; //Set the SlaveReady pin as an input;
+    TRISAbits.RA3 = 0; //Set the SlaveSelect pin as an output;
+}
+
+void MSendSPI(unsigned char data, unsigned char Slave)
+{
+    if (Slave == 1)
+    {
+        SlaveSelect1 = 0; //Bring the SS to 0, enabling the slave;
+        Delay10TCYx(1); //delay for 10 clock cycles to ensure the slave is ready;
+        unsigned char tempChar;
+        tempChar = SSPBUF;
+        PIR1bits.SSPIF = 0;
+        SSPBUF = data;
+        while (!PIR1bits.SSPIF);
+        data = SSPBUF;
+        SlaveSelect1 = 1; //Set the SS, resetting the bit count of the slave;
+    }
+
+    else if (Slave == 2)
+    {
+        SlaveSelect2 = 0; //Bring the SS to 0, enabling the slave;
+        Delay10TCYx(1); //delay for 10 clock cycles to ensure the slave is ready;
+        unsigned char tempChar;
+        tempChar = SSPBUF;
+        PIR1bits.SSPIF = 0;
+        SSPBUF = data;
+        while (!PIR1bits.SSPIF);
+        data = SSPBUF;
+        SlaveSelect1 = 2; //Set the SS, resetting the bit count of the slave;
+    }
 }
 
 unsigned char MReceiveSPI(void)
 {
-    unsigned char tempChar;
-    tempChar = SSPBUF; //Clear the SSPBUF;
-    PIR1bits.SSPIF = 0; //Set the flag to 0 (this will let us know when the slave has sent the byte);
-    SSPBUF = 0x00; //This starts the clock of the master, allowing the slave to clock its data out;
-    while (!PIR1bits.SSPIF); //Wait until the byte was received from the slave;
-    return SSPBUF; //Return the byte;
+    unsigned char tempCH;
+    tempCH = SSPBUF; //Clear the buffer;
+    PIR1bits.SSPIF = 0; //Clear the MSSP Interrupt Flag; 
+    SSPBUF = 0x00; //Initiate communication by sending a dummy byte;
+    while (!PIR1bits.SSPIF); // Wait until transmission is complete;
+    return SSPBUF; //Read/return the buffer;
 }
 
-void MWriteSPI(unsigned char data)
+void MReceiveStrSPI(unsigned char* str, unsigned char Slave)
 {
-    unsigned char tempChar;
-    tempChar = SSPBUF; //Clear the Buffer;
-    PIR1bits.SSPIF = 0; //Set the flag to 0;
-    SSPBUF = data; //Start the data cycle;
-    while (!PIR1bits.SSPIF); //Wait for it to complete;
-    Delay10TCYx(1); //Add a slight delay (10 instruction cycles);
-}
-
-/* M_RW_Routine
- * This routine controls the entire SPI interface from the Master's end;  After discerning the
- * appropriate slave to be toggled, it sends that chip select low then commences communication;
- * The Master will the repeatedly check to make sure that the slave hasn't been interrupt by the
- * PID Loop while communicating with the slave;
- */
-void M_RW_Routine(unsigned char Command)
-{
-    INTCONbits.GIE = 0; //Disable interrupts for the duration of the transaction;
-    unsigned char x = 0;
-    if (AZEL == 0)
+    if (Slave == 1)
     {
-        SlaveSelect1 = 0;
-        while (SlaveReady1 == 1); //Wait for the slave to be ready;
-        if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
-        {
-            MWriteSPI(Command);
-
-            if (Command == 0x01)
-            {
-                SPIDisassembleDouble(SetAngle); //Break the double into 3 bytes;
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady1 == 1); //Check that the slave is not busy;
-                    MWriteSPI(DoubleSPI[x]);
-                }
-            }
-            else if (Command == 0x05)
-            {
-                SPIDisassembleDouble(Kp); //Break the double into 3 bytes;
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady1 == 1); //Check that the slave is not busy;
-                    MWriteSPI(DoubleSPI[x]);
-                }
-            }
-            else if (Command == 0x07)
-            {
-                SPIDisassembleDouble(Ki); //Break the double into 3 bytes;
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady1 == 1); //Check that the slave is not busy;
-                    MWriteSPI(DoubleSPI[x]);
-                }
-            }
-            else if (Command == 0x09)
-            {
-                SPIDisassembleDouble(Kd); //Break the double into 3 bytes;
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady1 == 1); //Check that the slave is not busy;
-                    MWriteSPI(DoubleSPI[x]);
-                }
-            }
-        }
-
-        else if ((Command == 0x02) || (Command == 0x03) || (Command == 0x04) || (Command == 0x06) || (Command == 0x08))
-        {
-            MWriteSPI(Command);
-
-            if (Command == 0x02)
-            {
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady1 == 1); //Check that the slave is not busy;
-                    DoubleSPI[x] = MReceiveSPI(); //Receive the 3 bytes of the double;
-                }
-                CurrentAngle = SPIReassembleDouble(); //Reassemble the double and place it in the appropriate variable;
-            }
-            else if (Command == 0x03)
-            {
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady1 == 1); //Check that the slave is not busy;
-                    DoubleSPI[x] = MReceiveSPI(); //Receive the 3 bytes of the double;
-                }
-                CurrentVelocity = SPIReassembleDouble(); //Reassemble the double and place it in the appropriate variable;
-            }
-            else if (Command == 0x04)
-            {
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady1 == 1); //Check that the slave is not busy;
-                    DoubleSPI[x] = MReceiveSPI(); //Receive the 3 bytes of the double;
-                }
-                Kp = SPIReassembleDouble(); //Reassemble the double and place it in the appropriate variable;
-            }
-            else if (Command == 0x06)
-            {
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady1 == 1); //Check that the slave is not busy;
-                    DoubleSPI[x] = MReceiveSPI(); //Receive the 3 bytes of the double;
-                }
-                Ki = SPIReassembleDouble(); //Reassemble the double and place it in the appropriate variable;
-            }
-            else if (Command == 0x08)
-            {
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady1 == 1); //Check that the slave is not busy;
-                    DoubleSPI[x] = MReceiveSPI(); //Receive the 3 bytes of the double;
-                }
-                Kd = SPIReassembleDouble(); //Reassemble the double and place it in the appropriate variable;
-            }
-        }
-        SlaveSelect1 = 1; //Reset the Slave;
+        unsigned char x;
+        SlaveSelect1 = 0; //Clear the SS, enabling the slave; 
+        while (SlaveReady1);
+        Delay10TCYx(25); //250 TCY Delay;
+        for (x = 0; x < 4; x++)
+            DoubleSPIM[x] = MReceiveSPI(); //Read data from slave;
+        breakDouble(SPIReassembleDouble()); //This function takes the double and converts it into readable characters on the screen;
+        SlaveSelect1 = 1; //Set the SS, ending communication with the slave;
     }
-
-    else if (AZEL == 1)
+    else if (Slave == 2)
     {
-        SlaveSelect2 = 0;
-        while (SlaveReady2 == 1); //Wait for the slave to be ready;
-        if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
-        {
-            MWriteSPI(Command);
-
-            if (Command == 0x01)
-            {
-                SPIDisassembleDouble(SetAngle); //Break the double into 3 bytes;
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady2 == 1); //Check that the slave is not busy;
-                    MWriteSPI(DoubleSPI[x]);
-                }
-            }
-            else if (Command == 0x05)
-            {
-                SPIDisassembleDouble(Kp); //Break the double into 3 bytes;
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady2 == 1); //Check that the slave is not busy;
-                    MWriteSPI(DoubleSPI[x]);
-                }
-            }
-            else if (Command == 0x07)
-            {
-                SPIDisassembleDouble(Ki); //Break the double into 3 bytes;
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady2 == 1); //Check that the slave is not busy;
-                    MWriteSPI(DoubleSPI[x]);
-                }
-            }
-            else if (Command == 0x09)
-            {
-                SPIDisassembleDouble(Kd); //Break the double into 3 bytes;
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady2 == 1); //Check that the slave is not busy;
-                    MWriteSPI(DoubleSPI[x]);
-                }
-            }
-        }
-
-        else if ((Command == 0x02) || (Command == 0x03) || (Command == 0x04) || (Command == 0x06) || (Command == 0x08))
-        {
-            MWriteSPI(Command);
-
-            if (Command == 0x02)
-            {
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady2 == 1); //Check that the slave is not busy;
-                    DoubleSPI[x] = MReceiveSPI(); //Receive the 3 bytes of the double;
-                }
-                CurrentAngle = SPIReassembleDouble(); //Reassemble the double and place it in the appropriate variable;
-            }
-            else if (Command == 0x03)
-            {
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady2 == 1); //Check that the slave is not busy;
-                    DoubleSPI[x] = MReceiveSPI(); //Receive the 3 bytes of the double;
-                }
-                CurrentVelocity = SPIReassembleDouble(); //Reassemble the double and place it in the appropriate variable;
-            }
-            else if (Command == 0x04)
-            {
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady2 == 1); //Check that the slave is not busy;
-                    DoubleSPI[x] = MReceiveSPI(); //Receive the 3 bytes of the double;
-                }
-                Kp = SPIReassembleDouble(); //Reassemble the double and place it in the appropriate variable;
-            }
-            else if (Command == 0x06)
-            {
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady2 == 1); //Check that the slave is not busy;
-                    DoubleSPI[x] = MReceiveSPI(); //Receive the 3 bytes of the double;
-                }
-                Ki = SPIReassembleDouble(); //Reassemble the double and place it in the appropriate variable;
-            }
-            else if (Command == 0x08)
-            {
-                for (x = 0; x < 3; x++)
-                {
-                    while (SlaveReady2 == 1); //Check that the slave is not busy;
-                    DoubleSPI[x] = MReceiveSPI(); //Receive the 3 bytes of the double;
-                }
-                Kd = SPIReassembleDouble(); //Reassemble the double and place it in the appropriate variable;
-            }
-        }
-        SlaveSelect2 = 1; //Reset the Slave;
+        unsigned char x;
+        SlaveSelect2 = 0; //Clear the SS, enabling the slave; 
+        while (SlaveReady2);
+        Delay10TCYx(50); //500 TCY Delay;
+        for (x = 0; x < 3; x++)
+            str[x] = MReceiveSPI(); //Read data from slave;
+        Delay10TCYx(1);
+        SlaveSelect2 = 1;
     }
-    INTCONbits.GIE = 1; //Enable interrupts after transaction is complete;
-}
-
-void SPIDisassembleDouble(double dub)
-{
-    DoublePtrSPI = (unsigned char*) &dub; //This sets the pointer to the location of the first byte of the double;
-    DoubleSPI[0] = DoublePtrSPI[0]; //The following lines extract the double byte-by-byte into the Double variable;
-    DoubleSPI[1] = DoublePtrSPI[1]; //This way, whenever the double is operated upon, the referenced double is not altered;
-    DoubleSPI[2] = DoublePtrSPI[2];
 }
 
 double SPIReassembleDouble(void)
 {
     double dub;
-    DoublePtrSPI = (unsigned char*) &dub; //This sets the pointer to the location of the first byte of the double;
-    unsigned char x; //Loop variable;
-
-    for (x = 3; x > 0; --x) //
-    {
-        DoublePtrSPI[x - 1] = DoubleSPI[x - 1]; //This reassembles the double at it's location;
-    }
-
+    DoublePtr = (unsigned char*) &dub; //This sets the pointer to the location of the first byte of the double;
+    DoublePtr[0] = DoubleSPIM[0]; //The following lines extract the double byte-by-byte into the DDouble variable;
+    DoublePtr[1] = DoubleSPIM[1]; //This way, whenever the double is operated upon, the referenced double is not altered;
+    DoublePtr[2] = DoubleSPIM[2];
     return dub; //Return the reconstructed double;
 }
 
+unsigned char checksum(void)
+{
+    unsigned char y, sum = 0;
+    for (y = 0; y != 3; y++)
+        sum += DoubleSPIM[y];
+    if ((sum - DoubleSPIM[3]) == 0)
+        return 1;
+    else
+        return 0;
+}
 
+void SPIDisassembleDouble(double dub)
+{
+    DoublePtr = (unsigned char*) &dub;
+    DoubleSPIM[0] = DoublePtr[0];
+    DoubleSPIM[1] = DoublePtr[1];
+    DoubleSPIM[2] = DoublePtr[2];
+    DoubleSPIM[3] = MGenerateChecksum();
+}
 
+unsigned char MGenerateChecksum(void)
+{
+    unsigned char z, sum = 0;
+    for (z = 0; z != 3; z++)
+        sum += DoubleSPIM[z];
+    return sum;
+}
