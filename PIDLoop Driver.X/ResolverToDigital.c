@@ -11,18 +11,18 @@ void RTDInit(void)
     TRISEbits.RE5 = 1;  //Set the DIR pin as an input;
     TRISEbits.RE6 = 1;  //Set the DOS pin as an input;
     TRISEbits.RE7 = 1;  //Set the LOT pin as an input;
-
-    while((LOT == 0) && (DOS == 0)) //Check to make sure the startup condition has been reached;
-    {
+//
+//    while((LOT == 0) && (DOS == 0)) //Check to make sure the startup condition has been reached;
+//    {
 	mRESET = 0; //Reset is initially off;
-	NOP(); //Set a slight delay;
+	Delay10TCYx(10);
 	mRESET = 1; //Toggle Resest ON;
 	Delay1KTCYx(20); //Delay for 200,000 clock cycles (20 ms);
 	SAMPLE = 0; //After the 20 ms delay, pulse the SAMPLE pin low;
         Delay1TCYx(1); //Delay 10 clock cycles;
 	SAMPLE = 1;
-     }	
-    RDrtd = 1;
+//     }	
+    RDrtd = 0;
     
 }
 
@@ -35,28 +35,25 @@ void RTDInit(void)
 unsigned int ReadRTDpos(void)
 {
     unsigned char x;
-    unsigned int FullPosition;
+    unsigned int FullPosition, helloworld;
     unsigned char HighPosition, LowPosition;
     
-    if((LOT != 0) && (DOS != 0))
     {
         RDVEL = 1; //Set the pin to read position;
         SAMPLE = 0; //Toggle the sample low;
         for(x = 0; x < 8; x++) //Wait 800 ns for the data before grabbing the data;
 	 NOP();
+        RDrtd = 1;
         RDrtd = 0; //Toggle the RD pin low;
+        Delay10TCYx(1);
         HighPosition = HighByte; //Get the data;
         LowPosition = LowByte;
         RDrtd = 1; //Set the RD pin high;
 	SAMPLE = 1; //Set the SAMPLE pin high, this allows the chip to start processing the angle again;
         FullPosition = LowPosition;
-        FullPosition = (HighPosition & 0x0F) << 8; 
-        
+        FullPosition = FullPosition | ((HighPosition & 0x0F) << 8);
         return FullPosition;
     }
-    
-    else
-        return 0xFF;    //If there is loss of tracking or degradation of signal, send back a unique int;
 }
 
 unsigned int ReadRTDvel(void)

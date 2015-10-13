@@ -18,7 +18,8 @@ void PIDInit(void)
     err = 0;
     prevErr = 0;
     intErr = 0;
-    INTCONbits.TMR0IE = 1; //Enable the Timer 0 interrupt;
+    
+   // INTCONbits.TMR0IE = 1; //Enable the Timer 0 interrupt;  Scratch that, the Timer 0 Interrupt should only be enabled when the PID flag is raised;
     INTCON2bits.TMR0IP = 1; //Set the Timer 0 interrupt to high priority;
     T0CON = 0x84; //Enable Timer 0, 32:1 prescaler;
     TMR0H = timerHigh; //Offset the timer by 0xDB60 to allow for a 0.03 second timer loop;

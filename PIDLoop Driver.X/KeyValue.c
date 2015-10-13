@@ -1,7 +1,6 @@
 #include "KeyValue.h"
 
 double StrippedValue; //This is going to be the value outgoing to the slave;
-unsigned char PIDEnableFlag = 0;
 unsigned char StrippedKey; //This is going to be the command, whether it's internal to the master or outward to the slave;  this is simply updated by the keyvalue function, it must be acted upon by the master;
 unsigned char AZEL = 1; //This identifies which PIC will be addressed;
 unsigned char key[5]; //This is the storage variable for the key;
@@ -9,10 +8,11 @@ unsigned char value[10]; //This is the storage variable for the value;
 unsigned char received[30]; // this is the storage variable for the received bytes from the computer;
 unsigned char RCflag;
 
+//These Variables are here temporarily in order to drive the SPI routine;
 double Kp;
 double Ki;
 double Kd;
-double SetAngle = 0;
+double SetAngle;
 double CurrentAngle;
 double CurrentVelocity;
 
@@ -43,13 +43,7 @@ void RCInt(void)
 
     if (StrippedKey == 0x01)
     {
-        if (SetAngle != StrippedValue) //This is to safeguard against the user reentering the same angle and it restarting the PID loop;
-        {
-            SetAngle = StrippedValue;
-            PIDEnableFlag = 0x03; //If this is indeed a new angle, let the PID loop know that it is a new angle;
-        }
-        else
-            PIDEnableFlag = 0x01; //Else, simply ensure that the PID loop flag is raised;
+        SetAngle = StrippedValue;
     }
 
     else if (StrippedKey == 0x05)

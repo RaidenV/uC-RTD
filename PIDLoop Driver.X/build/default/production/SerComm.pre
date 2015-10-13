@@ -1,5 +1,5 @@
 
-# 1 "PIDLoop.c"
+# 1 "SerComm.c"
 
 # 26 "/opt/microchip/xc8/v1.34/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -8293,179 +8293,6 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 27 "/opt/microchip/xc8/v1.34/include/stdlib.h"
-typedef struct {
-int rem;
-int quot;
-} div_t;
-typedef struct {
-unsigned rem;
-unsigned quot;
-} udiv_t;
-typedef struct {
-long quot;
-long rem;
-} ldiv_t;
-typedef struct {
-unsigned long quot;
-unsigned long rem;
-} uldiv_t;
-
-# 65
-extern double atof(const char *);
-extern double strtod(const char *, const char **);
-extern int atoi(const char *);
-extern unsigned xtoi(const char *);
-extern long atol(const char *);
-extern long strtol(const char *, char **, int);
-
-extern int rand(void);
-extern void srand(unsigned int);
-extern void * calloc(size_t, size_t);
-extern div_t div(int numer, int denom);
-extern udiv_t udiv(unsigned numer, unsigned denom);
-extern ldiv_t ldiv(long numer, long denom);
-extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-extern unsigned int _rotl(unsigned int value, unsigned int shift);
-extern unsigned int _rotr(unsigned int value, unsigned int shift);
-
-
-
-
-extern void * malloc(size_t);
-extern void free(void *);
-extern void * realloc(void *, size_t);
-
-# 98
-extern int atexit(void (*)(void));
-extern char * getenv(const char *);
-extern char ** environ;
-extern int system(char *);
-extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-extern int abs(int);
-extern long labs(long);
-
-
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-
-# 30 "ResolverToDigital.h"
-void RTDInit(void);
-unsigned int ReadRTDpos(void);
-unsigned int ReadRTDvel(void);
-double RTD2Angle(unsigned int);
-double RTD2Velocity(unsigned int);
-unsigned char RTDdirection(void);
-
-# 108 "/opt/microchip/xc8/v1.34/include/stdlib.h"
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-
-# 22 "MotorControl.h"
-extern unsigned char PIDEnableFlag;
-
-void MotorDriverInit(void);
-void KillMotors(void);
-void ImplementPIDMotion(int);
-void ImplementJSMotion(int);
-
-# 24 "PID.h"
-extern unsigned char PIDEnableFlag;
-extern double Ki;
-extern double Kp;
-extern double Kd;
-extern double SetAngle;
-extern double CurrentAngle;
-extern double err;
-extern double prevErr;
-extern double intErr;
-extern double StartAngle;
-extern int motorInput;
-
-void PIDInit(void);
-void calculatePID(double, double);
-void TMR0Int(void);
-
-# 108 "/opt/microchip/xc8/v1.34/include/stdlib.h"
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-
-# 22 "/opt/microchip/xc8/v1.34/include/string.h"
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
-
-# 42
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
-
-
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-
-# 4 "/opt/microchip/xc8/v1.34/include/ctype.h"
-extern __bit isalpha(char);
-extern __bit isupper(char);
-extern __bit islower(char);
-extern __bit isdigit(char);
-extern __bit isxdigit(char);
-extern __bit isspace(char);
-extern __bit ispunct(char);
-extern __bit isalnum(char);
-extern __bit isprint(char);
-extern __bit isgraph(char);
-extern __bit iscntrl(char);
-
-
-extern char toupper(char);
-extern char tolower(char);
-
 # 20 "SerComm.h"
 void SerInit(void);
 void SerTx(unsigned char);
@@ -8474,70 +8301,77 @@ unsigned char SerRx(void);
 void SerRxStr(unsigned char*);
 void breakDouble(double);
 
-# 29 "KeyValue.h"
-extern double Kp;
-extern double Ki;
-extern double Kd;
-extern double SetAngle;
-extern double CurrentAngle;
-extern double CurrentVelocity;
-
-extern double StrippedValue;
-extern unsigned char PIDEnableFlag;
-extern unsigned char StrippedKey;
-extern unsigned char AZEL;
-extern unsigned char key[5];
-extern unsigned char value[10];
-extern unsigned char received[30];
-extern unsigned char RCflag;
-
-void RCInt(void);
-void keyValue(unsigned char*, unsigned short);
-
-
-# 8 "PIDLoop.c"
-#pragma config OSC = HSPLL
-#pragma config WDT = OFF
-#pragma config FCMEN = OFF
-
-void initialize(void);
-void interrupt ISR(void);
-
-void main(void)
+# 19 "SerComm.c"
+void SerInit(void)
 {
-initialize();
 
-while (1)
-{
-if ((PIDEnableFlag & 0x02) == 0x02)
-{
-TMR0H = 0xDB;
-TMR0L = 0x60;
-INTCONbits.TMR0IE = 1;
-}
-else if((PIDEnableFlag & 0x01) == 0x01)
-INTCONbits.TMR0IE = 1;
-else
-PIDEnableFlag = 0;
-}
-}
+# 26
+TXSTA1 = 0x24;
+RCSTA1 = 0x90;
+BAUDCON = 0x00;
+SPBRG = 21;
 
-void initialize(void)
-{
-PIDInit();
-MotorDriverInit();
-RTDInit();
-SerInit();
-
-INTCONbits.GIE = 1;
-INTCONbits.PEIE = 1;
 RCONbits.IPEN = 1;
+IPR1bits.RCIP = 0;
+PIE1bits.RC1IE = 1;
+
+SerTxStr("Welcome to the world of tomorrow!!!");
 }
 
-void interrupt ISR(void)
+# 41
+void SerTx(unsigned char c)
 {
-if (PIR1bits.RC1IF == 1)
-RCInt();
-else if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1))
-TMR0Int();
+TXREG1 = c;
+while (PIR1bits.TX1IF == 0);
+}
+
+# 50
+void SerTxStr(unsigned char* string)
+{
+while (*string)
+SerTx(*string++);
+}
+
+# 60
+unsigned char SerRx(void)
+{
+return RCREG1;
+}
+
+# 69
+void SerRxStr(unsigned char* str)
+{
+unsigned short length = sizeof (str) / sizeof (str[0]);
+unsigned short x = 0;
+while ((RCREG1 != 0x0D) || (x != length))
+{
+str[x] = RCREG1;
+x++;
+}
+}
+
+void breakDouble(double dubs)
+{
+unsigned int temp1, temp2;
+unsigned int tempDub;
+
+tempDub = dubs * 100;
+temp1 = tempDub / 10000;
+temp2 = tempDub % 10000;
+if (temp1 != 0)
+SerTx(temp1 + 0x30);
+temp1 = temp2 / 1000;
+temp2 = temp2 % 1000;
+if (temp1 != 0)
+SerTx(temp1 + 0x30);
+temp1 = temp2 / 100;
+temp2 = temp2 % 100;
+SerTx(temp1 + 0x30);
+SerTx('.');
+temp1 = temp2 / 10;
+temp2 = temp2 % 10;
+SerTx(temp1 + 0x30);
+SerTx(temp2 + 0x30);
+SerTx(0x0A);
+SerTx(0x0D);
 }

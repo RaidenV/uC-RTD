@@ -8314,17 +8314,17 @@ TRISEbits.RE5 = 1;
 TRISEbits.RE6 = 1;
 TRISEbits.RE7 = 1;
 
-while((PORTEbits.RE7 == 0) && (PORTEbits.RE6 == 0))
-{
+
+
 PORTJbits.RJ0 = 0;
-__nop();
+Delay10TCYx(10);
 PORTJbits.RJ0 = 1;
 Delay1KTCYx(20);
 PORTEbits.RE0 = 0;
 Delay1TCYx(1);
 PORTEbits.RE0 = 1;
-}
-PORTEbits.RE2 = 1;
+
+PORTEbits.RE2 = 0;
 
 }
 
@@ -8332,28 +8332,25 @@ PORTEbits.RE2 = 1;
 unsigned int ReadRTDpos(void)
 {
 unsigned char x;
-unsigned int FullPosition;
+unsigned int FullPosition, helloworld;
 unsigned char HighPosition, LowPosition;
 
-if((PORTEbits.RE7 != 0) && (PORTEbits.RE6 != 0))
 {
 PORTEbits.RE1 = 1;
 PORTEbits.RE0 = 0;
 for(x = 0; x < 8; x++)
 __nop();
+PORTEbits.RE2 = 1;
 PORTEbits.RE2 = 0;
+Delay10TCYx(1);
 HighPosition = PORTH;
 LowPosition = PORTD;
 PORTEbits.RE2 = 1;
 PORTEbits.RE0 = 1;
 FullPosition = LowPosition;
-FullPosition = (HighPosition & 0x0F) << 8;
-
+FullPosition = FullPosition | ((HighPosition & 0x0F) << 8);
 return FullPosition;
 }
-
-else
-return 0xFF;
 }
 
 unsigned int ReadRTDvel(void)
@@ -8383,7 +8380,7 @@ else
 return 0xFF;
 }
 
-# 93
+# 90
 double RTD2Angle(unsigned int RTDAngle)
 {
 return 0.087890625 * RTDAngle;

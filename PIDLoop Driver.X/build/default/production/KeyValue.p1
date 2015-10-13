@@ -1,68 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
-"12 PIDLoop.c
-[v _initialize `(v ~T0 @X0 0 ef ]
-"22 MotorControl.h
-[v _PIDEnableFlag `uc ~T0 @X0 0 e ]
-"13144 /opt/microchip/xc8/v1.34/include/pic18f8722.h
-[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
-"13138
-[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"13593
-[s S711 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S711 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"13603
-[s S712 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S712 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE GIE ]
-"13613
-[s S713 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S713 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE GIEL GIEH ]
-"13623
-[s S714 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S714 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"13633
-[s S715 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S715 . . GIEL GIEH ]
-"13592
-[u S710 `S711 1 `S712 1 `S713 1 `S714 1 `S715 1 ]
-[n S710 . . . . . . ]
-"13639
-[v _INTCONbits `VS710 ~T0 @X0 0 e@4082 ]
-"36 PID.h
-[v _PIDInit `(v ~T0 @X0 0 ef ]
-"24 MotorControl.h
-[v _MotorDriverInit `(v ~T0 @X0 0 ef ]
-"30 ResolverToDigital.h
-[v _RTDInit `(v ~T0 @X0 0 ef ]
-"20 SerComm.h
-[v _SerInit `(v ~T0 @X0 0 ef ]
-"12551 /opt/microchip/xc8/v1.34/include/pic18f8722.h
-[s S671 :1 `uc 1 ]
-[n S671 . NOT_BOR ]
-"12554
-[s S672 :1 `uc 1 :1 `uc 1 ]
-[n S672 . . NOT_POR ]
-"12558
-[s S673 :2 `uc 1 :1 `uc 1 ]
-[n S673 . . NOT_PD ]
-"12562
-[s S674 :3 `uc 1 :1 `uc 1 ]
-[n S674 . . NOT_TO ]
-"12566
-[s S675 :4 `uc 1 :1 `uc 1 ]
-[n S675 . . NOT_RI ]
-"12570
-[s S676 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S676 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
-"12580
-[s S677 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S677 . BOR POR PD TO RI ]
-"12550
-[u S670 `S671 1 `S672 1 `S673 1 `S674 1 `S675 1 `S676 1 `S677 1 ]
-[n S670 . . . . . . . . ]
-"12588
-[v _RCONbits `VS670 ~T0 @X0 0 e@4048 ]
-"7828
+"7828 /opt/microchip/xc8/v1.34/include/pic18f8722.h
 [s S379 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S379 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF PSPIF ]
 "7838
@@ -73,10 +10,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S378 . . . ]
 "7845
 [v _PIR1bits `VS378 ~T0 @X0 0 e@3998 ]
-"45 KeyValue.h
-[v _RCInt `(v ~T0 @X0 0 ef ]
-"38 PID.h
-[v _TMR0Int `(v ~T0 @X0 0 ef ]
+"9195
+[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
+"21 SerComm.h
+[v _SerTx `(v ~T0 @X0 0 ef1`uc ]
+"46 KeyValue.h
+[v _keyValue `(v ~T0 @X0 0 ef2`*uc`us ]
+"9 /opt/microchip/xc8/v1.34/include/ctype.h
+[v _isspace `(b ~T0 @X0 0 ef1`uc ]
+"22 SerComm.h
+[v _SerTxStr `(v ~T0 @X0 0 ef1`*uc ]
+"51 /opt/microchip/xc8/v1.34/include/string.h
+[v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
+"66 /opt/microchip/xc8/v1.34/include/stdlib.h
+[v _strtod `(d ~T0 @X0 0 ef2`*Cuc`**Cuc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f8722.h: 49: extern volatile unsigned char SSP2CON2 @ 0xF62;
@@ -6510,41 +6457,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
-[; ;ResolverToDigital.h: 30: void RTDInit(void);
-[; ;ResolverToDigital.h: 31: unsigned int ReadRTDpos(void);
-[; ;ResolverToDigital.h: 32: unsigned int ReadRTDvel(void);
-[; ;ResolverToDigital.h: 33: double RTD2Angle(unsigned int);
-[; ;ResolverToDigital.h: 34: double RTD2Velocity(unsigned int);
-[; ;ResolverToDigital.h: 35: unsigned char RTDdirection(void);
-[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
-[; ;MotorControl.h: 22: extern unsigned char PIDEnableFlag;
-[; ;MotorControl.h: 24: void MotorDriverInit(void);
-[; ;MotorControl.h: 25: void KillMotors(void);
-[; ;MotorControl.h: 26: void ImplementPIDMotion(int);
-[; ;MotorControl.h: 27: void ImplementJSMotion(int);
-[; ;PID.h: 24: extern unsigned char PIDEnableFlag;
-[; ;PID.h: 25: extern double Ki;
-[; ;PID.h: 26: extern double Kp;
-[; ;PID.h: 27: extern double Kd;
-[; ;PID.h: 28: extern double SetAngle;
-[; ;PID.h: 29: extern double CurrentAngle;
-[; ;PID.h: 30: extern double err;
-[; ;PID.h: 31: extern double prevErr;
-[; ;PID.h: 32: extern double intErr;
-[; ;PID.h: 33: extern double StartAngle;
-[; ;PID.h: 34: extern int motorInput;
-[; ;PID.h: 36: void PIDInit(void);
-[; ;PID.h: 37: void calculatePID(double, double);
-[; ;PID.h: 38: void TMR0Int(void);
-[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
 [; ;string.h: 22: extern void * memcpy(void *, const void *, size_t);
 [; ;string.h: 23: extern void * memmove(void *, const void *, size_t);
 [; ;string.h: 24: extern void * memset(void *, int, size_t);
@@ -6606,136 +6518,702 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;KeyValue.h: 43: extern unsigned char RCflag;
 [; ;KeyValue.h: 45: void RCInt(void);
 [; ;KeyValue.h: 46: void keyValue(unsigned char*, unsigned short);
-"8 PIDLoop.c
-[p x OSC=HSPLL ]
+"3 KeyValue.c
+[v _StrippedValue `d ~T0 @X0 1 e ]
+[; ;KeyValue.c: 3: double StrippedValue;
+"4
+[v _StrippedKey `uc ~T0 @X0 1 e ]
+[; ;KeyValue.c: 4: unsigned char StrippedKey;
+"5
+[v _AZEL `uc ~T0 @X0 1 e ]
+[i _AZEL
+-> -> 1 `i `uc
+]
+[; ;KeyValue.c: 5: unsigned char AZEL = 1;
+"6
+[v _key `uc ~T0 @X0 -> 5 `i e ]
+[; ;KeyValue.c: 6: unsigned char key[5];
+"7
+[v _value `uc ~T0 @X0 -> 10 `i e ]
+[; ;KeyValue.c: 7: unsigned char value[10];
+"8
+[v _received `uc ~T0 @X0 -> 30 `i e ]
+[; ;KeyValue.c: 8: unsigned char received[30];
 "9
-[p x WDT=OFF ]
-"10
-[p x FCMEN=OFF ]
-[; ;PIDLoop.c: 12: void initialize(void);
-[; ;PIDLoop.c: 13: void interrupt ISR(void);
+[v _RCflag `uc ~T0 @X0 1 e ]
+[; ;KeyValue.c: 9: unsigned char RCflag;
+"12
+[v _Kp `d ~T0 @X0 1 e ]
+[; ;KeyValue.c: 12: double Kp;
+"13
+[v _Ki `d ~T0 @X0 1 e ]
+[; ;KeyValue.c: 13: double Ki;
+"14
+[v _Kd `d ~T0 @X0 1 e ]
+[; ;KeyValue.c: 14: double Kd;
 "15
-[v _main `(v ~T0 @X0 1 ef ]
+[v _SetAngle `d ~T0 @X0 1 e ]
+[; ;KeyValue.c: 15: double SetAngle;
 "16
-{
-[; ;PIDLoop.c: 15: void main(void)
-[; ;PIDLoop.c: 16: {
-[e :U _main ]
-[f ]
-[; ;PIDLoop.c: 17: initialize();
+[v _CurrentAngle `d ~T0 @X0 1 e ]
+[; ;KeyValue.c: 16: double CurrentAngle;
 "17
-[e ( _initialize ..  ]
-[; ;PIDLoop.c: 19: while (1)
+[v _CurrentVelocity `d ~T0 @X0 1 e ]
+[; ;KeyValue.c: 17: double CurrentVelocity;
 "19
-[e :U 764 ]
-[; ;PIDLoop.c: 20: {
+[v _RCInt `(v ~T0 @X0 1 ef ]
 "20
 {
-[; ;PIDLoop.c: 21: if ((PIDEnableFlag & 0x02) == 0x02)
+[; ;KeyValue.c: 19: void RCInt(void)
+[; ;KeyValue.c: 20: {
+[e :U _RCInt ]
+[f ]
 "21
-[e $ ! == & -> _PIDEnableFlag `i -> 2 `i -> 2 `i 766  ]
-[; ;PIDLoop.c: 22: {
+[v _counter `uc ~T0 @X0 1 a ]
+[; ;KeyValue.c: 21: unsigned char counter = 0;
+[e = _counter -> -> 0 `i `uc ]
+[; ;KeyValue.c: 22: do
 "22
-{
-[; ;PIDLoop.c: 23: TMR0H = 0xDB;
-"23
-[e = _TMR0H -> -> 219 `i `uc ]
-[; ;PIDLoop.c: 24: TMR0L = 0x60;
-"24
-[e = _TMR0L -> -> 96 `i `uc ]
-[; ;PIDLoop.c: 25: INTCONbits.TMR0IE = 1;
-"25
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"26
-}
-[; ;PIDLoop.c: 26: }
-[e $U 767  ]
-"27
-[e :U 766 ]
-[; ;PIDLoop.c: 27: else if((PIDEnableFlag & 0x01) == 0x01)
-[e $ ! == & -> _PIDEnableFlag `i -> 1 `i -> 1 `i 768  ]
-[; ;PIDLoop.c: 28: INTCONbits.TMR0IE = 1;
-"28
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[e $U 769  ]
-"29
-[e :U 768 ]
-[; ;PIDLoop.c: 29: else
-[; ;PIDLoop.c: 30: PIDEnableFlag = 0;
-"30
-[e = _PIDEnableFlag -> -> 0 `i `uc ]
-[e :U 769 ]
-[e :U 767 ]
-"31
-}
-[e :U 763 ]
-"19
-[e $U 764  ]
 [e :U 765 ]
-[; ;PIDLoop.c: 31: }
-[; ;PIDLoop.c: 32: }
+[; ;KeyValue.c: 23: {
+"23
+{
+[; ;KeyValue.c: 24: while (PIR1bits.RCIF == 0);
+"24
+[e $U 766  ]
+[e :U 767 ]
+[e :U 766 ]
+[e $ == -> . . _PIR1bits 1 3 `i -> 0 `i 767  ]
+[e :U 768 ]
+[; ;KeyValue.c: 25: received[counter] = RCREG;
+"25
+[e = *U + &U _received * -> _counter `ux -> -> # *U &U _received `ui `ux _RCREG ]
+[; ;KeyValue.c: 26: SerTx(RCREG);
+"26
+[e ( _SerTx (1 _RCREG ]
+[; ;KeyValue.c: 27: if ((received[counter] == 0x08) || received[counter] == 0x7F)
+"27
+[e $ ! || == -> *U + &U _received * -> _counter `ux -> -> # *U &U _received `ui `ux `i -> 8 `i == -> *U + &U _received * -> _counter `ux -> -> # *U &U _received `ui `ux `i -> 127 `i 769  ]
+[; ;KeyValue.c: 28: {
+"28
+{
+[; ;KeyValue.c: 29: if (counter != 0)
+"29
+[e $ ! != -> _counter `i -> 0 `i 770  ]
+[; ;KeyValue.c: 30: counter--;
+"30
+[e -- _counter -> -> 1 `i `uc ]
+[e :U 770 ]
+[; ;KeyValue.c: 31: received[counter] = '\0';
+"31
+[e = *U + &U _received * -> _counter `ux -> -> # *U &U _received `ui `ux -> -> 0 `ui `uc ]
 "32
+}
+[; ;KeyValue.c: 32: }
+[e $U 771  ]
+"33
+[e :U 769 ]
+[; ;KeyValue.c: 33: else if ((received[counter] != 0x08) && (received[counter] != 0x0D))
+[e $ ! && != -> *U + &U _received * -> _counter `ux -> -> # *U &U _received `ui `ux `i -> 8 `i != -> *U + &U _received * -> _counter `ux -> -> # *U &U _received `ui `ux `i -> 13 `i 772  ]
+[; ;KeyValue.c: 34: counter++;
+"34
+[e ++ _counter -> -> 1 `i `uc ]
+[e :U 772 ]
+"35
+[e :U 771 ]
+}
+[; ;KeyValue.c: 35: }
+[; ;KeyValue.c: 36: while (RCREG != 0x0D);
+"36
+[e $ != -> _RCREG `i -> 13 `i 765  ]
+[e :U 764 ]
+[; ;KeyValue.c: 38: SerTx(0x0A);
+"38
+[e ( _SerTx (1 -> -> 10 `i `uc ]
+[; ;KeyValue.c: 39: SerTx(0x0D);
+"39
+[e ( _SerTx (1 -> -> 13 `i `uc ]
+[; ;KeyValue.c: 40: keyValue(received, 30);
+"40
+[e ( _keyValue (2 , &U _received -> -> 30 `i `us ]
+[; ;KeyValue.c: 41: SerTx(0x0A);
+"41
+[e ( _SerTx (1 -> -> 10 `i `uc ]
+[; ;KeyValue.c: 42: SerTx(0x0D);
+"42
+[e ( _SerTx (1 -> -> 13 `i `uc ]
+[; ;KeyValue.c: 44: if (StrippedKey == 0x01)
+"44
+[e $ ! == -> _StrippedKey `i -> 1 `i 773  ]
+[; ;KeyValue.c: 45: {
+"45
+{
+[; ;KeyValue.c: 46: SetAngle = StrippedValue;
+"46
+[e = _SetAngle _StrippedValue ]
+"47
+}
+[; ;KeyValue.c: 47: }
+[e $U 774  ]
+"49
+[e :U 773 ]
+[; ;KeyValue.c: 49: else if (StrippedKey == 0x05)
+[e $ ! == -> _StrippedKey `i -> 5 `i 775  ]
+[; ;KeyValue.c: 50: {
+"50
+{
+[; ;KeyValue.c: 51: Kp = StrippedValue;
+"51
+[e = _Kp _StrippedValue ]
+"52
+}
+[; ;KeyValue.c: 52: }
+[e $U 776  ]
+"54
+[e :U 775 ]
+[; ;KeyValue.c: 54: else if (StrippedKey == 0x07)
+[e $ ! == -> _StrippedKey `i -> 7 `i 777  ]
+[; ;KeyValue.c: 55: {
+"55
+{
+[; ;KeyValue.c: 56: Ki = StrippedValue;
+"56
+[e = _Ki _StrippedValue ]
+"57
+}
+[; ;KeyValue.c: 57: }
+[e $U 778  ]
+"59
+[e :U 777 ]
+[; ;KeyValue.c: 59: else if (StrippedKey == 0x09)
+[e $ ! == -> _StrippedKey `i -> 9 `i 779  ]
+[; ;KeyValue.c: 60: {
+"60
+{
+[; ;KeyValue.c: 61: Kd = StrippedValue;
+"61
+[e = _Kd _StrippedValue ]
+"62
+}
+[e :U 779 ]
+"64
+[e :U 778 ]
+[e :U 776 ]
+[e :U 774 ]
+[; ;KeyValue.c: 62: }
+[; ;KeyValue.c: 64: PIR1bits.RCIF = 0;
+[e = . . _PIR1bits 1 3 -> -> 0 `i `uc ]
+[; ;KeyValue.c: 65: }
+"65
 [e :UE 762 ]
 }
-"34
-[v _initialize `(v ~T0 @X0 1 ef ]
-"35
+"67
+[v _keyValue `(v ~T0 @X0 1 ef2`*uc`us ]
+"68
 {
-[; ;PIDLoop.c: 34: void initialize(void)
-[; ;PIDLoop.c: 35: {
-[e :U _initialize ]
+[; ;KeyValue.c: 67: void keyValue(unsigned char* str, unsigned short length)
+[; ;KeyValue.c: 68: {
+[e :U _keyValue ]
+"67
+[v _str `*uc ~T0 @X0 1 r1 ]
+[v _length `us ~T0 @X0 1 r2 ]
+"68
 [f ]
-[; ;PIDLoop.c: 36: PIDInit();
-"36
-[e ( _PIDInit ..  ]
-[; ;PIDLoop.c: 37: MotorDriverInit();
-"37
-[e ( _MotorDriverInit ..  ]
-[; ;PIDLoop.c: 38: RTDInit();
-"38
-[e ( _RTDInit ..  ]
-[; ;PIDLoop.c: 39: SerInit();
-"39
-[e ( _SerInit ..  ]
-[; ;PIDLoop.c: 41: INTCONbits.GIE = 1;
-"41
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 42: INTCONbits.PEIE = 1;
-"42
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 43: RCONbits.IPEN = 1;
-"43
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 44: }
-"44
-[e :UE 770 ]
-}
-[v F7412 `(v ~T0 @X0 1 tf ]
-"46
-[v _ISR `IF7412 ~T0 @X0 1 e ]
-"47
+"69
+[v _x `uc ~T0 @X0 1 a ]
+[; ;KeyValue.c: 69: unsigned char x = 0;
+[e = _x -> -> 0 `i `uc ]
+"70
+[v _y `uc ~T0 @X0 1 a ]
+[; ;KeyValue.c: 70: unsigned char y = 0;
+[e = _y -> -> 0 `i `uc ]
+"71
+[v _str_end `*uc ~T0 @X0 1 a ]
+"72
+[v _flag `uc ~T0 @X0 1 a ]
+[; ;KeyValue.c: 71: unsigned char* str_end;
+[; ;KeyValue.c: 72: unsigned char flag = 0;
+[e = _flag -> -> 0 `i `uc ]
+[; ;KeyValue.c: 74: while ((str[x] != '=') && x < length)
+"74
+[e $U 781  ]
+[e :U 782 ]
+[; ;KeyValue.c: 75: {
+"75
 {
-[; ;PIDLoop.c: 46: void interrupt ISR(void)
-[; ;PIDLoop.c: 47: {
-[e :U _ISR ]
-[f ]
-[; ;PIDLoop.c: 48: if (PIR1bits.RC1IF == 1)
-"48
-[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 772  ]
-[; ;PIDLoop.c: 49: RCInt();
-"49
-[e ( _RCInt ..  ]
-[e $U 773  ]
-"50
-[e :U 772 ]
-[; ;PIDLoop.c: 50: else if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1))
-[e $ ! && == -> . . _INTCONbits 0 2 `i -> 1 `i == -> . . _INTCONbits 0 5 `i -> 1 `i 774  ]
-[; ;PIDLoop.c: 51: TMR0Int();
-"51
-[e ( _TMR0Int ..  ]
-[e :U 774 ]
-"52
-[e :U 773 ]
-[; ;PIDLoop.c: 52: }
-[e :UE 771 ]
+[; ;KeyValue.c: 76: x++;
+"76
+[e ++ _x -> -> 1 `i `uc ]
+[; ;KeyValue.c: 77: if (str[x] == '=')
+"77
+[e $ ! == -> *U + _str * -> _x `ux -> -> # *U _str `ui `ux `ui -> 61 `ui 784  ]
+[; ;KeyValue.c: 78: {
+"78
+{
+[; ;KeyValue.c: 79: flag = 1;
+"79
+[e = _flag -> -> 1 `i `uc ]
+"80
 }
+[; ;KeyValue.c: 80: }
+[e $U 785  ]
+"81
+[e :U 784 ]
+[; ;KeyValue.c: 81: else
+[; ;KeyValue.c: 82: flag = 0;
+"82
+[e = _flag -> -> 0 `i `uc ]
+[e :U 785 ]
+"83
+}
+[e :U 781 ]
+"74
+[e $ && != -> *U + _str * -> _x `ux -> -> # *U _str `ui `ux `ui -> 61 `ui < -> _x `ui -> _length `ui 782  ]
+[e :U 783 ]
+[; ;KeyValue.c: 83: }
+[; ;KeyValue.c: 84: if ((x < length) && flag)
+"84
+[e $ ! && < -> _x `ui -> _length `ui != -> _flag `i -> -> -> 0 `i `uc `i 786  ]
+[; ;KeyValue.c: 85: {
+"85
+{
+[; ;KeyValue.c: 86: for (y = 0; y < x && y < 5; y++)
+"86
+{
+[e = _y -> -> 0 `i `uc ]
+[e $U 790  ]
+"87
+[e :U 787 ]
+[; ;KeyValue.c: 87: {
+{
+[; ;KeyValue.c: 88: if (isspace(str[y]) == 0)
+"88
+[e $ ! == -> ( _isspace (1 *U + _str * -> _y `ux -> -> # *U _str `ui `ux `i -> 0 `i 791  ]
+[; ;KeyValue.c: 89: key[y] = str[y];
+"89
+[e = *U + &U _key * -> _y `ux -> -> # *U &U _key `ui `ux *U + _str * -> _y `ux -> -> # *U _str `ui `ux ]
+[e :U 791 ]
+"90
+}
+"86
+[e ++ _y -> -> 1 `i `uc ]
+[e :U 790 ]
+[e $ && < -> _y `i -> _x `i < -> _y `i -> 5 `i 787  ]
+[e :U 788 ]
+"90
+}
+[; ;KeyValue.c: 90: }
+[; ;KeyValue.c: 92: SerTxStr("Key: ");
+"92
+[e ( _SerTxStr (1 -> :s 1C `*uc ]
+[; ;KeyValue.c: 93: SerTxStr(key);
+"93
+[e ( _SerTxStr (1 &U _key ]
+[; ;KeyValue.c: 95: for (y = 0; str[x + 1] != (0); y++)
+"95
+{
+[e = _y -> -> 0 `i `uc ]
+[e $U 795  ]
+"96
+[e :U 792 ]
+[; ;KeyValue.c: 96: {
+{
+[; ;KeyValue.c: 97: x++;
+"97
+[e ++ _x -> -> 1 `i `uc ]
+[; ;KeyValue.c: 99: value[y] = str[x];
+"99
+[e = *U + &U _value * -> _y `ux -> -> # *U &U _value `ui `ux *U + _str * -> _x `ux -> -> # *U _str `ui `ux ]
+"100
+}
+"95
+[e ++ _y -> -> 1 `i `uc ]
+[e :U 795 ]
+[e $ != -> *U + _str * -> + -> _x `i -> 1 `i `x -> -> # *U _str `i `x `i -> 0 `i 792  ]
+[e :U 793 ]
+"100
+}
+[; ;KeyValue.c: 100: }
+[; ;KeyValue.c: 101: SerTxStr("   Value: ");
+"101
+[e ( _SerTxStr (1 -> :s 2C `*uc ]
+[; ;KeyValue.c: 102: SerTxStr(value);
+"102
+[e ( _SerTxStr (1 &U _value ]
+[; ;KeyValue.c: 104: if ((strcmp(key, "POS") == 0) || (strcmp(key, "pos") == 0))
+"104
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 3C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 4C -> 0 `i 796  ]
+[; ;KeyValue.c: 105: {
+"105
+{
+[; ;KeyValue.c: 106: StrippedKey = 0x01;
+"106
+[e = _StrippedKey -> -> 1 `i `uc ]
+[; ;KeyValue.c: 107: SerTx(';');
+"107
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
+"108
+}
+[; ;KeyValue.c: 108: }
+[e $U 797  ]
+"110
+[e :U 796 ]
+[; ;KeyValue.c: 110: else if ((strcmp(key, "KP") == 0) || (strcmp(key, "kp") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 5C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 6C -> 0 `i 798  ]
+[; ;KeyValue.c: 111: {
+"111
+{
+[; ;KeyValue.c: 112: StrippedKey = 0x05;
+"112
+[e = _StrippedKey -> -> 5 `i `uc ]
+[; ;KeyValue.c: 113: SerTx(';');
+"113
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
+"114
+}
+[; ;KeyValue.c: 114: }
+[e $U 799  ]
+"116
+[e :U 798 ]
+[; ;KeyValue.c: 116: else if ((strcmp(key, "KI") == 0) || (strcmp(key, "ki") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 7C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 8C -> 0 `i 800  ]
+[; ;KeyValue.c: 117: {
+"117
+{
+[; ;KeyValue.c: 118: StrippedKey = 0x07;
+"118
+[e = _StrippedKey -> -> 7 `i `uc ]
+[; ;KeyValue.c: 119: SerTx(';');
+"119
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
+"120
+}
+[; ;KeyValue.c: 120: }
+[e $U 801  ]
+"122
+[e :U 800 ]
+[; ;KeyValue.c: 122: else if ((strcmp(key, "KD") == 0) || (strcmp(key, "kd") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 9C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 10C -> 0 `i 802  ]
+[; ;KeyValue.c: 123: {
+"123
+{
+[; ;KeyValue.c: 124: StrippedKey = 0x09;
+"124
+[e = _StrippedKey -> -> 9 `i `uc ]
+[; ;KeyValue.c: 125: SerTx(';');
+"125
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
+"126
+}
+[; ;KeyValue.c: 126: }
+[e $U 803  ]
+"128
+[e :U 802 ]
+[; ;KeyValue.c: 128: else
+[; ;KeyValue.c: 129: {
+"129
+{
+[; ;KeyValue.c: 130: SerTxStr("???");
+"130
+[e ( _SerTxStr (1 -> :s 11C `*uc ]
+[; ;KeyValue.c: 131: StrippedKey = 0;
+"131
+[e = _StrippedKey -> -> 0 `i `uc ]
+"132
+}
+[e :U 803 ]
+[e :U 801 ]
+[e :U 799 ]
+[e :U 797 ]
+"133
+}
+[; ;KeyValue.c: 132: }
+[; ;KeyValue.c: 133: }
+[e $U 804  ]
+"135
+[e :U 786 ]
+[; ;KeyValue.c: 135: else if (flag == 0)
+[e $ ! == -> _flag `i -> 0 `i 805  ]
+[; ;KeyValue.c: 136: {
+"136
+{
+[; ;KeyValue.c: 137: y = 0;
+"137
+[e = _y -> -> 0 `i `uc ]
+[; ;KeyValue.c: 138: while (str[y] != 0x0D)
+"138
+[e $U 806  ]
+[e :U 807 ]
+[; ;KeyValue.c: 139: {
+"139
+{
+[; ;KeyValue.c: 141: key[y] = str[y];
+"141
+[e = *U + &U _key * -> _y `ux -> -> # *U &U _key `ui `ux *U + _str * -> _y `ux -> -> # *U _str `ui `ux ]
+[; ;KeyValue.c: 142: y++;
+"142
+[e ++ _y -> -> 1 `i `uc ]
+"143
+}
+[e :U 806 ]
+"138
+[e $ != -> *U + _str * -> _y `ux -> -> # *U _str `ui `ux `i -> 13 `i 807  ]
+[e :U 808 ]
+[; ;KeyValue.c: 143: }
+[; ;KeyValue.c: 145: SerTxStr("Key: ");
+"145
+[e ( _SerTxStr (1 -> :s 12C `*uc ]
+[; ;KeyValue.c: 146: SerTxStr(key);
+"146
+[e ( _SerTxStr (1 &U _key ]
+[; ;KeyValue.c: 148: if ((strcmp(key, "AZ") == 0) || (strcmp(key, "az") == 0))
+"148
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 13C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 14C -> 0 `i 809  ]
+[; ;KeyValue.c: 149: {
+"149
+{
+[; ;KeyValue.c: 150: AZEL = 1;
+"150
+[e = _AZEL -> -> 1 `i `uc ]
+[; ;KeyValue.c: 151: SerTx(';');
+"151
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
+"152
+}
+[; ;KeyValue.c: 152: }
+[e $U 810  ]
+"154
+[e :U 809 ]
+[; ;KeyValue.c: 154: else if ((strcmp(key, "EL") == 0) || (strcmp(key, "el") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 15C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 16C -> 0 `i 811  ]
+[; ;KeyValue.c: 155: {
+"155
+{
+[; ;KeyValue.c: 156: AZEL = 2;
+"156
+[e = _AZEL -> -> 2 `i `uc ]
+[; ;KeyValue.c: 157: SerTx(';');
+"157
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
+"158
+}
+[; ;KeyValue.c: 158: }
+[e $U 812  ]
+"160
+[e :U 811 ]
+[; ;KeyValue.c: 160: else if ((strcmp(key, "POS") == 0) || (strcmp(key, "pos") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 17C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 18C -> 0 `i 813  ]
+[; ;KeyValue.c: 161: {
+"161
+{
+[; ;KeyValue.c: 162: StrippedKey = 0x02;
+"162
+[e = _StrippedKey -> -> 2 `i `uc ]
+[; ;KeyValue.c: 163: SerTx(';');
+"163
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
+"164
+}
+[; ;KeyValue.c: 164: }
+[e $U 814  ]
+"166
+[e :U 813 ]
+[; ;KeyValue.c: 166: else if ((strcmp(key, "VEL") == 0) || (strcmp(key, "vel") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 19C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 20C -> 0 `i 815  ]
+[; ;KeyValue.c: 167: {
+"167
+{
+[; ;KeyValue.c: 168: StrippedKey = 0x03;
+"168
+[e = _StrippedKey -> -> 3 `i `uc ]
+[; ;KeyValue.c: 169: SerTx(';');
+"169
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
+"170
+}
+[; ;KeyValue.c: 170: }
+[e $U 816  ]
+"172
+[e :U 815 ]
+[; ;KeyValue.c: 172: else if ((strcmp(key, "KP") == 0) || (strcmp(key, "kp") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 21C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 22C -> 0 `i 817  ]
+[; ;KeyValue.c: 173: {
+"173
+{
+[; ;KeyValue.c: 174: StrippedKey = 0x04;
+"174
+[e = _StrippedKey -> -> 4 `i `uc ]
+[; ;KeyValue.c: 175: SerTx(';');
+"175
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
+"176
+}
+[; ;KeyValue.c: 176: }
+[e $U 818  ]
+"178
+[e :U 817 ]
+[; ;KeyValue.c: 178: else if ((strcmp(key, "KI") == 0) || (strcmp(key, "ki") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 23C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 24C -> 0 `i 819  ]
+[; ;KeyValue.c: 179: {
+"179
+{
+[; ;KeyValue.c: 180: StrippedKey = 0x06;
+"180
+[e = _StrippedKey -> -> 6 `i `uc ]
+[; ;KeyValue.c: 181: SerTx(';');
+"181
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
+"182
+}
+[; ;KeyValue.c: 182: }
+[e $U 820  ]
+"184
+[e :U 819 ]
+[; ;KeyValue.c: 184: else if ((strcmp(key, "KD") == 0) || (strcmp(key, "kd") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 25C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 26C -> 0 `i 821  ]
+[; ;KeyValue.c: 185: {
+"185
+{
+[; ;KeyValue.c: 186: StrippedKey = 0x08;
+"186
+[e = _StrippedKey -> -> 8 `i `uc ]
+[; ;KeyValue.c: 187: SerTx(';');
+"187
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
+"188
+}
+[; ;KeyValue.c: 188: }
+[e $U 822  ]
+"190
+[e :U 821 ]
+[; ;KeyValue.c: 190: else
+[; ;KeyValue.c: 191: {
+"191
+{
+[; ;KeyValue.c: 192: SerTxStr("???");
+"192
+[e ( _SerTxStr (1 -> :s 27C `*uc ]
+[; ;KeyValue.c: 193: StrippedKey = 0;
+"193
+[e = _StrippedKey -> -> 0 `i `uc ]
+"194
+}
+[e :U 822 ]
+[e :U 820 ]
+[e :U 818 ]
+[e :U 816 ]
+[e :U 814 ]
+[e :U 812 ]
+[e :U 810 ]
+"195
+}
+[e :U 805 ]
+"197
+[e :U 804 ]
+[; ;KeyValue.c: 194: }
+[; ;KeyValue.c: 195: }
+[; ;KeyValue.c: 197: StrippedValue = strtod(value, &str_end);
+[e = _StrippedValue ( _strtod (2 , -> &U _value `*Cuc -> &U _str_end `**Cuc ]
+[; ;KeyValue.c: 201: for (x = 0; x < 5; x++)
+"201
+{
+[e = _x -> -> 0 `i `uc ]
+[e $ < -> _x `i -> 5 `i 823  ]
+[e $U 824  ]
+"202
+[e :U 823 ]
+[; ;KeyValue.c: 202: {
+{
+[; ;KeyValue.c: 203: key[x] = (0);
+"203
+[e = *U + &U _key * -> _x `ux -> -> # *U &U _key `ui `ux -> -> 0 `i `uc ]
+"204
+}
+"201
+[e ++ _x -> -> 1 `i `uc ]
+[e $ < -> _x `i -> 5 `i 823  ]
+[e :U 824 ]
+"204
+}
+[; ;KeyValue.c: 204: }
+[; ;KeyValue.c: 206: for (x = 0; x < 10; x++)
+"206
+{
+[e = _x -> -> 0 `i `uc ]
+[e $ < -> _x `i -> 10 `i 826  ]
+[e $U 827  ]
+"207
+[e :U 826 ]
+[; ;KeyValue.c: 207: {
+{
+[; ;KeyValue.c: 208: value[x] = (0);
+"208
+[e = *U + &U _value * -> _x `ux -> -> # *U &U _value `ui `ux -> -> 0 `i `uc ]
+"209
+}
+"206
+[e ++ _x -> -> 1 `i `uc ]
+[e $ < -> _x `i -> 10 `i 826  ]
+[e :U 827 ]
+"209
+}
+[; ;KeyValue.c: 209: }
+[; ;KeyValue.c: 211: for (x = 0; x < 30; x++)
+"211
+{
+[e = _x -> -> 0 `i `uc ]
+[e $ < -> _x `i -> 30 `i 829  ]
+[e $U 830  ]
+"212
+[e :U 829 ]
+[; ;KeyValue.c: 212: {
+{
+[; ;KeyValue.c: 213: received[x] = (0);
+"213
+[e = *U + &U _received * -> _x `ux -> -> # *U &U _received `ui `ux -> -> 0 `i `uc ]
+"214
+}
+"211
+[e ++ _x -> -> 1 `i `uc ]
+[e $ < -> _x `i -> 30 `i 829  ]
+[e :U 830 ]
+"214
+}
+[; ;KeyValue.c: 214: }
+[; ;KeyValue.c: 215: flag = 0;
+"215
+[e = _flag -> -> 0 `i `uc ]
+[; ;KeyValue.c: 216: RCflag = 1;
+"216
+[e = _RCflag -> -> 1 `i `uc ]
+[; ;KeyValue.c: 217: }
+"217
+[e :UE 780 ]
+}
+[a 14C 97 122 0 ]
+[a 4C 112 111 115 0 ]
+[a 18C 112 111 115 0 ]
+[a 6C 107 112 0 ]
+[a 22C 107 112 0 ]
+[a 20C 118 101 108 0 ]
+[a 16C 101 108 0 ]
+[a 8C 107 105 0 ]
+[a 24C 107 105 0 ]
+[a 10C 107 100 0 ]
+[a 26C 107 100 0 ]
+[a 13C 65 90 0 ]
+[a 3C 80 79 83 0 ]
+[a 17C 80 79 83 0 ]
+[a 5C 75 80 0 ]
+[a 21C 75 80 0 ]
+[a 19C 86 69 76 0 ]
+[a 15C 69 76 0 ]
+[a 7C 75 73 0 ]
+[a 23C 75 73 0 ]
+[a 9C 75 68 0 ]
+[a 25C 75 68 0 ]
+[a 11C 63 63 63 0 ]
+[a 27C 63 63 63 0 ]
+[a 1C 75 101 121 58 32 0 ]
+[a 12C 75 101 121 58 32 0 ]
+[a 2C 32 32 32 86 97 108 117 101 58 32 0 ]

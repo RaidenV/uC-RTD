@@ -8,6 +8,10 @@
       <itemPath>PID.c</itemPath>
       <itemPath>MotorControl.c</itemPath>
       <itemPath>MotorControl.h</itemPath>
+      <itemPath>KeyValue.c</itemPath>
+      <itemPath>KeyValue.h</itemPath>
+      <itemPath>SerComm.c</itemPath>
+      <itemPath>SerComm.h</itemPath>
       <itemPath>ResolverToDigital.c</itemPath>
       <itemPath>ResolverToDigital.h</itemPath>
     </logicalFolder>
@@ -28,6 +32,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>../../Desktop/Capstone Project/Code/Resolver</Elem>
+    <Elem>../SPItest(MASTER).X</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

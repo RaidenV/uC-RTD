@@ -8424,7 +8424,8 @@ void PIDInit(void)
 err = 0;
 prevErr = 0;
 intErr = 0;
-INTCONbits.TMR0IE = 1;
+
+
 INTCON2bits.TMR0IP = 1;
 T0CON = 0x84;
 TMR0H = 0xDB;

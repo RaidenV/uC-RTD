@@ -1,5 +1,5 @@
 
-# 1 "PIDLoop.c"
+# 1 "KeyValue.c"
 
 # 26 "/opt/microchip/xc8/v1.34/include/htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -8360,63 +8360,6 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 30 "ResolverToDigital.h"
-void RTDInit(void);
-unsigned int ReadRTDpos(void);
-unsigned int ReadRTDvel(void);
-double RTD2Angle(unsigned int);
-double RTD2Velocity(unsigned int);
-unsigned char RTDdirection(void);
-
-# 108 "/opt/microchip/xc8/v1.34/include/stdlib.h"
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-
-# 22 "MotorControl.h"
-extern unsigned char PIDEnableFlag;
-
-void MotorDriverInit(void);
-void KillMotors(void);
-void ImplementPIDMotion(int);
-void ImplementJSMotion(int);
-
-# 24 "PID.h"
-extern unsigned char PIDEnableFlag;
-extern double Ki;
-extern double Kp;
-extern double Kd;
-extern double SetAngle;
-extern double CurrentAngle;
-extern double err;
-extern double prevErr;
-extern double intErr;
-extern double StartAngle;
-extern int motorInput;
-
-void PIDInit(void);
-void calculatePID(double, double);
-void TMR0Int(void);
-
-# 108 "/opt/microchip/xc8/v1.34/include/stdlib.h"
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-
 # 22 "/opt/microchip/xc8/v1.34/include/string.h"
 extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
@@ -8494,50 +8437,219 @@ extern unsigned char RCflag;
 void RCInt(void);
 void keyValue(unsigned char*, unsigned short);
 
+# 3 "KeyValue.c"
+double StrippedValue;
+unsigned char StrippedKey;
+unsigned char AZEL = 1;
+unsigned char key[5];
+unsigned char value[10];
+unsigned char received[30];
+unsigned char RCflag;
 
-# 8 "PIDLoop.c"
-#pragma config OSC = HSPLL
-#pragma config WDT = OFF
-#pragma config FCMEN = OFF
 
-void initialize(void);
-void interrupt ISR(void);
+double Kp;
+double Ki;
+double Kd;
+double SetAngle;
+double CurrentAngle;
+double CurrentVelocity;
 
-void main(void)
+void RCInt(void)
 {
-initialize();
-
-while (1)
+unsigned char counter = 0;
+do
 {
-if ((PIDEnableFlag & 0x02) == 0x02)
+while (PIR1bits.RCIF == 0);
+received[counter] = RCREG;
+SerTx(RCREG);
+if ((received[counter] == 0x08) || received[counter] == 0x7F)
 {
-TMR0H = 0xDB;
-TMR0L = 0x60;
-INTCONbits.TMR0IE = 1;
+if (counter != 0)
+counter--;
+received[counter] = '\0';
 }
-else if((PIDEnableFlag & 0x01) == 0x01)
-INTCONbits.TMR0IE = 1;
+else if ((received[counter] != 0x08) && (received[counter] != 0x0D))
+counter++;
+}
+while (RCREG != 0x0D);
+
+SerTx(0x0A);
+SerTx(0x0D);
+keyValue(received, 30);
+SerTx(0x0A);
+SerTx(0x0D);
+
+if (StrippedKey == 0x01)
+{
+SetAngle = StrippedValue;
+}
+
+else if (StrippedKey == 0x05)
+{
+Kp = StrippedValue;
+}
+
+else if (StrippedKey == 0x07)
+{
+Ki = StrippedValue;
+}
+
+else if (StrippedKey == 0x09)
+{
+Kd = StrippedValue;
+}
+
+PIR1bits.RCIF = 0;
+}
+
+void keyValue(unsigned char* str, unsigned short length)
+{
+unsigned char x = 0;
+unsigned char y = 0;
+unsigned char* str_end;
+unsigned char flag = 0;
+
+while ((str[x] != '=') && x < length)
+{
+x++;
+if (str[x] == '=')
+{
+flag = 1;
+}
 else
-PIDEnableFlag = 0;
+flag = 0;
 }
-}
-
-void initialize(void)
+if ((x < length) && flag)
 {
-PIDInit();
-MotorDriverInit();
-RTDInit();
-SerInit();
-
-INTCONbits.GIE = 1;
-INTCONbits.PEIE = 1;
-RCONbits.IPEN = 1;
+for (y = 0; y < x && y < 5; y++)
+{
+if (isspace(str[y]) == 0)
+key[y] = str[y];
 }
 
-void interrupt ISR(void)
+SerTxStr("Key: ");
+SerTxStr(key);
+
+for (y = 0; str[x + 1] != (0); y++)
 {
-if (PIR1bits.RC1IF == 1)
-RCInt();
-else if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1))
-TMR0Int();
+x++;
+
+value[y] = str[x];
+}
+SerTxStr("   Value: ");
+SerTxStr(value);
+
+if ((strcmp(key, "POS") == 0) || (strcmp(key, "pos") == 0))
+{
+StrippedKey = 0x01;
+SerTx(';');
+}
+
+else if ((strcmp(key, "KP") == 0) || (strcmp(key, "kp") == 0))
+{
+StrippedKey = 0x05;
+SerTx(';');
+}
+
+else if ((strcmp(key, "KI") == 0) || (strcmp(key, "ki") == 0))
+{
+StrippedKey = 0x07;
+SerTx(';');
+}
+
+else if ((strcmp(key, "KD") == 0) || (strcmp(key, "kd") == 0))
+{
+StrippedKey = 0x09;
+SerTx(';');
+}
+
+else
+{
+SerTxStr("???");
+StrippedKey = 0;
+}
+}
+
+else if (flag == 0)
+{
+y = 0;
+while (str[y] != 0x0D)
+{
+
+key[y] = str[y];
+y++;
+}
+
+SerTxStr("Key: ");
+SerTxStr(key);
+
+if ((strcmp(key, "AZ") == 0) || (strcmp(key, "az") == 0))
+{
+AZEL = 1;
+SerTx(';');
+}
+
+else if ((strcmp(key, "EL") == 0) || (strcmp(key, "el") == 0))
+{
+AZEL = 2;
+SerTx(';');
+}
+
+else if ((strcmp(key, "POS") == 0) || (strcmp(key, "pos") == 0))
+{
+StrippedKey = 0x02;
+SerTx(';');
+}
+
+else if ((strcmp(key, "VEL") == 0) || (strcmp(key, "vel") == 0))
+{
+StrippedKey = 0x03;
+SerTx(';');
+}
+
+else if ((strcmp(key, "KP") == 0) || (strcmp(key, "kp") == 0))
+{
+StrippedKey = 0x04;
+SerTx(';');
+}
+
+else if ((strcmp(key, "KI") == 0) || (strcmp(key, "ki") == 0))
+{
+StrippedKey = 0x06;
+SerTx(';');
+}
+
+else if ((strcmp(key, "KD") == 0) || (strcmp(key, "kd") == 0))
+{
+StrippedKey = 0x08;
+SerTx(';');
+}
+
+else
+{
+SerTxStr("???");
+StrippedKey = 0;
+}
+}
+
+StrippedValue = strtod(value, &str_end);
+
+
+
+for (x = 0; x < 5; x++)
+{
+key[x] = (0);
+}
+
+for (x = 0; x < 10; x++)
+{
+value[x] = (0);
+}
+
+for (x = 0; x < 30; x++)
+{
+received[x] = (0);
+}
+flag = 0;
+RCflag = 1;
 }

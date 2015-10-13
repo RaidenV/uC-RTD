@@ -3,4 +3,6 @@
  PIDLoop.c  \
 MotorControl.h  \
 ResolverToDigital.h  \
-PID.h 
+SerComm.h  \
+PID.h  \
+KeyValue.h 

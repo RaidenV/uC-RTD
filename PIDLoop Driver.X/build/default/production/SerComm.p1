@@ -1,42 +1,13 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
-"12 PIDLoop.c
-[v _initialize `(v ~T0 @X0 0 ef ]
-"22 MotorControl.h
-[v _PIDEnableFlag `uc ~T0 @X0 0 e ]
-"13144 /opt/microchip/xc8/v1.34/include/pic18f8722.h
-[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
-"13138
-[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"13593
-[s S711 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S711 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"13603
-[s S712 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S712 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE GIE ]
-"13613
-[s S713 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S713 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE GIEL GIEH ]
-"13623
-[s S714 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S714 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"13633
-[s S715 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S715 . . GIEL GIEH ]
-"13592
-[u S710 `S711 1 `S712 1 `S713 1 `S714 1 `S715 1 ]
-[n S710 . . . . . . ]
-"13639
-[v _INTCONbits `VS710 ~T0 @X0 0 e@4082 ]
-"36 PID.h
-[v _PIDInit `(v ~T0 @X0 0 ef ]
-"24 MotorControl.h
-[v _MotorDriverInit `(v ~T0 @X0 0 ef ]
-"30 ResolverToDigital.h
-[v _RTDInit `(v ~T0 @X0 0 ef ]
-"20 SerComm.h
-[v _SerInit `(v ~T0 @X0 0 ef ]
-"12551 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+"8892 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[v _TXSTA1 `Vuc ~T0 @X0 0 e@4012 ]
+"8569
+[v _RCSTA1 `Vuc ~T0 @X0 0 e@4011 ]
+"2198
+[v _BAUDCON `Vuc ~T0 @X0 0 e@3966 ]
+"9206
+[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
+"12551
 [s S671 :1 `uc 1 ]
 [n S671 . NOT_BOR ]
 "12554
@@ -62,6 +33,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S670 . . . . . . . . ]
 "12588
 [v _RCONbits `VS670 ~T0 @X0 0 e@4048 ]
+"7910
+[s S382 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S382 . TMR1IP TMR2IP CCP1IP SSP1IP TX1IP RC1IP ADIP PSPIP ]
+"7920
+[s S383 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S383 . . SSPIP TXIP RCIP ]
+"7909
+[u S381 `S382 1 `S383 1 ]
+[n S381 . . . ]
+"7927
+[v _IPR1bits `VS381 ~T0 @X0 0 e@3999 ]
+"7746
+[s S376 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S376 . TMR1IE TMR2IE CCP1IE SSP1IE TX1IE RC1IE ADIE PSPIE ]
+"7756
+[s S377 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S377 . . SSPIE TXIE RCIE ]
+"7745
+[u S375 `S376 1 `S377 1 ]
+[n S375 . . . ]
+"7763
+[v _PIE1bits `VS375 ~T0 @X0 0 e@3997 ]
+"22 SerComm.h
+[v _SerTxStr `(v ~T0 @X0 0 ef1`*uc ]
+"9179 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[v _TXREG1 `Vuc ~T0 @X0 0 e@4013 ]
 "7828
 [s S379 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S379 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF PSPIF ]
@@ -73,10 +70,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S378 . . . ]
 "7845
 [v _PIR1bits `VS378 ~T0 @X0 0 e@3998 ]
-"45 KeyValue.h
-[v _RCInt `(v ~T0 @X0 0 ef ]
-"38 PID.h
-[v _TMR0Int `(v ~T0 @X0 0 ef ]
+"9190
+[v _RCREG1 `Vuc ~T0 @X0 0 e@4014 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f8722.h: 49: extern volatile unsigned char SSP2CON2 @ 0xF62;
@@ -6461,281 +6456,238 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-[; ;stdlib.h: 27: typedef struct {
-[; ;stdlib.h: 28: int rem;
-[; ;stdlib.h: 29: int quot;
-[; ;stdlib.h: 30: } div_t;
-[; ;stdlib.h: 31: typedef struct {
-[; ;stdlib.h: 32: unsigned rem;
-[; ;stdlib.h: 33: unsigned quot;
-[; ;stdlib.h: 34: } udiv_t;
-[; ;stdlib.h: 35: typedef struct {
-[; ;stdlib.h: 36: long quot;
-[; ;stdlib.h: 37: long rem;
-[; ;stdlib.h: 38: } ldiv_t;
-[; ;stdlib.h: 39: typedef struct {
-[; ;stdlib.h: 40: unsigned long quot;
-[; ;stdlib.h: 41: unsigned long rem;
-[; ;stdlib.h: 42: } uldiv_t;
-[; ;stdlib.h: 65: extern double atof(const char *);
-[; ;stdlib.h: 66: extern double strtod(const char *, const char **);
-[; ;stdlib.h: 67: extern int atoi(const char *);
-[; ;stdlib.h: 68: extern unsigned xtoi(const char *);
-[; ;stdlib.h: 69: extern long atol(const char *);
-[; ;stdlib.h: 70: extern long strtol(const char *, char **, int);
-[; ;stdlib.h: 72: extern int rand(void);
-[; ;stdlib.h: 73: extern void srand(unsigned int);
-[; ;stdlib.h: 74: extern void * calloc(size_t, size_t);
-[; ;stdlib.h: 75: extern div_t div(int numer, int denom);
-[; ;stdlib.h: 76: extern udiv_t udiv(unsigned numer, unsigned denom);
-[; ;stdlib.h: 77: extern ldiv_t ldiv(long numer, long denom);
-[; ;stdlib.h: 78: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-[; ;stdlib.h: 79: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 80: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-[; ;stdlib.h: 81: extern unsigned int _rotl(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 82: extern unsigned int _rotr(unsigned int value, unsigned int shift);
-[; ;stdlib.h: 87: extern void * malloc(size_t);
-[; ;stdlib.h: 88: extern void free(void *);
-[; ;stdlib.h: 89: extern void * realloc(void *, size_t);
-[; ;stdlib.h: 98: extern int atexit(void (*)(void));
-[; ;stdlib.h: 99: extern char * getenv(const char *);
-[; ;stdlib.h: 100: extern char ** environ;
-[; ;stdlib.h: 101: extern int system(char *);
-[; ;stdlib.h: 102: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-[; ;stdlib.h: 103: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-[; ;stdlib.h: 104: extern int abs(int);
-[; ;stdlib.h: 105: extern long labs(long);
-[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
-[; ;ResolverToDigital.h: 30: void RTDInit(void);
-[; ;ResolverToDigital.h: 31: unsigned int ReadRTDpos(void);
-[; ;ResolverToDigital.h: 32: unsigned int ReadRTDvel(void);
-[; ;ResolverToDigital.h: 33: double RTD2Angle(unsigned int);
-[; ;ResolverToDigital.h: 34: double RTD2Velocity(unsigned int);
-[; ;ResolverToDigital.h: 35: unsigned char RTDdirection(void);
-[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
-[; ;MotorControl.h: 22: extern unsigned char PIDEnableFlag;
-[; ;MotorControl.h: 24: void MotorDriverInit(void);
-[; ;MotorControl.h: 25: void KillMotors(void);
-[; ;MotorControl.h: 26: void ImplementPIDMotion(int);
-[; ;MotorControl.h: 27: void ImplementJSMotion(int);
-[; ;PID.h: 24: extern unsigned char PIDEnableFlag;
-[; ;PID.h: 25: extern double Ki;
-[; ;PID.h: 26: extern double Kp;
-[; ;PID.h: 27: extern double Kd;
-[; ;PID.h: 28: extern double SetAngle;
-[; ;PID.h: 29: extern double CurrentAngle;
-[; ;PID.h: 30: extern double err;
-[; ;PID.h: 31: extern double prevErr;
-[; ;PID.h: 32: extern double intErr;
-[; ;PID.h: 33: extern double StartAngle;
-[; ;PID.h: 34: extern int motorInput;
-[; ;PID.h: 36: void PIDInit(void);
-[; ;PID.h: 37: void calculatePID(double, double);
-[; ;PID.h: 38: void TMR0Int(void);
-[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
-[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
-[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
-[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
-[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
-[; ;string.h: 22: extern void * memcpy(void *, const void *, size_t);
-[; ;string.h: 23: extern void * memmove(void *, const void *, size_t);
-[; ;string.h: 24: extern void * memset(void *, int, size_t);
-[; ;string.h: 42: extern char * strcat(char *, const char *);
-[; ;string.h: 43: extern char * strcpy(char *, const char *);
-[; ;string.h: 44: extern char * strncat(char *, const char *, size_t);
-[; ;string.h: 45: extern char * strncpy(char *, const char *, size_t);
-[; ;string.h: 46: extern char * strdup(const char *);
-[; ;string.h: 47: extern char * strtok(char *, const char *);
-[; ;string.h: 50: extern int memcmp(const void *, const void *, size_t);
-[; ;string.h: 51: extern int strcmp(const char *, const char *);
-[; ;string.h: 52: extern int stricmp(const char *, const char *);
-[; ;string.h: 53: extern int strncmp(const char *, const char *, size_t);
-[; ;string.h: 54: extern int strnicmp(const char *, const char *, size_t);
-[; ;string.h: 55: extern void * memchr(const void *, int, size_t);
-[; ;string.h: 56: extern size_t strcspn(const char *, const char *);
-[; ;string.h: 57: extern char * strpbrk(const char *, const char *);
-[; ;string.h: 58: extern size_t strspn(const char *, const char *);
-[; ;string.h: 59: extern char * strstr(const char *, const char *);
-[; ;string.h: 60: extern char * stristr(const char *, const char *);
-[; ;string.h: 61: extern char * strerror(int);
-[; ;string.h: 62: extern size_t strlen(const char *);
-[; ;string.h: 63: extern char * strchr(const char *, int);
-[; ;string.h: 64: extern char * strichr(const char *, int);
-[; ;string.h: 65: extern char * strrchr(const char *, int);
-[; ;string.h: 66: extern char * strrichr(const char *, int);
-[; ;ctype.h: 4: extern __bit isalpha(char);
-[; ;ctype.h: 5: extern __bit isupper(char);
-[; ;ctype.h: 6: extern __bit islower(char);
-[; ;ctype.h: 7: extern __bit isdigit(char);
-[; ;ctype.h: 8: extern __bit isxdigit(char);
-[; ;ctype.h: 9: extern __bit isspace(char);
-[; ;ctype.h: 10: extern __bit ispunct(char);
-[; ;ctype.h: 11: extern __bit isalnum(char);
-[; ;ctype.h: 12: extern __bit isprint(char);
-[; ;ctype.h: 13: extern __bit isgraph(char);
-[; ;ctype.h: 14: extern __bit iscntrl(char);
-[; ;ctype.h: 17: extern char toupper(char);
-[; ;ctype.h: 18: extern char tolower(char);
 [; ;SerComm.h: 20: void SerInit(void);
 [; ;SerComm.h: 21: void SerTx(unsigned char);
 [; ;SerComm.h: 22: void SerTxStr(unsigned char*);
 [; ;SerComm.h: 23: unsigned char SerRx(void);
 [; ;SerComm.h: 24: void SerRxStr(unsigned char*);
 [; ;SerComm.h: 25: void breakDouble(double);
-[; ;KeyValue.h: 29: extern double Kp;
-[; ;KeyValue.h: 30: extern double Ki;
-[; ;KeyValue.h: 31: extern double Kd;
-[; ;KeyValue.h: 32: extern double SetAngle;
-[; ;KeyValue.h: 33: extern double CurrentAngle;
-[; ;KeyValue.h: 34: extern double CurrentVelocity;
-[; ;KeyValue.h: 36: extern double StrippedValue;
-[; ;KeyValue.h: 37: extern unsigned char PIDEnableFlag;
-[; ;KeyValue.h: 38: extern unsigned char StrippedKey;
-[; ;KeyValue.h: 39: extern unsigned char AZEL;
-[; ;KeyValue.h: 40: extern unsigned char key[5];
-[; ;KeyValue.h: 41: extern unsigned char value[10];
-[; ;KeyValue.h: 42: extern unsigned char received[30];
-[; ;KeyValue.h: 43: extern unsigned char RCflag;
-[; ;KeyValue.h: 45: void RCInt(void);
-[; ;KeyValue.h: 46: void keyValue(unsigned char*, unsigned short);
-"8 PIDLoop.c
-[p x OSC=HSPLL ]
-"9
-[p x WDT=OFF ]
-"10
-[p x FCMEN=OFF ]
-[; ;PIDLoop.c: 12: void initialize(void);
-[; ;PIDLoop.c: 13: void interrupt ISR(void);
-"15
-[v _main `(v ~T0 @X0 1 ef ]
-"16
-{
-[; ;PIDLoop.c: 15: void main(void)
-[; ;PIDLoop.c: 16: {
-[e :U _main ]
-[f ]
-[; ;PIDLoop.c: 17: initialize();
-"17
-[e ( _initialize ..  ]
-[; ;PIDLoop.c: 19: while (1)
-"19
-[e :U 764 ]
-[; ;PIDLoop.c: 20: {
+"19 SerComm.c
+[v _SerInit `(v ~T0 @X0 1 ef ]
 "20
 {
-[; ;PIDLoop.c: 21: if ((PIDEnableFlag & 0x02) == 0x02)
-"21
-[e $ ! == & -> _PIDEnableFlag `i -> 2 `i -> 2 `i 766  ]
-[; ;PIDLoop.c: 22: {
-"22
-{
-[; ;PIDLoop.c: 23: TMR0H = 0xDB;
-"23
-[e = _TMR0H -> -> 219 `i `uc ]
-[; ;PIDLoop.c: 24: TMR0L = 0x60;
-"24
-[e = _TMR0L -> -> 96 `i `uc ]
-[; ;PIDLoop.c: 25: INTCONbits.TMR0IE = 1;
-"25
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;SerComm.c: 19: void SerInit(void)
+[; ;SerComm.c: 20: {
+[e :U _SerInit ]
+[f ]
+[; ;SerComm.c: 26: TXSTA1 = 0x24;
 "26
-}
-[; ;PIDLoop.c: 26: }
-[e $U 767  ]
+[e = _TXSTA1 -> -> 36 `i `uc ]
+[; ;SerComm.c: 27: RCSTA1 = 0x90;
 "27
-[e :U 766 ]
-[; ;PIDLoop.c: 27: else if((PIDEnableFlag & 0x01) == 0x01)
-[e $ ! == & -> _PIDEnableFlag `i -> 1 `i -> 1 `i 768  ]
-[; ;PIDLoop.c: 28: INTCONbits.TMR0IE = 1;
+[e = _RCSTA1 -> -> 144 `i `uc ]
+[; ;SerComm.c: 28: BAUDCON = 0x00;
 "28
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[e $U 769  ]
+[e = _BAUDCON -> -> 0 `i `uc ]
+[; ;SerComm.c: 29: SPBRG = 21;
 "29
-[e :U 768 ]
-[; ;PIDLoop.c: 29: else
-[; ;PIDLoop.c: 30: PIDEnableFlag = 0;
-"30
-[e = _PIDEnableFlag -> -> 0 `i `uc ]
-[e :U 769 ]
-[e :U 767 ]
+[e = _SPBRG -> -> 21 `i `uc ]
+[; ;SerComm.c: 31: RCONbits.IPEN = 1;
 "31
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;SerComm.c: 32: IPR1bits.RCIP = 0;
+"32
+[e = . . _IPR1bits 1 3 -> -> 0 `i `uc ]
+[; ;SerComm.c: 33: PIE1bits.RC1IE = 1;
+"33
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;SerComm.c: 35: SerTxStr("Welcome to the world of tomorrow!!!");
+"35
+[e ( _SerTxStr (1 -> :s 1C `*uc ]
+[; ;SerComm.c: 36: }
+"36
+[e :UE 758 ]
 }
-[e :U 763 ]
-"19
+"41
+[v _SerTx `(v ~T0 @X0 1 ef1`uc ]
+"42
+{
+[; ;SerComm.c: 41: void SerTx(unsigned char c)
+[; ;SerComm.c: 42: {
+[e :U _SerTx ]
+"41
+[v _c `uc ~T0 @X0 1 r1 ]
+"42
+[f ]
+[; ;SerComm.c: 43: TXREG1 = c;
+"43
+[e = _TXREG1 _c ]
+[; ;SerComm.c: 44: while (PIR1bits.TX1IF == 0);
+"44
+[e $U 760  ]
+[e :U 761 ]
+[e :U 760 ]
+[e $ == -> . . _PIR1bits 0 4 `i -> 0 `i 761  ]
+[e :U 762 ]
+[; ;SerComm.c: 45: }
+"45
+[e :UE 759 ]
+}
+"50
+[v _SerTxStr `(v ~T0 @X0 1 ef1`*uc ]
+"51
+{
+[; ;SerComm.c: 50: void SerTxStr(unsigned char* string)
+[; ;SerComm.c: 51: {
+[e :U _SerTxStr ]
+"50
+[v _string `*uc ~T0 @X0 1 r1 ]
+"51
+[f ]
+[; ;SerComm.c: 52: while (*string)
+"52
 [e $U 764  ]
 [e :U 765 ]
-[; ;PIDLoop.c: 31: }
-[; ;PIDLoop.c: 32: }
-"32
-[e :UE 762 ]
-}
-"34
-[v _initialize `(v ~T0 @X0 1 ef ]
-"35
-{
-[; ;PIDLoop.c: 34: void initialize(void)
-[; ;PIDLoop.c: 35: {
-[e :U _initialize ]
-[f ]
-[; ;PIDLoop.c: 36: PIDInit();
-"36
-[e ( _PIDInit ..  ]
-[; ;PIDLoop.c: 37: MotorDriverInit();
-"37
-[e ( _MotorDriverInit ..  ]
-[; ;PIDLoop.c: 38: RTDInit();
-"38
-[e ( _RTDInit ..  ]
-[; ;PIDLoop.c: 39: SerInit();
-"39
-[e ( _SerInit ..  ]
-[; ;PIDLoop.c: 41: INTCONbits.GIE = 1;
-"41
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 42: INTCONbits.PEIE = 1;
-"42
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 43: RCONbits.IPEN = 1;
-"43
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 44: }
-"44
-[e :UE 770 ]
-}
-[v F7412 `(v ~T0 @X0 1 tf ]
-"46
-[v _ISR `IF7412 ~T0 @X0 1 e ]
-"47
-{
-[; ;PIDLoop.c: 46: void interrupt ISR(void)
-[; ;PIDLoop.c: 47: {
-[e :U _ISR ]
-[f ]
-[; ;PIDLoop.c: 48: if (PIR1bits.RC1IF == 1)
-"48
-[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 772  ]
-[; ;PIDLoop.c: 49: RCInt();
-"49
-[e ( _RCInt ..  ]
-[e $U 773  ]
-"50
-[e :U 772 ]
-[; ;PIDLoop.c: 50: else if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1))
-[e $ ! && == -> . . _INTCONbits 0 2 `i -> 1 `i == -> . . _INTCONbits 0 5 `i -> 1 `i 774  ]
-[; ;PIDLoop.c: 51: TMR0Int();
-"51
-[e ( _TMR0Int ..  ]
-[e :U 774 ]
+[; ;SerComm.c: 53: SerTx(*string++);
+"53
+[e ( _SerTx (1 *U ++ _string * -> -> 1 `i `x -> -> # *U _string `i `x ]
+[e :U 764 ]
 "52
-[e :U 773 ]
-[; ;PIDLoop.c: 52: }
-[e :UE 771 ]
+[e $ != -> *U _string `i -> -> -> 0 `i `uc `i 765  ]
+[e :U 766 ]
+[; ;SerComm.c: 54: }
+"54
+[e :UE 763 ]
 }
+"60
+[v _SerRx `(uc ~T0 @X0 1 ef ]
+"61
+{
+[; ;SerComm.c: 60: unsigned char SerRx(void)
+[; ;SerComm.c: 61: {
+[e :U _SerRx ]
+[f ]
+[; ;SerComm.c: 62: return RCREG1;
+"62
+[e ) _RCREG1 ]
+[e $UE 767  ]
+[; ;SerComm.c: 63: }
+"63
+[e :UE 767 ]
+}
+"69
+[v _SerRxStr `(v ~T0 @X0 1 ef1`*uc ]
+"70
+{
+[; ;SerComm.c: 69: void SerRxStr(unsigned char* str)
+[; ;SerComm.c: 70: {
+[e :U _SerRxStr ]
+"69
+[v _str `*uc ~T0 @X0 1 r1 ]
+"70
+[f ]
+"71
+[v _length `us ~T0 @X0 1 a ]
+[; ;SerComm.c: 71: unsigned short length = sizeof (str) / sizeof (str[0]);
+[e = _length -> / -> # _str `ui -> # *U + _str * -> -> 0 `i `x -> -> # *U _str `i `x `ui `us ]
+"72
+[v _x `us ~T0 @X0 1 a ]
+[; ;SerComm.c: 72: unsigned short x = 0;
+[e = _x -> -> 0 `i `us ]
+[; ;SerComm.c: 73: while ((RCREG1 != 0x0D) || (x != length))
+"73
+[e $U 769  ]
+[e :U 770 ]
+[; ;SerComm.c: 74: {
+"74
+{
+[; ;SerComm.c: 75: str[x] = RCREG1;
+"75
+[e = *U + _str * -> _x `ux -> -> # *U _str `ui `ux _RCREG1 ]
+[; ;SerComm.c: 76: x++;
+"76
+[e ++ _x -> -> 1 `i `us ]
+"77
+}
+[e :U 769 ]
+"73
+[e $ || != -> _RCREG1 `i -> 13 `i != -> _x `ui -> _length `ui 770  ]
+[e :U 771 ]
+[; ;SerComm.c: 77: }
+[; ;SerComm.c: 78: }
+"78
+[e :UE 768 ]
+}
+"80
+[v _breakDouble `(v ~T0 @X0 1 ef1`d ]
+"81
+{
+[; ;SerComm.c: 80: void breakDouble(double dubs)
+[; ;SerComm.c: 81: {
+[e :U _breakDouble ]
+"80
+[v _dubs `d ~T0 @X0 1 r1 ]
+"81
+[f ]
+"82
+[v _temp1 `ui ~T0 @X0 1 a ]
+[v _temp2 `ui ~T0 @X0 1 a ]
+"83
+[v _tempDub `ui ~T0 @X0 1 a ]
+[; ;SerComm.c: 82: unsigned int temp1, temp2;
+[; ;SerComm.c: 83: unsigned int tempDub;
+[; ;SerComm.c: 85: tempDub = dubs * 100;
+"85
+[e = _tempDub -> * _dubs -> -> 100 `i `d `ui ]
+[; ;SerComm.c: 86: temp1 = tempDub / 10000;
+"86
+[e = _temp1 / _tempDub -> -> 10000 `i `ui ]
+[; ;SerComm.c: 87: temp2 = tempDub % 10000;
+"87
+[e = _temp2 % _tempDub -> -> 10000 `i `ui ]
+[; ;SerComm.c: 88: if (temp1 != 0)
+"88
+[e $ ! != _temp1 -> -> 0 `i `ui 773  ]
+[; ;SerComm.c: 89: SerTx(temp1 + 0x30);
+"89
+[e ( _SerTx (1 -> + _temp1 -> -> 48 `i `ui `uc ]
+[e :U 773 ]
+[; ;SerComm.c: 90: temp1 = temp2 / 1000;
+"90
+[e = _temp1 / _temp2 -> -> 1000 `i `ui ]
+[; ;SerComm.c: 91: temp2 = temp2 % 1000;
+"91
+[e = _temp2 % _temp2 -> -> 1000 `i `ui ]
+[; ;SerComm.c: 92: if (temp1 != 0)
+"92
+[e $ ! != _temp1 -> -> 0 `i `ui 774  ]
+[; ;SerComm.c: 93: SerTx(temp1 + 0x30);
+"93
+[e ( _SerTx (1 -> + _temp1 -> -> 48 `i `ui `uc ]
+[e :U 774 ]
+[; ;SerComm.c: 94: temp1 = temp2 / 100;
+"94
+[e = _temp1 / _temp2 -> -> 100 `i `ui ]
+[; ;SerComm.c: 95: temp2 = temp2 % 100;
+"95
+[e = _temp2 % _temp2 -> -> 100 `i `ui ]
+[; ;SerComm.c: 96: SerTx(temp1 + 0x30);
+"96
+[e ( _SerTx (1 -> + _temp1 -> -> 48 `i `ui `uc ]
+[; ;SerComm.c: 97: SerTx('.');
+"97
+[e ( _SerTx (1 -> -> 46 `ui `uc ]
+[; ;SerComm.c: 98: temp1 = temp2 / 10;
+"98
+[e = _temp1 / _temp2 -> -> 10 `i `ui ]
+[; ;SerComm.c: 99: temp2 = temp2 % 10;
+"99
+[e = _temp2 % _temp2 -> -> 10 `i `ui ]
+[; ;SerComm.c: 100: SerTx(temp1 + 0x30);
+"100
+[e ( _SerTx (1 -> + _temp1 -> -> 48 `i `ui `uc ]
+[; ;SerComm.c: 101: SerTx(temp2 + 0x30);
+"101
+[e ( _SerTx (1 -> + _temp2 -> -> 48 `i `ui `uc ]
+[; ;SerComm.c: 102: SerTx(0x0A);
+"102
+[e ( _SerTx (1 -> -> 10 `i `uc ]
+[; ;SerComm.c: 103: SerTx(0x0D);
+"103
+[e ( _SerTx (1 -> -> 13 `i `uc ]
+[; ;SerComm.c: 104: }
+"104
+[e :UE 772 ]
+}
+[a 1C 87 101 108 99 111 109 101 32 116 111 32 116 104 101 32 119 111 114 108 100 32 111 102 32 116 111 109 111 114 114 111 119 33 33 33 0 ]
+
