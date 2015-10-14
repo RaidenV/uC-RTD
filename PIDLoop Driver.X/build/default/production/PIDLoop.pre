@@ -8494,8 +8494,145 @@ extern unsigned char RCflag;
 void RCInt(void);
 void keyValue(unsigned char*, unsigned short);
 
+# 24 "LCD.h"
+void lcdInit(void);
+void setIODIR(char, char);
+void setGPIO(char, char);
+void lcdCommand(char);
+void lcdChar(unsigned char);
+void lcdGoTo(char);
+void lcdWriteString(unsigned char*);
+void lcdPrint(unsigned char*, unsigned char*);
+void LCDBreakDouble(double);
 
-# 8 "PIDLoop.c"
+void setGPIO(char address, char value)
+{
+PORTAbits.RA2=0;
+
+
+WriteSPI1(0x40);
+WriteSPI1(address);
+WriteSPI1(value);
+PORTAbits.RA2=1;
+}
+
+void setIODIR(char address, char dir)
+{
+PORTAbits.RA2=0;
+WriteSPI1(0x40);
+WriteSPI1(address);
+WriteSPI1(dir);
+PORTAbits.RA2=1;
+}
+
+void lcdCommand(char command)
+{
+setGPIO(0x12,0x00);
+Delay10TCYx(0);
+setGPIO(0x13, command);
+Delay10TCYx(0);
+setGPIO(0x12,0x40);
+Delay10TCYx(0);
+setGPIO(0x12,0x00);
+Delay10TCYx(0);
+}
+
+void lcdChar(unsigned char letter)
+{
+setGPIO(0x12,0x80);
+Delay10TCYx(0);
+setGPIO(0x13,letter);
+
+setGPIO(0x12, 0xc0);
+Delay10TCYx(0);
+setGPIO(0x12,0x00);
+Delay10TCYx(0);
+}
+
+void lcdGoTo(char pos)
+{
+
+lcdCommand(0x80+pos);
+}
+
+void lcdWriteString(unsigned char *s)
+{
+while(*s)
+lcdChar(*s++);
+}
+
+void lcdPrint(unsigned char* xmit8722, unsigned char* xmit8680)
+{
+unsigned char temp, temp2;
+
+lcdGoTo(0x00);
+lcdWriteString("8722: ");
+lcdChar(xmit8722[0]);
+lcdChar('.');
+lcdChar(xmit8722[1]);
+lcdChar(xmit8722[2]);
+lcdChar(xmit8722[3]);
+
+
+lcdGoTo(0x40);
+lcdWriteString("8680: ");
+lcdChar(xmit8680[0]);
+lcdChar('.');
+lcdChar(xmit8680[1]);
+lcdChar(xmit8680[2]);
+lcdChar(xmit8680[3]);
+}
+
+void lcdInit(void)
+{
+TRISAbits.RA2=0;
+PORTAbits.RA2=1;
+
+OpenSPI1(0b00000010, 0b00000010, 0b10000000);
+
+setIODIR(0x01,0x00);
+
+setIODIR(0x00,0x00);
+
+setGPIO(0x00,0x00);
+
+lcdCommand(0b00111111);
+
+lcdCommand(0b00001111);
+
+lcdCommand(0b00000001);
+
+lcdCommand(0b00000110);
+}
+
+void LCDBreakDouble(double dubs)
+{
+unsigned int temp1, temp2;
+unsigned int tempDub;
+
+lcdCommand(0x01);
+lcdGoTo(0x40);
+tempDub = dubs * 100;
+temp1 = tempDub / 10000;
+temp2 = tempDub % 10000;
+if (temp1 != 0)
+lcdChar(temp1 + 0x30);
+temp1 = temp2 / 1000;
+temp2 = temp2 % 1000;
+if (temp1 != 0)
+lcdChar(temp1 + 0x30);
+temp1 = temp2 / 100;
+temp2 = temp2 % 100;
+lcdChar(temp1 + 0x30);
+lcdChar('.');
+temp1 = temp2 / 10;
+temp2 = temp2 % 10;
+lcdChar(temp1 + 0x30);
+lcdChar(temp2 + 0x30);
+}
+
+
+# 9 "PIDLoop.c"
 #pragma config OSC = HSPLL
 #pragma config WDT = OFF
 #pragma config FCMEN = OFF
@@ -8519,6 +8656,8 @@ else if((PIDEnableFlag & 0x01) == 0x01)
 INTCONbits.TMR0IE = 1;
 else
 PIDEnableFlag = 0;
+
+LCDBreakDouble(CurrentAngle);
 }
 }
 

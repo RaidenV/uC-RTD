@@ -1,6 +1,46 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"2641 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[s S136 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S136 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"2651
+[s S137 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S137 . . VREFM VREFP T0CKI LVDIN ]
+"2658
+[s S138 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S138 . AN0 AN1 AN2 AN3 . AN4 ]
+"2666
+[s S139 :5 `uc 1 :1 `uc 1 ]
+[n S139 . . HLVDIN ]
+"2670
+[s S140 :7 `uc 1 :1 `uc 1 ]
+[n S140 . . RJPU ]
+"2674
+[s S141 :1 `uc 1 ]
+[n S141 . ULPWUIN ]
+"2640
+[u S135 `S136 1 `S137 1 `S138 1 `S139 1 `S140 1 `S141 1 ]
+[n S135 . . . . . . . ]
+"2678
+[v _PORTAbits `VS135 ~T0 @X0 0 e@3968 ]
+"240 /opt/microchip/xc8/v1.34/include/plib/spi.h
+[v _WriteSPI1 `(c ~T0 @X0 0 ef1`uc ]
+"19 /opt/microchip/xc8/v1.34/include/plib/delays.h
+[v _Delay10TCYx `(v ~T0 @X0 0 ef1`uc ]
+"5710 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[s S316 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S316 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"5720
+[s S317 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S317 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"5709
+[u S315 `S316 1 `S317 1 ]
+[n S315 . . . ]
+"5731
+[v _TRISAbits `VS315 ~T0 @X0 0 e@3986 ]
+"236 /opt/microchip/xc8/v1.34/include/plib/spi.h
+[v _OpenSPI1 `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 [p mainexit ]
-"12 PIDLoop.c
+"13 PIDLoop.c
 [v _initialize `(v ~T0 @X0 0 ef ]
 "22 MotorControl.h
 [v _PIDEnableFlag `uc ~T0 @X0 0 e ]
@@ -28,7 +68,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S710 . . . . . . ]
 "13639
 [v _INTCONbits `VS710 ~T0 @X0 0 e@4082 ]
-"36 PID.h
+"29 PID.h
+[v _CurrentAngle `d ~T0 @X0 0 e ]
+"36
 [v _PIDInit `(v ~T0 @X0 0 ef ]
 "24 MotorControl.h
 [v _MotorDriverInit `(v ~T0 @X0 0 ef ]
@@ -6606,136 +6648,516 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;KeyValue.h: 43: extern unsigned char RCflag;
 [; ;KeyValue.h: 45: void RCInt(void);
 [; ;KeyValue.h: 46: void keyValue(unsigned char*, unsigned short);
-"8 PIDLoop.c
-[p x OSC=HSPLL ]
-"9
-[p x WDT=OFF ]
-"10
-[p x FCMEN=OFF ]
-[; ;PIDLoop.c: 12: void initialize(void);
-[; ;PIDLoop.c: 13: void interrupt ISR(void);
-"15
-[v _main `(v ~T0 @X0 1 ef ]
-"16
-{
-[; ;PIDLoop.c: 15: void main(void)
-[; ;PIDLoop.c: 16: {
-[e :U _main ]
-[f ]
-[; ;PIDLoop.c: 17: initialize();
-"17
-[e ( _initialize ..  ]
-[; ;PIDLoop.c: 19: while (1)
-"19
-[e :U 764 ]
-[; ;PIDLoop.c: 20: {
-"20
-{
-[; ;PIDLoop.c: 21: if ((PIDEnableFlag & 0x02) == 0x02)
-"21
-[e $ ! == & -> _PIDEnableFlag `i -> 2 `i -> 2 `i 766  ]
-[; ;PIDLoop.c: 22: {
-"22
-{
-[; ;PIDLoop.c: 23: TMR0H = 0xDB;
-"23
-[e = _TMR0H -> -> 219 `i `uc ]
-[; ;PIDLoop.c: 24: TMR0L = 0x60;
-"24
-[e = _TMR0L -> -> 96 `i `uc ]
-[; ;PIDLoop.c: 25: INTCONbits.TMR0IE = 1;
-"25
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"26
-}
-[; ;PIDLoop.c: 26: }
-[e $U 767  ]
-"27
-[e :U 766 ]
-[; ;PIDLoop.c: 27: else if((PIDEnableFlag & 0x01) == 0x01)
-[e $ ! == & -> _PIDEnableFlag `i -> 1 `i -> 1 `i 768  ]
-[; ;PIDLoop.c: 28: INTCONbits.TMR0IE = 1;
-"28
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[e $U 769  ]
-"29
-[e :U 768 ]
-[; ;PIDLoop.c: 29: else
-[; ;PIDLoop.c: 30: PIDEnableFlag = 0;
-"30
-[e = _PIDEnableFlag -> -> 0 `i `uc ]
-[e :U 769 ]
-[e :U 767 ]
-"31
-}
-[e :U 763 ]
-"19
-[e $U 764  ]
-[e :U 765 ]
-[; ;PIDLoop.c: 31: }
-[; ;PIDLoop.c: 32: }
-"32
-[e :UE 762 ]
-}
-"34
-[v _initialize `(v ~T0 @X0 1 ef ]
+[; ;LCD.h: 24: void lcdInit(void);
+[; ;LCD.h: 25: void setIODIR(char, char);
+[; ;LCD.h: 26: void setGPIO(char, char);
+[; ;LCD.h: 27: void lcdCommand(char);
+[; ;LCD.h: 28: void lcdChar(unsigned char);
+[; ;LCD.h: 29: void lcdGoTo(char);
+[; ;LCD.h: 30: void lcdWriteString(unsigned char*);
+[; ;LCD.h: 31: void lcdPrint(unsigned char*, unsigned char*);
+[; ;LCD.h: 32: void LCDBreakDouble(double);
+"34 LCD.h
+[v _setGPIO `(v ~T0 @X0 1 ef2`uc`uc ]
 "35
 {
-[; ;PIDLoop.c: 34: void initialize(void)
-[; ;PIDLoop.c: 35: {
-[e :U _initialize ]
+[; ;LCD.h: 34: void setGPIO(char address, char value)
+[; ;LCD.h: 35: {
+[e :U _setGPIO ]
+"34
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _value `uc ~T0 @X0 1 r2 ]
+"35
 [f ]
-[; ;PIDLoop.c: 36: PIDInit();
+[; ;LCD.h: 36: PORTAbits.RA2=0;
 "36
-[e ( _PIDInit ..  ]
-[; ;PIDLoop.c: 37: MotorDriverInit();
-"37
-[e ( _MotorDriverInit ..  ]
-[; ;PIDLoop.c: 38: RTDInit();
-"38
-[e ( _RTDInit ..  ]
-[; ;PIDLoop.c: 39: SerInit();
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+[; ;LCD.h: 39: WriteSPI1(0x40);
 "39
-[e ( _SerInit ..  ]
-[; ;PIDLoop.c: 41: INTCONbits.GIE = 1;
+[e ( _WriteSPI1 (1 -> -> 64 `i `uc ]
+[; ;LCD.h: 40: WriteSPI1(address);
+"40
+[e ( _WriteSPI1 (1 _address ]
+[; ;LCD.h: 41: WriteSPI1(value);
 "41
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 42: INTCONbits.PEIE = 1;
+[e ( _WriteSPI1 (1 _value ]
+[; ;LCD.h: 42: PORTAbits.RA2=1;
 "42
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 43: RCONbits.IPEN = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[; ;LCD.h: 43: }
 "43
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 44: }
-"44
-[e :UE 770 ]
+[e :UE 762 ]
 }
-[v F7412 `(v ~T0 @X0 1 tf ]
+"45
+[v _setIODIR `(v ~T0 @X0 1 ef2`uc`uc ]
 "46
-[v _ISR `IF7412 ~T0 @X0 1 e ]
-"47
 {
-[; ;PIDLoop.c: 46: void interrupt ISR(void)
-[; ;PIDLoop.c: 47: {
-[e :U _ISR ]
+[; ;LCD.h: 45: void setIODIR(char address, char dir)
+[; ;LCD.h: 46: {
+[e :U _setIODIR ]
+"45
+[v _address `uc ~T0 @X0 1 r1 ]
+[v _dir `uc ~T0 @X0 1 r2 ]
+"46
 [f ]
-[; ;PIDLoop.c: 48: if (PIR1bits.RC1IF == 1)
+[; ;LCD.h: 47: PORTAbits.RA2=0;
+"47
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+[; ;LCD.h: 48: WriteSPI1(0x40);
 "48
-[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 772  ]
-[; ;PIDLoop.c: 49: RCInt();
+[e ( _WriteSPI1 (1 -> -> 64 `i `uc ]
+[; ;LCD.h: 49: WriteSPI1(address);
 "49
-[e ( _RCInt ..  ]
-[e $U 773  ]
+[e ( _WriteSPI1 (1 _address ]
+[; ;LCD.h: 50: WriteSPI1(dir);
 "50
-[e :U 772 ]
-[; ;PIDLoop.c: 50: else if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1))
-[e $ ! && == -> . . _INTCONbits 0 2 `i -> 1 `i == -> . . _INTCONbits 0 5 `i -> 1 `i 774  ]
-[; ;PIDLoop.c: 51: TMR0Int();
+[e ( _WriteSPI1 (1 _dir ]
+[; ;LCD.h: 51: PORTAbits.RA2=1;
 "51
-[e ( _TMR0Int ..  ]
-[e :U 774 ]
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[; ;LCD.h: 52: }
 "52
-[e :U 773 ]
-[; ;PIDLoop.c: 52: }
+[e :UE 763 ]
+}
+"54
+[v _lcdCommand `(v ~T0 @X0 1 ef1`uc ]
+"55
+{
+[; ;LCD.h: 54: void lcdCommand(char command)
+[; ;LCD.h: 55: {
+[e :U _lcdCommand ]
+"54
+[v _command `uc ~T0 @X0 1 r1 ]
+"55
+[f ]
+[; ;LCD.h: 56: setGPIO(0x12,0x00);
+"56
+[e ( _setGPIO (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
+[; ;LCD.h: 57: Delay10TCYx(0);
+"57
+[e ( _Delay10TCYx (1 -> -> 0 `i `uc ]
+[; ;LCD.h: 58: setGPIO(0x13, command);
+"58
+[e ( _setGPIO (2 , -> -> 19 `i `uc _command ]
+[; ;LCD.h: 59: Delay10TCYx(0);
+"59
+[e ( _Delay10TCYx (1 -> -> 0 `i `uc ]
+[; ;LCD.h: 60: setGPIO(0x12,0x40);
+"60
+[e ( _setGPIO (2 , -> -> 18 `i `uc -> -> 64 `i `uc ]
+[; ;LCD.h: 61: Delay10TCYx(0);
+"61
+[e ( _Delay10TCYx (1 -> -> 0 `i `uc ]
+[; ;LCD.h: 62: setGPIO(0x12,0x00);
+"62
+[e ( _setGPIO (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
+[; ;LCD.h: 63: Delay10TCYx(0);
+"63
+[e ( _Delay10TCYx (1 -> -> 0 `i `uc ]
+[; ;LCD.h: 64: }
+"64
+[e :UE 764 ]
+}
+"66
+[v _lcdChar `(v ~T0 @X0 1 ef1`uc ]
+"67
+{
+[; ;LCD.h: 66: void lcdChar(unsigned char letter)
+[; ;LCD.h: 67: {
+[e :U _lcdChar ]
+"66
+[v _letter `uc ~T0 @X0 1 r1 ]
+"67
+[f ]
+[; ;LCD.h: 68: setGPIO(0x12,0x80);
+"68
+[e ( _setGPIO (2 , -> -> 18 `i `uc -> -> 128 `i `uc ]
+[; ;LCD.h: 69: Delay10TCYx(0);
+"69
+[e ( _Delay10TCYx (1 -> -> 0 `i `uc ]
+[; ;LCD.h: 70: setGPIO(0x13,letter);
+"70
+[e ( _setGPIO (2 , -> -> 19 `i `uc _letter ]
+[; ;LCD.h: 72: setGPIO(0x12, 0xc0);
+"72
+[e ( _setGPIO (2 , -> -> 18 `i `uc -> -> 192 `i `uc ]
+[; ;LCD.h: 73: Delay10TCYx(0);
+"73
+[e ( _Delay10TCYx (1 -> -> 0 `i `uc ]
+[; ;LCD.h: 74: setGPIO(0x12,0x00);
+"74
+[e ( _setGPIO (2 , -> -> 18 `i `uc -> -> 0 `i `uc ]
+[; ;LCD.h: 75: Delay10TCYx(0);
+"75
+[e ( _Delay10TCYx (1 -> -> 0 `i `uc ]
+[; ;LCD.h: 76: }
+"76
+[e :UE 765 ]
+}
+"78
+[v _lcdGoTo `(v ~T0 @X0 1 ef1`uc ]
+"79
+{
+[; ;LCD.h: 78: void lcdGoTo(char pos)
+[; ;LCD.h: 79: {
+[e :U _lcdGoTo ]
+"78
+[v _pos `uc ~T0 @X0 1 r1 ]
+"79
+[f ]
+[; ;LCD.h: 81: lcdCommand(0x80+pos);
+"81
+[e ( _lcdCommand (1 -> + -> 128 `i -> _pos `i `uc ]
+[; ;LCD.h: 82: }
+"82
+[e :UE 766 ]
+}
+"84
+[v _lcdWriteString `(v ~T0 @X0 1 ef1`*uc ]
+"85
+{
+[; ;LCD.h: 84: void lcdWriteString(unsigned char *s)
+[; ;LCD.h: 85: {
+[e :U _lcdWriteString ]
+"84
+[v _s `*uc ~T0 @X0 1 r1 ]
+"85
+[f ]
+[; ;LCD.h: 86: while(*s)
+"86
+[e $U 768  ]
+[e :U 769 ]
+[; ;LCD.h: 87: lcdChar(*s++);
+"87
+[e ( _lcdChar (1 *U ++ _s * -> -> 1 `i `x -> -> # *U _s `i `x ]
+[e :U 768 ]
+"86
+[e $ != -> *U _s `i -> -> -> 0 `i `uc `i 769  ]
+[e :U 770 ]
+[; ;LCD.h: 88: }
+"88
+[e :UE 767 ]
+}
+"90
+[v _lcdPrint `(v ~T0 @X0 1 ef2`*uc`*uc ]
+"91
+{
+[; ;LCD.h: 90: void lcdPrint(unsigned char* xmit8722, unsigned char* xmit8680)
+[; ;LCD.h: 91: {
+[e :U _lcdPrint ]
+"90
+[v _xmit8722 `*uc ~T0 @X0 1 r1 ]
+[v _xmit8680 `*uc ~T0 @X0 1 r2 ]
+"91
+[f ]
+"92
+[v _temp `uc ~T0 @X0 1 a ]
+[v _temp2 `uc ~T0 @X0 1 a ]
+[; ;LCD.h: 92: unsigned char temp, temp2;
+[; ;LCD.h: 94: lcdGoTo(0x00);
+"94
+[e ( _lcdGoTo (1 -> -> 0 `i `uc ]
+[; ;LCD.h: 95: lcdWriteString("8722: ");
+"95
+[e ( _lcdWriteString (1 -> :s 1C `*uc ]
+[; ;LCD.h: 96: lcdChar(xmit8722[0]);
+"96
+[e ( _lcdChar (1 *U + _xmit8722 * -> -> 0 `i `x -> -> # *U _xmit8722 `i `x ]
+[; ;LCD.h: 97: lcdChar('.');
+"97
+[e ( _lcdChar (1 -> -> 46 `ui `uc ]
+[; ;LCD.h: 98: lcdChar(xmit8722[1]);
+"98
+[e ( _lcdChar (1 *U + _xmit8722 * -> -> 1 `i `x -> -> # *U _xmit8722 `i `x ]
+[; ;LCD.h: 99: lcdChar(xmit8722[2]);
+"99
+[e ( _lcdChar (1 *U + _xmit8722 * -> -> 2 `i `x -> -> # *U _xmit8722 `i `x ]
+[; ;LCD.h: 100: lcdChar(xmit8722[3]);
+"100
+[e ( _lcdChar (1 *U + _xmit8722 * -> -> 3 `i `x -> -> # *U _xmit8722 `i `x ]
+[; ;LCD.h: 103: lcdGoTo(0x40);
+"103
+[e ( _lcdGoTo (1 -> -> 64 `i `uc ]
+[; ;LCD.h: 104: lcdWriteString("8680: ");
+"104
+[e ( _lcdWriteString (1 -> :s 2C `*uc ]
+[; ;LCD.h: 105: lcdChar(xmit8680[0]);
+"105
+[e ( _lcdChar (1 *U + _xmit8680 * -> -> 0 `i `x -> -> # *U _xmit8680 `i `x ]
+[; ;LCD.h: 106: lcdChar('.');
+"106
+[e ( _lcdChar (1 -> -> 46 `ui `uc ]
+[; ;LCD.h: 107: lcdChar(xmit8680[1]);
+"107
+[e ( _lcdChar (1 *U + _xmit8680 * -> -> 1 `i `x -> -> # *U _xmit8680 `i `x ]
+[; ;LCD.h: 108: lcdChar(xmit8680[2]);
+"108
+[e ( _lcdChar (1 *U + _xmit8680 * -> -> 2 `i `x -> -> # *U _xmit8680 `i `x ]
+[; ;LCD.h: 109: lcdChar(xmit8680[3]);
+"109
+[e ( _lcdChar (1 *U + _xmit8680 * -> -> 3 `i `x -> -> # *U _xmit8680 `i `x ]
+[; ;LCD.h: 110: }
+"110
 [e :UE 771 ]
 }
+"112
+[v _lcdInit `(v ~T0 @X0 1 ef ]
+"113
+{
+[; ;LCD.h: 112: void lcdInit(void)
+[; ;LCD.h: 113: {
+[e :U _lcdInit ]
+[f ]
+[; ;LCD.h: 114: TRISAbits.RA2=0;
+"114
+[e = . . _TRISAbits 1 2 -> -> 0 `i `uc ]
+[; ;LCD.h: 115: PORTAbits.RA2=1;
+"115
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[; ;LCD.h: 117: OpenSPI1(0b00000010, 0b00000010, 0b10000000);
+"117
+[e ( _OpenSPI1 (3 , , -> -> 2 `i `uc -> -> 2 `i `uc -> -> 128 `i `uc ]
+[; ;LCD.h: 119: setIODIR(0x01,0x00);
+"119
+[e ( _setIODIR (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+[; ;LCD.h: 121: setIODIR(0x00,0x00);
+"121
+[e ( _setIODIR (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;LCD.h: 123: setGPIO(0x00,0x00);
+"123
+[e ( _setGPIO (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;LCD.h: 125: lcdCommand(0b00111111);
+"125
+[e ( _lcdCommand (1 -> -> 63 `i `uc ]
+[; ;LCD.h: 127: lcdCommand(0b00001111);
+"127
+[e ( _lcdCommand (1 -> -> 15 `i `uc ]
+[; ;LCD.h: 129: lcdCommand(0b00000001);
+"129
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+[; ;LCD.h: 131: lcdCommand(0b00000110);
+"131
+[e ( _lcdCommand (1 -> -> 6 `i `uc ]
+[; ;LCD.h: 132: }
+"132
+[e :UE 772 ]
+}
+"134
+[v _LCDBreakDouble `(v ~T0 @X0 1 ef1`d ]
+"135
+{
+[; ;LCD.h: 134: void LCDBreakDouble(double dubs)
+[; ;LCD.h: 135: {
+[e :U _LCDBreakDouble ]
+"134
+[v _dubs `d ~T0 @X0 1 r1 ]
+"135
+[f ]
+"136
+[v _temp1 `ui ~T0 @X0 1 a ]
+[v _temp2 `ui ~T0 @X0 1 a ]
+"137
+[v _tempDub `ui ~T0 @X0 1 a ]
+[; ;LCD.h: 136: unsigned int temp1, temp2;
+[; ;LCD.h: 137: unsigned int tempDub;
+[; ;LCD.h: 139: lcdCommand(0x01);
+"139
+[e ( _lcdCommand (1 -> -> 1 `i `uc ]
+[; ;LCD.h: 140: lcdGoTo(0x40);
+"140
+[e ( _lcdGoTo (1 -> -> 64 `i `uc ]
+[; ;LCD.h: 141: tempDub = dubs * 100;
+"141
+[e = _tempDub -> * _dubs -> -> 100 `i `d `ui ]
+[; ;LCD.h: 142: temp1 = tempDub / 10000;
+"142
+[e = _temp1 / _tempDub -> -> 10000 `i `ui ]
+[; ;LCD.h: 143: temp2 = tempDub % 10000;
+"143
+[e = _temp2 % _tempDub -> -> 10000 `i `ui ]
+[; ;LCD.h: 144: if (temp1 != 0)
+"144
+[e $ ! != _temp1 -> -> 0 `i `ui 774  ]
+[; ;LCD.h: 145: lcdChar(temp1 + 0x30);
+"145
+[e ( _lcdChar (1 -> + _temp1 -> -> 48 `i `ui `uc ]
+[e :U 774 ]
+[; ;LCD.h: 146: temp1 = temp2 / 1000;
+"146
+[e = _temp1 / _temp2 -> -> 1000 `i `ui ]
+[; ;LCD.h: 147: temp2 = temp2 % 1000;
+"147
+[e = _temp2 % _temp2 -> -> 1000 `i `ui ]
+[; ;LCD.h: 148: if (temp1 != 0)
+"148
+[e $ ! != _temp1 -> -> 0 `i `ui 775  ]
+[; ;LCD.h: 149: lcdChar(temp1 + 0x30);
+"149
+[e ( _lcdChar (1 -> + _temp1 -> -> 48 `i `ui `uc ]
+[e :U 775 ]
+[; ;LCD.h: 150: temp1 = temp2 / 100;
+"150
+[e = _temp1 / _temp2 -> -> 100 `i `ui ]
+[; ;LCD.h: 151: temp2 = temp2 % 100;
+"151
+[e = _temp2 % _temp2 -> -> 100 `i `ui ]
+[; ;LCD.h: 152: lcdChar(temp1 + 0x30);
+"152
+[e ( _lcdChar (1 -> + _temp1 -> -> 48 `i `ui `uc ]
+[; ;LCD.h: 153: lcdChar('.');
+"153
+[e ( _lcdChar (1 -> -> 46 `ui `uc ]
+[; ;LCD.h: 154: temp1 = temp2 / 10;
+"154
+[e = _temp1 / _temp2 -> -> 10 `i `ui ]
+[; ;LCD.h: 155: temp2 = temp2 % 10;
+"155
+[e = _temp2 % _temp2 -> -> 10 `i `ui ]
+[; ;LCD.h: 156: lcdChar(temp1 + 0x30);
+"156
+[e ( _lcdChar (1 -> + _temp1 -> -> 48 `i `ui `uc ]
+[; ;LCD.h: 157: lcdChar(temp2 + 0x30);
+"157
+[e ( _lcdChar (1 -> + _temp2 -> -> 48 `i `ui `uc ]
+[; ;LCD.h: 158: }
+"158
+[e :UE 773 ]
+}
+"9 PIDLoop.c
+[p x OSC=HSPLL ]
+"10
+[p x WDT=OFF ]
+"11
+[p x FCMEN=OFF ]
+[; ;PIDLoop.c: 13: void initialize(void);
+[; ;PIDLoop.c: 14: void interrupt ISR(void);
+"16
+[v _main `(v ~T0 @X0 1 ef ]
+"17
+{
+[; ;PIDLoop.c: 16: void main(void)
+[; ;PIDLoop.c: 17: {
+[e :U _main ]
+[f ]
+[; ;PIDLoop.c: 18: initialize();
+"18
+[e ( _initialize ..  ]
+[; ;PIDLoop.c: 20: while (1)
+"20
+[e :U 778 ]
+[; ;PIDLoop.c: 21: {
+"21
+{
+[; ;PIDLoop.c: 22: if ((PIDEnableFlag & 0x02) == 0x02)
+"22
+[e $ ! == & -> _PIDEnableFlag `i -> 2 `i -> 2 `i 780  ]
+[; ;PIDLoop.c: 23: {
+"23
+{
+[; ;PIDLoop.c: 24: TMR0H = 0xDB;
+"24
+[e = _TMR0H -> -> 219 `i `uc ]
+[; ;PIDLoop.c: 25: TMR0L = 0x60;
+"25
+[e = _TMR0L -> -> 96 `i `uc ]
+[; ;PIDLoop.c: 26: INTCONbits.TMR0IE = 1;
+"26
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"27
+}
+[; ;PIDLoop.c: 27: }
+[e $U 781  ]
+"28
+[e :U 780 ]
+[; ;PIDLoop.c: 28: else if((PIDEnableFlag & 0x01) == 0x01)
+[e $ ! == & -> _PIDEnableFlag `i -> 1 `i -> 1 `i 782  ]
+[; ;PIDLoop.c: 29: INTCONbits.TMR0IE = 1;
+"29
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[e $U 783  ]
+"30
+[e :U 782 ]
+[; ;PIDLoop.c: 30: else
+[; ;PIDLoop.c: 31: PIDEnableFlag = 0;
+"31
+[e = _PIDEnableFlag -> -> 0 `i `uc ]
+[e :U 783 ]
+[e :U 781 ]
+[; ;PIDLoop.c: 33: LCDBreakDouble(CurrentAngle);
+"33
+[e ( _LCDBreakDouble (1 _CurrentAngle ]
+"34
+}
+[e :U 777 ]
+"20
+[e $U 778  ]
+[e :U 779 ]
+[; ;PIDLoop.c: 34: }
+[; ;PIDLoop.c: 35: }
+"35
+[e :UE 776 ]
+}
+"37
+[v _initialize `(v ~T0 @X0 1 ef ]
+"38
+{
+[; ;PIDLoop.c: 37: void initialize(void)
+[; ;PIDLoop.c: 38: {
+[e :U _initialize ]
+[f ]
+[; ;PIDLoop.c: 39: PIDInit();
+"39
+[e ( _PIDInit ..  ]
+[; ;PIDLoop.c: 40: MotorDriverInit();
+"40
+[e ( _MotorDriverInit ..  ]
+[; ;PIDLoop.c: 41: RTDInit();
+"41
+[e ( _RTDInit ..  ]
+[; ;PIDLoop.c: 42: SerInit();
+"42
+[e ( _SerInit ..  ]
+[; ;PIDLoop.c: 44: INTCONbits.GIE = 1;
+"44
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;PIDLoop.c: 45: INTCONbits.PEIE = 1;
+"45
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;PIDLoop.c: 46: RCONbits.IPEN = 1;
+"46
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;PIDLoop.c: 47: }
+"47
+[e :UE 784 ]
+}
+[v F7450 `(v ~T0 @X0 1 tf ]
+"49
+[v _ISR `IF7450 ~T0 @X0 1 e ]
+"50
+{
+[; ;PIDLoop.c: 49: void interrupt ISR(void)
+[; ;PIDLoop.c: 50: {
+[e :U _ISR ]
+[f ]
+[; ;PIDLoop.c: 51: if (PIR1bits.RC1IF == 1)
+"51
+[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 786  ]
+[; ;PIDLoop.c: 52: RCInt();
+"52
+[e ( _RCInt ..  ]
+[e $U 787  ]
+"53
+[e :U 786 ]
+[; ;PIDLoop.c: 53: else if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1))
+[e $ ! && == -> . . _INTCONbits 0 2 `i -> 1 `i == -> . . _INTCONbits 0 5 `i -> 1 `i 788  ]
+[; ;PIDLoop.c: 54: TMR0Int();
+"54
+[e ( _TMR0Int ..  ]
+[e :U 788 ]
+"55
+[e :U 787 ]
+[; ;PIDLoop.c: 55: }
+[e :UE 785 ]
+}
+[a 1C 56 55 50 50 58 32 0 ]
+[a 2C 56 54 56 48 58 32 0 ]

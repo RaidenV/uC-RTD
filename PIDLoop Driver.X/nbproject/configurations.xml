@@ -14,6 +14,7 @@
       <itemPath>SerComm.h</itemPath>
       <itemPath>ResolverToDigital.c</itemPath>
       <itemPath>ResolverToDigital.h</itemPath>
+      <itemPath>LCD.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

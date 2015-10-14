@@ -4,6 +4,7 @@
 #include "MotorControl.h"
 #include "KeyValue.h"
 #include "SerComm.h"
+#include "LCD.h"
 
 #pragma config OSC = HSPLL
 #pragma config WDT = OFF
@@ -28,6 +29,8 @@ void main(void)
             INTCONbits.TMR0IE = 1;
         else
             PIDEnableFlag = 0;
+        
+        LCDBreakDouble(CurrentAngle);
     }
 }
 
