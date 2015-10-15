@@ -5,7 +5,7 @@ Linker command line:
 --edf=/opt/microchip/xc8/v1.34/dat/en_msgs.txt -cs \
   -h+dist/default/production/SPItest_SLAVE_.X.production.sym \
   --cmf=dist/default/production/SPItest_SLAVE_.X.production.cmf -z \
-  -Q18F8722 -o/tmp/cgtYAck6k \
+  -Q18F8722 -o/tmp/cgt1cAn7r \
   -Mdist/default/production/SPItest_SLAVE_.X.production.map -E1 -ver=XC8 \
   -ASTACK=06Bh-0f5fh -pstack=STACK -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
   -ASMALLCONST=01000h-010FFhx496 \
@@ -27,7 +27,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/cgtZ3xTpH.obj \
+  /tmp/cgtZMJdsM.obj \
   dist/default/production/SPItest_SLAVE_.X.production.obj 
 
 Object code version is 3.11
@@ -40,7 +40,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/cgtZ3xTpH.obj
+/tmp/cgtZMJdsM.obj
                 end_init                             18       18        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -48,34 +48,36 @@ Call graph: (short form)
 dist/default/production/SPItest_SLAVE_.X.production.obj
                 intcode                               8        8       10        4       0
                 smallconst                         1000     1000       10      800       0
-                text23                             19C2     19C2       10      808       0
+                text25                             1A2C     1A2C       10      808       0
                 intcode_body                       1632     1632       72      808       0
-                text21                             156C     156C       C6      808       0
-                text20                             138E     138E       F8      808       0
-                text19                             1486     1486       E6      808       0
-                text18                             16A4     16A4       5C      808       0
-                text17                             1756     1756       4C      808       0
-                text16                             19A0     19A0       12      808       0
-                text15                             1920     1920       22      808       0
-                text14                             195C     195C       1A      808       0
-                text13                             1874     1874       3E      808       0
-                text12                             1830     1830       44      808       0
-                text11                             19D2     19D2        C      808       0
-                text10                             121C     121C      172      808       0
-                text9                              19B2     19B2       10      808       0
-                text8                              18EE     18EE       32      808       0
-                text7                              18B2     18B2       3C      808       0
-                text6                              17EC     17EC       44      808       0
-                text5                              1976     1976       18      808       0
+                text23                             156C     156C       C6      808       0
+                text22                             138E     138E       F8      808       0
+                text21                             1486     1486       E6      808       0
+                text20                             16A4     16A4       5C      808       0
+                text19                             17AC     17AC       4C      808       0
+                text18                             1A0A     1A0A       12      808       0
+                text17                             1976     1976       22      808       0
+                text16                             19B2     19B2       1A      808       0
+                text15                             18CA     18CA       3E      808       0
+                text14                             1886     1886       44      808       0
+                text13                             1A4A     1A4A        C      808       0
+                text12                             121C     121C      172      808       0
+                text11                             1A1C     1A1C       10      808       0
+                text10                             1944     1944       32      808       0
+                text9                              1908     1908       3C      808       0
+                text8                              1842     1842       44      808       0
+                text7                              19CC     19CC       18      808       0
+                text6                              1756     1756       56      808       0
+                text5                              19E4     19E4       14      808       0
                 text4                              1700     1700       56      808       0
-                text3                              1942     1942       1A      808       0
-                text2                              17A2     17A2       4A      808       0
-                text1                              19DE     19DE        A      808       0
+                text3                              1998     1998       1A      808       0
+                text2                              17F8     17F8       4A      808       0
+                text1                              1A3C     1A3C        E      808       0
                 text0                              1010     1010      20C      808       0
                 cstackCOMRAM                          1        1       34        1       1
                 cstackBANK0                          60       60        B       60       1
                 bssCOMRAM                            35       35       1C        1       1
-                cinit                              198E     198E       12      808       0
+                cinit                              19F8     19F8       12      808       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -84,31 +86,33 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                             18       18        4         0
                 intcode                               8        8       10         0
                 reset_vec                             0        0        4         0
-                text23                             19C2     19C2       10         0
+                text25                             1A2C     1A2C       10         0
                 intcode_body                       1632     1632       72         0
-                text21                             156C     156C       C6         0
-                text20                             138E     138E       F8         0
-                text19                             1486     1486       E6         0
-                text18                             16A4     16A4       5C         0
-                text17                             1756     1756       4C         0
-                text16                             19A0     19A0       12         0
-                text15                             1920     1920       22         0
-                text14                             195C     195C       1A         0
-                text13                             1874     1874       3E         0
-                text12                             1830     1830       44         0
-                text11                             19D2     19D2        C         0
-                text10                             121C     121C      172         0
-                text9                              19B2     19B2       10         0
-                text8                              18EE     18EE       32         0
-                text7                              18B2     18B2       3C         0
-                text6                              17EC     17EC       44         0
-                text5                              1976     1976       18         0
+                text23                             156C     156C       C6         0
+                text22                             138E     138E       F8         0
+                text21                             1486     1486       E6         0
+                text20                             16A4     16A4       5C         0
+                text19                             17AC     17AC       4C         0
+                text18                             1A0A     1A0A       12         0
+                text17                             1976     1976       22         0
+                text16                             19B2     19B2       1A         0
+                text15                             18CA     18CA       3E         0
+                text14                             1886     1886       44         0
+                text13                             1A4A     1A4A        C         0
+                text12                             121C     121C      172         0
+                text11                             1A1C     1A1C       10         0
+                text10                             1944     1944       32         0
+                text9                              1908     1908       3C         0
+                text8                              1842     1842       44         0
+                text7                              19CC     19CC       18         0
+                text6                              1756     1756       56         0
+                text5                              19E4     19E4       14         0
                 text4                              1700     1700       56         0
-                text3                              1942     1942       1A         0
-                text2                              17A2     17A2       4A         0
-                text1                              19DE     19DE        A         0
+                text3                              1998     1998       1A         0
+                text2                              17F8     17F8       4A         0
+                text1                              1A3C     1A3C        E         0
                 text0                              1010     1010      20C         0
-                cinit                              198E     198E       12         0
+                cinit                              19F8     19F8       12         0
 
         CLASS   CONST          
 
@@ -181,7 +185,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 intcode                        000008  000014  00001C         4       0  CODE    
                 cstackBANK0                    000060  00000B  00006B        60       1  BANK0   
                 smallconst                     001000  000010  001010       800       0  SMALLCON
-                text0                          001010  0009D8  0019E8       808       0  CODE    
+                text0                          001010  000A46  001A56       808       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -209,17 +213,17 @@ UNUSED ADDRESS RANGES
                          00006B-000F5F              EF5
         CODE             000004-000007                4
                          00001C-000FFF              FE4
-                         0019E8-01FFFF            1E618
+                         001A56-01FFFF            1E5AA
         COMRAM           000051-00005F                F
         CONST            000004-000007                4
                          00001C-000FFF              FE4
-                         0019E8-01FFFF            1E618
+                         001A56-01FFFF            1E5AA
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      0019E8-00FFFF             E618
+        MEDIUMCONST      001A56-00FFFF             E5AA
                          011000-01FFFF             F000
         RAM              00006B-000F5F              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       0019E8-01FFFF              100
+        SMALLCONST       001A56-01FFFF              100
         STACK            00006B-000F5F              EF5
 
                                   Symbol Table
@@ -240,6 +244,9 @@ LCDbreakDouble@tempDub         cstackBANK0  000063
 OpenSPI1@bus_mode              cstackCOMRAM 00000F
 OpenSPI1@smp_phase             cstackCOMRAM 000010
 OpenSPI1@sync_mode             cstackCOMRAM 000011
+OpenSPI2@bus_mode              cstackCOMRAM 00000F
+OpenSPI2@smp_phase             cstackCOMRAM 000010
+OpenSPI2@sync_mode             cstackCOMRAM 000011
 SPIDisassembleDouble@dub       cstackCOMRAM 000011
 SPIReassembleDouble@dub        cstackCOMRAM 000012
 SendSPI1@data                  cstackCOMRAM 000010
@@ -249,27 +256,29 @@ WriteSPI1@data_out             cstackCOMRAM 000010
 _Command                       bssCOMRAM    00004D
 _CurrentAngle                  bssCOMRAM    000039
 _CurrentVelocity               bssCOMRAM    00003C
-_Delay10TCYx                   text16       0019A0
+_Delay10TCYx                   text18       001A0A
 _DoublePtr                     bssCOMRAM    00004B
 _DoubleSPIS                    bssCOMRAM    000035
-_GenerateChecksum              text8        0018EE
+_GenerateChecksum              text10       001944
 _INTCONbits                    (abs)        000FF2
 _ISR                           intcode      000008
 _Kd                            bssCOMRAM    00003F
 _Ki                            bssCOMRAM    000042
 _Kp                            bssCOMRAM    000045
-_LCDbreakDouble                text10       00121C
+_LCDbreakDouble                text12       00121C
 _OpenSPI1                      text4        001700
+_OpenSPI2                      text6        001756
 _PIDEnableFlag                 bssCOMRAM    00004E
 _PIE3bits                      (abs)        000FA3
 _PIR1bits                      (abs)        000F9E
 _PIR3bits                      (abs)        000FA4
 _PORTAbits                     (abs)        000F80
 _PORTCbits                     (abs)        000F82
-_ReceiveSPI1                   text9        0019B2
-_SPIDisassembleDouble          text7        0018B2
-_SPIInt                        text23       0019C2
-_SPIReassembleDouble           text6        0017EC
+_ReceiveSPI1                   text11       001A1C
+_SPIDisassembleDouble          text9        001908
+_SPIInit                       text5        0019E4
+_SPIInt                        text25       001A2C
+_SPIReassembleDouble           text8        001842
 _SPIflag                       bssCOMRAM    00004F
 _SSP1BUF                       (abs)        000FC9
 _SSP1CON1                      (abs)        000FC6
@@ -277,14 +286,17 @@ _SSP1CON1bits                  (abs)        000FC6
 _SSP1STAT                      (abs)        000FC7
 _SSP1STATbits                  (abs)        000FC7
 _SSP2BUF                       (abs)        000F66
+_SSP2CON1                      (abs)        000F63
 _SSP2CON1bits                  (abs)        000F63
+_SSP2STAT                      (abs)        000F64
 _SSP2STATbits                  (abs)        000F64
-_SendSPI1                      text5        001976
+_SendSPI1                      text7        0019CC
 _SetAngle                      bssCOMRAM    000048
 _TRISAbits                     (abs)        000F92
 _TRISCbits                     (abs)        000F94
+_TRISDbits                     (abs)        000F95
 _TRISFbits                     (abs)        000F97
-_WriteSPI1                     text15       001920
+_WriteSPI1                     text17       001976
 __CFG_FCMEN$OFF                (abs)        000000
 __CFG_OSC$HSPLL                (abs)        000000
 __CFG_WDT$OFF                  (abs)        000000
@@ -372,7 +384,9 @@ __Htext19                      text19       000000
 __Htext2                       text2        000000
 __Htext20                      text20       000000
 __Htext21                      text21       000000
+__Htext22                      text22       000000
 __Htext23                      text23       000000
+__Htext25                      text25       000000
 __Htext3                       text3        000000
 __Htext4                       text4        000000
 __Htext5                       text5        000000
@@ -464,7 +478,9 @@ __Ltext19                      text19       000000
 __Ltext2                       text2        000000
 __Ltext20                      text20       000000
 __Ltext21                      text21       000000
+__Ltext22                      text22       000000
 __Ltext23                      text23       000000
+__Ltext25                      text25       000000
 __Ltext3                       text3        000000
 __Ltext4                       text4        000000
 __Ltext5                       text5        000000
@@ -476,30 +492,30 @@ __S0                           (abs)        30000E
 __S1                           (abs)        00006B
 __S2                           (abs)        000000
 ___extmem_base                 (abs)        020000
-___ftmul                       text20       00138E
+___ftmul                       text22       00138E
 ___ftmul@cntr                  cstackCOMRAM 000024
 ___ftmul@exp                   cstackCOMRAM 000020
 ___ftmul@f1                    cstackCOMRAM 000017
 ___ftmul@f2                    cstackCOMRAM 00001A
 ___ftmul@f3_as_product         cstackCOMRAM 000021
 ___ftmul@sign                  cstackCOMRAM 000025
-___ftpack                      text21       00156C
+___ftpack                      text23       00156C
 ___ftpack@arg                  cstackCOMRAM 00000F
 ___ftpack@exp                  cstackCOMRAM 000012
 ___ftpack@sign                 cstackCOMRAM 000013
-___fttol                       text19       001486
+___fttol                       text21       001486
 ___fttol@exp1                  cstackCOMRAM 000034
 ___fttol@f1                    cstackCOMRAM 000026
 ___fttol@lval                  cstackCOMRAM 000030
 ___fttol@sign1                 cstackCOMRAM 00002F
 ___inthi_sp                    stack        000000
 ___intlo_sp                    stack        000000
-___lwdiv                       text18       0016A4
+___lwdiv                       text20       0016A4
 ___lwdiv@counter               cstackCOMRAM 000013
 ___lwdiv@dividend              cstackCOMRAM 00000F
 ___lwdiv@divisor               cstackCOMRAM 000011
 ___lwdiv@quotient              cstackCOMRAM 000014
-___lwmod                       text17       001756
+___lwmod                       text19       0017AC
 ___lwmod@counter               cstackCOMRAM 000013
 ___lwmod@dividend              cstackCOMRAM 00000F
 ___lwmod@divisor               cstackCOMRAM 000011
@@ -508,71 +524,77 @@ ___rparam_used                 (abs)        000001
 ___sp                          stack        000000
 __accesstop                    (abs)        000060
 __activetblptr                 (abs)        000003
-__end_of_Delay10TCYx           text16       0019B2
-__end_of_GenerateChecksum      text8        001920
+__end_of_Delay10TCYx           text18       001A1C
+__end_of_GenerateChecksum      text10       001976
 __end_of_ISR                   intcode_body 0016A4
-__end_of_LCDbreakDouble        text10       00138E
+__end_of_LCDbreakDouble        text12       00138E
 __end_of_OpenSPI1              text4        001756
-__end_of_ReceiveSPI1           text9        0019C2
-__end_of_SPIDisassembleDouble  text7        0018EE
-__end_of_SPIInt                text23       0019D2
-__end_of_SPIReassembleDouble   text6        001830
-__end_of_SendSPI1              text5        00198E
-__end_of_WriteSPI1             text15       001942
-__end_of___ftmul               text20       001486
-__end_of___ftpack              text21       001632
-__end_of___fttol               text19       00156C
-__end_of___lwdiv               text18       001700
-__end_of___lwmod               text17       0017A2
-__end_of__initialization       cinit        00199A
-__end_of_initialize            text1        0019E8
-__end_of_lcdChar               text13       0018B2
-__end_of_lcdCommand            text12       001874
-__end_of_lcdGoTo               text11       0019DE
-__end_of_lcdInit               text2        0017EC
+__end_of_OpenSPI2              text6        0017AC
+__end_of_ReceiveSPI1           text11       001A2C
+__end_of_SPIDisassembleDouble  text9        001944
+__end_of_SPIInit               text5        0019F8
+__end_of_SPIInt                text25       001A3C
+__end_of_SPIReassembleDouble   text8        001886
+__end_of_SendSPI1              text7        0019E4
+__end_of_WriteSPI1             text17       001998
+__end_of___ftmul               text22       001486
+__end_of___ftpack              text23       001632
+__end_of___fttol               text21       00156C
+__end_of___lwdiv               text20       001700
+__end_of___lwmod               text19       0017F8
+__end_of__initialization       cinit        001A04
+__end_of_initialize            text1        001A4A
+__end_of_lcdChar               text15       001908
+__end_of_lcdCommand            text14       0018CA
+__end_of_lcdGoTo               text13       001A56
+__end_of_lcdInit               text2        001842
 __end_of_main                  text0        00121C
-__end_of_setGPIO               text14       001976
-__end_of_setIODIR              text3        00195C
-__initialization               cinit        00198E
+__end_of_setGPIO               text16       0019CC
+__end_of_setIODIR              text3        0019B2
+__initialization               cinit        0019F8
 __mediumconst                  mediumconst  000000
 __pbssCOMRAM                   bssCOMRAM    000035
-__pcinit                       cinit        00198E
+__pcinit                       cinit        0019F8
 __pcstackBANK0                 cstackBANK0  000060
 __pcstackCOMRAM                cstackCOMRAM 000001
 __pintcode                     intcode      000008
 __pintcode_body                intcode_body 001632
 __psmallconst                  smallconst   001000
 __ptext0                       text0        001010
-__ptext1                       text1        0019DE
-__ptext10                      text10       00121C
-__ptext11                      text11       0019D2
-__ptext12                      text12       001830
-__ptext13                      text13       001874
-__ptext14                      text14       00195C
-__ptext15                      text15       001920
-__ptext16                      text16       0019A0
-__ptext17                      text17       001756
-__ptext18                      text18       0016A4
-__ptext19                      text19       001486
-__ptext2                       text2        0017A2
-__ptext20                      text20       00138E
-__ptext21                      text21       00156C
-__ptext23                      text23       0019C2
-__ptext3                       text3        001942
+__ptext1                       text1        001A3C
+__ptext10                      text10       001944
+__ptext11                      text11       001A1C
+__ptext12                      text12       00121C
+__ptext13                      text13       001A4A
+__ptext14                      text14       001886
+__ptext15                      text15       0018CA
+__ptext16                      text16       0019B2
+__ptext17                      text17       001976
+__ptext18                      text18       001A0A
+__ptext19                      text19       0017AC
+__ptext2                       text2        0017F8
+__ptext20                      text20       0016A4
+__ptext21                      text21       001486
+__ptext22                      text22       00138E
+__ptext23                      text23       00156C
+__ptext25                      text25       001A2C
+__ptext3                       text3        001998
 __ptext4                       text4        001700
-__ptext5                       text5        001976
-__ptext6                       text6        0017EC
-__ptext7                       text7        0018B2
-__ptext8                       text8        0018EE
-__ptext9                       text9        0019B2
+__ptext5                       text5        0019E4
+__ptext6                       text6        001756
+__ptext7                       text7        0019CC
+__ptext8                       text8        001842
+__ptext9                       text9        001908
 __ramtop                       ramtop       001000
 __size_of_Delay10TCYx          (abs)        000000
 __size_of_GenerateChecksum     (abs)        000000
 __size_of_ISR                  (abs)        000000
 __size_of_LCDbreakDouble       (abs)        000000
 __size_of_OpenSPI1             (abs)        000000
+__size_of_OpenSPI2             (abs)        000000
 __size_of_ReceiveSPI1          (abs)        000000
 __size_of_SPIDisassembleDouble (abs)        000000
+__size_of_SPIInit              (abs)        000000
 __size_of_SPIInt               (abs)        000000
 __size_of_SPIReassembleDouble  (abs)        000000
 __size_of_SendSPI1             (abs)        000000
@@ -592,15 +614,15 @@ __size_of_setGPIO              (abs)        000000
 __size_of_setIODIR             (abs)        000000
 __smallconst                   smallconst   001000
 _dummy_byte                    bssCOMRAM    000050
-_initialize                    text1        0019DE
-_lcdChar                       text13       001874
-_lcdCommand                    text12       001830
-_lcdGoTo                       text11       0019D2
-_lcdInit                       text2        0017A2
+_initialize                    text1        001A3C
+_lcdChar                       text15       0018CA
+_lcdCommand                    text14       001886
+_lcdGoTo                       text13       001A4A
+_lcdInit                       text2        0017F8
 _main                          text0        001010
-_setGPIO                       text14       00195C
-_setIODIR                      text3        001942
-end_of_initialization          cinit        00199A
+_setGPIO                       text16       0019B2
+_setIODIR                      text3        001998
+end_of_initialization          cinit        001A04
 int_func                       intcode_body 001632
 intlevel0                      text         000000
 intlevel1                      text         000000
@@ -618,7 +640,7 @@ setIODIR@dir                   cstackCOMRAM 000011
 stackhi                        (abs)        000F5F
 stacklo                        (abs)        00006B
 start                          init         000018
-start_initialization           cinit        00198E
+start_initialization           cinit        0019F8
 
 
 FUNCTION INFORMATION:
@@ -660,7 +682,7 @@ Total ram usage:        2 bytes
 
  *************** function _initialize *****************
  Defined at:
-		line 80 in file "SPItestSLAVE.c"
+		line 79 in file "SPItestSLAVE.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -682,6 +704,7 @@ Total ram usage:        0 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    6
  This function calls:
+		_SPIInit
 		_lcdInit
  This function is called by:
 		_main
@@ -718,7 +741,6 @@ Total ram usage:        0 bytes
 		_setIODIR
  This function is called by:
 		_initialize
-		_SPIInit
  This function uses a non-reentrant model
 
 
@@ -785,9 +807,71 @@ Total ram usage:        3 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _SPIInit *****************
+ Defined at:
+		line 16 in file "SPISlave.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_OpenSPI2
+ This function is called by:
+		_initialize
+ This function uses a non-reentrant model
+
+
+ *************** function _OpenSPI2 *****************
+ Defined at:
+		line 14 in file "/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi2open.c"
+ Parameters:    Size  Location     Type
+  sync_mode       1    wreg     unsigned char 
+  bus_mode        1   14[COMRAM] unsigned char 
+  smp_phase       1   15[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+  sync_mode       1   16[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_SPIInit
+ This function uses a non-reentrant model
+
+
  *************** function _SendSPI1 *****************
  Defined at:
-		line 34 in file "SPISlave.c"
+		line 32 in file "SPISlave.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -818,7 +902,7 @@ Total ram usage:        2 bytes
 
  *************** function _SPIReassembleDouble *****************
  Defined at:
-		line 69 in file "SPISlave.c"
+		line 67 in file "SPISlave.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -848,7 +932,7 @@ Total ram usage:        6 bytes
 
  *************** function _SPIDisassembleDouble *****************
  Defined at:
-		line 52 in file "SPISlave.c"
+		line 50 in file "SPISlave.c"
  Parameters:    Size  Location     Type
   dub             3   16[COMRAM] unsigned char 
  Auto vars:     Size  Location     Type
@@ -878,7 +962,7 @@ Total ram usage:        3 bytes
 
  *************** function _GenerateChecksum *****************
  Defined at:
-		line 61 in file "SPISlave.c"
+		line 59 in file "SPISlave.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -909,7 +993,7 @@ Total ram usage:        2 bytes
 
  *************** function _ReceiveSPI1 *****************
  Defined at:
-		line 45 in file "SPISlave.c"
+		line 43 in file "SPISlave.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1361,7 +1445,7 @@ Total ram usage:       14 bytes
 
  *************** function _SPIInt *****************
  Defined at:
-		line 25 in file "SPISlave.c"
+		line 23 in file "SPISlave.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1393,12 +1477,12 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 LCD.h
-		_lcdCommand    		CODE           	1830	0000	69
-		_lcdChar       		CODE           	1874	0000	63
-		_lcdGoTo       		CODE           	19D2	0000	13
-		_lcdInit       		CODE           	17A2	0000	75
-		_setGPIO       		CODE           	195C	0000	27
-		_setIODIR      		CODE           	1942	0000	27
+		_lcdCommand    		CODE           	1886	0000	69
+		_lcdChar       		CODE           	18CA	0000	63
+		_lcdGoTo       		CODE           	1A4A	0000	13
+		_lcdInit       		CODE           	17F8	0000	75
+		_setGPIO       		CODE           	19B2	0000	27
+		_setIODIR      		CODE           	1998	0000	27
 
 LCD.h estimated size: 274
 
@@ -1408,19 +1492,25 @@ LCD.h estimated size: 274
 /opt/microchip/xc8/v1.34/sources/common/float.c estimated size: 199
 
 /opt/microchip/xc8/v1.34/sources/common/lwmod.c
-		___lwmod       		CODE           	1756	0000	77
+		___lwmod       		CODE           	17AC	0000	77
 
 /opt/microchip/xc8/v1.34/sources/common/lwmod.c estimated size: 77
 
-SPISlave.c
-		_ReceiveSPI1   		CODE           	19B2	0000	17
-		_GenerateChecks		CODE           	18EE	0000	51
-		_SendSPI1      		CODE           	1976	0000	25
-		_SPIReassembleD		CODE           	17EC	0000	69
-		_SPIDisassemble		CODE           	18B2	0000	61
-		_SPIInt        		CODE           	19C2	0000	17
+/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi2open.c
+		_OpenSPI2      		CODE           	1756	0000	87
 
-SPISlave.c estimated size: 240
+/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi2open.c estimated size: 87
+
+SPISlave.c
+		_ReceiveSPI1   		CODE           	1A1C	0000	17
+		_GenerateChecks		CODE           	1944	0000	51
+		_SendSPI1      		CODE           	19CC	0000	25
+		_SPIReassembleD		CODE           	1842	0000	69
+		_SPIDisassemble		CODE           	1908	0000	61
+		_SPIInt        		CODE           	1A2C	0000	17
+		_SPIInit       		CODE           	19E4	0000	21
+
+SPISlave.c estimated size: 261
 
 /opt/microchip/xc8/v1.34/sources/common/ftmul.c
 		___ftmul       		CODE           	138E	0000	249
@@ -1428,7 +1518,7 @@ SPISlave.c estimated size: 240
 /opt/microchip/xc8/v1.34/sources/common/ftmul.c estimated size: 249
 
 shared
-		__initializatio		CODE           	198E	0000	13
+		__initializatio		CODE           	19F8	0000	13
 
 shared estimated size: 13
 
@@ -1446,12 +1536,12 @@ SPItestSLAVE.c
 		_LCDbreakDouble		CODE           	121C	0000	371
 		_ISR           		CODE           	0008	0000	131
 		_main          		CODE           	1010	0000	525
-		_initialize    		CODE           	19DE	0000	11
+		_initialize    		CODE           	1A3C	0000	15
 
-SPItestSLAVE.c estimated size: 1038
+SPItestSLAVE.c estimated size: 1042
 
 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1writ.c
-		_WriteSPI1     		CODE           	1920	0000	35
+		_WriteSPI1     		CODE           	1976	0000	35
 
 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1writ.c estimated size: 35
 
@@ -1461,7 +1551,7 @@ SPItestSLAVE.c estimated size: 1038
 /opt/microchip/xc8/v1.34/sources/common/fttol.c estimated size: 231
 
 /opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-		_Delay10TCYx   		CODE           	19A0	0000	19
+		_Delay10TCYx   		CODE           	1A0A	0000	19
 
 /opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c estimated size: 19
 

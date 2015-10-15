@@ -8333,9 +8333,7 @@ double Kd;
 void SPIInit(void)
 {
 OpenSPI2(0b00000100, 0b00000000, 0b00000000);
-lcdInit();
 TRISCbits.RC6 = 0;
-
 PIE3bits.SSP2IE = 1;
 }
 

@@ -1,4 +1,4 @@
-#include <pic18f8722.h>
+#include <xc.h>
 #include <stdlib.h>
 #include "Joystick.h"
 #include "ResolverToDigital.h"
@@ -31,19 +31,17 @@ void JoystickInit(void)
 
 void DetectJoystick(void)
 {
-    if (PORTBbits.RB1 == 0) //If this was triggered by a falling edge interrupt;
+    if (PORTBbits.RB1 == 0)
     {
         JOYSTICKLED = 0; //Turn off the Joystick Connected LED
         JSEnableFlag = 0; //If the Joystick is disabled, disallow its routine from running in the main body of code;
     }
 
-    else if (PORTBbits.RB1 == 1) //If this was triggered by a rising edge interrupt;
+    else if (PORTBbits.RB1 == 1)
     {
         JOYSTICKLED = 1; //Turn on the Joystick Connected LED
         JSEnableFlag = 1; //If the Joystick is enabled, allow its routine to run in the main body of code;
     }
-    
-    INTCON3bits.INT1IF == 0;
 }
 
 int DetectMovement(void)
@@ -57,9 +55,7 @@ int DetectMovement(void)
     ADCresult = ADRESH; //When the conversion is done, bring out the high byte of the ADC;
     ADCresult = ADCresult << 8; //Shift the high byte left;
     ADCresult = ADCresult | ADRESL; //Add the low byte of the ADC;
-    ADCresult = ADCresult + 225;
     JoystickResult = (ADCresult - JSOFFSET); //Subtract the median offset from the ADC value, yielding a value which is positive or negative;
-    JoystickResult = JoystickResult * 14.28571428571428571429;
     
     if ((JoystickResult > DeadbandHigh) || (JoystickResult < DeadbandLow))  //If the joystick has been moved a sufficient distance (we don't want very slight variations causing the motor to move)
     { 

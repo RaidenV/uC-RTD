@@ -4,10 +4,16 @@ unsigned char PIDEnableFlag;
 
 void MotorDriverInit(void)
 {
-    TRISGbits.RG0 = 0; //ECCP3 Enhanced PWM output Channel: A, AHA (MOSFET Driver Chip)
-    TRISGbits.RG3 = 0; //ECCP3 Enhanced PWM output Channel: D, ALB (MOSFET Driver Chip)
-    TRISEbits.RE3 = 0; //ECCP3 Enhanced PWM output Channel: C, ALA (MOSFET DRIVER CHIP)
-    TRISEbits.RE4 = 0; //ECCP3 Enhanced PWM output Channel: B, AHB (MOSFET Driver Chip)
+    TRISGbits.RG0 = 0; //ECCP3 Enhanced PWM output Channel: A, AHI (MOSFET Driver Chip)
+    TRISEbits.RE4 = 0; //ECCP3 Enhanced PWM output Channel: B, BHI (MOSFET Driver Chip)
+    TRISEbits.RE3 = 0; //ECCP3 Enhanced PWM output Channel: C, BLO (MOSFET DRIVER CHIP)
+    TRISGbits.RG3 = 0; //ECCP3 Enhanced PWM output Channel: D, ALO (MOSFET Driver Chip)
+
+    //    TRISGbits.RG0 = 0; //ECCP3 Enhanced PWM output Channel: A, AHA (MOSFET Driver Chip)
+    //    TRISGbits.RG3 = 0; //ECCP3 Enhanced PWM output Channel: D, ALB (MOSFET Driver Chip)
+    //    TRISEbits.RE3 = 0; //ECCP3 Enhanced PWM output Channel: C, ALA (MOSFET DRIVER CHIP)
+    //    TRISEbits.RE4 = 0; //ECCP3 Enhanced PWM output Channel: B, AHB (MOSFET Driver Chip)
+
     TRISBbits.RB0 = 1; //FAULT Pin Falling-edge Interrupt (MOSFET Dr)
 
     TRISAbits.RA4 = 0; //Motor Fault LED;
@@ -25,20 +31,28 @@ void KillMotors(void)
     CCP3CON = CCP3CON & 0xF0; //Shut the PWM module down;
 }
 
-void ImplementPIDMotion(int)
+void ImplementPIDMotion(int PIDValue)
 {
-    
+    if (PIDValue < 0)
+        CCP3CONbits.P3M1 = 1; //If the PID loop is negative, turn counter clockwise;
+    else if (PIDValue > 0)
+        CCP3CONbits.P3M1 = 0; //If the PID loop is positive, turn the counter in the clockwise direction;
+
+    PIDValue = abs(PIDValue); //Now that the direction is set, we no longer care about whether this is positive or negative;
+    CCPR3L = (PIDValue >> 2) & 0xFF;
+    CCP3CONbits.DC3B = (PIDValue & 0x03);
+
 }
 
 void ImplementJSMotion(int JoystickValue)
 {
     unsigned int CCPinput;
     PIDEnableFlag = 0; //Make damn sure that the PID loop is not being implemented;
-    if(JoystickValue < DeadbandLow) //If the joystick value is less than DeadbandLow
+    if (JoystickValue < DeadbandLow) //If the joystick value is less than DeadbandLow
     {
         CCP3CONbits.P3M1 = 1; //Set the Full-bridge output REVERSE
     }
-    else if(JoystickValue > DeadbandHigh) //If the joystick value is greater than DeadbandHigh
+    else if (JoystickValue > DeadbandHigh) //If the joystick value is greater than DeadbandHigh
     {
         CCP3CONbits.P3M1 = 0; //Set the Full-bridge output FORWARD
     }
@@ -46,11 +60,11 @@ void ImplementJSMotion(int JoystickValue)
     {
         JoystickValue = 0;
     }
-    
+
     JoystickValue = abs(JoystickValue);
-    CCPinput = JoystickValue  * 2;
+    CCPinput = JoystickValue * 2;
     CCPR3L = (CCPinput >> 2) & 0xFF;
-    PORTD = CCPinput & 0xFF;
-    CCP3CONbits.DC3B = (CCPinput & 0x03);  
+    //  PORTD = CCPinput & 0xFF;
+    CCP3CONbits.DC3B = (CCPinput & 0x03);
 }
 

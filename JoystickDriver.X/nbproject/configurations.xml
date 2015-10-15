@@ -8,8 +8,6 @@
       <itemPath>Joystick.h</itemPath>
       <itemPath>MotorControl.c</itemPath>
       <itemPath>MotorControl.h</itemPath>
-      <itemPath>ResolverToDigital.c</itemPath>
-      <itemPath>ResolverToDigital.h</itemPath>
       <itemPath>LCD.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"

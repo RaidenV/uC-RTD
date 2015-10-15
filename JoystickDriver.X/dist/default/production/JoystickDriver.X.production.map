@@ -5,7 +5,7 @@ Linker command line:
 --edf=/opt/microchip/xc8/v1.34/dat/en_msgs.txt -cs \
   -h+dist/default/production/JoystickDriver.X.production.sym \
   --cmf=dist/default/production/JoystickDriver.X.production.cmf -z \
-  -Q18F8722 -o/tmp/cgtSDwbku \
+  -Q18F8722 -o/tmp/cgtnKGsH2 \
   -Mdist/default/production/JoystickDriver.X.production.map -E1 -ver=XC8 \
   -ASTACK=060h-0f5fh -pstack=STACK -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
   -ASMALLCONST=01000h-010FFhx496 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/cgt5EZ5Nb.obj \
+  /tmp/cgtOTMFO8.obj \
   dist/default/production/JoystickDriver.X.production.obj 
 
 Object code version is 3.11
@@ -39,60 +39,48 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/cgt5EZ5Nb.obj
+/tmp/cgtOTMFO8.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production/JoystickDriver.X.production.obj
                 smallconst                         1000     1000       10      800       0
-                text18                             161E     161E       1A      808       0
-                text17                             11EE     11EE       C6      808       0
-                text16                             14EE     14EE       3C      808       0
-                text15                             1010     1010       F8      808       0
-                text14                             1108     1108       E6      808       0
-                text13                             12B4     12B4       B0      808       0
-                text12                             1560     1560       28      808       0
-                text11                             1364     1364       A6      808       0
-                text10                             152A     152A       36      808       0
-                text9                              1604     1604       1A      808       0
-                text8                              140A     140A       56      808       0
-                text7                              164C     164C       12      808       0
-                text6                              15AE     15AE       22      808       0
-                text5                              15EA     15EA       1A      808       0
-                text4                              14AA     14AA       44      808       0
-                text3                              15D0     15D0       1A      808       0
-                text2                              1460     1460       4A      808       0
-                text1                              1638     1638       14      808       0
-                text0                              1588     1588       26      808       0
-                cstackCOMRAM                          1        1       36        1       1
-                bssCOMRAM                            37       37        2        1       1
-                cinit                              165E     165E        A      808       0
+                text12                             11CC     11CC       28      808       0
+                text11                             1010     1010       A2      808       0
+                text10                             1196     1196       36      808       0
+                text9                              1216     1216       1C      808       0
+                text8                              10B2     10B2       56      808       0
+                text7                              1290     1290       12      808       0
+                text6                              11F4     11F4       22      808       0
+                text5                              124C     124C       1A      808       0
+                text4                              1152     1152       44      808       0
+                text3                              1232     1232       1A      808       0
+                text2                              1108     1108       4A      808       0
+                text1                              127C     127C       14      808       0
+                text0                              1266     1266       16      808       0
+                cstackCOMRAM                          1        1        A        1       1
+                bssCOMRAM                             B        B        2        1       1
+                cinit                              12A2     12A2        A      808       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              0        0        4         0
-                text18                             161E     161E       1A         0
-                text17                             11EE     11EE       C6         0
-                text16                             14EE     14EE       3C         0
-                text15                             1010     1010       F8         0
-                text14                             1108     1108       E6         0
-                text13                             12B4     12B4       B0         0
-                text12                             1560     1560       28         0
-                text11                             1364     1364       A6         0
-                text10                             152A     152A       36         0
-                text9                              1604     1604       1A         0
-                text8                              140A     140A       56         0
-                text7                              164C     164C       12         0
-                text6                              15AE     15AE       22         0
-                text5                              15EA     15EA       1A         0
-                text4                              14AA     14AA       44         0
-                text3                              15D0     15D0       1A         0
-                text2                              1460     1460       4A         0
-                text1                              1638     1638       14         0
-                text0                              1588     1588       26         0
-                cinit                              165E     165E        A         0
+                text12                             11CC     11CC       28         0
+                text11                             1010     1010       A2         0
+                text10                             1196     1196       36         0
+                text9                              1216     1216       1C         0
+                text8                              10B2     10B2       56         0
+                text7                              1290     1290       12         0
+                text6                              11F4     11F4       22         0
+                text5                              124C     124C       1A         0
+                text4                              1152     1152       44         0
+                text3                              1232     1232       1A         0
+                text2                              1108     1108       4A         0
+                text1                              127C     127C       14         0
+                text0                              1266     1266       16         0
+                cinit                              12A2     12A2        A         0
 
         CLASS   CONST          
 
@@ -102,8 +90,8 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1       36         1
-                bssCOMRAM                            37       37        2         1
+                cstackCOMRAM                          1        1        A         1
+                bssCOMRAM                             B        B        2         1
 
         CLASS   ABS1           
 
@@ -160,9 +148,9 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
-                cstackCOMRAM                   000001  000038  000039         1       1  COMRAM  
+                cstackCOMRAM                   000001  00000C  00000D         1       1  COMRAM  
                 smallconst                     001000  000010  001010       800       0  SMALLCON
-                text15                         001010  000658  001668       808       0  CODE    
+                text11                         001010  00029C  0012AC       808       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -186,33 +174,26 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           000039-000F5F              F27
+        BIGRAM           00000D-000F5F              F53
         CODE             000004-000FFF              FFC
-                         001668-01FFFF            1E998
-        COMRAM           000039-00005F               27
+                         0012AC-01FFFF            1ED54
+        COMRAM           00000D-00005F               53
         CONST            000004-000FFF              FFC
-                         001668-01FFFF            1E998
+                         0012AC-01FFFF            1ED54
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      001668-00FFFF             E998
+        MEDIUMCONST      0012AC-00FFFF             ED54
                          011000-01FFFF             F000
         RAM              000060-000F5F              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       001668-01FFFF              100
+        SMALLCONST       0012AC-01FFFF              100
         STACK            000060-000F5F              F00
 
                                   Symbol Table
 
-?_DetectMovement                cstackCOMRAM 00002B
-?___awtoft                      cstackCOMRAM 000009
-?___ftmul                       cstackCOMRAM 00000D
-?___ftpack                      cstackCOMRAM 000001
-?___fttol                       cstackCOMRAM 00001C
 ?_abs                           cstackCOMRAM 000001
 Delay10TCYx@unit                cstackCOMRAM 000001
-DetectMovement@ADCresult        cstackCOMRAM 00002F
-DetectMovement@JoystickResult   cstackCOMRAM 00002D
-ImplementJSMotion@CCPinput      cstackCOMRAM 000035
-ImplementJSMotion@JoystickValue cstackCOMRAM 000031
+ImplementJSMotion@CCPinput      cstackCOMRAM 000009
+ImplementJSMotion@JoystickValue cstackCOMRAM 000005
 OpenSPI1@bus_mode               cstackCOMRAM 000001
 OpenSPI1@smp_phase              cstackCOMRAM 000002
 OpenSPI1@sync_mode              cstackCOMRAM 000003
@@ -227,23 +208,17 @@ _ADRESL                         (abs)        000FC3
 _CCP3CON                        (abs)        000FB7
 _CCP3CONbits                    (abs)        000FB7
 _CCPR3L                         (abs)        000FB8
-_Delay10TCYx                    text7        00164C
-_DetectJoystick                 text18       00161E
-_DetectMovement                 text13       0012B4
+_Delay10TCYx                    text7        001290
 _INTCON                         (abs)        000FF2
-_INTCON3bits                    (abs)        000FF0
-_ImplementJSMotion              text11       001364
-_JSEnableFlag                   bssCOMRAM    000037
-_JoystickInit                   text10       00152A
-_MotorDriverInit                text9        001604
-_OpenSPI1                       text8        00140A
-_PIDEnableFlag                  bssCOMRAM    000038
+_ImplementJSMotion              text11       001010
+_JSEnableFlag                   bssCOMRAM    00000B
+_JoystickInit                   text10       001196
+_MotorDriverInit                text9        001216
+_OpenSPI1                       text8        0010B2
+_PIDEnableFlag                  bssCOMRAM    00000C
 _PIR1bits                       (abs)        000F9E
 _PORTAbits                      (abs)        000F80
 _PORTBbits                      (abs)        000F81
-_PORTD                          (abs)        000F83
-_PORTEbits                      (abs)        000F84
-_PORTH                          (abs)        000F87
 _PR2                            (abs)        000FCB
 _SSP1BUF                        (abs)        000FC9
 _SSP1CON1                       (abs)        000FC6
@@ -259,9 +234,7 @@ _TRISD                          (abs)        000F95
 _TRISEbits                      (abs)        000F96
 _TRISFbits                      (abs)        000F97
 _TRISGbits                      (abs)        000F98
-_TRISH                          (abs)        000F99
-_TRISJbits                      (abs)        000F9A
-_WriteSPI1                      text6        0015AE
+_WriteSPI1                      text6        0011F4
 __CFG_ECCPMX$PORTE              (abs)        000000
 __CFG_FCMEN$OFF                 (abs)        000000
 __CFG_OSC$HSPLL                 (abs)        000000
@@ -328,7 +301,7 @@ __Hrparam                       rparam       000000
 __Hsfr                          sfr          000000
 __Hsmallconst                   smallconst   001010
 __Hspace_0                      (abs)        30000E
-__Hspace_1                      (abs)        000039
+__Hspace_1                      (abs)        00000D
 __Hspace_2                      (abs)        000000
 __Hstack                        stack        000000
 __Hstruct                       struct       000000
@@ -339,12 +312,6 @@ __Htext1                        text1        000000
 __Htext10                       text10       000000
 __Htext11                       text11       000000
 __Htext12                       text12       000000
-__Htext13                       text13       000000
-__Htext14                       text14       000000
-__Htext15                       text15       000000
-__Htext16                       text16       000000
-__Htext17                       text17       000000
-__Htext18                       text18       000000
 __Htext2                        text2        000000
 __Htext3                        text3        000000
 __Htext4                        text4        000000
@@ -426,12 +393,6 @@ __Ltext1                        text1        000000
 __Ltext10                       text10       000000
 __Ltext11                       text11       000000
 __Ltext12                       text12       000000
-__Ltext13                       text13       000000
-__Ltext14                       text14       000000
-__Ltext15                       text15       000000
-__Ltext16                       text16       000000
-__Ltext17                       text17       000000
-__Ltext18                       text18       000000
 __Ltext2                        text2        000000
 __Ltext3                        text3        000000
 __Ltext4                        text4        000000
@@ -441,28 +402,9 @@ __Ltext7                        text7        000000
 __Ltext8                        text8        000000
 __Ltext9                        text9        000000
 __S0                            (abs)        30000E
-__S1                            (abs)        000039
+__S1                            (abs)        00000D
 __S2                            (abs)        000000
-___awtoft                       text16       0014EE
-___awtoft@c                     cstackCOMRAM 000009
-___awtoft@sign                  cstackCOMRAM 00000C
 ___extmem_base                  (abs)        020000
-___ftmul                        text15       001010
-___ftmul@cntr                   cstackCOMRAM 00001A
-___ftmul@exp                    cstackCOMRAM 000016
-___ftmul@f1                     cstackCOMRAM 00000D
-___ftmul@f2                     cstackCOMRAM 000010
-___ftmul@f3_as_product          cstackCOMRAM 000017
-___ftmul@sign                   cstackCOMRAM 00001B
-___ftpack                       text17       0011EE
-___ftpack@arg                   cstackCOMRAM 000001
-___ftpack@exp                   cstackCOMRAM 000004
-___ftpack@sign                  cstackCOMRAM 000005
-___fttol                        text14       001108
-___fttol@exp1                   cstackCOMRAM 00002A
-___fttol@f1                     cstackCOMRAM 00001C
-___fttol@lval                   cstackCOMRAM 000026
-___fttol@sign1                  cstackCOMRAM 000025
 ___inthi_sp                     stack        000000
 ___intlo_sp                     stack        000000
 ___param_bank                   (abs)        000010
@@ -470,64 +412,46 @@ ___rparam_used                  (abs)        000001
 ___sp                           stack        000000
 __accesstop                     (abs)        000060
 __activetblptr                  (abs)        000003
-__end_of_Delay10TCYx            text7        00165E
-__end_of_DetectJoystick         text18       001638
-__end_of_DetectMovement         text13       001364
-__end_of_ImplementJSMotion      text11       00140A
-__end_of_JoystickInit           text10       001560
-__end_of_MotorDriverInit        text9        00161E
-__end_of_OpenSPI1               text8        001460
-__end_of_WriteSPI1              text6        0015D0
-__end_of___awtoft               text16       00152A
-__end_of___ftmul                text15       001108
-__end_of___ftpack               text17       0012B4
-__end_of___fttol                text14       0011EE
-__end_of__initialization        cinit        001662
-__end_of_abs                    text12       001588
-__end_of_initialize             text1        00164C
-__end_of_lcdCommand             text4        0014EE
-__end_of_lcdInit                text2        0014AA
-__end_of_main                   text0        0015AE
-__end_of_setGPIO                text5        001604
-__end_of_setIODIR               text3        0015EA
-__initialization                cinit        00165E
+__end_of_Delay10TCYx            text7        0012A2
+__end_of_ImplementJSMotion      text11       0010B2
+__end_of_JoystickInit           text10       0011CC
+__end_of_MotorDriverInit        text9        001232
+__end_of_OpenSPI1               text8        001108
+__end_of_WriteSPI1              text6        001216
+__end_of__initialization        cinit        0012A6
+__end_of_abs                    text12       0011F4
+__end_of_initialize             text1        001290
+__end_of_lcdCommand             text4        001196
+__end_of_lcdInit                text2        001152
+__end_of_main                   text0        00127C
+__end_of_setGPIO                text5        001266
+__end_of_setIODIR               text3        00124C
+__initialization                cinit        0012A2
 __mediumconst                   mediumconst  000000
-__pbssCOMRAM                    bssCOMRAM    000037
-__pcinit                        cinit        00165E
+__pbssCOMRAM                    bssCOMRAM    00000B
+__pcinit                        cinit        0012A2
 __pcstackCOMRAM                 cstackCOMRAM 000001
 __psmallconst                   smallconst   001000
-__ptext0                        text0        001588
-__ptext1                        text1        001638
-__ptext10                       text10       00152A
-__ptext11                       text11       001364
-__ptext12                       text12       001560
-__ptext13                       text13       0012B4
-__ptext14                       text14       001108
-__ptext15                       text15       001010
-__ptext16                       text16       0014EE
-__ptext17                       text17       0011EE
-__ptext18                       text18       00161E
-__ptext2                        text2        001460
-__ptext3                        text3        0015D0
-__ptext4                        text4        0014AA
-__ptext5                        text5        0015EA
-__ptext6                        text6        0015AE
-__ptext7                        text7        00164C
-__ptext8                        text8        00140A
-__ptext9                        text9        001604
+__ptext0                        text0        001266
+__ptext1                        text1        00127C
+__ptext10                       text10       001196
+__ptext11                       text11       001010
+__ptext12                       text12       0011CC
+__ptext2                        text2        001108
+__ptext3                        text3        001232
+__ptext4                        text4        001152
+__ptext5                        text5        00124C
+__ptext6                        text6        0011F4
+__ptext7                        text7        001290
+__ptext8                        text8        0010B2
+__ptext9                        text9        001216
 __ramtop                        ramtop       001000
 __size_of_Delay10TCYx           (abs)        000000
-__size_of_DetectJoystick        (abs)        000000
-__size_of_DetectMovement        (abs)        000000
 __size_of_ImplementJSMotion     (abs)        000000
 __size_of_JoystickInit          (abs)        000000
 __size_of_MotorDriverInit       (abs)        000000
 __size_of_OpenSPI1              (abs)        000000
 __size_of_WriteSPI1             (abs)        000000
-__size_of___awtoft              (abs)        000000
-__size_of___ftmul               (abs)        000000
-__size_of___ftpack              (abs)        000000
-__size_of___fttol               (abs)        000000
 __size_of_abs                   (abs)        000000
 __size_of_initialize            (abs)        000000
 __size_of_lcdCommand            (abs)        000000
@@ -536,15 +460,15 @@ __size_of_main                  (abs)        000000
 __size_of_setGPIO               (abs)        000000
 __size_of_setIODIR              (abs)        000000
 __smallconst                    smallconst   001000
-_abs                            text12       001560
-_initialize                     text1        001638
-_lcdCommand                     text4        0014AA
-_lcdInit                        text2        001460
-_main                           text0        001588
-_setGPIO                        text5        0015EA
-_setIODIR                       text3        0015D0
+_abs                            text12       0011CC
+_initialize                     text1        00127C
+_lcdCommand                     text4        001152
+_lcdInit                        text2        001108
+_main                           text0        001266
+_setGPIO                        text5        00124C
+_setIODIR                       text3        001232
 abs@a                           cstackCOMRAM 000001
-end_of_initialization           cinit        001662
+end_of_initialization           cinit        0012A6
 intlevel0                       text         000000
 intlevel1                       text         000000
 intlevel2                       text         000000
@@ -557,14 +481,14 @@ setIODIR@dir                    cstackCOMRAM 000003
 stackhi                         (abs)        000F5F
 stacklo                         (abs)        000060
 start                           init         000000
-start_initialization            cinit        00165E
+start_initialization            cinit        0012A2
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 15 in file "JoystickDriver.c"
+		line 14 in file "JoystickDriver.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -585,8 +509,6 @@ FUNCTION INFORMATION:
 Total ram usage:        0 bytes
  Hardware stack levels required when called:    5
  This function calls:
-		_DetectJoystick
-		_DetectMovement
 		_ImplementJSMotion
 		_initialize
  This function is called by:
@@ -849,7 +771,7 @@ Total ram usage:        3 bytes
 
  *************** function _MotorDriverInit *****************
  Defined at:
-		line 3 in file "MotorControl.c"
+		line 5 in file "MotorControl.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -907,11 +829,11 @@ Total ram usage:        0 bytes
 
  *************** function _ImplementJSMotion *****************
  Defined at:
-		line 72 in file "Joystick.c"
+		line 47 in file "MotorControl.c"
  Parameters:    Size  Location     Type
-  JoystickValu    2   48[COMRAM] int 
+  JoystickValu    2    4[COMRAM] int 
  Auto vars:     Size  Location     Type
-  CCPinput        2   52[COMRAM] unsigned int 
+  CCPinput        2    8[COMRAM] unsigned int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -961,196 +883,7 @@ Total ram usage:        4 bytes
 		Nothing
  This function is called by:
 		_ImplementJSMotion
- This function uses a non-reentrant model
-
-
- *************** function _DetectMovement *****************
- Defined at:
-		line 49 in file "Joystick.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  ADCresult       2   46[COMRAM] unsigned int 
-  JoystickResu    2   44[COMRAM] int 
- Return value:  Size  Location     Type
-                  2   42[COMRAM] int 
- Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		___awtoft
-		___ftmul
-		___fttol
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function ___fttol *****************
- Defined at:
-		line 44 in file "/opt/microchip/xc8/v1.34/sources/common/fttol.c"
- Parameters:    Size  Location     Type
-  f1              3   27[COMRAM] float 
- Auto vars:     Size  Location     Type
-  lval            4   37[COMRAM] unsigned long 
-  exp1            1   41[COMRAM] unsigned char 
-  sign1           1   36[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  4   27[COMRAM] long 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:        15       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       15 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_DetectMovement
- This function uses a non-reentrant model
-
-
- *************** function ___ftmul *****************
- Defined at:
-		line 62 in file "/opt/microchip/xc8/v1.34/sources/common/ftmul.c"
- Parameters:    Size  Location     Type
-  f1              3   12[COMRAM] float 
-  f2              3   15[COMRAM] float 
- Auto vars:     Size  Location     Type
-  f3_as_produc    3   22[COMRAM] unsigned um
-  sign            1   26[COMRAM] unsigned char 
-  cntr            1   25[COMRAM] unsigned char 
-  exp             1   21[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  3   12[COMRAM] float 
- Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:        15       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       15 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		___ftpack
- This function is called by:
-		_DetectMovement
-		_RTD2Angle
- This function uses a non-reentrant model
-
-
- *************** function ___awtoft *****************
- Defined at:
-		line 32 in file "/opt/microchip/xc8/v1.34/sources/common/awtoft.c"
- Parameters:    Size  Location     Type
-  c               2    8[COMRAM] int 
- Auto vars:     Size  Location     Type
-  sign            1   11[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  3    8[COMRAM] float 
- Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        4 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		___ftpack
- This function is called by:
-		_DetectMovement
- This function uses a non-reentrant model
-
-
- *************** function ___ftpack *****************
- Defined at:
-		line 62 in file "/opt/microchip/xc8/v1.34/sources/common/float.c"
- Parameters:    Size  Location     Type
-  arg             3    0[COMRAM] unsigned um
-  exp             1    3[COMRAM] unsigned char 
-  sign            1    4[COMRAM] unsigned char 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  3    0[COMRAM] float 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         5       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         8       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        8 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		___awtoft
-		___ftmul
- This function uses a non-reentrant model
-
-
- *************** function _DetectJoystick *****************
- Defined at:
-		line 32 in file "Joystick.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_main
+		_ImplementPIDMotion
  This function uses a non-reentrant model
 
 
@@ -1159,74 +892,52 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 LCD.h
-		_lcdCommand    		CODE           	14AA	0000	69
-		_lcdInit       		CODE           	1460	0000	75
-		_setGPIO       		CODE           	15EA	0000	27
-		_setIODIR      		CODE           	15D0	0000	27
+		_lcdCommand    		CODE           	1152	0000	69
+		_lcdInit       		CODE           	1108	0000	75
+		_setGPIO       		CODE           	124C	0000	27
+		_setIODIR      		CODE           	1232	0000	27
 
 LCD.h estimated size: 198
 
-/opt/microchip/xc8/v1.34/sources/common/awtoft.c
-		___awtoft      		CODE           	14EE	0000	61
-
-/opt/microchip/xc8/v1.34/sources/common/awtoft.c estimated size: 61
-
-/opt/microchip/xc8/v1.34/sources/common/float.c
-		___ftpack      		CODE           	11EE	0000	199
-
-/opt/microchip/xc8/v1.34/sources/common/float.c estimated size: 199
-
 MotorControl.c
-		_MotorDriverIni		CODE           	1604	0000	27
+		_MotorDriverIni		CODE           	1216	0000	29
+		_ImplementJSMot		CODE           	1010	0000	163
 
-MotorControl.c estimated size: 27
+MotorControl.c estimated size: 192
 
 JoystickDriver.c
-		_main          		CODE           	1588	0000	39
-		_initialize    		CODE           	1638	0000	21
+		_main          		CODE           	1266	0000	23
+		_initialize    		CODE           	127C	0000	21
 
-JoystickDriver.c estimated size: 60
+JoystickDriver.c estimated size: 44
 
 /opt/microchip/xc8/v1.34/sources/common/abs.c
-		_abs           		CODE           	1560	0000	41
+		_abs           		CODE           	11CC	0000	41
 
 /opt/microchip/xc8/v1.34/sources/common/abs.c estimated size: 41
 
-/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-		___ftmul       		CODE           	1010	0000	249
-
-/opt/microchip/xc8/v1.34/sources/common/ftmul.c estimated size: 249
-
 shared
-		__initializatio		CODE           	165E	0000	5
+		__initializatio		CODE           	12A2	0000	5
 
 shared estimated size: 5
 
 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-		_OpenSPI1      		CODE           	140A	0000	87
+		_OpenSPI1      		CODE           	10B2	0000	87
 
 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c estimated size: 87
 
 Joystick.c
-		_JoystickInit  		CODE           	152A	0000	55
-		_DetectJoystick		CODE           	161E	0000	27
-		_DetectMovement		CODE           	12B4	0000	177
-		_ImplementJSMot		CODE           	1364	0000	167
+		_JoystickInit  		CODE           	1196	0000	55
 
-Joystick.c estimated size: 426
+Joystick.c estimated size: 55
 
 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1writ.c
-		_WriteSPI1     		CODE           	15AE	0000	35
+		_WriteSPI1     		CODE           	11F4	0000	35
 
 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1writ.c estimated size: 35
 
-/opt/microchip/xc8/v1.34/sources/common/fttol.c
-		___fttol       		CODE           	1108	0000	231
-
-/opt/microchip/xc8/v1.34/sources/common/fttol.c estimated size: 231
-
 /opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-		_Delay10TCYx   		CODE           	164C	0000	19
+		_Delay10TCYx   		CODE           	1290	0000	19
 
 /opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c estimated size: 19
 

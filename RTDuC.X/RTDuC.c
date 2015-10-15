@@ -1,9 +1,10 @@
-#include <pic18f8722.h>
-#include "ResolverToDigital.h"
-#include "Joystick.h"
+#include <xc.h>
+
+#define CHIPSTATUSLED PORTAbits.RA3
 
 
 
 void main(void)
 {
+    
 }

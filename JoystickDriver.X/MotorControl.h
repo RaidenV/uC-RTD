@@ -13,9 +13,13 @@ extern "C" {
 #endif
 
 #include <xc.h>
+#include <stdlib.h>
 
-#define DeadbandHigh 100
-#define DeadbandLow -100
+#define MOTORFAILLED PORTAbits.RA4
+#define DeadbandHigh 10
+#define DeadbandLow -10
+
+    extern unsigned char PIDEnableFlag;
 
     void MotorDriverInit(void);
     void KillMotors(void);

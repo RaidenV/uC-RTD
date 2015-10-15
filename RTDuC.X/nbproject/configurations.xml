@@ -4,12 +4,6 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>Joystick.h</itemPath>
-      <itemPath>ResolverToDigital.c</itemPath>
-      <itemPath>ResolverToDigital.h</itemPath>
-      <itemPath>Joystick.c</itemPath>
-      <itemPath>MotorControl.h</itemPath>
-      <itemPath>MotorControl.c</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ResolverToDigital.c RTDuC.c Joystick.c MotorControl.c
+SOURCEFILES_QUOTED_IF_SPACED=RTDuC.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ResolverToDigital.p1 ${OBJECTDIR}/RTDuC.p1 ${OBJECTDIR}/Joystick.p1 ${OBJECTDIR}/MotorControl.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/ResolverToDigital.p1.d ${OBJECTDIR}/RTDuC.p1.d ${OBJECTDIR}/Joystick.p1.d ${OBJECTDIR}/MotorControl.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/RTDuC.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/RTDuC.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ResolverToDigital.p1 ${OBJECTDIR}/RTDuC.p1 ${OBJECTDIR}/Joystick.p1 ${OBJECTDIR}/MotorControl.p1
+OBJECTFILES=${OBJECTDIR}/RTDuC.p1
 
 # Source Files
-SOURCEFILES=ResolverToDigital.c RTDuC.c Joystick.c MotorControl.c
+SOURCEFILES=RTDuC.c
 
 
 CFLAGS=
@@ -81,14 +81,6 @@ MP_PROCESSOR_OPTION=18F8722
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/ResolverToDigital.p1: ResolverToDigital.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ResolverToDigital.p1.d 
-	@${RM} ${OBJECTDIR}/ResolverToDigital.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/ResolverToDigital.p1  ResolverToDigital.c 
-	@-${MV} ${OBJECTDIR}/ResolverToDigital.d ${OBJECTDIR}/ResolverToDigital.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ResolverToDigital.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/RTDuC.p1: RTDuC.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/RTDuC.p1.d 
@@ -97,31 +89,7 @@ ${OBJECTDIR}/RTDuC.p1: RTDuC.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/RTDuC.d ${OBJECTDIR}/RTDuC.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/RTDuC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Joystick.p1: Joystick.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Joystick.p1.d 
-	@${RM} ${OBJECTDIR}/Joystick.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/Joystick.p1  Joystick.c 
-	@-${MV} ${OBJECTDIR}/Joystick.d ${OBJECTDIR}/Joystick.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Joystick.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/MotorControl.p1: MotorControl.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/MotorControl.p1.d 
-	@${RM} ${OBJECTDIR}/MotorControl.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/MotorControl.p1  MotorControl.c 
-	@-${MV} ${OBJECTDIR}/MotorControl.d ${OBJECTDIR}/MotorControl.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/MotorControl.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 else
-${OBJECTDIR}/ResolverToDigital.p1: ResolverToDigital.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ResolverToDigital.p1.d 
-	@${RM} ${OBJECTDIR}/ResolverToDigital.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/ResolverToDigital.p1  ResolverToDigital.c 
-	@-${MV} ${OBJECTDIR}/ResolverToDigital.d ${OBJECTDIR}/ResolverToDigital.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ResolverToDigital.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/RTDuC.p1: RTDuC.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/RTDuC.p1.d 
@@ -129,22 +97,6 @@ ${OBJECTDIR}/RTDuC.p1: RTDuC.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/RTDuC.p1  RTDuC.c 
 	@-${MV} ${OBJECTDIR}/RTDuC.d ${OBJECTDIR}/RTDuC.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/RTDuC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Joystick.p1: Joystick.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Joystick.p1.d 
-	@${RM} ${OBJECTDIR}/Joystick.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/Joystick.p1  Joystick.c 
-	@-${MV} ${OBJECTDIR}/Joystick.d ${OBJECTDIR}/Joystick.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Joystick.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/MotorControl.p1: MotorControl.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/MotorControl.p1.d 
-	@${RM} ${OBJECTDIR}/MotorControl.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/MotorControl.p1  MotorControl.c 
-	@-${MV} ${OBJECTDIR}/MotorControl.d ${OBJECTDIR}/MotorControl.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/MotorControl.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
