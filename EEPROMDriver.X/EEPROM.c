@@ -15,10 +15,22 @@ void EEPROMInit(void)
     EECON1bits.EEPGD = 0; //Set the mode to EEPROM;
     EECON1bits.CFGS = 0; //Set to access EEPROM memory, instead of Configuration registers;
     EECON1bits.WREN = 1; //Enable writing to the EEPROM;
-    
-    HLVDCON = 0x3D;  //Enable the High/Low Voltage Detect Control, Event occurrs when voltage falls below trip point, trip point is 13/14 in terms of internal settings;
+
+    HLVDCON = 0x3D; //Enable the High/Low Voltage Detect Control, Event occurs when voltage falls below trip point, trip point is 13/14 in terms of internal settings;
     PIE2bits.HLVDIE = 1; //Enable the HLVD interrupt;
     IPR2bits.HLVDIP = 1; //Set the HLVD to high priority;
+}
+
+void EEBootUp(void) //This function restores variables that were lost;
+{
+    if (EEReadChar(SAVEDloc))
+    {
+        SetAngle = EEReadDouble(LASTCOMPOSloc);
+        Kp = EEReadDouble(KPPARAMloc);
+        Ki = EEReadDouble(KIPARAMloc);
+        Kd = EEReadDouble(KDPARAMloc);
+        PIDEnableFlag = EEReadChar(PIDENABLEloc);
+    }
 }
 
 /* DisassembleDouble
@@ -124,7 +136,7 @@ char EEReadChar(unsigned char location)
     return ch; //Return the character;
 }
 
-void SHUTDOWN(void)
+void HLVDInt(void) //This is the shutdown routine;
 {
     EEWriteDouble(LASTCOMPOSloc, SetAngle);
     EEWriteDouble(KPPARAMloc, Kp);
@@ -140,4 +152,5 @@ void SHUTDOWN(void)
     EEWriteChar(PORTHloc, PORTH);
     EEWriteChar(PORTJloc, PORTJ);
     EEWriteChar(PIDENABLEloc, PIDEnableFlag);
+    EEWriteChar(SAVEDloc, 0x01);
 }

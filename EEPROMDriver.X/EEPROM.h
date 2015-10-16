@@ -33,6 +33,7 @@ extern "C" {
 #define PORTHloc 0x13
 #define PORTJloc 0x14
 #define PIDENABLEloc 0x15
+#define SAVEDloc 0x16 //This lets us know whether or not the unit has settings saved;
     
     extern unsigned char DDouble[3];
     extern unsigned char* DoublePtr;
@@ -45,7 +46,7 @@ extern "C" {
     extern unsigned char PIDEnableFlag;
 
     void EEPROMInit(void);
-    
+    void EEBootUp(void);
     void EEDisassembleDouble(double);
     double EEReassembleDouble(void);
     void EEWriteDouble(unsigned char, double);
@@ -54,7 +55,7 @@ extern "C" {
     void EEWriteChar(unsigned char, unsigned char);
     char EEReadChar(unsigned char);
 
-    void SHUTDOWN(void);
+    void HLVDInt(void);
 
 #ifdef	__cplusplus
 }
