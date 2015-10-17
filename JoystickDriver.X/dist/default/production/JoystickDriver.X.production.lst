@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Thu Oct 15 03:13:04 2015
+                                                                                               Sat Oct 17 00:49:09 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	18F8722
@@ -914,24 +914,24 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    858                           ;MotorControl.c: 10: TRISGbits.RG3 = 0;
    859  00121C  9698               	bcf	3992,3,c	;volatile
    860                           
-   861                           ;MotorControl.c: 17: TRISBbits.RB0 = 1;
+   861                           ;MotorControl.c: 12: TRISBbits.RB0 = 1;
    862  00121E  8093               	bsf	3987,0,c	;volatile
    863                           
-   864                           ;MotorControl.c: 19: TRISAbits.RA4 = 0;
+   864                           ;MotorControl.c: 14: TRISAbits.RA4 = 0;
    865  001220  9892               	bcf	3986,4,c	;volatile
    866                           
-   867                           ;MotorControl.c: 21: CCP3CON = 0x4C;
+   867                           ;MotorControl.c: 16: CCP3CON = 0x4C;
    868  001222  0E4C               	movlw	76
    869  001224  6EB7               	movwf	4023,c	;volatile
    870                           
-   871                           ;MotorControl.c: 22: PR2 = 0xFF;
+   871                           ;MotorControl.c: 17: PR2 = 0xFF;
    872  001226  68CB               	setf	4043,c	;volatile
    873                           
-   874                           ;MotorControl.c: 23: T3CON = 0x00;
+   874                           ;MotorControl.c: 18: T3CON = 0x00;
    875  001228  0E00               	movlw	0
    876  00122A  6EB1               	movwf	4017,c	;volatile
    877                           
-   878                           ;MotorControl.c: 24: T2CON = 0x04;
+   878                           ;MotorControl.c: 19: T2CON = 0x04;
    879  00122C  0E04               	movlw	4
    880  00122E  6ECA               	movwf	4042,c	;volatile
    881  001230  0012               	return		;funcret
@@ -1051,7 +1051,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
    990                           
    991 ;; *************** function _ImplementJSMotion *****************
    992 ;; Defined at:
-   993 ;;		line 47 in file "MotorControl.c"
+   993 ;;		line 42 in file "MotorControl.c"
    994 ;; Parameters:    Size  Location     Type
    995 ;;  JoystickValu    2    4[COMRAM] int 
    996 ;; Auto vars:     Size  Location     Type
@@ -1090,14 +1090,14 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1024  001010                     _ImplementJSMotion:
   1025                           	opt stack 29
   1026                           
-  1027                           ;MotorControl.c: 49: unsigned int CCPinput;
-  1028                           ;MotorControl.c: 50: PIDEnableFlag = 0;
+  1027                           ;MotorControl.c: 44: unsigned int CCPinput;
+  1028                           ;MotorControl.c: 45: PIDEnableFlag = 0;
   1029                           
   1030                           ;incstack = 0
   1031  001010  0E00               	movlw	0
   1032  001012  6E0C               	movwf	_PIDEnableFlag,c
   1033                           
-  1034                           ;MotorControl.c: 51: if (JoystickValue < -10)
+  1034                           ;MotorControl.c: 46: if (JoystickValue < -10)
   1035  001014  AE06               	btfss	ImplementJSMotion@JoystickValue+1,7,c
   1036  001016  D008               	goto	l1129
   1037  001018  0EF6               	movlw	246
@@ -1107,15 +1107,15 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1041  001020  B0D8               	btfsc	status,0,c
   1042  001022  D002               	goto	l1129
   1043                           
-  1044                           ;MotorControl.c: 52: {
-  1045                           ;MotorControl.c: 53: CCP3CONbits.P3M1 = 1;
+  1044                           ;MotorControl.c: 47: {
+  1045                           ;MotorControl.c: 48: CCP3CONbits.P3M1 = 1;
   1046  001024  8EB7               	bsf	4023,7,c	;volatile
   1047                           
-  1048                           ;MotorControl.c: 54: }
+  1048                           ;MotorControl.c: 49: }
   1049  001026  D01F               	goto	l1139
   1050  001028                     l1129:
   1051                           
-  1052                           ;MotorControl.c: 55: else if (JoystickValue > 10)
+  1052                           ;MotorControl.c: 50: else if (JoystickValue > 10)
   1053  001028  BE06               	btfsc	ImplementJSMotion@JoystickValue+1,7,c
   1054  00102A  D008               	goto	l1133
   1055  00102C  5006               	movf	ImplementJSMotion@JoystickValue+1,w,c
@@ -1126,15 +1126,15 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1060  001036  D002               	goto	l1133
   1061  001038                     u200:
   1062                           
-  1063                           ;MotorControl.c: 56: {
-  1064                           ;MotorControl.c: 57: CCP3CONbits.P3M1 = 0;
+  1063                           ;MotorControl.c: 51: {
+  1064                           ;MotorControl.c: 52: CCP3CONbits.P3M1 = 0;
   1065  001038  9EB7               	bcf	4023,7,c	;volatile
   1066                           
-  1067                           ;MotorControl.c: 58: }
+  1067                           ;MotorControl.c: 53: }
   1068  00103A  D015               	goto	l1139
   1069  00103C                     l1133:
   1070                           
-  1071                           ;MotorControl.c: 59: else if (JoystickValue <= 10 && JoystickValue >= -10)
+  1071                           ;MotorControl.c: 54: else if (JoystickValue <= 10 && JoystickValue >= -10)
   1072  00103C  BE06               	btfsc	ImplementJSMotion@JoystickValue+1,7,c
   1073  00103E  D006               	goto	l1135
   1074  001040  5006               	movf	ImplementJSMotion@JoystickValue+1,w,c
@@ -1154,8 +1154,8 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1088  00105A  D005               	goto	l1139
   1089  00105C                     l1137:
   1090                           
-  1091                           ;MotorControl.c: 60: {
-  1092                           ;MotorControl.c: 61: JoystickValue = 0;
+  1091                           ;MotorControl.c: 55: {
+  1092                           ;MotorControl.c: 56: JoystickValue = 0;
   1093  00105C  0E00               	movlw	0
   1094  00105E  6E06               	movwf	ImplementJSMotion@JoystickValue+1,c
   1095  001060  0E00               	movlw	0
@@ -1163,22 +1163,22 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1097  001064  D000               	goto	l1139
   1098  001066                     l1139:
   1099                           
-  1100                           ;MotorControl.c: 62: }
-  1101                           ;MotorControl.c: 64: JoystickValue = abs(JoystickValue);
+  1100                           ;MotorControl.c: 57: }
+  1101                           ;MotorControl.c: 59: JoystickValue = abs(JoystickValue);
   1102  001066  C005  F001         	movff	ImplementJSMotion@JoystickValue,abs@a
   1103  00106A  C006  F002         	movff	ImplementJSMotion@JoystickValue+1,abs@a+1
   1104  00106E  ECE6  F008         	call	_abs	;wreg free
   1105  001072  C001  F005         	movff	?_abs,ImplementJSMotion@JoystickValue
   1106  001076  C002  F006         	movff	?_abs+1,ImplementJSMotion@JoystickValue+1
   1107                           
-  1108                           ;MotorControl.c: 65: CCPinput = JoystickValue * 2;
+  1108                           ;MotorControl.c: 60: CCPinput = JoystickValue * 2;
   1109  00107A  90D8               	bcf	status,0,c
   1110  00107C  3405               	rlcf	ImplementJSMotion@JoystickValue,w,c
   1111  00107E  6E09               	movwf	ImplementJSMotion@CCPinput,c
   1112  001080  3406               	rlcf	ImplementJSMotion@JoystickValue+1,w,c
   1113  001082  6E0A               	movwf	ImplementJSMotion@CCPinput+1,c
   1114                           
-  1115                           ;MotorControl.c: 66: CCPR3L = (CCPinput >> 2) & 0xFF;
+  1115                           ;MotorControl.c: 61: CCPR3L = (CCPinput >> 2) & 0xFF;
   1116  001084  C009  F007         	movff	ImplementJSMotion@CCPinput,??_ImplementJSMotion
   1117  001088  C00A  F008         	movff	ImplementJSMotion@CCPinput+1,??_ImplementJSMotion+1
   1118  00108C  90D8               	bcf	status,0,c
@@ -1190,7 +1190,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   1124  001098  5007               	movf	??_ImplementJSMotion,w,c
   1125  00109A  6EB8               	movwf	4024,c	;volatile
   1126                           
-  1127                           ;MotorControl.c: 68: CCP3CONbits.DC3B = (CCPinput & 0x03);
+  1127                           ;MotorControl.c: 63: CCP3CONbits.DC3B = (CCPinput & 0x03);
   1128  00109C  C009  F007         	movff	ImplementJSMotion@CCPinput,??_ImplementJSMotion
   1129  0010A0  0E03               	movlw	3
   1130  0010A2  1607               	andwf	??_ImplementJSMotion,f,c
@@ -1508,7 +1508,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Thu Oct 15 03:13:04 2015
+Symbol Table                                                                                   Sat Oct 17 00:49:09 2015
 
       __size_of_MotorDriverInit 001C                              l29 11A8       ImplementJSMotion@CCPinput 0009  
                            l144 126A                             l242 11EA                             l243 11F2  

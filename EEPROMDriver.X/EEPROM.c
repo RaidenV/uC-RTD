@@ -54,13 +54,9 @@ double EEReassembleDouble(void)
 {
     double dub;
     DoublePtr = (unsigned char*) &dub; //This sets the pointer to the location of the first byte of the double;
-    unsigned char x; //Loop variable;
-
-    for (x = 3; x > 0; --x) //
-    {
-        DoublePtr[x - 1] = DDouble[x - 1]; //This reassembles the double at it's location;
-    }
-
+    DoublePtr[0] = DDouble[0]; //The following lines extract the double byte-by-byte into the DDouble variable;
+    DoublePtr[1] = DDouble[1]; //This way, whenever the double is operated upon, the referenced double is not altered;
+    DoublePtr[2] = DDouble[2];
     return dub; //Return the reconstructed double;
 }
 
@@ -98,7 +94,8 @@ double EEReadDouble(unsigned char location)
 
     for (x = 0; x < 3; x++)
     {
-        DDouble[x] = Read_b_eep(location); //Read the double, recalling from the earlier write function that the double writes to a location LSByte first;
+        DDouble[x] = Read_b_eep(location + x); //Read the double, recalling from the earlier write function that the double writes to a location LSByte first;
+        Busy_eep();
     }
 
     INTCON = INTCON | 0xC0; //Turn on interrupts;

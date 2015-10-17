@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/cgtOTMFO8.obj
+$/tmp/cgt1TNw55.obj
 idloc IDLOC 0 200000 200000 8 1
 end_init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
@@ -82,21 +82,21 @@ MEDIUMCONST 11000-1FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/JoystickDriver.X.production.obj
-1010 text11 CODE >47:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1010 text11 CODE >50:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1014 text11 CODE >51:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1024 text11 CODE >53:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1026 text11 CODE >54:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1028 text11 CODE >55:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1038 text11 CODE >57:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-103A text11 CODE >58:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-103C text11 CODE >59:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-105C text11 CODE >61:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1064 text11 CODE >64:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-107A text11 CODE >65:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1084 text11 CODE >66:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-109C text11 CODE >68:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-10B0 text11 CODE >69:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1010 text11 CODE >42:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1010 text11 CODE >45:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1014 text11 CODE >46:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1024 text11 CODE >48:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1026 text11 CODE >49:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1028 text11 CODE >50:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1038 text11 CODE >52:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+103A text11 CODE >53:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+103C text11 CODE >54:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+105C text11 CODE >56:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1064 text11 CODE >59:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+107A text11 CODE >60:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1084 text11 CODE >61:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+109C text11 CODE >63:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+10B0 text11 CODE >64:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
 10B2 text8 CODE >13:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
 10B4 text8 CODE >15:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
 10B8 text8 CODE >16:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
@@ -185,13 +185,13 @@ $dist/default/production/JoystickDriver.X.production.obj
 1218 text9 CODE >8:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
 121A text9 CODE >9:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
 121C text9 CODE >10:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-121E text9 CODE >17:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1220 text9 CODE >19:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1222 text9 CODE >21:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1226 text9 CODE >22:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1228 text9 CODE >23:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-122C text9 CODE >24:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
-1230 text9 CODE >26:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+121E text9 CODE >12:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1220 text9 CODE >14:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1222 text9 CODE >16:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1226 text9 CODE >17:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1228 text9 CODE >18:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+122C text9 CODE >19:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
+1230 text9 CODE >21:/home/raidenv/MPLABXProjects/JoystickDriver.X/MotorControl.c
 1232 text3 CODE >43:/home/raidenv/MPLABXProjects/JoystickDriver.X/LCD.h
 1234 text3 CODE >45:/home/raidenv/MPLABXProjects/JoystickDriver.X/LCD.h
 1236 text3 CODE >46:/home/raidenv/MPLABXProjects/JoystickDriver.X/LCD.h
@@ -222,14 +222,14 @@ $dist/default/production/JoystickDriver.X.production.obj
 1292 text7 CODE >11:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
 129A text7 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
 12A0 text7 CODE >13:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-12A2 cinit CODE >1443:/tmp/cgtDpfxHx
-12A2 cinit CODE >1445:/tmp/cgtDpfxHx
-12A2 cinit CODE >1448:/tmp/cgtDpfxHx
-12A2 cinit CODE >1462:/tmp/cgtDpfxHx
-12A4 cinit CODE >1463:/tmp/cgtDpfxHx
-12A6 cinit CODE >1469:/tmp/cgtDpfxHx
-12A6 cinit CODE >1470:/tmp/cgtDpfxHx
-12A8 cinit CODE >1471:/tmp/cgtDpfxHx
+12A2 cinit CODE >1443:/tmp/cgtv5rFua
+12A2 cinit CODE >1445:/tmp/cgtv5rFua
+12A2 cinit CODE >1448:/tmp/cgtv5rFua
+12A2 cinit CODE >1462:/tmp/cgtv5rFua
+12A4 cinit CODE >1463:/tmp/cgtv5rFua
+12A6 cinit CODE >1469:/tmp/cgtv5rFua
+12A6 cinit CODE >1470:/tmp/cgtv5rFua
+12A8 cinit CODE >1471:/tmp/cgtv5rFua
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -250,16 +250,16 @@ __size_of_lcdInit 0 0 ABS 0 - dist/default/production/JoystickDriver.X.productio
 __end_of_initialize 1290 0 CODE 0 text1 dist/default/production/JoystickDriver.X.production.obj
 _SSP1STATbits FC7 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/JoystickDriver.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtOTMFO8.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgt1TNw55.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/JoystickDriver.X.production.obj
 _Delay10TCYx 1290 0 CODE 0 text7 dist/default/production/JoystickDriver.X.production.obj
 setIODIR@dir 3 0 COMRAM 1 cstackCOMRAM dist/default/production/JoystickDriver.X.production.obj
 ?_abs 1 0 COMRAM 1 cstackCOMRAM dist/default/production/JoystickDriver.X.production.obj
 __Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production/JoystickDriver.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/cgtOTMFO8.obj
+___sp 0 0 STACK 2 stack /tmp/cgt1TNw55.obj
 _main 1266 0 CODE 0 text0 dist/default/production/JoystickDriver.X.production.obj
 abs@a 1 0 COMRAM 1 cstackCOMRAM dist/default/production/JoystickDriver.X.production.obj
-start 0 0 CODE 0 init /tmp/cgtOTMFO8.obj
+start 0 0 CODE 0 init /tmp/cgt1TNw55.obj
 __size_of_main 0 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj
 OpenSPI1@smp_phase 2 0 COMRAM 1 cstackCOMRAM dist/default/production/JoystickDriver.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/JoystickDriver.X.production.obj
@@ -271,11 +271,11 @@ __end_of_WriteSPI1 1216 0 CODE 0 text6 dist/default/production/JoystickDriver.X.
 __Hpowerup 0 0 CODE 0 powerup dist/default/production/JoystickDriver.X.production.obj
 __size_of_WriteSPI1 0 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj
 __size_of_MotorDriverInit 0 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj
-__accesstop 60 0 ABS 0 - /tmp/cgtOTMFO8.obj
-intlevel0 0 0 CODE 0 text /tmp/cgtOTMFO8.obj
-intlevel1 0 0 CODE 0 text /tmp/cgtOTMFO8.obj
-intlevel2 0 0 CODE 0 text /tmp/cgtOTMFO8.obj
-intlevel3 0 0 CODE 0 text /tmp/cgtOTMFO8.obj
+__accesstop 60 0 ABS 0 - /tmp/cgt1TNw55.obj
+intlevel0 0 0 CODE 0 text /tmp/cgt1TNw55.obj
+intlevel1 0 0 CODE 0 text /tmp/cgt1TNw55.obj
+intlevel2 0 0 CODE 0 text /tmp/cgt1TNw55.obj
+intlevel3 0 0 CODE 0 text /tmp/cgt1TNw55.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/JoystickDriver.X.production.obj
 __size_of_setGPIO 0 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/JoystickDriver.X.production.obj
@@ -288,8 +288,8 @@ _ADCON2 FC0 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj
 _ADRESH FC4 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj
 _ADRESL FC3 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj
 __end_of_lcdInit 1152 0 CODE 0 text2 dist/default/production/JoystickDriver.X.production.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/cgtOTMFO8.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/cgtOTMFO8.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/cgt1TNw55.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/cgt1TNw55.obj
 WriteSPI1@TempVar 1 0 COMRAM 1 cstackCOMRAM dist/default/production/JoystickDriver.X.production.obj
 _CCPR3L FB8 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production/JoystickDriver.X.production.obj
@@ -351,7 +351,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production/JoystickDriver.X.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production/JoystickDriver.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/JoystickDriver.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production/JoystickDriver.X.production.obj
-__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/cgtOTMFO8.obj
+__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/cgt1TNw55.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production/JoystickDriver.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production/JoystickDriver.X.production.obj
 __end_of_Delay10TCYx 12A2 0 CODE 0 text7 dist/default/production/JoystickDriver.X.production.obj
@@ -446,8 +446,8 @@ _JoystickInit 1196 0 CODE 0 text10 dist/default/production/JoystickDriver.X.prod
 OpenSPI1@bus_mode 1 0 COMRAM 1 cstackCOMRAM dist/default/production/JoystickDriver.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production/JoystickDriver.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production/JoystickDriver.X.production.obj
-stackhi F5F 0 ABS 0 - /tmp/cgtOTMFO8.obj
-stacklo 60 0 ABS 0 - /tmp/cgtOTMFO8.obj
+stackhi F5F 0 ABS 0 - /tmp/cgt1TNw55.obj
+stacklo 60 0 ABS 0 - /tmp/cgt1TNw55.obj
 __Lintcode 0 0 CODE 0 intcode dist/default/production/JoystickDriver.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production/JoystickDriver.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production/JoystickDriver.X.production.obj
@@ -488,7 +488,7 @@ __end_of_setIODIR 124C 0 CODE 0 text3 dist/default/production/JoystickDriver.X.p
 __Ltext10 0 0 ABS 0 text10 dist/default/production/JoystickDriver.X.production.obj
 __Ltext11 0 0 ABS 0 text11 dist/default/production/JoystickDriver.X.production.obj
 __Ltext12 0 0 ABS 0 text12 dist/default/production/JoystickDriver.X.production.obj
-__ramtop 1000 0 RAM 0 ramtop /tmp/cgtOTMFO8.obj
+__ramtop 1000 0 RAM 0 ramtop /tmp/cgt1TNw55.obj
 __Lpowerup 0 0 CODE 0 powerup dist/default/production/JoystickDriver.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/JoystickDriver.X.production.obj
 setGPIO@address 4 0 COMRAM 1 cstackCOMRAM dist/default/production/JoystickDriver.X.production.obj
@@ -523,7 +523,7 @@ __LRAM 1 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj
 __Lbss 0 0 RAM 1 bss dist/default/production/JoystickDriver.X.production.obj
 __Lram 0 0 ABS 0 ram dist/default/production/JoystickDriver.X.production.obj
 __Lsfr 0 0 ABS 0 sfr dist/default/production/JoystickDriver.X.production.obj
-___extmem_base 20000 0 ABS 0 - /tmp/cgtOTMFO8.obj
+___extmem_base 20000 0 ABS 0 - /tmp/cgt1TNw55.obj
 _MotorDriverInit 1216 0 CODE 0 text9 dist/default/production/JoystickDriver.X.production.obj
 _CCP3CON FB7 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj
 __size_of_abs 0 0 ABS 0 - dist/default/production/JoystickDriver.X.production.obj

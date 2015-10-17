@@ -5,7 +5,7 @@ Linker command line:
 --edf=/opt/microchip/xc8/v1.34/dat/en_msgs.txt -cs \
   -h+dist/default/production/JoystickDriver.X.production.sym \
   --cmf=dist/default/production/JoystickDriver.X.production.cmf -z \
-  -Q18F8722 -o/tmp/cgtnKGsH2 \
+  -Q18F8722 -o/tmp/cgtVMnI8W \
   -Mdist/default/production/JoystickDriver.X.production.map -E1 -ver=XC8 \
   -ASTACK=060h-0f5fh -pstack=STACK -ACODE=00h-01FFFFh -ACONST=00h-01FFFFh \
   -ASMALLCONST=01000h-010FFhx496 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/cgtOTMFO8.obj \
+  /tmp/cgt1TNw55.obj \
   dist/default/production/JoystickDriver.X.production.obj 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/cgtOTMFO8.obj
+/tmp/cgt1TNw55.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
@@ -829,7 +829,7 @@ Total ram usage:        0 bytes
 
  *************** function _ImplementJSMotion *****************
  Defined at:
-		line 47 in file "MotorControl.c"
+		line 42 in file "MotorControl.c"
  Parameters:    Size  Location     Type
   JoystickValu    2    4[COMRAM] int 
  Auto vars:     Size  Location     Type

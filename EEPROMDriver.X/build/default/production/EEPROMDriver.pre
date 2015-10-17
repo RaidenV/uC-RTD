@@ -7233,7 +7233,7 @@ void Busy_eep ( void );
 unsigned char Read_b_eep( unsigned int badd );
 void Write_b_eep( unsigned int badd, unsigned char bdat );
 
-# 37 "EEPROM.h"
+# 38 "EEPROM.h"
 extern unsigned char DDouble[3];
 extern unsigned char* DoublePtr;
 extern double Kp;
@@ -7245,7 +7245,7 @@ extern double CurrentVelocity;
 extern unsigned char PIDEnableFlag;
 
 void EEPROMInit(void);
-
+void EEBootUp(void);
 void EEDisassembleDouble(double);
 double EEReassembleDouble(void);
 void EEWriteDouble(unsigned char, double);
@@ -7254,7 +7254,7 @@ double EEReadDouble(unsigned char);
 void EEWriteChar(unsigned char, unsigned char);
 char EEReadChar(unsigned char);
 
-void SHUTDOWN(void);
+void HLVDInt(void);
 
 # 20 "SerComm.h"
 void SerInit(void);
@@ -7262,6 +7262,8 @@ void SerTx(unsigned char);
 void SerTxStr(unsigned char*);
 unsigned char SerRx(void);
 void SerRxStr(unsigned char*);
+void breakDouble(double);
+void Sernl(void);
 
 
 # 5 "EEPROMDriver.c"
@@ -7271,33 +7273,38 @@ void SerRxStr(unsigned char*);
 
 void initialize(void);
 
-double hello = 3254.2130;
-unsigned char ch = 6;
-
 void main(void)
 {
-
 initialize();
 
-EEWriteDouble(0x00, hello);
-EEWriteChar(0x08, ch);
+double hello = 255;
+unsigned char ch = 6;
 
-ch = 0;
-hello = 0;
-
+Sernl();
+Sernl();
 SerTxStr("Here is the double string: ");
-SerTxStr(DDouble);
-SerTx(0x0A);
-SerTx(0x0D);
+breakDouble(hello);
+Sernl();
+SerTxStr("Here is the char: ");
+SerTx(ch + 0x30);
+Sernl();
+
+EEWriteDouble(0x00, hello);
+EEWriteChar(0x04, ch);
+
+hello = 0;
+ch = 0;
+
+Sernl();
 hello = EEReadDouble(0x00);
-ch = EEReadChar(0x08);
+ch = EEReadChar(0x04);
 
 SerTxStr("Here is the double string again: ");
-SerTxStr(DDouble);
-SerTxStr("And here is the char");
+breakDouble(hello);
+SerTxStr("And here is the char: ");
 SerTx(ch + 0x30);
 
-while(1);
+while (1);
 }
 
 void initialize(void)

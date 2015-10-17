@@ -22,6 +22,8 @@ extern "C" {
     void SerTxStr(unsigned char*);
     unsigned char SerRx(void);
     void SerRxStr(unsigned char*);
+    void breakDouble(double);
+    void Sernl(void);
 
 #ifdef	__cplusplus
 }

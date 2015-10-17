@@ -7209,6 +7209,8 @@ void SerTx(unsigned char);
 void SerTxStr(unsigned char*);
 unsigned char SerRx(void);
 void SerRxStr(unsigned char*);
+void breakDouble(double);
+void Sernl(void);
 
 # 19 "SerComm.c"
 void SerInit(void)
@@ -7251,4 +7253,36 @@ while ((RCREG1 != 0x0D) || (x != length))
 str[x] = RCREG1;
 x++;
 }
+}
+
+void breakDouble(double dubs)
+{
+unsigned int temp1, temp2;
+unsigned int tempDub;
+
+tempDub = dubs * 100;
+temp1 = tempDub / 10000;
+temp2 = tempDub % 10000;
+if (temp1 != 0)
+SerTx(temp1 + 0x30);
+temp1 = temp2 / 1000;
+temp2 = temp2 % 1000;
+if (temp1 != 0)
+SerTx(temp1 + 0x30);
+temp1 = temp2 / 100;
+temp2 = temp2 % 100;
+SerTx(temp1 + 0x30);
+SerTx('.');
+temp1 = temp2 / 10;
+temp2 = temp2 % 10;
+SerTx(temp1 + 0x30);
+SerTx(temp2 + 0x30);
+SerTx(0x0A);
+SerTx(0x0D);
+}
+
+void Sernl(void)
+{
+SerTx(0x0A);
+SerTx(0x0D);
 }

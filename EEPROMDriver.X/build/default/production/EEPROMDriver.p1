@@ -2,23 +2,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "9 EEPROMDriver.c
 [v _initialize `(v ~T0 @X0 0 ef ]
-"51 EEPROM.h
-[v _EEWriteDouble `(v ~T0 @X0 0 ef2`uc`d ]
-"54
-[v _EEWriteChar `(v ~T0 @X0 0 ef2`uc`uc ]
-"22 SerComm.h
+"26 SerComm.h
+[v _Sernl `(v ~T0 @X0 0 ef ]
+"22
 [v _SerTxStr `(v ~T0 @X0 0 ef1`*uc ]
-"37 EEPROM.h
-[v _DDouble `uc ~T0 @X0 -> 0 `x e ]
-"21 SerComm.h
+"25
+[v _breakDouble `(v ~T0 @X0 0 ef1`d ]
+"21
 [v _SerTx `(v ~T0 @X0 0 ef1`uc ]
 "52 EEPROM.h
-[v _EEReadDouble `(d ~T0 @X0 0 ef1`uc ]
+[v _EEWriteDouble `(v ~T0 @X0 0 ef2`uc`d ]
 "55
+[v _EEWriteChar `(v ~T0 @X0 0 ef2`uc`uc ]
+"53
+[v _EEReadDouble `(d ~T0 @X0 0 ef1`uc ]
+"56
 [v _EEReadChar `(uc ~T0 @X0 0 ef1`uc ]
 "20 SerComm.h
 [v _SerInit `(v ~T0 @X0 0 ef ]
-"47 EEPROM.h
+"48 EEPROM.h
 [v _EEPROMInit `(v ~T0 @X0 0 ef ]
 [; ;pic18f8722.h: 49: extern volatile unsigned char SSP2CON2 @ 0xF62;
 "51 /opt/microchip/xc8/v1.34/include/pic18f8722.h
@@ -5661,28 +5663,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;EEP.h: 36: void Busy_eep ( void );
 [; ;EEP.h: 37: unsigned char Read_b_eep( unsigned int badd );
 [; ;EEP.h: 38: void Write_b_eep( unsigned int badd, unsigned char bdat );
-[; ;EEPROM.h: 37: extern unsigned char DDouble[3];
-[; ;EEPROM.h: 38: extern unsigned char* DoublePtr;
-[; ;EEPROM.h: 39: extern double Kp;
-[; ;EEPROM.h: 40: extern double Ki;
-[; ;EEPROM.h: 41: extern double Kd;
-[; ;EEPROM.h: 42: extern double SetAngle;
-[; ;EEPROM.h: 43: extern double CurrentAngle;
-[; ;EEPROM.h: 44: extern double CurrentVelocity;
-[; ;EEPROM.h: 45: extern unsigned char PIDEnableFlag;
-[; ;EEPROM.h: 47: void EEPROMInit(void);
-[; ;EEPROM.h: 49: void EEDisassembleDouble(double);
-[; ;EEPROM.h: 50: double EEReassembleDouble(void);
-[; ;EEPROM.h: 51: void EEWriteDouble(unsigned char, double);
-[; ;EEPROM.h: 52: double EEReadDouble(unsigned char);
-[; ;EEPROM.h: 54: void EEWriteChar(unsigned char, unsigned char);
-[; ;EEPROM.h: 55: char EEReadChar(unsigned char);
-[; ;EEPROM.h: 57: void SHUTDOWN(void);
+[; ;EEPROM.h: 38: extern unsigned char DDouble[3];
+[; ;EEPROM.h: 39: extern unsigned char* DoublePtr;
+[; ;EEPROM.h: 40: extern double Kp;
+[; ;EEPROM.h: 41: extern double Ki;
+[; ;EEPROM.h: 42: extern double Kd;
+[; ;EEPROM.h: 43: extern double SetAngle;
+[; ;EEPROM.h: 44: extern double CurrentAngle;
+[; ;EEPROM.h: 45: extern double CurrentVelocity;
+[; ;EEPROM.h: 46: extern unsigned char PIDEnableFlag;
+[; ;EEPROM.h: 48: void EEPROMInit(void);
+[; ;EEPROM.h: 49: void EEBootUp(void);
+[; ;EEPROM.h: 50: void EEDisassembleDouble(double);
+[; ;EEPROM.h: 51: double EEReassembleDouble(void);
+[; ;EEPROM.h: 52: void EEWriteDouble(unsigned char, double);
+[; ;EEPROM.h: 53: double EEReadDouble(unsigned char);
+[; ;EEPROM.h: 55: void EEWriteChar(unsigned char, unsigned char);
+[; ;EEPROM.h: 56: char EEReadChar(unsigned char);
+[; ;EEPROM.h: 58: void HLVDInt(void);
 [; ;SerComm.h: 20: void SerInit(void);
 [; ;SerComm.h: 21: void SerTx(unsigned char);
 [; ;SerComm.h: 22: void SerTxStr(unsigned char*);
 [; ;SerComm.h: 23: unsigned char SerRx(void);
 [; ;SerComm.h: 24: void SerRxStr(unsigned char*);
+[; ;SerComm.h: 25: void breakDouble(double);
+[; ;SerComm.h: 26: void Sernl(void);
 "5 EEPROMDriver.c
 [p x OSC=HSPLL ]
 "6
@@ -5691,98 +5696,110 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x FCMEN=OFF ]
 [; ;EEPROMDriver.c: 9: void initialize(void);
 "11
-[v _hello `d ~T0 @X0 1 e ]
-[i _hello
-.3254.2130
-]
-[; ;EEPROMDriver.c: 11: double hello = 3254.2130;
-"12
-[v _ch `uc ~T0 @X0 1 e ]
-[i _ch
--> -> 6 `i `uc
-]
-[; ;EEPROMDriver.c: 12: unsigned char ch = 6;
-"14
 [v _main `(v ~T0 @X0 1 ef ]
-"15
+"12
 {
-[; ;EEPROMDriver.c: 14: void main(void)
-[; ;EEPROMDriver.c: 15: {
+[; ;EEPROMDriver.c: 11: void main(void)
+[; ;EEPROMDriver.c: 12: {
 [e :U _main ]
 [f ]
-[; ;EEPROMDriver.c: 17: initialize();
-"17
+[; ;EEPROMDriver.c: 13: initialize();
+"13
 [e ( _initialize ..  ]
-[; ;EEPROMDriver.c: 19: EEWriteDouble(0x00, hello);
+"15
+[v _hello `d ~T0 @X0 1 a ]
+[; ;EEPROMDriver.c: 15: double hello = 255;
+[e = _hello -> -> 255 `i `d ]
+"16
+[v _ch `uc ~T0 @X0 1 a ]
+[; ;EEPROMDriver.c: 16: unsigned char ch = 6;
+[e = _ch -> -> 6 `i `uc ]
+[; ;EEPROMDriver.c: 18: Sernl();
+"18
+[e ( _Sernl ..  ]
+[; ;EEPROMDriver.c: 19: Sernl();
 "19
-[e ( _EEWriteDouble (2 , -> -> 0 `i `uc _hello ]
-[; ;EEPROMDriver.c: 20: EEWriteChar(0x08, ch);
+[e ( _Sernl ..  ]
+[; ;EEPROMDriver.c: 20: SerTxStr("Here is the double string: ");
 "20
-[e ( _EEWriteChar (2 , -> -> 8 `i `uc _ch ]
-[; ;EEPROMDriver.c: 22: ch = 0;
-"22
-[e = _ch -> -> 0 `i `uc ]
-[; ;EEPROMDriver.c: 23: hello = 0;
-"23
-[e = _hello -> -> 0 `i `d ]
-[; ;EEPROMDriver.c: 25: SerTxStr("Here is the double string: ");
-"25
 [e ( _SerTxStr (1 -> :s 1C `*uc ]
-[; ;EEPROMDriver.c: 26: SerTxStr(DDouble);
-"26
-[e ( _SerTxStr (1 &U _DDouble ]
-[; ;EEPROMDriver.c: 27: SerTx(0x0A);
-"27
-[e ( _SerTx (1 -> -> 10 `i `uc ]
-[; ;EEPROMDriver.c: 28: SerTx(0x0D);
-"28
-[e ( _SerTx (1 -> -> 13 `i `uc ]
-[; ;EEPROMDriver.c: 29: hello = EEReadDouble(0x00);
-"29
-[e = _hello ( _EEReadDouble (1 -> -> 0 `i `uc ]
-[; ;EEPROMDriver.c: 30: ch = EEReadChar(0x08);
-"30
-[e = _ch ( _EEReadChar (1 -> -> 8 `i `uc ]
-[; ;EEPROMDriver.c: 32: SerTxStr("Here is the double string again: ");
-"32
+[; ;EEPROMDriver.c: 21: breakDouble(hello);
+"21
+[e ( _breakDouble (1 _hello ]
+[; ;EEPROMDriver.c: 22: Sernl();
+"22
+[e ( _Sernl ..  ]
+[; ;EEPROMDriver.c: 23: SerTxStr("Here is the char: ");
+"23
 [e ( _SerTxStr (1 -> :s 2C `*uc ]
-[; ;EEPROMDriver.c: 33: SerTxStr(DDouble);
-"33
-[e ( _SerTxStr (1 &U _DDouble ]
-[; ;EEPROMDriver.c: 34: SerTxStr("And here is the char");
-"34
-[e ( _SerTxStr (1 -> :s 3C `*uc ]
-[; ;EEPROMDriver.c: 35: SerTx(ch + 0x30);
-"35
+[; ;EEPROMDriver.c: 24: SerTx(ch + 0x30);
+"24
 [e ( _SerTx (1 -> + -> _ch `i -> 48 `i `uc ]
-[; ;EEPROMDriver.c: 37: while(1);
+[; ;EEPROMDriver.c: 25: Sernl();
+"25
+[e ( _Sernl ..  ]
+[; ;EEPROMDriver.c: 27: EEWriteDouble(0x00, hello);
+"27
+[e ( _EEWriteDouble (2 , -> -> 0 `i `uc _hello ]
+[; ;EEPROMDriver.c: 28: EEWriteChar(0x04, ch);
+"28
+[e ( _EEWriteChar (2 , -> -> 4 `i `uc _ch ]
+[; ;EEPROMDriver.c: 30: hello = 0;
+"30
+[e = _hello -> -> 0 `i `d ]
+[; ;EEPROMDriver.c: 31: ch = 0;
+"31
+[e = _ch -> -> 0 `i `uc ]
+[; ;EEPROMDriver.c: 33: Sernl();
+"33
+[e ( _Sernl ..  ]
+[; ;EEPROMDriver.c: 34: hello = EEReadDouble(0x00);
+"34
+[e = _hello ( _EEReadDouble (1 -> -> 0 `i `uc ]
+[; ;EEPROMDriver.c: 35: ch = EEReadChar(0x04);
+"35
+[e = _ch ( _EEReadChar (1 -> -> 4 `i `uc ]
+[; ;EEPROMDriver.c: 37: SerTxStr("Here is the double string again: ");
 "37
+[e ( _SerTxStr (1 -> :s 3C `*uc ]
+[; ;EEPROMDriver.c: 38: breakDouble(hello);
+"38
+[e ( _breakDouble (1 _hello ]
+[; ;EEPROMDriver.c: 39: SerTxStr("And here is the char: ");
+"39
+[e ( _SerTxStr (1 -> :s 4C `*uc ]
+[; ;EEPROMDriver.c: 40: SerTx(ch + 0x30);
+"40
+[e ( _SerTx (1 -> + -> _ch `i -> 48 `i `uc ]
+[; ;EEPROMDriver.c: 42: while (1);
+"42
 [e :U 722 ]
 [e :U 721 ]
 [e $U 722  ]
 [e :U 723 ]
-[; ;EEPROMDriver.c: 38: }
-"38
+[; ;EEPROMDriver.c: 43: }
+"43
 [e :UE 720 ]
 }
-"40
+"45
 [v _initialize `(v ~T0 @X0 1 ef ]
-"41
+"46
 {
-[; ;EEPROMDriver.c: 40: void initialize(void)
-[; ;EEPROMDriver.c: 41: {
+[; ;EEPROMDriver.c: 45: void initialize(void)
+[; ;EEPROMDriver.c: 46: {
 [e :U _initialize ]
 [f ]
-[; ;EEPROMDriver.c: 42: SerInit();
-"42
+[; ;EEPROMDriver.c: 47: SerInit();
+"47
 [e ( _SerInit ..  ]
-[; ;EEPROMDriver.c: 43: EEPROMInit();
-"43
+[; ;EEPROMDriver.c: 48: EEPROMInit();
+"48
 [e ( _EEPROMInit ..  ]
-[; ;EEPROMDriver.c: 44: }
-"44
+[; ;EEPROMDriver.c: 49: }
+"49
 [e :UE 724 ]
 }
-[a 3C 65 110 100 32 104 101 114 101 32 105 115 32 116 104 101 32 99 104 97 114 0 ]
-[a 2C 72 101 114 101 32 105 115 32 116 104 101 32 100 111 117 98 108 101 32 115 116 114 105 110 103 32 97 103 97 105 110 58 32 0 ]
+[a 4C 65 110 100 32 104 101 114 101 32 105 115 32 116 104 101 32 99 104 97 114 58 32 0 ]
+[a 2C 72 101 114 101 32 105 115 32 116 104 101 32 99 104 97 114 58 32 0 ]
+[a 3C 72 101 114 101 32 105 115 32 116 104 101 32 100 111 117 98 108 101 32 115 116 114 105 110 103 32 97 103 97 105 110 58 32 0 ]
 [a 1C 72 101 114 101 32 105 115 32 116 104 101 32 100 111 117 98 108 101 32 115 116 114 105 110 103 58 32 0 ]
