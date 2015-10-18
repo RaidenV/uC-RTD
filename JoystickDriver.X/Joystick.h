@@ -12,7 +12,10 @@
 extern "C" {
 #endif
 
-#include <pic18f8722.h>
+#include <xc.h>
+#include <xc.h>
+#include <stdlib.h>
+#include "ResolverToDigital.h"
 
 #define JOYSTICKLED PORTAbits.RA2
 #define JOYSTICKDETECT PORTBbits.RB1

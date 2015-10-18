@@ -6544,207 +6544,204 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
-[; ;Joystick.h: 23: extern unsigned char PIDEnableFlag;
-[; ;Joystick.h: 24: extern unsigned char JSEnableFlag;
-[; ;Joystick.h: 26: void JoystickInit(void);
-[; ;Joystick.h: 27: void DetectJoystick(void);
-[; ;Joystick.h: 28: int DetectMovement(void);
 [; ;ResolverToDigital.h: 26: void RTDInit(void);
 [; ;ResolverToDigital.h: 27: unsigned int ReadRTDpos(void);
 [; ;ResolverToDigital.h: 28: unsigned int ReadRTDvel(void);
 [; ;ResolverToDigital.h: 29: double RTD2Angle(unsigned int);
 [; ;ResolverToDigital.h: 30: double RTD2Velocity(unsigned int);
 [; ;ResolverToDigital.h: 31: unsigned char RTDdirection(void);
-"6 Joystick.c
+[; ;Joystick.h: 26: extern unsigned char PIDEnableFlag;
+[; ;Joystick.h: 27: extern unsigned char JSEnableFlag;
+[; ;Joystick.h: 29: void JoystickInit(void);
+[; ;Joystick.h: 30: void DetectJoystick(void);
+[; ;Joystick.h: 31: int DetectMovement(void);
+"3 Joystick.c
 [v _PIDEnableFlag `uc ~T0 @X0 1 e ]
 [i _PIDEnableFlag
 -> -> 0 `i `uc
 ]
-[; ;Joystick.c: 6: unsigned char PIDEnableFlag = 0;
-"7
+[; ;Joystick.c: 3: unsigned char PIDEnableFlag = 0;
+"4
 [v _JSEnableFlag `uc ~T0 @X0 1 e ]
 [i _JSEnableFlag
 -> -> 0 `i `uc
 ]
-[; ;Joystick.c: 7: unsigned char JSEnableFlag = 0;
-"9
+[; ;Joystick.c: 4: unsigned char JSEnableFlag = 0;
+"6
 [v _JoystickInit `(v ~T0 @X0 1 ef ]
-"10
+"7
 {
-[; ;Joystick.c: 9: void JoystickInit(void)
-[; ;Joystick.c: 10: {
+[; ;Joystick.c: 6: void JoystickInit(void)
+[; ;Joystick.c: 7: {
 [e :U _JoystickInit ]
 [f ]
-[; ;Joystick.c: 11: TRISD = 0;
-"11
+[; ;Joystick.c: 8: TRISD = 0;
+"8
 [e = _TRISD -> -> 0 `i `uc ]
-[; ;Joystick.c: 12: TRISAbits.RA2 = 0;
-"12
+[; ;Joystick.c: 9: TRISAbits.RA2 = 0;
+"9
 [e = . . _TRISAbits 1 2 -> -> 0 `i `uc ]
-[; ;Joystick.c: 13: TRISBbits.RB1 = 1;
-"13
+[; ;Joystick.c: 10: TRISBbits.RB1 = 1;
+"10
 [e = . . _TRISBbits 1 1 -> -> 1 `i `uc ]
-[; ;Joystick.c: 14: if (PORTBbits.RB1 == 1)
-"14
+[; ;Joystick.c: 11: if (PORTBbits.RB1 == 1)
+"11
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 763  ]
-[; ;Joystick.c: 15: {
-"15
+[; ;Joystick.c: 12: {
+"12
 {
-[; ;Joystick.c: 16: PORTAbits.RA2 = 1;
-"16
+[; ;Joystick.c: 13: PORTAbits.RA2 = 1;
+"13
 [e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
-[; ;Joystick.c: 17: JSEnableFlag = 1;
-"17
+[; ;Joystick.c: 14: JSEnableFlag = 1;
+"14
 [e = _JSEnableFlag -> -> 1 `i `uc ]
-"18
+"15
 }
-[; ;Joystick.c: 18: }
+[; ;Joystick.c: 15: }
 [e $U 764  ]
-"19
+"16
 [e :U 763 ]
-[; ;Joystick.c: 19: else if (PORTBbits.RB1 == 0)
+[; ;Joystick.c: 16: else if (PORTBbits.RB1 == 0)
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 765  ]
-[; ;Joystick.c: 20: {
-"20
+[; ;Joystick.c: 17: {
+"17
 {
-[; ;Joystick.c: 21: PORTAbits.RA2 = 0;
-"21
+[; ;Joystick.c: 18: PORTAbits.RA2 = 0;
+"18
 [e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
-[; ;Joystick.c: 22: JSEnableFlag = 0;
-"22
+[; ;Joystick.c: 19: JSEnableFlag = 0;
+"19
 [e = _JSEnableFlag -> -> 0 `i `uc ]
-"23
+"20
 }
 [e :U 765 ]
-"25
+"22
 [e :U 764 ]
-[; ;Joystick.c: 23: }
-[; ;Joystick.c: 25: ADCON0bits.ADON = 1;
+[; ;Joystick.c: 20: }
+[; ;Joystick.c: 22: ADCON0bits.ADON = 1;
 [e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-[; ;Joystick.c: 26: ADCON0 = ADCON0 & 0x01;
-"26
+[; ;Joystick.c: 23: ADCON0 = ADCON0 & 0x01;
+"23
 [e = _ADCON0 -> & -> _ADCON0 `i -> 1 `i `uc ]
-[; ;Joystick.c: 27: ADCON0 = ADCON0 | 0x04;
-"27
-[e = _ADCON0 -> | -> _ADCON0 `i -> 4 `i `uc ]
-[; ;Joystick.c: 28: ADCON1 = 0x0D;
-"28
+[; ;Joystick.c: 24: ADCON1 = 0x0D;
+"24
 [e = _ADCON1 -> -> 13 `i `uc ]
-[; ;Joystick.c: 29: ADCON2 = 0xB4;
-"29
+[; ;Joystick.c: 25: ADCON2 = 0xB4;
+"25
 [e = _ADCON2 -> -> 180 `i `uc ]
-[; ;Joystick.c: 30: }
-"30
+[; ;Joystick.c: 26: }
+"26
 [e :UE 762 ]
 }
-"32
+"28
 [v _DetectJoystick `(v ~T0 @X0 1 ef ]
-"33
+"29
 {
-[; ;Joystick.c: 32: void DetectJoystick(void)
-[; ;Joystick.c: 33: {
+[; ;Joystick.c: 28: void DetectJoystick(void)
+[; ;Joystick.c: 29: {
 [e :U _DetectJoystick ]
 [f ]
-[; ;Joystick.c: 34: if (PORTBbits.RB1 == 0)
-"34
+[; ;Joystick.c: 30: if (PORTBbits.RB1 == 0)
+"30
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 767  ]
-[; ;Joystick.c: 35: {
-"35
+[; ;Joystick.c: 31: {
+"31
 {
-[; ;Joystick.c: 36: PORTAbits.RA2 = 0;
-"36
+[; ;Joystick.c: 32: PORTAbits.RA2 = 0;
+"32
 [e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
-[; ;Joystick.c: 37: JSEnableFlag = 0;
-"37
+[; ;Joystick.c: 33: JSEnableFlag = 0;
+"33
 [e = _JSEnableFlag -> -> 0 `i `uc ]
-"38
+"34
 }
-[; ;Joystick.c: 38: }
+[; ;Joystick.c: 34: }
 [e $U 768  ]
-"40
+"36
 [e :U 767 ]
-[; ;Joystick.c: 40: else if (PORTBbits.RB1 == 1)
+[; ;Joystick.c: 36: else if (PORTBbits.RB1 == 1)
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 769  ]
-[; ;Joystick.c: 41: {
-"41
+[; ;Joystick.c: 37: {
+"37
 {
-[; ;Joystick.c: 42: PORTAbits.RA2 = 1;
-"42
+[; ;Joystick.c: 38: PORTAbits.RA2 = 1;
+"38
 [e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
-[; ;Joystick.c: 43: JSEnableFlag = 1;
-"43
+[; ;Joystick.c: 39: JSEnableFlag = 1;
+"39
 [e = _JSEnableFlag -> -> 1 `i `uc ]
-"44
+"40
 }
 [e :U 769 ]
-"45
+"41
 [e :U 768 ]
-[; ;Joystick.c: 44: }
-[; ;Joystick.c: 45: }
+[; ;Joystick.c: 40: }
+[; ;Joystick.c: 41: }
 [e :UE 766 ]
 }
-"47
+"43
 [v _DetectMovement `(i ~T0 @X0 1 ef ]
-"48
+"44
 {
-[; ;Joystick.c: 47: int DetectMovement(void)
-[; ;Joystick.c: 48: {
+[; ;Joystick.c: 43: int DetectMovement(void)
+[; ;Joystick.c: 44: {
 [e :U _DetectMovement ]
 [f ]
-"49
+"45
 [v _ADCresult `ui ~T0 @X0 1 a ]
-"50
+"46
 [v _JoystickResult `i ~T0 @X0 1 a ]
-[; ;Joystick.c: 49: unsigned int ADCresult;
-[; ;Joystick.c: 50: int JoystickResult;
-[; ;Joystick.c: 52: ADCON0bits.GODONE = 1;
-"52
+[; ;Joystick.c: 45: unsigned int ADCresult;
+[; ;Joystick.c: 46: int JoystickResult;
+[; ;Joystick.c: 48: ADCON0bits.GODONE = 1;
+"48
 [e = . . _ADCON0bits 8 1 -> -> 1 `i `uc ]
-[; ;Joystick.c: 53: while (ADCON0bits.GO_NOT_DONE == 1);
-"53
+[; ;Joystick.c: 49: while (ADCON0bits.GO_NOT_DONE == 1);
+"49
 [e $U 771  ]
 [e :U 772 ]
 [e :U 771 ]
 [e $ == -> . . _ADCON0bits 0 1 `i -> 1 `i 772  ]
 [e :U 773 ]
-[; ;Joystick.c: 55: ADCresult = ADRESH;
-"55
+[; ;Joystick.c: 51: ADCresult = ADRESH;
+"51
 [e = _ADCresult -> _ADRESH `ui ]
-[; ;Joystick.c: 56: ADCresult = ADCresult << 8;
-"56
+[; ;Joystick.c: 52: ADCresult = ADCresult << 8;
+"52
 [e = _ADCresult << _ADCresult -> 8 `i ]
-[; ;Joystick.c: 57: ADCresult = ADCresult | ADRESL;
-"57
+[; ;Joystick.c: 53: ADCresult = ADCresult | ADRESL;
+"53
 [e = _ADCresult | _ADCresult -> _ADRESL `ui ]
-[; ;Joystick.c: 58: JoystickResult = (ADCresult - 512);
-"58
+[; ;Joystick.c: 54: JoystickResult = (ADCresult - 512);
+"54
 [e = _JoystickResult -> - _ADCresult -> -> 512 `i `ui `i ]
-[; ;Joystick.c: 60: if ((JoystickResult > 100) || (JoystickResult < -100))
-"60
+[; ;Joystick.c: 56: if ((JoystickResult > 100) || (JoystickResult < -100))
+"56
 [e $ ! || > _JoystickResult -> 100 `i < _JoystickResult -U -> 100 `i 774  ]
-[; ;Joystick.c: 61: {
-"61
+[; ;Joystick.c: 57: {
+"57
 {
-[; ;Joystick.c: 62: PIDEnableFlag = 0;
-"62
+[; ;Joystick.c: 58: PIDEnableFlag = 0;
+"58
 [e = _PIDEnableFlag -> -> 0 `i `uc ]
-[; ;Joystick.c: 63: return JoystickResult;
-"63
+[; ;Joystick.c: 59: return JoystickResult;
+"59
 [e ) _JoystickResult ]
 [e $UE 770  ]
-"64
+"60
 }
-[; ;Joystick.c: 64: }
+[; ;Joystick.c: 60: }
 [e $U 775  ]
-"65
+"61
 [e :U 774 ]
-[; ;Joystick.c: 65: else
-[; ;Joystick.c: 66: return 0;
-"66
+[; ;Joystick.c: 61: else
+[; ;Joystick.c: 62: return 0;
+"62
 [e ) -> 0 `i ]
 [e $UE 770  ]
 [e :U 775 ]
-[; ;Joystick.c: 67: }
-"67
+[; ;Joystick.c: 63: }
+"63
 [e :UE 770 ]
 }

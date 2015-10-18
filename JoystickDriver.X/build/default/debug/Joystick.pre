@@ -8360,14 +8360,6 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 23 "Joystick.h"
-extern unsigned char PIDEnableFlag;
-extern unsigned char JSEnableFlag;
-
-void JoystickInit(void);
-void DetectJoystick(void);
-int DetectMovement(void);
-
 # 26 "ResolverToDigital.h"
 void RTDInit(void);
 unsigned int ReadRTDpos(void);
@@ -8376,7 +8368,15 @@ double RTD2Angle(unsigned int);
 double RTD2Velocity(unsigned int);
 unsigned char RTDdirection(void);
 
-# 6 "Joystick.c"
+# 26 "Joystick.h"
+extern unsigned char PIDEnableFlag;
+extern unsigned char JSEnableFlag;
+
+void JoystickInit(void);
+void DetectJoystick(void);
+int DetectMovement(void);
+
+# 3 "Joystick.c"
 unsigned char PIDEnableFlag = 0;
 unsigned char JSEnableFlag = 0;
 

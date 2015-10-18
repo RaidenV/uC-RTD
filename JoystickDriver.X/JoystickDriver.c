@@ -16,10 +16,10 @@ void main(void)
     initialize();
     while (1)
     {
-      //  DetectJoystick();
-       // if (JSEnableFlag == 1)
-          //  ImplementJSMotion(DetectMovement());
-        ImplementJSMotion(-50);
+        //DetectJoystick();
+        JSEnableFlag = 1;
+        if (JSEnableFlag == 1)
+            ImplementJSMotion(DetectMovement());
     }
 
 }

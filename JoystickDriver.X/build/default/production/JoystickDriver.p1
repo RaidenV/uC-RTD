@@ -42,11 +42,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "12 JoystickDriver.c
 [v _initialize `(v ~T0 @X0 0 ef ]
+"27 Joystick.h
+[v _JSEnableFlag `uc ~T0 @X0 0 e ]
 "27 MotorControl.h
 [v _ImplementJSMotion `(v ~T0 @X0 0 ef1`i ]
-"24
+"31 Joystick.h
+[v _DetectMovement `(i ~T0 @X0 0 ef ]
+"24 MotorControl.h
 [v _MotorDriverInit `(v ~T0 @X0 0 ef ]
-"26 Joystick.h
+"29 Joystick.h
 [v _JoystickInit `(v ~T0 @X0 0 ef ]
 "13587 /opt/microchip/xc8/v1.34/include/pic18f8722.h
 [v _INTCON `Vuc ~T0 @X0 0 e@4082 ]
@@ -6434,11 +6438,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-[; ;Joystick.h: 23: extern unsigned char PIDEnableFlag;
-[; ;Joystick.h: 24: extern unsigned char JSEnableFlag;
-[; ;Joystick.h: 26: void JoystickInit(void);
-[; ;Joystick.h: 27: void DetectJoystick(void);
-[; ;Joystick.h: 28: int DetectMovement(void);
 [; ;stdlib.h: 27: typedef struct {
 [; ;stdlib.h: 28: int rem;
 [; ;stdlib.h: 29: int quot;
@@ -6483,6 +6482,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 103: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
 [; ;stdlib.h: 104: extern int abs(int);
 [; ;stdlib.h: 105: extern long labs(long);
+[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
+[; ;ResolverToDigital.h: 26: void RTDInit(void);
+[; ;ResolverToDigital.h: 27: unsigned int ReadRTDpos(void);
+[; ;ResolverToDigital.h: 28: unsigned int ReadRTDvel(void);
+[; ;ResolverToDigital.h: 29: double RTD2Angle(unsigned int);
+[; ;ResolverToDigital.h: 30: double RTD2Velocity(unsigned int);
+[; ;ResolverToDigital.h: 31: unsigned char RTDdirection(void);
+[; ;Joystick.h: 26: extern unsigned char PIDEnableFlag;
+[; ;Joystick.h: 27: extern unsigned char JSEnableFlag;
+[; ;Joystick.h: 29: void JoystickInit(void);
+[; ;Joystick.h: 30: void DetectJoystick(void);
+[; ;Joystick.h: 31: int DetectMovement(void);
 [; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
 [; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
 [; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
@@ -6812,9 +6827,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;JoystickDriver.c: 18: {
 "18
 {
-[; ;JoystickDriver.c: 22: ImplementJSMotion(-50);
+[; ;JoystickDriver.c: 20: JSEnableFlag = 1;
+"20
+[e = _JSEnableFlag -> -> 1 `i `uc ]
+[; ;JoystickDriver.c: 21: if (JSEnableFlag == 1)
+"21
+[e $ ! == -> _JSEnableFlag `i -> 1 `i 777  ]
+[; ;JoystickDriver.c: 22: ImplementJSMotion(DetectMovement());
 "22
-[e ( _ImplementJSMotion (1 -U -> 50 `i ]
+[e ( _ImplementJSMotion (1 ( _DetectMovement ..  ]
+[e :U 777 ]
 "23
 }
 [e :U 774 ]
@@ -6848,7 +6870,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _INTCON -> | -> _INTCON `i -> 192 `i `uc ]
 [; ;JoystickDriver.c: 34: }
 "34
-[e :UE 777 ]
+[e :UE 778 ]
 }
 [a 1C 56 55 50 50 58 32 0 ]
 [a 2C 56 54 56 48 58 32 0 ]

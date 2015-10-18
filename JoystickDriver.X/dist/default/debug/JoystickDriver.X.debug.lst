@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Sat Oct 17 00:53:38 2015
+                                                                                               Sun Oct 18 03:34:57 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	18F8722
@@ -25,1259 +25,1413 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
     19                           	psect	text10,global,reloc=2,class=CODE,delta=1
     20                           	psect	text11,global,reloc=2,class=CODE,delta=1
     21                           	psect	text12,global,reloc=2,class=CODE,delta=1
-    22                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
-    23                           	psect	rparam,global,class=COMRAM,space=1,delta=1
-    24  0000                     _PORTAbits	set	3968
-    25  0000                     _PORTBbits	set	3969
-    26  0000                     _TRISAbits	set	3986
-    27  0000                     _TRISBbits	set	3987
-    28  0000                     _TRISCbits	set	3988
-    29  0000                     _TRISD	set	3989
-    30  0000                     _TRISEbits	set	3990
-    31  0000                     _TRISFbits	set	3991
-    32  0000                     _TRISGbits	set	3992
-    33  0000                     _ADCON0	set	4034
-    34  0000                     _ADCON0bits	set	4034
-    35  0000                     _ADCON1	set	4033
-    36  0000                     _ADCON2	set	4032
-    37  0000                     _ADRESH	set	4036
-    38  0000                     _ADRESL	set	4035
-    39  0000                     _CCP3CON	set	4023
-    40  0000                     _CCP3CONbits	set	4023
-    41  0000                     _CCPR3L	set	4024
-    42  0000                     _PIR1bits	set	3998
-    43  0000                     _PR2	set	4043
-    44  0000                     _SSP1BUF	set	4041
-    45  0000                     _SSP1CON1	set	4038
-    46  0000                     _SSP1CON1bits	set	4038
-    47  0000                     _SSP1STAT	set	4039
-    48  0000                     _SSP1STATbits	set	4039
-    49  0000                     _T2CON	set	4042
-    50  0000                     _T3CON	set	4017
-    51  0000                     _INTCON	set	4082
-    52                           
-    53                           	psect	smallconst
-    54  001000                     __psmallconst:
-    55                           	opt stack 0
-    56  001000  00                 	db	0
-    57  001001  38                 	db	56	;'8'
-    58  001002  36                 	db	54	;'6'
-    59  001003  38                 	db	56	;'8'
-    60  001004  30                 	db	48	;'0'
-    61  001005  3A                 	db	58	;':'
-    62  001006  20                 	db	32
-    63  001007  00                 	db	0
-    64  001008  38                 	db	56	;'8'
-    65  001009  37                 	db	55	;'7'
-    66  00100A  32                 	db	50	;'2'
-    67  00100B  32                 	db	50	;'2'
-    68  00100C  3A                 	db	58	;':'
-    69  00100D  20                 	db	32
-    70  00100E  00                 	db	0
-    71                           
-    72                           ; #config settings
-    73  00100F  00                 	db	0	; dummy byte at the end
-    74  0000                     
-    75                           	psect	cinit
-    76  0012A2                     __pcinit:
-    77                           	opt stack 0
-    78  0012A2                     start_initialization:
-    79                           	opt stack 0
-    80  0012A2                     __initialization:
-    81                           	opt stack 0
-    82                           
-    83                           ; Clear objects allocated to COMRAM (2 bytes)
-    84  0012A2  6A0C               	clrf	(__pbssCOMRAM+1)& (0+255),c
-    85  0012A4  6A0B               	clrf	__pbssCOMRAM& (0+255),c
-    86  0012A6                     end_of_initialization:
-    87                           	opt stack 0
-    88  0012A6                     __end_of__initialization:
-    89                           	opt stack 0
-    90  0012A6  0100               	movlb	0
-    91  0012A8  EF33  F009         	goto	_main	;jump to C main() function
-    92                           
-    93                           	psect	bssCOMRAM
-    94  00000B                     __pbssCOMRAM:
-    95                           	opt stack 0
-    96  00000B                     _JSEnableFlag:
-    97                           	opt stack 0
-    98  00000B                     	ds	1
-    99  00000C                     _PIDEnableFlag:
-   100                           	opt stack 0
-   101  00000C                     	ds	1
-   102                           
-   103                           	psect	cstackCOMRAM
-   104  000001                     __pcstackCOMRAM:
-   105                           	opt stack 0
-   106  000001                     ?_abs:
-   107                           	opt stack 0
-   108  000001                     OpenSPI1@bus_mode:
-   109                           	opt stack 0
-   110  000001                     WriteSPI1@TempVar:
-   111                           	opt stack 0
-   112  000001                     Delay10TCYx@unit:
-   113                           	opt stack 0
-   114  000001                     abs@a:
-   115                           	opt stack 0
-   116                           
-   117                           ; 2 bytes @ 0x0
-   118  000001                     	ds	1
-   119  000002                     OpenSPI1@smp_phase:
-   120                           	opt stack 0
-   121  000002                     WriteSPI1@data_out:
-   122                           	opt stack 0
-   123                           
-   124                           ; 1 bytes @ 0x1
-   125  000002                     	ds	1
-   126  000003                     ??_abs:
-   127  000003                     setGPIO@value:
-   128                           	opt stack 0
-   129  000003                     setIODIR@dir:
-   130                           	opt stack 0
-   131  000003                     OpenSPI1@sync_mode:
-   132                           	opt stack 0
-   133                           
-   134                           ; 1 bytes @ 0x2
-   135  000003                     	ds	1
-   136  000004                     setGPIO@address:
+    22                           	psect	text13,global,reloc=2,class=CODE,delta=1
+    23                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    24                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    25  0000                     _PORTAbits	set	3968
+    26  0000                     _PORTBbits	set	3969
+    27  0000                     _TRISAbits	set	3986
+    28  0000                     _TRISBbits	set	3987
+    29  0000                     _TRISCbits	set	3988
+    30  0000                     _TRISD	set	3989
+    31  0000                     _TRISEbits	set	3990
+    32  0000                     _TRISFbits	set	3991
+    33  0000                     _TRISGbits	set	3992
+    34  0000                     _ADCON0	set	4034
+    35  0000                     _ADCON0bits	set	4034
+    36  0000                     _ADCON1	set	4033
+    37  0000                     _ADCON2	set	4032
+    38  0000                     _ADRESH	set	4036
+    39  0000                     _ADRESL	set	4035
+    40  0000                     _CCP3CON	set	4023
+    41  0000                     _CCP3CONbits	set	4023
+    42  0000                     _CCPR3L	set	4024
+    43  0000                     _PIR1bits	set	3998
+    44  0000                     _PR2	set	4043
+    45  0000                     _SSP1BUF	set	4041
+    46  0000                     _SSP1CON1	set	4038
+    47  0000                     _SSP1CON1bits	set	4038
+    48  0000                     _SSP1STAT	set	4039
+    49  0000                     _SSP1STATbits	set	4039
+    50  0000                     _T2CON	set	4042
+    51  0000                     _T3CON	set	4017
+    52  0000                     _INTCON	set	4082
+    53                           
+    54                           	psect	smallconst
+    55  001000                     __psmallconst:
+    56                           	opt stack 0
+    57  001000  00                 	db	0
+    58  001001  38                 	db	56	;'8'
+    59  001002  36                 	db	54	;'6'
+    60  001003  38                 	db	56	;'8'
+    61  001004  30                 	db	48	;'0'
+    62  001005  3A                 	db	58	;':'
+    63  001006  20                 	db	32
+    64  001007  00                 	db	0
+    65  001008  38                 	db	56	;'8'
+    66  001009  37                 	db	55	;'7'
+    67  00100A  32                 	db	50	;'2'
+    68  00100B  32                 	db	50	;'2'
+    69  00100C  3A                 	db	58	;':'
+    70  00100D  20                 	db	32
+    71  00100E  00                 	db	0
+    72                           
+    73                           ; #config settings
+    74  00100F  00                 	db	0	; dummy byte at the end
+    75  0000                     
+    76                           	psect	cinit
+    77  001316                     __pcinit:
+    78                           	opt stack 0
+    79  001316                     start_initialization:
+    80                           	opt stack 0
+    81  001316                     __initialization:
+    82                           	opt stack 0
+    83                           
+    84                           ; Clear objects allocated to COMRAM (2 bytes)
+    85  001316  6A0E               	clrf	(__pbssCOMRAM+1)& (0+255),c
+    86  001318  6A0D               	clrf	__pbssCOMRAM& (0+255),c
+    87  00131A                     end_of_initialization:
+    88                           	opt stack 0
+    89  00131A                     __end_of__initialization:
+    90                           	opt stack 0
+    91  00131A  0100               	movlb	0
+    92  00131C  EF2C  F009         	goto	_main	;jump to C main() function
+    93                           
+    94                           	psect	bssCOMRAM
+    95  00000D                     __pbssCOMRAM:
+    96                           	opt stack 0
+    97  00000D                     _JSEnableFlag:
+    98                           	opt stack 0
+    99  00000D                     	ds	1
+   100  00000E                     _PIDEnableFlag:
+   101                           	opt stack 0
+   102  00000E                     	ds	1
+   103                           
+   104                           	psect	cstackCOMRAM
+   105  000001                     __pcstackCOMRAM:
+   106                           	opt stack 0
+   107  000001                     ?_abs:
+   108                           	opt stack 0
+   109  000001                     ?_DetectMovement:
+   110                           	opt stack 0
+   111  000001                     OpenSPI1@bus_mode:
+   112                           	opt stack 0
+   113  000001                     WriteSPI1@TempVar:
+   114                           	opt stack 0
+   115  000001                     Delay10TCYx@unit:
+   116                           	opt stack 0
+   117  000001                     abs@a:
+   118                           	opt stack 0
+   119                           
+   120                           ; 2 bytes @ 0x0
+   121  000001                     	ds	1
+   122  000002                     OpenSPI1@smp_phase:
+   123                           	opt stack 0
+   124  000002                     WriteSPI1@data_out:
+   125                           	opt stack 0
+   126                           
+   127                           ; 1 bytes @ 0x1
+   128  000002                     	ds	1
+   129  000003                     ??_abs:
+   130  000003                     setGPIO@value:
+   131                           	opt stack 0
+   132  000003                     setIODIR@dir:
+   133                           	opt stack 0
+   134  000003                     OpenSPI1@sync_mode:
+   135                           	opt stack 0
+   136  000003                     DetectMovement@JoystickResult:
    137                           	opt stack 0
-   138  000004                     setIODIR@address:
-   139                           	opt stack 0
-   140                           
-   141                           ; 1 bytes @ 0x3
-   142  000004                     	ds	1
-   143  000005                     lcdCommand@command:
+   138                           
+   139                           ; 2 bytes @ 0x2
+   140  000003                     	ds	1
+   141  000004                     setGPIO@address:
+   142                           	opt stack 0
+   143  000004                     setIODIR@address:
    144                           	opt stack 0
-   145  000005                     ImplementJSMotion@JoystickValue:
-   146                           	opt stack 0
-   147                           
-   148                           ; 2 bytes @ 0x4
-   149  000005                     	ds	1
-   150  000006                     
-   151                           ; 0 bytes @ 0x5
-   152  000006                     	ds	1
-   153  000007                     ??_ImplementJSMotion:
-   154                           
-   155                           ; 0 bytes @ 0x6
-   156  000007                     	ds	2
-   157  000009                     ImplementJSMotion@CCPinput:
-   158                           	opt stack 0
-   159                           
-   160                           ; 2 bytes @ 0x8
-   161  000009                     	ds	2
-   162  00000B                     
-   163                           ; 0 bytes @ 0xA
-   164 ;;
-   165 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   166 ;;
-   167 ;; *************** function _main *****************
-   168 ;; Defined at:
-   169 ;;		line 14 in file "JoystickDriver.c"
-   170 ;; Parameters:    Size  Location     Type
-   171 ;;		None
-   172 ;; Auto vars:     Size  Location     Type
-   173 ;;		None
-   174 ;; Return value:  Size  Location     Type
-   175 ;;		None               void
-   176 ;; Registers used:
-   177 ;;		wreg, status,2, status,0, cstack
-   178 ;; Tracked objects:
-   179 ;;		On entry : 0/0
-   180 ;;		On exit  : 0/0
-   181 ;;		Unchanged: 0/0
-   182 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   145                           
+   146                           ; 1 bytes @ 0x3
+   147  000004                     	ds	1
+   148  000005                     lcdCommand@command:
+   149                           	opt stack 0
+   150  000005                     DetectMovement@ADCresult:
+   151                           	opt stack 0
+   152                           
+   153                           ; 2 bytes @ 0x4
+   154  000005                     	ds	1
+   155  000006                     
+   156                           ; 0 bytes @ 0x5
+   157  000006                     	ds	1
+   158  000007                     ImplementJSMotion@JoystickValue:
+   159                           	opt stack 0
+   160                           
+   161                           ; 2 bytes @ 0x6
+   162  000007                     	ds	2
+   163  000009                     ??_ImplementJSMotion:
+   164                           
+   165                           ; 0 bytes @ 0x8
+   166  000009                     	ds	2
+   167  00000B                     ImplementJSMotion@CCPinput:
+   168                           	opt stack 0
+   169                           
+   170                           ; 2 bytes @ 0xA
+   171  00000B                     	ds	2
+   172  00000D                     
+   173                           ; 0 bytes @ 0xC
+   174 ;;
+   175 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   176 ;;
+   177 ;; *************** function _main *****************
+   178 ;; Defined at:
+   179 ;;		line 14 in file "JoystickDriver.c"
+   180 ;; Parameters:    Size  Location     Type
+   181 ;;		None
+   182 ;; Auto vars:     Size  Location     Type
+   183 ;;		None
+   184 ;; Return value:  Size  Location     Type
+   185 ;;		None               void
+   186 ;; Registers used:
+   187 ;;		wreg, status,2, status,0, cstack
+   188 ;; Tracked objects:
+   189 ;;		On entry : 0/0
+   190 ;;		On exit  : 0/0
+   191 ;;		Unchanged: 0/0
+   192 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   183 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   193 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   184 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   194 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   185 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   195 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   186 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   196 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   187 ;;Total ram usage:        0 bytes
-   188 ;; Hardware stack levels required when called:    5
-   189 ;; This function calls:
-   190 ;;		_ImplementJSMotion
-   191 ;;		_initialize
-   192 ;; This function is called by:
-   193 ;;		Startup code after reset
-   194 ;; This function uses a non-reentrant model
-   195 ;;
-   196                           
-   197                           	psect	text0
-   198  001266                     __ptext0:
-   199                           	opt stack 0
-   200  001266                     _main:
-   201                           	opt stack 26
-   202                           
-   203                           ;JoystickDriver.c: 16: initialize();
-   204                           
-   205                           ;incstack = 0
-   206  001266  EC3E  F009         	call	_initialize	;wreg free
-   207  00126A                     l144:
-   208                           
-   209                           ;JoystickDriver.c: 18: {
-   210                           ;JoystickDriver.c: 22: ImplementJSMotion(-50);
-   211  00126A  0EFF               	movlw	255
-   212  00126C  6E06               	movwf	ImplementJSMotion@JoystickValue+1,c
-   213  00126E  0ECE               	movlw	206
-   214  001270  6E05               	movwf	ImplementJSMotion@JoystickValue,c
-   215  001272  EC08  F008         	call	_ImplementJSMotion	;wreg free
-   216  001276  D7F9               	goto	l144
-   217  001278  EF01  F000         	goto	start
-   218  00127C                     __end_of_main:
-   219                           	opt stack 0
+   197 ;;Total ram usage:        0 bytes
+   198 ;; Hardware stack levels required when called:    5
+   199 ;; This function calls:
+   200 ;;		_DetectMovement
+   201 ;;		_ImplementJSMotion
+   202 ;;		_initialize
+   203 ;; This function is called by:
+   204 ;;		Startup code after reset
+   205 ;; This function uses a non-reentrant model
+   206 ;;
+   207                           
+   208                           	psect	text0
+   209  001258                     __ptext0:
+   210                           	opt stack 0
+   211  001258                     _main:
+   212                           	opt stack 26
+   213                           
+   214                           ;JoystickDriver.c: 16: initialize();
+   215                           
+   216                           ;incstack = 0
+   217  001258  EC78  F009         	call	_initialize	;wreg free
+   218  00125C  D000               	goto	l1244
+   219  00125E                     l1244:
    220                           
-   221 ;; *************** function _initialize *****************
-   222 ;; Defined at:
-   223 ;;		line 28 in file "JoystickDriver.c"
-   224 ;; Parameters:    Size  Location     Type
-   225 ;;		None
-   226 ;; Auto vars:     Size  Location     Type
-   227 ;;		None
-   228 ;; Return value:  Size  Location     Type
-   229 ;;		None               void
-   230 ;; Registers used:
-   231 ;;		wreg, status,2, status,0, cstack
-   232 ;; Tracked objects:
-   233 ;;		On entry : 0/0
-   234 ;;		On exit  : 0/0
-   235 ;;		Unchanged: 0/0
-   236 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   221                           ;JoystickDriver.c: 18: {
+   222                           ;JoystickDriver.c: 20: JSEnableFlag = 1;
+   223  00125E  0E01               	movlw	1
+   224  001260  6E0D               	movwf	_JSEnableFlag,c
+   225                           
+   226                           ;JoystickDriver.c: 21: if (JSEnableFlag == 1)
+   227  001262  040D               	decf	_JSEnableFlag,w,c
+   228  001264  A4D8               	btfss	status,2,c
+   229  001266  D7FB               	goto	l1244
+   230                           
+   231                           ;JoystickDriver.c: 22: ImplementJSMotion(DetectMovement());
+   232  001268  EC59  F008         	call	_DetectMovement	;wreg free
+   233  00126C  C001  F007         	movff	?_DetectMovement,ImplementJSMotion@JoystickValue
+   234  001270  C002  F008         	movff	?_DetectMovement+1,ImplementJSMotion@JoystickValue+1
+   235  001274  EC08  F008         	call	_ImplementJSMotion	;wreg free
+   236  001278  D7F2               	goto	l1244
+   237  00127A  EF01  F000         	goto	start
+   238  00127E                     __end_of_main:
+   239                           	opt stack 0
+   240                           status	equ	0xFD8
+   241                           
+   242 ;; *************** function _initialize *****************
+   243 ;; Defined at:
+   244 ;;		line 28 in file "JoystickDriver.c"
+   245 ;; Parameters:    Size  Location     Type
+   246 ;;		None
+   247 ;; Auto vars:     Size  Location     Type
+   248 ;;		None
+   249 ;; Return value:  Size  Location     Type
+   250 ;;		None               void
+   251 ;; Registers used:
+   252 ;;		wreg, status,2, status,0, cstack
+   253 ;; Tracked objects:
+   254 ;;		On entry : 0/0
+   255 ;;		On exit  : 0/0
+   256 ;;		Unchanged: 0/0
+   257 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   237 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   258 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   238 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   259 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   239 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   260 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   240 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   261 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   241 ;;Total ram usage:        0 bytes
-   242 ;; Hardware stack levels used:    1
-   243 ;; Hardware stack levels required when called:    4
-   244 ;; This function calls:
-   245 ;;		_JoystickInit
-   246 ;;		_MotorDriverInit
-   247 ;;		_lcdInit
-   248 ;; This function is called by:
-   249 ;;		_main
-   250 ;; This function uses a non-reentrant model
-   251 ;;
-   252                           
-   253                           	psect	text1
-   254  00127C                     __ptext1:
-   255                           	opt stack 0
-   256  00127C                     _initialize:
-   257                           	opt stack 26
-   258                           
-   259                           ;JoystickDriver.c: 30: MotorDriverInit();
-   260                           
-   261                           ;incstack = 0
-   262  00127C  EC0B  F009         	call	_MotorDriverInit	;wreg free
-   263                           
-   264                           ;JoystickDriver.c: 31: JoystickInit();
-   265  001280  ECCB  F008         	call	_JoystickInit	;wreg free
-   266                           
-   267                           ;JoystickDriver.c: 32: lcdInit();
-   268  001284  EC84  F008         	call	_lcdInit	;wreg free
-   269                           
-   270                           ;JoystickDriver.c: 33: INTCON = INTCON | 0xC0;
-   271  001288  50F2               	movf	intcon,w,c	;volatile
-   272  00128A  09C0               	iorlw	192
-   273  00128C  6EF2               	movwf	intcon,c	;volatile
-   274  00128E  0012               	return		;funcret
-   275  001290                     __end_of_initialize:
+   262 ;;Total ram usage:        0 bytes
+   263 ;; Hardware stack levels used:    1
+   264 ;; Hardware stack levels required when called:    4
+   265 ;; This function calls:
+   266 ;;		_JoystickInit
+   267 ;;		_MotorDriverInit
+   268 ;;		_lcdInit
+   269 ;; This function is called by:
+   270 ;;		_main
+   271 ;; This function uses a non-reentrant model
+   272 ;;
+   273                           
+   274                           	psect	text1
+   275  0012F0                     __ptext1:
    276                           	opt stack 0
-   277                           intcon	equ	0xFF2
-   278                           
-   279 ;; *************** function _lcdInit *****************
-   280 ;; Defined at:
-   281 ;;		line 110 in file "LCD.h"
-   282 ;; Parameters:    Size  Location     Type
-   283 ;;		None
-   284 ;; Auto vars:     Size  Location     Type
-   285 ;;		None
-   286 ;; Return value:  Size  Location     Type
-   287 ;;		None               void
-   288 ;; Registers used:
-   289 ;;		wreg, status,2, status,0, cstack
-   290 ;; Tracked objects:
-   291 ;;		On entry : 0/0
-   292 ;;		On exit  : 0/0
-   293 ;;		Unchanged: 0/0
-   294 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   277  0012F0                     _initialize:
+   278                           	opt stack 26
+   279                           
+   280                           ;JoystickDriver.c: 30: MotorDriverInit();
+   281                           
+   282                           ;incstack = 0
+   283  0012F0  EC50  F009         	call	_MotorDriverInit	;wreg free
+   284                           
+   285                           ;JoystickDriver.c: 31: JoystickInit();
+   286  0012F4  ECFD  F008         	call	_JoystickInit	;wreg free
+   287                           
+   288                           ;JoystickDriver.c: 32: lcdInit();
+   289  0012F8  ECB6  F008         	call	_lcdInit	;wreg free
+   290                           
+   291                           ;JoystickDriver.c: 33: INTCON = INTCON | 0xC0;
+   292  0012FC  50F2               	movf	intcon,w,c	;volatile
+   293  0012FE  09C0               	iorlw	192
+   294  001300  6EF2               	movwf	intcon,c	;volatile
+   295  001302  0012               	return		;funcret
+   296  001304                     __end_of_initialize:
+   297                           	opt stack 0
+   298                           intcon	equ	0xFF2
+   299                           status	equ	0xFD8
+   300                           
+   301 ;; *************** function _lcdInit *****************
+   302 ;; Defined at:
+   303 ;;		line 110 in file "LCD.h"
+   304 ;; Parameters:    Size  Location     Type
+   305 ;;		None
+   306 ;; Auto vars:     Size  Location     Type
+   307 ;;		None
+   308 ;; Return value:  Size  Location     Type
+   309 ;;		None               void
+   310 ;; Registers used:
+   311 ;;		wreg, status,2, status,0, cstack
+   312 ;; Tracked objects:
+   313 ;;		On entry : 0/0
+   314 ;;		On exit  : 0/0
+   315 ;;		Unchanged: 0/0
+   316 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   295 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   317 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   296 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   318 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   297 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   319 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   298 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   320 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   299 ;;Total ram usage:        0 bytes
-   300 ;; Hardware stack levels used:    1
-   301 ;; Hardware stack levels required when called:    3
-   302 ;; This function calls:
-   303 ;;		_OpenSPI1
-   304 ;;		_lcdCommand
-   305 ;;		_setGPIO
-   306 ;;		_setIODIR
-   307 ;; This function is called by:
-   308 ;;		_initialize
-   309 ;; This function uses a non-reentrant model
-   310 ;;
-   311                           
-   312                           	psect	text2
-   313  001108                     __ptext2:
-   314                           	opt stack 0
-   315  001108                     _lcdInit:
-   316                           	opt stack 26
-   317                           
-   318                           ;LCD.h: 112: TRISAbits.RA2=0;
-   319                           
-   320                           ;incstack = 0
-   321  001108  9492               	bcf	3986,2,c	;volatile
-   322                           
-   323                           ;LCD.h: 113: PORTAbits.RA2=1;
-   324  00110A  8480               	bsf	3968,2,c	;volatile
-   325                           
-   326                           ;LCD.h: 115: OpenSPI1(0b00000010, 0b00000010, 0b10000000);
-   327  00110C  0E02               	movlw	2
-   328  00110E  6E01               	movwf	OpenSPI1@bus_mode,c
-   329  001110  0E80               	movlw	128
-   330  001112  6E02               	movwf	OpenSPI1@smp_phase,c
-   331  001114  0E02               	movlw	2
-   332  001116  EC59  F008         	call	_OpenSPI1
+   321 ;;Total ram usage:        0 bytes
+   322 ;; Hardware stack levels used:    1
+   323 ;; Hardware stack levels required when called:    3
+   324 ;; This function calls:
+   325 ;;		_OpenSPI1
+   326 ;;		_lcdCommand
+   327 ;;		_setGPIO
+   328 ;;		_setIODIR
+   329 ;; This function is called by:
+   330 ;;		_initialize
+   331 ;; This function uses a non-reentrant model
+   332 ;;
    333                           
-   334                           ;LCD.h: 117: setIODIR(0x01,0x00);
-   335  00111A  0E00               	movlw	0
-   336  00111C  6E03               	movwf	setIODIR@dir,c
-   337  00111E  0E01               	movlw	1
-   338  001120  EC19  F009         	call	_setIODIR
+   334                           	psect	text2
+   335  00116C                     __ptext2:
+   336                           	opt stack 0
+   337  00116C                     _lcdInit:
+   338                           	opt stack 26
    339                           
-   340                           ;LCD.h: 119: setIODIR(0x00,0x00);
-   341  001124  0E00               	movlw	0
-   342  001126  6E03               	movwf	setIODIR@dir,c
-   343  001128  0E00               	movlw	0
-   344  00112A  EC19  F009         	call	_setIODIR
-   345                           
-   346                           ;LCD.h: 121: setGPIO(0x00,0x00);
-   347  00112E  0E00               	movlw	0
-   348  001130  6E03               	movwf	setGPIO@value,c
-   349  001132  0E00               	movlw	0
-   350  001134  EC26  F009         	call	_setGPIO
-   351                           
-   352                           ;LCD.h: 123: lcdCommand(0b00111111);
-   353  001138  0E3F               	movlw	63
-   354  00113A  ECA9  F008         	call	_lcdCommand
+   340                           ;LCD.h: 112: TRISAbits.RA2=0;
+   341                           
+   342                           ;incstack = 0
+   343  00116C  9492               	bcf	3986,2,c	;volatile
+   344                           
+   345                           ;LCD.h: 113: PORTAbits.RA2=1;
+   346  00116E  8480               	bsf	3968,2,c	;volatile
+   347                           
+   348                           ;LCD.h: 115: OpenSPI1(0b00000010, 0b00000010, 0b10000000);
+   349  001170  0E02               	movlw	2
+   350  001172  6E01               	movwf	OpenSPI1@bus_mode,c
+   351  001174  0E80               	movlw	128
+   352  001176  6E02               	movwf	OpenSPI1@smp_phase,c
+   353  001178  0E02               	movlw	2
+   354  00117A  EC8B  F008         	call	_OpenSPI1
    355                           
-   356                           ;LCD.h: 125: lcdCommand(0b00001111);
-   357  00113E  0E0F               	movlw	15
-   358  001140  ECA9  F008         	call	_lcdCommand
-   359                           
-   360                           ;LCD.h: 127: lcdCommand(0b00000001);
-   361  001144  0E01               	movlw	1
-   362  001146  ECA9  F008         	call	_lcdCommand
-   363                           
-   364                           ;LCD.h: 129: lcdCommand(0b00000110);
-   365  00114A  0E06               	movlw	6
-   366  00114C  ECA9  F008         	call	_lcdCommand
-   367  001150  0012               	return		;funcret
-   368  001152                     __end_of_lcdInit:
-   369                           	opt stack 0
-   370                           intcon	equ	0xFF2
-   371                           
-   372 ;; *************** function _setIODIR *****************
-   373 ;; Defined at:
-   374 ;;		line 43 in file "LCD.h"
-   375 ;; Parameters:    Size  Location     Type
-   376 ;;  address         1    wreg     unsigned char 
-   377 ;;  dir             1    2[COMRAM] unsigned char 
-   378 ;; Auto vars:     Size  Location     Type
-   379 ;;  address         1    3[COMRAM] unsigned char 
-   380 ;; Return value:  Size  Location     Type
-   381 ;;		None               void
-   382 ;; Registers used:
-   383 ;;		wreg, status,2, cstack
-   384 ;; Tracked objects:
-   385 ;;		On entry : 0/0
-   386 ;;		On exit  : 0/0
-   387 ;;		Unchanged: 0/0
-   388 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   356                           ;LCD.h: 117: setIODIR(0x01,0x00);
+   357  00117E  0E00               	movlw	0
+   358  001180  6E03               	movwf	setIODIR@dir,c
+   359  001182  0E01               	movlw	1
+   360  001184  EC5E  F009         	call	_setIODIR
+   361                           
+   362                           ;LCD.h: 119: setIODIR(0x00,0x00);
+   363  001188  0E00               	movlw	0
+   364  00118A  6E03               	movwf	setIODIR@dir,c
+   365  00118C  0E00               	movlw	0
+   366  00118E  EC5E  F009         	call	_setIODIR
+   367                           
+   368                           ;LCD.h: 121: setGPIO(0x00,0x00);
+   369  001192  0E00               	movlw	0
+   370  001194  6E03               	movwf	setGPIO@value,c
+   371  001196  0E00               	movlw	0
+   372  001198  EC6B  F009         	call	_setGPIO
+   373                           
+   374                           ;LCD.h: 123: lcdCommand(0b00111111);
+   375  00119C  0E3F               	movlw	63
+   376  00119E  ECDB  F008         	call	_lcdCommand
+   377                           
+   378                           ;LCD.h: 125: lcdCommand(0b00001111);
+   379  0011A2  0E0F               	movlw	15
+   380  0011A4  ECDB  F008         	call	_lcdCommand
+   381                           
+   382                           ;LCD.h: 127: lcdCommand(0b00000001);
+   383  0011A8  0E01               	movlw	1
+   384  0011AA  ECDB  F008         	call	_lcdCommand
+   385                           
+   386                           ;LCD.h: 129: lcdCommand(0b00000110);
+   387  0011AE  0E06               	movlw	6
+   388  0011B0  ECDB  F008         	call	_lcdCommand
+   389  0011B4  0012               	return		;funcret
+   390  0011B6                     __end_of_lcdInit:
+   391                           	opt stack 0
+   392                           intcon	equ	0xFF2
+   393                           status	equ	0xFD8
+   394                           
+   395 ;; *************** function _setIODIR *****************
+   396 ;; Defined at:
+   397 ;;		line 43 in file "LCD.h"
+   398 ;; Parameters:    Size  Location     Type
+   399 ;;  address         1    wreg     unsigned char 
+   400 ;;  dir             1    2[COMRAM] unsigned char 
+   401 ;; Auto vars:     Size  Location     Type
+   402 ;;  address         1    3[COMRAM] unsigned char 
+   403 ;; Return value:  Size  Location     Type
+   404 ;;		None               void
+   405 ;; Registers used:
+   406 ;;		wreg, status,2, cstack
+   407 ;; Tracked objects:
+   408 ;;		On entry : 0/0
+   409 ;;		On exit  : 0/0
+   410 ;;		Unchanged: 0/0
+   411 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   389 ;;      Params:         1       0       0       0       0       0       0       0       0       0       0       0       
+   412 ;;      Params:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   390 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+   413 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   391 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   414 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   392 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+   415 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   393 ;;Total ram usage:        2 bytes
-   394 ;; Hardware stack levels used:    1
-   395 ;; Hardware stack levels required when called:    1
-   396 ;; This function calls:
-   397 ;;		_WriteSPI1
-   398 ;; This function is called by:
-   399 ;;		_lcdInit
-   400 ;; This function uses a non-reentrant model
-   401 ;;
-   402                           
-   403                           	psect	text3
-   404  001232                     __ptext3:
-   405                           	opt stack 0
-   406  001232                     _setIODIR:
-   407                           	opt stack 27
-   408                           
-   409                           ;incstack = 0
-   410                           ;setIODIR@address stored from wreg
-   411  001232  6E04               	movwf	setIODIR@address,c
-   412                           
-   413                           ;LCD.h: 45: PORTAbits.RA2=0;
-   414  001234  9480               	bcf	3968,2,c	;volatile
-   415                           
-   416                           ;LCD.h: 46: WriteSPI1(0x40);
-   417  001236  0E40               	movlw	64
-   418  001238  ECFA  F008         	call	_WriteSPI1
-   419                           
-   420                           ;LCD.h: 47: WriteSPI1(address);
-   421  00123C  5004               	movf	setIODIR@address,w,c
-   422  00123E  ECFA  F008         	call	_WriteSPI1
-   423                           
-   424                           ;LCD.h: 48: WriteSPI1(dir);
-   425  001242  5003               	movf	setIODIR@dir,w,c
-   426  001244  ECFA  F008         	call	_WriteSPI1
-   427                           
-   428                           ;LCD.h: 49: PORTAbits.RA2=1;
-   429  001248  8480               	bsf	3968,2,c	;volatile
-   430  00124A  0012               	return		;funcret
-   431  00124C                     __end_of_setIODIR:
-   432                           	opt stack 0
-   433                           intcon	equ	0xFF2
-   434                           
-   435 ;; *************** function _lcdCommand *****************
-   436 ;; Defined at:
-   437 ;;		line 52 in file "LCD.h"
-   438 ;; Parameters:    Size  Location     Type
-   439 ;;  command         1    wreg     unsigned char 
-   440 ;; Auto vars:     Size  Location     Type
-   441 ;;  command         1    4[COMRAM] unsigned char 
-   442 ;; Return value:  Size  Location     Type
-   443 ;;		None               void
-   444 ;; Registers used:
-   445 ;;		wreg, status,2, cstack
-   446 ;; Tracked objects:
-   447 ;;		On entry : 0/0
-   448 ;;		On exit  : 0/0
-   449 ;;		Unchanged: 0/0
-   450 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   416 ;;Total ram usage:        2 bytes
+   417 ;; Hardware stack levels used:    1
+   418 ;; Hardware stack levels required when called:    1
+   419 ;; This function calls:
+   420 ;;		_WriteSPI1
+   421 ;; This function is called by:
+   422 ;;		_lcdInit
+   423 ;; This function uses a non-reentrant model
+   424 ;;
+   425                           
+   426                           	psect	text3
+   427  0012BC                     __ptext3:
+   428                           	opt stack 0
+   429  0012BC                     _setIODIR:
+   430                           	opt stack 27
+   431                           
+   432                           ;incstack = 0
+   433                           ;setIODIR@address stored from wreg
+   434  0012BC  6E04               	movwf	setIODIR@address,c
+   435                           
+   436                           ;LCD.h: 45: PORTAbits.RA2=0;
+   437  0012BE  9480               	bcf	3968,2,c	;volatile
+   438                           
+   439                           ;LCD.h: 46: WriteSPI1(0x40);
+   440  0012C0  0E40               	movlw	64
+   441  0012C2  EC3F  F009         	call	_WriteSPI1
+   442                           
+   443                           ;LCD.h: 47: WriteSPI1(address);
+   444  0012C6  5004               	movf	setIODIR@address,w,c
+   445  0012C8  EC3F  F009         	call	_WriteSPI1
+   446                           
+   447                           ;LCD.h: 48: WriteSPI1(dir);
+   448  0012CC  5003               	movf	setIODIR@dir,w,c
+   449  0012CE  EC3F  F009         	call	_WriteSPI1
+   450                           
+   451                           ;LCD.h: 49: PORTAbits.RA2=1;
+   452  0012D2  8480               	bsf	3968,2,c	;volatile
+   453  0012D4  0012               	return		;funcret
+   454  0012D6                     __end_of_setIODIR:
+   455                           	opt stack 0
+   456                           intcon	equ	0xFF2
+   457                           status	equ	0xFD8
+   458                           
+   459 ;; *************** function _lcdCommand *****************
+   460 ;; Defined at:
+   461 ;;		line 52 in file "LCD.h"
+   462 ;; Parameters:    Size  Location     Type
+   463 ;;  command         1    wreg     unsigned char 
+   464 ;; Auto vars:     Size  Location     Type
+   465 ;;  command         1    4[COMRAM] unsigned char 
+   466 ;; Return value:  Size  Location     Type
+   467 ;;		None               void
+   468 ;; Registers used:
+   469 ;;		wreg, status,2, cstack
+   470 ;; Tracked objects:
+   471 ;;		On entry : 0/0
+   472 ;;		On exit  : 0/0
+   473 ;;		Unchanged: 0/0
+   474 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   451 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   475 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   452 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+   476 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   453 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   477 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   454 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+   478 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   455 ;;Total ram usage:        1 bytes
-   456 ;; Hardware stack levels used:    1
-   457 ;; Hardware stack levels required when called:    2
-   458 ;; This function calls:
-   459 ;;		_Delay10TCYx
-   460 ;;		_setGPIO
-   461 ;; This function is called by:
-   462 ;;		_lcdInit
-   463 ;;		_lcdGoTo
-   464 ;; This function uses a non-reentrant model
-   465 ;;
-   466                           
-   467                           	psect	text4
-   468  001152                     __ptext4:
-   469                           	opt stack 0
-   470  001152                     _lcdCommand:
-   471                           	opt stack 26
-   472                           
-   473                           ;incstack = 0
-   474                           ;lcdCommand@command stored from wreg
-   475  001152  6E05               	movwf	lcdCommand@command,c
-   476                           
-   477                           ;LCD.h: 54: setGPIO(0x12,0x00);
-   478  001154  0E00               	movlw	0
-   479  001156  6E03               	movwf	setGPIO@value,c
-   480  001158  0E12               	movlw	18
-   481  00115A  EC26  F009         	call	_setGPIO
-   482                           
-   483                           ;LCD.h: 55: Delay10TCYx(0);
-   484  00115E  0E00               	movlw	0
-   485  001160  EC48  F009         	call	_Delay10TCYx
-   486                           
-   487                           ;LCD.h: 56: setGPIO(0x13, command);
-   488  001164  C005  F003         	movff	lcdCommand@command,setGPIO@value
-   489  001168  0E13               	movlw	19
-   490  00116A  EC26  F009         	call	_setGPIO
-   491                           
-   492                           ;LCD.h: 57: Delay10TCYx(0);
-   493  00116E  0E00               	movlw	0
-   494  001170  EC48  F009         	call	_Delay10TCYx
-   495                           
-   496                           ;LCD.h: 58: setGPIO(0x12,0x40);
-   497  001174  0E40               	movlw	64
-   498  001176  6E03               	movwf	setGPIO@value,c
-   499  001178  0E12               	movlw	18
-   500  00117A  EC26  F009         	call	_setGPIO
-   501                           
-   502                           ;LCD.h: 59: Delay10TCYx(0);
-   503  00117E  0E00               	movlw	0
-   504  001180  EC48  F009         	call	_Delay10TCYx
-   505                           
-   506                           ;LCD.h: 60: setGPIO(0x12,0x00);
-   507  001184  0E00               	movlw	0
-   508  001186  6E03               	movwf	setGPIO@value,c
-   509  001188  0E12               	movlw	18
-   510  00118A  EC26  F009         	call	_setGPIO
-   511                           
-   512                           ;LCD.h: 61: Delay10TCYx(0);
-   513  00118E  0E00               	movlw	0
-   514  001190  EC48  F009         	call	_Delay10TCYx
-   515  001194  0012               	return		;funcret
-   516  001196                     __end_of_lcdCommand:
-   517                           	opt stack 0
-   518                           intcon	equ	0xFF2
+   479 ;;Total ram usage:        1 bytes
+   480 ;; Hardware stack levels used:    1
+   481 ;; Hardware stack levels required when called:    2
+   482 ;; This function calls:
+   483 ;;		_Delay10TCYx
+   484 ;;		_setGPIO
+   485 ;; This function is called by:
+   486 ;;		_lcdInit
+   487 ;;		_lcdGoTo
+   488 ;; This function uses a non-reentrant model
+   489 ;;
+   490                           
+   491                           	psect	text4
+   492  0011B6                     __ptext4:
+   493                           	opt stack 0
+   494  0011B6                     _lcdCommand:
+   495                           	opt stack 26
+   496                           
+   497                           ;incstack = 0
+   498                           ;lcdCommand@command stored from wreg
+   499  0011B6  6E05               	movwf	lcdCommand@command,c
+   500                           
+   501                           ;LCD.h: 54: setGPIO(0x12,0x00);
+   502  0011B8  0E00               	movlw	0
+   503  0011BA  6E03               	movwf	setGPIO@value,c
+   504  0011BC  0E12               	movlw	18
+   505  0011BE  EC6B  F009         	call	_setGPIO
+   506                           
+   507                           ;LCD.h: 55: Delay10TCYx(0);
+   508  0011C2  0E00               	movlw	0
+   509  0011C4  EC82  F009         	call	_Delay10TCYx
+   510                           
+   511                           ;LCD.h: 56: setGPIO(0x13, command);
+   512  0011C8  C005  F003         	movff	lcdCommand@command,setGPIO@value
+   513  0011CC  0E13               	movlw	19
+   514  0011CE  EC6B  F009         	call	_setGPIO
+   515                           
+   516                           ;LCD.h: 57: Delay10TCYx(0);
+   517  0011D2  0E00               	movlw	0
+   518  0011D4  EC82  F009         	call	_Delay10TCYx
    519                           
-   520 ;; *************** function _setGPIO *****************
-   521 ;; Defined at:
-   522 ;;		line 32 in file "LCD.h"
-   523 ;; Parameters:    Size  Location     Type
-   524 ;;  address         1    wreg     unsigned char 
-   525 ;;  value           1    2[COMRAM] unsigned char 
-   526 ;; Auto vars:     Size  Location     Type
-   527 ;;  address         1    3[COMRAM] unsigned char 
-   528 ;; Return value:  Size  Location     Type
-   529 ;;		None               void
-   530 ;; Registers used:
-   531 ;;		wreg, status,2, cstack
-   532 ;; Tracked objects:
-   533 ;;		On entry : 0/0
-   534 ;;		On exit  : 0/0
-   535 ;;		Unchanged: 0/0
-   536 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   520                           ;LCD.h: 58: setGPIO(0x12,0x40);
+   521  0011D8  0E40               	movlw	64
+   522  0011DA  6E03               	movwf	setGPIO@value,c
+   523  0011DC  0E12               	movlw	18
+   524  0011DE  EC6B  F009         	call	_setGPIO
+   525                           
+   526                           ;LCD.h: 59: Delay10TCYx(0);
+   527  0011E2  0E00               	movlw	0
+   528  0011E4  EC82  F009         	call	_Delay10TCYx
+   529                           
+   530                           ;LCD.h: 60: setGPIO(0x12,0x00);
+   531  0011E8  0E00               	movlw	0
+   532  0011EA  6E03               	movwf	setGPIO@value,c
+   533  0011EC  0E12               	movlw	18
+   534  0011EE  EC6B  F009         	call	_setGPIO
+   535                           
+   536                           ;LCD.h: 61: Delay10TCYx(0);
+   537  0011F2  0E00               	movlw	0
+   538  0011F4  EC82  F009         	call	_Delay10TCYx
+   539  0011F8  0012               	return		;funcret
+   540  0011FA                     __end_of_lcdCommand:
+   541                           	opt stack 0
+   542                           intcon	equ	0xFF2
+   543                           status	equ	0xFD8
+   544                           
+   545 ;; *************** function _setGPIO *****************
+   546 ;; Defined at:
+   547 ;;		line 32 in file "LCD.h"
+   548 ;; Parameters:    Size  Location     Type
+   549 ;;  address         1    wreg     unsigned char 
+   550 ;;  value           1    2[COMRAM] unsigned char 
+   551 ;; Auto vars:     Size  Location     Type
+   552 ;;  address         1    3[COMRAM] unsigned char 
+   553 ;; Return value:  Size  Location     Type
+   554 ;;		None               void
+   555 ;; Registers used:
+   556 ;;		wreg, status,2, cstack
+   557 ;; Tracked objects:
+   558 ;;		On entry : 0/0
+   559 ;;		On exit  : 0/0
+   560 ;;		Unchanged: 0/0
+   561 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   537 ;;      Params:         1       0       0       0       0       0       0       0       0       0       0       0       
+   562 ;;      Params:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   538 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+   563 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   539 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   564 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   540 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+   565 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   541 ;;Total ram usage:        2 bytes
-   542 ;; Hardware stack levels used:    1
-   543 ;; Hardware stack levels required when called:    1
-   544 ;; This function calls:
-   545 ;;		_WriteSPI1
-   546 ;; This function is called by:
-   547 ;;		_lcdCommand
-   548 ;;		_lcdInit
-   549 ;;		_lcdChar
-   550 ;; This function uses a non-reentrant model
-   551 ;;
-   552                           
-   553                           	psect	text5
-   554  00124C                     __ptext5:
-   555                           	opt stack 0
-   556  00124C                     _setGPIO:
-   557                           	opt stack 27
-   558                           
-   559                           ;incstack = 0
-   560                           ;setGPIO@address stored from wreg
-   561  00124C  6E04               	movwf	setGPIO@address,c
-   562                           
-   563                           ;LCD.h: 34: PORTAbits.RA2=0;
-   564  00124E  9480               	bcf	3968,2,c	;volatile
-   565                           
-   566                           ;LCD.h: 37: WriteSPI1(0x40);
-   567  001250  0E40               	movlw	64
-   568  001252  ECFA  F008         	call	_WriteSPI1
-   569                           
-   570                           ;LCD.h: 38: WriteSPI1(address);
-   571  001256  5004               	movf	setGPIO@address,w,c
-   572  001258  ECFA  F008         	call	_WriteSPI1
-   573                           
-   574                           ;LCD.h: 39: WriteSPI1(value);
-   575  00125C  5003               	movf	setGPIO@value,w,c
-   576  00125E  ECFA  F008         	call	_WriteSPI1
+   566 ;;Total ram usage:        2 bytes
+   567 ;; Hardware stack levels used:    1
+   568 ;; Hardware stack levels required when called:    1
+   569 ;; This function calls:
+   570 ;;		_WriteSPI1
+   571 ;; This function is called by:
+   572 ;;		_lcdCommand
+   573 ;;		_lcdInit
+   574 ;;		_lcdChar
+   575 ;; This function uses a non-reentrant model
+   576 ;;
    577                           
-   578                           ;LCD.h: 40: PORTAbits.RA2=1;
-   579  001262  8480               	bsf	3968,2,c	;volatile
-   580  001264  0012               	return		;funcret
-   581  001266                     __end_of_setGPIO:
-   582                           	opt stack 0
-   583                           intcon	equ	0xFF2
-   584                           
-   585 ;; *************** function _WriteSPI1 *****************
-   586 ;; Defined at:
-   587 ;;		line 13 in file "/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1writ.c"
-   588 ;; Parameters:    Size  Location     Type
-   589 ;;  data_out        1    wreg     unsigned char 
-   590 ;; Auto vars:     Size  Location     Type
-   591 ;;  data_out        1    1[COMRAM] unsigned char 
-   592 ;;  TempVar         1    0[COMRAM] unsigned char 
-   593 ;; Return value:  Size  Location     Type
-   594 ;;                  1    wreg      char 
-   595 ;; Registers used:
-   596 ;;		wreg
-   597 ;; Tracked objects:
-   598 ;;		On entry : 0/0
-   599 ;;		On exit  : 0/0
-   600 ;;		Unchanged: 0/0
-   601 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   578                           	psect	text5
+   579  0012D6                     __ptext5:
+   580                           	opt stack 0
+   581  0012D6                     _setGPIO:
+   582                           	opt stack 27
+   583                           
+   584                           ;incstack = 0
+   585                           ;setGPIO@address stored from wreg
+   586  0012D6  6E04               	movwf	setGPIO@address,c
+   587                           
+   588                           ;LCD.h: 34: PORTAbits.RA2=0;
+   589  0012D8  9480               	bcf	3968,2,c	;volatile
+   590                           
+   591                           ;LCD.h: 37: WriteSPI1(0x40);
+   592  0012DA  0E40               	movlw	64
+   593  0012DC  EC3F  F009         	call	_WriteSPI1
+   594                           
+   595                           ;LCD.h: 38: WriteSPI1(address);
+   596  0012E0  5004               	movf	setGPIO@address,w,c
+   597  0012E2  EC3F  F009         	call	_WriteSPI1
+   598                           
+   599                           ;LCD.h: 39: WriteSPI1(value);
+   600  0012E6  5003               	movf	setGPIO@value,w,c
+   601  0012E8  EC3F  F009         	call	_WriteSPI1
+   602                           
+   603                           ;LCD.h: 40: PORTAbits.RA2=1;
+   604  0012EC  8480               	bsf	3968,2,c	;volatile
+   605  0012EE  0012               	return		;funcret
+   606  0012F0                     __end_of_setGPIO:
+   607                           	opt stack 0
+   608                           intcon	equ	0xFF2
+   609                           status	equ	0xFD8
+   610                           
+   611 ;; *************** function _WriteSPI1 *****************
+   612 ;; Defined at:
+   613 ;;		line 13 in file "/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1writ.c"
+   614 ;; Parameters:    Size  Location     Type
+   615 ;;  data_out        1    wreg     unsigned char 
+   616 ;; Auto vars:     Size  Location     Type
+   617 ;;  data_out        1    1[COMRAM] unsigned char 
+   618 ;;  TempVar         1    0[COMRAM] unsigned char 
+   619 ;; Return value:  Size  Location     Type
+   620 ;;                  1    wreg      char 
+   621 ;; Registers used:
+   622 ;;		wreg
+   623 ;; Tracked objects:
+   624 ;;		On entry : 0/0
+   625 ;;		On exit  : 0/0
+   626 ;;		Unchanged: 0/0
+   627 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   602 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   628 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   603 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+   629 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   604 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   630 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   605 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+   631 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   606 ;;Total ram usage:        2 bytes
-   607 ;; Hardware stack levels used:    1
-   608 ;; This function calls:
-   609 ;;		Nothing
-   610 ;; This function is called by:
-   611 ;;		_setGPIO
-   612 ;;		_setIODIR
-   613 ;; This function uses a non-reentrant model
-   614 ;;
-   615                           
-   616                           	psect	text6
-   617  0011F4                     __ptext6:
-   618                           	opt stack 0
-   619  0011F4                     _WriteSPI1:
-   620                           	opt stack 27
-   621                           
-   622                           ;incstack = 0
-   623                           ;WriteSPI1@data_out stored from wreg
-   624  0011F4  6E02               	movwf	WriteSPI1@data_out,c
-   625  0011F6  CFC9 F001          	movff	4041,WriteSPI1@TempVar	;volatile
-   626  0011FA  969E               	bcf	3998,3,c	;volatile
-   627  0011FC  9EC6               	bcf	4038,7,c	;volatile
-   628  0011FE  C002  FFC9         	movff	WriteSPI1@data_out,4041	;volatile
-   629  001202  BEC6               	btfsc	4038,7,c	;volatile
-   630  001204  D007               	goto	l188
-   631  001206  D002               	goto	l190
-   632                           
-   633                           ;	Return value of _WriteSPI1 is never used
-   634  001208  D005               	goto	l188
-   635  00120A  D000               	goto	l190
-   636  00120C                     l190:
-   637  00120C  B69E               	btfsc	3998,3,c	;volatile
-   638  00120E  D002               	goto	l188
-   639  001210  D7FD               	goto	l190
-   640  001212  D000               	goto	l188
-   641  001214                     l188:
-   642  001214  0012               	return		;funcret
-   643  001216                     __end_of_WriteSPI1:
+   632 ;;Total ram usage:        2 bytes
+   633 ;; Hardware stack levels used:    1
+   634 ;; This function calls:
+   635 ;;		Nothing
+   636 ;; This function is called by:
+   637 ;;		_setGPIO
+   638 ;;		_setIODIR
+   639 ;; This function uses a non-reentrant model
+   640 ;;
+   641                           
+   642                           	psect	text6
+   643  00127E                     __ptext6:
    644                           	opt stack 0
-   645                           intcon	equ	0xFF2
-   646                           
-   647 ;; *************** function _Delay10TCYx *****************
-   648 ;; Defined at:
-   649 ;;		line 8 in file "/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c"
-   650 ;; Parameters:    Size  Location     Type
-   651 ;;  unit            1    wreg     unsigned char 
-   652 ;; Auto vars:     Size  Location     Type
-   653 ;;  unit            1    0[COMRAM] unsigned char 
-   654 ;; Return value:  Size  Location     Type
-   655 ;;		None               void
-   656 ;; Registers used:
-   657 ;;		wreg
-   658 ;; Tracked objects:
-   659 ;;		On entry : 0/0
-   660 ;;		On exit  : 0/0
-   661 ;;		Unchanged: 0/0
-   662 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   645  00127E                     _WriteSPI1:
+   646                           	opt stack 27
+   647                           
+   648                           ;incstack = 0
+   649                           ;WriteSPI1@data_out stored from wreg
+   650  00127E  6E02               	movwf	WriteSPI1@data_out,c
+   651  001280  CFC9 F001          	movff	4041,WriteSPI1@TempVar	;volatile
+   652  001284  969E               	bcf	3998,3,c	;volatile
+   653  001286  9EC6               	bcf	4038,7,c	;volatile
+   654  001288  C002  FFC9         	movff	WriteSPI1@data_out,4041	;volatile
+   655  00128C  BEC6               	btfsc	4038,7,c	;volatile
+   656  00128E  D007               	goto	l193
+   657  001290  D002               	goto	l195
+   658                           
+   659                           ;	Return value of _WriteSPI1 is never used
+   660  001292  D005               	goto	l193
+   661  001294  D000               	goto	l195
+   662  001296                     l195:
+   663  001296  B69E               	btfsc	3998,3,c	;volatile
+   664  001298  D002               	goto	l193
+   665  00129A  D7FD               	goto	l195
+   666  00129C  D000               	goto	l193
+   667  00129E                     l193:
+   668  00129E  0012               	return		;funcret
+   669  0012A0                     __end_of_WriteSPI1:
+   670                           	opt stack 0
+   671                           intcon	equ	0xFF2
+   672                           status	equ	0xFD8
+   673                           
+   674 ;; *************** function _Delay10TCYx *****************
+   675 ;; Defined at:
+   676 ;;		line 8 in file "/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c"
+   677 ;; Parameters:    Size  Location     Type
+   678 ;;  unit            1    wreg     unsigned char 
+   679 ;; Auto vars:     Size  Location     Type
+   680 ;;  unit            1    0[COMRAM] unsigned char 
+   681 ;; Return value:  Size  Location     Type
+   682 ;;		None               void
+   683 ;; Registers used:
+   684 ;;		wreg
+   685 ;; Tracked objects:
+   686 ;;		On entry : 0/0
+   687 ;;		On exit  : 0/0
+   688 ;;		Unchanged: 0/0
+   689 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   663 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   690 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   664 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+   691 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   665 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   692 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   666 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+   693 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   667 ;;Total ram usage:        1 bytes
-   668 ;; Hardware stack levels used:    1
-   669 ;; This function calls:
-   670 ;;		Nothing
-   671 ;; This function is called by:
-   672 ;;		_lcdCommand
-   673 ;;		_lcdChar
-   674 ;; This function uses a non-reentrant model
-   675 ;;
-   676                           
-   677                           	psect	text7
-   678  001290                     __ptext7:
-   679                           	opt stack 0
-   680  001290                     _Delay10TCYx:
-   681                           	opt stack 27
-   682                           
-   683                           ;incstack = 0
-   684                           ;Delay10TCYx@unit stored from wreg
-   685  001290  6E01               	movwf	Delay10TCYx@unit,c
-   686  001292  0E03               	movlw	3
-   687  001294                     u267:
-   688  001294  2EE8               	decfsz	wreg,f,c
-   689  001296  D7FE               	goto	u267
-   690  001298  F000               	nop	
-   691  00129A  2E01               	decfsz	Delay10TCYx@unit,f,c
-   692  00129C  D7FA               	goto	l821
-   693  00129E  D000               	goto	l424
-   694  0012A0                     l424:
-   695  0012A0  0012               	return		;funcret
-   696  0012A2                     __end_of_Delay10TCYx:
-   697                           	opt stack 0
-   698                           intcon	equ	0xFF2
-   699                           wreg	equ	0xFE8
-   700                           
-   701 ;; *************** function _OpenSPI1 *****************
-   702 ;; Defined at:
-   703 ;;		line 13 in file "/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c"
-   704 ;; Parameters:    Size  Location     Type
-   705 ;;  sync_mode       1    wreg     unsigned char 
-   706 ;;  bus_mode        1    0[COMRAM] unsigned char 
-   707 ;;  smp_phase       1    1[COMRAM] unsigned char 
-   708 ;; Auto vars:     Size  Location     Type
-   709 ;;  sync_mode       1    2[COMRAM] unsigned char 
-   710 ;; Return value:  Size  Location     Type
-   711 ;;		None               void
-   712 ;; Registers used:
-   713 ;;		wreg, status,2, status,0
-   714 ;; Tracked objects:
-   715 ;;		On entry : 0/0
-   716 ;;		On exit  : 0/0
-   717 ;;		Unchanged: 0/0
-   718 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   694 ;;Total ram usage:        1 bytes
+   695 ;; Hardware stack levels used:    1
+   696 ;; This function calls:
+   697 ;;		Nothing
+   698 ;; This function is called by:
+   699 ;;		_lcdCommand
+   700 ;;		_lcdChar
+   701 ;; This function uses a non-reentrant model
+   702 ;;
+   703                           
+   704                           	psect	text7
+   705  001304                     __ptext7:
+   706                           	opt stack 0
+   707  001304                     _Delay10TCYx:
+   708                           	opt stack 27
+   709                           
+   710                           ;incstack = 0
+   711                           ;Delay10TCYx@unit stored from wreg
+   712  001304  6E01               	movwf	Delay10TCYx@unit,c
+   713  001306  0E03               	movlw	3
+   714  001308                     u317:
+   715  001308  2EE8               	decfsz	wreg,f,c
+   716  00130A  D7FE               	goto	u317
+   717  00130C  F000               	nop	
+   718  00130E  2E01               	decfsz	Delay10TCYx@unit,f,c
+   719  001310  D7FA               	goto	l826
+   720  001312  D000               	goto	l429
+   721  001314                     l429:
+   722  001314  0012               	return		;funcret
+   723  001316                     __end_of_Delay10TCYx:
+   724                           	opt stack 0
+   725                           intcon	equ	0xFF2
+   726                           wreg	equ	0xFE8
+   727                           status	equ	0xFD8
+   728                           
+   729 ;; *************** function _OpenSPI1 *****************
+   730 ;; Defined at:
+   731 ;;		line 13 in file "/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c"
+   732 ;; Parameters:    Size  Location     Type
+   733 ;;  sync_mode       1    wreg     unsigned char 
+   734 ;;  bus_mode        1    0[COMRAM] unsigned char 
+   735 ;;  smp_phase       1    1[COMRAM] unsigned char 
+   736 ;; Auto vars:     Size  Location     Type
+   737 ;;  sync_mode       1    2[COMRAM] unsigned char 
+   738 ;; Return value:  Size  Location     Type
+   739 ;;		None               void
+   740 ;; Registers used:
+   741 ;;		wreg, status,2, status,0
+   742 ;; Tracked objects:
+   743 ;;		On entry : 0/0
+   744 ;;		On exit  : 0/0
+   745 ;;		Unchanged: 0/0
+   746 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   719 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+   747 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   720 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+   748 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   721 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   749 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   722 ;;      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       
+   750 ;;      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   723 ;;Total ram usage:        3 bytes
-   724 ;; Hardware stack levels used:    1
-   725 ;; This function calls:
-   726 ;;		Nothing
-   727 ;; This function is called by:
-   728 ;;		_lcdInit
-   729 ;; This function uses a non-reentrant model
-   730 ;;
-   731                           
-   732                           	psect	text8
-   733  0010B2                     __ptext8:
-   734                           	opt stack 0
-   735  0010B2                     _OpenSPI1:
-   736                           	opt stack 28
-   737                           
-   738                           ;incstack = 0
-   739                           ;OpenSPI1@sync_mode stored from wreg
-   740  0010B2  6E03               	movwf	OpenSPI1@sync_mode,c
-   741  0010B4  0E3F               	movlw	63
-   742  0010B6  16C7               	andwf	4039,f,c	;volatile
-   743  0010B8  0E00               	movlw	0
-   744  0010BA  6EC6               	movwf	4038,c	;volatile
-   745  0010BC  5003               	movf	OpenSPI1@sync_mode,w,c
-   746  0010BE  12C6               	iorwf	4038,f,c	;volatile
-   747  0010C0  5002               	movf	OpenSPI1@smp_phase,w,c
-   748  0010C2  12C7               	iorwf	4039,f,c	;volatile
-   749  0010C4  D005               	goto	l1081
-   750  0010C6                     l166:
-   751  0010C6  8CC7               	bsf	4039,6,c	;volatile
-   752  0010C8  D013               	goto	l1085
-   753  0010CA                     l168:
-   754  0010CA  8CC7               	bsf	4039,6,c	;volatile
-   755  0010CC                     l169:
-   756  0010CC  88C6               	bsf	4038,4,c	;volatile
-   757  0010CE  D010               	goto	l1085
-   758  0010D0                     l1081:
-   759  0010D0  5001               	movf	OpenSPI1@bus_mode,w,c
-   760                           
-   761                           ; Switch size 1, requested type "space"
-   762                           ; Number of cases is 3, Range of values is 0 to 3
-   763                           ; switch strategies available:
-   764                           ; Name         Instructions Cycles
-   765                           ; simple_byte           10     6 (average)
-   766                           ;	Chosen strategy is simple_byte
-   767  0010D2  0A00               	xorlw	0	; case 0
-   768  0010D4  B4D8               	btfsc	status,2,c
-   769  0010D6  D7F7               	goto	l166
-   770  0010D8  0A02               	xorlw	2	; case 2
-   771  0010DA  B4D8               	btfsc	status,2,c
-   772  0010DC  D7F6               	goto	l168
-   773  0010DE  0A01               	xorlw	1	; case 3
-   774  0010E0  B4D8               	btfsc	status,2,c
-   775  0010E2  D7F4               	goto	l169
-   776  0010E4  D005               	goto	l1085
-   777  0010E6                     l172:
-   778  0010E6  8E97               	bsf	3991,7,c	;volatile
-   779  0010E8                     l174:
-   780  0010E8  8694               	bsf	3988,3,c	;volatile
-   781  0010EA  D00A               	goto	l173
-   782  0010EC                     l175:
-   783  0010EC  9694               	bcf	3988,3,c	;volatile
-   784  0010EE  D008               	goto	l173
-   785  0010F0                     l1085:
-   786  0010F0  5003               	movf	OpenSPI1@sync_mode,w,c
-   787                           
-   788                           ; Switch size 1, requested type "space"
-   789                           ; Number of cases is 2, Range of values is 4 to 5
-   790                           ; switch strategies available:
-   791                           ; Name         Instructions Cycles
-   792                           ; simple_byte            7     4 (average)
-   793                           ;	Chosen strategy is simple_byte
-   794  0010F2  0A04               	xorlw	4	; case 4
-   795  0010F4  B4D8               	btfsc	status,2,c
-   796  0010F6  D7F7               	goto	l172
-   797  0010F8  0A01               	xorlw	1	; case 5
-   798  0010FA  B4D8               	btfsc	status,2,c
-   799  0010FC  D7F5               	goto	l174
-   800  0010FE  D7F6               	goto	l175
-   801  001100                     l173:
-   802  001100  8894               	bsf	3988,4,c	;volatile
-   803  001102  9A94               	bcf	3988,5,c	;volatile
-   804  001104  8AC6               	bsf	4038,5,c	;volatile
-   805  001106  0012               	return		;funcret
-   806  001108                     __end_of_OpenSPI1:
-   807                           	opt stack 0
-   808                           intcon	equ	0xFF2
-   809                           wreg	equ	0xFE8
-   810                           status	equ	0xFD8
-   811                           
-   812 ;; *************** function _MotorDriverInit *****************
-   813 ;; Defined at:
-   814 ;;		line 5 in file "MotorControl.c"
-   815 ;; Parameters:    Size  Location     Type
-   816 ;;		None
-   817 ;; Auto vars:     Size  Location     Type
-   818 ;;		None
-   819 ;; Return value:  Size  Location     Type
-   820 ;;		None               void
-   821 ;; Registers used:
-   822 ;;		wreg, status,2
-   823 ;; Tracked objects:
-   824 ;;		On entry : 0/0
-   825 ;;		On exit  : 0/0
-   826 ;;		Unchanged: 0/0
-   827 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   751 ;;Total ram usage:        3 bytes
+   752 ;; Hardware stack levels used:    1
+   753 ;; This function calls:
+   754 ;;		Nothing
+   755 ;; This function is called by:
+   756 ;;		_lcdInit
+   757 ;; This function uses a non-reentrant model
+   758 ;;
+   759                           
+   760                           	psect	text8
+   761  001116                     __ptext8:
+   762                           	opt stack 0
+   763  001116                     _OpenSPI1:
+   764                           	opt stack 28
+   765                           
+   766                           ;incstack = 0
+   767                           ;OpenSPI1@sync_mode stored from wreg
+   768  001116  6E03               	movwf	OpenSPI1@sync_mode,c
+   769  001118  0E3F               	movlw	63
+   770  00111A  16C7               	andwf	4039,f,c	;volatile
+   771  00111C  0E00               	movlw	0
+   772  00111E  6EC6               	movwf	4038,c	;volatile
+   773  001120  5003               	movf	OpenSPI1@sync_mode,w,c
+   774  001122  12C6               	iorwf	4038,f,c	;volatile
+   775  001124  5002               	movf	OpenSPI1@smp_phase,w,c
+   776  001126  12C7               	iorwf	4039,f,c	;volatile
+   777  001128  D005               	goto	l1098
+   778  00112A                     l171:
+   779  00112A  8CC7               	bsf	4039,6,c	;volatile
+   780  00112C  D013               	goto	l1102
+   781  00112E                     l173:
+   782  00112E  8CC7               	bsf	4039,6,c	;volatile
+   783  001130                     l174:
+   784  001130  88C6               	bsf	4038,4,c	;volatile
+   785  001132  D010               	goto	l1102
+   786  001134                     l1098:
+   787  001134  5001               	movf	OpenSPI1@bus_mode,w,c
+   788                           
+   789                           ; Switch size 1, requested type "space"
+   790                           ; Number of cases is 3, Range of values is 0 to 3
+   791                           ; switch strategies available:
+   792                           ; Name         Instructions Cycles
+   793                           ; simple_byte           10     6 (average)
+   794                           ;	Chosen strategy is simple_byte
+   795  001136  0A00               	xorlw	0	; case 0
+   796  001138  B4D8               	btfsc	status,2,c
+   797  00113A  D7F7               	goto	l171
+   798  00113C  0A02               	xorlw	2	; case 2
+   799  00113E  B4D8               	btfsc	status,2,c
+   800  001140  D7F6               	goto	l173
+   801  001142  0A01               	xorlw	1	; case 3
+   802  001144  B4D8               	btfsc	status,2,c
+   803  001146  D7F4               	goto	l174
+   804  001148  D005               	goto	l1102
+   805  00114A                     l177:
+   806  00114A  8E97               	bsf	3991,7,c	;volatile
+   807  00114C                     l179:
+   808  00114C  8694               	bsf	3988,3,c	;volatile
+   809  00114E  D00A               	goto	l178
+   810  001150                     l180:
+   811  001150  9694               	bcf	3988,3,c	;volatile
+   812  001152  D008               	goto	l178
+   813  001154                     l1102:
+   814  001154  5003               	movf	OpenSPI1@sync_mode,w,c
+   815                           
+   816                           ; Switch size 1, requested type "space"
+   817                           ; Number of cases is 2, Range of values is 4 to 5
+   818                           ; switch strategies available:
+   819                           ; Name         Instructions Cycles
+   820                           ; simple_byte            7     4 (average)
+   821                           ;	Chosen strategy is simple_byte
+   822  001156  0A04               	xorlw	4	; case 4
+   823  001158  B4D8               	btfsc	status,2,c
+   824  00115A  D7F7               	goto	l177
+   825  00115C  0A01               	xorlw	1	; case 5
+   826  00115E  B4D8               	btfsc	status,2,c
+   827  001160  D7F5               	goto	l179
+   828  001162  D7F6               	goto	l180
+   829  001164                     l178:
+   830  001164  8894               	bsf	3988,4,c	;volatile
+   831  001166  9A94               	bcf	3988,5,c	;volatile
+   832  001168  8AC6               	bsf	4038,5,c	;volatile
+   833  00116A  0012               	return		;funcret
+   834  00116C                     __end_of_OpenSPI1:
+   835                           	opt stack 0
+   836                           intcon	equ	0xFF2
+   837                           wreg	equ	0xFE8
+   838                           status	equ	0xFD8
+   839                           
+   840 ;; *************** function _MotorDriverInit *****************
+   841 ;; Defined at:
+   842 ;;		line 5 in file "MotorControl.c"
+   843 ;; Parameters:    Size  Location     Type
+   844 ;;		None
+   845 ;; Auto vars:     Size  Location     Type
+   846 ;;		None
+   847 ;; Return value:  Size  Location     Type
+   848 ;;		None               void
+   849 ;; Registers used:
+   850 ;;		wreg, status,2
+   851 ;; Tracked objects:
+   852 ;;		On entry : 0/0
+   853 ;;		On exit  : 0/0
+   854 ;;		Unchanged: 0/0
+   855 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   828 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   856 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   829 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   857 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   830 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   858 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   831 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   859 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   832 ;;Total ram usage:        0 bytes
-   833 ;; Hardware stack levels used:    1
-   834 ;; This function calls:
-   835 ;;		Nothing
-   836 ;; This function is called by:
-   837 ;;		_initialize
-   838 ;; This function uses a non-reentrant model
-   839 ;;
-   840                           
-   841                           	psect	text9
-   842  001216                     __ptext9:
-   843                           	opt stack 0
-   844  001216                     _MotorDriverInit:
-   845                           	opt stack 29
-   846                           
-   847                           ;MotorControl.c: 7: TRISGbits.RG0 = 0;
-   848                           
-   849                           ;incstack = 0
-   850  001216  9098               	bcf	3992,0,c	;volatile
-   851                           
-   852                           ;MotorControl.c: 8: TRISEbits.RE4 = 0;
-   853  001218  9896               	bcf	3990,4,c	;volatile
-   854                           
-   855                           ;MotorControl.c: 9: TRISEbits.RE3 = 0;
-   856  00121A  9696               	bcf	3990,3,c	;volatile
-   857                           
-   858                           ;MotorControl.c: 10: TRISGbits.RG3 = 0;
-   859  00121C  9698               	bcf	3992,3,c	;volatile
-   860                           
-   861                           ;MotorControl.c: 12: TRISBbits.RB0 = 1;
-   862  00121E  8093               	bsf	3987,0,c	;volatile
-   863                           
-   864                           ;MotorControl.c: 14: TRISAbits.RA4 = 0;
-   865  001220  9892               	bcf	3986,4,c	;volatile
-   866                           
-   867                           ;MotorControl.c: 16: CCP3CON = 0x4C;
-   868  001222  0E4C               	movlw	76
-   869  001224  6EB7               	movwf	4023,c	;volatile
-   870                           
-   871                           ;MotorControl.c: 17: PR2 = 0xFF;
-   872  001226  68CB               	setf	4043,c	;volatile
-   873                           
-   874                           ;MotorControl.c: 18: T3CON = 0x00;
-   875  001228  0E00               	movlw	0
-   876  00122A  6EB1               	movwf	4017,c	;volatile
-   877                           
-   878                           ;MotorControl.c: 19: T2CON = 0x04;
-   879  00122C  0E04               	movlw	4
-   880  00122E  6ECA               	movwf	4042,c	;volatile
-   881  001230  0012               	return		;funcret
-   882  001232                     __end_of_MotorDriverInit:
-   883                           	opt stack 0
-   884                           intcon	equ	0xFF2
-   885                           wreg	equ	0xFE8
-   886                           status	equ	0xFD8
-   887                           
-   888 ;; *************** function _JoystickInit *****************
-   889 ;; Defined at:
-   890 ;;		line 9 in file "Joystick.c"
-   891 ;; Parameters:    Size  Location     Type
-   892 ;;		None
-   893 ;; Auto vars:     Size  Location     Type
-   894 ;;		None
-   895 ;; Return value:  Size  Location     Type
-   896 ;;		None               void
-   897 ;; Registers used:
-   898 ;;		wreg, status,2, status,0
-   899 ;; Tracked objects:
-   900 ;;		On entry : 0/0
-   901 ;;		On exit  : 0/0
-   902 ;;		Unchanged: 0/0
-   903 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   860 ;;Total ram usage:        0 bytes
+   861 ;; Hardware stack levels used:    1
+   862 ;; This function calls:
+   863 ;;		Nothing
+   864 ;; This function is called by:
+   865 ;;		_initialize
+   866 ;; This function uses a non-reentrant model
+   867 ;;
+   868                           
+   869                           	psect	text9
+   870  0012A0                     __ptext9:
+   871                           	opt stack 0
+   872  0012A0                     _MotorDriverInit:
+   873                           	opt stack 29
+   874                           
+   875                           ;MotorControl.c: 7: TRISGbits.RG0 = 0;
+   876                           
+   877                           ;incstack = 0
+   878  0012A0  9098               	bcf	3992,0,c	;volatile
+   879                           
+   880                           ;MotorControl.c: 8: TRISEbits.RE4 = 0;
+   881  0012A2  9896               	bcf	3990,4,c	;volatile
+   882                           
+   883                           ;MotorControl.c: 9: TRISEbits.RE3 = 0;
+   884  0012A4  9696               	bcf	3990,3,c	;volatile
+   885                           
+   886                           ;MotorControl.c: 10: TRISGbits.RG3 = 0;
+   887  0012A6  9698               	bcf	3992,3,c	;volatile
+   888                           
+   889                           ;MotorControl.c: 12: TRISBbits.RB0 = 1;
+   890  0012A8  8093               	bsf	3987,0,c	;volatile
+   891                           
+   892                           ;MotorControl.c: 14: TRISAbits.RA4 = 0;
+   893  0012AA  9892               	bcf	3986,4,c	;volatile
+   894                           
+   895                           ;MotorControl.c: 16: CCP3CON = 0x4C;
+   896  0012AC  0E4C               	movlw	76
+   897  0012AE  6EB7               	movwf	4023,c	;volatile
+   898                           
+   899                           ;MotorControl.c: 17: PR2 = 0xFF;
+   900  0012B0  68CB               	setf	4043,c	;volatile
+   901                           
+   902                           ;MotorControl.c: 18: T3CON = 0x00;
+   903  0012B2  0E00               	movlw	0
+   904  0012B4  6EB1               	movwf	4017,c	;volatile
+   905                           
+   906                           ;MotorControl.c: 19: T2CON = 0x04;
+   907  0012B6  0E04               	movlw	4
+   908  0012B8  6ECA               	movwf	4042,c	;volatile
+   909  0012BA  0012               	return		;funcret
+   910  0012BC                     __end_of_MotorDriverInit:
+   911                           	opt stack 0
+   912                           intcon	equ	0xFF2
+   913                           wreg	equ	0xFE8
+   914                           status	equ	0xFD8
+   915                           
+   916 ;; *************** function _JoystickInit *****************
+   917 ;; Defined at:
+   918 ;;		line 6 in file "Joystick.c"
+   919 ;; Parameters:    Size  Location     Type
+   920 ;;		None
+   921 ;; Auto vars:     Size  Location     Type
+   922 ;;		None
+   923 ;; Return value:  Size  Location     Type
+   924 ;;		None               void
+   925 ;; Registers used:
+   926 ;;		wreg, status,2, status,0
+   927 ;; Tracked objects:
+   928 ;;		On entry : 0/0
+   929 ;;		On exit  : 0/0
+   930 ;;		Unchanged: 0/0
+   931 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   904 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   932 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   905 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   933 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   906 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   934 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   907 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   935 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   908 ;;Total ram usage:        0 bytes
-   909 ;; Hardware stack levels used:    1
-   910 ;; This function calls:
-   911 ;;		Nothing
-   912 ;; This function is called by:
-   913 ;;		_initialize
-   914 ;; This function uses a non-reentrant model
-   915 ;;
-   916                           
-   917                           	psect	text10
-   918  001196                     __ptext10:
-   919                           	opt stack 0
-   920  001196                     _JoystickInit:
-   921                           	opt stack 29
-   922                           
-   923                           ;Joystick.c: 11: TRISD = 0;
-   924                           
-   925                           ;incstack = 0
-   926  001196  0E00               	movlw	0
-   927  001198  6E95               	movwf	3989,c	;volatile
-   928                           
-   929                           ;Joystick.c: 12: TRISAbits.RA2 = 0;
-   930  00119A  9492               	bcf	3986,2,c	;volatile
-   931                           
-   932                           ;Joystick.c: 13: TRISBbits.RB1 = 1;
-   933  00119C  8293               	bsf	3987,1,c	;volatile
-   934                           
-   935                           ;Joystick.c: 14: if (PORTBbits.RB1 == 1)
-   936  00119E  A281               	btfss	3969,1,c	;volatile
-   937  0011A0  D003               	goto	l29
-   938                           
-   939                           ;Joystick.c: 15: {
-   940                           ;Joystick.c: 16: PORTAbits.RA2 = 1;
-   941  0011A2  8480               	bsf	3968,2,c	;volatile
-   942                           
-   943                           ;Joystick.c: 17: JSEnableFlag = 1;
-   944  0011A4  0E01               	movlw	1
-   945  0011A6  D004               	goto	L1
-   946  0011A8                     l29:
-   947                           
-   948                           ;Joystick.c: 19: else if (PORTBbits.RB1 == 0)
-   949  0011A8  B281               	btfsc	3969,1,c	;volatile
-   950  0011AA  D004               	goto	l881
-   951                           
-   952                           ;Joystick.c: 20: {
-   953                           ;Joystick.c: 21: PORTAbits.RA2 = 0;
-   954  0011AC  9480               	bcf	3968,2,c	;volatile
-   955                           
-   956                           ;Joystick.c: 22: JSEnableFlag = 0;
-   957  0011AE  0E00               	movlw	0
-   958  0011B0                     L1:
-   959  0011B0  6E0B               	movwf	_JSEnableFlag,c
-   960  0011B2  D000               	goto	l881
-   961  0011B4                     l881:
+   936 ;;Total ram usage:        0 bytes
+   937 ;; Hardware stack levels used:    1
+   938 ;; This function calls:
+   939 ;;		Nothing
+   940 ;; This function is called by:
+   941 ;;		_initialize
+   942 ;; This function uses a non-reentrant model
+   943 ;;
+   944                           
+   945                           	psect	text10
+   946  0011FA                     __ptext10:
+   947                           	opt stack 0
+   948  0011FA                     _JoystickInit:
+   949                           	opt stack 29
+   950                           
+   951                           ;Joystick.c: 8: TRISD = 0;
+   952                           
+   953                           ;incstack = 0
+   954  0011FA  0E00               	movlw	0
+   955  0011FC  6E95               	movwf	3989,c	;volatile
+   956                           
+   957                           ;Joystick.c: 9: TRISAbits.RA2 = 0;
+   958  0011FE  9492               	bcf	3986,2,c	;volatile
+   959                           
+   960                           ;Joystick.c: 10: TRISBbits.RB1 = 1;
+   961  001200  8293               	bsf	3987,1,c	;volatile
    962                           
-   963                           ;Joystick.c: 23: }
-   964                           ;Joystick.c: 25: ADCON0bits.ADON = 1;
-   965  0011B4  80C2               	bsf	4034,0,c	;volatile
+   963                           ;Joystick.c: 11: if (PORTBbits.RB1 == 1)
+   964  001202  A281               	btfss	3969,1,c	;volatile
+   965  001204  D003               	goto	l29
    966                           
-   967                           ;Joystick.c: 26: ADCON0 = ADCON0 & 0x01;
-   968  0011B6  50C2               	movf	4034,w,c	;volatile
-   969  0011B8  0B01               	andlw	1
-   970  0011BA  6EC2               	movwf	4034,c	;volatile
-   971                           
-   972                           ;Joystick.c: 27: ADCON0 = ADCON0 | 0x04;
-   973  0011BC  50C2               	movf	4034,w,c	;volatile
-   974  0011BE  0904               	iorlw	4
-   975  0011C0  6EC2               	movwf	4034,c	;volatile
-   976                           
-   977                           ;Joystick.c: 28: ADCON1 = 0x0D;
-   978  0011C2  0E0D               	movlw	13
-   979  0011C4  6EC1               	movwf	4033,c	;volatile
-   980                           
-   981                           ;Joystick.c: 29: ADCON2 = 0xB4;
-   982  0011C6  0EB4               	movlw	180
-   983  0011C8  6EC0               	movwf	4032,c	;volatile
-   984  0011CA  0012               	return		;funcret
-   985  0011CC                     __end_of_JoystickInit:
-   986                           	opt stack 0
-   987                           intcon	equ	0xFF2
-   988                           wreg	equ	0xFE8
-   989                           status	equ	0xFD8
+   967                           ;Joystick.c: 12: {
+   968                           ;Joystick.c: 13: PORTAbits.RA2 = 1;
+   969  001206  8480               	bsf	3968,2,c	;volatile
+   970                           
+   971                           ;Joystick.c: 14: JSEnableFlag = 1;
+   972  001208  0E01               	movlw	1
+   973  00120A  D004               	goto	L1
+   974  00120C                     l29:
+   975                           
+   976                           ;Joystick.c: 16: else if (PORTBbits.RB1 == 0)
+   977  00120C  B281               	btfsc	3969,1,c	;volatile
+   978  00120E  D004               	goto	l886
+   979                           
+   980                           ;Joystick.c: 17: {
+   981                           ;Joystick.c: 18: PORTAbits.RA2 = 0;
+   982  001210  9480               	bcf	3968,2,c	;volatile
+   983                           
+   984                           ;Joystick.c: 19: JSEnableFlag = 0;
+   985  001212  0E00               	movlw	0
+   986  001214                     L1:
+   987  001214  6E0D               	movwf	_JSEnableFlag,c
+   988  001216  D000               	goto	l886
+   989  001218                     l886:
    990                           
-   991 ;; *************** function _ImplementJSMotion *****************
-   992 ;; Defined at:
-   993 ;;		line 42 in file "MotorControl.c"
-   994 ;; Parameters:    Size  Location     Type
-   995 ;;  JoystickValu    2    4[COMRAM] int 
-   996 ;; Auto vars:     Size  Location     Type
-   997 ;;  CCPinput        2    8[COMRAM] unsigned int 
-   998 ;; Return value:  Size  Location     Type
-   999 ;;		None               void
-  1000 ;; Registers used:
-  1001 ;;		wreg, status,2, status,0, cstack
-  1002 ;; Tracked objects:
-  1003 ;;		On entry : 0/0
-  1004 ;;		On exit  : 0/0
-  1005 ;;		Unchanged: 0/0
-  1006 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   991                           ;Joystick.c: 20: }
+   992                           ;Joystick.c: 22: ADCON0bits.ADON = 1;
+   993  001218  80C2               	bsf	4034,0,c	;volatile
+   994                           
+   995                           ;Joystick.c: 23: ADCON0 = ADCON0 & 0x01;
+   996  00121A  50C2               	movf	4034,w,c	;volatile
+   997  00121C  0B01               	andlw	1
+   998  00121E  6EC2               	movwf	4034,c	;volatile
+   999                           
+  1000                           ;Joystick.c: 24: ADCON0 = ADCON0 | 0x04;
+  1001  001220  50C2               	movf	4034,w,c	;volatile
+  1002  001222  0904               	iorlw	4
+  1003  001224  6EC2               	movwf	4034,c	;volatile
+  1004                           
+  1005                           ;Joystick.c: 25: ADCON1 = 0x0D;
+  1006  001226  0E0D               	movlw	13
+  1007  001228  6EC1               	movwf	4033,c	;volatile
+  1008                           
+  1009                           ;Joystick.c: 26: ADCON2 = 0xB4;
+  1010  00122A  0EB4               	movlw	180
+  1011  00122C  6EC0               	movwf	4032,c	;volatile
+  1012  00122E  0012               	return		;funcret
+  1013  001230                     __end_of_JoystickInit:
+  1014                           	opt stack 0
+  1015                           intcon	equ	0xFF2
+  1016                           wreg	equ	0xFE8
+  1017                           status	equ	0xFD8
+  1018                           
+  1019 ;; *************** function _ImplementJSMotion *****************
+  1020 ;; Defined at:
+  1021 ;;		line 42 in file "MotorControl.c"
+  1022 ;; Parameters:    Size  Location     Type
+  1023 ;;  JoystickValu    2    6[COMRAM] int 
+  1024 ;; Auto vars:     Size  Location     Type
+  1025 ;;  CCPinput        2   10[COMRAM] unsigned int 
+  1026 ;; Return value:  Size  Location     Type
+  1027 ;;		None               void
+  1028 ;; Registers used:
+  1029 ;;		wreg, status,2, status,0, cstack
+  1030 ;; Tracked objects:
+  1031 ;;		On entry : 0/0
+  1032 ;;		On exit  : 0/0
+  1033 ;;		Unchanged: 0/0
+  1034 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-  1007 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+  1035 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1008 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
+  1036 ;;      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1009 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+  1037 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1010 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
+  1038 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1011 ;;Total ram usage:        6 bytes
-  1012 ;; Hardware stack levels used:    1
-  1013 ;; Hardware stack levels required when called:    1
-  1014 ;; This function calls:
-  1015 ;;		_abs
-  1016 ;; This function is called by:
-  1017 ;;		_main
-  1018 ;; This function uses a non-reentrant model
-  1019 ;;
-  1020                           
-  1021                           	psect	text11
-  1022  001010                     __ptext11:
-  1023                           	opt stack 0
-  1024  001010                     _ImplementJSMotion:
-  1025                           	opt stack 29
-  1026                           
-  1027                           ;MotorControl.c: 44: unsigned int CCPinput;
-  1028                           ;MotorControl.c: 45: PIDEnableFlag = 0;
-  1029                           
-  1030                           ;incstack = 0
-  1031  001010  0E00               	movlw	0
-  1032  001012  6E0C               	movwf	_PIDEnableFlag,c
-  1033                           
-  1034                           ;MotorControl.c: 46: if (JoystickValue < -10)
-  1035  001014  AE06               	btfss	ImplementJSMotion@JoystickValue+1,7,c
-  1036  001016  D008               	goto	l1129
-  1037  001018  0EF6               	movlw	246
-  1038  00101A  5C05               	subwf	ImplementJSMotion@JoystickValue,w,c
-  1039  00101C  0EFF               	movlw	255
-  1040  00101E  5806               	subwfb	ImplementJSMotion@JoystickValue+1,w,c
-  1041  001020  B0D8               	btfsc	status,0,c
-  1042  001022  D002               	goto	l1129
-  1043                           
-  1044                           ;MotorControl.c: 47: {
-  1045                           ;MotorControl.c: 48: CCP3CONbits.P3M1 = 1;
-  1046  001024  8EB7               	bsf	4023,7,c	;volatile
-  1047                           
-  1048                           ;MotorControl.c: 49: }
-  1049  001026  D01F               	goto	l1139
-  1050  001028                     l1129:
-  1051                           
-  1052                           ;MotorControl.c: 50: else if (JoystickValue > 10)
-  1053  001028  BE06               	btfsc	ImplementJSMotion@JoystickValue+1,7,c
-  1054  00102A  D008               	goto	l1133
-  1055  00102C  5006               	movf	ImplementJSMotion@JoystickValue+1,w,c
-  1056  00102E  E104               	bnz	u200
-  1057  001030  0E0B               	movlw	11
-  1058  001032  5C05               	subwf	ImplementJSMotion@JoystickValue,w,c
-  1059  001034  A0D8               	btfss	status,0,c
-  1060  001036  D002               	goto	l1133
-  1061  001038                     u200:
-  1062                           
-  1063                           ;MotorControl.c: 51: {
-  1064                           ;MotorControl.c: 52: CCP3CONbits.P3M1 = 0;
-  1065  001038  9EB7               	bcf	4023,7,c	;volatile
-  1066                           
-  1067                           ;MotorControl.c: 53: }
-  1068  00103A  D015               	goto	l1139
-  1069  00103C                     l1133:
-  1070                           
-  1071                           ;MotorControl.c: 54: else if (JoystickValue <= 10 && JoystickValue >= -10)
-  1072  00103C  BE06               	btfsc	ImplementJSMotion@JoystickValue+1,7,c
-  1073  00103E  D006               	goto	l1135
-  1074  001040  5006               	movf	ImplementJSMotion@JoystickValue+1,w,c
-  1075  001042  E111               	bnz	l1139
-  1076  001044  0E0B               	movlw	11
-  1077  001046  5C05               	subwf	ImplementJSMotion@JoystickValue,w,c
-  1078  001048  B0D8               	btfsc	status,0,c
-  1079  00104A  D00D               	goto	l1139
-  1080  00104C                     l1135:
-  1081  00104C  AE06               	btfss	ImplementJSMotion@JoystickValue+1,7,c
-  1082  00104E  D006               	goto	l1137
-  1083  001050  0EF6               	movlw	246
-  1084  001052  5C05               	subwf	ImplementJSMotion@JoystickValue,w,c
-  1085  001054  0EFF               	movlw	255
-  1086  001056  5806               	subwfb	ImplementJSMotion@JoystickValue+1,w,c
-  1087  001058  A0D8               	btfss	status,0,c
-  1088  00105A  D005               	goto	l1139
-  1089  00105C                     l1137:
+  1039 ;;Total ram usage:        6 bytes
+  1040 ;; Hardware stack levels used:    1
+  1041 ;; Hardware stack levels required when called:    1
+  1042 ;; This function calls:
+  1043 ;;		_abs
+  1044 ;; This function is called by:
+  1045 ;;		_main
+  1046 ;; This function uses a non-reentrant model
+  1047 ;;
+  1048                           
+  1049                           	psect	text11
+  1050  001010                     __ptext11:
+  1051                           	opt stack 0
+  1052  001010                     _ImplementJSMotion:
+  1053                           	opt stack 29
+  1054                           
+  1055                           ;MotorControl.c: 44: unsigned int CCPinput;
+  1056                           ;MotorControl.c: 45: PIDEnableFlag = 0;
+  1057                           
+  1058                           ;incstack = 0
+  1059  001010  0E00               	movlw	0
+  1060  001012  6E0E               	movwf	_PIDEnableFlag,c
+  1061                           
+  1062                           ;MotorControl.c: 46: if (JoystickValue < -10)
+  1063  001014  AE08               	btfss	ImplementJSMotion@JoystickValue+1,7,c
+  1064  001016  D008               	goto	l1170
+  1065  001018  0EF6               	movlw	246
+  1066  00101A  5C07               	subwf	ImplementJSMotion@JoystickValue,w,c
+  1067  00101C  0EFF               	movlw	255
+  1068  00101E  5808               	subwfb	ImplementJSMotion@JoystickValue+1,w,c
+  1069  001020  B0D8               	btfsc	status,0,c
+  1070  001022  D002               	goto	l1170
+  1071                           
+  1072                           ;MotorControl.c: 47: {
+  1073                           ;MotorControl.c: 48: CCP3CONbits.P3M1 = 1;
+  1074  001024  8EB7               	bsf	4023,7,c	;volatile
+  1075                           
+  1076                           ;MotorControl.c: 49: }
+  1077  001026  D01F               	goto	l1180
+  1078  001028                     l1170:
+  1079                           
+  1080                           ;MotorControl.c: 50: else if (JoystickValue > 10)
+  1081  001028  BE08               	btfsc	ImplementJSMotion@JoystickValue+1,7,c
+  1082  00102A  D008               	goto	l1174
+  1083  00102C  5008               	movf	ImplementJSMotion@JoystickValue+1,w,c
+  1084  00102E  E104               	bnz	u240
+  1085  001030  0E0B               	movlw	11
+  1086  001032  5C07               	subwf	ImplementJSMotion@JoystickValue,w,c
+  1087  001034  A0D8               	btfss	status,0,c
+  1088  001036  D002               	goto	l1174
+  1089  001038                     u240:
   1090                           
-  1091                           ;MotorControl.c: 55: {
-  1092                           ;MotorControl.c: 56: JoystickValue = 0;
-  1093  00105C  0E00               	movlw	0
-  1094  00105E  6E06               	movwf	ImplementJSMotion@JoystickValue+1,c
-  1095  001060  0E00               	movlw	0
-  1096  001062  6E05               	movwf	ImplementJSMotion@JoystickValue,c
-  1097  001064  D000               	goto	l1139
-  1098  001066                     l1139:
-  1099                           
-  1100                           ;MotorControl.c: 57: }
-  1101                           ;MotorControl.c: 59: JoystickValue = abs(JoystickValue);
-  1102  001066  C005  F001         	movff	ImplementJSMotion@JoystickValue,abs@a
-  1103  00106A  C006  F002         	movff	ImplementJSMotion@JoystickValue+1,abs@a+1
-  1104  00106E  ECE6  F008         	call	_abs	;wreg free
-  1105  001072  C001  F005         	movff	?_abs,ImplementJSMotion@JoystickValue
-  1106  001076  C002  F006         	movff	?_abs+1,ImplementJSMotion@JoystickValue+1
-  1107                           
-  1108                           ;MotorControl.c: 60: CCPinput = JoystickValue * 2;
-  1109  00107A  90D8               	bcf	status,0,c
-  1110  00107C  3405               	rlcf	ImplementJSMotion@JoystickValue,w,c
-  1111  00107E  6E09               	movwf	ImplementJSMotion@CCPinput,c
-  1112  001080  3406               	rlcf	ImplementJSMotion@JoystickValue+1,w,c
-  1113  001082  6E0A               	movwf	ImplementJSMotion@CCPinput+1,c
-  1114                           
-  1115                           ;MotorControl.c: 61: CCPR3L = (CCPinput >> 2) & 0xFF;
-  1116  001084  C009  F007         	movff	ImplementJSMotion@CCPinput,??_ImplementJSMotion
-  1117  001088  C00A  F008         	movff	ImplementJSMotion@CCPinput+1,??_ImplementJSMotion+1
-  1118  00108C  90D8               	bcf	status,0,c
-  1119  00108E  3208               	rrcf	??_ImplementJSMotion+1,f,c
-  1120  001090  3207               	rrcf	??_ImplementJSMotion,f,c
-  1121  001092  90D8               	bcf	status,0,c
-  1122  001094  3208               	rrcf	??_ImplementJSMotion+1,f,c
-  1123  001096  3207               	rrcf	??_ImplementJSMotion,f,c
-  1124  001098  5007               	movf	??_ImplementJSMotion,w,c
-  1125  00109A  6EB8               	movwf	4024,c	;volatile
-  1126                           
-  1127                           ;MotorControl.c: 63: CCP3CONbits.DC3B = (CCPinput & 0x03);
-  1128  00109C  C009  F007         	movff	ImplementJSMotion@CCPinput,??_ImplementJSMotion
-  1129  0010A0  0E03               	movlw	3
-  1130  0010A2  1607               	andwf	??_ImplementJSMotion,f,c
-  1131  0010A4  3A07               	swapf	??_ImplementJSMotion,f,c
-  1132  0010A6  50B7               	movf	4023,w,c	;volatile
-  1133  0010A8  1807               	xorwf	??_ImplementJSMotion,w,c
-  1134  0010AA  0BCF               	andlw	-49
-  1135  0010AC  1807               	xorwf	??_ImplementJSMotion,w,c
-  1136  0010AE  6EB7               	movwf	4023,c	;volatile
-  1137  0010B0  0012               	return		;funcret
-  1138  0010B2                     __end_of_ImplementJSMotion:
-  1139                           	opt stack 0
-  1140                           intcon	equ	0xFF2
-  1141                           wreg	equ	0xFE8
-  1142                           status	equ	0xFD8
-  1143                           
-  1144 ;; *************** function _abs *****************
-  1145 ;; Defined at:
-  1146 ;;		line 4 in file "/opt/microchip/xc8/v1.34/sources/common/abs.c"
-  1147 ;; Parameters:    Size  Location     Type
-  1148 ;;  a               2    0[COMRAM] int 
-  1149 ;; Auto vars:     Size  Location     Type
-  1150 ;;		None
-  1151 ;; Return value:  Size  Location     Type
-  1152 ;;                  2    0[COMRAM] int 
-  1153 ;; Registers used:
-  1154 ;;		wreg, status,2, status,0
-  1155 ;; Tracked objects:
-  1156 ;;		On entry : 0/0
-  1157 ;;		On exit  : 0/0
-  1158 ;;		Unchanged: 0/0
-  1159 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  1091                           ;MotorControl.c: 51: {
+  1092                           ;MotorControl.c: 52: CCP3CONbits.P3M1 = 0;
+  1093  001038  9EB7               	bcf	4023,7,c	;volatile
+  1094                           
+  1095                           ;MotorControl.c: 53: }
+  1096  00103A  D015               	goto	l1180
+  1097  00103C                     l1174:
+  1098                           
+  1099                           ;MotorControl.c: 54: else if (JoystickValue <= 10 && JoystickValue >= -10)
+  1100  00103C  BE08               	btfsc	ImplementJSMotion@JoystickValue+1,7,c
+  1101  00103E  D006               	goto	l1176
+  1102  001040  5008               	movf	ImplementJSMotion@JoystickValue+1,w,c
+  1103  001042  E111               	bnz	l1180
+  1104  001044  0E0B               	movlw	11
+  1105  001046  5C07               	subwf	ImplementJSMotion@JoystickValue,w,c
+  1106  001048  B0D8               	btfsc	status,0,c
+  1107  00104A  D00D               	goto	l1180
+  1108  00104C                     l1176:
+  1109  00104C  AE08               	btfss	ImplementJSMotion@JoystickValue+1,7,c
+  1110  00104E  D006               	goto	l1178
+  1111  001050  0EF6               	movlw	246
+  1112  001052  5C07               	subwf	ImplementJSMotion@JoystickValue,w,c
+  1113  001054  0EFF               	movlw	255
+  1114  001056  5808               	subwfb	ImplementJSMotion@JoystickValue+1,w,c
+  1115  001058  A0D8               	btfss	status,0,c
+  1116  00105A  D005               	goto	l1180
+  1117  00105C                     l1178:
+  1118                           
+  1119                           ;MotorControl.c: 55: {
+  1120                           ;MotorControl.c: 56: JoystickValue = 0;
+  1121  00105C  0E00               	movlw	0
+  1122  00105E  6E08               	movwf	ImplementJSMotion@JoystickValue+1,c
+  1123  001060  0E00               	movlw	0
+  1124  001062  6E07               	movwf	ImplementJSMotion@JoystickValue,c
+  1125  001064  D000               	goto	l1180
+  1126  001066                     l1180:
+  1127                           
+  1128                           ;MotorControl.c: 57: }
+  1129                           ;MotorControl.c: 59: JoystickValue = abs(JoystickValue);
+  1130  001066  C007  F001         	movff	ImplementJSMotion@JoystickValue,abs@a
+  1131  00106A  C008  F002         	movff	ImplementJSMotion@JoystickValue+1,abs@a+1
+  1132  00106E  EC18  F009         	call	_abs	;wreg free
+  1133  001072  C001  F007         	movff	?_abs,ImplementJSMotion@JoystickValue
+  1134  001076  C002  F008         	movff	?_abs+1,ImplementJSMotion@JoystickValue+1
+  1135                           
+  1136                           ;MotorControl.c: 60: CCPinput = JoystickValue * 2;
+  1137  00107A  90D8               	bcf	status,0,c
+  1138  00107C  3407               	rlcf	ImplementJSMotion@JoystickValue,w,c
+  1139  00107E  6E0B               	movwf	ImplementJSMotion@CCPinput,c
+  1140  001080  3408               	rlcf	ImplementJSMotion@JoystickValue+1,w,c
+  1141  001082  6E0C               	movwf	ImplementJSMotion@CCPinput+1,c
+  1142                           
+  1143                           ;MotorControl.c: 61: CCPR3L = (CCPinput >> 2) & 0xFF;
+  1144  001084  C00B  F009         	movff	ImplementJSMotion@CCPinput,??_ImplementJSMotion
+  1145  001088  C00C  F00A         	movff	ImplementJSMotion@CCPinput+1,??_ImplementJSMotion+1
+  1146  00108C  90D8               	bcf	status,0,c
+  1147  00108E  320A               	rrcf	??_ImplementJSMotion+1,f,c
+  1148  001090  3209               	rrcf	??_ImplementJSMotion,f,c
+  1149  001092  90D8               	bcf	status,0,c
+  1150  001094  320A               	rrcf	??_ImplementJSMotion+1,f,c
+  1151  001096  3209               	rrcf	??_ImplementJSMotion,f,c
+  1152  001098  5009               	movf	??_ImplementJSMotion,w,c
+  1153  00109A  6EB8               	movwf	4024,c	;volatile
+  1154                           
+  1155                           ;MotorControl.c: 63: CCP3CONbits.DC3B = (CCPinput & 0x03);
+  1156  00109C  C00B  F009         	movff	ImplementJSMotion@CCPinput,??_ImplementJSMotion
+  1157  0010A0  0E03               	movlw	3
+  1158  0010A2  1609               	andwf	??_ImplementJSMotion,f,c
+  1159  0010A4  3A09               	swapf	??_ImplementJSMotion,f,c
+  1160  0010A6  50B7               	movf	4023,w,c	;volatile
+  1161  0010A8  1809               	xorwf	??_ImplementJSMotion,w,c
+  1162  0010AA  0BCF               	andlw	-49
+  1163  0010AC  1809               	xorwf	??_ImplementJSMotion,w,c
+  1164  0010AE  6EB7               	movwf	4023,c	;volatile
+  1165  0010B0  0012               	return		;funcret
+  1166  0010B2                     __end_of_ImplementJSMotion:
+  1167                           	opt stack 0
+  1168                           intcon	equ	0xFF2
+  1169                           wreg	equ	0xFE8
+  1170                           status	equ	0xFD8
+  1171                           
+  1172 ;; *************** function _abs *****************
+  1173 ;; Defined at:
+  1174 ;;		line 4 in file "/opt/microchip/xc8/v1.34/sources/common/abs.c"
+  1175 ;; Parameters:    Size  Location     Type
+  1176 ;;  a               2    0[COMRAM] int 
+  1177 ;; Auto vars:     Size  Location     Type
+  1178 ;;		None
+  1179 ;; Return value:  Size  Location     Type
+  1180 ;;                  2    0[COMRAM] int 
+  1181 ;; Registers used:
+  1182 ;;		wreg, status,2, status,0
+  1183 ;; Tracked objects:
+  1184 ;;		On entry : 0/0
+  1185 ;;		On exit  : 0/0
+  1186 ;;		Unchanged: 0/0
+  1187 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-  1160 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+  1188 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1161 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1189 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1162 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+  1190 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1163 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
+  1191 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-  1164 ;;Total ram usage:        4 bytes
-  1165 ;; Hardware stack levels used:    1
-  1166 ;; This function calls:
-  1167 ;;		Nothing
-  1168 ;; This function is called by:
-  1169 ;;		_ImplementJSMotion
-  1170 ;;		_ImplementPIDMotion
-  1171 ;; This function uses a non-reentrant model
-  1172 ;;
-  1173                           
-  1174                           	psect	text12
-  1175  0011CC                     __ptext12:
-  1176                           	opt stack 0
-  1177  0011CC                     _abs:
-  1178                           	opt stack 29
-  1179                           
-  1180                           ;incstack = 0
-  1181  0011CC  AE02               	btfss	abs@a+1,7,c
-  1182  0011CE  D00D               	goto	l242
-  1183  0011D0  C001  F003         	movff	abs@a,??_abs
-  1184  0011D4  C002  F004         	movff	abs@a+1,??_abs+1
-  1185  0011D8  1E03               	comf	??_abs,f,c
-  1186  0011DA  1E04               	comf	??_abs+1,f,c
-  1187  0011DC  4A03               	infsnz	??_abs,f,c
-  1188  0011DE  2A04               	incf	??_abs+1,f,c
-  1189  0011E0  C003  F001         	movff	??_abs,?_abs
-  1190  0011E4  C004  F002         	movff	??_abs+1,?_abs+1
-  1191  0011E8  D004               	goto	l243
-  1192  0011EA                     l242:
-  1193  0011EA  C001  F001         	movff	abs@a,?_abs
-  1194  0011EE  C002  F002         	movff	abs@a+1,?_abs+1
-  1195  0011F2                     l243:
-  1196  0011F2  0012               	return		;funcret
-  1197  0011F4                     __end_of_abs:
-  1198                           	opt stack 0
-  1199                           intcon	equ	0xFF2
-  1200                           wreg	equ	0xFE8
-  1201                           status	equ	0xFD8
-  1202                           intcon	equ	0xFF2
-  1203                           wreg	equ	0xFE8
-  1204                           status	equ	0xFD8
-  1205                           
-  1206                           	psect	rparam
-  1207  0000                     intcon	equ	0xFF2
-  1208                           wreg	equ	0xFE8
-  1209                           status	equ	0xFD8
+  1192 ;;Total ram usage:        4 bytes
+  1193 ;; Hardware stack levels used:    1
+  1194 ;; This function calls:
+  1195 ;;		Nothing
+  1196 ;; This function is called by:
+  1197 ;;		_ImplementJSMotion
+  1198 ;;		_ImplementPIDMotion
+  1199 ;; This function uses a non-reentrant model
+  1200 ;;
+  1201                           
+  1202                           	psect	text12
+  1203  001230                     __ptext12:
+  1204                           	opt stack 0
+  1205  001230                     _abs:
+  1206                           	opt stack 29
+  1207                           
+  1208                           ;incstack = 0
+  1209  001230  AE02               	btfss	abs@a+1,7,c
+  1210  001232  D00D               	goto	l247
+  1211  001234  C001  F003         	movff	abs@a,??_abs
+  1212  001238  C002  F004         	movff	abs@a+1,??_abs+1
+  1213  00123C  1E03               	comf	??_abs,f,c
+  1214  00123E  1E04               	comf	??_abs+1,f,c
+  1215  001240  4A03               	infsnz	??_abs,f,c
+  1216  001242  2A04               	incf	??_abs+1,f,c
+  1217  001244  C003  F001         	movff	??_abs,?_abs
+  1218  001248  C004  F002         	movff	??_abs+1,?_abs+1
+  1219  00124C  D004               	goto	l248
+  1220  00124E                     l247:
+  1221  00124E  C001  F001         	movff	abs@a,?_abs
+  1222  001252  C002  F002         	movff	abs@a+1,?_abs+1
+  1223  001256                     l248:
+  1224  001256  0012               	return		;funcret
+  1225  001258                     __end_of_abs:
+  1226                           	opt stack 0
+  1227                           intcon	equ	0xFF2
+  1228                           wreg	equ	0xFE8
+  1229                           status	equ	0xFD8
+  1230                           
+  1231 ;; *************** function _DetectMovement *****************
+  1232 ;; Defined at:
+  1233 ;;		line 44 in file "Joystick.c"
+  1234 ;; Parameters:    Size  Location     Type
+  1235 ;;		None
+  1236 ;; Auto vars:     Size  Location     Type
+  1237 ;;  ADCresult       2    4[COMRAM] unsigned int 
+  1238 ;;  JoystickResu    2    2[COMRAM] int 
+  1239 ;; Return value:  Size  Location     Type
+  1240 ;;                  2    0[COMRAM] int 
+  1241 ;; Registers used:
+  1242 ;;		wreg, status,2, status,0
+  1243 ;; Tracked objects:
+  1244 ;;		On entry : 0/0
+  1245 ;;		On exit  : 0/0
+  1246 ;;		Unchanged: 0/0
+  1247 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15
+  1248 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1249 ;;      Locals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1250 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1251 ;;      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0
+  1252 ;;Total ram usage:        6 bytes
+  1253 ;; Hardware stack levels used:    1
+  1254 ;; This function calls:
+  1255 ;;		Nothing
+  1256 ;; This function is called by:
+  1257 ;;		_main
+  1258 ;; This function uses a non-reentrant model
+  1259 ;;
+  1260                           
+  1261                           	psect	text13
+  1262  0010B2                     __ptext13:
+  1263                           	opt stack 0
+  1264  0010B2                     _DetectMovement:
+  1265                           	opt stack 30
+  1266                           
+  1267                           ;Joystick.c: 46: unsigned int ADCresult;
+  1268                           ;Joystick.c: 47: int JoystickResult;
+  1269                           ;Joystick.c: 49: ADCON0bits.GODONE = 1;
+  1270                           
+  1271                           ;incstack = 0
+  1272  0010B2  82C2               	bsf	4034,1,c	;volatile
+  1273                           
+  1274                           ;Joystick.c: 50: while (ADCON0bits.GO_NOT_DONE == 1);
+  1275  0010B4  D000               	goto	l41
+  1276  0010B6                     l41:
+  1277  0010B6  B2C2               	btfsc	4034,1,c	;volatile
+  1278  0010B8  D7FE               	goto	l41
+  1279                           
+  1280                           ;Joystick.c: 52: ADCresult = ADRESH;
+  1281  0010BA  CFC4 F005          	movff	4036,DetectMovement@ADCresult	;volatile
+  1282  0010BE  6A06               	clrf	DetectMovement@ADCresult+1,c
+  1283                           
+  1284                           ;Joystick.c: 53: ADCresult = ADCresult << 8;
+  1285  0010C0  5005               	movf	DetectMovement@ADCresult,w,c
+  1286  0010C2  6E06               	movwf	DetectMovement@ADCresult+1,c
+  1287  0010C4  6A05               	clrf	DetectMovement@ADCresult,c
+  1288                           
+  1289                           ;Joystick.c: 54: ADCresult = ADCresult | ADRESL;
+  1290  0010C6  5005               	movf	DetectMovement@ADCresult,w,c
+  1291  0010C8  10C3               	iorwf	4035,w,c	;volatile
+  1292  0010CA  6E05               	movwf	DetectMovement@ADCresult,c
+  1293  0010CC  5006               	movf	DetectMovement@ADCresult+1,w,c
+  1294  0010CE  6E06               	movwf	DetectMovement@ADCresult+1,c
+  1295                           
+  1296                           ;Joystick.c: 55: JoystickResult = (ADCresult - 512);
+  1297  0010D0  0E00               	movlw	0
+  1298  0010D2  2405               	addwf	DetectMovement@ADCresult,w,c
+  1299  0010D4  6E03               	movwf	DetectMovement@JoystickResult,c
+  1300  0010D6  0EFE               	movlw	254
+  1301  0010D8  2006               	addwfc	DetectMovement@ADCresult+1,w,c
+  1302  0010DA  6E04               	movwf	DetectMovement@JoystickResult+1,c
+  1303                           
+  1304                           ;Joystick.c: 57: if ((JoystickResult > 100) || (JoystickResult < -100))
+  1305  0010DC  BE04               	btfsc	DetectMovement@JoystickResult+1,7,c
+  1306  0010DE  D006               	goto	l1150
+  1307  0010E0  5004               	movf	DetectMovement@JoystickResult+1,w,c
+  1308  0010E2  E10C               	bnz	l1152
+  1309  0010E4  0E65               	movlw	101
+  1310  0010E6  5C03               	subwf	DetectMovement@JoystickResult,w,c
+  1311  0010E8  B0D8               	btfsc	status,0,c
+  1312  0010EA  D008               	goto	l1152
+  1313  0010EC                     l1150:
+  1314  0010EC  AE04               	btfss	DetectMovement@JoystickResult+1,7,c
+  1315  0010EE  D00D               	goto	l1160
+  1316  0010F0  0E9C               	movlw	156
+  1317  0010F2  5C03               	subwf	DetectMovement@JoystickResult,w,c
+  1318  0010F4  0EFF               	movlw	255
+  1319  0010F6  5804               	subwfb	DetectMovement@JoystickResult+1,w,c
+  1320  0010F8  B0D8               	btfsc	status,0,c
+  1321  0010FA  D007               	goto	l1160
+  1322  0010FC                     l1152:
+  1323                           
+  1324                           ;Joystick.c: 58: {
+  1325                           ;Joystick.c: 59: PIDEnableFlag = 0;
+  1326  0010FC  0E00               	movlw	0
+  1327  0010FE  6E0E               	movwf	_PIDEnableFlag,c
+  1328                           
+  1329                           ;Joystick.c: 60: return JoystickResult;
+  1330  001100  C003  F001         	movff	DetectMovement@JoystickResult,?_DetectMovement
+  1331  001104  C004  F002         	movff	DetectMovement@JoystickResult+1,?_DetectMovement+1
+  1332                           
+  1333                           ;Joystick.c: 61: }
+  1334  001108  D005               	goto	l47
+  1335  00110A                     l1160:
+  1336                           
+  1337                           ;Joystick.c: 62: else
+  1338                           ;Joystick.c: 63: return 0;
+  1339  00110A  0E00               	movlw	0
+  1340  00110C  6E02               	movwf	?_DetectMovement+1,c
+  1341  00110E  0E00               	movlw	0
+  1342  001110  6E01               	movwf	?_DetectMovement,c
+  1343  001112  D000               	goto	l47
+  1344  001114                     l47:
+  1345  001114  0012               	return		;funcret
+  1346  001116                     __end_of_DetectMovement:
+  1347                           	opt stack 0
+  1348                           intcon	equ	0xFF2
+  1349                           wreg	equ	0xFE8
+  1350                           status	equ	0xFD8
+  1351                           intcon	equ	0xFF2
+  1352                           wreg	equ	0xFE8
+  1353                           status	equ	0xFD8
+  1354                           
+  1355                           	psect	rparam
+  1356  0000                     intcon	equ	0xFF2
+  1357                           wreg	equ	0xFE8
+  1358                           status	equ	0xFD8
 
 
 Data Sizes:
@@ -1290,7 +1444,7 @@ Data Sizes:
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMRAM           95     10      12
+    COMRAM           95     12      14
     BANK0           160      0       0
     BANK1           256      0       0
     BANK2           256      0       0
@@ -1319,7 +1473,7 @@ Critical Paths under _main in COMRAM
     _setIODIR->_WriteSPI1
     _lcdCommand->_setGPIO
     _setGPIO->_WriteSPI1
-    _ImplementJSMotion->_abs
+    _ImplementJSMotion->_DetectMovement
 
 Critical Paths under _main in BANK0
 
@@ -1390,7 +1544,8 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 0     0      0    2147
+ (0) _main                                                 0     0      0    2283
+                     _DetectMovement
                   _ImplementJSMotion
                          _initialize
  ---------------------------------------------------------------------------------
@@ -1432,11 +1587,15 @@ Call Graph Tables:
  (2) _JoystickInit                                         0     0      0       0
  ---------------------------------------------------------------------------------
  (1) _ImplementJSMotion                                    6     4      2     437
-                                              4 COMRAM     6     4      2
+                                              6 COMRAM     6     4      2
+                     _DetectMovement (ARG)
                                 _abs
  ---------------------------------------------------------------------------------
  (2) _abs                                                  4     2      2     194
                                               0 COMRAM     4     2      2
+ ---------------------------------------------------------------------------------
+ (1) _DetectMovement                                       6     4      2     136
+                                              0 COMRAM     6     4      2
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 4
  ---------------------------------------------------------------------------------
@@ -1444,8 +1603,10 @@ Call Graph Tables:
  Call Graph Graphs:
 
  _main (ROOT)
+   _DetectMovement
    _ImplementJSMotion
-     _abs
+     _DetectMovement (ARG)
+     _abs (ARG)
    _initialize
      _JoystickInit
      _MotorDriverInit
@@ -1498,7 +1659,7 @@ BITBANK15           60      0       0      35        0.0%
 BANK15              60      0       0      36        0.0%
 BIGRAM_1            60      0       0      37        0.0%
 BITCOMRAM           5F      0       0       0        0.0%
-COMRAM              5F      A       C       1       12.6%
+COMRAM              5F      C       E       1       14.7%
 BITSFR_5             0      0       0      40        0.0%
 SFR_5                0      0       0      40        0.0%
 BITSFR_4             0      0       0      40        0.0%
@@ -1513,70 +1674,74 @@ BITSFR               0      0       0      40        0.0%
 SFR                  0      0       0      40        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0       C       6        0.0%
-DATA                 0      0       C       3        0.0%
+ABS                  0      0       E       6        0.0%
+DATA                 0      0       E       3        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Sat Oct 17 00:53:38 2015
+Symbol Table                                                                                   Sun Oct 18 03:34:57 2015
 
-      __size_of_MotorDriverInit 001C                              l29 11A8       ImplementJSMotion@CCPinput 0009  
-                           l144 126A                             l242 11EA                             l243 11F2  
-                           l172 10E6                             l173 1100                             l174 10E8  
-                           l166 10C6                             l190 120C                             l175 10EC  
-                           l168 10CA                             l424 12A0                             l169 10CC  
-                           l188 1214                             l821 1292                             l881 11B4  
-                           u200 1038                             _PR2 000FCB                             u267 1294  
-                           _abs 11CC               lcdCommand@command 0005                             wreg 000FE8  
-                  __CFG_WDT$OFF 000000                            ?_abs 0001                            l1133 103C  
-                          l1135 104C                            l1137 105C                            l1129 1028  
-                          l1081 10D0                            l1139 1066                            l1085 10F0  
-                          STR_1 1008                            STR_2 1001  ImplementJSMotion@JoystickValue 0005  
-                          abs@a 0001                            _main 1266                            start 0002  
-                  ___param_bank 000010                     _Delay10TCYx 1290                           ??_abs 0003  
-                         ?_main 0001                           _T2CON 000FCA                           _T3CON 000FB1  
-                         _TRISD 000F95                 __end_of_lcdInit 1152                  __CFG_FCMEN$OFF 000000  
-               __end_of_setGPIO 1266                           status 000FD8      __size_of_ImplementJSMotion 00A2  
-               __initialization 12A2                    __end_of_main 127C                  __CFG_OSC$HSPLL 000000  
-              __end_of_OpenSPI1 1108                          ??_main 000B                   __activetblptr 000003  
-             ??_MotorDriverInit 0001                          _ADCON0 000FC2                          _ADCON1 000FC1  
-                        _ADCON2 000FC0                          _ADRESH 000FC4                          _ADRESL 000FC3  
-                        _CCPR3L 000FB8                          _INTCON 000FF2                OpenSPI1@bus_mode 0001  
-              __end_of_setIODIR 124C                     setIODIR@dir 0003                       ??_lcdInit 0006  
-                     ??_setGPIO 0004                    __mediumconst 0000                      __accesstop 0060  
-       __end_of__initialization 12A6              __size_of_WriteSPI1 0022                   ___rparam_used 000001  
+      __size_of_MotorDriverInit 001C                              l41 10B6                              l29 120C  
+                            l47 1114       ImplementJSMotion@CCPinput 000B                             l171 112A  
+                           l180 1150                             l173 112E                             l174 1130  
+                           l247 124E                             l248 1256                             l177 114A  
+                           l193 129E                             l178 1164                             l179 114C  
+                           l195 1296                             l429 1314                             l826 1306  
+                           l886 1218                             u240 1038                             u317 1308  
+                           _PR2 000FCB                             _abs 1230               lcdCommand@command 0005  
+                           wreg 000FE8                    __CFG_WDT$OFF 000000                            l1102 1154  
+                          ?_abs 0001                            l1150 10EC                            l1160 110A  
+                          l1152 10FC                            l1170 1028                            l1180 1066  
+                          l1244 125E                            l1174 103C                            l1176 104C  
+                          l1178 105C                            l1098 1134                            STR_1 1008  
+                          STR_2 1001  ImplementJSMotion@JoystickValue 0007                            abs@a 0001  
+                          _main 1258                            start 0002                    ___param_bank 000010  
+                   _Delay10TCYx 1304                           ??_abs 0003                           ?_main 0001  
+                         _T2CON 000FCA                           _T3CON 000FB1                           _TRISD 000F95  
+               __end_of_lcdInit 11B6                  __CFG_FCMEN$OFF 000000                 __end_of_setGPIO 12F0  
+                         status 000FD8      __size_of_ImplementJSMotion 00A2                 __initialization 1316  
+                  __end_of_main 127E                  _DetectMovement 10B2                  __CFG_OSC$HSPLL 000000  
+              __end_of_OpenSPI1 116C                          ??_main 000D                   __activetblptr 000003  
+             ??_MotorDriverInit 0001         DetectMovement@ADCresult 0005                          _ADCON0 000FC2  
+                        _ADCON1 000FC1                          _ADCON2 000FC0                          _ADRESH 000FC4  
+                        _ADRESL 000FC3                          _CCPR3L 000FB8                          _INTCON 000FF2  
+        __end_of_DetectMovement 1116                OpenSPI1@bus_mode 0001                __end_of_setIODIR 12D6  
+                   setIODIR@dir 0003                       ??_lcdInit 0006                       ??_setGPIO 0004  
+                  __mediumconst 0000                      __accesstop 0060         __end_of__initialization 131A  
+            __size_of_WriteSPI1 0022                   ___rparam_used 000001                 ?_DetectMovement 0001  
                 __pcstackCOMRAM 0001                WriteSPI1@TempVar 0001                   ?_JoystickInit 0001  
-                     ?_OpenSPI1 0001                    ?_Delay10TCYx 0001                      _lcdCommand 1152  
-                       _CCP3CON 000FB7               __end_of_WriteSPI1 1216                   _PIDEnableFlag 000C  
+                     ?_OpenSPI1 0001                    ?_Delay10TCYx 0001                      _lcdCommand 11B6  
+                       _CCP3CON 000FB7               __end_of_WriteSPI1 12A0                   _PIDEnableFlag 000E  
                        _SSP1BUF 000FC9                  ??_JoystickInit 0001                       ?_setIODIR 0003  
                     ??_OpenSPI1 0003                         __Hparam 0000                         __Lparam 0000  
-               _MotorDriverInit 1216                    __psmallconst 1000                         __pcinit 12A2  
-               Delay10TCYx@unit 0001                         __ramtop 1000                      _initialize 127C  
-                       _lcdInit 1108                         __ptext0 1266                         __ptext1 127C  
-                       __ptext2 1108                         __ptext3 1232                         __ptext4 1152  
-                       __ptext5 124C                         __ptext6 11F4                         __ptext7 1290  
-                       __ptext8 10B2                         __ptext9 1216                    __size_of_abs 0028  
-                       _setGPIO 124C                 setIODIR@address 0004                    setGPIO@value 0003  
-          end_of_initialization 12A6                      ??_setIODIR 0004               OpenSPI1@smp_phase 0002  
+               _MotorDriverInit 12A0                    __psmallconst 1000                         __pcinit 1316  
+               Delay10TCYx@unit 0001                         __ramtop 1000                      _initialize 12F0  
+                       _lcdInit 116C                         __ptext0 1258                         __ptext1 12F0  
+                       __ptext2 116C                         __ptext3 12BC                         __ptext4 11B6  
+                       __ptext5 12D6                         __ptext6 127E                         __ptext7 1304  
+                       __ptext8 1116                         __ptext9 12A0                    __size_of_abs 0028  
+                       _setGPIO 12D6                 setIODIR@address 0004                    setGPIO@value 0003  
+          end_of_initialization 131A                      ??_setIODIR 0004               OpenSPI1@smp_phase 0002  
                    ?_lcdCommand 0001               OpenSPI1@sync_mode 0003                       _PORTAbits 000F80  
                      _PORTBbits 000F81                       _TRISAbits 000F92                       _TRISBbits 000F93  
                      _TRISCbits 000F94                       _TRISEbits 000F96                       _TRISFbits 000F97  
-                     _TRISGbits 000F98         __end_of_MotorDriverInit 1232                     _CCP3CONbits 000FB7  
-          __size_of_Delay10TCYx 0012                     ?_initialize 0001            __end_of_JoystickInit 11CC  
-           start_initialization 12A2                     __end_of_abs 11F4             __size_of_lcdCommand 0044  
-             __size_of_OpenSPI1 0056                     __pbssCOMRAM 000B                       _WriteSPI1 11F4  
-              ?_MotorDriverInit 0001             __size_of_initialize 0014               WriteSPI1@data_out 0002  
-             __size_of_setIODIR 001A                        ?_lcdInit 0001                     __smallconst 1000  
-                      ?_setGPIO 0003                      ?_WriteSPI1 0001                        _PIR1bits 000F9E  
-                setGPIO@address 0004                    ??_lcdCommand 0005           __size_of_JoystickInit 0036  
-                      _SSP1CON1 000FC6                        _SSP1STAT 000FC7               __CFG_ECCPMX$PORTE 000000  
-                    _ADCON0bits 000FC2              __end_of_lcdCommand 1196                    _JoystickInit 1196  
-                      _OpenSPI1 10B2                        __Hrparam 0000                        __Lrparam 0000  
-                  _JSEnableFlag 000B                    ??_initialize 0006                __size_of_lcdInit 004A  
-              __size_of_setGPIO 001A                     ??_WriteSPI1 0001                        __ptext10 1196  
-                      __ptext11 1010                        __ptext12 11CC                    _SSP1CON1bits 000FC6  
-                      _setIODIR 1232                   __size_of_main 0016              __end_of_initialize 1290  
-                 ??_Delay10TCYx 0001                    _SSP1STATbits 000FC7               _ImplementJSMotion 1010  
-            ?_ImplementJSMotion 0005             __end_of_Delay10TCYx 12A2             ??_ImplementJSMotion 0007  
-     __end_of_ImplementJSMotion 10B2  
+                     _TRISGbits 000F98         __end_of_MotorDriverInit 12BC                ??_DetectMovement 0003  
+                   _CCP3CONbits 000FB7            __size_of_Delay10TCYx 0012                     ?_initialize 0001  
+          __end_of_JoystickInit 1230             start_initialization 1316                     __end_of_abs 1258  
+           __size_of_lcdCommand 0044               __size_of_OpenSPI1 0056                     __pbssCOMRAM 000D  
+                     _WriteSPI1 127E                ?_MotorDriverInit 0001             __size_of_initialize 0014  
+             WriteSPI1@data_out 0002               __size_of_setIODIR 001A                        ?_lcdInit 0001  
+                   __smallconst 1000                        ?_setGPIO 0003                      ?_WriteSPI1 0001  
+                      _PIR1bits 000F9E                  setGPIO@address 0004                    ??_lcdCommand 0005  
+         __size_of_JoystickInit 0036                        _SSP1CON1 000FC6                        _SSP1STAT 000FC7  
+             __CFG_ECCPMX$PORTE 000000                      _ADCON0bits 000FC2              __end_of_lcdCommand 11FA  
+                  _JoystickInit 11FA                        _OpenSPI1 1116                        __Hrparam 0000  
+                      __Lrparam 0000                    _JSEnableFlag 000D                    ??_initialize 0006  
+              __size_of_lcdInit 004A                __size_of_setGPIO 001A                     ??_WriteSPI1 0001  
+                      __ptext10 11FA                        __ptext11 1010                        __ptext12 1230  
+                      __ptext13 10B2                    _SSP1CON1bits 000FC6                        _setIODIR 12BC  
+                 __size_of_main 0026              __end_of_initialize 1304                   ??_Delay10TCYx 0001  
+                  _SSP1STATbits 000FC7    DetectMovement@JoystickResult 0003               _ImplementJSMotion 1010  
+            ?_ImplementJSMotion 0007         __size_of_DetectMovement 0064             __end_of_Delay10TCYx 1316  
+           ??_ImplementJSMotion 0009       __end_of_ImplementJSMotion 10B2  

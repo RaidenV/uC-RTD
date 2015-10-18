@@ -8293,14 +8293,6 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 23 "Joystick.h"
-extern unsigned char PIDEnableFlag;
-extern unsigned char JSEnableFlag;
-
-void JoystickInit(void);
-void DetectJoystick(void);
-int DetectMovement(void);
-
 # 27 "/opt/microchip/xc8/v1.34/include/stdlib.h"
 typedef struct {
 int rem;
@@ -8357,6 +8349,34 @@ extern int abs(int);
 extern long labs(long);
 
 
+extern char * itoa(char * buf, int val, int base);
+extern char * utoa(char * buf, unsigned val, int base);
+
+
+
+
+extern char * ltoa(char * buf, long val, int base);
+extern char * ultoa(char * buf, unsigned long val, int base);
+
+extern char * ftoa(float f, int * status);
+
+# 26 "ResolverToDigital.h"
+void RTDInit(void);
+unsigned int ReadRTDpos(void);
+unsigned int ReadRTDvel(void);
+double RTD2Angle(unsigned int);
+double RTD2Velocity(unsigned int);
+unsigned char RTDdirection(void);
+
+# 26 "Joystick.h"
+extern unsigned char PIDEnableFlag;
+extern unsigned char JSEnableFlag;
+
+void JoystickInit(void);
+void DetectJoystick(void);
+int DetectMovement(void);
+
+# 108 "/opt/microchip/xc8/v1.34/include/stdlib.h"
 extern char * itoa(char * buf, int val, int base);
 extern char * utoa(char * buf, unsigned val, int base);
 
@@ -8501,9 +8521,9 @@ initialize();
 while (1)
 {
 
-
-
-ImplementJSMotion(-50);
+JSEnableFlag = 1;
+if (JSEnableFlag == 1)
+ImplementJSMotion(DetectMovement());
 }
 
 }

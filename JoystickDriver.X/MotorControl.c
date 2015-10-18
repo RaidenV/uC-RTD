@@ -6,8 +6,8 @@ void MotorDriverInit(void)
 {
     TRISGbits.RG0 = 0; //ECCP3 Enhanced PWM output Channel: A, AHI (MOSFET Driver Chip)
     TRISEbits.RE4 = 0; //ECCP3 Enhanced PWM output Channel: B, BHI (MOSFET Driver Chip)
-    TRISEbits.RE3 = 0; //ECCP3 Enhanced PWM output Channel: C, BLO (MOSFET DRIVER CHIP)
-    TRISGbits.RG3 = 0; //ECCP3 Enhanced PWM output Channel: D, ALO (MOSFET Driver Chip)
+    TRISEbits.RE3 = 0; //ECCP3 Enhanced PWM output Channel: C, ALO (MOSFET DRIVER CHIP)
+    TRISGbits.RG3 = 0; //ECCP3 Enhanced PWM output Channel: D, BLO (MOSFET Driver Chip)
 
     TRISBbits.RB0 = 1; //FAULT Pin Falling-edge Interrupt (MOSFET Dr)
 

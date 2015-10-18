@@ -1,7 +1,4 @@
-#include <xc.h>
-#include <stdlib.h>
 #include "Joystick.h"
-#include "ResolverToDigital.h"
 
 unsigned char PIDEnableFlag = 0;
 unsigned char JSEnableFlag = 0;
@@ -24,7 +21,6 @@ void JoystickInit(void)
 
     ADCON0bits.ADON = 1; //Turn on the ADC module;
     ADCON0 = ADCON0 & 0x01; //Set the Analog Channel to 0 (AN0), don't touch the ADON bit;
-    ADCON0 = ADCON0 | 0x04;
     ADCON1 = 0x0D; //Set the Analog Channel to 0, every other input is enabled as a digital value, use internal reference voltage);
     ADCON2 = 0xB4; //Set register: Right Justified, 16 Tad, Fosc/4;
 }
