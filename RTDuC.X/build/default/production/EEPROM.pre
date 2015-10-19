@@ -1,13 +1,5 @@
 
-# 1 "ResolverToDigital.c"
-
-# 26 "ResolverToDigital.h"
-void RTDInit(void);
-unsigned int ReadRTDpos(void);
-unsigned int ReadRTDvel(void);
-double RTD2Angle(unsigned int);
-double RTD2Velocity(unsigned int);
-unsigned char RTDdirection(void);
+# 1 "EEPROM.c"
 
 # 49 "/opt/microchip/xc8/v1.34/include/pic18f8722.h"
 extern volatile unsigned char SSP2CON2 @ 0xF62;
@@ -7211,77 +7203,210 @@ extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRL @ (((unsigned) &PORTJ)*8) + 2;
 
-# 4 "ResolverToDigital.c"
-void RTDInit(void)
-{
-TRISD = 0xFF;
-TRISH = 0xFF;
-TRISEbits.RE0 = 0;
-TRISEbits.RE1 = 0;
-TRISEbits.RE2 = 0;
-TRISJbits.RJ0 = 0;
-TRISEbits.RE5 = 1;
-TRISEbits.RE6 = 1;
-TRISEbits.RE7 = 1;
-PORTEbits.RE2 = 0;
+# 26 "/opt/microchip/xc8/v1.34/include/htc.h"
+extern const char __xc8_OPTIM_SPEED;
 
+
+# 13 "/opt/microchip/xc8/v1.34/include/xc8debug.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+
+# 18 "/opt/microchip/xc8/v1.34/include/pic18.h"
+__attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
+
+
+# 41
+#pragma intrinsic(__nop)
+extern void __nop(void);
+
+
+# 160
+#pragma intrinsic(_delay)
+extern __nonreentrant void _delay(unsigned long);
+#pragma intrinsic(_delaywdt)
+extern __nonreentrant void _delaywdt(unsigned long);
+#pragma intrinsic(_delay3)
+extern __nonreentrant void _delay3(unsigned char);
+
+# 36 "/opt/microchip/xc8/v1.34/include/plib/EEP.h"
+void Busy_eep ( void );
+unsigned char Read_b_eep( unsigned int badd );
+void Write_b_eep( unsigned int badd, unsigned char bdat );
+
+# 38 "EEPROM.h"
+extern unsigned char DDouble[3];
+extern unsigned char* DoublePtr;
+extern double Kp;
+extern double Ki;
+extern double Kd;
+extern double SetAngle;
+extern double CurrentAngle;
+extern double CurrentVelocity;
+extern unsigned char PIDEnableFlag;
+
+void EEPROMInit(void);
+void EEBootUp(void);
+void EEDisassembleDouble(double);
+double EEReassembleDouble(void);
+void EEWriteDouble(unsigned char, double);
+double EEReadDouble(unsigned char);
+
+void EEWriteChar(unsigned char, unsigned char);
+char EEReadChar(unsigned char);
+
+void HLVDInt(void);
+
+# 3 "EEPROM.c"
+unsigned char DDouble[3];
+unsigned char* DoublePtr;
+double Kp;
+double Ki;
+double Kd;
+double SetAngle;
+double CurrentAngle;
+double CurrentVelocity;
+unsigned char PIDEnableFlag;
+
+void EEPROMInit(void)
+{
+EECON1bits.EEPGD = 0;
+EECON1bits.CFGS = 0;
+EECON1bits.WREN = 1;
+
+EEBootUp();
+
+HLVDCON = 0x3D;
+PIE2bits.HLVDIE = 1;
+IPR2bits.HLVDIP = 1;
 }
 
-# 27
-unsigned int ReadRTDpos(void)
+#pragma interrupt_level 1
+void EEBootUp(void)
 {
-unsigned int FullPosition;
-unsigned char HighPosition, LowPosition;
-
-if((PORTEbits.RE7 != 0) && (PORTEbits.RE6 != 0))
+if (EEReadChar(0x16))
 {
-PORTEbits.RE1 = 1;
-PORTEbits.RE0 = 0;
-PORTEbits.RE2 = 0;
-HighPosition = PORTH;
-LowPosition = PORTD;
-PORTEbits.RE0 = 1;
-FullPosition = LowPosition;
-FullPosition = (HighPosition & 0x0F) << 8;
-
-return FullPosition;
+SetAngle = EEReadDouble(0x00);
+Kp = EEReadDouble(0x03);
+Ki = EEReadDouble(0x06);
+Kd = EEReadDouble(0x09);
+PIDEnableFlag = EEReadChar(0x15);
+if((PIDEnableFlag | 0x01) == 0x01)
+{
+PIDEnableFlag = 0x03;
+}
+}
 }
 
-else
-return 0xFF;
+
+# 47
+#pragma interrupt_level 1
+void EEDisassembleDouble(double dub)
+{
+DoublePtr = (unsigned char*) &dub;
+DDouble[0] = DoublePtr[0];
+DDouble[1] = DoublePtr[1];
+DDouble[2] = DoublePtr[2];
 }
 
-unsigned int ReadRTDvel(void)
-{
-unsigned int FullVelocity;
-unsigned char HighVelocity, LowVelocity;
 
-if((PORTEbits.RE7 != 0) && (PORTEbits.RE6 != 0))
+# 61
+#pragma interrupt_level 1
+double EEReassembleDouble(void)
 {
-PORTEbits.RE1 = 0;
-PORTEbits.RE0 = 0;
-PORTEbits.RE2 = 0;
-HighVelocity = PORTH;
-LowVelocity = PORTD;
-PORTEbits.RE0 = 1;
-FullVelocity = LowVelocity;
-FullVelocity = (HighVelocity & 0x07) << 8;
-
-return FullVelocity;
+double dub;
+DoublePtr = (unsigned char*) &dub;
+DoublePtr[0] = DDouble[0];
+DoublePtr[1] = DDouble[1];
+DoublePtr[2] = DDouble[2];
+return dub;
 }
 
-else
-return 0xFF;
+
+# 76
+#pragma interrupt_level 1
+void EEWriteDouble(unsigned char location, double dub)
+{
+unsigned char x;
+
+EEDisassembleDouble(dub);
+
+INTCON = INTCON & 0x3F;
+
+for (x = 0; x < 3; x++)
+{
+Write_b_eep(location, DDouble[x]);
+location++;
+Busy_eep();
 }
 
-# 77
-double RTD2Angle(unsigned int RTDAngle)
-{
-return 0.087890625 * RTDAngle;
+INTCON = INTCON | 0xC0;
 }
-double RTD2Velocity(unsigned int);
 
-unsigned char RTDdirection(void)
+
+# 99
+#pragma interrupt_level 1
+double EEReadDouble(unsigned char location)
 {
-return PORTEbits.RE5;
+unsigned char x;
+
+INTCON = INTCON & 0x3F;
+
+for (x = 0; x < 3; x++)
+{
+DDouble[x] = Read_b_eep(location + x);
+Busy_eep();
+}
+
+INTCON = INTCON | 0xC0;
+
+return EEReassembleDouble();
+}
+
+
+# 121
+#pragma interrupt_level 1
+void EEWriteChar(unsigned char location, unsigned char ch)
+{
+INTCON = INTCON & 0x3F;
+
+Write_b_eep(location, ch);
+Busy_eep();
+
+INTCON = INTCON | 0xC0;
+}
+
+
+# 135
+#pragma interrupt_level 1
+char EEReadChar(unsigned char location)
+{
+unsigned char ch;
+
+INTCON = INTCON & 0x3F;
+
+ch = Read_b_eep(location);
+
+INTCON = INTCON | 0xC0;
+
+return ch;
+}
+
+#pragma interrupt_level 1
+void HLVDInt(void)
+{
+EEWriteDouble(0x00, SetAngle);
+EEWriteDouble(0x03, Kp);
+EEWriteDouble(0x06, Ki);
+EEWriteDouble(0x09, Kd);
+EEWriteChar(0x0C, PORTA);
+EEWriteChar(0x0D, PORTB);
+EEWriteChar(0x0E, PORTC);
+EEWriteChar(0x0F, PORTD);
+EEWriteChar(0x10, PORTE);
+EEWriteChar(0x11, PORTF);
+EEWriteChar(0x12, PORTG);
+EEWriteChar(0x13, PORTH);
+EEWriteChar(0x14, PORTJ);
+EEWriteChar(0x15, PIDEnableFlag);
+EEWriteChar(0x16, 0x01);
 }

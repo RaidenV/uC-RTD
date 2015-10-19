@@ -12,11 +12,15 @@
 extern "C" {
 #endif
 
-#include <pic18f8722.h>
+#include <xc.h>
+#include <xc.h>
+#include <stdlib.h>
+#include "ResolverToDigital.h"
 
-#define JOYSTICKLED PORTAbits.RA1
-#define DeadbandHigh 10
-#define DeadbandLow -10
+#define JOYSTICKLED PORTAbits.RA2
+#define JOYSTICKDETECT PORTBbits.RB1
+#define DeadbandHigh 100
+#define DeadbandLow -100
 #define JSOFFSET 512
 
     extern unsigned char PIDEnableFlag;
@@ -25,7 +29,6 @@ extern "C" {
     void JoystickInit(void);
     void DetectJoystick(void);
     int DetectMovement(void);
-    void ImplementJSMotion(int);
 
 
 #ifdef	__cplusplus

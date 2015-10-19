@@ -1,69 +1,57 @@
-#include <pic18f8722.h>
-#include <stdlib.h>
 #include "Joystick.h"
-#include "ResolverToDigital.h"
 
 unsigned char PIDEnableFlag = 0;
 unsigned char JSEnableFlag = 0;
 
 void JoystickInit(void)
 {
-    
-    TRISAbits.RA1 = 0; //Set the Joystick Connected LED pin as an output
-    TRISBbits.RB1 = 1; //Set RB1 as an Input for the external interrupt;
-
+    TRISAbits.RA2 = 0; //Set the Joystick Connected LED pin as an output
+    TRISBbits.RB1 = 1;
     if (PORTBbits.RB1 == 1) //If the Joystick is connected (power is applied to RB1)
     {
         JOYSTICKLED = 1; //Turn on the Joystick Connected LED
-        INTCON2bits.INTEDG1 = 0; //Enable external interrupt 1 for falling edge triggering (the Joystick is unplugged)
-        ADCON0bits.ADON = 1; //Turn on the ADC module;
         JSEnableFlag = 1; //If the Joystick is enabled, allow its routine to run in the main body of code;
     }
     else if (PORTBbits.RB1 == 0) //If the Joystick is not connected (power is not applied to RB1)
     {
         JOYSTICKLED = 0; //Turn off the Joystick Connected LED
-        INTCON2bits.INTEDG1 = 1; //Enable external interrupt 1 for rising edge triggering (the joystick is plugged in)
-        ADCON0bits.ADON = 0; // Turn off the ADC module;
         JSEnableFlag = 0; //If the Joystick is disabled, disallow its routine from running in the main body of code;
     }
 
-    RCONbits.IPEN = 1; //Enable interrupt priorities;
-    INTCON3bits.INT1IE = 1; //Enable the Joystick interrupt;
-    INTCON3bits.INT1IP = 0; //Set EXTINT1 to Low Priority
+    ADCON0bits.ADON = 1; //Turn on the ADC module;
     ADCON0 = ADCON0 & 0x01; //Set the Analog Channel to 0 (AN0), don't touch the ADON bit;
-    ADCON1 = 0x0E; //Set the Analog Channel to 0, every other input is enabled as a digital value, use internal reference voltage);
+    ADCON1 = 0x0D; //Set the Analog Channel to 0, every other input is enabled as a digital value, use internal reference voltage);
     ADCON2 = 0xB4; //Set register: Right Justified, 16 Tad, Fosc/4;
 }
 
 void DetectJoystick(void)
 {
-    if (INTCON2bits.INTEDG1 == 0) //If this was triggered by a falling edge interrupt;
+    if (PORTBbits.RB1 == 0)
     {
-        INTCON2bits.INTEDG1 == 1; //Change to a rising edge triggered interrupt
-        ADCON0bits.ADON = 0; //Turn the ADC module off (the joystick is no longer connected)
-        JOYSTICKLED = 0; //Turn the Joystick LED off;
+        JOYSTICKLED = 0; //Turn off the Joystick Connected LED
+        JSEnableFlag = 0; //If the Joystick is disabled, disallow its routine from running in the main body of code;
     }
 
-    else if (INTCON2bits.INTEDG1 == 1) //If this was triggered by a rising edge interrupt;
+    else if (PORTBbits.RB1 == 1)
     {
-        INTCON2bits.INTEDG1 = 0; //Change to a falling edge triggered interrupt
-        ADCON0bits.ADON = 1; //Turn the ADC module on (the joystick is connected)
-        JOYSTICKLED = 1; //Turn the Joystick LED on;
+        JOYSTICKLED = 1; //Turn on the Joystick Connected LED
+        JSEnableFlag = 1; //If the Joystick is enabled, allow its routine to run in the main body of code;
     }
 }
 
 int DetectMovement(void)
 {
+    unsigned int ADCresult;
     int JoystickResult;
 
     ADCON0bits.GODONE = 1; //Start the ADC conversion;
     while (ADCON0bits.GO_NOT_DONE == 1); //Wait until the conversion is done;
 
-    JoystickResult = ADRESH; //When the conversion is done, bring out the high byte of the ADC;
-    JoystickResult = JoystickResult << 8; //Shift the high byte left;
-    JoystickResult = JoystickResult | ADRESL; //Add the low byte of the ADC;
-    JoystickResult = JoystickResult - JSOFFSET; //Subtract the median offset from the ADC value, yielding a value which is positive or negative;
-
+    ADCresult = ADRESH; //When the conversion is done, bring out the high byte of the ADC;
+    ADCresult = ADCresult << 8; //Shift the high byte left;
+    ADCresult = ADCresult | ADRESL; //Add the low byte of the ADC;
+    JoystickResult = (ADCresult - JSOFFSET); //Subtract the median offset from the ADC value, yielding a value which is positive or negative;
+    
     if ((JoystickResult > DeadbandHigh) || (JoystickResult < DeadbandLow))  //If the joystick has been moved a sufficient distance (we don't want very slight variations causing the motor to move)
     { 
         PIDEnableFlag = 0; //Disable the PID loop; This will prevent the PID from trying to drag the motor back to its setpoint;
@@ -71,26 +59,4 @@ int DetectMovement(void)
     }
     else
         return 0;
-}
-void ImplementJSMotion(int JoystickValue)
-{
-    unsigned int CCPinput;
-    PIDEnableFlag = 0; //Make damn sure that the PID loop is not being implemented;
-    if(JoystickValue < DeadbandLow) //If the joystick value is less than DeadbandLow
-    {
-        CCP3CONbits.P3M1 = 1; //Set the Full-bridge output REVERSE
-    }
-    else if(JoystickValue > DeadbandHigh) //If the joystick value is greater than DeadbandHigh
-    {
-        CCP3CONbits.P3M1 = 0; //Set the Full-bridge output FORWARD
-    }
-    else if (JoystickValue <= DeadbandHigh && JoystickValue >= DeadbandLow) //If the Joystick Module is activated, but it's not being moved, set the movement to 0;
-    {
-        JoystickValue = 0; //If the Joystick has not moved out of the Deadband, set it 0;
-    }
-    
-    JoystickValue = abs(JoystickValue);
-    CCPinput = JoystickValue;
-    CCPR3L = (CCPinput >> 2) & 0xFF;
-    CCP3CONbits.DC3B = (CCPinput & 0x03);  
 }

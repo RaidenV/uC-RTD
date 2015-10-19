@@ -12,6 +12,10 @@
 extern "C" {
 #endif
 
+#include <xc.h>
+#include <pic18f8722.h>
+#include <delays.h>
+
 #define LowByte PORTD		//Takes the low byte of the RTD;
 #define HighByte PORTH		//Takes the high byte of the RTD;
 #define SAMPLE PORTEbits.RE0	
@@ -20,7 +24,7 @@ extern "C" {
 #define DIR PORTEbits.RE5
 #define DOS PORTEbits.RE6
 #define LOT PORTEbits.RE7
-#define RESETrtd PORTJbits.RJ0
+#define mRESET PORTJbits.RJ0
 #define ANGLERATIO 0.087890625  //This is 360 degrees divided by the 12 bits (4096) and represents a constant of the angle in proportion to the received data;
 
     void RTDInit(void);

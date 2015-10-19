@@ -1,152 +1,50 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"6362 /opt/microchip/xc8/v1.34/include/pic18f8722.h
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"7174
-[v _TRISH `Vuc ~T0 @X0 0 e@3993 ]
-"6594
-[s S340 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S340 . TRISE0 TRISE1 TRISE2 TRISE3 TRISE4 TRISE5 TRISE6 TRISE7 ]
-"6604
-[s S341 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S341 . RE0 RE1 RE2 RE3 RE4 RE5 RE6 RE7 ]
-"6593
-[u S339 `S340 1 `S341 1 ]
-[n S339 . . . ]
-"6615
-[v _TRISEbits `VS339 ~T0 @X0 0 e@3990 ]
-"7406
-[s S364 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S364 . TRISJ0 TRISJ1 TRISJ2 TRISJ3 TRISJ4 TRISJ5 TRISJ6 TRISJ7 ]
-"7416
-[s S365 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S365 . RJ0 RJ1 RJ2 RJ3 RJ4 RJ5 RJ6 RJ7 ]
-"7405
-[u S363 `S364 1 `S365 1 ]
-[n S363 . . . ]
-"7427
-[v _TRISJbits `VS363 ~T0 @X0 0 e@3994 ]
-"4351
-[s S219 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S219 . RJ0 RJ1 RJ2 RJ3 RJ4 RJ5 RJ6 RJ7 ]
-"4361
-[s S220 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S220 . ALE OE WRL WRH BA0 CE LB UB ]
-"4371
-[s S221 :1 `uc 1 :1 `uc 1 ]
-[n S221 . . NOT_OE ]
-"4375
-[s S222 :2 `uc 1 :1 `uc 1 ]
-[n S222 . . NOT_WRL ]
-"4379
-[s S223 :3 `uc 1 :1 `uc 1 ]
-[n S223 . . NOT_WRH ]
-"4383
-[s S224 :5 `uc 1 :1 `uc 1 ]
-[n S224 . . NOT_CE ]
-"4387
-[s S225 :6 `uc 1 :1 `uc 1 ]
-[n S225 . . NOT_LB ]
-"4391
-[s S226 :7 `uc 1 :1 `uc 1 ]
-[n S226 . . NOT_UB ]
-"4395
-[s S227 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S227 . . nOE nWRL nWRH . nCE nLB nUB ]
-"4350
-[u S218 `S219 1 `S220 1 `S221 1 `S222 1 `S223 1 `S224 1 `S225 1 `S226 1 `S227 1 ]
-[n S218 . . . . . . . . . . ]
-"4406
-[v _PORTJbits `VS218 ~T0 @X0 0 e@3976 ]
-"19 /opt/microchip/xc8/v1.34/include/plib/delays.h
-[v _Delay10TCYx `(v ~T0 @X0 0 ef1`uc ]
+"13501 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[s S707 :7 `uc 1 :1 `uc 1 ]
+[n S707 . . NOT_RBPU ]
+"13505
+[s S708 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S708 . RBIP INT3IP TMR0IP INTEDG3 INTEDG2 INTEDG1 INTEDG0 nRBPU ]
+"13515
+[s S709 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S709 . . INT3P T0IP . RBPU ]
+"13500
+[u S706 `S707 1 `S708 1 `S709 1 ]
+[n S706 . . . . ]
+"13523
+[v _INTCON2bits `VS706 ~T0 @X0 0 e@4081 ]
+"13057
+[v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
+"13144
+[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
+"13138
+[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"33 ResolverToDigital.h
+[v _RTD2Angle `(d ~T0 @X0 0 ef1`ui ]
 "31
-[v _Delay1KTCYx `(v ~T0 @X0 0 ef1`uc ]
-"3413 /opt/microchip/xc8/v1.34/include/pic18f8722.h
-[s S165 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S165 . RE0 RE1 RE2 RE3 RE4 RE5 RE6 RE7 ]
-"3423
-[s S166 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
-[n S166 . RD WR CS . ECCP2 ]
-"3430
-[s S167 :1 `uc 1 ]
-[n S167 . NOT_RD ]
-"3433
-[s S168 :1 `uc 1 :1 `uc 1 ]
-[n S168 . . NOT_WR ]
-"3437
-[s S169 :2 `uc 1 :1 `uc 1 ]
-[n S169 . . NOT_CS ]
-"3441
-[s S170 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
-[n S170 . nRD nWR nCS . CCP2 ]
-"3448
-[s S171 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S171 . AD8 AD9 AD10 AD11 AD12 AD13 AD14 AD15 ]
-"3458
-[s S172 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S172 . P2D P2C P2B P3C P3B P1C P1B P2A ]
-"3468
-[s S173 :2 `uc 1 :1 `uc 1 ]
-[n S173 . . CCP10 ]
-"3472
-[s S174 :7 `uc 1 :1 `uc 1 ]
-[n S174 . . CCP2E ]
-"3476
-[s S175 :6 `uc 1 :1 `uc 1 ]
-[n S175 . . CCP6E ]
-"3480
-[s S176 :5 `uc 1 :1 `uc 1 ]
-[n S176 . . CCP7E ]
-"3484
-[s S177 :4 `uc 1 :1 `uc 1 ]
-[n S177 . . CCP8E ]
-"3488
-[s S178 :3 `uc 1 :1 `uc 1 ]
-[n S178 . . CCP9E ]
-"3492
-[s S179 :7 `uc 1 :1 `uc 1 ]
-[n S179 . . PA2E ]
-"3496
-[s S180 :6 `uc 1 :1 `uc 1 ]
-[n S180 . . PB1E ]
-"3500
-[s S181 :2 `uc 1 :1 `uc 1 ]
-[n S181 . . PB2 ]
-"3504
-[s S182 :4 `uc 1 :1 `uc 1 ]
-[n S182 . . PB3E ]
-"3508
-[s S183 :5 `uc 1 :1 `uc 1 ]
-[n S183 . . PC1E ]
-"3512
-[s S184 :1 `uc 1 :1 `uc 1 ]
-[n S184 . . PC2 ]
-"3516
-[s S185 :3 `uc 1 :1 `uc 1 ]
-[n S185 . . PC3E ]
-"3520
-[s S186 :1 `uc 1 ]
-[n S186 . PD2 ]
-"3523
-[s S187 :1 `uc 1 ]
-[n S187 . RDE ]
-"3526
-[s S188 :1 `uc 1 :1 `uc 1 ]
-[n S188 . . WRE ]
-"3412
-[u S164 `S165 1 `S166 1 `S167 1 `S168 1 `S169 1 `S170 1 `S171 1 `S172 1 `S173 1 `S174 1 `S175 1 `S176 1 `S177 1 `S178 1 `S179 1 `S180 1 `S181 1 `S182 1 `S183 1 `S184 1 `S185 1 `S186 1 `S187 1 `S188 1 ]
-[n S164 . . . . . . . . . . . . . . . . . . . . . . . . . ]
-"3531
-[v _PORTEbits `VS164 ~T0 @X0 0 e@3972 ]
-"13 /opt/microchip/xc8/v1.34/include/plib/delays.h
-[v _Delay1TCYx `(v ~T0 @X0 0 ef1`uc ]
-"42 /opt/microchip/xc8/v1.34/include/pic18.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-"4135 /opt/microchip/xc8/v1.34/include/pic18f8722.h
-[v _PORTH `Vuc ~T0 @X0 0 e@3975 ]
-"3189
-[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
+[v _ReadRTDpos `(ui ~T0 @X0 0 ef ]
+"28 MotorControl.h
+[v _ImplementPIDMotion `(v ~T0 @X0 0 ef1`i ]
+"13593 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[s S711 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S711 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"13603
+[s S712 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S712 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE GIE ]
+"13613
+[s S713 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S713 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE GIEL GIEH ]
+"13623
+[s S714 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S714 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"13633
+[s S715 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S715 . . GIEL GIEH ]
+"13592
+[u S710 `S711 1 `S712 1 `S713 1 `S714 1 `S715 1 ]
+[n S710 . . . . . . ]
+"13639
+[v _INTCONbits `VS710 ~T0 @X0 0 e@4082 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f8722.h: 49: extern volatile unsigned char SSP2CON2 @ 0xF62;
@@ -6531,259 +6429,376 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
+[; ;stdlib.h: 27: typedef struct {
+[; ;stdlib.h: 28: int rem;
+[; ;stdlib.h: 29: int quot;
+[; ;stdlib.h: 30: } div_t;
+[; ;stdlib.h: 31: typedef struct {
+[; ;stdlib.h: 32: unsigned rem;
+[; ;stdlib.h: 33: unsigned quot;
+[; ;stdlib.h: 34: } udiv_t;
+[; ;stdlib.h: 35: typedef struct {
+[; ;stdlib.h: 36: long quot;
+[; ;stdlib.h: 37: long rem;
+[; ;stdlib.h: 38: } ldiv_t;
+[; ;stdlib.h: 39: typedef struct {
+[; ;stdlib.h: 40: unsigned long quot;
+[; ;stdlib.h: 41: unsigned long rem;
+[; ;stdlib.h: 42: } uldiv_t;
+[; ;stdlib.h: 65: extern double atof(const char *);
+[; ;stdlib.h: 66: extern double strtod(const char *, const char **);
+[; ;stdlib.h: 67: extern int atoi(const char *);
+[; ;stdlib.h: 68: extern unsigned xtoi(const char *);
+[; ;stdlib.h: 69: extern long atol(const char *);
+[; ;stdlib.h: 70: extern long strtol(const char *, char **, int);
+[; ;stdlib.h: 72: extern int rand(void);
+[; ;stdlib.h: 73: extern void srand(unsigned int);
+[; ;stdlib.h: 74: extern void * calloc(size_t, size_t);
+[; ;stdlib.h: 75: extern div_t div(int numer, int denom);
+[; ;stdlib.h: 76: extern udiv_t udiv(unsigned numer, unsigned denom);
+[; ;stdlib.h: 77: extern ldiv_t ldiv(long numer, long denom);
+[; ;stdlib.h: 78: extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
+[; ;stdlib.h: 79: extern unsigned long _lrotl(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 80: extern unsigned long _lrotr(unsigned long value, unsigned int shift);
+[; ;stdlib.h: 81: extern unsigned int _rotl(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 82: extern unsigned int _rotr(unsigned int value, unsigned int shift);
+[; ;stdlib.h: 87: extern void * malloc(size_t);
+[; ;stdlib.h: 88: extern void free(void *);
+[; ;stdlib.h: 89: extern void * realloc(void *, size_t);
+[; ;stdlib.h: 98: extern int atexit(void (*)(void));
+[; ;stdlib.h: 99: extern char * getenv(const char *);
+[; ;stdlib.h: 100: extern char ** environ;
+[; ;stdlib.h: 101: extern int system(char *);
+[; ;stdlib.h: 102: extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
+[; ;stdlib.h: 103: extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
+[; ;stdlib.h: 104: extern int abs(int);
+[; ;stdlib.h: 105: extern long labs(long);
+[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
 [; ;ResolverToDigital.h: 30: void RTDInit(void);
 [; ;ResolverToDigital.h: 31: unsigned int ReadRTDpos(void);
 [; ;ResolverToDigital.h: 32: unsigned int ReadRTDvel(void);
 [; ;ResolverToDigital.h: 33: double RTD2Angle(unsigned int);
 [; ;ResolverToDigital.h: 34: double RTD2Velocity(unsigned int);
 [; ;ResolverToDigital.h: 35: unsigned char RTDdirection(void);
-"3 ResolverToDigital.c
-[v _RTDInit `(v ~T0 @X0 1 ef ]
+[; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
+[; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
+[; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
+[; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
+[; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
+[; ;MotorControl.h: 23: extern unsigned char PIDEnableFlag;
+"24 MotorControl.h
+[v _MotorFailFlag `uc ~T0 @X0 1 e ]
+[; ;MotorControl.h: 24: unsigned char MotorFailFlag;
+[; ;MotorControl.h: 26: void MotorDriverInit(void);
+[; ;MotorControl.h: 27: void KillMotors(void);
+[; ;MotorControl.h: 28: void ImplementPIDMotion(int);
+[; ;MotorControl.h: 29: void ImplementJSMotion(int);
+[; ;MotorControl.h: 30: void INT0Int(void);
+[; ;PID.h: 24: extern unsigned char PIDEnableFlag;
+[; ;PID.h: 25: extern double Ki;
+[; ;PID.h: 26: extern double Kp;
+[; ;PID.h: 27: extern double Kd;
+[; ;PID.h: 28: extern double SetAngle;
+[; ;PID.h: 29: extern double CurrentAngle;
+[; ;PID.h: 30: extern double err;
+[; ;PID.h: 31: extern double prevErr;
+[; ;PID.h: 32: extern double intErr;
+[; ;PID.h: 33: extern double StartAngle;
+[; ;PID.h: 34: extern int motorInput;
+[; ;PID.h: 36: void PIDInit(void);
+[; ;PID.h: 37: void calculatePID(double, double);
+[; ;PID.h: 38: void TMR0Int(void);
+"3 PID.c
+[v _PIDEnableFlag `uc ~T0 @X0 1 e ]
+[; ;PID.c: 3: unsigned char PIDEnableFlag;
 "4
-{
-[; ;ResolverToDigital.c: 3: void RTDInit(void)
-[; ;ResolverToDigital.c: 4: {
-[e :U _RTDInit ]
-[f ]
-[; ;ResolverToDigital.c: 5: TRISD = 0xFF;
+[v _Ki `d ~T0 @X0 1 e ]
+[; ;PID.c: 4: double Ki;
 "5
-[e = _TRISD -> -> 255 `i `uc ]
-[; ;ResolverToDigital.c: 6: TRISH = 0xFF;
+[v _Kp `d ~T0 @X0 1 e ]
+[; ;PID.c: 5: double Kp;
 "6
-[e = _TRISH -> -> 255 `i `uc ]
-[; ;ResolverToDigital.c: 7: TRISEbits.RE0 = 0;
+[v _Kd `d ~T0 @X0 1 e ]
+[; ;PID.c: 6: double Kd;
 "7
-[e = . . _TRISEbits 1 0 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 8: TRISEbits.RE1 = 0;
+[v _SetAngle `d ~T0 @X0 1 e ]
+[; ;PID.c: 7: double SetAngle;
 "8
-[e = . . _TRISEbits 1 1 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 9: TRISEbits.RE2 = 0;
+[v _CurrentAngle `d ~T0 @X0 1 e ]
+[; ;PID.c: 8: double CurrentAngle;
 "9
-[e = . . _TRISEbits 1 2 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 10: TRISJbits.RJ0 = 0;
+[v _err `d ~T0 @X0 1 e ]
+[; ;PID.c: 9: double err;
 "10
-[e = . . _TRISJbits 1 0 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 11: TRISEbits.RE5 = 1;
+[v _prevErr `d ~T0 @X0 1 e ]
+[; ;PID.c: 10: double prevErr;
 "11
-[e = . . _TRISEbits 1 5 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 12: TRISEbits.RE6 = 1;
+[v _intErr `d ~T0 @X0 1 e ]
+[; ;PID.c: 11: double intErr;
 "12
-[e = . . _TRISEbits 1 6 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 13: TRISEbits.RE7 = 1;
+[v _StartAngle `d ~T0 @X0 1 e ]
+[; ;PID.c: 12: double StartAngle;
 "13
-[e = . . _TRISEbits 1 7 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 21: PORTJbits.RJ0 = 0;
-"21
-[e = . . _PORTJbits 0 0 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 22: Delay10TCYx(10);
-"22
-[e ( _Delay10TCYx (1 -> -> 10 `i `uc ]
-[; ;ResolverToDigital.c: 23: PORTJbits.RJ0 = 1;
+[v _motorInput `i ~T0 @X0 1 e ]
+[; ;PID.c: 13: int motorInput;
+"15
+[v _PIDInit `(v ~T0 @X0 1 ef ]
+"16
+{
+[; ;PID.c: 15: void PIDInit(void)
+[; ;PID.c: 16: {
+[e :U _PIDInit ]
+[f ]
+[; ;PID.c: 18: err = 0;
+"18
+[e = _err -> -> 0 `i `d ]
+[; ;PID.c: 19: prevErr = 0;
+"19
+[e = _prevErr -> -> 0 `i `d ]
+[; ;PID.c: 20: intErr = 0;
+"20
+[e = _intErr -> -> 0 `i `d ]
+[; ;PID.c: 23: INTCON2bits.TMR0IP = 1;
 "23
-[e = . . _PORTJbits 0 0 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 24: Delay1KTCYx(20);
+[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
+[; ;PID.c: 24: T0CON = 0x84;
 "24
-[e ( _Delay1KTCYx (1 -> -> 20 `i `uc ]
-[; ;ResolverToDigital.c: 25: PORTEbits.RE0 = 0;
+[e = _T0CON -> -> 132 `i `uc ]
+[; ;PID.c: 25: TMR0H = 0xDB;
 "25
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 26: Delay1TCYx(1);
+[e = _TMR0H -> -> 219 `i `uc ]
+[; ;PID.c: 26: TMR0L = 0x60;
 "26
-[e ( _Delay1TCYx (1 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 27: PORTEbits.RE0 = 1;
-"27
-[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 29: PORTEbits.RE2 = 0;
+[e = _TMR0L -> -> 96 `i `uc ]
+[; ;PID.c: 28: }
+"28
+[e :UE 762 ]
+}
 "29
-[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 31: }
+[v _calculatePID `(v ~T0 @X0 1 ef2`d`d ]
+"30
+{
+[; ;PID.c: 29: void calculatePID(double angle, double setpoint)
+[; ;PID.c: 30: {
+[e :U _calculatePID ]
+"29
+[v _angle `d ~T0 @X0 1 r1 ]
+[v _setpoint `d ~T0 @X0 1 r2 ]
+"30
+[f ]
 "31
-[e :UE 758 ]
-}
+[v _derErr `d ~T0 @X0 1 a ]
+[; ;PID.c: 31: double derErr;
+[; ;PID.c: 32: if((PIDEnableFlag & 0x02) == 0x02)
+"32
+[e $ ! == & -> _PIDEnableFlag `i -> 2 `i -> 2 `i 764  ]
+[; ;PID.c: 33: {
+"33
+{
+[; ;PID.c: 34: StartAngle = angle;
+"34
+[e = _StartAngle _angle ]
+[; ;PID.c: 35: err = 0;
+"35
+[e = _err -> -> 0 `i `d ]
+[; ;PID.c: 36: prevErr = 0;
+"36
+[e = _prevErr -> -> 0 `i `d ]
+[; ;PID.c: 37: intErr = 0;
+"37
+[e = _intErr -> -> 0 `i `d ]
+[; ;PID.c: 38: PIDEnableFlag = PIDEnableFlag & 0x01;
+"38
+[e = _PIDEnableFlag -> & -> _PIDEnableFlag `i -> 1 `i `uc ]
 "39
-[v _ReadRTDpos `(ui ~T0 @X0 1 ef ]
-"40
-{
-[; ;ResolverToDigital.c: 39: unsigned int ReadRTDpos(void)
-[; ;ResolverToDigital.c: 40: {
-[e :U _ReadRTDpos ]
-[f ]
-"41
-[v _x `uc ~T0 @X0 1 a ]
-"42
-[v _FullPosition `ui ~T0 @X0 1 a ]
-[v _helloworld `ui ~T0 @X0 1 a ]
-"43
-[v _HighPosition `uc ~T0 @X0 1 a ]
-[v _LowPosition `uc ~T0 @X0 1 a ]
-[; ;ResolverToDigital.c: 41: unsigned char x;
-[; ;ResolverToDigital.c: 42: unsigned int FullPosition, helloworld;
-[; ;ResolverToDigital.c: 43: unsigned char HighPosition, LowPosition;
-[; ;ResolverToDigital.c: 48: {
-"48
-{
-[; ;ResolverToDigital.c: 49: PORTEbits.RE1 = 1;
-"49
-[e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 50: PORTEbits.RE0 = 0;
-"50
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 51: for (x = 0; x < 8; x++)
-"51
-{
-[e = _x -> -> 0 `i `uc ]
-[e $ < -> _x `i -> 8 `i 760  ]
-[e $U 761  ]
-"52
-[e :U 760 ]
-[; ;ResolverToDigital.c: 52: __nop();
-[e ( ___nop ..  ]
-"51
-[e ++ _x -> -> 1 `i `uc ]
-[e $ < -> _x `i -> 8 `i 760  ]
-[e :U 761 ]
-"52
 }
-[; ;ResolverToDigital.c: 53: PORTEbits.RE2 = 1;
-"53
-[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 54: PORTEbits.RE2 = 0;
-"54
-[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 55: Delay10TCYx(1);
-"55
-[e ( _Delay10TCYx (1 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 56: HighPosition = PORTH;
-"56
-[e = _HighPosition _PORTH ]
-[; ;ResolverToDigital.c: 57: LowPosition = PORTD;
-"57
-[e = _LowPosition _PORTD ]
-[; ;ResolverToDigital.c: 58: PORTEbits.RE2 = 1;
-"58
-[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 59: PORTEbits.RE0 = 1;
-"59
-[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 60: FullPosition = LowPosition;
-"60
-[e = _FullPosition -> _LowPosition `ui ]
-[; ;ResolverToDigital.c: 61: FullPosition = FullPosition | ((HighPosition & 0x0F) << 8);
-"61
-[e = _FullPosition | _FullPosition -> << & -> _HighPosition `i -> 15 `i -> 8 `i `ui ]
-[; ;ResolverToDigital.c: 62: return FullPosition;
-"62
-[e ) _FullPosition ]
-[e $UE 759  ]
-"63
-}
-[; ;ResolverToDigital.c: 63: }
-[; ;ResolverToDigital.c: 64: }
-"64
-[e :UE 759 ]
-}
-"66
-[v _ReadRTDvel `(ui ~T0 @X0 1 ef ]
-"67
-{
-[; ;ResolverToDigital.c: 66: unsigned int ReadRTDvel(void)
-[; ;ResolverToDigital.c: 67: {
-[e :U _ReadRTDvel ]
-[f ]
-"68
-[v _FullVelocity `ui ~T0 @X0 1 a ]
-"69
-[v _HighVelocity `uc ~T0 @X0 1 a ]
-[v _LowVelocity `uc ~T0 @X0 1 a ]
-"70
-[v _x `uc ~T0 @X0 1 a ]
-[; ;ResolverToDigital.c: 68: unsigned int FullVelocity;
-[; ;ResolverToDigital.c: 69: unsigned char HighVelocity, LowVelocity;
-[; ;ResolverToDigital.c: 70: unsigned char x;
-[; ;ResolverToDigital.c: 74: PORTEbits.RE1 = 0;
-"74
-[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 75: PORTEbits.RE0 = 0;
-"75
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 76: for (x = 0; x < 8; x++)
-"76
-{
-[e = _x -> -> 0 `i `uc ]
-[e $ < -> _x `i -> 8 `i 764  ]
-[e $U 765  ]
-"77
 [e :U 764 ]
-[; ;ResolverToDigital.c: 77: __nop();
-[e ( ___nop ..  ]
-"76
-[e ++ _x -> -> 1 `i `uc ]
-[e $ < -> _x `i -> 8 `i 764  ]
-[e :U 765 ]
-"77
+[; ;PID.c: 39: }
+[; ;PID.c: 41: if(((StartAngle - setpoint) > 180) || ((StartAngle - setpoint) < -180))
+"41
+[e $ ! || > - _StartAngle _setpoint -> -> 180 `i `d < - _StartAngle _setpoint -> -U -> 180 `i `d 765  ]
+[; ;PID.c: 42: {
+"42
+{
+[; ;PID.c: 43: if((StartAngle - setpoint) > 180)
+"43
+[e $ ! > - _StartAngle _setpoint -> -> 180 `i `d 766  ]
+[; ;PID.c: 44: {
+"44
+{
+[; ;PID.c: 45: if(angle > StartAngle)
+"45
+[e $ ! > _angle _StartAngle 767  ]
+[; ;PID.c: 46: err = 360 - angle + setpoint;
+"46
+[e = _err + - -> -> 360 `i `d _angle _setpoint ]
+[e $U 768  ]
+"47
+[e :U 767 ]
+[; ;PID.c: 47: else
+[; ;PID.c: 48: err = setpoint - angle;
+"48
+[e = _err - _setpoint _angle ]
+[e :U 768 ]
+"49
 }
-[; ;ResolverToDigital.c: 78: PORTEbits.RE2 = 0;
-"78
-[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 79: HighVelocity = PORTH;
+[; ;PID.c: 49: }
+[e $U 769  ]
+"50
+[e :U 766 ]
+[; ;PID.c: 50: else if((StartAngle - setpoint) < -180)
+[e $ ! < - _StartAngle _setpoint -> -U -> 180 `i `d 770  ]
+[; ;PID.c: 51: {
+"51
+{
+[; ;PID.c: 52: if(angle < StartAngle)
+"52
+[e $ ! < _angle _StartAngle 771  ]
+[; ;PID.c: 53: err = setpoint - 360 - angle;
+"53
+[e = _err - - _setpoint -> -> 360 `i `d _angle ]
+[e $U 772  ]
+"54
+[e :U 771 ]
+[; ;PID.c: 54: else
+[; ;PID.c: 55: err = setpoint - angle;
+"55
+[e = _err - _setpoint _angle ]
+[e :U 772 ]
+"56
+}
+[e :U 770 ]
+"57
+[e :U 769 ]
+}
+[; ;PID.c: 56: }
+[; ;PID.c: 57: }
+[e $U 773  ]
+"58
+[e :U 765 ]
+[; ;PID.c: 58: else if(((StartAngle - setpoint) <= 180) && ((StartAngle - setpoint) > -180))
+[e $ ! && <= - _StartAngle _setpoint -> -> 180 `i `d > - _StartAngle _setpoint -> -U -> 180 `i `d 774  ]
+[; ;PID.c: 59: {
+"59
+{
+[; ;PID.c: 60: if(((setpoint - StartAngle) > -180) && (setpoint - StartAngle < 0))
+"60
+[e $ ! && > - _setpoint _StartAngle -> -U -> 180 `i `d < - _setpoint _StartAngle -> -> 0 `i `d 775  ]
+[; ;PID.c: 61: {
+"61
+{
+[; ;PID.c: 62: if(angle <= StartAngle)
+"62
+[e $ ! <= _angle _StartAngle 776  ]
+[; ;PID.c: 63: err = setpoint - angle;
+"63
+[e = _err - _setpoint _angle ]
+[e $U 777  ]
+"64
+[e :U 776 ]
+[; ;PID.c: 64: else
+[; ;PID.c: 65: err = setpoint + 360 - angle;
+"65
+[e = _err - + _setpoint -> -> 360 `i `d _angle ]
+[e :U 777 ]
+"66
+}
+[; ;PID.c: 66: }
+[e $U 778  ]
+"67
+[e :U 775 ]
+[; ;PID.c: 67: else if(((setpoint - StartAngle) < 180) && (setpoint - StartAngle >= 0))
+[e $ ! && < - _setpoint _StartAngle -> -> 180 `i `d >= - _setpoint _StartAngle -> -> 0 `i `d 779  ]
+[; ;PID.c: 68: {
+"68
+{
+[; ;PID.c: 69: if(angle <= StartAngle)
+"69
+[e $ ! <= _angle _StartAngle 780  ]
+[; ;PID.c: 70: err = setpoint - angle;
+"70
+[e = _err - _setpoint _angle ]
+[e $U 781  ]
+"71
+[e :U 780 ]
+[; ;PID.c: 71: else
+[; ;PID.c: 72: err = setpoint - 360 - angle;
+"72
+[e = _err - - _setpoint -> -> 360 `i `d _angle ]
+[e :U 781 ]
+"73
+}
+[e :U 779 ]
+"74
+[e :U 778 ]
+}
+[e :U 774 ]
+"76
+[e :U 773 ]
+[; ;PID.c: 73: }
+[; ;PID.c: 74: }
+[; ;PID.c: 76: intErr = err + prevErr;
+[e = _intErr + _err _prevErr ]
+[; ;PID.c: 77: derErr = err - prevErr;
+"77
+[e = _derErr - _err _prevErr ]
+[; ;PID.c: 79: motorInput = Kp * err + (Ki * intErr * 0.03) + (Kd * (derErr/0.03));
 "79
-[e = _HighVelocity _PORTH ]
-[; ;ResolverToDigital.c: 80: LowVelocity = PORTD;
-"80
-[e = _LowVelocity _PORTD ]
-[; ;ResolverToDigital.c: 81: PORTEbits.RE2 = 1;
+[e = _motorInput -> + + * _Kp _err * * _Ki _intErr .0.03 * _Kd / _derErr .0.03 `i ]
+[; ;PID.c: 81: if(motorInput > 255)
 "81
-[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 82: PORTEbits.RE0 = 1;
+[e $ ! > _motorInput -> 255 `i 782  ]
+[; ;PID.c: 82: motorInput = 255;
 "82
-[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 83: FullVelocity = LowVelocity;
+[e = _motorInput -> 255 `i ]
+[e $U 783  ]
 "83
-[e = _FullVelocity -> _LowVelocity `ui ]
-[; ;ResolverToDigital.c: 84: FullVelocity = (HighVelocity & 0x0F) << 8;
+[e :U 782 ]
+[; ;PID.c: 83: else if (motorInput < -255)
+[e $ ! < _motorInput -U -> 255 `i 784  ]
+[; ;PID.c: 84: motorInput = -255;
 "84
-[e = _FullVelocity -> << & -> _HighVelocity `i -> 15 `i -> 8 `i `ui ]
-[; ;ResolverToDigital.c: 86: return FullVelocity;
+[e = _motorInput -U -> 255 `i ]
+[e :U 784 ]
 "86
-[e ) _FullVelocity ]
-[e $UE 763  ]
-[; ;ResolverToDigital.c: 91: }
-"91
+[e :U 783 ]
+[; ;PID.c: 86: prevErr = err;
+[e = _prevErr _err ]
+[; ;PID.c: 87: }
+"87
 [e :UE 763 ]
 }
-"97
-[v _RTD2Angle `(d ~T0 @X0 1 ef1`ui ]
-"98
+"89
+[v _TMR0Int `(v ~T0 @X0 1 ef ]
+"90
 {
-[; ;ResolverToDigital.c: 97: double RTD2Angle(unsigned int RTDAngle)
-[; ;ResolverToDigital.c: 98: {
-[e :U _RTD2Angle ]
+[; ;PID.c: 89: void TMR0Int(void)
+[; ;PID.c: 90: {
+[e :U _TMR0Int ]
+[f ]
+[; ;PID.c: 91: CurrentAngle = RTD2Angle(ReadRTDpos);
+"91
+[e = _CurrentAngle ( _RTD2Angle (1 -> &U _ReadRTDpos `ui ]
+[; ;PID.c: 92: calculatePID(CurrentAngle, SetAngle);
+"92
+[e ( _calculatePID (2 , _CurrentAngle _SetAngle ]
+[; ;PID.c: 93: ImplementPIDMotion(motorInput);
+"93
+[e ( _ImplementPIDMotion (1 _motorInput ]
+[; ;PID.c: 94: TMR0H = 0xDB;
+"94
+[e = _TMR0H -> -> 219 `i `uc ]
+[; ;PID.c: 95: TMR0L = 0x60;
+"95
+[e = _TMR0L -> -> 96 `i `uc ]
+[; ;PID.c: 97: INTCONbits.TMR0IF = 0;
 "97
-[v _RTDAngle `ui ~T0 @X0 1 r1 ]
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;PID.c: 98: }
 "98
-[f ]
-[; ;ResolverToDigital.c: 99: return 0.087890625 * RTDAngle;
-"99
-[e ) * .0.087890625 -> _RTDAngle `d ]
-[e $UE 767  ]
-[; ;ResolverToDigital.c: 100: }
-"100
-[e :UE 767 ]
-}
-[; ;ResolverToDigital.c: 101: double RTD2Velocity(unsigned int);
-"103
-[v _RTDdirection `(uc ~T0 @X0 1 ef ]
-"104
-{
-[; ;ResolverToDigital.c: 103: unsigned char RTDdirection(void)
-[; ;ResolverToDigital.c: 104: {
-[e :U _RTDdirection ]
-[f ]
-[; ;ResolverToDigital.c: 105: return PORTEbits.RE5;
-"105
-[e ) . . _PORTEbits 0 5 ]
-[e $UE 768  ]
-[; ;ResolverToDigital.c: 106: }
-"106
-[e :UE 768 ]
+[e :UE 785 ]
 }

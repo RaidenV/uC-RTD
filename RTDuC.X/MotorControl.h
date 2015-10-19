@@ -12,8 +12,22 @@
 extern "C" {
 #endif
 
+#include <xc.h>
+#include <stdlib.h>
+
+#define MOTORFAILLED PORTAbits.RA4
+#define MotorFailPin PORT
+#define DeadbandHigh 5
+#define DeadbandLow -5
+
+    extern unsigned char PIDEnableFlag;
+    unsigned char MotorFailFlag;
+
     void MotorDriverInit(void);
+    void KillMotors(void);
     void ImplementPIDMotion(int);
+    void ImplementJSMotion(int);
+    void INT0Int(void);
 
 
 #ifdef	__cplusplus
