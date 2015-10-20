@@ -17,8 +17,8 @@ void SPIInit(void)
 {
     TRISCbits.RC6 = 0; //Set the SlaveReady pin as an output;
     TRISDbits.RD7 = 1; //Set the SlaveSelect pin as an input (this might not be necessary if it conflicts with the SLV_SSON command of the following line);
-    OpenSPI2(SLV_SSON, MODE_00, SMPMID);
-    PIE3bits.SSP2IE = 1; //Enable the MSSP1 Interrupt on byte received;
+    OpenSPI1(SLV_SSON, MODE_00, SMPMID);
+    PIE1bits.SSP1IE = 1; //Enable the MSSP1 Interrupt on byte received;
     IPR1bits.SSP1IP = 0; //SPI communication is a low priority compared to the PID loop;
 }
 
@@ -26,28 +26,28 @@ void SPIInt(void)
 {
     Command = SSP2BUF;
     SlaveReady = 0; //Set the SlaveReady pin, stopping the master from initiating a transfer until the slave is ready;
-    PIR3bits.SSP2IF = 0; //Clear the interrupt flag;
-    PIE3bits.SSP2IE = 0; //Disable the interrupt so that subsequent transfers don't cause interrupts;
+    PIR1bits.SSP1IF = 0; //Clear the interrupt flag;
+    PIE1bits.SSP1IE = 0; //Disable the interrupt so that subsequent transfers don't cause interrupts;
     SPIflag = 1; //Set the SPIflag;
     PIR1bits.SSP1IF = 0; //Lower the interrupt flag;
 }
 
 void SendSPI1(unsigned char data)
 {
-    SSP2BUF = data; //Put the data into the SSPBUF;   
+    SSP1BUF = data; //Put the data into the SSPBUF;   
     unsigned char temp;
-    PIR3bits.SSP2IF = 0; //Clear the MSSP2 Interrupt flag;
+    PIR1bits.SSP1IF = 0; //Clear the MSSP2 Interrupt flag;
     temp = SSP2BUF; //Clear the SSPBUF; 
-    while (!PIR3bits.SSP2IF); //Wait for the byte to be clocked out;
+    while (!PIR1bits.SSP1IF); //Wait for the byte to be clocked out;
     SSP2CON1bits.SSPOV2 = 0;
-    PIR3bits.SSP2IF = 0; //Clear the flag;
+    PIR1bits.SSP1IF = 0; //Clear the flag;
 }
 
 unsigned char ReceiveSPI1(void)
 {
-    SSP2BUF = 0x00; //Load dummy byte into SBUF;
-    while (SSP2STATbits.BF == 0); //Wait for transmission to complete;
-    return SSP2BUF;
+    SSP1BUF = 0x00; //Load dummy byte into SBUF;
+    while (SSP1STATbits.BF == 0); //Wait for transmission to complete;
+    return SSP1BUF;
 }
 
 void SPIDisassembleDouble(double dub)

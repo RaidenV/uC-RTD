@@ -8477,26 +8477,91 @@ double SPIReassembleDouble(void);
 # 9 "RTDuC.c"
 #pragma config OSC = HSPLL
 #pragma config WDT = OFF
+#pragma config FCMEN = OFF
 
 
 
 void initialize(void);
-void interrupt high_priority ISR(void);
+void interrupt high_priority hISR(void);
 void interrupt low_priority lISR(void);
 
 void main(void)
 {
-initialize();
-while(1)
-{
+unsigned char temporary, x;
 
+initialize();
+
+PORTCbits.RC6 = 0;
+SSP2BUF = dummy_byte;
+
+while (1)
+{
+if (SPIflag == 1)
+{
+SPIflag = 0;
+if ((Command == 0x02) || (Command == 0x03) || (Command == 0x04) || (Command == 0x06) || (Command == 0x08))
+{
+if (Command == 0x02)
+SPIDisassembleDouble(CurrentAngle);
+else if (Command == 0x03)
+SPIDisassembleDouble(CurrentVelocity);
+else if (Command == 0x04)
+SPIDisassembleDouble(Kp);
+else if (Command == 0x06)
+SPIDisassembleDouble(Ki);
+else if (Command == 0x08)
+SPIDisassembleDouble(Kd);
+PORTCbits.RC6 = 0;
+for (x = 0; x < 4; x++)
+SendSPI1(DoubleSPIS[x]);
+temporary = SSP1BUF;
+}
+else if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
+{
+PORTCbits.RC6 = 0;
+for (x = 0; x != 4; x++)
+DoubleSPIS[x] = ReceiveSPI1();
+if (Command == 0x01)
+{
+SetAngle = SPIReassembleDouble();
+PIDEnableFlag = 0x03;
+JSEnableFlag = 0;
+}
+else if (Command == 0x05)
+{
+Kp = SPIReassembleDouble();
+}
+else if (Command == 0x07)
+{
+Ki = SPIReassembleDouble();
+}
+else if (Command == 0x09)
+{
+Kd = SPIReassembleDouble();
+}
+temporary = SSP1BUF;
+}
+PIE1bits.SSP1IE = 1;
+}
+
+DetectJoystick();
+if(JSEnableFlag == 1)
+{
+ImplementJSMotion(DetectMovement());
+}
+
+else if((PIDEnableFlag & 0x02) == 0x02)
+{
+INTCONbits.TMR0IE = 1;
+JSEnableFlag = 0;
+}
 }
 
 }
 
 void initialize(void)
 {
-while(OSCCONbits.OSTS == 0);
+while (OSCCONbits.OSTS == 0);
 
 RTDInit();
 JoystickInit();
@@ -8513,19 +8578,19 @@ PIE2bits.OSCFIE = 1;
 IPR2bits.OSCFIP = 1;
 }
 
-void interrupt high_priority ISR(void)
+void interrupt high_priority hISR(void)
 {
-if(INTCONbits.TMR0IF == 1)
+if ((INTCONbits.TMR0IF == 1) && ((PIDEnableFlag | 0x01) == 0x01))
 {
 TMR0Int();
 }
 
-if(INTCONbits.INT0IF == 1)
+if (INTCONbits.INT0IF == 1)
 {
 INT0Int();
 }
 
-if(PIR2bits.HLVDIF == 1)
+if (PIR2bits.HLVDIF == 1)
 {
 PORTAbits.RA4 = 0;
 PORTAbits.RA3 = 0;
@@ -8533,9 +8598,18 @@ PORTAbits.RA2 = 0;
 HLVDInt();
 }
 
-if(PIR2bits.OSCFIF == 1)
+if (PIR2bits.OSCFIF == 1)
 {
 asm("reset");
+
+# 142
 }
 }
-void interrupt low_priority lISR(void);
+
+void interrupt low_priority lISR(void)
+{
+if (PIR1bits.SSP1IF == 1)
+{
+SPIInt();
+}
+}

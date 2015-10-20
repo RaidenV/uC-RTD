@@ -32,7 +32,7 @@ void DetectJoystick(void)
         JSEnableFlag = 0; //If the Joystick is disabled, disallow its routine from running in the main body of code;
     }
 
-    else if (PORTBbits.RB1 == 1)
+    else if ((PORTBbits.RB1 == 1) && (JSEnableFlag == 0))
     {
         JOYSTICKLED = 1; //Turn on the Joystick Connected LED
         JSEnableFlag = 1; //If the Joystick is enabled, allow its routine to run in the main body of code;

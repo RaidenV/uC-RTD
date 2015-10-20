@@ -19,8 +19,8 @@ extern "C" {
 
 #define JOYSTICKLED PORTAbits.RA2
 #define JOYSTICKDETECT PORTBbits.RB1
-#define DeadbandHigh 100
-#define DeadbandLow -100
+#define DeadbandHigh 5
+#define DeadbandLow -5
 #define JSOFFSET 512
 
     extern unsigned char PIDEnableFlag;

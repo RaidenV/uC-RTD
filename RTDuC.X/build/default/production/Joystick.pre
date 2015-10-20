@@ -8409,7 +8409,7 @@ PORTAbits.RA2 = 0;
 JSEnableFlag = 0;
 }
 
-else if (PORTBbits.RB1 == 1)
+else if ((PORTBbits.RB1 == 1) && (JSEnableFlag == 0))
 {
 PORTAbits.RA2 = 1;
 JSEnableFlag = 1;
@@ -8429,7 +8429,7 @@ ADCresult = ADCresult << 8;
 ADCresult = ADCresult | ADRESL;
 JoystickResult = (ADCresult - 512);
 
-if ((JoystickResult > 100) || (JoystickResult < -100))
+if ((JoystickResult > 5) || (JoystickResult < -5))
 {
 PIDEnableFlag = 0;
 return JoystickResult;

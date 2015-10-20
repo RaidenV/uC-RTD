@@ -3,11 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.h</file>
+            <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.h</file>
             <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c</file>
             <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c</file>
+            <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.h</file>
+            <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.h</file>
+            <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c</file>
             <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c</file>
+            <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c</file>
+            <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c</file>
             <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/PID.h</file>
             <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c</file>
+            <file>file:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.h</file>
         </group>
     </open-files>
 </project-private>

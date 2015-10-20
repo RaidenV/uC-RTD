@@ -21,37 +21,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S333 . . . ]
 "6394
 [v _TRISDbits `VS333 ~T0 @X0 0 e@3989 ]
-"441 /opt/microchip/xc8/v1.34/include/plib/spi.h
-[v _OpenSPI2 `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"8205 /opt/microchip/xc8/v1.34/include/pic18f8722.h
-[s S394 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S394 . CCP3IE CCP4IE CCP5IE TMR4IE TX2IE RC2IE BCL2IE SSP2IE ]
-"8215
-[s S395 :1 `uc 1 ]
-[n S395 . RXB0IE ]
-"8218
-[s S396 :1 `uc 1 :1 `uc 1 ]
-[n S396 . . RXB1IE ]
-"8222
-[s S397 :1 `uc 1 :1 `uc 1 ]
-[n S397 . . RXBNIE ]
-"8226
-[s S398 :2 `uc 1 :1 `uc 1 ]
-[n S398 . . TXB0IE ]
-"8230
-[s S399 :3 `uc 1 :1 `uc 1 ]
-[n S399 . . TXB1IE ]
-"8234
-[s S400 :4 `uc 1 :1 `uc 1 ]
-[n S400 . . TXB2IE ]
-"8238
-[s S401 :4 `uc 1 :1 `uc 1 ]
-[n S401 . . TXBNIE ]
-"8204
-[u S393 `S394 1 `S395 1 `S396 1 `S397 1 `S398 1 `S399 1 `S400 1 `S401 1 ]
-[n S393 . . . . . . . . . ]
-"8243
-[v _PIE3bits `VS393 ~T0 @X0 0 e@4003 ]
+"236 /opt/microchip/xc8/v1.34/include/plib/spi.h
+[v _OpenSPI1 `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"7746 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[s S376 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S376 . TMR1IE TMR2IE CCP1IE SSP1IE TX1IE RC1IE ADIE PSPIE ]
+"7756
+[s S377 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S377 . . SSPIE TXIE RCIE ]
+"7745
+[u S375 `S376 1 `S377 1 ]
+[n S375 . . . ]
+"7763
+[v _PIE1bits `VS375 ~T0 @X0 0 e@3997 ]
 "7910
 [s S382 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S382 . TMR1IP TMR2IP CCP1IP SSP1IP TX1IP RC1IP ADIP PSPIP ]
@@ -91,20 +73,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S149 . . . . . . . . ]
 "3000
 [v _PORTCbits `VS149 ~T0 @X0 0 e@3970 ]
-"8328
-[s S403 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S403 . CCP3IF CCP4IF CCP5IF TMR4IF TX2IF RC2IF BCL2IF SSP2IF ]
-"8338
-[s S404 :1 `uc 1 :1 `uc 1 ]
-[n S404 . . RXBNIF ]
-"8342
-[s S405 :4 `uc 1 :1 `uc 1 ]
-[n S405 . . TXBNIF ]
-"8327
-[u S402 `S403 1 `S404 1 `S405 1 ]
-[n S402 . . . . ]
-"8347
-[v _PIR3bits `VS402 ~T0 @X0 0 e@4004 ]
+"7828
+[s S379 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S379 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF PSPIF ]
+"7838
+[s S380 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S380 . . SSPIF TXIF RCIF ]
+"7827
+[u S378 `S379 1 `S380 1 ]
+[n S378 . . . ]
+"7845
+[v _PIR1bits `VS378 ~T0 @X0 0 e@3998 ]
+"12321
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@4041 ]
 "211
 [s S10 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S10 . SSPM CKP SSPEN SSPOV WCOL ]
@@ -119,101 +100,92 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S9 . . . . ]
 "235
 [v _SSP2CON1bits `VS9 ~T0 @X0 0 e@3939 ]
-"330
-[s S14 :2 `uc 1 :1 `uc 1 ]
-[n S14 . . R_NOT_W ]
-"334
-[s S15 :5 `uc 1 :1 `uc 1 ]
-[n S15 . . D_NOT_A ]
-"338
-[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S16 . BF UA R_nW S P D_nA CKE SMP ]
-"348
-[s S17 :2 `uc 1 :1 `uc 1 ]
-[n S17 . . R_NOT_W ]
-"352
-[s S18 :5 `uc 1 :1 `uc 1 ]
-[n S18 . . D_NOT_A ]
-"356
-[s S19 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S19 . . R_W . D_A ]
-"362
-[s S20 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S20 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
-"369
-[s S21 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S21 . . nW . nA ]
-"375
-[s S22 :2 `uc 1 :1 `uc 1 ]
-[n S22 . . NOT_WRITE ]
-"379
-[s S23 :5 `uc 1 :1 `uc 1 ]
-[n S23 . . NOT_ADDRESS ]
-"383
-[s S24 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S24 . . nWRITE . nADDRESS ]
-"389
-[s S25 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S25 . . READ_WRITE . DATA_ADDRESS ]
-"395
-[s S26 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S26 . . R . D ]
-"401
-[s S27 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S27 . BF2 UA2 RW2 START2 STOP2 DA2 CKE2 SMP2 ]
-"411
-[s S28 :5 `uc 1 :1 `uc 1 ]
-[n S28 . . DATA_ADDRESS2 ]
-"415
-[s S29 :5 `uc 1 :1 `uc 1 ]
-[n S29 . . D_A2 ]
-"419
-[s S30 :5 `uc 1 :1 `uc 1 ]
-[n S30 . . D_nA2 ]
-"423
-[s S31 :5 `uc 1 :1 `uc 1 ]
-[n S31 . . I2C_DAT2 ]
-"427
-[s S32 :2 `uc 1 :1 `uc 1 ]
-[n S32 . . I2C_READ2 ]
-"431
-[s S33 :3 `uc 1 :1 `uc 1 ]
-[n S33 . . I2C_START2 ]
-"435
-[s S34 :4 `uc 1 :1 `uc 1 ]
-[n S34 . . I2C_STOP2 ]
-"439
-[s S35 :4 `uc 1 :1 `uc 1 ]
-[n S35 . . P2 ]
-"443
-[s S36 :2 `uc 1 :1 `uc 1 ]
-[n S36 . . READ_WRITE2 ]
-"447
-[s S37 :2 `uc 1 :1 `uc 1 ]
-[n S37 . . R_W2 ]
-"451
-[s S38 :2 `uc 1 :1 `uc 1 ]
-[n S38 . . R_nW2 ]
-"455
-[s S39 :3 `uc 1 :1 `uc 1 ]
-[n S39 . . S2 ]
-"459
-[s S40 :5 `uc 1 :1 `uc 1 ]
-[n S40 . . nA2 ]
-"463
-[s S41 :5 `uc 1 :1 `uc 1 ]
-[n S41 . . nADDRESS2 ]
-"467
-[s S42 :2 `uc 1 :1 `uc 1 ]
-[n S42 . . nW2 ]
-"471
-[s S43 :2 `uc 1 :1 `uc 1 ]
-[n S43 . . nWRITE2 ]
-"329
-[u S13 `S14 1 `S15 1 `S16 1 `S17 1 `S18 1 `S19 1 `S20 1 `S21 1 `S22 1 `S23 1 `S24 1 `S25 1 `S26 1 `S27 1 `S28 1 `S29 1 `S30 1 `S31 1 `S32 1 `S33 1 `S34 1 `S35 1 `S36 1 `S37 1 `S38 1 `S39 1 `S40 1 `S41 1 `S42 1 `S43 1 ]
-[n S13 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ]
-"476
-[v _SSP2STATbits `VS13 ~T0 @X0 0 e@3940 ]
+"11354
+[s S571 :2 `uc 1 :1 `uc 1 ]
+[n S571 . . R_NOT_W ]
+"11358
+[s S572 :5 `uc 1 :1 `uc 1 ]
+[n S572 . . D_NOT_A ]
+"11362
+[s S573 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S573 . BF UA R_nW S P D_nA CKE SMP ]
+"11372
+[s S574 :2 `uc 1 :1 `uc 1 ]
+[n S574 . . R_NOT_W ]
+"11376
+[s S575 :5 `uc 1 :1 `uc 1 ]
+[n S575 . . D_NOT_A ]
+"11380
+[s S576 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S576 . . R_W . D_A ]
+"11386
+[s S577 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S577 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
+"11393
+[s S578 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S578 . . nW . nA ]
+"11399
+[s S579 :2 `uc 1 :1 `uc 1 ]
+[n S579 . . NOT_WRITE ]
+"11403
+[s S580 :5 `uc 1 :1 `uc 1 ]
+[n S580 . . NOT_ADDRESS ]
+"11407
+[s S581 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S581 . . nWRITE . nADDRESS ]
+"11413
+[s S582 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S582 . . READ_WRITE . DATA_ADDRESS ]
+"11419
+[s S583 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S583 . . R . D ]
+"11425
+[s S584 :1 `uc 1 ]
+[n S584 . BF1 ]
+"11428
+[s S585 :6 `uc 1 :1 `uc 1 ]
+[n S585 . . CKE1 ]
+"11432
+[s S586 :5 `uc 1 :1 `uc 1 ]
+[n S586 . . DA ]
+"11436
+[s S587 :5 `uc 1 :1 `uc 1 ]
+[n S587 . . DA1 ]
+"11440
+[s S588 :2 `uc 1 :1 `uc 1 ]
+[n S588 . . RW ]
+"11444
+[s S589 :2 `uc 1 :1 `uc 1 ]
+[n S589 . . RW1 ]
+"11448
+[s S590 :7 `uc 1 :1 `uc 1 ]
+[n S590 . . SMP1 ]
+"11452
+[s S591 :3 `uc 1 :1 `uc 1 ]
+[n S591 . . START ]
+"11456
+[s S592 :3 `uc 1 :1 `uc 1 ]
+[n S592 . . START1 ]
+"11460
+[s S593 :4 `uc 1 :1 `uc 1 ]
+[n S593 . . STOP ]
+"11464
+[s S594 :4 `uc 1 :1 `uc 1 ]
+[n S594 . . STOP1 ]
+"11468
+[s S595 :1 `uc 1 :1 `uc 1 ]
+[n S595 . . UA1 ]
+"11472
+[s S596 :2 `uc 1 :1 `uc 1 ]
+[n S596 . . NOT_W ]
+"11476
+[s S597 :5 `uc 1 :1 `uc 1 ]
+[n S597 . . NOT_A ]
+"11353
+[u S570 `S571 1 `S572 1 `S573 1 `S574 1 `S575 1 `S576 1 `S577 1 `S578 1 `S579 1 `S580 1 `S581 1 `S582 1 `S583 1 `S584 1 `S585 1 `S586 1 `S587 1 `S588 1 `S589 1 `S590 1 `S591 1 `S592 1 `S593 1 `S594 1 `S595 1 `S596 1 `S597 1 ]
+[n S570 . . . . . . . . . . . . . . . . . . . . . . . . . . . . ]
+"11481
+[v _SSP1STATbits `VS570 ~T0 @X0 0 e@4039 ]
 "38 SPISlave.h
 [v _GenerateChecksum `(uc ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -6673,12 +6645,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SPISlave.c: 19: TRISDbits.RD7 = 1;
 "19
 [e = . . _TRISDbits 1 7 -> -> 1 `i `uc ]
-[; ;SPISlave.c: 20: OpenSPI2(0b00000100, 0b00000000, 0b00000000);
+[; ;SPISlave.c: 20: OpenSPI1(0b00000100, 0b00000000, 0b00000000);
 "20
-[e ( _OpenSPI2 (3 , , -> -> 4 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;SPISlave.c: 21: PIE3bits.SSP2IE = 1;
+[e ( _OpenSPI1 (3 , , -> -> 4 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;SPISlave.c: 21: PIE1bits.SSP1IE = 1;
 "21
-[e = . . _PIE3bits 0 7 -> -> 1 `i `uc ]
+[e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
 [; ;SPISlave.c: 22: IPR1bits.SSP1IP = 0;
 "22
 [e = . . _IPR1bits 0 3 -> -> 0 `i `uc ]
@@ -6700,180 +6672,183 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SPISlave.c: 28: PORTCbits.RC6 = 0;
 "28
 [e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-[; ;SPISlave.c: 29: PIR3bits.SSP2IF = 0;
+[; ;SPISlave.c: 29: PIR1bits.SSP1IF = 0;
 "29
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-[; ;SPISlave.c: 30: PIE3bits.SSP2IE = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 30: PIE1bits.SSP1IE = 0;
 "30
-[e = . . _PIE3bits 0 7 -> -> 0 `i `uc ]
+[e = . . _PIE1bits 0 3 -> -> 0 `i `uc ]
 [; ;SPISlave.c: 31: SPIflag = 1;
 "31
 [e = _SPIflag -> -> 1 `i `uc ]
-[; ;SPISlave.c: 32: }
+[; ;SPISlave.c: 32: PIR1bits.SSP1IF = 0;
 "32
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 33: }
+"33
 [e :UE 759 ]
 }
-"34
+"35
 [v _SendSPI1 `(v ~T0 @X0 1 ef1`uc ]
-"35
-{
-[; ;SPISlave.c: 34: void SendSPI1(unsigned char data)
-[; ;SPISlave.c: 35: {
-[e :U _SendSPI1 ]
-"34
-[v _data `uc ~T0 @X0 1 r1 ]
-"35
-[f ]
-[; ;SPISlave.c: 36: SSP2BUF = data;
 "36
-[e = _SSP2BUF _data ]
+{
+[; ;SPISlave.c: 35: void SendSPI1(unsigned char data)
+[; ;SPISlave.c: 36: {
+[e :U _SendSPI1 ]
+"35
+[v _data `uc ~T0 @X0 1 r1 ]
+"36
+[f ]
+[; ;SPISlave.c: 37: SSP1BUF = data;
 "37
-[v _temp `uc ~T0 @X0 1 a ]
-[; ;SPISlave.c: 37: unsigned char temp;
-[; ;SPISlave.c: 38: PIR3bits.SSP2IF = 0;
+[e = _SSP1BUF _data ]
 "38
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-[; ;SPISlave.c: 39: temp = SSP2BUF;
+[v _temp `uc ~T0 @X0 1 a ]
+[; ;SPISlave.c: 38: unsigned char temp;
+[; ;SPISlave.c: 39: PIR1bits.SSP1IF = 0;
 "39
-[e = _temp _SSP2BUF ]
-[; ;SPISlave.c: 40: while (!PIR3bits.SSP2IF);
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 40: temp = SSP2BUF;
 "40
+[e = _temp _SSP2BUF ]
+[; ;SPISlave.c: 41: while (!PIR1bits.SSP1IF);
+"41
 [e $U 761  ]
 [e :U 762 ]
 [e :U 761 ]
-[e $ ! != -> . . _PIR3bits 0 7 `i -> -> -> 0 `i `Vuc `i 762  ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 762  ]
 [e :U 763 ]
-[; ;SPISlave.c: 41: SSP2CON1bits.SSPOV2 = 0;
-"41
-[e = . . _SSP2CON1bits 2 6 -> -> 0 `i `uc ]
-[; ;SPISlave.c: 42: PIR3bits.SSP2IF = 0;
+[; ;SPISlave.c: 42: SSP2CON1bits.SSPOV2 = 0;
 "42
-[e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
-[; ;SPISlave.c: 43: }
+[e = . . _SSP2CON1bits 2 6 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 43: PIR1bits.SSP1IF = 0;
 "43
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 44: }
+"44
 [e :UE 760 ]
 }
-"45
-[v _ReceiveSPI1 `(uc ~T0 @X0 1 ef ]
 "46
+[v _ReceiveSPI1 `(uc ~T0 @X0 1 ef ]
+"47
 {
-[; ;SPISlave.c: 45: unsigned char ReceiveSPI1(void)
-[; ;SPISlave.c: 46: {
+[; ;SPISlave.c: 46: unsigned char ReceiveSPI1(void)
+[; ;SPISlave.c: 47: {
 [e :U _ReceiveSPI1 ]
 [f ]
-[; ;SPISlave.c: 47: SSP2BUF = 0x00;
-"47
-[e = _SSP2BUF -> -> 0 `i `uc ]
-[; ;SPISlave.c: 48: while (SSP2STATbits.BF == 0);
+[; ;SPISlave.c: 48: SSP1BUF = 0x00;
 "48
+[e = _SSP1BUF -> -> 0 `i `uc ]
+[; ;SPISlave.c: 49: while (SSP1STATbits.BF == 0);
+"49
 [e $U 765  ]
 [e :U 766 ]
 [e :U 765 ]
-[e $ == -> . . _SSP2STATbits 2 0 `i -> 0 `i 766  ]
+[e $ == -> . . _SSP1STATbits 2 0 `i -> 0 `i 766  ]
 [e :U 767 ]
-[; ;SPISlave.c: 49: return SSP2BUF;
-"49
-[e ) _SSP2BUF ]
-[e $UE 764  ]
-[; ;SPISlave.c: 50: }
+[; ;SPISlave.c: 50: return SSP1BUF;
 "50
+[e ) _SSP1BUF ]
+[e $UE 764  ]
+[; ;SPISlave.c: 51: }
+"51
 [e :UE 764 ]
 }
-"52
+"53
 [v _SPIDisassembleDouble `(v ~T0 @X0 1 ef1`d ]
-"53
-{
-[; ;SPISlave.c: 52: void SPIDisassembleDouble(double dub)
-[; ;SPISlave.c: 53: {
-[e :U _SPIDisassembleDouble ]
-"52
-[v _dub `d ~T0 @X0 1 r1 ]
-"53
-[f ]
-[; ;SPISlave.c: 54: DoublePtr = (unsigned char*) &dub;
 "54
-[e = _DoublePtr -> &U _dub `*uc ]
-[; ;SPISlave.c: 55: DoubleSPIS[0] = DoublePtr[0];
+{
+[; ;SPISlave.c: 53: void SPIDisassembleDouble(double dub)
+[; ;SPISlave.c: 54: {
+[e :U _SPIDisassembleDouble ]
+"53
+[v _dub `d ~T0 @X0 1 r1 ]
+"54
+[f ]
+[; ;SPISlave.c: 55: DoublePtr = (unsigned char*) &dub;
 "55
-[e = *U + &U _DoubleSPIS * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;SPISlave.c: 56: DoubleSPIS[1] = DoublePtr[1];
+[e = _DoublePtr -> &U _dub `*uc ]
+[; ;SPISlave.c: 56: DoubleSPIS[0] = DoublePtr[0];
 "56
-[e = *U + &U _DoubleSPIS * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;SPISlave.c: 57: DoubleSPIS[2] = DoublePtr[2];
+[e = *U + &U _DoubleSPIS * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;SPISlave.c: 57: DoubleSPIS[1] = DoublePtr[1];
 "57
-[e = *U + &U _DoubleSPIS * -> -> -> 2 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;SPISlave.c: 58: DoubleSPIS[3] = GenerateChecksum();
+[e = *U + &U _DoubleSPIS * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;SPISlave.c: 58: DoubleSPIS[2] = DoublePtr[2];
 "58
-[e = *U + &U _DoubleSPIS * -> -> -> 3 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ( _GenerateChecksum ..  ]
-[; ;SPISlave.c: 59: }
+[e = *U + &U _DoubleSPIS * -> -> -> 2 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;SPISlave.c: 59: DoubleSPIS[3] = GenerateChecksum();
 "59
+[e = *U + &U _DoubleSPIS * -> -> -> 3 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ( _GenerateChecksum ..  ]
+[; ;SPISlave.c: 60: }
+"60
 [e :UE 768 ]
 }
-"61
-[v _GenerateChecksum `(uc ~T0 @X0 1 ef ]
 "62
+[v _GenerateChecksum `(uc ~T0 @X0 1 ef ]
+"63
 {
-[; ;SPISlave.c: 61: unsigned char GenerateChecksum(void)
-[; ;SPISlave.c: 62: {
+[; ;SPISlave.c: 62: unsigned char GenerateChecksum(void)
+[; ;SPISlave.c: 63: {
 [e :U _GenerateChecksum ]
 [f ]
-"63
+"64
 [v _y `uc ~T0 @X0 1 a ]
 [v _sum `uc ~T0 @X0 1 a ]
-[; ;SPISlave.c: 63: unsigned char y, sum = 0;
+[; ;SPISlave.c: 64: unsigned char y, sum = 0;
 [e = _sum -> -> 0 `i `uc ]
-[; ;SPISlave.c: 64: for (y = 0; y != 3; y++)
-"64
+[; ;SPISlave.c: 65: for (y = 0; y != 3; y++)
+"65
 {
 [e = _y -> -> 0 `i `uc ]
 [e $ != -> _y `i -> 3 `i 770  ]
 [e $U 771  ]
-"65
+"66
 [e :U 770 ]
-[; ;SPISlave.c: 65: sum += DoubleSPIS[y];
+[; ;SPISlave.c: 66: sum += DoubleSPIS[y];
 [e =+ _sum *U + &U _DoubleSPIS * -> _y `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
-"64
+"65
 [e ++ _y -> -> 1 `i `uc ]
 [e $ != -> _y `i -> 3 `i 770  ]
 [e :U 771 ]
-"65
-}
-[; ;SPISlave.c: 66: return sum;
 "66
+}
+[; ;SPISlave.c: 67: return sum;
+"67
 [e ) _sum ]
 [e $UE 769  ]
-[; ;SPISlave.c: 67: }
-"67
+[; ;SPISlave.c: 68: }
+"68
 [e :UE 769 ]
 }
-"69
-[v _SPIReassembleDouble `(d ~T0 @X0 1 ef ]
 "70
+[v _SPIReassembleDouble `(d ~T0 @X0 1 ef ]
+"71
 {
-[; ;SPISlave.c: 69: double SPIReassembleDouble(void)
-[; ;SPISlave.c: 70: {
+[; ;SPISlave.c: 70: double SPIReassembleDouble(void)
+[; ;SPISlave.c: 71: {
 [e :U _SPIReassembleDouble ]
 [f ]
-"71
-[v _dub `d ~T0 @X0 1 a ]
-[; ;SPISlave.c: 71: double dub;
-[; ;SPISlave.c: 72: DoublePtr = (unsigned char*) &dub;
 "72
-[e = _DoublePtr -> &U _dub `*uc ]
-[; ;SPISlave.c: 73: DoublePtr[0] = DoubleSPIS[0];
+[v _dub `d ~T0 @X0 1 a ]
+[; ;SPISlave.c: 72: double dub;
+[; ;SPISlave.c: 73: DoublePtr = (unsigned char*) &dub;
 "73
-[e = *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIS * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
-[; ;SPISlave.c: 74: DoublePtr[1] = DoubleSPIS[1];
+[e = _DoublePtr -> &U _dub `*uc ]
+[; ;SPISlave.c: 74: DoublePtr[0] = DoubleSPIS[0];
 "74
-[e = *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIS * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
-[; ;SPISlave.c: 75: DoublePtr[2] = DoubleSPIS[2];
+[e = *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIS * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
+[; ;SPISlave.c: 75: DoublePtr[1] = DoubleSPIS[1];
 "75
+[e = *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIS * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
+[; ;SPISlave.c: 76: DoublePtr[2] = DoubleSPIS[2];
+"76
 [e = *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIS * -> -> -> 2 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
-[; ;SPISlave.c: 77: return dub;
-"77
+[; ;SPISlave.c: 78: return dub;
+"78
 [e ) _dub ]
 [e $UE 773  ]
-[; ;SPISlave.c: 78: }
-"78
+[; ;SPISlave.c: 79: }
+"79
 [e :UE 773 ]
 }

@@ -6655,8 +6655,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 768  ]
 "35
 [e :U 767 ]
-[; ;Joystick.c: 35: else if (PORTBbits.RB1 == 1)
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 769  ]
+[; ;Joystick.c: 35: else if ((PORTBbits.RB1 == 1) && (JSEnableFlag == 0))
+[e $ ! && == -> . . _PORTBbits 0 1 `i -> 1 `i == -> _JSEnableFlag `i -> 0 `i 769  ]
 [; ;Joystick.c: 36: {
 "36
 {
@@ -6711,9 +6711,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Joystick.c: 53: JoystickResult = (ADCresult - 512);
 "53
 [e = _JoystickResult -> - _ADCresult -> -> 512 `i `ui `i ]
-[; ;Joystick.c: 55: if ((JoystickResult > 100) || (JoystickResult < -100))
+[; ;Joystick.c: 55: if ((JoystickResult > 5) || (JoystickResult < -5))
 "55
-[e $ ! || > _JoystickResult -> 100 `i < _JoystickResult -U -> 100 `i 774  ]
+[e $ ! || > _JoystickResult -> 5 `i < _JoystickResult -U -> 5 `i 774  ]
 [; ;Joystick.c: 56: {
 "56
 {
