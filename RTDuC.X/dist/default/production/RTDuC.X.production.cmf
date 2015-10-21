@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/cgtry97MT.obj
+$/tmp/cgt7ARrsp.obj
 idloc IDLOC 0 200000 200000 8 1
 reset_vec CODE 0 0 0 4 1
 end_init CODE 0 AC AC 4 1
@@ -127,10 +127,10 @@ $dist/default/production/RTDuC.X.production.obj
 8 intcode CODE >112:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 8 intcode CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
 18 intcodelo CODE >40:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-18 intcodelo CODE >145:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-5C intcodelo CODE >147:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-60 intcodelo CODE >149:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-66 intcodelo CODE >151:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+18 intcodelo CODE >150:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+5C intcodelo CODE >152:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+60 intcodelo CODE >154:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+66 intcodelo CODE >156:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 B0 text31 CODE >29:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
 B0 text31 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
 B6 text31 CODE >34:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
@@ -411,7 +411,7 @@ FF8 text40 CODE >72:/opt/microchip/xc8/v1.34/sources/common/float.c
 1194 intcode_body CODE >129:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 119A intcode_body CODE >132:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 119E intcode_body CODE >134:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11A2 intcode_body CODE >143:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11A2 intcode_body CODE >148:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 11DC text34 CODE >4:/opt/microchip/xc8/v1.34/sources/common/ftge.c
 11DC text34 CODE >6:/opt/microchip/xc8/v1.34/sources/common/ftge.c
 11E0 text34 CODE >7:/opt/microchip/xc8/v1.34/sources/common/ftge.c
@@ -692,22 +692,22 @@ FF8 text40 CODE >72:/opt/microchip/xc8/v1.34/sources/common/float.c
 195C text17 CODE >43:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
 195E text17 CODE >44:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
 1962 text17 CODE >45:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
-1964 cinit CODE >3145:/tmp/cgtMEZ0mY
-1964 cinit CODE >3147:/tmp/cgtMEZ0mY
-1964 cinit CODE >3150:/tmp/cgtMEZ0mY
-1964 cinit CODE >3222:/tmp/cgtMEZ0mY
-1968 cinit CODE >3223:/tmp/cgtMEZ0mY
-196A cinit CODE >3224:/tmp/cgtMEZ0mY
-196A cinit CODE >3225:/tmp/cgtMEZ0mY
-196C cinit CODE >3226:/tmp/cgtMEZ0mY
-196E cinit CODE >3227:/tmp/cgtMEZ0mY
-1970 cinit CODE >3230:/tmp/cgtMEZ0mY
-1972 cinit CODE >3231:/tmp/cgtMEZ0mY
-1974 cinit CODE >3232:/tmp/cgtMEZ0mY
-1976 cinit CODE >3233:/tmp/cgtMEZ0mY
-1978 cinit CODE >3239:/tmp/cgtMEZ0mY
-1978 cinit CODE >3240:/tmp/cgtMEZ0mY
-197A cinit CODE >3241:/tmp/cgtMEZ0mY
+1964 cinit CODE >3145:/tmp/cgt67KP57
+1964 cinit CODE >3147:/tmp/cgt67KP57
+1964 cinit CODE >3150:/tmp/cgt67KP57
+1964 cinit CODE >3222:/tmp/cgt67KP57
+1968 cinit CODE >3223:/tmp/cgt67KP57
+196A cinit CODE >3224:/tmp/cgt67KP57
+196A cinit CODE >3225:/tmp/cgt67KP57
+196C cinit CODE >3226:/tmp/cgt67KP57
+196E cinit CODE >3227:/tmp/cgt67KP57
+1970 cinit CODE >3230:/tmp/cgt67KP57
+1972 cinit CODE >3231:/tmp/cgt67KP57
+1974 cinit CODE >3232:/tmp/cgt67KP57
+1976 cinit CODE >3233:/tmp/cgt67KP57
+1978 cinit CODE >3239:/tmp/cgt67KP57
+1978 cinit CODE >3240:/tmp/cgt67KP57
+197A cinit CODE >3241:/tmp/cgt67KP57
 197E text18 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
 1982 text18 CODE >37:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
 1986 text18 CODE >39:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
@@ -787,7 +787,7 @@ _ReadRTDpos 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _SSP1STATbits FC7 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 ___ftdiv@exp 27 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/RTDuC.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtry97MT.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgt7ARrsp.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/RTDuC.X.production.obj
 _Delay10TCYx 19AE 0 CODE 0 text7 dist/default/production/RTDuC.X.production.obj
 _Delay1KTCYx 1998 0 CODE 0 text6 dist/default/production/RTDuC.X.production.obj
@@ -801,7 +801,7 @@ __size_of_RTDInit 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of_SendSPI1 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 main@x 9B 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production/RTDuC.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/cgtry97MT.obj
+___sp 0 0 STACK 2 stack /tmp/cgt7ARrsp.obj
 _hISR 8 0 CODE 0 intcode dist/default/production/RTDuC.X.production.obj
 _lISR 18 0 CODE 0 intcodelo dist/default/production/RTDuC.X.production.obj
 _main 800 0 CODE 0 text0 dist/default/production/RTDuC.X.production.obj
@@ -809,7 +809,7 @@ abs@a 8D 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 ___ftadd@f1 38 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 ___ftadd@f2 3B 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 EEWriteDouble@x 1A 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-start AC 0 CODE 0 init /tmp/cgtry97MT.obj
+start AC 0 CODE 0 init /tmp/cgt7ARrsp.obj
 Write_b_eep@badd 12 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 Write_b_eep@bdat 14 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __size_of___ftadd 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -841,11 +841,11 @@ __size_of_MotorDriverInit 0 0 ABS 0 - dist/default/production/RTDuC.X.production
 _EEPROMInit 19C4 0 CODE 0 text11 dist/default/production/RTDuC.X.production.obj
 __end_of_Write_b_eep 1704 0 CODE 0 text50 dist/default/production/RTDuC.X.production.obj
 _motorInput C0 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
-__accesstop 60 0 ABS 0 - /tmp/cgtry97MT.obj
-intlevel0 0 0 CODE 0 text /tmp/cgtry97MT.obj
-intlevel1 0 0 CODE 0 text /tmp/cgtry97MT.obj
-intlevel2 0 0 CODE 0 text /tmp/cgtry97MT.obj
-intlevel3 0 0 CODE 0 text /tmp/cgtry97MT.obj
+__accesstop 60 0 ABS 0 - /tmp/cgt7ARrsp.obj
+intlevel0 0 0 CODE 0 text /tmp/cgt7ARrsp.obj
+intlevel1 0 0 CODE 0 text /tmp/cgt7ARrsp.obj
+intlevel2 0 0 CODE 0 text /tmp/cgt7ARrsp.obj
+intlevel3 0 0 CODE 0 text /tmp/cgt7ARrsp.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/RTDuC.X.production.obj
 _TMR0Int 15F2 0 CODE 0 text30 dist/default/production/RTDuC.X.production.obj
 _Read_b_eep 1948 0 CODE 0 text17 dist/default/production/RTDuC.X.production.obj
@@ -868,8 +868,8 @@ _ADRESH FC4 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _ADRESL FC3 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _DoublePtr BE 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
 __end_of_SendSPI1 1998 0 CODE 0 text18 dist/default/production/RTDuC.X.production.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/cgtry97MT.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/cgtry97MT.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/cgt7ARrsp.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/cgt7ARrsp.obj
 EEWriteChar@ch 16 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 _EECON1bits FA6 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _CCPR3L FB8 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -1000,7 +1000,7 @@ __Hbank15 0 0 ABS 0 bank15 dist/default/production/RTDuC.X.production.obj
 __size_of_RTD2Angle 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/RTDuC.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production/RTDuC.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/cgtry97MT.obj
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/cgt7ARrsp.obj
 Write_b_eep@GIE_BIT_VAL 15 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __size_of_ReceiveSPI1 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production/RTDuC.X.production.obj
@@ -1226,8 +1226,8 @@ __end_of_EEReadDouble 13FE 0 CODE 0 text13 dist/default/production/RTDuC.X.produ
 ImplementPIDMotion@PIDValue 16 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 _CurrentAngle A0 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
 ___lwtoft@c 1A 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-stackhi F5F 0 ABS 0 - /tmp/cgtry97MT.obj
-stacklo C7 0 ABS 0 - /tmp/cgtry97MT.obj
+stackhi F5F 0 ABS 0 - /tmp/cgt7ARrsp.obj
+stacklo C7 0 ABS 0 - /tmp/cgt7ARrsp.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production/RTDuC.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production/RTDuC.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production/RTDuC.X.production.obj
@@ -1324,7 +1324,7 @@ __Ltext47 0 0 ABS 0 text47 dist/default/production/RTDuC.X.production.obj
 __Ltext48 0 0 ABS 0 text48 dist/default/production/RTDuC.X.production.obj
 __Ltext49 0 0 ABS 0 text49 dist/default/production/RTDuC.X.production.obj
 __Ltext50 0 0 ABS 0 text50 dist/default/production/RTDuC.X.production.obj
-__ramtop 1000 0 RAM 0 ramtop /tmp/cgtry97MT.obj
+__ramtop 1000 0 RAM 0 ramtop /tmp/cgt7ARrsp.obj
 __size_of_EEWriteDouble 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Lpowerup AC 0 CODE 0 powerup dist/default/production/RTDuC.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/RTDuC.X.production.obj
@@ -1397,7 +1397,7 @@ __Lram 0 0 ABS 0 ram dist/default/production/RTDuC.X.production.obj
 __Lsfr 0 0 ABS 0 sfr dist/default/production/RTDuC.X.production.obj
 _DetectMovement 1282 0 CODE 0 text25 dist/default/production/RTDuC.X.production.obj
 ?i2_abs 12 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-___extmem_base 20000 0 ABS 0 - /tmp/cgtry97MT.obj
+___extmem_base 20000 0 ABS 0 - /tmp/cgt7ARrsp.obj
 _MotorDriverInit 190C 0 CODE 0 text9 dist/default/production/RTDuC.X.production.obj
 _CCP3CON FB7 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 ___fttol@sign1 65 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj

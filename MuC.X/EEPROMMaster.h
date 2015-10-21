@@ -26,12 +26,6 @@ extern "C" {
 #define PORTAloc 0x0C
 #define PORTBloc 0x0D
 #define PORTCloc 0x0E
-#define PORTDloc 0x0F
-#define PORTEloc 0x10
-#define PORTFloc 0x11
-#define PORTGloc 0x12
-#define PORTHloc 0x13
-#define PORTJloc 0x14
 #define PIDENABLEloc 0x15
 #define SAVEDloc 0x16 //This lets us know whether or not the unit has settings saved;
     

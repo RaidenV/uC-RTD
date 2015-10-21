@@ -8602,7 +8602,7 @@ if (PIR2bits.OSCFIF == 1)
 {
 asm("reset");
 
-# 142
+# 147
 }
 }
 

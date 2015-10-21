@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.34 build -361300703 
-                                                                                               Tue Oct 20 02:50:09 2015
+                                                                                               Wed Oct 21 02:36:26 2015
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
      1                           	processor	18F8722
@@ -3783,7 +3783,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3640                           
   3641 ;; *************** function _lISR *****************
   3642 ;; Defined at:
-  3643 ;;		line 145 in file "RTDuC.c"
+  3643 ;;		line 150 in file "RTDuC.c"
   3644 ;; Parameters:    Size  Location     Type
   3645 ;;		None
   3646 ;; Auto vars:     Size  Location     Type
@@ -3841,12 +3841,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
   3693  000054  CFF8 F010          	movff	tblptru,??_lISR+15
   3694  000058  CFF5 F011          	movff	tablat,??_lISR+16
   3695                           
-  3696                           ;RTDuC.c: 147: if (PIR1bits.SSP1IF == 1)
+  3696                           ;RTDuC.c: 152: if (PIR1bits.SSP1IF == 1)
   3697  00005C  A69E               	btfss	3998,3,c	;volatile
   3698  00005E  D003               	goto	i1l356
   3699                           
-  3700                           ;RTDuC.c: 148: {
-  3701                           ;RTDuC.c: 149: SPIInt();
+  3700                           ;RTDuC.c: 153: {
+  3701                           ;RTDuC.c: 154: SPIInt();
   3702  000060  ECEC  F00C         	call	_SPIInt	;wreg free
   3703  000064  D000               	goto	i1l356
   3704  000066                     i1l356:
@@ -8232,7 +8232,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.34 build -361300703 
-Symbol Table                                                                                   Tue Oct 20 02:50:09 2015
+Symbol Table                                                                                   Wed Oct 21 02:36:26 2015
 
       __size_of_MotorDriverInit 0020                              l33 18D2                              l27 17B8  
                             l36 18E8                              l45 130A                              l39 1286  

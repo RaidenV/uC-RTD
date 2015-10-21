@@ -74,14 +74,14 @@ void main(void)
             }
             PIE1bits.SSP1IE = 1;
         }
-        
+
         DetectJoystick();
-        if(JSEnableFlag == 1)
+        if (JSEnableFlag == 1)
         {
-           ImplementJSMotion(DetectMovement()); //This function should guarantee that the PID loop is only stopped if the Joystick actually causes the motors to move;
+            ImplementJSMotion(DetectMovement()); //This function should guarantee that the PID loop is only stopped if the Joystick actually causes the motors to move;
         }
-        
-        else if((PIDEnableFlag & 0x02) == 0x02) //We don't need this repeating all the time, only when it's a new angle;
+
+        else if ((PIDEnableFlag & 0x02) == 0x02) //We don't need this repeating all the time, only when it's a new angle;
         {
             INTCONbits.TMR0IE = 1; //Enable the timer interrupt;
             JSEnableFlag = 0; //Disable the Joystick;
@@ -95,10 +95,10 @@ void initialize(void)
     while (OSCCONbits.OSTS == 0); //Wait here while the Oscillator stabilizes;
 
     RTDInit(); //Initialize all modules;
+    SPIInit();
     JoystickInit();
     MotorDriverInit();
     PIDInit();
-    SPIInit();
     EEPROMInit();
 
     INTCONbits.GIE = 1; //Enable General Interrupts;
@@ -107,10 +107,13 @@ void initialize(void)
 
     PIE2bits.OSCFIE = 1; //Enable the Oscillator Fail interrupt;
     IPR2bits.OSCFIP = 1; //High priority;
+
 }
 
 void interrupt high_priority hISR(void)
 {
+    SlaveReady = 1; //Set the slave in the Not Ready State so that the master in no longer allowed to transmit;
+
     if ((INTCONbits.TMR0IF == 1) && ((PIDEnableFlag | 0x01) == 0x01)) //If the TMR0 Interrupt is high, and the PID loop is enabled, run this;
     {
         TMR0Int();
@@ -145,6 +148,8 @@ void interrupt high_priority hISR(void)
          * value, and figuring out a way to revert in the event that the oscillator comes back online;
          */
     }
+
+    SlaveReady = 0; //Take it out of the Not Ready State to allow for SPI transmission;
 }
 
 void interrupt low_priority lISR(void)

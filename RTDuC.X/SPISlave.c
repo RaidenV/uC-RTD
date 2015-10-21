@@ -16,16 +16,17 @@ double Kd;
 void SPIInit(void)
 {
     TRISCbits.RC6 = 0; //Set the SlaveReady pin as an output;
+    SlaveReady = 1;  //Start the Slave in the "Not Ready" position;
     TRISDbits.RD7 = 1; //Set the SlaveSelect pin as an input (this might not be necessary if it conflicts with the SLV_SSON command of the following line);
     OpenSPI1(SLV_SSON, MODE_00, SMPMID);
     PIE1bits.SSP1IE = 1; //Enable the MSSP1 Interrupt on byte received;
-    IPR1bits.SSP1IP = 0; //SPI communication is a low priority compared to the PID loop;
+    IPR1bits.SSP1IP = 0; //SPI communication is low priority compared to the PID loop;
 }
 
 void SPIInt(void)
 {
     Command = SSP2BUF;
-    SlaveReady = 0; //Set the SlaveReady pin, stopping the master from initiating a transfer until the slave is ready;
+    SlaveReady = 1; //Set the SlaveReady pin, stopping the master from initiating a transfer until the slave is ready;
     PIR1bits.SSP1IF = 0; //Clear the interrupt flag;
     PIE1bits.SSP1IE = 0; //Disable the interrupt so that subsequent transfers don't cause interrupts;
     SPIflag = 1; //Set the SPIflag;
