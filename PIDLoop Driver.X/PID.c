@@ -1,4 +1,7 @@
 #include "PID.h"
+#include "LCD.h"
+#include "ResolverToDigital.h"
+#include "MotorControl.h"
 
 unsigned char PIDEnableFlag;  
 double Ki;
@@ -11,6 +14,7 @@ double prevErr;
 double intErr;
 double StartAngle;
 int motorInput;
+double loopTime = 0.03;
 
 void PIDInit(void)
 {
@@ -20,8 +24,8 @@ void PIDInit(void)
     intErr = 0;
     
    // INTCONbits.TMR0IE = 1; //Enable the Timer 0 interrupt;  Scratch that, the Timer 0 Interrupt should only be enabled when the PID flag is raised;
-    INTCON2bits.TMR0IP = 1; //Set the Timer 0 interrupt to high priority;
-    T0CON = 0x84; //Enable Timer 0, 32:1 prescaler;
+    //INTCON2bits.TMR0IP = 1; //Set the Timer 0 interrupt to high priority;
+    T0CON = 0x04; //Enable Timer 0, 32:1 prescaler;
     TMR0H = timerHigh; //Offset the timer by 0xDB60 to allow for a 0.03 second timer loop;
     TMR0L = timerLow; //Calculation: 0xffff - ((0.03/(1/10e6))/32); hello world
     
@@ -29,13 +33,13 @@ void PIDInit(void)
 void calculatePID(double angle, double setpoint)
 {
     double derErr; //Generate derivative variable;
-    if((PIDEnableFlag & 0x02) == 0x02) //Check if this is a new angle sent by the master;
+    if(PIDEnableFlag == 3) //Check if this is a new angle sent by the master;
     {
         StartAngle = angle; //If this is a new angle, note that this is the StartAngle, or angle upon which our error will be repeatedly calculated for consistency;
         err = 0; //Because we're starting from a newly commanded angle, all errors are essentially 0 until evaluated;
         prevErr = 0;
         intErr = 0;
-        PIDEnableFlag = PIDEnableFlag & 0x01; //Since we have evaluated this as a new angle, we no longer need the new angle flag;
+        PIDEnableFlag = 1; //Since we have evaluated this as a new angle, we no longer need the new angle flag;
     }
     
     if(((StartAngle - setpoint) > 180) || ((StartAngle - setpoint) < -180)) 
@@ -73,7 +77,7 @@ void calculatePID(double angle, double setpoint)
         }
     }
     
-    intErr = err + prevErr; //Calculate the integral error;
+    intErr += err; //Calculate the integral error;
     derErr = err - prevErr; //Calculate the derivative error;
     
     motorInput = Kp * err + (Ki * intErr * loopTime) + (Kd * (derErr/loopTime));
@@ -88,11 +92,13 @@ void calculatePID(double angle, double setpoint)
 
 void TMR0Int(void)
 {
-    CurrentAngle = RTD2Angle(ReadRTDpos);
-    calculatePID(CurrentAngle, SetAngle);
+    double currentAngle;
+    currentAngle = RTD2Angle(ReadRTDpos());
+    calculatePID(currentAngle, SetAngle);
     ImplementPIDMotion(motorInput);
     TMR0H = timerHigh;
     TMR0L = timerLow;
+    LCDBreakDouble(currentAngle);
     
     INTCONbits.TMR0IF = 0;
 }

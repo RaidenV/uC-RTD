@@ -16,6 +16,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SerTx `(v ~T0 @X0 0 ef1`uc ]
 "46 KeyValue.h
 [v _keyValue `(v ~T0 @X0 0 ef2`*uc`us ]
+"37
+[v _PIDEnableFlag `uc ~T0 @X0 0 e ]
 "9 /opt/microchip/xc8/v1.34/include/ctype.h
 [v _isspace `(b ~T0 @X0 0 ef1`uc ]
 "22 SerComm.h
@@ -6642,69 +6644,72 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;KeyValue.c: 42: SerTx(0x0D);
 "42
 [e ( _SerTx (1 -> -> 13 `i `uc ]
-[; ;KeyValue.c: 44: if (StrippedKey == 0x01)
-"44
-[e $ ! == -> _StrippedKey `i -> 1 `i 773  ]
-[; ;KeyValue.c: 45: {
+[; ;KeyValue.c: 43: PIR1bits.RCIF = 0;
+"43
+[e = . . _PIR1bits 1 3 -> -> 0 `i `uc ]
+[; ;KeyValue.c: 45: if (StrippedKey == 0x01)
 "45
-{
-[; ;KeyValue.c: 46: SetAngle = StrippedValue;
+[e $ ! == -> _StrippedKey `i -> 1 `i 773  ]
+[; ;KeyValue.c: 46: {
 "46
-[e = _SetAngle _StrippedValue ]
+{
+[; ;KeyValue.c: 47: SetAngle = StrippedValue;
 "47
-}
-[; ;KeyValue.c: 47: }
-[e $U 774  ]
+[e = _SetAngle _StrippedValue ]
+[; ;KeyValue.c: 48: PIDEnableFlag = 3;
+"48
+[e = _PIDEnableFlag -> -> 3 `i `uc ]
 "49
-[e :U 773 ]
-[; ;KeyValue.c: 49: else if (StrippedKey == 0x05)
-[e $ ! == -> _StrippedKey `i -> 5 `i 775  ]
-[; ;KeyValue.c: 50: {
-"50
-{
-[; ;KeyValue.c: 51: Kp = StrippedValue;
+}
+[; ;KeyValue.c: 49: }
+[e $U 774  ]
 "51
-[e = _Kp _StrippedValue ]
+[e :U 773 ]
+[; ;KeyValue.c: 51: else if (StrippedKey == 0x05)
+[e $ ! == -> _StrippedKey `i -> 5 `i 775  ]
+[; ;KeyValue.c: 52: {
 "52
-}
-[; ;KeyValue.c: 52: }
-[e $U 776  ]
+{
+[; ;KeyValue.c: 53: Kp = StrippedValue;
+"53
+[e = _Kp _StrippedValue ]
 "54
-[e :U 775 ]
-[; ;KeyValue.c: 54: else if (StrippedKey == 0x07)
-[e $ ! == -> _StrippedKey `i -> 7 `i 777  ]
-[; ;KeyValue.c: 55: {
-"55
-{
-[; ;KeyValue.c: 56: Ki = StrippedValue;
-"56
-[e = _Ki _StrippedValue ]
-"57
 }
-[; ;KeyValue.c: 57: }
-[e $U 778  ]
-"59
-[e :U 777 ]
-[; ;KeyValue.c: 59: else if (StrippedKey == 0x09)
-[e $ ! == -> _StrippedKey `i -> 9 `i 779  ]
-[; ;KeyValue.c: 60: {
-"60
+[; ;KeyValue.c: 54: }
+[e $U 776  ]
+"56
+[e :U 775 ]
+[; ;KeyValue.c: 56: else if (StrippedKey == 0x07)
+[e $ ! == -> _StrippedKey `i -> 7 `i 777  ]
+[; ;KeyValue.c: 57: {
+"57
 {
-[; ;KeyValue.c: 61: Kd = StrippedValue;
+[; ;KeyValue.c: 58: Ki = StrippedValue;
+"58
+[e = _Ki _StrippedValue ]
+"59
+}
+[; ;KeyValue.c: 59: }
+[e $U 778  ]
 "61
-[e = _Kd _StrippedValue ]
+[e :U 777 ]
+[; ;KeyValue.c: 61: else if (StrippedKey == 0x09)
+[e $ ! == -> _StrippedKey `i -> 9 `i 779  ]
+[; ;KeyValue.c: 62: {
 "62
+{
+[; ;KeyValue.c: 63: Kd = StrippedValue;
+"63
+[e = _Kd _StrippedValue ]
+"64
 }
 [e :U 779 ]
-"64
+"65
 [e :U 778 ]
 [e :U 776 ]
 [e :U 774 ]
-[; ;KeyValue.c: 62: }
-[; ;KeyValue.c: 64: PIR1bits.RCIF = 0;
-[e = . . _PIR1bits 1 3 -> -> 0 `i `uc ]
+[; ;KeyValue.c: 64: }
 [; ;KeyValue.c: 65: }
-"65
 [e :UE 762 ]
 }
 "67

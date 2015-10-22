@@ -38,7 +38,6 @@ unsigned int ReadRTDpos(void)
     unsigned int FullPosition, helloworld;
     unsigned char HighPosition, LowPosition;
     
-    {
         RDVEL = 1; //Set the pin to read position;
         SAMPLE = 0; //Toggle the sample low;
         for(x = 0; x < 8; x++) //Wait 800 ns for the data before grabbing the data;
@@ -53,7 +52,6 @@ unsigned int ReadRTDpos(void)
         FullPosition = LowPosition;
         FullPosition = FullPosition | ((HighPosition & 0x0F) << 8);
         return FullPosition;
-    }
 }
 
 unsigned int ReadRTDvel(void)

@@ -8335,7 +8335,6 @@ unsigned char x;
 unsigned int FullPosition, helloworld;
 unsigned char HighPosition, LowPosition;
 
-{
 PORTEbits.RE1 = 1;
 PORTEbits.RE0 = 0;
 for(x = 0; x < 8; x++)
@@ -8350,7 +8349,6 @@ PORTEbits.RE0 = 1;
 FullPosition = LowPosition;
 FullPosition = FullPosition | ((HighPosition & 0x0F) << 8);
 return FullPosition;
-}
 }
 
 unsigned int ReadRTDvel(void)
@@ -8380,7 +8378,7 @@ else
 return 0xFF;
 }
 
-# 90
+# 88
 double RTD2Angle(unsigned int RTDAngle)
 {
 return 0.087890625 * RTDAngle;

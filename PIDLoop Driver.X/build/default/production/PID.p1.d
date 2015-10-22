@@ -3,4 +3,5 @@
  PID.c  \
 MotorControl.h  \
 ResolverToDigital.h  \
+LCD.h  \
 PID.h 

@@ -8374,9 +8374,10 @@ unsigned char PIDEnableFlag;
 void MotorDriverInit(void)
 {
 TRISGbits.RG0 = 0;
-TRISGbits.RG3 = 0;
-TRISEbits.RE3 = 0;
 TRISEbits.RE4 = 0;
+TRISEbits.RE3 = 0;
+TRISGbits.RG3 = 0;
+
 TRISBbits.RB0 = 1;
 
 TRISAbits.RA4 = 0;

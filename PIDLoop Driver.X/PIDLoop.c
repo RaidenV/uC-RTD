@@ -4,7 +4,6 @@
 #include "MotorControl.h"
 #include "KeyValue.h"
 #include "SerComm.h"
-#include "LCD.h"
 
 #pragma config OSC = HSPLL
 #pragma config WDT = OFF
@@ -19,31 +18,29 @@ void main(void)
 
     while (1)
     {
-        if ((PIDEnableFlag & 0x02) == 0x02) //Tests if the bit has been set by the StrippedKey = 0x01 in the KeyValue code;
+        if (PIDEnableFlag == 3) //Tests if the bit has been set by the StrippedKey = 0x01 in the KeyValue code;
         {
             TMR0H = timerHigh;
             TMR0L = timerLow;
             INTCONbits.TMR0IE = 1; //If so, enable the PID loop;
+            T0CONbits.TMR0ON = 1;
         }
-        else if((PIDEnableFlag & 0x01) == 0x01)
-            INTCONbits.TMR0IE = 1;
-        else
-            PIDEnableFlag = 0;
-        
-        LCDBreakDouble(CurrentAngle);
+//        else if (PIDEnableFlag == 0)
+//            PIDEnableFlag = 0;
     }
 }
 
 void initialize(void)
 {
+    RTDInit();
     PIDInit(); //Initialize all modules;
     MotorDriverInit();
-    RTDInit();
     SerInit();
+    lcdInit();
 
     INTCONbits.GIE = 1; //Enable General Interrupts;
     INTCONbits.PEIE = 1; //Enable Peripheral Interrupts;
-    RCONbits.IPEN = 1; //Enable Interrupt Priorities;
+//    RCONbits.IPEN = 1; //Enable Interrupt Priorities;
 }
 
 void interrupt ISR(void)

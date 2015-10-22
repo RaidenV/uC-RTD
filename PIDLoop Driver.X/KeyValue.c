@@ -40,10 +40,12 @@ void RCInt(void)
     keyValue(received, LENGTH); //Strip the key and the value from the received byte;
     SerTx(newLine); //Go to a new line;
     SerTx(carriageReturn); //Return to the base position;
+    PIR1bits.RCIF = 0; //Clear the RX flag;
 
     if (StrippedKey == 0x01)
     {
         SetAngle = StrippedValue;
+        PIDEnableFlag = 3;
     }
 
     else if (StrippedKey == 0x05)
@@ -60,8 +62,6 @@ void RCInt(void)
     {
         Kd = StrippedValue;
     }
-
-    PIR1bits.RCIF = 0; //Clear the RX flag;
 }
 
 void keyValue(unsigned char* str, unsigned short length)

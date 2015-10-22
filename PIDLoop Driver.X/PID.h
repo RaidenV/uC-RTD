@@ -14,10 +14,8 @@ extern "C" {
 
 #include <xc.h>
 #include <stdlib.h>
-#include "ResolverToDigital.h"
-#include "MotorControl.h"
 
-#define loopTime 0.03
+
 #define timerHigh 0xDB
 #define timerLow 0x60
 

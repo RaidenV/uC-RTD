@@ -8478,10 +8478,12 @@ SerTx(0x0D);
 keyValue(received, 30);
 SerTx(0x0A);
 SerTx(0x0D);
+PIR1bits.RCIF = 0;
 
 if (StrippedKey == 0x01)
 {
 SetAngle = StrippedValue;
+PIDEnableFlag = 3;
 }
 
 else if (StrippedKey == 0x05)
@@ -8498,8 +8500,6 @@ else if (StrippedKey == 0x09)
 {
 Kd = StrippedValue;
 }
-
-PIR1bits.RCIF = 0;
 }
 
 void keyValue(unsigned char* str, unsigned short length)
