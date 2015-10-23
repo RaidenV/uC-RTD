@@ -29,7 +29,7 @@ void SerInit(void)
     SPBRG = 21;
 
     RCONbits.IPEN = 1; //Enable interrupt priority;
-    IPR1bits.RCIP = 1; //Set the RCIP to high;
+    IPR1bits.RCIP = 0; //Set the RCIP to low;
     PIE1bits.RC1IE = 1; //Enable the Receive interrupt;
 
     SerTxStr("Welcome to the world of tomorrow!!!");
