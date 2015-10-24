@@ -141,11 +141,9 @@ void LCDBreakDouble(double dubs)
     tempDub = dubs * 100;
     temp1 = tempDub / 10000;
     temp2 = tempDub % 10000;
-//    if (temp1 != 0)
         lcdChar(temp1 + 0x30);
     temp1 = temp2 / 1000;
     temp2 = temp2 % 1000;
-//    if (temp1 != 0)
         lcdChar(temp1 + 0x30);
     temp1 = temp2 / 100;
     temp2 = temp2 % 100;

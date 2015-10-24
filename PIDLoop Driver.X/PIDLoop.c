@@ -19,15 +19,32 @@ void main(void)
 
     while (1)
     {
-        if (PIDEnableFlag == 3) //Tests if the bit has been set by the StrippedKey = 0x01 in the KeyValue code;
+
+        if (PIDEnableFlag == 1 && TMR0Flag == 1)
         {
+            INTCONbits.GIE = 0; //Disable interrupts while the PID loop runs;
+            CurrentAngle = RTD2Angle(ReadRTDpos());
+            calculatePID(CurrentAngle, SetAngle);
+            ImplementPIDMotion(motorInput);
+            TMR0Flag = 0;
+            INTCONbits.GIE = 1; //Enable interrupts;
+
+            SerTxStr("Current Angle: ");
+            breakDouble(CurrentAngle);
+        }
+
+        else if (PIDEnableFlag == 3) //Tests if the bit has been set by the StrippedKey = 0x01 in the KeyValue code;
+        {
+            INTCONbits.GIE = 0; //Disable interrupts while the PID loop runs;
             TMR0H = timerHigh;
             TMR0L = timerLow;
+            CurrentAngle = RTD2Angle(ReadRTDpos());
+            calculatePID(CurrentAngle, SetAngle);
+            ImplementPIDMotion(motorInput);
+            INTCONbits.GIE = 1;
             INTCONbits.TMR0IE = 1; //If so, enable the PID loop;
             T0CONbits.TMR0ON = 1;
         }
-        //        else if (PIDEnableFlag == 0)
-        //            PIDEnableFlag = 0;
     }
 }
 
@@ -46,7 +63,7 @@ void initialize(void)
 
 void interrupt high_priority hISR(void)
 {
-    if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1)) //If the interrupt flag is raised and the interrupt is enabled;
+    if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1) && ((PIDEnableFlag == 1) || (PIDEnableFlag == 3))) //If the interrupt flag is raised and the interrupt is enabled;
         TMR0Int(); //Run the PID loop;
 }
 

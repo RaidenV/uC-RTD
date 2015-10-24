@@ -8312,7 +8312,7 @@ BAUDCON = 0x00;
 SPBRG = 21;
 
 RCONbits.IPEN = 1;
-IPR1bits.RCIP = 1;
+IPR1bits.RCIP = 0;
 PIE1bits.RC1IE = 1;
 
 SerTxStr("Welcome to the world of tomorrow!!!");

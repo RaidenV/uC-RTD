@@ -19,13 +19,14 @@ extern "C" {
 #define timerHigh 0xDB
 #define timerLow 0x60
 
-    extern unsigned char PIDEnableFlag;    
+    extern unsigned char PIDEnableFlag; 
+    extern unsigned char TMR0Flag;
     extern double Ki;
     extern double Kp;
     extern double Kd;
     extern double SetAngle;
     extern double CurrentAngle;
-    extern double err;
+    extern double error;
     extern double prevErr;
     extern double intErr;
     extern double StartAngle;

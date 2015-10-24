@@ -28,11 +28,16 @@ void KillMotors(void)
 
 void ImplementPIDMotion(int PIDValue)
 {
+    if (PIDValue > 255) //Set the limits so that input is not greater than the possible motor input;
+        PIDValue = 255;
+    else if (PIDValue < -255)
+        PIDValue = -255;
+
     if (PIDValue < 0)
         CCP3CONbits.P3M1 = 1; //If the PID loop is negative, turn counter clockwise;
     else if (PIDValue > 0)
         CCP3CONbits.P3M1 = 0; //If the PID loop is positive, turn the counter in the clockwise direction;
-    
+
     PIDValue = abs(PIDValue); //Now that the direction is set, we no longer care about whether this is positive or negative;
     CCPR3L = (PIDValue >> 2) & 0xFF;
     CCP3CONbits.DC3B = (PIDValue & 0x03);

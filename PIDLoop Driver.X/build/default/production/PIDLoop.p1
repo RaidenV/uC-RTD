@@ -47,8 +47,36 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _MotorDriverInit `(v ~T0 @X0 0 ef ]
 "20 SerComm.h
 [v _SerInit `(v ~T0 @X0 0 ef ]
-"39 PIDLoop.c
+"40 PIDLoop.c
 [v _lcdInit `(i ~T0 @X0 0 ef ]
+"12551 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[s S671 :1 `uc 1 ]
+[n S671 . NOT_BOR ]
+"12554
+[s S672 :1 `uc 1 :1 `uc 1 ]
+[n S672 . . NOT_POR ]
+"12558
+[s S673 :2 `uc 1 :1 `uc 1 ]
+[n S673 . . NOT_PD ]
+"12562
+[s S674 :3 `uc 1 :1 `uc 1 ]
+[n S674 . . NOT_TO ]
+"12566
+[s S675 :4 `uc 1 :1 `uc 1 ]
+[n S675 . . NOT_RI ]
+"12570
+[s S676 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S676 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
+"12580
+[s S677 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S677 . BOR POR PD TO RI ]
+"12550
+[u S670 `S671 1 `S672 1 `S673 1 `S674 1 `S675 1 `S676 1 `S677 1 ]
+[n S670 . . . . . . . . ]
+"12588
+[v _RCONbits `VS670 ~T0 @X0 0 e@4048 ]
+"36 PID.h
+[v _TMR0Int `(v ~T0 @X0 0 ef ]
 "7828 /opt/microchip/xc8/v1.34/include/pic18f8722.h
 [s S379 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S379 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF PSPIF ]
@@ -62,8 +90,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR1bits `VS378 ~T0 @X0 0 e@3998 ]
 "45 KeyValue.h
 [v _RCInt `(v ~T0 @X0 0 ef ]
-"36 PID.h
-[v _TMR0Int `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f8722.h: 49: extern volatile unsigned char SSP2CON2 @ 0xF62;
@@ -6503,7 +6529,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;PID.h: 25: extern double Kd;
 [; ;PID.h: 26: extern double SetAngle;
 [; ;PID.h: 27: extern double CurrentAngle;
-[; ;PID.h: 28: extern double err;
+[; ;PID.h: 28: extern double error;
 [; ;PID.h: 29: extern double prevErr;
 [; ;PID.h: 30: extern double intErr;
 [; ;PID.h: 31: extern double StartAngle;
@@ -6600,116 +6626,140 @@ Version 3.2 HI-TECH Software Intermediate Code
 "10
 [p x FCMEN=OFF ]
 [; ;PIDLoop.c: 12: void initialize(void);
-[; ;PIDLoop.c: 13: void interrupt ISR(void);
-"15
-[v _main `(v ~T0 @X0 1 ef ]
+[; ;PIDLoop.c: 13: void interrupt high_priority hISR(void);
+[; ;PIDLoop.c: 14: void interrupt low_priority lISR(void);
 "16
+[v _main `(v ~T0 @X0 1 ef ]
+"17
 {
-[; ;PIDLoop.c: 15: void main(void)
-[; ;PIDLoop.c: 16: {
+[; ;PIDLoop.c: 16: void main(void)
+[; ;PIDLoop.c: 17: {
 [e :U _main ]
 [f ]
-[; ;PIDLoop.c: 17: initialize();
-"17
+[; ;PIDLoop.c: 18: initialize();
+"18
 [e ( _initialize ..  ]
-[; ;PIDLoop.c: 19: while (1)
-"19
-[e :U 764 ]
-[; ;PIDLoop.c: 20: {
+[; ;PIDLoop.c: 20: while (1)
 "20
-{
-[; ;PIDLoop.c: 21: if (PIDEnableFlag == 3)
+[e :U 764 ]
+[; ;PIDLoop.c: 21: {
 "21
-[e $ ! == -> _PIDEnableFlag `i -> 3 `i 766  ]
-[; ;PIDLoop.c: 22: {
-"22
 {
-[; ;PIDLoop.c: 23: TMR0H = 0xDB;
+[; ;PIDLoop.c: 22: if (PIDEnableFlag == 3)
+"22
+[e $ ! == -> _PIDEnableFlag `i -> 3 `i 766  ]
+[; ;PIDLoop.c: 23: {
 "23
-[e = _TMR0H -> -> 219 `i `uc ]
-[; ;PIDLoop.c: 24: TMR0L = 0x60;
+{
+[; ;PIDLoop.c: 24: TMR0H = 0xDB;
 "24
-[e = _TMR0L -> -> 96 `i `uc ]
-[; ;PIDLoop.c: 25: INTCONbits.TMR0IE = 1;
+[e = _TMR0H -> -> 219 `i `uc ]
+[; ;PIDLoop.c: 25: TMR0L = 0x60;
 "25
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 26: T0CONbits.TMR0ON = 1;
+[e = _TMR0L -> -> 96 `i `uc ]
+[; ;PIDLoop.c: 26: INTCONbits.TMR0IE = 1;
 "26
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;PIDLoop.c: 27: T0CONbits.TMR0ON = 1;
 "27
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"28
 }
+[; ;PIDLoop.c: 28: }
+[e $U 767  ]
+"29
 [e :U 766 ]
+[; ;PIDLoop.c: 29: else if (PIDEnableFlag == 0)
+[e $ ! == -> _PIDEnableFlag `i -> 0 `i 768  ]
+[; ;PIDLoop.c: 30: PIDEnableFlag = 0;
 "30
+[e = _PIDEnableFlag -> -> 0 `i `uc ]
+[e :U 768 ]
+"31
+[e :U 767 ]
 }
 [e :U 763 ]
-"19
+"20
 [e $U 764  ]
 [e :U 765 ]
-[; ;PIDLoop.c: 27: }
-[; ;PIDLoop.c: 30: }
 [; ;PIDLoop.c: 31: }
-"31
+[; ;PIDLoop.c: 32: }
+"32
 [e :UE 762 ]
 }
-"33
-[v _initialize `(v ~T0 @X0 1 ef ]
 "34
+[v _initialize `(v ~T0 @X0 1 ef ]
+"35
 {
-[; ;PIDLoop.c: 33: void initialize(void)
-[; ;PIDLoop.c: 34: {
+[; ;PIDLoop.c: 34: void initialize(void)
+[; ;PIDLoop.c: 35: {
 [e :U _initialize ]
 [f ]
-[; ;PIDLoop.c: 35: RTDInit();
-"35
-[e ( _RTDInit ..  ]
-[; ;PIDLoop.c: 36: PIDInit();
+[; ;PIDLoop.c: 36: RTDInit();
 "36
-[e ( _PIDInit ..  ]
-[; ;PIDLoop.c: 37: MotorDriverInit();
+[e ( _RTDInit ..  ]
+[; ;PIDLoop.c: 37: PIDInit();
 "37
-[e ( _MotorDriverInit ..  ]
-[; ;PIDLoop.c: 38: SerInit();
+[e ( _PIDInit ..  ]
+[; ;PIDLoop.c: 38: MotorDriverInit();
 "38
-[e ( _SerInit ..  ]
-[; ;PIDLoop.c: 39: lcdInit();
+[e ( _MotorDriverInit ..  ]
+[; ;PIDLoop.c: 39: SerInit();
 "39
+[e ( _SerInit ..  ]
+[; ;PIDLoop.c: 40: lcdInit();
+"40
 [e ( _lcdInit ..  ]
-[; ;PIDLoop.c: 41: INTCONbits.GIE = 1;
-"41
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 42: INTCONbits.PEIE = 1;
+[; ;PIDLoop.c: 42: INTCONbits.GIE = 1;
 "42
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;PIDLoop.c: 43: INTCONbits.PEIE = 1;
+"43
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 44: }
+[; ;PIDLoop.c: 44: RCONbits.IPEN = 1;
 "44
-[e :UE 767 ]
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;PIDLoop.c: 45: }
+"45
+[e :UE 769 ]
 }
 [v F7412 `(v ~T0 @X0 1 tf ]
-"46
-[v _ISR `IF7412 ~T0 @X0 1 e ]
 "47
-{
-[; ;PIDLoop.c: 46: void interrupt ISR(void)
-[; ;PIDLoop.c: 47: {
-[e :U _ISR ]
-[f ]
-[; ;PIDLoop.c: 48: if (PIR1bits.RC1IF == 1)
+[v _hISR `IHF7412 ~T0 @X0 1 e ]
 "48
-[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 769  ]
-[; ;PIDLoop.c: 49: RCInt();
+{
+[; ;PIDLoop.c: 47: void interrupt high_priority hISR(void)
+[; ;PIDLoop.c: 48: {
+[e :U _hISR ]
+[f ]
+[; ;PIDLoop.c: 49: if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1) && ((PIDEnableFlag == 1) || (PIDEnableFlag == 3)))
 "49
-[e ( _RCInt ..  ]
-[e $U 770  ]
+[e $ ! && && == -> . . _INTCONbits 0 2 `i -> 1 `i == -> . . _INTCONbits 0 5 `i -> 1 `i || == -> _PIDEnableFlag `i -> 1 `i == -> _PIDEnableFlag `i -> 3 `i 771  ]
+[; ;PIDLoop.c: 50: TMR0Int();
 "50
-[e :U 769 ]
-[; ;PIDLoop.c: 50: else if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1))
-[e $ ! && == -> . . _INTCONbits 0 2 `i -> 1 `i == -> . . _INTCONbits 0 5 `i -> 1 `i 771  ]
-[; ;PIDLoop.c: 51: TMR0Int();
-"51
 [e ( _TMR0Int ..  ]
 [e :U 771 ]
-"52
-[e :U 770 ]
-[; ;PIDLoop.c: 52: }
-[e :UE 768 ]
+[; ;PIDLoop.c: 51: }
+"51
+[e :UE 770 ]
+}
+[v F7415 `(v ~T0 @X0 1 tf ]
+"53
+[v _lISR `ILF7415 ~T0 @X0 1 e ]
+"54
+{
+[; ;PIDLoop.c: 53: void interrupt low_priority lISR(void)
+[; ;PIDLoop.c: 54: {
+[e :U _lISR ]
+[f ]
+[; ;PIDLoop.c: 55: if (PIR1bits.RC1IF == 1)
+"55
+[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 773  ]
+[; ;PIDLoop.c: 56: RCInt();
+"56
+[e ( _RCInt ..  ]
+[e :U 773 ]
+[; ;PIDLoop.c: 57: }
+"57
+[e :UE 772 ]
 }

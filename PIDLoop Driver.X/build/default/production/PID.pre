@@ -8367,7 +8367,7 @@ extern double Kp;
 extern double Kd;
 extern double SetAngle;
 extern double CurrentAngle;
-extern double err;
+extern double error;
 extern double prevErr;
 extern double intErr;
 extern double StartAngle;
@@ -8498,11 +8498,11 @@ lcdGoTo(0x40);
 tempDub = dubs * 100;
 temp1 = tempDub / 10000;
 temp2 = tempDub % 10000;
-if (temp1 != 0)
+
 lcdChar(temp1 + 0x30);
 temp1 = temp2 / 1000;
 temp2 = temp2 % 1000;
-if (temp1 != 0)
+
 lcdChar(temp1 + 0x30);
 temp1 = temp2 / 100;
 temp2 = temp2 % 100;
@@ -8549,7 +8549,7 @@ double Kp;
 double Kd;
 double SetAngle;
 double CurrentAngle;
-double err;
+double error;
 double prevErr;
 double intErr;
 double StartAngle;
@@ -8559,7 +8559,7 @@ double loopTime = 0.03;
 void PIDInit(void)
 {
 
-err = 0;
+error = 0;
 prevErr = 0;
 intErr = 0;
 
@@ -8568,6 +8568,7 @@ intErr = 0;
 T0CON = 0x04;
 TMR0H = 0xDB;
 TMR0L = 0x60;
+INTCON2bits.TMR0IP = 1;
 
 }
 void calculatePID(double angle, double setpoint)
@@ -8576,69 +8577,39 @@ double derErr;
 if(PIDEnableFlag == 3)
 {
 StartAngle = angle;
-err = 0;
+error = 0;
 prevErr = 0;
 intErr = 0;
 PIDEnableFlag = 1;
 }
 
-if(((StartAngle - setpoint) > 180) || ((StartAngle - setpoint) < -180))
-{
-if((StartAngle - setpoint) > 180)
-{
-if(angle > StartAngle)
-err = 360 - angle + setpoint;
-else
-err = setpoint - angle;
-}
-else if((StartAngle - setpoint) < -180)
-{
-if(angle < StartAngle)
-err = setpoint - 360 - angle;
-else
-err = setpoint - angle;
-}
-}
-else if(((StartAngle - setpoint) <= 180) && ((StartAngle - setpoint) > -180))
-{
-if(((setpoint - StartAngle) > -180) && (setpoint - StartAngle < 0))
-{
-if(angle <= StartAngle)
-err = setpoint - angle;
-else
-err = setpoint + 360 - angle;
-}
-else if(((setpoint - StartAngle) < 180) && (setpoint - StartAngle >= 0))
-{
-if(angle <= StartAngle)
-err = setpoint - angle;
-else
-err = setpoint - 360 - angle;
-}
-}
+error = setpoint - angle;
+if(error > 180)
+error -= 360;
+else if(error < -180)
+error += 360;
 
-intErr += err;
-derErr = err - prevErr;
+intErr += error;
+derErr = error - prevErr;
 
-motorInput = Kp * err + (Ki * intErr * loopTime) + (Kd * (derErr/loopTime));
+motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr/loopTime));
 
 if(motorInput > 255)
 motorInput = 255;
 else if (motorInput < -255)
 motorInput = -255;
 
-prevErr = err;
+prevErr = error;
 }
 
 void TMR0Int(void)
 {
-double currentAngle;
-currentAngle = RTD2Angle(ReadRTDpos());
-calculatePID(currentAngle, SetAngle);
+CurrentAngle = RTD2Angle(ReadRTDpos());
+calculatePID(CurrentAngle, SetAngle);
 ImplementPIDMotion(motorInput);
 TMR0H = 0xDB;
 TMR0L = 0x60;
-LCDBreakDouble(currentAngle);
+LCDBreakDouble(CurrentAngle);
 
 INTCONbits.TMR0IF = 0;
 }

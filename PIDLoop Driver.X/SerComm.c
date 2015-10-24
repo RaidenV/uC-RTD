@@ -77,6 +77,12 @@ void SerRxStr(unsigned char* str)
     }
 }
 
+void SerNL(void)
+{
+    SerTx(newLine);
+    SerTx(carriageReturn);
+}
+
 void breakDouble(double dubs)
 {
     unsigned int temp1, temp2;
@@ -85,18 +91,23 @@ void breakDouble(double dubs)
     tempDub = dubs * 100;
     temp1 = tempDub / 10000;
     temp2 = tempDub % 10000;
-    if (temp1 != 0)
-        SerTx(temp1 + 0x30);
+  
+    SerTx(temp1 + 0x30);
+  
     temp1 = temp2 / 1000;
     temp2 = temp2 % 1000;
-    if (temp1 != 0)
-        SerTx(temp1 + 0x30);
+ 
+    SerTx(temp1 + 0x30);
+  
     temp1 = temp2 / 100;
     temp2 = temp2 % 100;
+  
     SerTx(temp1 + 0x30);
     SerTx('.');
+  
     temp1 = temp2 / 10;
     temp2 = temp2 % 10;
+  
     SerTx(temp1 + 0x30);
     SerTx(temp2 + 0x30);
     SerTx(newLine);
