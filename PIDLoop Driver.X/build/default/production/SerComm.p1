@@ -6461,7 +6461,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SerComm.h: 22: void SerTxStr(unsigned char*);
 [; ;SerComm.h: 23: unsigned char SerRx(void);
 [; ;SerComm.h: 24: void SerRxStr(unsigned char*);
-[; ;SerComm.h: 25: void breakDouble(double);
+[; ;SerComm.h: 25: void SerNL(void);
+[; ;SerComm.h: 26: void breakDouble(double);
 "19 SerComm.c
 [v _SerInit `(v ~T0 @X0 1 ef ]
 "20
@@ -6609,85 +6610,95 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 768 ]
 }
 "80
-[v _breakDouble `(v ~T0 @X0 1 ef1`d ]
+[v _SerNL `(v ~T0 @X0 1 ef ]
 "81
 {
-[; ;SerComm.c: 80: void breakDouble(double dubs)
+[; ;SerComm.c: 80: void SerNL(void)
 [; ;SerComm.c: 81: {
-[e :U _breakDouble ]
-"80
-[v _dubs `d ~T0 @X0 1 r1 ]
-"81
+[e :U _SerNL ]
 [f ]
+[; ;SerComm.c: 82: SerTx(0x0A);
 "82
+[e ( _SerTx (1 -> -> 10 `i `uc ]
+[; ;SerComm.c: 83: SerTx(0x0D);
+"83
+[e ( _SerTx (1 -> -> 13 `i `uc ]
+[; ;SerComm.c: 84: }
+"84
+[e :UE 772 ]
+}
+"86
+[v _breakDouble `(v ~T0 @X0 1 ef1`d ]
+"87
+{
+[; ;SerComm.c: 86: void breakDouble(double dubs)
+[; ;SerComm.c: 87: {
+[e :U _breakDouble ]
+"86
+[v _dubs `d ~T0 @X0 1 r1 ]
+"87
+[f ]
+"88
 [v _temp1 `ui ~T0 @X0 1 a ]
 [v _temp2 `ui ~T0 @X0 1 a ]
-"83
-[v _tempDub `ui ~T0 @X0 1 a ]
-[; ;SerComm.c: 82: unsigned int temp1, temp2;
-[; ;SerComm.c: 83: unsigned int tempDub;
-[; ;SerComm.c: 85: tempDub = dubs * 100;
-"85
-[e = _tempDub -> * _dubs -> -> 100 `i `d `ui ]
-[; ;SerComm.c: 86: temp1 = tempDub / 10000;
-"86
-[e = _temp1 / _tempDub -> -> 10000 `i `ui ]
-[; ;SerComm.c: 87: temp2 = tempDub % 10000;
-"87
-[e = _temp2 % _tempDub -> -> 10000 `i `ui ]
-[; ;SerComm.c: 88: if (temp1 != 0)
-"88
-[e $ ! != _temp1 -> -> 0 `i `ui 773  ]
-[; ;SerComm.c: 89: SerTx(temp1 + 0x30);
 "89
-[e ( _SerTx (1 -> + _temp1 -> -> 48 `i `ui `uc ]
-[e :U 773 ]
-[; ;SerComm.c: 90: temp1 = temp2 / 1000;
-"90
-[e = _temp1 / _temp2 -> -> 1000 `i `ui ]
-[; ;SerComm.c: 91: temp2 = temp2 % 1000;
+[v _tempDub `ui ~T0 @X0 1 a ]
+[; ;SerComm.c: 88: unsigned int temp1, temp2;
+[; ;SerComm.c: 89: unsigned int tempDub;
+[; ;SerComm.c: 91: tempDub = dubs * 100;
 "91
-[e = _temp2 % _temp2 -> -> 1000 `i `ui ]
-[; ;SerComm.c: 92: if (temp1 != 0)
+[e = _tempDub -> * _dubs -> -> 100 `i `d `ui ]
+[; ;SerComm.c: 92: temp1 = tempDub / 10000;
 "92
-[e $ ! != _temp1 -> -> 0 `i `ui 774  ]
-[; ;SerComm.c: 93: SerTx(temp1 + 0x30);
+[e = _temp1 / _tempDub -> -> 10000 `i `ui ]
+[; ;SerComm.c: 93: temp2 = tempDub % 10000;
 "93
-[e ( _SerTx (1 -> + _temp1 -> -> 48 `i `ui `uc ]
-[e :U 774 ]
-[; ;SerComm.c: 94: temp1 = temp2 / 100;
-"94
-[e = _temp1 / _temp2 -> -> 100 `i `ui ]
-[; ;SerComm.c: 95: temp2 = temp2 % 100;
+[e = _temp2 % _tempDub -> -> 10000 `i `ui ]
+[; ;SerComm.c: 95: SerTx(temp1 + 0x30);
 "95
-[e = _temp2 % _temp2 -> -> 100 `i `ui ]
-[; ;SerComm.c: 96: SerTx(temp1 + 0x30);
-"96
 [e ( _SerTx (1 -> + _temp1 -> -> 48 `i `ui `uc ]
-[; ;SerComm.c: 97: SerTx('.');
+[; ;SerComm.c: 97: temp1 = temp2 / 1000;
 "97
-[e ( _SerTx (1 -> -> 46 `ui `uc ]
-[; ;SerComm.c: 98: temp1 = temp2 / 10;
+[e = _temp1 / _temp2 -> -> 1000 `i `ui ]
+[; ;SerComm.c: 98: temp2 = temp2 % 1000;
 "98
-[e = _temp1 / _temp2 -> -> 10 `i `ui ]
-[; ;SerComm.c: 99: temp2 = temp2 % 10;
-"99
-[e = _temp2 % _temp2 -> -> 10 `i `ui ]
+[e = _temp2 % _temp2 -> -> 1000 `i `ui ]
 [; ;SerComm.c: 100: SerTx(temp1 + 0x30);
 "100
 [e ( _SerTx (1 -> + _temp1 -> -> 48 `i `ui `uc ]
-[; ;SerComm.c: 101: SerTx(temp2 + 0x30);
-"101
-[e ( _SerTx (1 -> + _temp2 -> -> 48 `i `ui `uc ]
-[; ;SerComm.c: 102: SerTx(0x0A);
+[; ;SerComm.c: 102: temp1 = temp2 / 100;
 "102
-[e ( _SerTx (1 -> -> 10 `i `uc ]
-[; ;SerComm.c: 103: SerTx(0x0D);
+[e = _temp1 / _temp2 -> -> 100 `i `ui ]
+[; ;SerComm.c: 103: temp2 = temp2 % 100;
 "103
+[e = _temp2 % _temp2 -> -> 100 `i `ui ]
+[; ;SerComm.c: 105: SerTx(temp1 + 0x30);
+"105
+[e ( _SerTx (1 -> + _temp1 -> -> 48 `i `ui `uc ]
+[; ;SerComm.c: 106: SerTx('.');
+"106
+[e ( _SerTx (1 -> -> 46 `ui `uc ]
+[; ;SerComm.c: 108: temp1 = temp2 / 10;
+"108
+[e = _temp1 / _temp2 -> -> 10 `i `ui ]
+[; ;SerComm.c: 109: temp2 = temp2 % 10;
+"109
+[e = _temp2 % _temp2 -> -> 10 `i `ui ]
+[; ;SerComm.c: 111: SerTx(temp1 + 0x30);
+"111
+[e ( _SerTx (1 -> + _temp1 -> -> 48 `i `ui `uc ]
+[; ;SerComm.c: 112: SerTx(temp2 + 0x30);
+"112
+[e ( _SerTx (1 -> + _temp2 -> -> 48 `i `ui `uc ]
+[; ;SerComm.c: 113: SerTx(0x0A);
+"113
+[e ( _SerTx (1 -> -> 10 `i `uc ]
+[; ;SerComm.c: 114: SerTx(0x0D);
+"114
 [e ( _SerTx (1 -> -> 13 `i `uc ]
-[; ;SerComm.c: 104: }
-"104
-[e :UE 772 ]
+[; ;SerComm.c: 115: }
+"115
+[e :UE 773 ]
 }
 [a 1C 87 101 108 99 111 109 101 32 116 111 32 116 104 101 32 119 111 114 108 100 32 111 102 32 116 111 109 111 114 114 111 119 33 33 33 0 ]
 

@@ -20,7 +20,7 @@ void main(void)
     while (1)
     {
 
-        if (PIDEnableFlag == 1 && TMR0Flag == 1)
+        if (PIDEnableFlag == 1 && TMR0Flag == 1) //This is the option which will run more frequently, therefore it should come first to avoid an instruction cycle of testing the PIDEnableFlag for the less likely value of '3';
         {
             INTCONbits.GIE = 0; //Disable interrupts while the PID loop runs;
             CurrentAngle = RTD2Angle(ReadRTDpos());
@@ -50,8 +50,8 @@ void main(void)
 
 void initialize(void)
 {
-    RTDInit();
-    PIDInit(); //Initialize all modules;
+    RTDInit();  //Initialize all modules;
+    PIDInit();
     MotorDriverInit();
     SerInit();
     lcdInit();
@@ -70,5 +70,10 @@ void interrupt high_priority hISR(void)
 void interrupt low_priority lISR(void)
 {
     if (PIR1bits.RC1IF == 1) //If the computer has attempted to talk to the unit;
+    {
+        KillMotors();
         RCInt(); //Enter the Receive routine;
+        StartMotors();
+    }
+        
 }

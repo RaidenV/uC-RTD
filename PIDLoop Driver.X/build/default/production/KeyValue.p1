@@ -6503,7 +6503,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SerComm.h: 22: void SerTxStr(unsigned char*);
 [; ;SerComm.h: 23: unsigned char SerRx(void);
 [; ;SerComm.h: 24: void SerRxStr(unsigned char*);
-[; ;SerComm.h: 25: void breakDouble(double);
+[; ;SerComm.h: 25: void SerNL(void);
+[; ;SerComm.h: 26: void breakDouble(double);
 [; ;KeyValue.h: 29: extern double Kp;
 [; ;KeyValue.h: 30: extern double Ki;
 [; ;KeyValue.h: 31: extern double Kd;

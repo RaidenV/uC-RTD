@@ -5,9 +5,11 @@
         <group>
             <file>file:/home/raidenv/MPLABXProjects/PIDLoop%20Driver.X/KeyValue.c</file>
             <file>file:/home/raidenv/MPLABXProjects/PIDLoop%20Driver.X/PID.h</file>
+            <file>file:/home/raidenv/MPLABXProjects/PIDLoop%20Driver.X/SerComm.h</file>
+            <file>file:/home/raidenv/MPLABXProjects/PIDLoop%20Driver.X/SerComm.c</file>
             <file>file:/home/raidenv/MPLABXProjects/PIDLoop%20Driver.X/PIDLoop.c</file>
             <file>file:/home/raidenv/MPLABXProjects/PIDLoop%20Driver.X/PID.c</file>
-            <file>file:/home/raidenv/MPLABXProjects/PIDLoop%20Driver.X/LCD.h</file>
+            <file>file:/home/raidenv/MPLABXProjects/PIDLoop%20Driver.X/MotorControl.h</file>
             <file>file:/home/raidenv/MPLABXProjects/PIDLoop%20Driver.X/MotorControl.c</file>
         </group>
     </open-files>

@@ -4,11 +4,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _initialize `(v ~T0 @X0 0 ef ]
 "22 PID.h
 [v _PIDEnableFlag `uc ~T0 @X0 0 e ]
-"13144 /opt/microchip/xc8/v1.34/include/pic18f8722.h
-[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
-"13138
-[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"13593
+"23
+[v _TMR0Flag `uc ~T0 @X0 0 e ]
+"13593 /opt/microchip/xc8/v1.34/include/pic18f8722.h
 [s S711 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S711 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
 "13603
@@ -28,6 +26,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S710 . . . . . . ]
 "13639
 [v _INTCONbits `VS710 ~T0 @X0 0 e@4082 ]
+"28 PID.h
+[v _CurrentAngle `d ~T0 @X0 0 e ]
+"33 ResolverToDigital.h
+[v _RTD2Angle `(d ~T0 @X0 0 ef1`ui ]
+"31
+[v _ReadRTDpos `(ui ~T0 @X0 0 ef ]
+"36 PID.h
+[v _calculatePID `(v ~T0 @X0 0 ef2`d`d ]
+"27
+[v _SetAngle `d ~T0 @X0 0 e ]
+"27 MotorControl.h
+[v _ImplementPIDMotion `(v ~T0 @X0 0 ef1`i ]
+"33 PID.h
+[v _motorInput `i ~T0 @X0 0 e ]
+"22 SerComm.h
+[v _SerTxStr `(v ~T0 @X0 0 ef1`*uc ]
+"26
+[v _breakDouble `(v ~T0 @X0 0 ef1`d ]
+"13144 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
+"13138
+[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
 "13063
 [s S695 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S695 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
@@ -41,13 +61,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _T0CONbits `VS694 ~T0 @X0 0 e@4053 ]
 "30 ResolverToDigital.h
 [v _RTDInit `(v ~T0 @X0 0 ef ]
-"34 PID.h
+"35 PID.h
 [v _PIDInit `(v ~T0 @X0 0 ef ]
 "24 MotorControl.h
 [v _MotorDriverInit `(v ~T0 @X0 0 ef ]
 "20 SerComm.h
 [v _SerInit `(v ~T0 @X0 0 ef ]
-"40 PIDLoop.c
+"57 PIDLoop.c
 [v _lcdInit `(i ~T0 @X0 0 ef ]
 "12551 /opt/microchip/xc8/v1.34/include/pic18f8722.h
 [s S671 :1 `uc 1 ]
@@ -75,7 +95,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S670 . . . . . . . . ]
 "12588
 [v _RCONbits `VS670 ~T0 @X0 0 e@4048 ]
-"36 PID.h
+"37 PID.h
 [v _TMR0Int `(v ~T0 @X0 0 ef ]
 "7828 /opt/microchip/xc8/v1.34/include/pic18f8722.h
 [s S379 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -88,8 +108,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S378 . . . ]
 "7845
 [v _PIR1bits `VS378 ~T0 @X0 0 e@3998 ]
+"25 MotorControl.h
+[v _KillMotors `(v ~T0 @X0 0 ef ]
 "45 KeyValue.h
 [v _RCInt `(v ~T0 @X0 0 ef ]
+"26 MotorControl.h
+[v _StartMotors `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f8722.h: 49: extern volatile unsigned char SSP2CON2 @ 0xF62;
@@ -6524,19 +6548,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
 [; ;PID.h: 22: extern unsigned char PIDEnableFlag;
-[; ;PID.h: 23: extern double Ki;
-[; ;PID.h: 24: extern double Kp;
-[; ;PID.h: 25: extern double Kd;
-[; ;PID.h: 26: extern double SetAngle;
-[; ;PID.h: 27: extern double CurrentAngle;
-[; ;PID.h: 28: extern double error;
-[; ;PID.h: 29: extern double prevErr;
-[; ;PID.h: 30: extern double intErr;
-[; ;PID.h: 31: extern double StartAngle;
-[; ;PID.h: 32: extern int motorInput;
-[; ;PID.h: 34: void PIDInit(void);
-[; ;PID.h: 35: void calculatePID(double, double);
-[; ;PID.h: 36: void TMR0Int(void);
+[; ;PID.h: 23: extern unsigned char TMR0Flag;
+[; ;PID.h: 24: extern double Ki;
+[; ;PID.h: 25: extern double Kp;
+[; ;PID.h: 26: extern double Kd;
+[; ;PID.h: 27: extern double SetAngle;
+[; ;PID.h: 28: extern double CurrentAngle;
+[; ;PID.h: 29: extern double error;
+[; ;PID.h: 30: extern double prevErr;
+[; ;PID.h: 31: extern double intErr;
+[; ;PID.h: 32: extern double StartAngle;
+[; ;PID.h: 33: extern int motorInput;
+[; ;PID.h: 35: void PIDInit(void);
+[; ;PID.h: 36: void calculatePID(double, double);
+[; ;PID.h: 37: void TMR0Int(void);
 [; ;ResolverToDigital.h: 30: void RTDInit(void);
 [; ;ResolverToDigital.h: 31: unsigned int ReadRTDpos(void);
 [; ;ResolverToDigital.h: 32: unsigned int ReadRTDvel(void);
@@ -6551,8 +6576,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MotorControl.h: 22: extern unsigned char PIDEnableFlag;
 [; ;MotorControl.h: 24: void MotorDriverInit(void);
 [; ;MotorControl.h: 25: void KillMotors(void);
-[; ;MotorControl.h: 26: void ImplementPIDMotion(int);
-[; ;MotorControl.h: 27: void ImplementJSMotion(int);
+[; ;MotorControl.h: 26: void StartMotors(void);
+[; ;MotorControl.h: 27: void ImplementPIDMotion(int);
+[; ;MotorControl.h: 28: void ImplementJSMotion(int);
 [; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
 [; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
 [; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
@@ -6602,7 +6628,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SerComm.h: 22: void SerTxStr(unsigned char*);
 [; ;SerComm.h: 23: unsigned char SerRx(void);
 [; ;SerComm.h: 24: void SerRxStr(unsigned char*);
-[; ;SerComm.h: 25: void breakDouble(double);
+[; ;SerComm.h: 25: void SerNL(void);
+[; ;SerComm.h: 26: void breakDouble(double);
 [; ;KeyValue.h: 29: extern double Kp;
 [; ;KeyValue.h: 30: extern double Ki;
 [; ;KeyValue.h: 31: extern double Kd;
@@ -6645,121 +6672,177 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;PIDLoop.c: 21: {
 "21
 {
-[; ;PIDLoop.c: 22: if (PIDEnableFlag == 3)
-"22
-[e $ ! == -> _PIDEnableFlag `i -> 3 `i 766  ]
-[; ;PIDLoop.c: 23: {
+[; ;PIDLoop.c: 23: if (PIDEnableFlag == 1 && TMR0Flag == 1)
 "23
-{
-[; ;PIDLoop.c: 24: TMR0H = 0xDB;
+[e $ ! && == -> _PIDEnableFlag `i -> 1 `i == -> _TMR0Flag `i -> 1 `i 766  ]
+[; ;PIDLoop.c: 24: {
 "24
-[e = _TMR0H -> -> 219 `i `uc ]
-[; ;PIDLoop.c: 25: TMR0L = 0x60;
+{
+[; ;PIDLoop.c: 25: INTCONbits.GIE = 0;
 "25
-[e = _TMR0L -> -> 96 `i `uc ]
-[; ;PIDLoop.c: 26: INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;PIDLoop.c: 26: CurrentAngle = RTD2Angle(ReadRTDpos());
 "26
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 27: T0CONbits.TMR0ON = 1;
+[e = _CurrentAngle ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
+[; ;PIDLoop.c: 27: calculatePID(CurrentAngle, SetAngle);
 "27
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[e ( _calculatePID (2 , _CurrentAngle _SetAngle ]
+[; ;PIDLoop.c: 28: ImplementPIDMotion(motorInput);
 "28
-}
-[; ;PIDLoop.c: 28: }
-[e $U 767  ]
+[e ( _ImplementPIDMotion (1 _motorInput ]
+[; ;PIDLoop.c: 29: TMR0Flag = 0;
 "29
-[e :U 766 ]
-[; ;PIDLoop.c: 29: else if (PIDEnableFlag == 0)
-[e $ ! == -> _PIDEnableFlag `i -> 0 `i 768  ]
-[; ;PIDLoop.c: 30: PIDEnableFlag = 0;
+[e = _TMR0Flag -> -> 0 `i `uc ]
+[; ;PIDLoop.c: 30: INTCONbits.GIE = 1;
 "30
-[e = _PIDEnableFlag -> -> 0 `i `uc ]
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;PIDLoop.c: 32: SerTxStr("Current Angle: ");
+"32
+[e ( _SerTxStr (1 -> :s 1C `*uc ]
+[; ;PIDLoop.c: 33: breakDouble(CurrentAngle);
+"33
+[e ( _breakDouble (1 _CurrentAngle ]
+"34
+}
+[; ;PIDLoop.c: 34: }
+[e $U 767  ]
+"36
+[e :U 766 ]
+[; ;PIDLoop.c: 36: else if (PIDEnableFlag == 3)
+[e $ ! == -> _PIDEnableFlag `i -> 3 `i 768  ]
+[; ;PIDLoop.c: 37: {
+"37
+{
+[; ;PIDLoop.c: 38: INTCONbits.GIE = 0;
+"38
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;PIDLoop.c: 39: TMR0H = 0xDB;
+"39
+[e = _TMR0H -> -> 219 `i `uc ]
+[; ;PIDLoop.c: 40: TMR0L = 0x60;
+"40
+[e = _TMR0L -> -> 96 `i `uc ]
+[; ;PIDLoop.c: 41: CurrentAngle = RTD2Angle(ReadRTDpos());
+"41
+[e = _CurrentAngle ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
+[; ;PIDLoop.c: 42: calculatePID(CurrentAngle, SetAngle);
+"42
+[e ( _calculatePID (2 , _CurrentAngle _SetAngle ]
+[; ;PIDLoop.c: 43: ImplementPIDMotion(motorInput);
+"43
+[e ( _ImplementPIDMotion (1 _motorInput ]
+[; ;PIDLoop.c: 44: INTCONbits.GIE = 1;
+"44
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;PIDLoop.c: 45: INTCONbits.TMR0IE = 1;
+"45
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;PIDLoop.c: 46: T0CONbits.TMR0ON = 1;
+"46
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"47
+}
 [e :U 768 ]
-"31
+"48
 [e :U 767 ]
 }
 [e :U 763 ]
 "20
 [e $U 764  ]
 [e :U 765 ]
-[; ;PIDLoop.c: 31: }
-[; ;PIDLoop.c: 32: }
-"32
+[; ;PIDLoop.c: 47: }
+[; ;PIDLoop.c: 48: }
+[; ;PIDLoop.c: 49: }
+"49
 [e :UE 762 ]
 }
-"34
+"51
 [v _initialize `(v ~T0 @X0 1 ef ]
-"35
+"52
 {
-[; ;PIDLoop.c: 34: void initialize(void)
-[; ;PIDLoop.c: 35: {
+[; ;PIDLoop.c: 51: void initialize(void)
+[; ;PIDLoop.c: 52: {
 [e :U _initialize ]
 [f ]
-[; ;PIDLoop.c: 36: RTDInit();
-"36
+[; ;PIDLoop.c: 53: RTDInit();
+"53
 [e ( _RTDInit ..  ]
-[; ;PIDLoop.c: 37: PIDInit();
-"37
+[; ;PIDLoop.c: 54: PIDInit();
+"54
 [e ( _PIDInit ..  ]
-[; ;PIDLoop.c: 38: MotorDriverInit();
-"38
+[; ;PIDLoop.c: 55: MotorDriverInit();
+"55
 [e ( _MotorDriverInit ..  ]
-[; ;PIDLoop.c: 39: SerInit();
-"39
+[; ;PIDLoop.c: 56: SerInit();
+"56
 [e ( _SerInit ..  ]
-[; ;PIDLoop.c: 40: lcdInit();
-"40
+[; ;PIDLoop.c: 57: lcdInit();
+"57
 [e ( _lcdInit ..  ]
-[; ;PIDLoop.c: 42: INTCONbits.GIE = 1;
-"42
+[; ;PIDLoop.c: 59: INTCONbits.GIE = 1;
+"59
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 43: INTCONbits.PEIE = 1;
-"43
+[; ;PIDLoop.c: 60: INTCONbits.PEIE = 1;
+"60
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 44: RCONbits.IPEN = 1;
-"44
+[; ;PIDLoop.c: 61: RCONbits.IPEN = 1;
+"61
 [e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;PIDLoop.c: 45: }
-"45
+[; ;PIDLoop.c: 62: }
+"62
 [e :UE 769 ]
 }
-[v F7412 `(v ~T0 @X0 1 tf ]
-"47
-[v _hISR `IHF7412 ~T0 @X0 1 e ]
-"48
+[v F7417 `(v ~T0 @X0 1 tf ]
+"64
+[v _hISR `IHF7417 ~T0 @X0 1 e ]
+"65
 {
-[; ;PIDLoop.c: 47: void interrupt high_priority hISR(void)
-[; ;PIDLoop.c: 48: {
+[; ;PIDLoop.c: 64: void interrupt high_priority hISR(void)
+[; ;PIDLoop.c: 65: {
 [e :U _hISR ]
 [f ]
-[; ;PIDLoop.c: 49: if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1) && ((PIDEnableFlag == 1) || (PIDEnableFlag == 3)))
-"49
+[; ;PIDLoop.c: 66: if ((INTCONbits.TMR0IF == 1) && (INTCONbits.TMR0IE == 1) && ((PIDEnableFlag == 1) || (PIDEnableFlag == 3)))
+"66
 [e $ ! && && == -> . . _INTCONbits 0 2 `i -> 1 `i == -> . . _INTCONbits 0 5 `i -> 1 `i || == -> _PIDEnableFlag `i -> 1 `i == -> _PIDEnableFlag `i -> 3 `i 771  ]
-[; ;PIDLoop.c: 50: TMR0Int();
-"50
+[; ;PIDLoop.c: 67: TMR0Int();
+"67
 [e ( _TMR0Int ..  ]
 [e :U 771 ]
-[; ;PIDLoop.c: 51: }
-"51
+[; ;PIDLoop.c: 68: }
+"68
 [e :UE 770 ]
 }
-[v F7415 `(v ~T0 @X0 1 tf ]
-"53
-[v _lISR `ILF7415 ~T0 @X0 1 e ]
-"54
+[v F7420 `(v ~T0 @X0 1 tf ]
+"70
+[v _lISR `ILF7420 ~T0 @X0 1 e ]
+"71
 {
-[; ;PIDLoop.c: 53: void interrupt low_priority lISR(void)
-[; ;PIDLoop.c: 54: {
+[; ;PIDLoop.c: 70: void interrupt low_priority lISR(void)
+[; ;PIDLoop.c: 71: {
 [e :U _lISR ]
 [f ]
-[; ;PIDLoop.c: 55: if (PIR1bits.RC1IF == 1)
-"55
+[; ;PIDLoop.c: 72: if (PIR1bits.RC1IF == 1)
+"72
 [e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 773  ]
-[; ;PIDLoop.c: 56: RCInt();
-"56
+[; ;PIDLoop.c: 73: {
+"73
+{
+[; ;PIDLoop.c: 74: KillMotors();
+"74
+[e ( _KillMotors ..  ]
+[; ;PIDLoop.c: 75: RCInt();
+"75
 [e ( _RCInt ..  ]
+[; ;PIDLoop.c: 76: StartMotors();
+"76
+[e ( _StartMotors ..  ]
+"77
+}
 [e :U 773 ]
-[; ;PIDLoop.c: 57: }
-"57
+[; ;PIDLoop.c: 77: }
+[; ;PIDLoop.c: 79: }
+"79
 [e :UE 772 ]
 }
+[a 1C 67 117 114 114 101 110 116 32 65 110 103 108 101 58 32 0 ]
+

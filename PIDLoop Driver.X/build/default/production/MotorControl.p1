@@ -6528,8 +6528,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MotorControl.h: 22: extern unsigned char PIDEnableFlag;
 [; ;MotorControl.h: 24: void MotorDriverInit(void);
 [; ;MotorControl.h: 25: void KillMotors(void);
-[; ;MotorControl.h: 26: void ImplementPIDMotion(int);
-[; ;MotorControl.h: 27: void ImplementJSMotion(int);
+[; ;MotorControl.h: 26: void StartMotors(void);
+[; ;MotorControl.h: 27: void ImplementPIDMotion(int);
+[; ;MotorControl.h: 28: void ImplementJSMotion(int);
 "3 MotorControl.c
 [v _PIDEnableFlag `uc ~T0 @X0 1 e ]
 [; ;MotorControl.c: 3: unsigned char PIDEnableFlag;
@@ -6594,118 +6595,152 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 763 ]
 }
 "29
-[v _ImplementPIDMotion `(v ~T0 @X0 1 ef1`i ]
+[v _StartMotors `(v ~T0 @X0 1 ef ]
 "30
 {
-[; ;MotorControl.c: 29: void ImplementPIDMotion(int PIDValue)
+[; ;MotorControl.c: 29: void StartMotors(void)
 [; ;MotorControl.c: 30: {
-[e :U _ImplementPIDMotion ]
-"29
-[v _PIDValue `i ~T0 @X0 1 r1 ]
-"30
+[e :U _StartMotors ]
 [f ]
-[; ;MotorControl.c: 31: if (PIDValue < 0)
+[; ;MotorControl.c: 31: PORTAbits.RA4 = 0;
 "31
-[e $ ! < _PIDValue -> 0 `i 765  ]
-[; ;MotorControl.c: 32: CCP3CONbits.P3M1 = 1;
+[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+[; ;MotorControl.c: 32: CCP3CON = CCP3CON = 0x4C;
 "32
-[e = . . _CCP3CONbits 1 7 -> -> 1 `i `uc ]
-[e $U 766  ]
+[e = _CCP3CON = _CCP3CON -> -> 76 `i `uc ]
+[; ;MotorControl.c: 33: }
 "33
-[e :U 765 ]
-[; ;MotorControl.c: 33: else if (PIDValue > 0)
-[e $ ! > _PIDValue -> 0 `i 767  ]
-[; ;MotorControl.c: 34: CCP3CONbits.P3M1 = 0;
-"34
-[e = . . _CCP3CONbits 1 7 -> -> 0 `i `uc ]
-[e :U 767 ]
-"36
-[e :U 766 ]
-[; ;MotorControl.c: 36: PIDValue = abs(PIDValue);
-[e = _PIDValue ( _abs (1 _PIDValue ]
-[; ;MotorControl.c: 37: CCPR3L = (PIDValue >> 2) & 0xFF;
-"37
-[e = _CCPR3L -> & >> _PIDValue -> 2 `i -> 255 `i `uc ]
-[; ;MotorControl.c: 38: CCP3CONbits.DC3B = (PIDValue & 0x03);
-"38
-[e = . . _CCP3CONbits 0 1 -> & _PIDValue -> 3 `i `uc ]
-[; ;MotorControl.c: 40: }
-"40
 [e :UE 764 ]
 }
-"42
-[v _ImplementJSMotion `(v ~T0 @X0 1 ef1`i ]
-"43
+"35
+[v _ImplementPIDMotion `(v ~T0 @X0 1 ef1`i ]
+"36
 {
-[; ;MotorControl.c: 42: void ImplementJSMotion(int JoystickValue)
-[; ;MotorControl.c: 43: {
-[e :U _ImplementJSMotion ]
-"42
-[v _JoystickValue `i ~T0 @X0 1 r1 ]
-"43
+[; ;MotorControl.c: 35: void ImplementPIDMotion(int PIDValue)
+[; ;MotorControl.c: 36: {
+[e :U _ImplementPIDMotion ]
+"35
+[v _PIDValue `i ~T0 @X0 1 r1 ]
+"36
 [f ]
-"44
-[v _CCPinput `ui ~T0 @X0 1 a ]
-[; ;MotorControl.c: 44: unsigned int CCPinput;
-[; ;MotorControl.c: 45: PIDEnableFlag = 0;
-"45
-[e = _PIDEnableFlag -> -> 0 `i `uc ]
-[; ;MotorControl.c: 46: if (JoystickValue < -100)
-"46
-[e $ ! < _JoystickValue -U -> 100 `i 769  ]
-[; ;MotorControl.c: 47: {
-"47
-{
-[; ;MotorControl.c: 48: CCP3CONbits.P3M1 = 1;
-"48
+[; ;MotorControl.c: 37: if (PIDValue > 255)
+"37
+[e $ ! > _PIDValue -> 255 `i 766  ]
+[; ;MotorControl.c: 38: PIDValue = 255;
+"38
+[e = _PIDValue -> 255 `i ]
+[e $U 767  ]
+"39
+[e :U 766 ]
+[; ;MotorControl.c: 39: else if (PIDValue < -255)
+[e $ ! < _PIDValue -U -> 255 `i 768  ]
+[; ;MotorControl.c: 40: PIDValue = -255;
+"40
+[e = _PIDValue -U -> 255 `i ]
+[e :U 768 ]
+"42
+[e :U 767 ]
+[; ;MotorControl.c: 42: if (PIDValue < 0)
+[e $ ! < _PIDValue -> 0 `i 769  ]
+[; ;MotorControl.c: 43: CCP3CONbits.P3M1 = 1;
+"43
 [e = . . _CCP3CONbits 1 7 -> -> 1 `i `uc ]
-"49
-}
-[; ;MotorControl.c: 49: }
 [e $U 770  ]
-"50
+"44
 [e :U 769 ]
-[; ;MotorControl.c: 50: else if (JoystickValue > 100)
-[e $ ! > _JoystickValue -> 100 `i 771  ]
-[; ;MotorControl.c: 51: {
-"51
-{
-[; ;MotorControl.c: 52: CCP3CONbits.P3M1 = 0;
-"52
+[; ;MotorControl.c: 44: else if (PIDValue > 0)
+[e $ ! > _PIDValue -> 0 `i 771  ]
+[; ;MotorControl.c: 45: CCP3CONbits.P3M1 = 0;
+"45
 [e = . . _CCP3CONbits 1 7 -> -> 0 `i `uc ]
-"53
-}
-[; ;MotorControl.c: 53: }
-[e $U 772  ]
-"54
 [e :U 771 ]
-[; ;MotorControl.c: 54: else if (JoystickValue <= 100 && JoystickValue >= -100)
-[e $ ! && <= _JoystickValue -> 100 `i >= _JoystickValue -U -> 100 `i 773  ]
-[; ;MotorControl.c: 55: {
-"55
-{
-[; ;MotorControl.c: 56: JoystickValue = 0;
-"56
-[e = _JoystickValue -> 0 `i ]
-"57
-}
-[e :U 773 ]
-"59
-[e :U 772 ]
+"47
 [e :U 770 ]
-[; ;MotorControl.c: 57: }
-[; ;MotorControl.c: 59: JoystickValue = abs(JoystickValue);
-[e = _JoystickValue ( _abs (1 _JoystickValue ]
-[; ;MotorControl.c: 60: CCPinput = JoystickValue * 2;
+[; ;MotorControl.c: 47: PIDValue = abs(PIDValue);
+[e = _PIDValue ( _abs (1 _PIDValue ]
+[; ;MotorControl.c: 48: CCPR3L = (PIDValue >> 2) & 0xFF;
+"48
+[e = _CCPR3L -> & >> _PIDValue -> 2 `i -> 255 `i `uc ]
+[; ;MotorControl.c: 49: CCP3CONbits.DC3B = (PIDValue & 0x03);
+"49
+[e = . . _CCP3CONbits 0 1 -> & _PIDValue -> 3 `i `uc ]
+[; ;MotorControl.c: 51: }
+"51
+[e :UE 765 ]
+}
+"53
+[v _ImplementJSMotion `(v ~T0 @X0 1 ef1`i ]
+"54
+{
+[; ;MotorControl.c: 53: void ImplementJSMotion(int JoystickValue)
+[; ;MotorControl.c: 54: {
+[e :U _ImplementJSMotion ]
+"53
+[v _JoystickValue `i ~T0 @X0 1 r1 ]
+"54
+[f ]
+"55
+[v _CCPinput `ui ~T0 @X0 1 a ]
+[; ;MotorControl.c: 55: unsigned int CCPinput;
+[; ;MotorControl.c: 56: PIDEnableFlag = 0;
+"56
+[e = _PIDEnableFlag -> -> 0 `i `uc ]
+[; ;MotorControl.c: 57: if (JoystickValue < -100)
+"57
+[e $ ! < _JoystickValue -U -> 100 `i 773  ]
+[; ;MotorControl.c: 58: {
+"58
+{
+[; ;MotorControl.c: 59: CCP3CONbits.P3M1 = 1;
+"59
+[e = . . _CCP3CONbits 1 7 -> -> 1 `i `uc ]
 "60
-[e = _CCPinput -> * _JoystickValue -> 2 `i `ui ]
-[; ;MotorControl.c: 61: CCPR3L = (CCPinput >> 2) & 0xFF;
+}
+[; ;MotorControl.c: 60: }
+[e $U 774  ]
 "61
-[e = _CCPR3L -> & >> _CCPinput -> 2 `i -> -> 255 `i `ui `uc ]
-[; ;MotorControl.c: 63: CCP3CONbits.DC3B = (CCPinput & 0x03);
+[e :U 773 ]
+[; ;MotorControl.c: 61: else if (JoystickValue > 100)
+[e $ ! > _JoystickValue -> 100 `i 775  ]
+[; ;MotorControl.c: 62: {
+"62
+{
+[; ;MotorControl.c: 63: CCP3CONbits.P3M1 = 0;
 "63
-[e = . . _CCP3CONbits 0 1 -> & _CCPinput -> -> 3 `i `ui `uc ]
-[; ;MotorControl.c: 64: }
+[e = . . _CCP3CONbits 1 7 -> -> 0 `i `uc ]
 "64
-[e :UE 768 ]
+}
+[; ;MotorControl.c: 64: }
+[e $U 776  ]
+"65
+[e :U 775 ]
+[; ;MotorControl.c: 65: else if (JoystickValue <= 100 && JoystickValue >= -100)
+[e $ ! && <= _JoystickValue -> 100 `i >= _JoystickValue -U -> 100 `i 777  ]
+[; ;MotorControl.c: 66: {
+"66
+{
+[; ;MotorControl.c: 67: JoystickValue = 0;
+"67
+[e = _JoystickValue -> 0 `i ]
+"68
+}
+[e :U 777 ]
+"70
+[e :U 776 ]
+[e :U 774 ]
+[; ;MotorControl.c: 68: }
+[; ;MotorControl.c: 70: JoystickValue = abs(JoystickValue);
+[e = _JoystickValue ( _abs (1 _JoystickValue ]
+[; ;MotorControl.c: 71: CCPinput = JoystickValue * 2;
+"71
+[e = _CCPinput -> * _JoystickValue -> 2 `i `ui ]
+[; ;MotorControl.c: 72: CCPR3L = (CCPinput >> 2) & 0xFF;
+"72
+[e = _CCPR3L -> & >> _CCPinput -> 2 `i -> -> 255 `i `ui `uc ]
+[; ;MotorControl.c: 74: CCP3CONbits.DC3B = (CCPinput & 0x03);
+"74
+[e = . . _CCP3CONbits 0 1 -> & _CCPinput -> -> 3 `i `ui `uc ]
+[; ;MotorControl.c: 75: }
+"75
+[e :UE 772 ]
 }

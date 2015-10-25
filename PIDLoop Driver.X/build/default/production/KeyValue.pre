@@ -8415,6 +8415,7 @@ void SerTx(unsigned char);
 void SerTxStr(unsigned char*);
 unsigned char SerRx(void);
 void SerRxStr(unsigned char*);
+void SerNL(void);
 void breakDouble(double);
 
 # 29 "KeyValue.h"

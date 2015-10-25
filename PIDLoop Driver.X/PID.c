@@ -13,7 +13,6 @@ double CurrentAngle;
 double error;
 double prevErr;
 double intErr;
-double StartAngle;
 int motorInput;
 double loopTime = 0.03;
 
@@ -38,7 +37,6 @@ void calculatePID(double angle, double setpoint)
     double derErr; //Generate derivative variable;
     if (PIDEnableFlag == 3) //Check if this is a new angle sent by the master;
     {
-        StartAngle = angle; //If this is a new angle, note that this is the StartAngle, or angle upon which our error will be repeatedly calculated for consistency;
         error = 0; //Because we're starting from a newly commanded angle, all errors are essentially 0 until evaluated;
         prevErr = 0;
         intErr = 0;

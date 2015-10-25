@@ -8362,6 +8362,7 @@ extern char * ftoa(float f, int * status);
 
 # 22 "PID.h"
 extern unsigned char PIDEnableFlag;
+extern unsigned char TMR0Flag;
 extern double Ki;
 extern double Kp;
 extern double Kd;
@@ -8498,11 +8499,9 @@ lcdGoTo(0x40);
 tempDub = dubs * 100;
 temp1 = tempDub / 10000;
 temp2 = tempDub % 10000;
-
 lcdChar(temp1 + 0x30);
 temp1 = temp2 / 1000;
 temp2 = temp2 % 1000;
-
 lcdChar(temp1 + 0x30);
 temp1 = temp2 / 100;
 temp2 = temp2 % 100;
@@ -8539,11 +8538,13 @@ extern unsigned char PIDEnableFlag;
 
 void MotorDriverInit(void);
 void KillMotors(void);
+void StartMotors(void);
 void ImplementPIDMotion(int);
 void ImplementJSMotion(int);
 
 # 6 "PID.c"
 unsigned char PIDEnableFlag;
+unsigned char TMR0Flag = 0;
 double Ki;
 double Kp;
 double Kd;
@@ -8552,7 +8553,6 @@ double CurrentAngle;
 double error;
 double prevErr;
 double intErr;
-double StartAngle;
 int motorInput;
 double loopTime = 0.03;
 
@@ -8571,12 +8571,12 @@ TMR0L = 0x60;
 INTCON2bits.TMR0IP = 1;
 
 }
+
 void calculatePID(double angle, double setpoint)
 {
 double derErr;
-if(PIDEnableFlag == 3)
+if (PIDEnableFlag == 3)
 {
-StartAngle = angle;
 error = 0;
 prevErr = 0;
 intErr = 0;
@@ -8584,32 +8584,27 @@ PIDEnableFlag = 1;
 }
 
 error = setpoint - angle;
-if(error > 180)
+if (error > 180)
 error -= 360;
-else if(error < -180)
+else if (error < -180)
 error += 360;
 
-intErr += error;
 derErr = error - prevErr;
+intErr += error;
+if (intErr > 2000)
+intErr = 2000;
 
-motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr/loopTime));
-
-if(motorInput > 255)
-motorInput = 255;
-else if (motorInput < -255)
-motorInput = -255;
+motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
 
 prevErr = error;
 }
 
 void TMR0Int(void)
 {
-CurrentAngle = RTD2Angle(ReadRTDpos());
-calculatePID(CurrentAngle, SetAngle);
-ImplementPIDMotion(motorInput);
 TMR0H = 0xDB;
 TMR0L = 0x60;
-LCDBreakDouble(CurrentAngle);
 
+
+TMR0Flag = 1;
 INTCONbits.TMR0IF = 0;
 }

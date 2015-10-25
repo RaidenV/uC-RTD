@@ -26,6 +26,12 @@ void KillMotors(void)
     CCP3CON = CCP3CON & 0xF0; //Shut the PWM module down;
 }
 
+void StartMotors(void)
+{
+    MOTORFAILLED = 0;
+    CCP3CON = CCP3CON = 0x4C; //Set Full-bridge mode, all outputs active high;
+}
+
 void ImplementPIDMotion(int PIDValue)
 {
     if (PIDValue > 255) //Set the limits so that input is not greater than the possible motor input;

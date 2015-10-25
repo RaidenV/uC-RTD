@@ -23,6 +23,7 @@ extern "C" {
 
     void MotorDriverInit(void);
     void KillMotors(void);
+    void StartMotors(void);
     void ImplementPIDMotion(int);
     void ImplementJSMotion(int);
 
