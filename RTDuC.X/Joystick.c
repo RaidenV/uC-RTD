@@ -1,7 +1,7 @@
 #include "Joystick.h"
 
-unsigned char PIDEnableFlag = 0;
-unsigned char JSEnableFlag = 0;
+unsigned char PIDEnableFlag;
+unsigned char JSEnableFlag;
 
 void JoystickInit(void)
 {

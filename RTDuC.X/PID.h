@@ -17,11 +17,11 @@ extern "C" {
 #include "ResolverToDigital.h"
 #include "MotorControl.h"
 
-#define loopTime 0.03
 #define timerHigh 0xDB
 #define timerLow 0x60
 
-    extern unsigned char PIDEnableFlag;    
+    extern unsigned char PIDEnableFlag;  
+    extern unsigned char TMR0Flag;
     extern double Ki;
     extern double Kp;
     extern double Kd;
@@ -31,6 +31,7 @@ extern "C" {
     extern double prevErr;
     extern double intErr;
     extern double StartAngle;
+    extern double loopTime;
     extern int motorInput;
 
     void PIDInit(void);

@@ -16,18 +16,16 @@ extern "C" {
 #include <stdlib.h>
 
 #define MOTORFAILLED PORTAbits.RA4
-#define MotorFailPin PORT
-#define DeadbandHigh 5
-#define DeadbandLow -5
 
     extern unsigned char PIDEnableFlag;
-    unsigned char MotorFailFlag;
+    extern char DeadbandLow;
+    extern unsigned char DeadbandHigh;
 
     void MotorDriverInit(void);
     void KillMotors(void);
+    void StartMotors(void);
     void ImplementPIDMotion(int);
     void ImplementJSMotion(int);
-    void INT0Int(void);
 
 
 #ifdef	__cplusplus

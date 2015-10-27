@@ -8333,6 +8333,7 @@ double Kd;
 void SPIInit(void)
 {
 TRISCbits.RC6 = 0;
+PORTCbits.RC6 = 1;
 TRISDbits.RD7 = 1;
 OpenSPI1(0b00000100, 0b00000000, 0b00000000);
 PIE1bits.SSP1IE = 1;
@@ -8342,7 +8343,7 @@ IPR1bits.SSP1IP = 0;
 void SPIInt(void)
 {
 Command = SSP2BUF;
-PORTCbits.RC6 = 0;
+PORTCbits.RC6 = 1;
 PIR1bits.SSP1IF = 0;
 PIE1bits.SSP1IE = 0;
 SPIflag = 1;

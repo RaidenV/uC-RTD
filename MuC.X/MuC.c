@@ -10,18 +10,16 @@
 #pragma config FCMEN = OFF
 
 void initialize(void);
-void IntInit(void);
+void InitializeInterrupts(void);
 void TMR0Init(void);
 void interrupt high_priority hISR(void);
 void interrupt low_priority lISR(void);
 void TMR0Int(void);
 
+/*The following timer setting is controversial.  Is it necessary to have 1/4 second interrupts?*/
 unsigned char timerHigh = 0x26; //Set the timer to go off every quarter second with a prescaler of 256, this should equal: (0.25)/(1/10,000,000 * 256) = 9766, or 0x2626 in hex;
 unsigned char timerLow = 0x26;
-unsigned char timer0Flag = 0;
-
-double Slave1Angle;
-double Slave2Angle;
+unsigned char TMR0Flag = 0;
 
 void main(void)
 {
@@ -162,7 +160,7 @@ void main(void)
             INTCONbits.GIE = 1; //Turn interrupts back on after communication with slave;
         }
 
-        if (timer0Flag == 1)
+        if (TMR0Flag == 1)
         {
             INTCONbits.GIE = 0; //Disable interrupts for transmission;
             while (SlaveReady1); //Wait for the slave to be ready;
@@ -190,7 +188,7 @@ void main(void)
             for (x = 0; x != 4; x++)
                 DoubleSPIM[x] = '\0'; //Clear the characters in the array;
 
-            SerTxStr("Azimuth = ");
+            SerTxStr("Elevation = ");
             breakDouble(CurrentAngle);
             SerTxStr(" degrees");
             SerNL();
@@ -206,8 +204,8 @@ void initialize(void)
     SPIInitM(); //Initialize all modules;
     SerInit();
     EEPROMInit();
-    IntInit();
     TMR0Init();
+    InitializeInterrupts();
 
     Delay10TCYx(10); //Give a slight delay to allow for the Slaves to come up;
 
@@ -215,7 +213,7 @@ void initialize(void)
 
 }
 
-void IntInit(void)
+void InitializeInterrupts(void)
 {
     PIE2bits.OSCFIE = 1; //Enable the Oscillator Fail interrupt;
     IPR2bits.OSCFIP = 1; //High priority;
@@ -240,7 +238,7 @@ void interrupt high_priority hISR(void)
 {
     if (INTCONbits.TMR0IF == 1)
     {
-        timer0Flag = 1;
+        TMR0Flag = 1;
         TMR0H = timerHigh;
         TMR0L = timerLow;
         INTCONbits.TMR0IF = 0;

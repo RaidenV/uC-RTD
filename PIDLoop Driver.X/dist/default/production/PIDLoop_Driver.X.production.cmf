@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/cgtFdpKrF.obj
+$/tmp/cgtjRXJTI.obj
 idloc IDLOC 0 200000 200000 8 1
 reset_vec CODE 0 0 0 4 1
 end_init CODE 0 B4 B4 4 1
@@ -803,44 +803,44 @@ $dist/default/production/PIDLoop_Driver.X.production.obj
 30B2 text16 CODE >24:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
 30C6 text16 CODE >26:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
 30F0 text16 CODE >27:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
-30F2 cinit CODE >2923:/tmp/cgteGPyt5
-30F2 cinit CODE >2925:/tmp/cgteGPyt5
-30F2 cinit CODE >2928:/tmp/cgteGPyt5
-30F2 cinit CODE >3011:/tmp/cgteGPyt5
-30F6 cinit CODE >3012:/tmp/cgteGPyt5
-30F8 cinit CODE >3013:/tmp/cgteGPyt5
-30F8 cinit CODE >3014:/tmp/cgteGPyt5
-30FA cinit CODE >3015:/tmp/cgteGPyt5
-30FC cinit CODE >3016:/tmp/cgteGPyt5
-30FE cinit CODE >3019:/tmp/cgteGPyt5
-3102 cinit CODE >3020:/tmp/cgteGPyt5
-3104 cinit CODE >3021:/tmp/cgteGPyt5
-3104 cinit CODE >3022:/tmp/cgteGPyt5
-3106 cinit CODE >3023:/tmp/cgteGPyt5
-3108 cinit CODE >3024:/tmp/cgteGPyt5
-310A cinit CODE >3029:/tmp/cgteGPyt5
-310C cinit CODE >3030:/tmp/cgteGPyt5
-310E cinit CODE >3031:/tmp/cgteGPyt5
-3110 cinit CODE >3032:/tmp/cgteGPyt5
-3112 cinit CODE >3033:/tmp/cgteGPyt5
-3114 cinit CODE >3034:/tmp/cgteGPyt5
-3116 cinit CODE >3035:/tmp/cgteGPyt5
-3118 cinit CODE >3036:/tmp/cgteGPyt5
-311C cinit CODE >3037:/tmp/cgteGPyt5
-311E cinit CODE >3038:/tmp/cgteGPyt5
-3122 cinit CODE >3039:/tmp/cgteGPyt5
-3124 cinit CODE >3040:/tmp/cgteGPyt5
-3128 cinit CODE >3044:/tmp/cgteGPyt5
-312A cinit CODE >3045:/tmp/cgteGPyt5
-312C cinit CODE >3046:/tmp/cgteGPyt5
-312E cinit CODE >3047:/tmp/cgteGPyt5
-3130 cinit CODE >3048:/tmp/cgteGPyt5
-3132 cinit CODE >3049:/tmp/cgteGPyt5
-3134 cinit CODE >3050:/tmp/cgteGPyt5
-3136 cinit CODE >3051:/tmp/cgteGPyt5
-313A cinit CODE >3057:/tmp/cgteGPyt5
-313A cinit CODE >3058:/tmp/cgteGPyt5
-313C cinit CODE >3059:/tmp/cgteGPyt5
+30F2 cinit CODE >2923:/tmp/cgto4eyyH
+30F2 cinit CODE >2925:/tmp/cgto4eyyH
+30F2 cinit CODE >2928:/tmp/cgto4eyyH
+30F2 cinit CODE >3011:/tmp/cgto4eyyH
+30F6 cinit CODE >3012:/tmp/cgto4eyyH
+30F8 cinit CODE >3013:/tmp/cgto4eyyH
+30F8 cinit CODE >3014:/tmp/cgto4eyyH
+30FA cinit CODE >3015:/tmp/cgto4eyyH
+30FC cinit CODE >3016:/tmp/cgto4eyyH
+30FE cinit CODE >3019:/tmp/cgto4eyyH
+3102 cinit CODE >3020:/tmp/cgto4eyyH
+3104 cinit CODE >3021:/tmp/cgto4eyyH
+3104 cinit CODE >3022:/tmp/cgto4eyyH
+3106 cinit CODE >3023:/tmp/cgto4eyyH
+3108 cinit CODE >3024:/tmp/cgto4eyyH
+310A cinit CODE >3029:/tmp/cgto4eyyH
+310C cinit CODE >3030:/tmp/cgto4eyyH
+310E cinit CODE >3031:/tmp/cgto4eyyH
+3110 cinit CODE >3032:/tmp/cgto4eyyH
+3112 cinit CODE >3033:/tmp/cgto4eyyH
+3114 cinit CODE >3034:/tmp/cgto4eyyH
+3116 cinit CODE >3035:/tmp/cgto4eyyH
+3118 cinit CODE >3036:/tmp/cgto4eyyH
+311C cinit CODE >3037:/tmp/cgto4eyyH
+311E cinit CODE >3038:/tmp/cgto4eyyH
+3122 cinit CODE >3039:/tmp/cgto4eyyH
+3124 cinit CODE >3040:/tmp/cgto4eyyH
+3128 cinit CODE >3044:/tmp/cgto4eyyH
+312A cinit CODE >3045:/tmp/cgto4eyyH
+312C cinit CODE >3046:/tmp/cgto4eyyH
+312E cinit CODE >3047:/tmp/cgto4eyyH
+3130 cinit CODE >3048:/tmp/cgto4eyyH
+3132 cinit CODE >3049:/tmp/cgto4eyyH
+3134 cinit CODE >3050:/tmp/cgto4eyyH
+3136 cinit CODE >3051:/tmp/cgto4eyyH
+313A cinit CODE >3057:/tmp/cgto4eyyH
+313A cinit CODE >3058:/tmp/cgto4eyyH
+313C cinit CODE >3059:/tmp/cgto4eyyH
 3140 text4 CODE >54:/home/raidenv/MPLABXProjects/PIDLoop Driver.X/LCD.h
 3144 text4 CODE >56:/home/raidenv/MPLABXProjects/PIDLoop Driver.X/LCD.h
 3150 text4 CODE >57:/home/raidenv/MPLABXProjects/PIDLoop Driver.X/LCD.h
@@ -1022,7 +1022,7 @@ _ReadRTDpos 2DB0 0 CODE 0 text26 dist/default/production/PIDLoop_Driver.X.produc
 _SSP1STATbits FC7 0 ABS 0 - dist/default/production/PIDLoop_Driver.X.production.obj
 ___ftdiv@exp 83 0 BANK0 1 cstackBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/PIDLoop_Driver.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtFdpKrF.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtjRXJTI.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/PIDLoop_Driver.X.production.obj
 i1___ftmul@exp 12 0 COMRAM 1 cstackCOMRAM dist/default/production/PIDLoop_Driver.X.production.obj
 _Delay10TCYx 3414 0 CODE 0 text27 dist/default/production/PIDLoop_Driver.X.production.obj
@@ -1036,14 +1036,14 @@ __size_of_RTDInit 0 0 ABS 0 - dist/default/production/PIDLoop_Driver.X.productio
 ?_abs 6E 0 BANK0 1 cstackBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
 __Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production/PIDLoop_Driver.X.production.obj
 _AZEL 59 0 COMRAM 1 dataCOMRAM dist/default/production/PIDLoop_Driver.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/cgtFdpKrF.obj
+___sp 0 0 STACK 2 stack /tmp/cgtjRXJTI.obj
 _hISR 8 0 CODE 0 intcode dist/default/production/PIDLoop_Driver.X.production.obj
 _lISR 18 0 CODE 0 intcodelo dist/default/production/PIDLoop_Driver.X.production.obj
 _main 278E 0 CODE 0 text0 dist/default/production/PIDLoop_Driver.X.production.obj
 abs@a 6E 0 BANK0 1 cstackBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
 ___ftadd@f1 94 0 BANK0 1 cstackBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
 ___ftadd@f2 97 0 BANK0 1 cstackBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
-start B4 0 CODE 0 init /tmp/cgtFdpKrF.obj
+start B4 0 CODE 0 init /tmp/cgtjRXJTI.obj
 __end_of_breakDouble 206A 0 CODE 0 text21 dist/default/production/PIDLoop_Driver.X.production.obj
 _SerInit 32F4 0 CODE 0 text8 dist/default/production/PIDLoop_Driver.X.production.obj
 __size_of___ftadd 0 0 ABS 0 - dist/default/production/PIDLoop_Driver.X.production.obj
@@ -1086,11 +1086,11 @@ __size_of_MotorDriverInit 0 0 ABS 0 - dist/default/production/PIDLoop_Driver.X.p
 keyValue@length 26 0 COMRAM 1 cstackCOMRAM dist/default/production/PIDLoop_Driver.X.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/PIDLoop_Driver.X.production.obj
 _motorInput CD 0 BANK0 1 bssBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
-__accesstop 60 0 ABS 0 - /tmp/cgtFdpKrF.obj
-intlevel0 0 0 CODE 0 text /tmp/cgtFdpKrF.obj
-intlevel1 0 0 CODE 0 text /tmp/cgtFdpKrF.obj
-intlevel2 0 0 CODE 0 text /tmp/cgtFdpKrF.obj
-intlevel3 0 0 CODE 0 text /tmp/cgtFdpKrF.obj
+__accesstop 60 0 ABS 0 - /tmp/cgtjRXJTI.obj
+intlevel0 0 0 CODE 0 text /tmp/cgtjRXJTI.obj
+intlevel1 0 0 CODE 0 text /tmp/cgtjRXJTI.obj
+intlevel2 0 0 CODE 0 text /tmp/cgtjRXJTI.obj
+intlevel3 0 0 CODE 0 text /tmp/cgtjRXJTI.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/PIDLoop_Driver.X.production.obj
 _TMR0Int 342A 0 CODE 0 text53 dist/default/production/PIDLoop_Driver.X.production.obj
 __size_of_setGPIO 0 0 ABS 0 - dist/default/production/PIDLoop_Driver.X.production.obj
@@ -1107,8 +1107,8 @@ ___ftneg@f1 6E 0 BANK0 1 cstackBANK0 dist/default/production/PIDLoop_Driver.X.pr
 i1___ftmul@cntr 16 0 COMRAM 1 cstackCOMRAM dist/default/production/PIDLoop_Driver.X.production.obj
 i1___ftmul@sign 17 0 COMRAM 1 cstackCOMRAM dist/default/production/PIDLoop_Driver.X.production.obj
 __end_of_lcdInit 304E 0 CODE 0 text2 dist/default/production/PIDLoop_Driver.X.production.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/cgtFdpKrF.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/cgtFdpKrF.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/cgtjRXJTI.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/cgtjRXJTI.obj
 __size_of___altoft 0 0 ABS 0 - dist/default/production/PIDLoop_Driver.X.production.obj
 _SerTxStr 2EEE 0 CODE 0 text9 dist/default/production/PIDLoop_Driver.X.production.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/PIDLoop_Driver.X.production.obj
@@ -1258,7 +1258,7 @@ __size_of_RTD2Angle 0 0 ABS 0 - dist/default/production/PIDLoop_Driver.X.product
 _keyValue 1082 0 CODE 0 text37 dist/default/production/PIDLoop_Driver.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/PIDLoop_Driver.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production/PIDLoop_Driver.X.production.obj
-__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/cgtFdpKrF.obj
+__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/cgtjRXJTI.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production/PIDLoop_Driver.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production/PIDLoop_Driver.X.production.obj
 ___lwtoft 3270 0 CODE 0 text29 dist/default/production/PIDLoop_Driver.X.production.obj
@@ -1511,8 +1511,8 @@ _breakDouble 1EFA 0 CODE 0 text21 dist/default/production/PIDLoop_Driver.X.produ
 ImplementPIDMotion@PIDValue 72 0 BANK0 1 cstackBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
 _CurrentAngle B5 0 BANK0 1 bssBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
 ___lwtoft@c 76 0 BANK0 1 cstackBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
-stackhi F5F 0 ABS 0 - /tmp/cgtFdpKrF.obj
-stacklo 109 0 ABS 0 - /tmp/cgtFdpKrF.obj
+stackhi F5F 0 ABS 0 - /tmp/cgtjRXJTI.obj
+stacklo 109 0 ABS 0 - /tmp/cgtjRXJTI.obj
 _received D1 0 BANK0 1 bssBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production/PIDLoop_Driver.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production/PIDLoop_Driver.X.production.obj
@@ -1615,7 +1615,7 @@ __Ltext49 0 0 ABS 0 text49 dist/default/production/PIDLoop_Driver.X.production.o
 __Ltext50 0 0 ABS 0 text50 dist/default/production/PIDLoop_Driver.X.production.obj
 __Ltext51 0 0 ABS 0 text51 dist/default/production/PIDLoop_Driver.X.production.obj
 __Ltext53 0 0 ABS 0 text53 dist/default/production/PIDLoop_Driver.X.production.obj
-__ramtop 1000 0 RAM 0 ramtop /tmp/cgtFdpKrF.obj
+__ramtop 1000 0 RAM 0 ramtop /tmp/cgtjRXJTI.obj
 __Lpowerup B4 0 CODE 0 powerup dist/default/production/PIDLoop_Driver.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/PIDLoop_Driver.X.production.obj
 _isdigit 3364 0 CODE 0 text46 dist/default/production/PIDLoop_Driver.X.production.obj
@@ -1695,7 +1695,7 @@ __Lsfr 0 0 ABS 0 sfr dist/default/production/PIDLoop_Driver.X.production.obj
 SerTx@c 6E 0 BANK0 1 cstackBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
 _error C4 0 BANK0 1 bssBANK0 dist/default/production/PIDLoop_Driver.X.production.obj
 _value 4A 0 COMRAM 1 bssCOMRAM dist/default/production/PIDLoop_Driver.X.production.obj
-___extmem_base 20000 0 ABS 0 - /tmp/cgtFdpKrF.obj
+___extmem_base 20000 0 ABS 0 - /tmp/cgtjRXJTI.obj
 _MotorDriverInit 33E2 0 CODE 0 text14 dist/default/production/PIDLoop_Driver.X.production.obj
 strtod@res 1A 0 COMRAM 1 cstackCOMRAM dist/default/production/PIDLoop_Driver.X.production.obj
 _CCP3CON FB7 0 ABS 0 - dist/default/production/PIDLoop_Driver.X.production.obj

@@ -8380,18 +8380,20 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 23 "MotorControl.h"
+# 20 "MotorControl.h"
 extern unsigned char PIDEnableFlag;
-unsigned char MotorFailFlag;
+extern char DeadbandLow;
+extern unsigned char DeadbandHigh;
 
 void MotorDriverInit(void);
 void KillMotors(void);
+void StartMotors(void);
 void ImplementPIDMotion(int);
 void ImplementJSMotion(int);
-void INT0Int(void);
 
-# 24 "PID.h"
+# 23 "PID.h"
 extern unsigned char PIDEnableFlag;
+extern unsigned char TMR0Flag;
 extern double Ki;
 extern double Kp;
 extern double Kd;
@@ -8401,106 +8403,74 @@ extern double err;
 extern double prevErr;
 extern double intErr;
 extern double StartAngle;
+extern double loopTime;
 extern int motorInput;
 
 void PIDInit(void);
 void calculatePID(double, double);
 void TMR0Int(void);
 
-# 3 "PID.c"
+# 5 "PID.c"
 unsigned char PIDEnableFlag;
+unsigned char TMR0Flag = 0;
 double Ki;
 double Kp;
 double Kd;
 double SetAngle;
 double CurrentAngle;
-double err;
+double error;
 double prevErr;
 double intErr;
-double StartAngle;
 int motorInput;
+double loopTime = 0.03;
 
 void PIDInit(void)
 {
 
-err = 0;
+error = 0;
 prevErr = 0;
 intErr = 0;
 
 
-INTCON2bits.TMR0IP = 1;
-T0CON = 0x84;
+
+T0CON = 0x04;
 TMR0H = 0xDB;
 TMR0L = 0x60;
+INTCON2bits.TMR0IP = 1;
 
 }
+
 void calculatePID(double angle, double setpoint)
 {
 double derErr;
-if((PIDEnableFlag & 0x02) == 0x02)
+if (PIDEnableFlag == 3)
 {
-StartAngle = angle;
-err = 0;
+error = 0;
 prevErr = 0;
 intErr = 0;
-PIDEnableFlag = PIDEnableFlag & 0x01;
+PIDEnableFlag = 1;
 }
 
-if(((StartAngle - setpoint) > 180) || ((StartAngle - setpoint) < -180))
-{
-if((StartAngle - setpoint) > 180)
-{
-if(angle > StartAngle)
-err = 360 - angle + setpoint;
-else
-err = setpoint - angle;
-}
-else if((StartAngle - setpoint) < -180)
-{
-if(angle < StartAngle)
-err = setpoint - 360 - angle;
-else
-err = setpoint - angle;
-}
-}
-else if(((StartAngle - setpoint) <= 180) && ((StartAngle - setpoint) > -180))
-{
-if(((setpoint - StartAngle) > -180) && (setpoint - StartAngle < 0))
-{
-if(angle <= StartAngle)
-err = setpoint - angle;
-else
-err = setpoint + 360 - angle;
-}
-else if(((setpoint - StartAngle) < 180) && (setpoint - StartAngle >= 0))
-{
-if(angle <= StartAngle)
-err = setpoint - angle;
-else
-err = setpoint - 360 - angle;
-}
-}
+error = setpoint - angle;
+if (error > 180)
+error -= 360;
+else if (error < -180)
+error += 360;
 
-intErr = err + prevErr;
-derErr = err - prevErr;
+derErr = error - prevErr;
+intErr += error;
+if (intErr > 2000)
+intErr = 2000;
 
-motorInput = Kp * err + (Ki * intErr * 0.03) + (Kd * (derErr/0.03));
+motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
 
-if(motorInput > 255)
-motorInput = 255;
-else if (motorInput < -255)
-motorInput = -255;
-
-prevErr = err;
+prevErr = error;
 }
 
 void TMR0Int(void)
 {
-CurrentAngle = RTD2Angle(ReadRTDpos);
-calculatePID(CurrentAngle, SetAngle);
-ImplementPIDMotion(motorInput);
 TMR0H = 0xDB;
 TMR0L = 0x60;
-
+TMR0Flag = 1;
 INTCONbits.TMR0IF = 0;
 }

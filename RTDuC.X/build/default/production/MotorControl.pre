@@ -8360,33 +8360,32 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 23 "MotorControl.h"
+# 20 "MotorControl.h"
 extern unsigned char PIDEnableFlag;
-unsigned char MotorFailFlag;
+extern char DeadbandLow;
+extern unsigned char DeadbandHigh;
 
 void MotorDriverInit(void);
 void KillMotors(void);
+void StartMotors(void);
 void ImplementPIDMotion(int);
 void ImplementJSMotion(int);
-void INT0Int(void);
 
 # 3 "MotorControl.c"
 unsigned char PIDEnableFlag;
-unsigned char MotorFailFlag = 0;
+char DeadbandLow = -5;
+unsigned char DeadbandHigh = 5;
 
 void MotorDriverInit(void)
 {
 TRISGbits.RG0 = 0;
-TRISGbits.RG3 = 0;
-TRISEbits.RE3 = 0;
 TRISEbits.RE4 = 0;
+TRISEbits.RE3 = 0;
+TRISGbits.RG3 = 0;
+
 TRISBbits.RB0 = 1;
 
 TRISAbits.RA4 = 0;
-
-INTCONbits.INT0IE = 1;
-INTCON2bits.INTEDG0 = 0;
-
 
 CCP3CON = 0x4C;
 PR2 = 0xFF;
@@ -8401,8 +8400,19 @@ PORTAbits.RA4 = 1;
 CCP3CON = CCP3CON & 0xF0;
 }
 
+void StartMotors(void)
+{
+PORTAbits.RA4 = 0;
+CCP3CON = CCP3CON = 0x4C;
+}
+
 void ImplementPIDMotion(int PIDValue)
 {
+if (PIDValue > 255)
+PIDValue = 255;
+else if (PIDValue < -255)
+PIDValue = -255;
+
 if (PIDValue < 0)
 CCP3CONbits.P3M1 = 1;
 else if (PIDValue > 0)
@@ -8411,21 +8421,22 @@ CCP3CONbits.P3M1 = 0;
 PIDValue = abs(PIDValue);
 CCPR3L = (PIDValue >> 2) & 0xFF;
 CCP3CONbits.DC3B = (PIDValue & 0x03);
+
 }
 
 void ImplementJSMotion(int JoystickValue)
 {
 unsigned int CCPinput;
 PIDEnableFlag = 0;
-if (JoystickValue < -5)
+if (JoystickValue < DeadbandLow)
 {
 CCP3CONbits.P3M1 = 1;
 }
-else if (JoystickValue > 5)
+else if (JoystickValue > DeadbandHigh)
 {
 CCP3CONbits.P3M1 = 0;
 }
-else if (JoystickValue <= 5 && JoystickValue >= -5)
+else if (JoystickValue <= DeadbandHigh && JoystickValue >= DeadbandLow)
 {
 JoystickValue = 0;
 }
@@ -8433,13 +8444,6 @@ JoystickValue = 0;
 JoystickValue = abs(JoystickValue);
 CCPinput = JoystickValue * 2;
 CCPR3L = (CCPinput >> 2) & 0xFF;
-
 CCP3CONbits.DC3B = (CCPinput & 0x03);
-}
-
-void INT0Int(void)
-{
-KillMotors();
-INTCONbits.INT0IF = 0;
 }
 

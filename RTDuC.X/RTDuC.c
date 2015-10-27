@@ -15,10 +15,12 @@
 void initialize(void);
 void interrupt high_priority hISR(void);
 void interrupt low_priority lISR(void);
+void INT0Int(void); //Motor failed interrupt, attached to External Interrupt 0 (RB0);
+void InitializeInterrupts(void);
 
 void main(void)
 {
-    unsigned char temporary, x;
+    unsigned char temporary, x = 0;
 
     initialize();
 
@@ -42,20 +44,24 @@ void main(void)
                     SPIDisassembleDouble(Ki);
                 else if (Command == 0x08)
                     SPIDisassembleDouble(Kd);
+                INTCONbits.GIE = 0; //Turn interrupts off during transmission;  This is somewhat of a last-minute design idea.  The idea is that the transmission time between master and slave will prove insignificant to the 30 ms PID loop time;
                 SlaveReady = 0;
                 for (x = 0; x < 4; x++) //Test sending multiple bytes;
                     SendSPI1(DoubleSPIS[x]);
                 temporary = SSP1BUF;
+                INTCONBits.GIE = 1; //Turn interrupts back on;
             }
             else if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
             {
+                INTCONbits.GIE = 0; //Turn interrupts off during transmission;
                 SlaveReady = 0;
                 for (x = 0; x != 4; x++)
                     DoubleSPIS[x] = ReceiveSPI1();
+                INTCONBits.GIE = 1; //Turn interrupts back on;
                 if (Command == 0x01)
                 {
                     SetAngle = SPIReassembleDouble();
-                    PIDEnableFlag = 0x03; //This flag sets two bits.  Bit 0 will be used by the main loop to determine whether or not the PID is active.  Bit 1 will be used to determine whether or not this is a new angle that is being sent;
+                    PIDEnableFlag = 3; //This flag sets two bits.  Bit 0 will be used by the main loop to determine whether or not the PID is active.  Bit 1 will be used to determine whether or not this is a new angle that is being sent;
                     JSEnableFlag = 0; //Turn off the joystick;
                 }
                 else if (Command == 0x05)
@@ -81,13 +87,33 @@ void main(void)
             ImplementJSMotion(DetectMovement()); //This function should guarantee that the PID loop is only stopped if the Joystick actually causes the motors to move;
         }
 
-        else if ((PIDEnableFlag & 0x02) == 0x02) //We don't need this repeating all the time, only when it's a new angle;
+        if (PIDEnableFlag == 1 && TMR0Flag == 1) //This is the option which will run more frequently, therefore it should come first to avoid an instruction cycle of testing the PIDEnableFlag for the less likely value of '3';
         {
-            INTCONbits.TMR0IE = 1; //Enable the timer interrupt;
-            JSEnableFlag = 0; //Disable the Joystick;
+            SlaveReady = 1; //Disallow master transmission;
+            INTCONbits.GIE = 0; //Disable interrupts while the PID loop runs;
+            CurrentAngle = RTD2Angle(ReadRTDpos());
+            calculatePID(CurrentAngle, SetAngle);
+            ImplementPIDMotion(motorInput);
+            TMR0Flag = 0; //Lower the timer flag so that this doesn't repeat before the timer has expired;
+            INTCONbits.GIE = 1; //Enable interrupts;
+            SlaveReady = 0; //Allow master to transmit;
+        }
+
+        else if (PIDEnableFlag == 3) //Tests if the bit has been set by the StrippedKey = 0x01 in the KeyValue code;
+        {
+            SlaveReady = 1; //Disallow master transmission;
+            INTCONbits.GIE = 0; //Disable interrupts while the PID loop runs;
+            TMR0H = timerHigh;
+            TMR0L = timerLow;
+            CurrentAngle = RTD2Angle(ReadRTDpos());
+            calculatePID(CurrentAngle, SetAngle);
+            ImplementPIDMotion(motorInput);
+            INTCONbits.GIE = 1;
+            INTCONbits.TMR0IE = 1; //If so, enable the PID loop;
+            T0CONbits.TMR0ON = 1;
+            SlaveReady = 0; // Allow master to transmit;
         }
     }
-
 }
 
 void initialize(void)
@@ -101,22 +127,19 @@ void initialize(void)
     PIDInit();
     EEPROMInit();
 
-    INTCONbits.GIE = 1; //Enable General Interrupts;
-    INTCONbits.PEIE = 1; //Enable Peripheral Interrupts;
-    RCONbits.IPEN = 1; //Enable Interrupt Priority;
+    InitializeInterrupts();
 
-    PIE2bits.OSCFIE = 1; //Enable the Oscillator Fail interrupt;
-    IPR2bits.OSCFIP = 1; //High priority;
-
+    STATUSLED = 1;
 }
 
 void interrupt high_priority hISR(void)
 {
-    SlaveReady = 1; //Set the slave in the Not Ready State so that the master in no longer allowed to transmit;
+    SlaveReady = 1; //Set the slave in the Not Ready State so that the master is no longer allowed to transmit;
 
     if ((INTCONbits.TMR0IF == 1) && ((PIDEnableFlag | 0x01) == 0x01)) //If the TMR0 Interrupt is high, and the PID loop is enabled, run this;
     {
         TMR0Int();
+        SlaveReady = 0; //Take it out of the Not Ready State to allow for SPI transmission;  This is the only high priority interrupt where the slave returns to normal operating conditions afterwards;
     }
 
     if (INTCONbits.INT0IF == 1) //If the motor has failed, run this;
@@ -129,7 +152,7 @@ void interrupt high_priority hISR(void)
         MOTORFAILLED = 0; //If the system is powering down, quickly turn off all the LEDs;
         STATUSLED = 0;
         JOYSTICKLED = 0;
-        HLVDInt();
+        HLVDInt(); //Run the save routine;
     }
 
     if (PIR2bits.OSCFIF == 1) //If this Oscillator failed, run this;
@@ -148,8 +171,6 @@ void interrupt high_priority hISR(void)
          * value, and figuring out a way to revert in the event that the oscillator comes back online;
          */
     }
-
-    SlaveReady = 0; //Take it out of the Not Ready State to allow for SPI transmission;
 }
 
 void interrupt low_priority lISR(void)
@@ -158,4 +179,31 @@ void interrupt low_priority lISR(void)
     {
         SPIInt();
     }
+}
+
+void INT0Int(void)
+{
+    KillMotors();
+    STATUSLED = 0; //Shut the status light off, indicating failure;
+    T0CONbits.TMR0ON = 1; //Turn the timer on;
+    INTCONbits.GIE = 0; //Turn interrupts off;
+    MOTORFAILLED = 1;
+    while (1)
+    {
+        TMR0H = 0x00; //Give the timer a long delay;
+        TMR0L = 0x00;
+        while (!INTCONbits.TMR0IF);
+        INTCONbits.TMR0IF = 0; //Return the interrupt flag to 0;
+        ~MOTORFAILLED; //Switch on/off;
+    }
+}
+
+void InitializeInterrupts(void)
+{
+    INTCONbits.GIE = 1; //Enable General Interrupts;
+    INTCONbits.PEIE = 1; //Enable Peripheral Interrupts;
+    RCONbits.IPEN = 1; //Enable Interrupt Priority;
+
+    PIE2bits.OSCFIE = 1; //Enable the Oscillator Fail interrupt;
+    IPR2bits.OSCFIP = 1; //High priority;
 }

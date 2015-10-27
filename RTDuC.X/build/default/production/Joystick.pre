@@ -8368,9 +8368,11 @@ double RTD2Angle(unsigned int);
 double RTD2Velocity(unsigned int);
 unsigned char RTDdirection(void);
 
-# 26 "Joystick.h"
+# 24 "Joystick.h"
 extern unsigned char PIDEnableFlag;
 extern unsigned char JSEnableFlag;
+extern char DeadbandLow;
+extern unsigned char DeadbandHigh;
 
 void JoystickInit(void);
 void DetectJoystick(void);
@@ -8429,7 +8431,7 @@ ADCresult = ADCresult << 8;
 ADCresult = ADCresult | ADRESL;
 JoystickResult = (ADCresult - 512);
 
-if ((JoystickResult > 5) || (JoystickResult < -5))
+if ((JoystickResult > DeadbandHigh) || (JoystickResult < DeadbandLow))
 {
 PIDEnableFlag = 0;
 return JoystickResult;

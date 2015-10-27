@@ -1,5 +1,11 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"13501 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+"13057 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
+"13144
+[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
+"13138
+[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"13501
 [s S707 :7 `uc 1 :1 `uc 1 ]
 [n S707 . . NOT_RBPU ]
 "13505
@@ -13,19 +19,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S706 . . . . ]
 "13523
 [v _INTCON2bits `VS706 ~T0 @X0 0 e@4081 ]
-"13057
-[v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
-"13144
-[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
-"13138
-[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"33 ResolverToDigital.h
-[v _RTD2Angle `(d ~T0 @X0 0 ef1`ui ]
-"31
-[v _ReadRTDpos `(ui ~T0 @X0 0 ef ]
-"28 MotorControl.h
-[v _ImplementPIDMotion `(v ~T0 @X0 0 ef1`i ]
-"13593 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+"13593
 [s S711 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S711 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
 "13603
@@ -6489,16 +6483,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
-[; ;MotorControl.h: 23: extern unsigned char PIDEnableFlag;
-"24 MotorControl.h
-[v _MotorFailFlag `uc ~T0 @X0 1 e ]
-[; ;MotorControl.h: 24: unsigned char MotorFailFlag;
-[; ;MotorControl.h: 26: void MotorDriverInit(void);
-[; ;MotorControl.h: 27: void KillMotors(void);
-[; ;MotorControl.h: 28: void ImplementPIDMotion(int);
-[; ;MotorControl.h: 29: void ImplementJSMotion(int);
-[; ;MotorControl.h: 30: void INT0Int(void);
-[; ;PID.h: 24: extern unsigned char PIDEnableFlag;
+[; ;MotorControl.h: 20: extern unsigned char PIDEnableFlag;
+[; ;MotorControl.h: 21: extern char DeadbandLow;
+[; ;MotorControl.h: 22: extern unsigned char DeadbandHigh;
+[; ;MotorControl.h: 24: void MotorDriverInit(void);
+[; ;MotorControl.h: 25: void KillMotors(void);
+[; ;MotorControl.h: 26: void StartMotors(void);
+[; ;MotorControl.h: 27: void ImplementPIDMotion(int);
+[; ;MotorControl.h: 28: void ImplementJSMotion(int);
+[; ;PID.h: 23: extern unsigned char PIDEnableFlag;
+[; ;PID.h: 24: extern unsigned char TMR0Flag;
 [; ;PID.h: 25: extern double Ki;
 [; ;PID.h: 26: extern double Kp;
 [; ;PID.h: 27: extern double Kd;
@@ -6508,297 +6502,186 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;PID.h: 31: extern double prevErr;
 [; ;PID.h: 32: extern double intErr;
 [; ;PID.h: 33: extern double StartAngle;
-[; ;PID.h: 34: extern int motorInput;
-[; ;PID.h: 36: void PIDInit(void);
-[; ;PID.h: 37: void calculatePID(double, double);
-[; ;PID.h: 38: void TMR0Int(void);
-"3 PID.c
+[; ;PID.h: 34: extern double loopTime;
+[; ;PID.h: 35: extern int motorInput;
+[; ;PID.h: 37: void PIDInit(void);
+[; ;PID.h: 38: void calculatePID(double, double);
+[; ;PID.h: 39: void TMR0Int(void);
+"5 PID.c
 [v _PIDEnableFlag `uc ~T0 @X0 1 e ]
-[; ;PID.c: 3: unsigned char PIDEnableFlag;
-"4
-[v _Ki `d ~T0 @X0 1 e ]
-[; ;PID.c: 4: double Ki;
-"5
-[v _Kp `d ~T0 @X0 1 e ]
-[; ;PID.c: 5: double Kp;
+[; ;PID.c: 5: unsigned char PIDEnableFlag;
 "6
-[v _Kd `d ~T0 @X0 1 e ]
-[; ;PID.c: 6: double Kd;
+[v _TMR0Flag `uc ~T0 @X0 1 e ]
+[i _TMR0Flag
+-> -> 0 `i `uc
+]
+[; ;PID.c: 6: unsigned char TMR0Flag = 0;
 "7
-[v _SetAngle `d ~T0 @X0 1 e ]
-[; ;PID.c: 7: double SetAngle;
+[v _Ki `d ~T0 @X0 1 e ]
+[; ;PID.c: 7: double Ki;
 "8
-[v _CurrentAngle `d ~T0 @X0 1 e ]
-[; ;PID.c: 8: double CurrentAngle;
+[v _Kp `d ~T0 @X0 1 e ]
+[; ;PID.c: 8: double Kp;
 "9
-[v _err `d ~T0 @X0 1 e ]
-[; ;PID.c: 9: double err;
+[v _Kd `d ~T0 @X0 1 e ]
+[; ;PID.c: 9: double Kd;
 "10
-[v _prevErr `d ~T0 @X0 1 e ]
-[; ;PID.c: 10: double prevErr;
+[v _SetAngle `d ~T0 @X0 1 e ]
+[; ;PID.c: 10: double SetAngle;
 "11
-[v _intErr `d ~T0 @X0 1 e ]
-[; ;PID.c: 11: double intErr;
+[v _CurrentAngle `d ~T0 @X0 1 e ]
+[; ;PID.c: 11: double CurrentAngle;
 "12
-[v _StartAngle `d ~T0 @X0 1 e ]
-[; ;PID.c: 12: double StartAngle;
+[v _error `d ~T0 @X0 1 e ]
+[; ;PID.c: 12: double error;
 "13
-[v _motorInput `i ~T0 @X0 1 e ]
-[; ;PID.c: 13: int motorInput;
+[v _prevErr `d ~T0 @X0 1 e ]
+[; ;PID.c: 13: double prevErr;
+"14
+[v _intErr `d ~T0 @X0 1 e ]
+[; ;PID.c: 14: double intErr;
 "15
-[v _PIDInit `(v ~T0 @X0 1 ef ]
+[v _motorInput `i ~T0 @X0 1 e ]
+[; ;PID.c: 15: int motorInput;
 "16
+[v _loopTime `d ~T0 @X0 1 e ]
+[i _loopTime
+.0.03
+]
+[; ;PID.c: 16: double loopTime = 0.03;
+"18
+[v _PIDInit `(v ~T0 @X0 1 ef ]
+"19
 {
-[; ;PID.c: 15: void PIDInit(void)
-[; ;PID.c: 16: {
+[; ;PID.c: 18: void PIDInit(void)
+[; ;PID.c: 19: {
 [e :U _PIDInit ]
 [f ]
-[; ;PID.c: 18: err = 0;
-"18
-[e = _err -> -> 0 `i `d ]
-[; ;PID.c: 19: prevErr = 0;
-"19
+[; ;PID.c: 21: error = 0;
+"21
+[e = _error -> -> 0 `i `d ]
+[; ;PID.c: 22: prevErr = 0;
+"22
 [e = _prevErr -> -> 0 `i `d ]
-[; ;PID.c: 20: intErr = 0;
-"20
-[e = _intErr -> -> 0 `i `d ]
-[; ;PID.c: 23: INTCON2bits.TMR0IP = 1;
+[; ;PID.c: 23: intErr = 0;
 "23
-[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
-[; ;PID.c: 24: T0CON = 0x84;
-"24
-[e = _T0CON -> -> 132 `i `uc ]
-[; ;PID.c: 25: TMR0H = 0xDB;
-"25
-[e = _TMR0H -> -> 219 `i `uc ]
-[; ;PID.c: 26: TMR0L = 0x60;
-"26
-[e = _TMR0L -> -> 96 `i `uc ]
-[; ;PID.c: 28: }
+[e = _intErr -> -> 0 `i `d ]
+[; ;PID.c: 27: T0CON = 0x04;
+"27
+[e = _T0CON -> -> 4 `i `uc ]
+[; ;PID.c: 28: TMR0H = 0xDB;
 "28
+[e = _TMR0H -> -> 219 `i `uc ]
+[; ;PID.c: 29: TMR0L = 0x60;
+"29
+[e = _TMR0L -> -> 96 `i `uc ]
+[; ;PID.c: 30: INTCON2bits.TMR0IP = 1;
+"30
+[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
+[; ;PID.c: 32: }
+"32
 [e :UE 762 ]
 }
-"29
+"34
 [v _calculatePID `(v ~T0 @X0 1 ef2`d`d ]
-"30
+"35
 {
-[; ;PID.c: 29: void calculatePID(double angle, double setpoint)
-[; ;PID.c: 30: {
+[; ;PID.c: 34: void calculatePID(double angle, double setpoint)
+[; ;PID.c: 35: {
 [e :U _calculatePID ]
-"29
+"34
 [v _angle `d ~T0 @X0 1 r1 ]
 [v _setpoint `d ~T0 @X0 1 r2 ]
-"30
-[f ]
-"31
-[v _derErr `d ~T0 @X0 1 a ]
-[; ;PID.c: 31: double derErr;
-[; ;PID.c: 32: if((PIDEnableFlag & 0x02) == 0x02)
-"32
-[e $ ! == & -> _PIDEnableFlag `i -> 2 `i -> 2 `i 764  ]
-[; ;PID.c: 33: {
-"33
-{
-[; ;PID.c: 34: StartAngle = angle;
-"34
-[e = _StartAngle _angle ]
-[; ;PID.c: 35: err = 0;
 "35
-[e = _err -> -> 0 `i `d ]
-[; ;PID.c: 36: prevErr = 0;
+[f ]
 "36
-[e = _prevErr -> -> 0 `i `d ]
-[; ;PID.c: 37: intErr = 0;
+[v _derErr `d ~T0 @X0 1 a ]
+[; ;PID.c: 36: double derErr;
+[; ;PID.c: 37: if (PIDEnableFlag == 3)
 "37
-[e = _intErr -> -> 0 `i `d ]
-[; ;PID.c: 38: PIDEnableFlag = PIDEnableFlag & 0x01;
+[e $ ! == -> _PIDEnableFlag `i -> 3 `i 764  ]
+[; ;PID.c: 38: {
 "38
-[e = _PIDEnableFlag -> & -> _PIDEnableFlag `i -> 1 `i `uc ]
+{
+[; ;PID.c: 39: error = 0;
 "39
+[e = _error -> -> 0 `i `d ]
+[; ;PID.c: 40: prevErr = 0;
+"40
+[e = _prevErr -> -> 0 `i `d ]
+[; ;PID.c: 41: intErr = 0;
+"41
+[e = _intErr -> -> 0 `i `d ]
+[; ;PID.c: 42: PIDEnableFlag = 1;
+"42
+[e = _PIDEnableFlag -> -> 1 `i `uc ]
+"43
 }
 [e :U 764 ]
-[; ;PID.c: 39: }
-[; ;PID.c: 41: if(((StartAngle - setpoint) > 180) || ((StartAngle - setpoint) < -180))
-"41
-[e $ ! || > - _StartAngle _setpoint -> -> 180 `i `d < - _StartAngle _setpoint -> -U -> 180 `i `d 765  ]
-[; ;PID.c: 42: {
-"42
-{
-[; ;PID.c: 43: if((StartAngle - setpoint) > 180)
-"43
-[e $ ! > - _StartAngle _setpoint -> -> 180 `i `d 766  ]
-[; ;PID.c: 44: {
-"44
-{
-[; ;PID.c: 45: if(angle > StartAngle)
+[; ;PID.c: 43: }
+[; ;PID.c: 45: error = setpoint - angle;
 "45
-[e $ ! > _angle _StartAngle 767  ]
-[; ;PID.c: 46: err = 360 - angle + setpoint;
+[e = _error - _setpoint _angle ]
+[; ;PID.c: 46: if (error > 180)
 "46
-[e = _err + - -> -> 360 `i `d _angle _setpoint ]
-[e $U 768  ]
+[e $ ! > _error -> -> 180 `i `d 765  ]
+[; ;PID.c: 47: error -= 360;
 "47
-[e :U 767 ]
-[; ;PID.c: 47: else
-[; ;PID.c: 48: err = setpoint - angle;
+[e =- _error -> -> 360 `i `d ]
+[e $U 766  ]
 "48
-[e = _err - _setpoint _angle ]
-[e :U 768 ]
-"49
-}
-[; ;PID.c: 49: }
-[e $U 769  ]
-"50
-[e :U 766 ]
-[; ;PID.c: 50: else if((StartAngle - setpoint) < -180)
-[e $ ! < - _StartAngle _setpoint -> -U -> 180 `i `d 770  ]
-[; ;PID.c: 51: {
-"51
-{
-[; ;PID.c: 52: if(angle < StartAngle)
-"52
-[e $ ! < _angle _StartAngle 771  ]
-[; ;PID.c: 53: err = setpoint - 360 - angle;
-"53
-[e = _err - - _setpoint -> -> 360 `i `d _angle ]
-[e $U 772  ]
-"54
-[e :U 771 ]
-[; ;PID.c: 54: else
-[; ;PID.c: 55: err = setpoint - angle;
-"55
-[e = _err - _setpoint _angle ]
-[e :U 772 ]
-"56
-}
-[e :U 770 ]
-"57
-[e :U 769 ]
-}
-[; ;PID.c: 56: }
-[; ;PID.c: 57: }
-[e $U 773  ]
-"58
 [e :U 765 ]
-[; ;PID.c: 58: else if(((StartAngle - setpoint) <= 180) && ((StartAngle - setpoint) > -180))
-[e $ ! && <= - _StartAngle _setpoint -> -> 180 `i `d > - _StartAngle _setpoint -> -U -> 180 `i `d 774  ]
-[; ;PID.c: 59: {
+[; ;PID.c: 48: else if (error < -180)
+[e $ ! < _error -> -U -> 180 `i `d 767  ]
+[; ;PID.c: 49: error += 360;
+"49
+[e =+ _error -> -> 360 `i `d ]
+[e :U 767 ]
+"51
+[e :U 766 ]
+[; ;PID.c: 51: derErr = error - prevErr;
+[e = _derErr - _error _prevErr ]
+[; ;PID.c: 52: intErr += error;
+"52
+[e =+ _intErr _error ]
+[; ;PID.c: 53: if (intErr > 2000)
+"53
+[e $ ! > _intErr -> -> 2000 `i `d 768  ]
+[; ;PID.c: 54: intErr = 2000;
+"54
+[e = _intErr -> -> 2000 `i `d ]
+[e :U 768 ]
+[; ;PID.c: 56: motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
+"56
+[e = _motorInput -> + + * _Kp _error * * _Ki _intErr _loopTime * _Kd / _derErr _loopTime `i ]
+[; ;PID.c: 58: prevErr = error;
+"58
+[e = _prevErr _error ]
+[; ;PID.c: 59: }
 "59
-{
-[; ;PID.c: 60: if(((setpoint - StartAngle) > -180) && (setpoint - StartAngle < 0))
-"60
-[e $ ! && > - _setpoint _StartAngle -> -U -> 180 `i `d < - _setpoint _StartAngle -> -> 0 `i `d 775  ]
-[; ;PID.c: 61: {
-"61
-{
-[; ;PID.c: 62: if(angle <= StartAngle)
-"62
-[e $ ! <= _angle _StartAngle 776  ]
-[; ;PID.c: 63: err = setpoint - angle;
-"63
-[e = _err - _setpoint _angle ]
-[e $U 777  ]
-"64
-[e :U 776 ]
-[; ;PID.c: 64: else
-[; ;PID.c: 65: err = setpoint + 360 - angle;
-"65
-[e = _err - + _setpoint -> -> 360 `i `d _angle ]
-[e :U 777 ]
-"66
-}
-[; ;PID.c: 66: }
-[e $U 778  ]
-"67
-[e :U 775 ]
-[; ;PID.c: 67: else if(((setpoint - StartAngle) < 180) && (setpoint - StartAngle >= 0))
-[e $ ! && < - _setpoint _StartAngle -> -> 180 `i `d >= - _setpoint _StartAngle -> -> 0 `i `d 779  ]
-[; ;PID.c: 68: {
-"68
-{
-[; ;PID.c: 69: if(angle <= StartAngle)
-"69
-[e $ ! <= _angle _StartAngle 780  ]
-[; ;PID.c: 70: err = setpoint - angle;
-"70
-[e = _err - _setpoint _angle ]
-[e $U 781  ]
-"71
-[e :U 780 ]
-[; ;PID.c: 71: else
-[; ;PID.c: 72: err = setpoint - 360 - angle;
-"72
-[e = _err - - _setpoint -> -> 360 `i `d _angle ]
-[e :U 781 ]
-"73
-}
-[e :U 779 ]
-"74
-[e :U 778 ]
-}
-[e :U 774 ]
-"76
-[e :U 773 ]
-[; ;PID.c: 73: }
-[; ;PID.c: 74: }
-[; ;PID.c: 76: intErr = err + prevErr;
-[e = _intErr + _err _prevErr ]
-[; ;PID.c: 77: derErr = err - prevErr;
-"77
-[e = _derErr - _err _prevErr ]
-[; ;PID.c: 79: motorInput = Kp * err + (Ki * intErr * 0.03) + (Kd * (derErr/0.03));
-"79
-[e = _motorInput -> + + * _Kp _err * * _Ki _intErr .0.03 * _Kd / _derErr .0.03 `i ]
-[; ;PID.c: 81: if(motorInput > 255)
-"81
-[e $ ! > _motorInput -> 255 `i 782  ]
-[; ;PID.c: 82: motorInput = 255;
-"82
-[e = _motorInput -> 255 `i ]
-[e $U 783  ]
-"83
-[e :U 782 ]
-[; ;PID.c: 83: else if (motorInput < -255)
-[e $ ! < _motorInput -U -> 255 `i 784  ]
-[; ;PID.c: 84: motorInput = -255;
-"84
-[e = _motorInput -U -> 255 `i ]
-[e :U 784 ]
-"86
-[e :U 783 ]
-[; ;PID.c: 86: prevErr = err;
-[e = _prevErr _err ]
-[; ;PID.c: 87: }
-"87
 [e :UE 763 ]
 }
-"89
+"61
 [v _TMR0Int `(v ~T0 @X0 1 ef ]
-"90
+"62
 {
-[; ;PID.c: 89: void TMR0Int(void)
-[; ;PID.c: 90: {
+[; ;PID.c: 61: void TMR0Int(void)
+[; ;PID.c: 62: {
 [e :U _TMR0Int ]
 [f ]
-[; ;PID.c: 91: CurrentAngle = RTD2Angle(ReadRTDpos);
-"91
-[e = _CurrentAngle ( _RTD2Angle (1 -> &U _ReadRTDpos `ui ]
-[; ;PID.c: 92: calculatePID(CurrentAngle, SetAngle);
-"92
-[e ( _calculatePID (2 , _CurrentAngle _SetAngle ]
-[; ;PID.c: 93: ImplementPIDMotion(motorInput);
-"93
-[e ( _ImplementPIDMotion (1 _motorInput ]
-[; ;PID.c: 94: TMR0H = 0xDB;
-"94
+[; ;PID.c: 63: TMR0H = 0xDB;
+"63
 [e = _TMR0H -> -> 219 `i `uc ]
-[; ;PID.c: 95: TMR0L = 0x60;
-"95
+[; ;PID.c: 64: TMR0L = 0x60;
+"64
 [e = _TMR0L -> -> 96 `i `uc ]
-[; ;PID.c: 97: INTCONbits.TMR0IF = 0;
-"97
+[; ;PID.c: 65: TMR0Flag = 1;
+"65
+[e = _TMR0Flag -> -> 1 `i `uc ]
+[; ;PID.c: 66: INTCONbits.TMR0IF = 0;
+"66
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;PID.c: 98: }
-"98
-[e :UE 785 ]
+[; ;PID.c: 67: }
+"67
+[e :UE 769 ]
 }
