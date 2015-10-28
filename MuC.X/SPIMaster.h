@@ -19,10 +19,10 @@ extern "C" {
 #include "SerComm.h"
 #include <delays.h>
 
-#define SlaveReady1 PORTAbits.RA1
-#define SlaveReady2 PORTAbits.RA2
-#define SlaveSelect1 PORTAbits.RA3
-#define SlaveSelect2 PORTAbits.RA4
+#define SlaveReady1 PORTBbits.RB1
+#define SlaveReady2 PORTBbits.RB2
+#define SlaveSelect1 PORTBbits.RB3
+#define SlaveSelect2 PORTBbits.RB4
 
     extern unsigned char RCflag;
     extern unsigned char ReceivedChar;

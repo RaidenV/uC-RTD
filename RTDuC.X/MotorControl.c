@@ -15,6 +15,9 @@ void MotorDriverInit(void)
 
     TRISAbits.RA4 = 0; //Motor Fault LED;
 
+    CCPR3L = 0x00; //Start with the motors off;
+    CCP3CONbits.DC3B0 = 0;
+    CCP3CONbits.DC3B1 = 0;
     CCP3CON = 0x4C; //Set Full-bridge mode, all outputs active high;
     PR2 = 0xFF; //With a prescaler of 1:1 on Timer2, this yields a PWM frequency of 39.06 kHz;
     T3CON = 0x00; //Set Timer1 and Timer2 as the clock sources for all PWM activities;

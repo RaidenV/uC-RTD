@@ -8426,18 +8426,14 @@ double loopTime = 0.03;
 
 void PIDInit(void)
 {
-
 error = 0;
 prevErr = 0;
 intErr = 0;
-
-
 
 T0CON = 0x04;
 TMR0H = 0xDB;
 TMR0L = 0x60;
 INTCON2bits.TMR0IP = 1;
-
 }
 
 void calculatePID(double angle, double setpoint)

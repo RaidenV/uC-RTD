@@ -1,15 +1,7 @@
 
 # 1 "SPItest-MASTER.c"
 
-# 26 "/opt/microchip/xc8/v1.34/include/htc.h"
-extern const char __xc8_OPTIM_SPEED;
-
-
-# 13 "/opt/microchip/xc8/v1.34/include/xc8debug.h"
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-
-# 49 "/opt/microchip/xc8/v1.34/include/pic18f2620.h"
+# 49 "/opt/microchip/xc8/v1.34/include/pic18F2620.h"
 extern volatile unsigned char PORTA @ 0xF80;
 
 asm("PORTA equ 0F80h");
@@ -3544,6 +3536,14 @@ extern volatile __bit nW @ (((unsigned) &SSPSTAT)*8) + 2;
 
 extern volatile __bit nWRITE @ (((unsigned) &SSPSTAT)*8) + 2;
 
+# 26 "/opt/microchip/xc8/v1.34/include/htc.h"
+extern const char __xc8_OPTIM_SPEED;
+
+
+# 13 "/opt/microchip/xc8/v1.34/include/xc8debug.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+
 # 2008 "/opt/microchip/xc8/v1.34/include/plib/adc.h"
 union ADCResult
 {
@@ -4667,6 +4667,7 @@ if (RCflag == 1)
 RCflag = 0;
 if (AZEL == 1)
 {
+while(PORTAbits.RA1);
 if ((StrippedKey == 0x02) || (StrippedKey == 0x03) || (StrippedKey == 0x04) || (StrippedKey == 0x06) || StrippedKey == 0x08)
 {
 do
@@ -4802,8 +4803,9 @@ RCInt();
 
 void initialize(void)
 {
+SPIInitM();
+SerInit();
 INTCONbits.GIE = 1;
 INTCONbits.PEIE = 1;
-SerInit();
 }
 

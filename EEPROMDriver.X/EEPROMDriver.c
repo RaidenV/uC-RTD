@@ -1,4 +1,4 @@
-#include <pic18f8722.h>
+#include <xc.h>
 #include "EEPROM.h"
 #include "SerComm.h"
 

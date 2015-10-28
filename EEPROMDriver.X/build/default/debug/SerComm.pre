@@ -7210,6 +7210,7 @@ void SerTxStr(unsigned char*);
 unsigned char SerRx(void);
 void SerRxStr(unsigned char*);
 void breakDouble(double);
+void Sernl(void);
 
 # 19 "SerComm.c"
 void SerInit(void)
@@ -7276,6 +7277,12 @@ temp1 = temp2 / 10;
 temp2 = temp2 % 10;
 SerTx(temp1 + 0x30);
 SerTx(temp2 + 0x30);
+SerTx(0x0A);
+SerTx(0x0D);
+}
+
+void Sernl(void)
+{
 SerTx(0x0A);
 SerTx(0x0D);
 }

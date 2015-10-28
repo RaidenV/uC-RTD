@@ -12,51 +12,53 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production/SPItest_MASTER_.X.production.obj
-cinit CODE 0 2EA2 2EA2 34 1
-intcode_body CODE 0 2B48 2B48 72 1
-text0 CODE 0 1064 1064 5E4 1
-text1 CODE 0 2FBA 2FBA A 1
-text2 CODE 0 2F02 2F02 28 1
-text3 CODE 0 2C26 2C26 5A 1
-text4 CODE 0 2A50 2A50 7C 1
-text5 CODE 0 2DDA 2DDA 44 1
-text6 CODE 0 2E62 2E62 40 1
-text7 CODE 0 2CDA 2CDA 58 1
-text8 CODE 0 2886 2886 B2 1
-text9 CODE 0 1F7A 1F7A 188 1
-text10 CODE 0 2BBA 2BBA 6C 1
-text11 CODE 0 29CE 29CE 82 1
-text12 CODE 0 2394 2394 132 1
-text13 CODE 0 2102 2102 15C 1
-text14 CODE 0 24C6 24C6 120 1
-text15 CODE 0 2F9C 2F9C 10 1
-text16 CODE 0 2E1E 2E1E 44 1
-text17 CODE 0 2F70 2F70 16 1
-text18 CODE 0 2F86 2F86 16 1
-text20 CODE 0 225E 225E 136 1
-text21 CODE 0 1648 1648 55C 1
-text22 CODE 0 2D32 2D32 58 1
-text23 CODE 0 2FAC 2FAC E 1
-text24 CODE 0 1BA4 1BA4 3D6 1
-text25 CODE 0 25E6 25E6 F8 1
-text26 CODE 0 2ED6 2ED6 2C 1
-text27 CODE 0 2F4E 2F4E 22 1
-text28 CODE 0 2C80 2C80 5A 1
-text29 CODE 0 2F2A 2F2A 24 1
-text30 CODE 0 2938 2938 96 1
-text31 CODE 0 26DE 26DE E2 1
-text32 CODE 0 2ACC 2ACC 7C 1
-text33 CODE 0 27C0 27C0 C6 1
-text34 CODE 0 2D8A 2D8A 50 1
+cinit CODE 0 2F2A 2F2A 34 1
+intcode_body CODE 0 2B6C 2B6C 72 1
+text0 CODE 0 1064 1064 5EC 1
+text1 CODE 0 304C 304C E 1
+text2 CODE 0 2F8A 2F8A 28 1
+text3 CODE 0 2CAE 2CAE 5A 1
+text4 CODE 0 2FF8 2FF8 18 1
+text5 CODE 0 2C4A 2C4A 64 1
+text6 CODE 0 2A74 2A74 7C 1
+text7 CODE 0 2E62 2E62 44 1
+text8 CODE 0 2EEA 2EEA 40 1
+text9 CODE 0 2D62 2D62 58 1
+text10 CODE 0 28AA 28AA B2 1
+text11 CODE 0 1F82 1F82 188 1
+text12 CODE 0 2BDE 2BDE 6C 1
+text13 CODE 0 29F2 29F2 82 1
+text14 CODE 0 23B8 23B8 132 1
+text15 CODE 0 210A 210A 15C 1
+text16 CODE 0 24EA 24EA 120 1
+text17 CODE 0 303C 303C 10 1
+text18 CODE 0 2EA6 2EA6 44 1
+text19 CODE 0 3010 3010 16 1
+text20 CODE 0 3026 3026 16 1
+text22 CODE 0 2266 2266 152 1
+text23 CODE 0 1650 1650 55C 1
+text24 CODE 0 2DBA 2DBA 58 1
+text25 CODE 0 305A 305A E 1
+text26 CODE 0 1BAC 1BAC 3D6 1
+text27 CODE 0 260A 260A F8 1
+text28 CODE 0 2F5E 2F5E 2C 1
+text29 CODE 0 2FD6 2FD6 22 1
+text30 CODE 0 2D08 2D08 5A 1
+text31 CODE 0 2FB2 2FB2 24 1
+text32 CODE 0 295C 295C 96 1
+text33 CODE 0 2702 2702 E2 1
+text34 CODE 0 2AF0 2AF0 7C 1
+text35 CODE 0 27E4 27E4 C6 1
+text36 CODE 0 2E12 2E12 50 1
 cstackCOMRAM COMRAM 1 1 1 3E 1
 cstackBANK0 BANK0 1 80 80 35 1
 bssBANK0 BANK0 1 B5 B5 29 1
 intcode CODE 0 8 8 10 1
 smallconst SMALLCONST 0 1000 1000 64 1
-idataBANK0 CODE 0 2FC4 2FC4 1 1
+idataBANK0 CODE 0 3068 3068 1 1
 dataBANK0 BANK0 1 DE DE 1 1
-bssCOMRAM COMRAM 1 3F 3F 22 1
-$/tmp/cgtBqQa2a.obj
+bssCOMRAM COMRAM 1 3F 3F 23 1
+$/tmp/cgtiQ8p9z.obj
 idloc IDLOC 0 200000 200000 8 1
 reset_vec CODE 0 0 0 4 1
 end_init CODE 0 18 18 4 1
@@ -81,23 +83,23 @@ BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-7 1
 CONST 1C-FFF 1
-CONST 2FC5-FFFF 1
+CONST 3069-FFFF 1
 STACK DF-F7F 1
-SMALLCONST 2FC5-FFFF 1
+SMALLCONST 3069-FFFF 1
 CODE 4-7 1
 CODE 1C-FFF 1
-CODE 2FC5-FFFF 1
+CODE 3069-FFFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
 BANK13 D00-DFF 1
 BANK14 E00-EFF 1
 BANK15 F00-F7F 1
-BIGRAM 61-7F 1
+BIGRAM 62-7F 1
 BIGRAM DF-F7F 1
-COMRAM 61-7F 1
+COMRAM 62-7F 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST 2FC5-FFFF 1
+MEDIUMCONST 3069-FFFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -113,7 +115,7 @@ MEDIUMCONST 2FC5-FFFF 1
 %LINETAB
 $dist/default/production/SPItest_MASTER_.X.production.obj
 8 intcode CODE >13:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-8 intcode CODE >151:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+8 intcode CODE >152:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
 1064 text0 CODE >13:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
 1064 text0 CODE >15:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
 106A text0 CODE >16:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
@@ -121,722 +123,764 @@ $dist/default/production/SPItest_MASTER_.X.production.obj
 1070 text0 CODE >21:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
 1078 text0 CODE >23:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
 107E text0 CODE >24:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1086 text0 CODE >26:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-10B2 text0 CODE >30:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-10BA text0 CODE >32:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-10C6 text0 CODE >33:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-10DC text0 CODE >34:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-10EC text0 CODE >35:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1100 text0 CODE >36:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1116 text0 CODE >35:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-111C text0 CODE >37:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-111E text0 CODE >38:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1126 text0 CODE >40:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1132 text0 CODE >41:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1148 text0 CODE >42:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1158 text0 CODE >43:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-116C text0 CODE >44:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1182 text0 CODE >43:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1188 text0 CODE >45:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-118A text0 CODE >46:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1192 text0 CODE >48:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-119E text0 CODE >49:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-11B4 text0 CODE >50:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-11C4 text0 CODE >51:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-11D8 text0 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-11EE text0 CODE >51:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-11F4 text0 CODE >53:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-11F6 text0 CODE >54:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-11FE text0 CODE >56:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-120A text0 CODE >57:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1220 text0 CODE >58:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1230 text0 CODE >59:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1244 text0 CODE >60:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-125A text0 CODE >59:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1260 text0 CODE >61:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1262 text0 CODE >62:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-126A text0 CODE >64:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1276 text0 CODE >65:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-128C text0 CODE >66:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-129C text0 CODE >67:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-12B0 text0 CODE >68:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-12C6 text0 CODE >67:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-12CC text0 CODE >70:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-12CE text0 CODE >71:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-12DA text0 CODE >72:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-12DC text0 CODE >73:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-12FA text0 CODE >75:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1306 text0 CODE >76:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1316 text0 CODE >77:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1318 text0 CODE >78:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-131E text0 CODE >79:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1324 text0 CODE >80:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1338 text0 CODE >81:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1356 text0 CODE >80:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-135C text0 CODE >82:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-135E text0 CODE >84:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1360 text0 CODE >86:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-136A text0 CODE >88:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1396 text0 CODE >92:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-139E text0 CODE >94:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-13AA text0 CODE >95:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-13C0 text0 CODE >96:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-13D0 text0 CODE >97:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-13E4 text0 CODE >98:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-13FA text0 CODE >97:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1400 text0 CODE >99:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1402 text0 CODE >100:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-140A text0 CODE >102:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1416 text0 CODE >103:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-142C text0 CODE >104:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-143C text0 CODE >105:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1450 text0 CODE >106:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1466 text0 CODE >105:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-146C text0 CODE >107:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-146E text0 CODE >108:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1476 text0 CODE >110:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1482 text0 CODE >111:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1498 text0 CODE >112:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-14A8 text0 CODE >113:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-14BC text0 CODE >114:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-14D2 text0 CODE >113:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-14D8 text0 CODE >115:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-14DA text0 CODE >116:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-14E2 text0 CODE >118:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-14EE text0 CODE >119:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1504 text0 CODE >120:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1514 text0 CODE >121:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1528 text0 CODE >122:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-153E text0 CODE >121:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1544 text0 CODE >123:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1546 text0 CODE >124:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-154E text0 CODE >126:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-155A text0 CODE >127:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1570 text0 CODE >128:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1580 text0 CODE >129:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1594 text0 CODE >130:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-15AA text0 CODE >129:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-15B0 text0 CODE >132:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-15B2 text0 CODE >133:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-15BE text0 CODE >134:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-15C0 text0 CODE >135:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-15DE text0 CODE >137:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-15EA text0 CODE >138:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-15FA text0 CODE >139:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-15FC text0 CODE >140:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1602 text0 CODE >141:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1608 text0 CODE >142:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-161C text0 CODE >143:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-163A text0 CODE >142:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1640 text0 CODE >144:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1642 text0 CODE >19:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1644 text0 CODE >149:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-1648 text21 CODE >67:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1648 text21 CODE >69:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-164C text21 CODE >70:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1652 text21 CODE >76:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1654 text21 CODE >77:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-166C text21 CODE >79:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1670 text21 CODE >82:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1676 text21 CODE >74:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-16A4 text21 CODE >84:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-16BC text21 CODE >86:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-16C2 text21 CODE >88:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-16DC text21 CODE >89:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1702 text21 CODE >86:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1716 text21 CODE >92:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1722 text21 CODE >93:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-172E text21 CODE >95:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1734 text21 CODE >97:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1736 text21 CODE >99:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-175A text21 CODE >95:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-177E text21 CODE >101:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-178A text21 CODE >102:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1796 text21 CODE >104:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-17CE text21 CODE >106:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-17D2 text21 CODE >107:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-17D8 text21 CODE >108:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-17DA text21 CODE >110:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1812 text21 CODE >112:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1816 text21 CODE >113:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-181C text21 CODE >114:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-181E text21 CODE >116:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1856 text21 CODE >118:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-185A text21 CODE >119:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1860 text21 CODE >120:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1862 text21 CODE >122:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-189A text21 CODE >124:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-189E text21 CODE >125:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-18A4 text21 CODE >126:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-18A6 text21 CODE >130:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-18B2 text21 CODE >131:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-18B4 text21 CODE >133:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-18B6 text21 CODE >135:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-18BC text21 CODE >137:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-18C0 text21 CODE >138:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-18C2 text21 CODE >141:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-18E6 text21 CODE >142:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-18EA text21 CODE >138:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1902 text21 CODE >145:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-190E text21 CODE >146:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-191A text21 CODE >148:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1952 text21 CODE >150:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1958 text21 CODE >151:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-195E text21 CODE >152:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1960 text21 CODE >154:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1998 text21 CODE >156:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-199E text21 CODE >157:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-19A4 text21 CODE >158:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-19A6 text21 CODE >160:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-19DE text21 CODE >162:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-19E2 text21 CODE >163:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-19E8 text21 CODE >164:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-19EA text21 CODE >166:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1A22 text21 CODE >168:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1A26 text21 CODE >169:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1A2C text21 CODE >170:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1A2E text21 CODE >172:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1A66 text21 CODE >174:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1A6A text21 CODE >175:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1A70 text21 CODE >176:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1A72 text21 CODE >178:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1AAA text21 CODE >180:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1AAE text21 CODE >181:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1AB4 text21 CODE >182:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1AB6 text21 CODE >184:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1AEE text21 CODE >186:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1AF2 text21 CODE >187:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1AF8 text21 CODE >188:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1AFA text21 CODE >192:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B06 text21 CODE >193:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B0A text21 CODE >195:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B0C text21 CODE >197:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B2C text21 CODE >201:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B38 text21 CODE >203:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B4C text21 CODE >201:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B50 text21 CODE >206:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B5C text21 CODE >208:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B70 text21 CODE >206:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B74 text21 CODE >211:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B80 text21 CODE >213:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B94 text21 CODE >211:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B98 text21 CODE >215:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1B9C text21 CODE >216:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1BA2 text21 CODE >217:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-1BA4 text24 CODE >35:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BA4 text24 CODE >66:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BAC text24 CODE >67:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BBC text24 CODE >68:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BBE text24 CODE >69:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BC4 text24 CODE >68:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BDA text24 CODE >70:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BDE text24 CODE >71:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BE6 text24 CODE >72:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BEA text24 CODE >73:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BEC text24 CODE >74:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BF4 text24 CODE >75:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BFA text24 CODE >76:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1BFE text24 CODE >77:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C0E text24 CODE >78:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C14 text24 CODE >81:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C28 text24 CODE >82:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C2C text24 CODE >86:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C40 text24 CODE >87:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C42 text24 CODE >88:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C44 text24 CODE >89:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C4C text24 CODE >90:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C4E text24 CODE >91:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C50 text24 CODE >92:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C52 text24 CODE >94:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1C86 text24 CODE >95:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1CA2 text24 CODE >99:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1CA8 text24 CODE >100:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1CAC text24 CODE >101:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1CB0 text24 CODE >102:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1CB2 text24 CODE >104:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1CB6 text24 CODE >105:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1CD6 text24 CODE >106:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1CEA text24 CODE >107:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1CEE text24 CODE >109:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1CFE text24 CODE >110:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1D02 text24 CODE >111:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1D1A text24 CODE >112:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1D2C text24 CODE >113:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1D3E text24 CODE >114:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1D50 text24 CODE >115:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1D6C text24 CODE >116:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1D7E text24 CODE >117:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1D96 text24 CODE >118:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1D98 text24 CODE >120:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1D9C text24 CODE >121:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1DA0 text24 CODE >123:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1DA4 text24 CODE >125:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1DAE text24 CODE >126:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1DC0 text24 CODE >130:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1DE0 text24 CODE >132:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1DEA text24 CODE >133:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1DF4 text24 CODE >134:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1DF8 text24 CODE >135:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1DFA text24 CODE >143:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1DFC text24 CODE >144:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E24 text24 CODE >145:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E2A text24 CODE >143:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E36 text24 CODE >147:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E38 text24 CODE >148:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E60 text24 CODE >149:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E64 text24 CODE >147:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E6A text24 CODE >159:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E88 text24 CODE >161:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E8A text24 CODE >162:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E8E text24 CODE >164:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E9C text24 CODE >172:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1E9E text24 CODE >173:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1EC6 text24 CODE >174:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1ECC text24 CODE >172:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1ED2 text24 CODE >176:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1ED4 text24 CODE >177:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1EFC text24 CODE >178:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1F00 text24 CODE >176:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1F06 text24 CODE >188:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1F26 text24 CODE >189:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1F2A text24 CODE >190:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1F38 text24 CODE >191:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1F46 text24 CODE >192:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1F48 text24 CODE >194:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1F4C text24 CODE >195:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1F6A text24 CODE >196:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1F78 text24 CODE >197:/opt/microchip/xc8/v1.34/sources/common/atof.c
-1F7A text9 CODE >80:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-1F7A text9 CODE >85:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-1FB4 text9 CODE >86:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-1FD2 text9 CODE >87:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-1FF0 text9 CODE >88:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-1FFC text9 CODE >89:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2006 text9 CODE >90:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2024 text9 CODE >91:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2042 text9 CODE >92:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-204E text9 CODE >93:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2058 text9 CODE >94:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2076 text9 CODE >95:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2094 text9 CODE >96:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-209E text9 CODE >97:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-20A4 text9 CODE >98:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-20C2 text9 CODE >99:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-20E0 text9 CODE >100:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-20EA text9 CODE >101:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-20F4 text9 CODE >102:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-20FA text9 CODE >103:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2100 text9 CODE >104:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2102 text13 CODE >62:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2102 text13 CODE >67:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2128 text13 CODE >68:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-212C text13 CODE >69:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2152 text13 CODE >70:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2166 text13 CODE >71:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2170 text13 CODE >72:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2174 text13 CODE >73:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-217C text13 CODE >74:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2182 text13 CODE >75:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2186 text13 CODE >77:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-218A text13 CODE >78:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-219C text13 CODE >79:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-21AE text13 CODE >134:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-21B6 text13 CODE >136:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-21BC text13 CODE >137:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-21D6 text13 CODE >138:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-21E0 text13 CODE >139:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-21EA text13 CODE >140:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-21F2 text13 CODE >143:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-21FA text13 CODE >145:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2200 text13 CODE >146:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-221A text13 CODE >147:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2224 text13 CODE >148:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-222E text13 CODE >149:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2236 text13 CODE >156:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-225C text13 CODE >157:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-225E text20 CODE >19:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-225E text20 CODE >21:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2262 text20 CODE >24:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2268 text20 CODE >25:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-227C text20 CODE >26:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2282 text20 CODE >27:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-22B2 text20 CODE >29:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-22B8 text20 CODE >30:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-22BC text20 CODE >31:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-22D0 text20 CODE >32:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-22D2 text20 CODE >33:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2302 text20 CODE >34:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2306 text20 CODE >36:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-230E text20 CODE >38:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2314 text20 CODE >39:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-231A text20 CODE >40:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-232E text20 CODE >41:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2334 text20 CODE >42:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-233A text20 CODE >44:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2340 text20 CODE >46:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-234C text20 CODE >47:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-234E text20 CODE >49:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2356 text20 CODE >51:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2362 text20 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2364 text20 CODE >54:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-236C text20 CODE >56:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2378 text20 CODE >57:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-237A text20 CODE >59:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2382 text20 CODE >61:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-238E text20 CODE >64:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2392 text20 CODE >65:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
-2394 text12 CODE >44:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2394 text12 CODE >49:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-23BA text12 CODE >50:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-23BE text12 CODE >51:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-23F2 text12 CODE >52:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-23F6 text12 CODE >53:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2408 text12 CODE >54:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2424 text12 CODE >55:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-242A text12 CODE >56:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2430 text12 CODE >57:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-243C text12 CODE >58:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2442 text12 CODE >60:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-244E text12 CODE >61:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2454 text12 CODE >62:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2456 text12 CODE >63:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-245E text12 CODE >64:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2472 text12 CODE >65:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2474 text12 CODE >66:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2480 text12 CODE >67:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2486 text12 CODE >65:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-2494 text12 CODE >70:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-249E text12 CODE >71:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-24B2 text12 CODE >72:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-24C4 text12 CODE >73:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-24C6 text14 CODE >62:/opt/microchip/xc8/v1.34/sources/common/float.c
-24C6 text14 CODE >64:/opt/microchip/xc8/v1.34/sources/common/float.c
-24E0 text14 CODE >65:/opt/microchip/xc8/v1.34/sources/common/float.c
-24F4 text14 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
-24F6 text14 CODE >67:/opt/microchip/xc8/v1.34/sources/common/float.c
-24FA text14 CODE >68:/opt/microchip/xc8/v1.34/sources/common/float.c
-2506 text14 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
-2536 text14 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
-2538 text14 CODE >71:/opt/microchip/xc8/v1.34/sources/common/float.c
-253C text14 CODE >72:/opt/microchip/xc8/v1.34/sources/common/float.c
-254E text14 CODE >73:/opt/microchip/xc8/v1.34/sources/common/float.c
-255A text14 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
-258A text14 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
-258C text14 CODE >76:/opt/microchip/xc8/v1.34/sources/common/float.c
-2590 text14 CODE >77:/opt/microchip/xc8/v1.34/sources/common/float.c
-259C text14 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
-25AC text14 CODE >79:/opt/microchip/xc8/v1.34/sources/common/float.c
-25B2 text14 CODE >80:/opt/microchip/xc8/v1.34/sources/common/float.c
-25B8 text14 CODE >81:/opt/microchip/xc8/v1.34/sources/common/float.c
-25BE text14 CODE >82:/opt/microchip/xc8/v1.34/sources/common/float.c
-25C6 text14 CODE >83:/opt/microchip/xc8/v1.34/sources/common/float.c
-25D0 text14 CODE >84:/opt/microchip/xc8/v1.34/sources/common/float.c
-25D6 text14 CODE >85:/opt/microchip/xc8/v1.34/sources/common/float.c
-25E4 text14 CODE >86:/opt/microchip/xc8/v1.34/sources/common/float.c
-25E6 text25 CODE >62:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-25E6 text25 CODE >67:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2600 text25 CODE >68:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2604 text25 CODE >69:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-261E text25 CODE >70:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-262C text25 CODE >71:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2632 text25 CODE >72:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2636 text25 CODE >73:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-263A text25 CODE >74:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-263E text25 CODE >75:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2640 text25 CODE >77:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2642 text25 CODE >78:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-264E text25 CODE >79:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-265A text25 CODE >134:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2660 text25 CODE >136:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2664 text25 CODE >137:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2672 text25 CODE >138:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-267A text25 CODE >139:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2682 text25 CODE >140:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2688 text25 CODE >143:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-268E text25 CODE >145:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-2692 text25 CODE >146:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-26A0 text25 CODE >147:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-26A8 text25 CODE >148:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-26B0 text25 CODE >149:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-26B6 text25 CODE >156:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-26DC text25 CODE >157:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-26DE text31 CODE >54:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-26DE text31 CODE >63:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-26F8 text31 CODE >64:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-26FC text31 CODE >65:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2716 text31 CODE >66:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2724 text31 CODE >67:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2730 text31 CODE >68:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2736 text31 CODE >69:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-273A text31 CODE >70:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-273E text31 CODE >71:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2742 text31 CODE >72:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2744 text31 CODE >73:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2750 text31 CODE >74:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2752 text31 CODE >75:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-275E text31 CODE >76:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2764 text31 CODE >78:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-276C text31 CODE >79:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-277C text31 CODE >80:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2788 text31 CODE >81:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-278A text31 CODE >82:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-278A text31 CODE >83:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2792 text31 CODE >84:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-2798 text31 CODE >85:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-27BE text31 CODE >86:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-27C0 text33 CODE >62:/opt/microchip/xc8/v1.34/sources/common/float.c
-27C0 text33 CODE >64:/opt/microchip/xc8/v1.34/sources/common/float.c
-27D0 text33 CODE >65:/opt/microchip/xc8/v1.34/sources/common/float.c
-27DE text33 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
-27E0 text33 CODE >67:/opt/microchip/xc8/v1.34/sources/common/float.c
-27E2 text33 CODE >68:/opt/microchip/xc8/v1.34/sources/common/float.c
-27EC text33 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
-280A text33 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
-280C text33 CODE >71:/opt/microchip/xc8/v1.34/sources/common/float.c
-280E text33 CODE >72:/opt/microchip/xc8/v1.34/sources/common/float.c
-281A text33 CODE >73:/opt/microchip/xc8/v1.34/sources/common/float.c
-2824 text33 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
-2842 text33 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
-2844 text33 CODE >76:/opt/microchip/xc8/v1.34/sources/common/float.c
-2846 text33 CODE >77:/opt/microchip/xc8/v1.34/sources/common/float.c
-2850 text33 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
-285C text33 CODE >79:/opt/microchip/xc8/v1.34/sources/common/float.c
-2860 text33 CODE >80:/opt/microchip/xc8/v1.34/sources/common/float.c
-2864 text33 CODE >81:/opt/microchip/xc8/v1.34/sources/common/float.c
-2868 text33 CODE >82:/opt/microchip/xc8/v1.34/sources/common/float.c
-286C text33 CODE >83:/opt/microchip/xc8/v1.34/sources/common/float.c
-2872 text33 CODE >84:/opt/microchip/xc8/v1.34/sources/common/float.c
-2876 text33 CODE >85:/opt/microchip/xc8/v1.34/sources/common/float.c
-2884 text33 CODE >86:/opt/microchip/xc8/v1.34/sources/common/float.c
-2886 text8 CODE >55:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2886 text8 CODE >57:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-288E text8 CODE >60:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2890 text8 CODE >61:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2896 text8 CODE >62:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-289C text8 CODE >63:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-28AC text8 CODE >64:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-28C4 text8 CODE >63:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-28CA text8 CODE >65:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-28DE text8 CODE >66:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-28E0 text8 CODE >67:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-28E2 text8 CODE >68:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-28EC text8 CODE >71:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-28EE text8 CODE >72:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-28F4 text8 CODE >73:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-28FA text8 CODE >74:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-290A text8 CODE >75:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2926 text8 CODE >74:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-292C text8 CODE >76:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2932 text8 CODE >77:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2934 text8 CODE >78:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2936 text8 CODE >79:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2938 text30 CODE >4:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-2938 text30 CODE >6:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-293C text30 CODE >7:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-296A text30 CODE >8:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-296E text30 CODE >9:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-299C text30 CODE >10:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-29A8 text30 CODE >11:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-29B4 text30 CODE >12:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-29CC text30 CODE >13:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-29CE text11 CODE >8:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-29CE text11 CODE >14:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-29D8 text11 CODE >15:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-29E4 text11 CODE >16:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-29EA text11 CODE >17:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-29EC text11 CODE >18:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-29F4 text11 CODE >19:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-29FA text11 CODE >17:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-2A04 text11 CODE >22:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-2A0C text11 CODE >23:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-2A20 text11 CODE >24:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-2A30 text11 CODE >25:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-2A36 text11 CODE >27:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-2A3E text11 CODE >28:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-2A46 text11 CODE >29:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-2A46 text11 CODE >30:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-2A4E text11 CODE >31:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-2A50 text4 CODE >91:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2A50 text4 CODE >93:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2A56 text4 CODE >94:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2A6A text4 CODE >95:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2A82 text4 CODE >94:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2A88 text4 CODE >96:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2AC2 text4 CODE >97:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2AC6 text4 CODE >99:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2ACA text4 CODE >100:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2ACC text32 CODE >42:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2ACC text32 CODE >45:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2AD0 text32 CODE >46:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2AD4 text32 CODE >47:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2AD8 text32 CODE >48:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2AE8 text32 CODE >49:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2AEC text32 CODE >52:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2AEE text32 CODE >53:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2AF8 text32 CODE >54:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2AFC text32 CODE >52:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2B20 text32 CODE >56:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2B46 text32 CODE >57:/opt/microchip/xc8/v1.34/sources/common/altoft.c
-2B48 intcode_body CODE >151:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-2B76 intcode_body CODE >153:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-2B7A intcode_body CODE >155:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-2B80 intcode_body CODE >157:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-2BBA text10 CODE >8:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2BBA text10 CODE >13:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2BC6 text10 CODE >14:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2BCC text10 CODE >15:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2BCE text10 CODE >16:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2BD6 text10 CODE >17:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2BDC text10 CODE >15:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2BE6 text10 CODE >20:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2BFA text10 CODE >21:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2C0C text10 CODE >22:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2C14 text10 CODE >23:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2C1C text10 CODE >24:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2C1C text10 CODE >25:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2C24 text10 CODE >26:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
-2C26 text3 CODE >50:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2C26 text3 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2C28 text3 CODE >53:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2C56 text3 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2C7E text3 CODE >54:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2C80 text28 CODE >15:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
-2C80 text28 CODE >119:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
-2C92 text28 CODE >121:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
-2C96 text28 CODE >122:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
-2CA8 text28 CODE >123:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
-2CB2 text28 CODE >124:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
-2CBC text28 CODE >125:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
-2CC8 text28 CODE >128:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
-2CD8 text28 CODE >129:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
-2CDA text7 CODE >16:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2CDE text7 CODE >18:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2CE6 text7 CODE >20:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2CE8 text7 CODE >21:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2CEE text7 CODE >23:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2CF2 text7 CODE >24:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2CF4 text7 CODE >25:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2CF8 text7 CODE >26:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2CFE text7 CODE >27:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D02 text7 CODE >28:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D04 text7 CODE >29:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D06 text7 CODE >31:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D10 text7 CODE >33:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D12 text7 CODE >34:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D18 text7 CODE >36:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D1C text7 CODE >37:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D1E text7 CODE >38:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D22 text7 CODE >39:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D28 text7 CODE >40:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D2C text7 CODE >41:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D2E text7 CODE >42:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D30 text7 CODE >43:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2D32 text22 CODE >50:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2D32 text22 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2D34 text22 CODE >53:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2D60 text22 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2D88 text22 CODE >54:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2D8A text34 CODE >33:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
-2D8A text34 CODE >37:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
-2D8C text34 CODE >38:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
-2D90 text34 CODE >39:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
-2D96 text34 CODE >37:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
-2DCC text34 CODE >41:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
-2DD8 text34 CODE >42:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
-2DDA text5 CODE >102:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2DDA text5 CODE >104:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2DE2 text5 CODE >105:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2DF0 text5 CODE >106:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E02 text5 CODE >107:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E14 text5 CODE >108:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E1C text5 CODE >109:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E1E text16 CODE >81:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E1E text16 CODE >84:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E26 text16 CODE >85:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E32 text16 CODE >86:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E42 text16 CODE >87:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E52 text16 CODE >88:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E60 text16 CODE >89:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E62 text6 CODE >111:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E62 text6 CODE >113:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E68 text6 CODE >114:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E7C text6 CODE >115:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E94 text6 CODE >114:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2E9A text6 CODE >116:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2EA0 text6 CODE >117:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2EA2 cinit CODE >1458:/tmp/cgtrYQ2DN
-2EA2 cinit CODE >1460:/tmp/cgtrYQ2DN
-2EA2 cinit CODE >1463:/tmp/cgtrYQ2DN
-2EA2 cinit CODE >1529:/tmp/cgtrYQ2DN
-2EA6 cinit CODE >1530:/tmp/cgtrYQ2DN
-2EA8 cinit CODE >1531:/tmp/cgtrYQ2DN
-2EA8 cinit CODE >1532:/tmp/cgtrYQ2DN
-2EAA cinit CODE >1533:/tmp/cgtrYQ2DN
-2EAC cinit CODE >1534:/tmp/cgtrYQ2DN
-2EAE cinit CODE >1537:/tmp/cgtrYQ2DN
-2EB2 cinit CODE >1538:/tmp/cgtrYQ2DN
-2EB4 cinit CODE >1539:/tmp/cgtrYQ2DN
-2EB4 cinit CODE >1540:/tmp/cgtrYQ2DN
-2EB6 cinit CODE >1541:/tmp/cgtrYQ2DN
-2EB8 cinit CODE >1542:/tmp/cgtrYQ2DN
-2EBA cinit CODE >1547:/tmp/cgtrYQ2DN
-2EBC cinit CODE >1548:/tmp/cgtrYQ2DN
-2EBE cinit CODE >1549:/tmp/cgtrYQ2DN
-2EC0 cinit CODE >1550:/tmp/cgtrYQ2DN
-2EC2 cinit CODE >1551:/tmp/cgtrYQ2DN
-2EC4 cinit CODE >1552:/tmp/cgtrYQ2DN
-2EC6 cinit CODE >1553:/tmp/cgtrYQ2DN
-2EC8 cinit CODE >1554:/tmp/cgtrYQ2DN
-2ECC cinit CODE >1560:/tmp/cgtrYQ2DN
-2ECC cinit CODE >1562:/tmp/cgtrYQ2DN
-2ECE cinit CODE >1563:/tmp/cgtrYQ2DN
-2ED0 cinit CODE >1564:/tmp/cgtrYQ2DN
-2ED2 cinit CODE >1565:/tmp/cgtrYQ2DN
-2ED6 text26 CODE >8:/opt/microchip/xc8/v1.34/sources/common/isspace.c
-2ED8 text26 CODE >14:/opt/microchip/xc8/v1.34/sources/common/isspace.c
-2F00 text26 CODE >15:/opt/microchip/xc8/v1.34/sources/common/isspace.c
-2F02 text2 CODE >19:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2F02 text2 CODE >26:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2F06 text2 CODE >27:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2F0A text2 CODE >28:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2F0E text2 CODE >29:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2F12 text2 CODE >31:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2F14 text2 CODE >32:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2F16 text2 CODE >33:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2F18 text2 CODE >35:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2F28 text2 CODE >36:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2F2A text29 CODE >15:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
-2F2A text29 CODE >17:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
-2F34 text29 CODE >18:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
-2F40 text29 CODE >19:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
-2F4C text29 CODE >20:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
-2F4E text27 CODE >8:/opt/microchip/xc8/v1.34/sources/common/isdigit.c
-2F50 text27 CODE >14:/opt/microchip/xc8/v1.34/sources/common/isdigit.c
-2F6E text27 CODE >15:/opt/microchip/xc8/v1.34/sources/common/isdigit.c
-2F70 text17 CODE >45:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2F70 text17 CODE >48:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2F74 text17 CODE >49:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2F76 text17 CODE >50:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2F7A text17 CODE >51:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2F80 text17 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2F84 text17 CODE >53:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
-2F86 text18 CODE >8:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-2F8A text18 CODE >11:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-2F92 text18 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-2F9A text18 CODE >13:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-2F9C text15 CODE >41:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2FA0 text15 CODE >43:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2FA4 text15 CODE >44:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2FAA text15 CODE >45:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2FAC text23 CODE >41:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2FAE text23 CODE >43:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2FB2 text23 CODE >44:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2FB8 text23 CODE >45:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
-2FBA text1 CODE >159:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-2FBA text1 CODE >161:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-2FBC text1 CODE >162:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-2FBE text1 CODE >163:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
-2FC2 text1 CODE >164:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1088 text0 CODE >26:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+108E text0 CODE >27:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+10BA text0 CODE >31:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+10C2 text0 CODE >33:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+10CE text0 CODE >34:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+10E4 text0 CODE >35:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+10F4 text0 CODE >36:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1108 text0 CODE >37:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+111E text0 CODE >36:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1124 text0 CODE >38:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1126 text0 CODE >39:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+112E text0 CODE >41:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+113A text0 CODE >42:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1150 text0 CODE >43:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1160 text0 CODE >44:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1174 text0 CODE >45:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+118A text0 CODE >44:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1190 text0 CODE >46:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1192 text0 CODE >47:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+119A text0 CODE >49:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+11A6 text0 CODE >50:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+11BC text0 CODE >51:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+11CC text0 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+11E0 text0 CODE >53:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+11F6 text0 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+11FC text0 CODE >54:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+11FE text0 CODE >55:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1206 text0 CODE >57:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1212 text0 CODE >58:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1228 text0 CODE >59:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1238 text0 CODE >60:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+124C text0 CODE >61:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1262 text0 CODE >60:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1268 text0 CODE >62:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+126A text0 CODE >63:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1272 text0 CODE >65:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+127E text0 CODE >66:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1294 text0 CODE >67:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+12A4 text0 CODE >68:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+12B8 text0 CODE >69:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+12CE text0 CODE >68:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+12D4 text0 CODE >71:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+12D6 text0 CODE >72:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+12E2 text0 CODE >73:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+12E4 text0 CODE >74:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1302 text0 CODE >76:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+130E text0 CODE >77:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+131E text0 CODE >78:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1320 text0 CODE >79:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1326 text0 CODE >80:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+132C text0 CODE >81:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1340 text0 CODE >82:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+135E text0 CODE >81:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1364 text0 CODE >83:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1366 text0 CODE >85:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1368 text0 CODE >87:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1372 text0 CODE >89:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+139E text0 CODE >93:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+13A6 text0 CODE >95:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+13B2 text0 CODE >96:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+13C8 text0 CODE >97:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+13D8 text0 CODE >98:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+13EC text0 CODE >99:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1402 text0 CODE >98:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1408 text0 CODE >100:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+140A text0 CODE >101:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1412 text0 CODE >103:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+141E text0 CODE >104:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1434 text0 CODE >105:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1444 text0 CODE >106:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1458 text0 CODE >107:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+146E text0 CODE >106:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1474 text0 CODE >108:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1476 text0 CODE >109:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+147E text0 CODE >111:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+148A text0 CODE >112:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+14A0 text0 CODE >113:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+14B0 text0 CODE >114:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+14C4 text0 CODE >115:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+14DA text0 CODE >114:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+14E0 text0 CODE >116:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+14E2 text0 CODE >117:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+14EA text0 CODE >119:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+14F6 text0 CODE >120:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+150C text0 CODE >121:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+151C text0 CODE >122:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1530 text0 CODE >123:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1546 text0 CODE >122:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+154C text0 CODE >124:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+154E text0 CODE >125:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1556 text0 CODE >127:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1562 text0 CODE >128:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1578 text0 CODE >129:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1588 text0 CODE >130:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+159C text0 CODE >131:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+15B2 text0 CODE >130:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+15B8 text0 CODE >133:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+15BA text0 CODE >134:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+15C6 text0 CODE >135:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+15C8 text0 CODE >136:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+15E6 text0 CODE >138:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+15F2 text0 CODE >139:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1602 text0 CODE >140:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1604 text0 CODE >141:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+160A text0 CODE >142:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1610 text0 CODE >143:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1624 text0 CODE >144:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1642 text0 CODE >143:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1648 text0 CODE >145:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+164A text0 CODE >19:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+164C text0 CODE >150:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+1650 text23 CODE >73:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1650 text23 CODE >75:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1654 text23 CODE >76:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+165A text23 CODE >82:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+165C text23 CODE >83:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1674 text23 CODE >85:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1678 text23 CODE >88:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+167E text23 CODE >80:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+16AC text23 CODE >90:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+16C4 text23 CODE >92:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+16CA text23 CODE >94:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+16E4 text23 CODE >95:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+170A text23 CODE >92:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+171E text23 CODE >98:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+172A text23 CODE >99:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1736 text23 CODE >101:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+173C text23 CODE >103:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+173E text23 CODE >105:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1762 text23 CODE >101:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1786 text23 CODE >107:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1792 text23 CODE >108:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+179E text23 CODE >110:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+17D6 text23 CODE >112:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+17DA text23 CODE >113:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+17E0 text23 CODE >114:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+17E2 text23 CODE >116:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+181A text23 CODE >118:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+181E text23 CODE >119:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1824 text23 CODE >120:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1826 text23 CODE >122:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+185E text23 CODE >124:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1862 text23 CODE >125:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1868 text23 CODE >126:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+186A text23 CODE >128:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18A2 text23 CODE >130:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18A6 text23 CODE >131:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18AC text23 CODE >132:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18AE text23 CODE >136:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18BA text23 CODE >137:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18BC text23 CODE >139:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18BE text23 CODE >141:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18C4 text23 CODE >143:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18C8 text23 CODE >144:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18CA text23 CODE >147:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18EE text23 CODE >148:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+18F2 text23 CODE >144:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+190A text23 CODE >151:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1916 text23 CODE >152:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1922 text23 CODE >154:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+195A text23 CODE >156:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1960 text23 CODE >157:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1966 text23 CODE >158:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1968 text23 CODE >160:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+19A0 text23 CODE >162:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+19A6 text23 CODE >163:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+19AC text23 CODE >164:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+19AE text23 CODE >166:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+19E6 text23 CODE >168:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+19EA text23 CODE >169:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+19F0 text23 CODE >170:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+19F2 text23 CODE >172:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1A2A text23 CODE >174:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1A2E text23 CODE >175:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1A34 text23 CODE >176:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1A36 text23 CODE >178:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1A6E text23 CODE >180:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1A72 text23 CODE >181:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1A78 text23 CODE >182:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1A7A text23 CODE >184:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1AB2 text23 CODE >186:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1AB6 text23 CODE >187:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1ABC text23 CODE >188:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1ABE text23 CODE >190:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1AF6 text23 CODE >192:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1AFA text23 CODE >193:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B00 text23 CODE >194:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B02 text23 CODE >198:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B0E text23 CODE >199:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B12 text23 CODE >201:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B14 text23 CODE >203:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B34 text23 CODE >207:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B40 text23 CODE >209:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B54 text23 CODE >207:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B58 text23 CODE >212:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B64 text23 CODE >214:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B78 text23 CODE >212:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B7C text23 CODE >217:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B88 text23 CODE >219:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1B9C text23 CODE >217:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1BA0 text23 CODE >221:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1BA4 text23 CODE >222:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1BAA text23 CODE >223:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+1BAC text26 CODE >35:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1BAC text26 CODE >66:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1BB4 text26 CODE >67:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1BC4 text26 CODE >68:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1BC6 text26 CODE >69:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1BCC text26 CODE >68:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1BE2 text26 CODE >70:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1BE6 text26 CODE >71:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1BEE text26 CODE >72:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1BF2 text26 CODE >73:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1BF4 text26 CODE >74:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1BFC text26 CODE >75:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C02 text26 CODE >76:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C06 text26 CODE >77:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C16 text26 CODE >78:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C1C text26 CODE >81:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C30 text26 CODE >82:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C34 text26 CODE >86:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C48 text26 CODE >87:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C4A text26 CODE >88:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C4C text26 CODE >89:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C54 text26 CODE >90:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C56 text26 CODE >91:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C58 text26 CODE >92:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C5A text26 CODE >94:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1C8E text26 CODE >95:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1CAA text26 CODE >99:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1CB0 text26 CODE >100:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1CB4 text26 CODE >101:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1CB8 text26 CODE >102:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1CBA text26 CODE >104:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1CBE text26 CODE >105:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1CDE text26 CODE >106:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1CF2 text26 CODE >107:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1CF6 text26 CODE >109:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1D06 text26 CODE >110:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1D0A text26 CODE >111:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1D22 text26 CODE >112:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1D34 text26 CODE >113:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1D46 text26 CODE >114:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1D58 text26 CODE >115:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1D74 text26 CODE >116:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1D86 text26 CODE >117:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1D9E text26 CODE >118:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1DA0 text26 CODE >120:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1DA4 text26 CODE >121:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1DA8 text26 CODE >123:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1DAC text26 CODE >125:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1DB6 text26 CODE >126:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1DC8 text26 CODE >130:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1DE8 text26 CODE >132:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1DF2 text26 CODE >133:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1DFC text26 CODE >134:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E00 text26 CODE >135:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E02 text26 CODE >143:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E04 text26 CODE >144:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E2C text26 CODE >145:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E32 text26 CODE >143:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E3E text26 CODE >147:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E40 text26 CODE >148:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E68 text26 CODE >149:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E6C text26 CODE >147:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E72 text26 CODE >159:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E90 text26 CODE >161:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E92 text26 CODE >162:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1E96 text26 CODE >164:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1EA4 text26 CODE >172:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1EA6 text26 CODE >173:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1ECE text26 CODE >174:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1ED4 text26 CODE >172:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1EDA text26 CODE >176:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1EDC text26 CODE >177:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F04 text26 CODE >178:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F08 text26 CODE >176:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F0E text26 CODE >188:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F2E text26 CODE >189:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F32 text26 CODE >190:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F40 text26 CODE >191:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F4E text26 CODE >192:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F50 text26 CODE >194:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F54 text26 CODE >195:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F72 text26 CODE >196:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F80 text26 CODE >197:/opt/microchip/xc8/v1.34/sources/common/atof.c
+1F82 text11 CODE >80:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+1F82 text11 CODE >85:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+1FBC text11 CODE >86:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+1FDA text11 CODE >87:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+1FF8 text11 CODE >88:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2004 text11 CODE >89:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+200E text11 CODE >90:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+202C text11 CODE >91:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+204A text11 CODE >92:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2056 text11 CODE >93:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2060 text11 CODE >94:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+207E text11 CODE >95:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+209C text11 CODE >96:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+20A6 text11 CODE >97:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+20AC text11 CODE >98:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+20CA text11 CODE >99:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+20E8 text11 CODE >100:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+20F2 text11 CODE >101:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+20FC text11 CODE >102:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2102 text11 CODE >103:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2108 text11 CODE >104:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+210A text15 CODE >62:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+210A text15 CODE >67:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2130 text15 CODE >68:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2134 text15 CODE >69:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+215A text15 CODE >70:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+216E text15 CODE >71:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2178 text15 CODE >72:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+217C text15 CODE >73:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2184 text15 CODE >74:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+218A text15 CODE >75:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+218E text15 CODE >77:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2192 text15 CODE >78:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+21A4 text15 CODE >79:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+21B6 text15 CODE >134:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+21BE text15 CODE >136:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+21C4 text15 CODE >137:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+21DE text15 CODE >138:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+21E8 text15 CODE >139:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+21F2 text15 CODE >140:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+21FA text15 CODE >143:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2202 text15 CODE >145:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2208 text15 CODE >146:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2222 text15 CODE >147:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+222C text15 CODE >148:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2236 text15 CODE >149:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+223E text15 CODE >156:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2264 text15 CODE >157:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2266 text22 CODE >19:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2266 text22 CODE >21:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+226A text22 CODE >24:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2270 text22 CODE >25:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2284 text22 CODE >26:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+228A text22 CODE >27:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+22BA text22 CODE >29:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+22C0 text22 CODE >30:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+22C4 text22 CODE >31:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+22D8 text22 CODE >32:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+22DA text22 CODE >33:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+230A text22 CODE >34:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+230E text22 CODE >36:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2316 text22 CODE >38:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+231C text22 CODE >39:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2322 text22 CODE >40:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2336 text22 CODE >41:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+233C text22 CODE >42:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2342 text22 CODE >44:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2348 text22 CODE >46:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+235C text22 CODE >48:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2368 text22 CODE >49:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+236C text22 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2370 text22 CODE >53:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2372 text22 CODE >55:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+237A text22 CODE >57:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2386 text22 CODE >58:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2388 text22 CODE >60:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+2390 text22 CODE >62:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+239C text22 CODE >63:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+239E text22 CODE >65:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+23A6 text22 CODE >67:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+23B2 text22 CODE >70:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+23B6 text22 CODE >71:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
+23B8 text14 CODE >44:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+23B8 text14 CODE >49:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+23DE text14 CODE >50:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+23E2 text14 CODE >51:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+2416 text14 CODE >52:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+241A text14 CODE >53:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+242C text14 CODE >54:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+2448 text14 CODE >55:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+244E text14 CODE >56:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+2454 text14 CODE >57:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+2460 text14 CODE >58:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+2466 text14 CODE >60:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+2472 text14 CODE >61:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+2478 text14 CODE >62:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+247A text14 CODE >63:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+2482 text14 CODE >64:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+2496 text14 CODE >65:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+2498 text14 CODE >66:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+24A4 text14 CODE >67:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+24AA text14 CODE >65:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+24B8 text14 CODE >70:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+24C2 text14 CODE >71:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+24D6 text14 CODE >72:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+24E8 text14 CODE >73:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+24EA text16 CODE >62:/opt/microchip/xc8/v1.34/sources/common/float.c
+24EA text16 CODE >64:/opt/microchip/xc8/v1.34/sources/common/float.c
+2504 text16 CODE >65:/opt/microchip/xc8/v1.34/sources/common/float.c
+2518 text16 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
+251A text16 CODE >67:/opt/microchip/xc8/v1.34/sources/common/float.c
+251E text16 CODE >68:/opt/microchip/xc8/v1.34/sources/common/float.c
+252A text16 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
+255A text16 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
+255C text16 CODE >71:/opt/microchip/xc8/v1.34/sources/common/float.c
+2560 text16 CODE >72:/opt/microchip/xc8/v1.34/sources/common/float.c
+2572 text16 CODE >73:/opt/microchip/xc8/v1.34/sources/common/float.c
+257E text16 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
+25AE text16 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
+25B0 text16 CODE >76:/opt/microchip/xc8/v1.34/sources/common/float.c
+25B4 text16 CODE >77:/opt/microchip/xc8/v1.34/sources/common/float.c
+25C0 text16 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
+25D0 text16 CODE >79:/opt/microchip/xc8/v1.34/sources/common/float.c
+25D6 text16 CODE >80:/opt/microchip/xc8/v1.34/sources/common/float.c
+25DC text16 CODE >81:/opt/microchip/xc8/v1.34/sources/common/float.c
+25E2 text16 CODE >82:/opt/microchip/xc8/v1.34/sources/common/float.c
+25EA text16 CODE >83:/opt/microchip/xc8/v1.34/sources/common/float.c
+25F4 text16 CODE >84:/opt/microchip/xc8/v1.34/sources/common/float.c
+25FA text16 CODE >85:/opt/microchip/xc8/v1.34/sources/common/float.c
+2608 text16 CODE >86:/opt/microchip/xc8/v1.34/sources/common/float.c
+260A text27 CODE >62:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+260A text27 CODE >67:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2624 text27 CODE >68:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2628 text27 CODE >69:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2642 text27 CODE >70:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2650 text27 CODE >71:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2656 text27 CODE >72:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+265A text27 CODE >73:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+265E text27 CODE >74:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2662 text27 CODE >75:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2664 text27 CODE >77:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2666 text27 CODE >78:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2672 text27 CODE >79:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+267E text27 CODE >134:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2684 text27 CODE >136:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2688 text27 CODE >137:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2696 text27 CODE >138:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+269E text27 CODE >139:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+26A6 text27 CODE >140:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+26AC text27 CODE >143:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+26B2 text27 CODE >145:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+26B6 text27 CODE >146:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+26C4 text27 CODE >147:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+26CC text27 CODE >148:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+26D4 text27 CODE >149:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+26DA text27 CODE >156:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2700 text27 CODE >157:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+2702 text33 CODE >54:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2702 text33 CODE >63:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+271C text33 CODE >64:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2720 text33 CODE >65:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+273A text33 CODE >66:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2748 text33 CODE >67:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2754 text33 CODE >68:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+275A text33 CODE >69:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+275E text33 CODE >70:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2762 text33 CODE >71:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2766 text33 CODE >72:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2768 text33 CODE >73:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2774 text33 CODE >74:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2776 text33 CODE >75:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2782 text33 CODE >76:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2788 text33 CODE >78:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+2790 text33 CODE >79:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+27A0 text33 CODE >80:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+27AC text33 CODE >81:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+27AE text33 CODE >82:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+27AE text33 CODE >83:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+27B6 text33 CODE >84:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+27BC text33 CODE >85:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+27E2 text33 CODE >86:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+27E4 text35 CODE >62:/opt/microchip/xc8/v1.34/sources/common/float.c
+27E4 text35 CODE >64:/opt/microchip/xc8/v1.34/sources/common/float.c
+27F4 text35 CODE >65:/opt/microchip/xc8/v1.34/sources/common/float.c
+2802 text35 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
+2804 text35 CODE >67:/opt/microchip/xc8/v1.34/sources/common/float.c
+2806 text35 CODE >68:/opt/microchip/xc8/v1.34/sources/common/float.c
+2810 text35 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
+282E text35 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
+2830 text35 CODE >71:/opt/microchip/xc8/v1.34/sources/common/float.c
+2832 text35 CODE >72:/opt/microchip/xc8/v1.34/sources/common/float.c
+283E text35 CODE >73:/opt/microchip/xc8/v1.34/sources/common/float.c
+2848 text35 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
+2866 text35 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
+2868 text35 CODE >76:/opt/microchip/xc8/v1.34/sources/common/float.c
+286A text35 CODE >77:/opt/microchip/xc8/v1.34/sources/common/float.c
+2874 text35 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
+2880 text35 CODE >79:/opt/microchip/xc8/v1.34/sources/common/float.c
+2884 text35 CODE >80:/opt/microchip/xc8/v1.34/sources/common/float.c
+2888 text35 CODE >81:/opt/microchip/xc8/v1.34/sources/common/float.c
+288C text35 CODE >82:/opt/microchip/xc8/v1.34/sources/common/float.c
+2890 text35 CODE >83:/opt/microchip/xc8/v1.34/sources/common/float.c
+2896 text35 CODE >84:/opt/microchip/xc8/v1.34/sources/common/float.c
+289A text35 CODE >85:/opt/microchip/xc8/v1.34/sources/common/float.c
+28A8 text35 CODE >86:/opt/microchip/xc8/v1.34/sources/common/float.c
+28AA text10 CODE >55:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+28AA text10 CODE >57:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+28B2 text10 CODE >60:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+28B4 text10 CODE >61:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+28BA text10 CODE >62:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+28C0 text10 CODE >63:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+28D0 text10 CODE >64:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+28E8 text10 CODE >63:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+28EE text10 CODE >65:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2902 text10 CODE >66:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2904 text10 CODE >67:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2906 text10 CODE >68:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2910 text10 CODE >71:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2912 text10 CODE >72:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2918 text10 CODE >73:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+291E text10 CODE >74:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+292E text10 CODE >75:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+294A text10 CODE >74:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2950 text10 CODE >76:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2956 text10 CODE >77:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2958 text10 CODE >78:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+295A text10 CODE >79:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+295C text32 CODE >4:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+295C text32 CODE >6:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+2960 text32 CODE >7:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+298E text32 CODE >8:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+2992 text32 CODE >9:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+29C0 text32 CODE >10:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+29CC text32 CODE >11:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+29D8 text32 CODE >12:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+29F0 text32 CODE >13:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+29F2 text13 CODE >8:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+29F2 text13 CODE >14:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+29FC text13 CODE >15:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A08 text13 CODE >16:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A0E text13 CODE >17:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A10 text13 CODE >18:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A18 text13 CODE >19:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A1E text13 CODE >17:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A28 text13 CODE >22:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A30 text13 CODE >23:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A44 text13 CODE >24:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A54 text13 CODE >25:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A5A text13 CODE >27:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A62 text13 CODE >28:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A6A text13 CODE >29:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A6A text13 CODE >30:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A72 text13 CODE >31:/opt/microchip/xc8/v1.34/sources/common/lwdiv.c
+2A74 text6 CODE >91:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2A74 text6 CODE >93:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2A7A text6 CODE >94:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2A8E text6 CODE >95:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2AA6 text6 CODE >94:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2AAC text6 CODE >96:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2AE6 text6 CODE >97:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2AEA text6 CODE >99:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2AEE text6 CODE >100:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2AF0 text34 CODE >42:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2AF0 text34 CODE >45:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2AF4 text34 CODE >46:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2AF8 text34 CODE >47:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2AFC text34 CODE >48:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2B0C text34 CODE >49:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2B10 text34 CODE >52:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2B12 text34 CODE >53:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2B1C text34 CODE >54:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2B20 text34 CODE >52:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2B44 text34 CODE >56:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2B6A text34 CODE >57:/opt/microchip/xc8/v1.34/sources/common/altoft.c
+2B6C intcode_body CODE >152:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+2B9A intcode_body CODE >154:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+2B9E intcode_body CODE >156:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+2BA4 intcode_body CODE >158:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+2BDE text12 CODE >8:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2BDE text12 CODE >13:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2BEA text12 CODE >14:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2BF0 text12 CODE >15:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2BF2 text12 CODE >16:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2BFA text12 CODE >17:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2C00 text12 CODE >15:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2C0A text12 CODE >20:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2C1E text12 CODE >21:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2C30 text12 CODE >22:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2C38 text12 CODE >23:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2C40 text12 CODE >24:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2C40 text12 CODE >25:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2C48 text12 CODE >26:/opt/microchip/xc8/v1.34/sources/common/lwmod.c
+2C4A text5 CODE >14:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C4E text5 CODE >16:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C52 text5 CODE >17:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C56 text5 CODE >18:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C5C text5 CODE >19:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C62 text5 CODE >21:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C64 text5 CODE >23:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C64 text5 CODE >24:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C66 text5 CODE >25:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C68 text5 CODE >26:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C68 text5 CODE >27:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C6A text5 CODE >30:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C6A text5 CODE >31:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C6C text5 CODE >35:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C6E text5 CODE >21:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C84 text5 CODE >37:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C86 text5 CODE >39:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C86 text5 CODE >41:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C88 text5 CODE >42:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C8A text5 CODE >60:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C8C text5 CODE >62:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C8C text5 CODE >64:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C8E text5 CODE >72:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C90 text5 CODE >74:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C90 text5 CODE >76:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C92 text5 CODE >86:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2C94 text5 CODE >37:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2CA6 text5 CODE >86:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2CA6 text5 CODE >97:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2CA8 text5 CODE >98:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2CAA text5 CODE >101:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2CAC text5 CODE >102:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+2CAE text3 CODE >50:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2CAE text3 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2CB0 text3 CODE >53:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2CDE text3 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2D06 text3 CODE >54:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2D08 text30 CODE >15:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
+2D08 text30 CODE >119:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
+2D1A text30 CODE >121:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
+2D1E text30 CODE >122:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
+2D30 text30 CODE >123:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
+2D3A text30 CODE >124:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
+2D44 text30 CODE >125:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
+2D50 text30 CODE >128:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
+2D60 text30 CODE >129:/opt/microchip/xc8/v1.34/sources/common/Umul32.c
+2D62 text9 CODE >16:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D66 text9 CODE >18:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D6E text9 CODE >20:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D70 text9 CODE >21:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D76 text9 CODE >23:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D7A text9 CODE >24:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D7C text9 CODE >25:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D80 text9 CODE >26:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D86 text9 CODE >27:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D8A text9 CODE >28:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D8C text9 CODE >29:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D8E text9 CODE >31:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D98 text9 CODE >33:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2D9A text9 CODE >34:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2DA0 text9 CODE >36:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2DA4 text9 CODE >37:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2DA6 text9 CODE >38:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2DAA text9 CODE >39:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2DB0 text9 CODE >40:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2DB4 text9 CODE >41:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2DB6 text9 CODE >42:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2DB8 text9 CODE >43:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2DBA text24 CODE >50:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2DBA text24 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2DBC text24 CODE >53:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2DE8 text24 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2E10 text24 CODE >54:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2E12 text36 CODE >33:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
+2E12 text36 CODE >37:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
+2E14 text36 CODE >38:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
+2E18 text36 CODE >39:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
+2E1E text36 CODE >37:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
+2E54 text36 CODE >41:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
+2E60 text36 CODE >42:/opt/microchip/xc8/v1.34/sources/common/strcmp.c
+2E62 text7 CODE >102:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2E62 text7 CODE >104:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2E6A text7 CODE >105:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2E78 text7 CODE >106:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2E8A text7 CODE >107:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2E9C text7 CODE >108:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2EA4 text7 CODE >109:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2EA6 text18 CODE >81:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2EA6 text18 CODE >84:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2EAE text18 CODE >85:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2EBA text18 CODE >86:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2ECA text18 CODE >87:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2EDA text18 CODE >88:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2EE8 text18 CODE >89:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2EEA text8 CODE >111:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2EEA text8 CODE >113:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2EF0 text8 CODE >114:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2F04 text8 CODE >115:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2F1C text8 CODE >114:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2F22 text8 CODE >116:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2F28 text8 CODE >117:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2F2A cinit CODE >1471:/tmp/cgtDFHXs6
+2F2A cinit CODE >1473:/tmp/cgtDFHXs6
+2F2A cinit CODE >1476:/tmp/cgtDFHXs6
+2F2A cinit CODE >1545:/tmp/cgtDFHXs6
+2F2E cinit CODE >1546:/tmp/cgtDFHXs6
+2F30 cinit CODE >1547:/tmp/cgtDFHXs6
+2F30 cinit CODE >1548:/tmp/cgtDFHXs6
+2F32 cinit CODE >1549:/tmp/cgtDFHXs6
+2F34 cinit CODE >1550:/tmp/cgtDFHXs6
+2F36 cinit CODE >1553:/tmp/cgtDFHXs6
+2F3A cinit CODE >1554:/tmp/cgtDFHXs6
+2F3C cinit CODE >1555:/tmp/cgtDFHXs6
+2F3C cinit CODE >1556:/tmp/cgtDFHXs6
+2F3E cinit CODE >1557:/tmp/cgtDFHXs6
+2F40 cinit CODE >1558:/tmp/cgtDFHXs6
+2F42 cinit CODE >1563:/tmp/cgtDFHXs6
+2F44 cinit CODE >1564:/tmp/cgtDFHXs6
+2F46 cinit CODE >1565:/tmp/cgtDFHXs6
+2F48 cinit CODE >1566:/tmp/cgtDFHXs6
+2F4A cinit CODE >1567:/tmp/cgtDFHXs6
+2F4C cinit CODE >1568:/tmp/cgtDFHXs6
+2F4E cinit CODE >1569:/tmp/cgtDFHXs6
+2F50 cinit CODE >1570:/tmp/cgtDFHXs6
+2F54 cinit CODE >1576:/tmp/cgtDFHXs6
+2F54 cinit CODE >1578:/tmp/cgtDFHXs6
+2F56 cinit CODE >1579:/tmp/cgtDFHXs6
+2F58 cinit CODE >1580:/tmp/cgtDFHXs6
+2F5A cinit CODE >1581:/tmp/cgtDFHXs6
+2F5E text28 CODE >8:/opt/microchip/xc8/v1.34/sources/common/isspace.c
+2F60 text28 CODE >14:/opt/microchip/xc8/v1.34/sources/common/isspace.c
+2F88 text28 CODE >15:/opt/microchip/xc8/v1.34/sources/common/isspace.c
+2F8A text2 CODE >19:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2F8A text2 CODE >26:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2F8E text2 CODE >27:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2F92 text2 CODE >28:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2F96 text2 CODE >29:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2F9A text2 CODE >31:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2F9C text2 CODE >32:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2F9E text2 CODE >33:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2FA0 text2 CODE >35:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2FB0 text2 CODE >36:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+2FB2 text31 CODE >15:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
+2FB2 text31 CODE >17:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
+2FBC text31 CODE >18:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
+2FC8 text31 CODE >19:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
+2FD4 text31 CODE >20:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
+2FD6 text29 CODE >8:/opt/microchip/xc8/v1.34/sources/common/isdigit.c
+2FD8 text29 CODE >14:/opt/microchip/xc8/v1.34/sources/common/isdigit.c
+2FF6 text29 CODE >15:/opt/microchip/xc8/v1.34/sources/common/isdigit.c
+2FF8 text4 CODE >9:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+2FF8 text4 CODE >11:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+300A text4 CODE >12:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+300C text4 CODE >13:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+300E text4 CODE >14:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+3010 text19 CODE >45:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+3010 text19 CODE >48:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+3014 text19 CODE >49:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+3016 text19 CODE >50:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+301A text19 CODE >51:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+3020 text19 CODE >52:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+3024 text19 CODE >53:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+3026 text20 CODE >8:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
+302A text20 CODE >11:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
+3032 text20 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
+303A text20 CODE >13:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
+303C text17 CODE >41:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+3040 text17 CODE >43:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+3044 text17 CODE >44:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+304A text17 CODE >45:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+304C text1 CODE >160:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+304C text1 CODE >162:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+3050 text1 CODE >163:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+3054 text1 CODE >164:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+3056 text1 CODE >165:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+3058 text1 CODE >166:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+305A text25 CODE >41:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+305C text25 CODE >43:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+3060 text25 CODE >44:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
+3066 text25 CODE >45:/home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -849,7 +893,7 @@ $dist/default/production/SPItest_MASTER_.X.production.obj
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-__end_of_MReceiveSPI 2F86 0 CODE 0 text17 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_MReceiveSPI 3026 0 CODE 0 text19 dist/default/production/SPItest_MASTER_.X.production.obj
 ___lwmod@counter 84 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __LdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/SPItest_MASTER_.X.production.obj
@@ -858,37 +902,38 @@ __Hspace_1 DF 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 i2___ftmul@f3_as_product 13 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 __HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_initialize 2FC4 0 CODE 0 text1 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_initialize 305A 0 CODE 0 text1 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_MSendSPI 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftdiv@exp 16 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/SPItest_MASTER_.X.production.obj
-_ReceivedChar 50 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtBqQa2a.obj
+_ReceivedChar 51 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtiQ8p9z.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/SPItest_MASTER_.X.production.obj
-_Delay10TCYx 2F86 0 CODE 0 text18 dist/default/production/SPItest_MASTER_.X.production.obj
+_Delay10TCYx 3026 0 CODE 0 text20 dist/default/production/SPItest_MASTER_.X.production.obj
 _Kd 3F 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 _Ki 42 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 _Kp 45 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 main@x B4 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production/SPItest_MASTER_.X.production.obj
 _AZEL DE 0 BANK0 1 dataBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/cgtBqQa2a.obj
+___sp 0 0 STACK 2 stack /tmp/cgtiQ8p9z.obj
 _main 1064 0 CODE 0 text0 dist/default/production/SPItest_MASTER_.X.production.obj
-start 18 0 CODE 0 init /tmp/cgtBqQa2a.obj
-__end_of_breakDouble 2102 0 CODE 0 text9 dist/default/production/SPItest_MASTER_.X.production.obj
-_SerInit 2F02 0 CODE 0 text2 dist/default/production/SPItest_MASTER_.X.production.obj
+start 18 0 CODE 0 init /tmp/cgtiQ8p9z.obj
+__end_of_breakDouble 210A 0 CODE 0 text11 dist/default/production/SPItest_MASTER_.X.production.obj
+_SerInit 2F8A 0 CODE 0 text2 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of___ftdiv 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of___ftmul 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of___ftneg 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of___fttol 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-_SPIReassembleDouble 2E1E 0 CODE 0 text16 dist/default/production/SPItest_MASTER_.X.production.obj
+_SPIReassembleDouble 2EA6 0 CODE 0 text18 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of___lwmod 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
+OpenSPI@sync_mode 82 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 checksum@y 85 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_SerTxStr 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-_StrippedKey 51 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
+_StrippedKey 52 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 ?___lmul 1 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 breakDouble@temp1 AB 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 breakDouble@temp2 AD 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
@@ -899,7 +944,7 @@ ___ftdiv@f2 C 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.
 ___ftdiv@f3 13 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 MReceiveStrSPI@str AF 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-MReceiveStrSPI@x_731 B3 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
+MReceiveStrSPI@x_736 B3 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 i2___ftpack@arg 1 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 i2___ftpack@exp 4 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 __Hpowerup 18 0 CODE 0 powerup dist/default/production/SPItest_MASTER_.X.production.obj
@@ -908,50 +953,50 @@ _CurrentVelocity B8 0 BANK0 1 bssBANK0 dist/default/production/SPItest_MASTER_.X
 ___ftge@ff1 1 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftge@ff2 4 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 keyValue@length 26 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-__accesstop 80 0 ABS 0 - /tmp/cgtBqQa2a.obj
-intlevel0 0 0 CODE 0 text /tmp/cgtBqQa2a.obj
-intlevel1 0 0 CODE 0 text /tmp/cgtBqQa2a.obj
-intlevel2 0 0 CODE 0 text /tmp/cgtBqQa2a.obj
-intlevel3 0 0 CODE 0 text /tmp/cgtBqQa2a.obj
+__accesstop 80 0 ABS 0 - /tmp/cgtiQ8p9z.obj
+intlevel0 0 0 CODE 0 text /tmp/cgtiQ8p9z.obj
+intlevel1 0 0 CODE 0 text /tmp/cgtiQ8p9z.obj
+intlevel2 0 0 CODE 0 text /tmp/cgtiQ8p9z.obj
+intlevel3 0 0 CODE 0 text /tmp/cgtiQ8p9z.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-_MSendSPI 2CDA 0 CODE 0 text7 dist/default/production/SPItest_MASTER_.X.production.obj
+_MSendSPI 2D62 0 CODE 0 text9 dist/default/production/SPItest_MASTER_.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/SPItest_MASTER_.X.production.obj
 MReceiveStrSPI@x B2 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/production/SPItest_MASTER_.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_MSendSPI 2D32 0 CODE 0 text7 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_MSendSPI 2DBA 0 CODE 0 text9 dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftmul@f1 88 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftmul@f2 8B 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftneg@f1 1 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 _DoublePtr 4E 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/cgtBqQa2a.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/cgtBqQa2a.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/cgtiQ8p9z.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/cgtiQ8p9z.obj
 __size_of___altoft 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-_SerTxStr 2C26 0 CODE 0 text3 dist/default/production/SPItest_MASTER_.X.production.obj
+_SerTxStr 2CAE 0 CODE 0 text3 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production/SPItest_MASTER_.X.production.obj
 _SetAngle 48 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 ___altoft@c 9 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 SPIReassembleDouble@dub 83 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of___ftge 29CE 0 CODE 0 text30 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of___lmul 2CDA 0 CODE 0 text28 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of___ftge 29F2 0 CODE 0 text32 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of___lmul 2D62 0 CODE 0 text30 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_MGenerateChecksum 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/SPItest_MASTER_.X.production.obj
 keyValue@flag 2C 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_SerTxStr 2C80 0 CODE 0 text3 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_SerTxStr 2D08 0 CODE 0 text3 dist/default/production/SPItest_MASTER_.X.production.obj
 ___fttol@f1 97 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/SPItest_MASTER_.X.production.obj
 __Hintcodelo 18 0 CODE 0 intcodelo dist/default/production/SPItest_MASTER_.X.production.obj
 ___lwmod@divisor 82 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of___ftpack 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of___ftdiv 27C0 0 CODE 0 text31 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of___ftmul 225E 0 CODE 0 text13 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of___ftneg 2F4E 0 CODE 0 text29 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of___fttol 24C6 0 CODE 0 text12 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of___lwdiv 2A50 0 CODE 0 text11 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of___lwmod 2C26 0 CODE 0 text10 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of___ftdiv 27E4 0 CODE 0 text33 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of___ftmul 2266 0 CODE 0 text15 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of___ftneg 2FD6 0 CODE 0 text31 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of___fttol 24EA 0 CODE 0 text14 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of___lwdiv 2A74 0 CODE 0 text13 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of___lwmod 2C4A 0 CODE 0 text12 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_isdigit 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_isspace 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_SPIReassembleDouble 2E62 0 CODE 0 text16 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_SPIReassembleDouble 2EEA 0 CODE 0 text18 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_MReceiveSPI 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 ?_strcmp 1 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 ?_strtod 18 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
@@ -968,33 +1013,36 @@ __size_of_MReceiveStrSPI 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.p
 breakDouble@dubs A6 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 ___lwmod@dividend 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lintcodelo 18 0 CODE 0 intcodelo dist/default/production/SPItest_MASTER_.X.production.obj
-i2_SerTx 2FAC 0 CODE 0 text23 dist/default/production/SPItest_MASTER_.X.production.obj
+i2_SerTx 305A 0 CODE 0 text25 dist/default/production/SPItest_MASTER_.X.production.obj
 ?i2___ftpack 1 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-start_initialization 2EA2 0 CODE 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
+start_initialization 2F2A 0 CODE 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/SPItest_MASTER_.X.production.obj
-___altoft 2ACC 0 CODE 0 text32 dist/default/production/SPItest_MASTER_.X.production.obj
+___altoft 2AF0 0 CODE 0 text34 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_initialize 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 _TRISAbits F92 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
+_TRISCbits F94 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_breakDouble 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 ___rparam_used 1 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 i2___ftmul@exp 12 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 _RCREG1 FAE 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 _RCSTA1 FAB 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 _RCflag BB 0 BANK0 1 bssBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of___altoft 2B48 0 CODE 0 text32 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of___altoft 2B6C 0 CODE 0 text34 dist/default/production/SPItest_MASTER_.X.production.obj
 __pcstackBANK0 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 _IPR1bits F9F 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 _SSPBUF FC9 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 ___fttol@exp1 A5 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 ___fttol@lval A1 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 MSendSPI@data 84 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
+_PIDEnableFlag 50 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 _TXREG1 FAD 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 _TXSTA1 FAC 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-___ftpack 24C6 0 CODE 0 text14 dist/default/production/SPItest_MASTER_.X.production.obj
+___ftpack 24EA 0 CODE 0 text16 dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftpack@arg 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftpack@exp 83 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of___ftpack 25E6 0 CODE 0 text14 dist/default/production/SPItest_MASTER_.X.production.obj
+__size_of_SPIInitM 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of___ftpack 260A 0 CODE 0 text16 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_SPIDisassembleDouble 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hbank1 0 0 ABS 0 bank1 dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1008,8 +1056,8 @@ __Hbank8 0 0 ABS 0 bank8 dist/default/production/SPItest_MASTER_.X.production.ob
 __Hbank9 0 0 ABS 0 bank9 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hcinit 0 0 ABS 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
 __Hconst 0 0 CODE 0 const dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_strcmp 2DDA 0 CODE 0 text34 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_strtod 1F7A 0 CODE 0 text24 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_strcmp 2E62 0 CODE 0 text36 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_strtod 1F82 0 CODE 0 text26 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hidata 0 0 CODE 0 idata dist/default/production/SPItest_MASTER_.X.production.obj
 __Hidloc 200008 0 IDLOC 0 idloc dist/default/production/SPItest_MASTER_.X.production.obj
 __Hnvbit 0 0 COMRAM 1 nvbit dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1026,6 +1074,7 @@ __Htext6 0 0 ABS 0 text6 dist/default/production/SPItest_MASTER_.X.production.ob
 __Htext7 0 0 ABS 0 text7 dist/default/production/SPItest_MASTER_.X.production.obj
 __Htext8 0 0 ABS 0 text8 dist/default/production/SPItest_MASTER_.X.production.obj
 __Htext9 0 0 ABS 0 text9 dist/default/production/SPItest_MASTER_.X.production.obj
+__size_of_OpenSPI 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 ___lwdiv@counter 84 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 SPIDisassembleDouble@dub 82 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hbank10 0 0 ABS 0 bank10 dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1034,15 +1083,15 @@ __Hbank12 0 0 ABS 0 bank12 dist/default/production/SPItest_MASTER_.X.production.
 __Hbank13 0 0 ABS 0 bank13 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hbank14 0 0 ABS 0 bank14 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hbank15 0 0 ABS 0 bank15 dist/default/production/SPItest_MASTER_.X.production.obj
-_keyValue 1648 0 CODE 0 text21 dist/default/production/SPItest_MASTER_.X.production.obj
+_keyValue 1650 0 CODE 0 text23 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/SPItest_MASTER_.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production/SPItest_MASTER_.X.production.obj
 i2___ftmul@cntr 16 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 i2___ftmul@sign 17 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/cgtBqQa2a.obj
+__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/cgtiQ8p9z.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production/SPItest_MASTER_.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_Delay10TCYx 2F9C 0 CODE 0 text18 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_Delay10TCYx 303C 0 CODE 0 text20 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lbank1 0 0 ABS 0 bank1 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lbank2 0 0 ABS 0 bank2 dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1053,15 +1102,15 @@ __Lbank6 0 0 ABS 0 bank6 dist/default/production/SPItest_MASTER_.X.production.ob
 __Lbank7 0 0 ABS 0 bank7 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lbank8 0 0 ABS 0 bank8 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lbank9 0 0 ABS 0 bank9 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_isdigit 2F70 0 CODE 0 text27 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_isdigit 2FF8 0 CODE 0 text29 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lcinit 0 0 ABS 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
 __Lconst 0 0 CODE 0 const dist/default/production/SPItest_MASTER_.X.production.obj
 __Lidata 0 0 CODE 0 idata dist/default/production/SPItest_MASTER_.X.production.obj
 __Lidloc 200000 0 IDLOC 0 idloc dist/default/production/SPItest_MASTER_.X.production.obj
 __Lnvbit 0 0 COMRAM 1 nvbit dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_keyValue 1BA4 0 CODE 0 text21 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_keyValue 1BAC 0 CODE 0 text23 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lparam 0 0 COMRAM 1 rparam dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_isspace 2F02 0 CODE 0 text26 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_isspace 2F8A 0 CODE 0 text28 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lrdata 0 0 COMRAM 1 rdata dist/default/production/SPItest_MASTER_.X.production.obj
 __Lstack 0 0 STACK 2 stack dist/default/production/SPItest_MASTER_.X.production.obj
 __Ltext0 0 0 ABS 0 text0 dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1075,11 +1124,11 @@ __Ltext7 0 0 ABS 0 text7 dist/default/production/SPItest_MASTER_.X.production.ob
 __Ltext8 0 0 ABS 0 text8 dist/default/production/SPItest_MASTER_.X.production.obj
 __Ltext9 0 0 ABS 0 text9 dist/default/production/SPItest_MASTER_.X.production.obj
 _DoubleSPIM DA 0 BANK0 1 bssBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_SPIDisassembleDouble 2E1E 0 CODE 0 text5 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_SPIDisassembleDouble 2EA6 0 CODE 0 text7 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production/SPItest_MASTER_.X.production.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production/SPItest_MASTER_.X.production.obj
 i2___ftpack@sign 5 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_MGenerateChecksum 2EA2 0 CODE 0 text6 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_MGenerateChecksum 2F2A 0 CODE 0 text8 dist/default/production/SPItest_MASTER_.X.production.obj
 SerTxStr@string 81 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 _PORTAbits F80 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 _INTCONbits FF2 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1099,8 +1148,8 @@ __Ltemp 0 0 COMRAM 1 temp dist/default/production/SPItest_MASTER_.X.production.o
 __Ltext 0 0 ABS 0 text dist/default/production/SPItest_MASTER_.X.production.obj
 strtod@expon 1F 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 strtod@flags 1E 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-___ftge 2938 0 CODE 0 text30 dist/default/production/SPItest_MASTER_.X.production.obj
-___lmul 2C80 0 CODE 0 text28 dist/default/production/SPItest_MASTER_.X.production.obj
+___ftge 295C 0 CODE 0 text32 dist/default/production/SPItest_MASTER_.X.production.obj
+___lmul 2D08 0 CODE 0 text30 dist/default/production/SPItest_MASTER_.X.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 isspace@c 3 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1110,22 +1159,25 @@ _ISR 8 0 CODE 0 intcode dist/default/production/SPItest_MASTER_.X.production.obj
 __S0 30000E 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __S1 DF 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __S2 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-_key 5C 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
+_key 5D 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 MReceiveSPI@tempCH 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
+_SPIInitM 2FF8 0 CODE 0 text4 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_SerInit 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 checksum@sum 84 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production/SPItest_MASTER_.X.production.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production/SPItest_MASTER_.X.production.obj
 strcmp@s1 1 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 strcmp@s2 3 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_ISR 2BBA 0 CODE 0 intcode_body dist/default/production/SPItest_MASTER_.X.production.obj
-int_func 2B48 0 CODE 0 intcode_body dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_SPIInitM 3010 0 CODE 0 text4 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_ISR 2BDE 0 CODE 0 intcode_body dist/default/production/SPItest_MASTER_.X.production.obj
+int_func 2B6C 0 CODE 0 intcode_body dist/default/production/SPItest_MASTER_.X.production.obj
 keyValue@str 24 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/production/SPItest_MASTER_.X.production.obj
 strcmp@r 6 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 __Hramtop 1000 0 RAM 0 ramtop dist/default/production/SPItest_MASTER_.X.production.obj
 strtod@s 18 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production/SPItest_MASTER_.X.production.obj
+OpenSPI@smp_phase 81 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __pdataBANK0 DE 0 BANK0 1 dataBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __activetblptr 2 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __Hstruct 0 0 COMRAM 1 struct dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1141,8 +1193,8 @@ __Htext15 0 0 ABS 0 text15 dist/default/production/SPItest_MASTER_.X.production.
 __Htext16 0 0 ABS 0 text16 dist/default/production/SPItest_MASTER_.X.production.obj
 __Htext17 0 0 ABS 0 text17 dist/default/production/SPItest_MASTER_.X.production.obj
 __Htext18 0 0 ABS 0 text18 dist/default/production/SPItest_MASTER_.X.production.obj
+__Htext19 0 0 ABS 0 text19 dist/default/production/SPItest_MASTER_.X.production.obj
 __Htext20 0 0 ABS 0 text20 dist/default/production/SPItest_MASTER_.X.production.obj
-__Htext21 0 0 ABS 0 text21 dist/default/production/SPItest_MASTER_.X.production.obj
 __Htext22 0 0 ABS 0 text22 dist/default/production/SPItest_MASTER_.X.production.obj
 __Htext23 0 0 ABS 0 text23 dist/default/production/SPItest_MASTER_.X.production.obj
 __Htext24 0 0 ABS 0 text24 dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1156,43 +1208,48 @@ __Htext31 0 0 ABS 0 text31 dist/default/production/SPItest_MASTER_.X.production.
 __Htext32 0 0 ABS 0 text32 dist/default/production/SPItest_MASTER_.X.production.obj
 __Htext33 0 0 ABS 0 text33 dist/default/production/SPItest_MASTER_.X.production.obj
 __Htext34 0 0 ABS 0 text34 dist/default/production/SPItest_MASTER_.X.production.obj
+__Htext35 0 0 ABS 0 text35 dist/default/production/SPItest_MASTER_.X.production.obj
+__Htext36 0 0 ABS 0 text36 dist/default/production/SPItest_MASTER_.X.production.obj
 ?___altoft 9 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 _PIE1bits F9D 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-_MReceiveSPI 2F70 0 CODE 0 text17 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_OpenSPI 2CAE 0 CODE 0 text5 dist/default/production/SPItest_MASTER_.X.production.obj
+_MReceiveSPI 3010 0 CODE 0 text19 dist/default/production/SPItest_MASTER_.X.production.obj
 ___altoft@exp 11 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-MSendSPI@tempChar_722 83 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext10 2BBA 0 CODE 0 text10 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext11 29CE 0 CODE 0 text11 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext12 2394 0 CODE 0 text12 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext13 2102 0 CODE 0 text13 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext14 24C6 0 CODE 0 text14 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext15 2F9C 0 CODE 0 text15 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext16 2E1E 0 CODE 0 text16 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext17 2F70 0 CODE 0 text17 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext18 2F86 0 CODE 0 text18 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext20 225E 0 CODE 0 text20 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext21 1648 0 CODE 0 text21 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext22 2D32 0 CODE 0 text22 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext23 2FAC 0 CODE 0 text23 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext24 1BA4 0 CODE 0 text24 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext25 25E6 0 CODE 0 text25 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext26 2ED6 0 CODE 0 text26 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext27 2F4E 0 CODE 0 text27 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext28 2C80 0 CODE 0 text28 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext29 2F2A 0 CODE 0 text29 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext30 2938 0 CODE 0 text30 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext31 26DE 0 CODE 0 text31 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext32 2ACC 0 CODE 0 text32 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext33 27C0 0 CODE 0 text33 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext34 2D8A 0 CODE 0 text34 dist/default/production/SPItest_MASTER_.X.production.obj
-___ftdiv 26DE 0 CODE 0 text31 dist/default/production/SPItest_MASTER_.X.production.obj
-___ftmul 2102 0 CODE 0 text13 dist/default/production/SPItest_MASTER_.X.production.obj
-___ftneg 2F2A 0 CODE 0 text29 dist/default/production/SPItest_MASTER_.X.production.obj
-___fttol 2394 0 CODE 0 text12 dist/default/production/SPItest_MASTER_.X.production.obj
+MSendSPI@tempChar_727 83 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext10 28AA 0 CODE 0 text10 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext11 1F82 0 CODE 0 text11 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext12 2BDE 0 CODE 0 text12 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext13 29F2 0 CODE 0 text13 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext14 23B8 0 CODE 0 text14 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext15 210A 0 CODE 0 text15 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext16 24EA 0 CODE 0 text16 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext17 303C 0 CODE 0 text17 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext18 2EA6 0 CODE 0 text18 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext19 3010 0 CODE 0 text19 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext20 3026 0 CODE 0 text20 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext22 2266 0 CODE 0 text22 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext23 1650 0 CODE 0 text23 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext24 2DBA 0 CODE 0 text24 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext25 305A 0 CODE 0 text25 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext26 1BAC 0 CODE 0 text26 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext27 260A 0 CODE 0 text27 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext28 2F5E 0 CODE 0 text28 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext29 2FD6 0 CODE 0 text29 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext30 2D08 0 CODE 0 text30 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext31 2FB2 0 CODE 0 text31 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext32 295C 0 CODE 0 text32 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext33 2702 0 CODE 0 text33 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext34 2AF0 0 CODE 0 text34 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext35 27E4 0 CODE 0 text35 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext36 2E12 0 CODE 0 text36 dist/default/production/SPItest_MASTER_.X.production.obj
+___ftdiv 2702 0 CODE 0 text33 dist/default/production/SPItest_MASTER_.X.production.obj
+___ftmul 210A 0 CODE 0 text15 dist/default/production/SPItest_MASTER_.X.production.obj
+___ftneg 2FB2 0 CODE 0 text31 dist/default/production/SPItest_MASTER_.X.production.obj
+___fttol 23B8 0 CODE 0 text14 dist/default/production/SPItest_MASTER_.X.production.obj
 _BAUDCON FB8 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-__pintcode_body 2B48 0 CODE 0 intcode_body dist/default/production/SPItest_MASTER_.X.production.obj
-___lwdiv 29CE 0 CODE 0 text11 dist/default/production/SPItest_MASTER_.X.production.obj
-___lwmod 2BBA 0 CODE 0 text10 dist/default/production/SPItest_MASTER_.X.production.obj
+__pintcode_body 2B6C 0 CODE 0 intcode_body dist/default/production/SPItest_MASTER_.X.production.obj
+___lwdiv 29F2 0 CODE 0 text13 dist/default/production/SPItest_MASTER_.X.production.obj
+___lwmod 2BDE 0 CODE 0 text12 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lbank10 0 0 ABS 0 bank10 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lbank11 0 0 ABS 0 bank11 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lbank12 0 0 ABS 0 bank12 dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1207,28 +1264,28 @@ __Lcomram 0 0 ABS 0 comram dist/default/production/SPItest_MASTER_.X.production.
 __Lconfig 300000 0 CONFIG 0 config dist/default/production/SPItest_MASTER_.X.production.obj
 ?___ftpack 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_checksum 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-_MGenerateChecksum 2E62 0 CODE 0 text6 dist/default/production/SPItest_MASTER_.X.production.obj
+_MGenerateChecksum 2EEA 0 CODE 0 text8 dist/default/production/SPItest_MASTER_.X.production.obj
 MGenerateChecksum@z 81 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production/SPItest_MASTER_.X.production.obj
 ___lwdiv@divisor 82 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-_strcmp 2D8A 0 CODE 0 text34 dist/default/production/SPItest_MASTER_.X.production.obj
-_strtod 1BA4 0 CODE 0 text24 dist/default/production/SPItest_MASTER_.X.production.obj
+_strcmp 2E12 0 CODE 0 text36 dist/default/production/SPItest_MASTER_.X.production.obj
+_strtod 1BAC 0 CODE 0 text26 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production/SPItest_MASTER_.X.production.obj
-_breakDouble 1F7A 0 CODE 0 text9 dist/default/production/SPItest_MASTER_.X.production.obj
-i2_SerTxStr 2D32 0 CODE 0 text22 dist/default/production/SPItest_MASTER_.X.production.obj
+_breakDouble 1F82 0 CODE 0 text11 dist/default/production/SPItest_MASTER_.X.production.obj
+i2_SerTxStr 2DBA 0 CODE 0 text24 dist/default/production/SPItest_MASTER_.X.production.obj
 _CurrentAngle B5 0 BANK0 1 bssBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-stackhi F7F 0 ABS 0 - /tmp/cgtBqQa2a.obj
-stacklo DF 0 ABS 0 - /tmp/cgtBqQa2a.obj
+stackhi F7F 0 ABS 0 - /tmp/cgtiQ8p9z.obj
+stacklo DF 0 ABS 0 - /tmp/cgtiQ8p9z.obj
 _received BC 0 BANK0 1 bssBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production/SPItest_MASTER_.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production/SPItest_MASTER_.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production/SPItest_MASTER_.X.production.obj
 strtod@_u 20 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-__end_ofi2___ftmul 26DE 0 CODE 0 text25 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_ofi2___ftmul 2702 0 CODE 0 text27 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lspace_0 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __Lspace_1 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __Lspace_2 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_SerInit 2F2A 0 CODE 0 text2 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_SerInit 2FB2 0 CODE 0 text2 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_ofi2___ftmul 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftmul@cntr 95 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __pbssCOMRAM 3F 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1238,7 +1295,7 @@ __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/SPItest_MASTER_.X.p
 _PIR1bits F9E 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __Lend_init 18 0 CODE 0 end_init dist/default/production/SPItest_MASTER_.X.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-end_of_initialization 2ECC 0 CODE 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
+end_of_initialization 2F54 0 CODE 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production/SPItest_MASTER_.X.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production/SPItest_MASTER_.X.production.obj
 _RCONbits FD0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1251,27 +1308,28 @@ ___lwdiv@dividend 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTE
 ?___fttol 97 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 ?___lwdiv 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 ?___lwmod 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-_MReceiveStrSPI 2886 0 CODE 0 text8 dist/default/production/SPItest_MASTER_.X.production.obj
-i2___ftmul 25E6 0 CODE 0 text25 dist/default/production/SPItest_MASTER_.X.production.obj
+_MReceiveStrSPI 28AA 0 CODE 0 text10 dist/default/production/SPItest_MASTER_.X.production.obj
+i2___ftmul 260A 0 CODE 0 text27 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production/SPItest_MASTER_.X.production.obj
-_checksum 2A50 0 CODE 0 text4 dist/default/production/SPItest_MASTER_.X.production.obj
+_checksum 2A74 0 CODE 0 text6 dist/default/production/SPItest_MASTER_.X.production.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_ofi2_SerTx 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __Lramtop 1000 0 RAM 0 ramtop dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_strcmp 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_strtod 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production/SPItest_MASTER_.X.production.obj
-__pcinit 2EA2 0 CODE 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
+__pcinit 2F2A 0 CODE 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
+_SSPCON1bits FC6 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __ptext0 1064 0 CODE 0 text0 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext1 2FBA 0 CODE 0 text1 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext2 2F02 0 CODE 0 text2 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext3 2C26 0 CODE 0 text3 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext4 2A50 0 CODE 0 text4 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext5 2DDA 0 CODE 0 text5 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext6 2E62 0 CODE 0 text6 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext7 2CDA 0 CODE 0 text7 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext8 2886 0 CODE 0 text8 dist/default/production/SPItest_MASTER_.X.production.obj
-__ptext9 1F7A 0 CODE 0 text9 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext1 304C 0 CODE 0 text1 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext2 2F8A 0 CODE 0 text2 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext3 2CAE 0 CODE 0 text3 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext4 2FF8 0 CODE 0 text4 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext5 2C4A 0 CODE 0 text5 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext6 2A74 0 CODE 0 text6 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext7 2E62 0 CODE 0 text7 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext8 2EEA 0 CODE 0 text8 dist/default/production/SPItest_MASTER_.X.production.obj
+__ptext9 2D62 0 CODE 0 text9 dist/default/production/SPItest_MASTER_.X.production.obj
 i2SerTx@c 1 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production/SPItest_MASTER_.X.production.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1283,8 +1341,8 @@ __Ltext15 0 0 ABS 0 text15 dist/default/production/SPItest_MASTER_.X.production.
 __Ltext16 0 0 ABS 0 text16 dist/default/production/SPItest_MASTER_.X.production.obj
 __Ltext17 0 0 ABS 0 text17 dist/default/production/SPItest_MASTER_.X.production.obj
 __Ltext18 0 0 ABS 0 text18 dist/default/production/SPItest_MASTER_.X.production.obj
+__Ltext19 0 0 ABS 0 text19 dist/default/production/SPItest_MASTER_.X.production.obj
 __Ltext20 0 0 ABS 0 text20 dist/default/production/SPItest_MASTER_.X.production.obj
-__Ltext21 0 0 ABS 0 text21 dist/default/production/SPItest_MASTER_.X.production.obj
 __Ltext22 0 0 ABS 0 text22 dist/default/production/SPItest_MASTER_.X.production.obj
 __Ltext23 0 0 ABS 0 text23 dist/default/production/SPItest_MASTER_.X.production.obj
 __Ltext24 0 0 ABS 0 text24 dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1298,53 +1356,57 @@ __Ltext31 0 0 ABS 0 text31 dist/default/production/SPItest_MASTER_.X.production.
 __Ltext32 0 0 ABS 0 text32 dist/default/production/SPItest_MASTER_.X.production.obj
 __Ltext33 0 0 ABS 0 text33 dist/default/production/SPItest_MASTER_.X.production.obj
 __Ltext34 0 0 ABS 0 text34 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_checksum 2ACC 0 CODE 0 text4 dist/default/production/SPItest_MASTER_.X.production.obj
-__ramtop 1000 0 RAM 0 ramtop /tmp/cgtBqQa2a.obj
+__Ltext35 0 0 ABS 0 text35 dist/default/production/SPItest_MASTER_.X.production.obj
+__Ltext36 0 0 ABS 0 text36 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_checksum 2AF0 0 CODE 0 text6 dist/default/production/SPItest_MASTER_.X.production.obj
+__ramtop 1000 0 RAM 0 ramtop /tmp/cgtiQ8p9z.obj
 __Lpowerup 18 0 CODE 0 powerup dist/default/production/SPItest_MASTER_.X.production.obj
 i2___ftmul@f1 9 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 i2___ftmul@f2 C 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/SPItest_MASTER_.X.production.obj
-__end_ofi2_SerTxStr 2D8A 0 CODE 0 text22 dist/default/production/SPItest_MASTER_.X.production.obj
-_isdigit 2F4E 0 CODE 0 text27 dist/default/production/SPItest_MASTER_.X.production.obj
-_isspace 2ED6 0 CODE 0 text26 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_ofi2_SerTxStr 2E12 0 CODE 0 text24 dist/default/production/SPItest_MASTER_.X.production.obj
+_isdigit 2FD6 0 CODE 0 text29 dist/default/production/SPItest_MASTER_.X.production.obj
+_isspace 2F5E 0 CODE 0 text28 dist/default/production/SPItest_MASTER_.X.production.obj
 __psmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production/SPItest_MASTER_.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production/SPItest_MASTER_.X.production.obj
 Delay10TCYx@unit 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 ___param_bank 10 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __CFG_WDT$OFF 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-i2___ftpack 27C0 0 CODE 0 text33 dist/default/production/SPItest_MASTER_.X.production.obj
+i2___ftpack 27E4 0 CODE 0 text35 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftmul@exp 91 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of__initialization 2ECC 0 CODE 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of__initialization 2F54 0 CODE 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production/SPItest_MASTER_.X.production.obj
-__pidataBANK0 2FC4 0 CODE 0 idataBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
+__pidataBANK0 3068 0 CODE 0 idataBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production/SPItest_MASTER_.X.production.obj
 ___altoft@sign 12 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-_isspace$1325 2 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
+_isspace$1330 2 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 __CFG_OSC$HSPLL 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftpack@sign 84 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 ___lmul@product 9 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_MReceiveStrSPI 2938 0 CODE 0 text8 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_MReceiveStrSPI 295C 0 CODE 0 text10 dist/default/production/SPItest_MASTER_.X.production.obj
 breakDouble@tempDub A9 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 ___lmul@multiplicand 5 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-_SPIDisassembleDouble 2DDA 0 CODE 0 text5 dist/default/production/SPItest_MASTER_.X.production.obj
+_SPIDisassembleDouble 2E62 0 CODE 0 text7 dist/default/production/SPItest_MASTER_.X.production.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftdiv@cntr 12 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 ___ftdiv@sign 17 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-_initialize 2FBA 0 CODE 0 text1 dist/default/production/SPItest_MASTER_.X.production.obj
+_initialize 304C 0 CODE 0 text1 dist/default/production/SPItest_MASTER_.X.production.obj
 strtod@eexp 1D 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
+_SSPCON1 FC6 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
+_SSPSTAT FC7 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __Hend_init 1C 0 CODE 0 end_init dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_main 1648 0 CODE 0 text0 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_main 1650 0 CODE 0 text0 dist/default/production/SPItest_MASTER_.X.production.obj
 __pintcode 8 0 CODE 0 intcode dist/default/production/SPItest_MASTER_.X.production.obj
 MGenerateChecksum@sum 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 isdigit@c 3 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_RCInt 2394 0 CODE 0 text20 dist/default/production/SPItest_MASTER_.X.production.obj
-__end_of_SerTx 2FAC 0 CODE 0 text15 dist/default/production/SPItest_MASTER_.X.production.obj
-_isdigit$1322 2 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-_RCInt 225E 0 CODE 0 text20 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_RCInt 23B8 0 CODE 0 text22 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_of_SerTx 304C 0 CODE 0 text17 dist/default/production/SPItest_MASTER_.X.production.obj
+_isdigit$1327 2 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
+_RCInt 2266 0 CODE 0 text22 dist/default/production/SPItest_MASTER_.X.production.obj
 _RCREG FAE 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 _SPBRG FAF 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-_SerTx 2F9C 0 CODE 0 text15 dist/default/production/SPItest_MASTER_.X.production.obj
+_SerTx 303C 0 CODE 0 text17 dist/default/production/SPItest_MASTER_.X.production.obj
 __HRAM 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __Hbss 0 0 RAM 1 bss dist/default/production/SPItest_MASTER_.X.production.obj
 __Hram 0 0 ABS 0 ram dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1354,18 +1416,21 @@ __Lbss 0 0 RAM 1 bss dist/default/production/SPItest_MASTER_.X.production.obj
 __Lram 0 0 ABS 0 ram dist/default/production/SPItest_MASTER_.X.production.obj
 __Lsfr 0 0 ABS 0 sfr dist/default/production/SPItest_MASTER_.X.production.obj
 SerTx@c 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-_value 52 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
+_value 53 0 COMRAM 1 bssCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
+_SSPSTATbits FC7 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 strtod@res 1A 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
 ___fttol@sign1 A0 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_ISR 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
 __HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
+OpenSPI@bus_mode 80 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
 i2SerTxStr@string 2 0 COMRAM 1 cstackCOMRAM dist/default/production/SPItest_MASTER_.X.production.obj
-__end_ofi2_SerTx 2FBA 0 CODE 0 text23 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_ofi2_SerTx 3068 0 CODE 0 text25 dist/default/production/SPItest_MASTER_.X.production.obj
 MSendSPI@Slave 81 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
-__initialization 2EA2 0 CODE 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
+__initialization 2F2A 0 CODE 0 cinit dist/default/production/SPItest_MASTER_.X.production.obj
 __pbssBANK0 B5 0 BANK0 1 bssBANK0 dist/default/production/SPItest_MASTER_.X.production.obj
+_OpenSPI 2C4A 0 CODE 0 text5 dist/default/production/SPItest_MASTER_.X.production.obj
 __size_of_SPIReassembleDouble 0 0 ABS 0 - dist/default/production/SPItest_MASTER_.X.production.obj
-__end_ofi2___ftpack 2886 0 CODE 0 text33 dist/default/production/SPItest_MASTER_.X.production.obj
+__end_ofi2___ftpack 28AA 0 CODE 0 text35 dist/default/production/SPItest_MASTER_.X.production.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production/SPItest_MASTER_.X.production.obj
 __Hsmallconst 1064 0 SMALLCONST 0 smallconst dist/default/production/SPItest_MASTER_.X.production.obj
 __Lifardata 0 0 CODE 0 ifardata dist/default/production/SPItest_MASTER_.X.production.obj
@@ -1397,8 +1462,8 @@ ___ftmul@f3_as_product 92 0 BANK0 1 cstackBANK0 dist/default/production/SPItest_
 # All other numeric quantities are in decimal.
 %SEGMENTS
 idloc 0 200000 200000 8 1
-text0 0 1064 1064 1F61 1
-cstackCOMRAM 1 1 1 60 1
+text0 0 1064 1064 2005 1
+cstackCOMRAM 1 1 1 61 1
 cstackBANK0 1 80 80 5F 1
 reset_vec 0 0 0 4 1
 intcode 0 8 8 14 1

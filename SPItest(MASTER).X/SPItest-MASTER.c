@@ -1,4 +1,4 @@
-#include <xc.h>
+#include <pic18F2620.h>
 #include "SPIMaster.h"
 
 #pragma config OSC = HSPLL
@@ -23,6 +23,7 @@ void main(void)
             RCflag = 0;
             if (AZEL == 1)
             {
+                while(SlaveReady1);
                 if ((StrippedKey == 0x02) || (StrippedKey == 0x03) || (StrippedKey == 0x04) || (StrippedKey == 0x06) || StrippedKey == 0x08)
                 {
                     do

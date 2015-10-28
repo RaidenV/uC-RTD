@@ -6561,16 +6561,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Joystick.h: 31: int DetectMovement(void);
 "3 Joystick.c
 [v _PIDEnableFlag `uc ~T0 @X0 1 e ]
-[i _PIDEnableFlag
--> -> 0 `i `uc
-]
-[; ;Joystick.c: 3: unsigned char PIDEnableFlag = 0;
+[; ;Joystick.c: 3: unsigned char PIDEnableFlag;
 "4
 [v _JSEnableFlag `uc ~T0 @X0 1 e ]
-[i _JSEnableFlag
--> -> 0 `i `uc
-]
-[; ;Joystick.c: 4: unsigned char JSEnableFlag = 0;
+[; ;Joystick.c: 4: unsigned char JSEnableFlag;
 "6
 [v _JoystickInit `(v ~T0 @X0 1 ef ]
 "7

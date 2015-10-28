@@ -3694,6 +3694,7 @@ void keyValue(unsigned char*, unsigned short);
 
 # 3 "KeyValue.c"
 double StrippedValue;
+unsigned char PIDEnableFlag = 0;
 unsigned char StrippedKey;
 unsigned char AZEL = 1;
 unsigned char key[5];
@@ -3701,11 +3702,10 @@ unsigned char value[10];
 unsigned char received[30];
 unsigned char RCflag;
 
-
 double Kp;
 double Ki;
 double Kd;
-double SetAngle;
+double SetAngle = 0;
 double CurrentAngle;
 double CurrentVelocity;
 
@@ -3736,7 +3736,13 @@ SerTx(0x0D);
 
 if (StrippedKey == 0x01)
 {
+if (SetAngle != StrippedValue)
+{
 SetAngle = StrippedValue;
+PIDEnableFlag = 0x03;
+}
+else
+PIDEnableFlag = 0x01;
 }
 
 else if (StrippedKey == 0x05)
@@ -3856,7 +3862,7 @@ StrippedKey = 0x02;
 SerTx(';');
 }
 
-else if((strcmp(key, "VEL") == 0) || (strcmp(key, "vel") == 0))
+else if ((strcmp(key, "VEL") == 0) || (strcmp(key, "vel") == 0))
 {
 StrippedKey = 0x03;
 SerTx(';');

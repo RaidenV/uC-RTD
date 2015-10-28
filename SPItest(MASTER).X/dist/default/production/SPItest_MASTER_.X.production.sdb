@@ -53,7 +53,7 @@
 [v _OpenSPI OpenSPI `(v  1 e 0 0 ]
 "19 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
 [v _RCInt RCInt `(v  1 e 0 0 ]
-"67
+"73
 [v _keyValue keyValue `(v  1 e 0 0 ]
 "19 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
 [v _SerInit SerInit `(v  1 e 0 0 ]
@@ -65,7 +65,9 @@
 [v i2_SerTxStr SerTxStr `(v  1 e 0 0 ]
 "80
 [v _breakDouble breakDouble `(v  1 e 0 0 ]
-"16 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+"9 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+[v _SPIInitM SPIInitM `(v  1 e 0 0 ]
+"16
 [v _MSendSPI MSendSPI `(v  1 e 0 0 ]
 "45
 [v _MReceiveSPI MReceiveSPI `(uc  1 e 1 0 ]
@@ -81,11 +83,11 @@
 [v _MGenerateChecksum MGenerateChecksum `(uc  1 e 1 0 ]
 "13 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
 [v _main main `(v  1 e 0 0 ]
-"151
+"152
 [v _ISR ISR `II(v  1 e 0 0 ]
-"159
+"160
 [v _initialize initialize `(v  1 e 0 0 ]
-[s S339 . 1 `uc 1 RA0 1 0 :1:0 
+[s S340 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -94,34 +96,34 @@
 `uc 1 RA6 1 0 :1:6 
 `uc 1 RA7 1 0 :1:7 
 ]
-"98 /opt/microchip/xc8/v1.34/include/pic18f2620.h
-[s S348 . 1 `uc 1 . 1 0 :4:0 
+"98 /opt/microchip/xc8/v1.34/include/pic18F2620.h
+[s S349 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T0CKI 1 0 :1:4 
 `uc 1 AN4 1 0 :1:5 
 ]
-[s S352 . 1 `uc 1 . 1 0 :5:0 
+[s S353 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SS 1 0 :1:5 
 ]
-[s S355 . 1 `uc 1 . 1 0 :5:0 
+[s S356 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_SS 1 0 :1:5 
 ]
-[s S358 . 1 `uc 1 . 1 0 :5:0 
+[s S359 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 nSS 1 0 :1:5 
 ]
-[s S361 . 1 `uc 1 . 1 0 :5:0 
+[s S362 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S364 . 1 `uc 1 . 1 0 :5:0 
+[s S365 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S367 . 1 `uc 1 . 1 0 :7:0 
+[s S368 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[s S370 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S371 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 ]
-[u S372 . 1 `S339 1 . 1 0 `S348 1 . 1 0 `S352 1 . 1 0 `S355 1 . 1 0 `S358 1 . 1 0 `S361 1 . 1 0 `S364 1 . 1 0 `S367 1 . 1 0 `S370 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES372  1 e 1 @3968 ]
-[s S594 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S373 . 1 `S340 1 . 1 0 `S349 1 . 1 0 `S353 1 . 1 0 `S356 1 . 1 0 `S359 1 . 1 0 `S362 1 . 1 0 `S365 1 . 1 0 `S368 1 . 1 0 `S371 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES373  1 e 1 @3968 ]
+[s S599 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -130,9 +132,30 @@
 `uc 1 TRISA6 1 0 :1:6 
 `uc 1 TRISA7 1 0 :1:7 
 ]
-"1231
-[u S612 . 1 `S594 1 . 1 0 `S339 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES612  1 e 1 @3986 ]
+"1231 /opt/microchip/xc8/v1.34/include/pic18f2620.h
+[u S617 . 1 `S599 1 . 1 0 `S340 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES617  1 e 1 @3986 ]
+[s S935 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1673
+[s S944 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S953 . 1 `S935 1 . 1 0 `S944 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES953  1 e 1 @3988 ]
 [s S125 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
@@ -198,6 +221,91 @@
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
 "3446
 [v _BAUDCON BAUDCON `VEuc  1 e 1 @4024 ]
+"4170
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+[s S909 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"4190
+[s S915 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S920 . 1 `S909 1 . 1 0 `S915 1 . 1 0 ]
+[v _SSPCON1bits SSPCON1bits `VES920  1 e 1 @4038 ]
+"4239
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
+[s S749 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"4334
+[s S752 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S755 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S770 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S775 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 A 1 0 :1:5 
+]
+[s S780 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S785 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S790 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S793 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S796 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S801 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 DA 1 0 :1:5 
+]
+[s S804 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+]
+[s S807 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 START 1 0 :1:3 
+]
+[s S810 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 STOP 1 0 :1:4 
+]
+[s S813 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W 1 0 :1:2 
+]
+[s S816 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_A 1 0 :1:5 
+]
+[u S819 . 1 `S749 1 . 1 0 `S752 1 . 1 0 `S755 1 . 1 0 `S749 1 . 1 0 `S752 1 . 1 0 `S770 1 . 1 0 `S775 1 . 1 0 `S780 1 . 1 0 `S785 1 . 1 0 `S790 1 . 1 0 `S793 1 . 1 0 `S796 1 . 1 0 `S801 1 . 1 0 `S804 1 . 1 0 `S807 1 . 1 0 `S810 1 . 1 0 `S813 1 . 1 0 `S816 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES819  1 e 1 @4039 ]
 "4484
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
 [s S25 . 1 `uc 1 NOT_BOR 1 0 :1:0 
@@ -232,7 +340,7 @@
 ]
 [u S54 . 1 `S25 1 . 1 0 `S27 1 . 1 0 `S30 1 . 1 0 `S33 1 . 1 0 `S36 1 . 1 0 `S39 1 . 1 0 `S48 1 . 1 0 ]
 [v _RCONbits RCONbits `VES54  1 e 1 @4048 ]
-[s S476 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S482 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -241,8 +349,8 @@
 `uc 1 PEIE_GIEL 1 0 :1:6 
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
-"5846
-[s S485 . 1 `uc 1 RBIF 1 0 :1:0 
+"5846 /opt/microchip/xc8/v1.34/include/pic18F2620.h
+[s S491 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -251,7 +359,7 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S494 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S500 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -260,7 +368,7 @@
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[s S503 . 1 `uc 1 . 1 0 :1:0 
+[s S509 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -269,23 +377,25 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S512 . 1 `uc 1 . 1 0 :6:0 
+[s S518 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S516 . 1 `S476 1 . 1 0 `S485 1 . 1 0 `S494 1 . 1 0 `S503 1 . 1 0 `S512 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES516  1 e 1 @4082 ]
+[u S522 . 1 `S482 1 . 1 0 `S491 1 . 1 0 `S500 1 . 1 0 `S509 1 . 1 0 `S518 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES522  1 e 1 @4082 ]
 "3 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
 [v _StrippedValue StrippedValue `d  1 e 3 0 ]
 "4
-[v _StrippedKey StrippedKey `uc  1 e 1 0 ]
+[v _PIDEnableFlag PIDEnableFlag `uc  1 e 1 0 ]
 "5
-[v _AZEL AZEL `uc  1 e 1 0 ]
+[v _StrippedKey StrippedKey `uc  1 e 1 0 ]
 "6
-[v _key key `[5]uc  1 e 5 0 ]
+[v _AZEL AZEL `uc  1 e 1 0 ]
 "7
-[v _value value `[10]uc  1 e 10 0 ]
+[v _key key `[5]uc  1 e 5 0 ]
 "8
+[v _value value `[10]uc  1 e 10 0 ]
+"9
 [v _received received `[30]uc  1 e 30 0 ]
 "12
 [v _Kp Kp `d  1 e 3 0 ]
@@ -310,12 +420,12 @@
 {
 "15
 [v main@x x `uc  1 a 1 52 ]
-"149
+"150
 } 0
-"159
+"160
 [v _initialize initialize `(v  1 e 0 0 ]
 {
-"164
+"166
 } 0
 "19 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
 [v _SerInit SerInit `(v  1 e 0 0 ]
@@ -327,6 +437,22 @@
 {
 [v SerTxStr@string string `*.35uc  1 p 2 1 ]
 "54
+} 0
+"9 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
+[v _SPIInitM SPIInitM `(v  1 e 0 0 ]
+{
+"14
+} 0
+"14 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi_open.c
+[v _OpenSPI OpenSPI `(v  1 e 0 0 ]
+{
+[v OpenSPI@sync_mode sync_mode `uc  1 a 1 wreg ]
+[v OpenSPI@sync_mode sync_mode `uc  1 a 1 wreg ]
+[v OpenSPI@bus_mode bus_mode `uc  1 p 1 0 ]
+[v OpenSPI@smp_phase smp_phase `uc  1 p 1 1 ]
+"16
+[v OpenSPI@sync_mode sync_mode `uc  1 a 1 2 ]
+"102
 } 0
 "91 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPIMaster.c
 [v _checksum checksum `(uc  1 e 1 0 ]
@@ -355,7 +481,7 @@
 {
 [v MSendSPI@data data `uc  1 a 1 wreg ]
 "35
-[v MSendSPI@tempChar_722 tempChar `uc  1 a 1 3 ]
+[v MSendSPI@tempChar_727 tempChar `uc  1 a 1 3 ]
 "22
 [v MSendSPI@tempChar tempChar `uc  1 a 1 2 ]
 "16
@@ -369,7 +495,7 @@
 [v _MReceiveStrSPI MReceiveStrSPI `(v  1 e 0 0 ]
 {
 "70
-[v MReceiveStrSPI@x_731 x `uc  1 a 1 51 ]
+[v MReceiveStrSPI@x_736 x `uc  1 a 1 51 ]
 "59
 [v MReceiveStrSPI@x x `uc  1 a 1 50 ]
 "55
@@ -476,33 +602,33 @@
 [v Delay10TCYx@unit unit `uc  1 a 1 0 ]
 "13
 } 0
-"151 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
+"152 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SPItest-MASTER.c
 [v _ISR ISR `II(v  1 e 0 0 ]
 {
-"157
+"158
 } 0
 "19 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/KeyValue.c
 [v _RCInt RCInt `(v  1 e 0 0 ]
 {
 "21
 [v RCInt@counter counter `uc  1 a 1 47 ]
-"65
+"71
 } 0
-"67
+"73
 [v _keyValue keyValue `(v  1 e 0 0 ]
 {
-"71
+"77
 [v keyValue@str_end str_end `*.39uc  1 a 2 41 ]
-"69
+"75
 [v keyValue@x x `uc  1 a 1 45 ]
-"70
+"76
 [v keyValue@y y `uc  1 a 1 44 ]
-"72
+"78
 [v keyValue@flag flag `uc  1 a 1 43 ]
-"67
+"73
 [v keyValue@str str `*.39uc  1 p 2 35 ]
 [v keyValue@length length `us  1 p 2 37 ]
-"217
+"223
 } 0
 "50 /home/raidenv/MPLABXProjects/SPItest(MASTER).X/SerComm.c
 [v i2_SerTxStr SerTxStr `(v  1 e 0 0 ]
@@ -522,9 +648,9 @@
 "35 /opt/microchip/xc8/v1.34/sources/common/atof.c
 [v _strtod strtod `(d  1 e 3 0 ]
 {
-[u S1194 . 4 `d 1 _l 3 0 `l 1 _v 4 0 ]
+[u S1199 . 4 `d 1 _l 3 0 `l 1 _v 4 0 ]
 "62
-[v strtod@_u _u `S1194  1 a 4 31 ]
+[v strtod@_u _u `S1199  1 a 4 31 ]
 "48
 [v strtod@expon expon `c  1 a 1 30 ]
 "37

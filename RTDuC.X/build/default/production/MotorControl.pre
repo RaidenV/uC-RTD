@@ -8387,6 +8387,9 @@ TRISBbits.RB0 = 1;
 
 TRISAbits.RA4 = 0;
 
+CCPR3L = 0x00;
+CCP3CONbits.DC3B0 = 0;
+CCP3CONbits.DC3B1 = 0;
 CCP3CON = 0x4C;
 PR2 = 0xFF;
 T3CON = 0x00;

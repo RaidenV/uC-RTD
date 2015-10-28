@@ -24,8 +24,8 @@ void SerInit(void)
     BAUDCON = 0x00; //8-Bit Baud Rate Generator
     SPBRG = 21;
 
-    RCONbits.IPEN = 1; //Enable interrupt priority;
-    IPR1bits.RCIP = 1; //Set the RCIP to high;
+//    RCONbits.IPEN = 1; //Enable interrupt priority;
+//    IPR1bits.RCIP = 1; //Set the RCIP to high;
     PIE1bits.RC1IE = 1; //Enable the Receive interrupt;
 
     SerTxStr("Welcome to the world of tomorrow!!!");
@@ -101,6 +101,4 @@ void breakDouble(double dubs)
     temp2 = temp2 % 10;
     SerTx(temp1 + 0x30);
     SerTx(temp2 + 0x30);
-    SerTx(newLine);
-    SerTx(carriageReturn);
 }

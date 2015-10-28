@@ -5670,6 +5670,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SerComm.h: 23: unsigned char SerRx(void);
 [; ;SerComm.h: 24: void SerRxStr(unsigned char*);
 [; ;SerComm.h: 25: void breakDouble(double);
+[; ;SerComm.h: 26: void Sernl(void);
 "19 SerComm.c
 [v _SerInit `(v ~T0 @X0 1 ef ]
 "20
@@ -5887,4 +5888,22 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SerComm.c: 95: }
 "95
 [e :UE 734 ]
+}
+"97
+[v _Sernl `(v ~T0 @X0 1 ef ]
+"98
+{
+[; ;SerComm.c: 97: void Sernl(void)
+[; ;SerComm.c: 98: {
+[e :U _Sernl ]
+[f ]
+[; ;SerComm.c: 99: SerTx(0x0A);
+"99
+[e ( _SerTx (1 -> -> 10 `i `uc ]
+[; ;SerComm.c: 100: SerTx(0x0D);
+"100
+[e ( _SerTx (1 -> -> 13 `i `uc ]
+[; ;SerComm.c: 101: }
+"101
+[e :UE 737 ]
 }

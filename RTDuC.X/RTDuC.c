@@ -49,7 +49,7 @@ void main(void)
                 for (x = 0; x < 4; x++) //Test sending multiple bytes;
                     SendSPI1(DoubleSPIS[x]);
                 temporary = SSP1BUF;
-                INTCONBits.GIE = 1; //Turn interrupts back on;
+                INTCONbits.GIE = 1; //Turn interrupts back on;
             }
             else if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
             {
@@ -57,7 +57,7 @@ void main(void)
                 SlaveReady = 0;
                 for (x = 0; x != 4; x++)
                     DoubleSPIS[x] = ReceiveSPI1();
-                INTCONBits.GIE = 1; //Turn interrupts back on;
+                INTCONbits.GIE = 1; //Turn interrupts back on;
                 if (Command == 0x01)
                 {
                     SetAngle = SPIReassembleDouble();

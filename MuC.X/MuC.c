@@ -2,18 +2,18 @@
 #include "KeyValue.h"
 #include "SerComm.h"
 #include "SPIMaster.h"
-#include "LCDMaster.h"
 #include "EEPROMMaster.h"
 
 #pragma config OSC = HSPLL
 #pragma config WDT = OFF
 #pragma config FCMEN = OFF
 
+#define STATUSLED PORTBbits.RB0
+
 void initialize(void);
 void InitializeInterrupts(void);
 void TMR0Init(void);
-void interrupt high_priority hISR(void);
-void interrupt low_priority lISR(void);
+void interrupt ISR(void);
 void TMR0Int(void);
 
 /*The following timer setting is controversial.  Is it necessary to have 1/4 second interrupts?*/
@@ -163,11 +163,11 @@ void main(void)
         if (TMR0Flag == 1)
         {
             INTCONbits.GIE = 0; //Disable interrupts for transmission;
-            while (SlaveReady1); //Wait for the slave to be ready;
+//            while (SlaveReady1); //Wait for the slave to be ready;
 
             MSendSPI(0x02, 1); //Write the command byte to the slave;
 
-            while (SlaveReady1); //Wait for the slave to be ready;
+//            while (SlaveReady1); //Wait for the slave to be ready;
             MReceiveStrSPI(DoubleSPIM, 1); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
             CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
             for (x = 0; x != 4; x++)
@@ -175,24 +175,24 @@ void main(void)
 
             SerTxStr("Azimuth = ");
             breakDouble(CurrentAngle);
-            SerTxStr(" degrees");
             SerNL();
 
-            while (SlaveReady2); //Wait for the slave to be ready;
-
-            MSendSPI(0x02, 2); //Write the command byte to the slave;
-
-            while (SlaveReady2); //Wait for the slave to be ready;
-            MReceiveStrSPI(DoubleSPIM, 2); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
-            CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
-            for (x = 0; x != 4; x++)
-                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
-
-            SerTxStr("Elevation = ");
-            breakDouble(CurrentAngle);
-            SerTxStr(" degrees");
-            SerNL();
+//            while (SlaveReady2); //Wait for the slave to be ready;
+//
+//            MSendSPI(0x02, 2); //Write the command byte to the slave;
+//
+//            while (SlaveReady2); //Wait for the slave to be ready;
+//            MReceiveStrSPI(DoubleSPIM, 2); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
+//            CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
+//            for (x = 0; x != 4; x++)
+//                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+//
+//            SerTxStr("Elevation = ");
+//            breakDouble(CurrentAngle);
+//            SerNL();
             INTCONbits.GIE = 1; //Enable interrupts after transmission;
+
+            TMR0Flag = 0;
         }
     }
 }
@@ -222,19 +222,19 @@ void InitializeInterrupts(void)
 
     INTCONbits.GIE = 1; //Enable general interrupts;
     INTCONbits.PEIE = 1; //Enable Peripheral interrupts;
-    RCONbits.IPEN = 1; //Enable Interrupt Priority;
+
 }
 
 void TMR0Init(void)
 {
-    T0CON = 0x07; //Prescaler of 256 enabled;
+    T0CON = 0x87; //Prescaler of 256 enabled;
     TMR0H = timerHigh;
     TMR0L = timerLow;
 
     //The timer will be initialized externally to this protocol, giving the slaves time to start up;
 }
 
-void interrupt high_priority hISR(void)
+void interrupt ISR(void)
 {
     if (INTCONbits.TMR0IF == 1)
     {
@@ -243,13 +243,10 @@ void interrupt high_priority hISR(void)
         TMR0L = timerLow;
         INTCONbits.TMR0IF = 0;
     }
-
-}
-
-void interrupt low_priority lISR(void)
-{
+    
     if (PIR1bits.RCIF == 1)
     {
         RCInt();
     }
+    INTCONbits.GIE = 1;
 }

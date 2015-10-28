@@ -2829,26 +2829,32 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _StrippedValue `d ~T0 @X0 1 e ]
 [; ;KeyValue.c: 3: double StrippedValue;
 "4
-[v _StrippedKey `uc ~T0 @X0 1 e ]
-[; ;KeyValue.c: 4: unsigned char StrippedKey;
+[v _PIDEnableFlag `uc ~T0 @X0 1 e ]
+[i _PIDEnableFlag
+-> -> 0 `i `uc
+]
+[; ;KeyValue.c: 4: unsigned char PIDEnableFlag = 0;
 "5
+[v _StrippedKey `uc ~T0 @X0 1 e ]
+[; ;KeyValue.c: 5: unsigned char StrippedKey;
+"6
 [v _AZEL `uc ~T0 @X0 1 e ]
 [i _AZEL
 -> -> 1 `i `uc
 ]
-[; ;KeyValue.c: 5: unsigned char AZEL = 1;
-"6
-[v _key `uc ~T0 @X0 -> 5 `i e ]
-[; ;KeyValue.c: 6: unsigned char key[5];
+[; ;KeyValue.c: 6: unsigned char AZEL = 1;
 "7
-[v _value `uc ~T0 @X0 -> 10 `i e ]
-[; ;KeyValue.c: 7: unsigned char value[10];
+[v _key `uc ~T0 @X0 -> 5 `i e ]
+[; ;KeyValue.c: 7: unsigned char key[5];
 "8
-[v _received `uc ~T0 @X0 -> 30 `i e ]
-[; ;KeyValue.c: 8: unsigned char received[30];
+[v _value `uc ~T0 @X0 -> 10 `i e ]
+[; ;KeyValue.c: 8: unsigned char value[10];
 "9
+[v _received `uc ~T0 @X0 -> 30 `i e ]
+[; ;KeyValue.c: 9: unsigned char received[30];
+"10
 [v _RCflag `uc ~T0 @X0 1 e ]
-[; ;KeyValue.c: 9: unsigned char RCflag;
+[; ;KeyValue.c: 10: unsigned char RCflag;
 "12
 [v _Kp `d ~T0 @X0 1 e ]
 [; ;KeyValue.c: 12: double Kp;
@@ -2860,7 +2866,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;KeyValue.c: 14: double Kd;
 "15
 [v _SetAngle `d ~T0 @X0 1 e ]
-[; ;KeyValue.c: 15: double SetAngle;
+[i _SetAngle
+-> -> 0 `i `d
+]
+[; ;KeyValue.c: 15: double SetAngle = 0;
 "16
 [v _CurrentAngle `d ~T0 @X0 1 e ]
 [; ;KeyValue.c: 16: double CurrentAngle;
@@ -2955,224 +2964,227 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;KeyValue.c: 45: {
 "45
 {
-[; ;KeyValue.c: 46: SetAngle = StrippedValue;
+[; ;KeyValue.c: 46: if (SetAngle != StrippedValue)
 "46
-[e = _SetAngle _StrippedValue ]
+[e $ ! != _SetAngle _StrippedValue 339  ]
+[; ;KeyValue.c: 47: {
 "47
-}
-[; ;KeyValue.c: 47: }
-[e $U 339  ]
+{
+[; ;KeyValue.c: 48: SetAngle = StrippedValue;
+"48
+[e = _SetAngle _StrippedValue ]
+[; ;KeyValue.c: 49: PIDEnableFlag = 0x03;
 "49
-[e :U 338 ]
-[; ;KeyValue.c: 49: else if (StrippedKey == 0x05)
-[e $ ! == -> _StrippedKey `i -> 5 `i 340  ]
-[; ;KeyValue.c: 50: {
+[e = _PIDEnableFlag -> -> 3 `i `uc ]
 "50
-{
-[; ;KeyValue.c: 51: Kp = StrippedValue;
+}
+[; ;KeyValue.c: 50: }
+[e $U 340  ]
 "51
-[e = _Kp _StrippedValue ]
-"52
-}
-[; ;KeyValue.c: 52: }
-[e $U 341  ]
-"54
-[e :U 340 ]
-[; ;KeyValue.c: 54: else if (StrippedKey == 0x07)
-[e $ ! == -> _StrippedKey `i -> 7 `i 342  ]
-[; ;KeyValue.c: 55: {
-"55
-{
-[; ;KeyValue.c: 56: Ki = StrippedValue;
-"56
-[e = _Ki _StrippedValue ]
-"57
-}
-[; ;KeyValue.c: 57: }
-[e $U 343  ]
-"59
-[e :U 342 ]
-[; ;KeyValue.c: 59: else if (StrippedKey == 0x09)
-[e $ ! == -> _StrippedKey `i -> 9 `i 344  ]
-[; ;KeyValue.c: 60: {
-"60
-{
-[; ;KeyValue.c: 61: Kd = StrippedValue;
-"61
-[e = _Kd _StrippedValue ]
-"62
-}
-[e :U 344 ]
-"64
-[e :U 343 ]
-[e :U 341 ]
 [e :U 339 ]
-[; ;KeyValue.c: 62: }
-[; ;KeyValue.c: 64: PIR1bits.RCIF = 0;
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-[; ;KeyValue.c: 65: }
+[; ;KeyValue.c: 51: else
+[; ;KeyValue.c: 52: PIDEnableFlag = 0x01;
+"52
+[e = _PIDEnableFlag -> -> 1 `i `uc ]
+[e :U 340 ]
+"53
+}
+[; ;KeyValue.c: 53: }
+[e $U 341  ]
+"55
+[e :U 338 ]
+[; ;KeyValue.c: 55: else if (StrippedKey == 0x05)
+[e $ ! == -> _StrippedKey `i -> 5 `i 342  ]
+[; ;KeyValue.c: 56: {
+"56
+{
+[; ;KeyValue.c: 57: Kp = StrippedValue;
+"57
+[e = _Kp _StrippedValue ]
+"58
+}
+[; ;KeyValue.c: 58: }
+[e $U 343  ]
+"60
+[e :U 342 ]
+[; ;KeyValue.c: 60: else if (StrippedKey == 0x07)
+[e $ ! == -> _StrippedKey `i -> 7 `i 344  ]
+[; ;KeyValue.c: 61: {
+"61
+{
+[; ;KeyValue.c: 62: Ki = StrippedValue;
+"62
+[e = _Ki _StrippedValue ]
+"63
+}
+[; ;KeyValue.c: 63: }
+[e $U 345  ]
 "65
-[e :UE 327 ]
-}
+[e :U 344 ]
+[; ;KeyValue.c: 65: else if (StrippedKey == 0x09)
+[e $ ! == -> _StrippedKey `i -> 9 `i 346  ]
+[; ;KeyValue.c: 66: {
+"66
+{
+[; ;KeyValue.c: 67: Kd = StrippedValue;
 "67
-[v _keyValue `(v ~T0 @X0 1 ef2`*uc`us ]
+[e = _Kd _StrippedValue ]
 "68
-{
-[; ;KeyValue.c: 67: void keyValue(unsigned char* str, unsigned short length)
-[; ;KeyValue.c: 68: {
-[e :U _keyValue ]
-"67
-[v _str `*uc ~T0 @X0 1 r1 ]
-[v _length `us ~T0 @X0 1 r2 ]
-"68
-[f ]
-"69
-[v _x `uc ~T0 @X0 1 a ]
-[; ;KeyValue.c: 69: unsigned char x = 0;
-[e = _x -> -> 0 `i `uc ]
-"70
-[v _y `uc ~T0 @X0 1 a ]
-[; ;KeyValue.c: 70: unsigned char y = 0;
-[e = _y -> -> 0 `i `uc ]
-"71
-[v _str_end `*uc ~T0 @X0 1 a ]
-"72
-[v _flag `uc ~T0 @X0 1 a ]
-[; ;KeyValue.c: 71: unsigned char* str_end;
-[; ;KeyValue.c: 72: unsigned char flag = 0;
-[e = _flag -> -> 0 `i `uc ]
-[; ;KeyValue.c: 74: while ((str[x] != '=') && x < length)
-"74
-[e $U 346  ]
-[e :U 347 ]
-[; ;KeyValue.c: 75: {
-"75
-{
-[; ;KeyValue.c: 76: x++;
-"76
-[e ++ _x -> -> 1 `i `uc ]
-[; ;KeyValue.c: 77: if (str[x] == '=')
-"77
-[e $ ! == -> *U + _str * -> _x `ux -> -> # *U _str `ui `ux `ui -> 61 `ui 349  ]
-[; ;KeyValue.c: 78: {
-"78
-{
-[; ;KeyValue.c: 79: flag = 1;
-"79
-[e = _flag -> -> 1 `i `uc ]
-"80
-}
-[; ;KeyValue.c: 80: }
-[e $U 350  ]
-"81
-[e :U 349 ]
-[; ;KeyValue.c: 81: else
-[; ;KeyValue.c: 82: flag = 0;
-"82
-[e = _flag -> -> 0 `i `uc ]
-[e :U 350 ]
-"83
 }
 [e :U 346 ]
+"70
+[e :U 345 ]
+[e :U 343 ]
+[e :U 341 ]
+[; ;KeyValue.c: 68: }
+[; ;KeyValue.c: 70: PIR1bits.RCIF = 0;
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+[; ;KeyValue.c: 71: }
+"71
+[e :UE 327 ]
+}
+"73
+[v _keyValue `(v ~T0 @X0 1 ef2`*uc`us ]
 "74
-[e $ && != -> *U + _str * -> _x `ux -> -> # *U _str `ui `ux `ui -> 61 `ui < -> _x `ui -> _length `ui 347  ]
-[e :U 348 ]
-[; ;KeyValue.c: 83: }
-[; ;KeyValue.c: 84: if ((x < length) && flag)
-"84
-[e $ ! && < -> _x `ui -> _length `ui != -> _flag `i -> -> -> 0 `i `uc `i 351  ]
-[; ;KeyValue.c: 85: {
-"85
 {
-[; ;KeyValue.c: 86: for (y = 0; y < x && y < 5; y++)
-"86
-{
+[; ;KeyValue.c: 73: void keyValue(unsigned char* str, unsigned short length)
+[; ;KeyValue.c: 74: {
+[e :U _keyValue ]
+"73
+[v _str `*uc ~T0 @X0 1 r1 ]
+[v _length `us ~T0 @X0 1 r2 ]
+"74
+[f ]
+"75
+[v _x `uc ~T0 @X0 1 a ]
+[; ;KeyValue.c: 75: unsigned char x = 0;
+[e = _x -> -> 0 `i `uc ]
+"76
+[v _y `uc ~T0 @X0 1 a ]
+[; ;KeyValue.c: 76: unsigned char y = 0;
 [e = _y -> -> 0 `i `uc ]
-[e $U 355  ]
-"87
-[e :U 352 ]
-[; ;KeyValue.c: 87: {
+"77
+[v _str_end `*uc ~T0 @X0 1 a ]
+"78
+[v _flag `uc ~T0 @X0 1 a ]
+[; ;KeyValue.c: 77: unsigned char* str_end;
+[; ;KeyValue.c: 78: unsigned char flag = 0;
+[e = _flag -> -> 0 `i `uc ]
+[; ;KeyValue.c: 80: while ((str[x] != '=') && x < length)
+"80
+[e $U 348  ]
+[e :U 349 ]
+[; ;KeyValue.c: 81: {
+"81
 {
-[; ;KeyValue.c: 88: if (isspace(str[y]) == 0)
-"88
-[e $ ! == -> ( _isspace (1 *U + _str * -> _y `ux -> -> # *U _str `ui `ux `i -> 0 `i 356  ]
-[; ;KeyValue.c: 89: key[y] = str[y];
-"89
-[e = *U + &U _key * -> _y `ux -> -> # *U &U _key `ui `ux *U + _str * -> _y `ux -> -> # *U _str `ui `ux ]
-[e :U 356 ]
-"90
-}
-"86
-[e ++ _y -> -> 1 `i `uc ]
-[e :U 355 ]
-[e $ && < -> _y `i -> _x `i < -> _y `i -> 5 `i 352  ]
-[e :U 353 ]
-"90
-}
-[; ;KeyValue.c: 90: }
-[; ;KeyValue.c: 92: SerTxStr("Key: ");
-"92
-[e ( _SerTxStr (1 -> :s 1C `*uc ]
-[; ;KeyValue.c: 93: SerTxStr(key);
-"93
-[e ( _SerTxStr (1 &U _key ]
-[; ;KeyValue.c: 95: for (y = 0; str[x + 1] != (0); y++)
-"95
-{
-[e = _y -> -> 0 `i `uc ]
-[e $U 360  ]
-"96
-[e :U 357 ]
-[; ;KeyValue.c: 96: {
-{
-[; ;KeyValue.c: 97: x++;
-"97
+[; ;KeyValue.c: 82: x++;
+"82
 [e ++ _x -> -> 1 `i `uc ]
-[; ;KeyValue.c: 99: value[y] = str[x];
-"99
-[e = *U + &U _value * -> _y `ux -> -> # *U &U _value `ui `ux *U + _str * -> _x `ux -> -> # *U _str `ui `ux ]
-"100
-}
-"95
-[e ++ _y -> -> 1 `i `uc ]
-[e :U 360 ]
-[e $ != -> *U + _str * -> + -> _x `i -> 1 `i `x -> -> # *U _str `i `x `i -> 0 `i 357  ]
-[e :U 358 ]
-"100
-}
-[; ;KeyValue.c: 100: }
-[; ;KeyValue.c: 101: SerTxStr("   Value: ");
-"101
-[e ( _SerTxStr (1 -> :s 2C `*uc ]
-[; ;KeyValue.c: 102: SerTxStr(value);
-"102
-[e ( _SerTxStr (1 &U _value ]
-[; ;KeyValue.c: 104: if ((strcmp(key, "POS") == 0) || (strcmp(key, "pos") == 0))
-"104
-[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 3C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 4C -> 0 `i 361  ]
-[; ;KeyValue.c: 105: {
-"105
+[; ;KeyValue.c: 83: if (str[x] == '=')
+"83
+[e $ ! == -> *U + _str * -> _x `ux -> -> # *U _str `ui `ux `ui -> 61 `ui 351  ]
+[; ;KeyValue.c: 84: {
+"84
 {
-[; ;KeyValue.c: 106: StrippedKey = 0x01;
-"106
-[e = _StrippedKey -> -> 1 `i `uc ]
-[; ;KeyValue.c: 107: SerTx(';');
-"107
-[e ( _SerTx (1 -> -> 59 `ui `uc ]
-"108
+[; ;KeyValue.c: 85: flag = 1;
+"85
+[e = _flag -> -> 1 `i `uc ]
+"86
 }
-[; ;KeyValue.c: 108: }
+[; ;KeyValue.c: 86: }
+[e $U 352  ]
+"87
+[e :U 351 ]
+[; ;KeyValue.c: 87: else
+[; ;KeyValue.c: 88: flag = 0;
+"88
+[e = _flag -> -> 0 `i `uc ]
+[e :U 352 ]
+"89
+}
+[e :U 348 ]
+"80
+[e $ && != -> *U + _str * -> _x `ux -> -> # *U _str `ui `ux `ui -> 61 `ui < -> _x `ui -> _length `ui 349  ]
+[e :U 350 ]
+[; ;KeyValue.c: 89: }
+[; ;KeyValue.c: 90: if ((x < length) && flag)
+"90
+[e $ ! && < -> _x `ui -> _length `ui != -> _flag `i -> -> -> 0 `i `uc `i 353  ]
+[; ;KeyValue.c: 91: {
+"91
+{
+[; ;KeyValue.c: 92: for (y = 0; y < x && y < 5; y++)
+"92
+{
+[e = _y -> -> 0 `i `uc ]
+[e $U 357  ]
+"93
+[e :U 354 ]
+[; ;KeyValue.c: 93: {
+{
+[; ;KeyValue.c: 94: if (isspace(str[y]) == 0)
+"94
+[e $ ! == -> ( _isspace (1 *U + _str * -> _y `ux -> -> # *U _str `ui `ux `i -> 0 `i 358  ]
+[; ;KeyValue.c: 95: key[y] = str[y];
+"95
+[e = *U + &U _key * -> _y `ux -> -> # *U &U _key `ui `ux *U + _str * -> _y `ux -> -> # *U _str `ui `ux ]
+[e :U 358 ]
+"96
+}
+"92
+[e ++ _y -> -> 1 `i `uc ]
+[e :U 357 ]
+[e $ && < -> _y `i -> _x `i < -> _y `i -> 5 `i 354  ]
+[e :U 355 ]
+"96
+}
+[; ;KeyValue.c: 96: }
+[; ;KeyValue.c: 98: SerTxStr("Key: ");
+"98
+[e ( _SerTxStr (1 -> :s 1C `*uc ]
+[; ;KeyValue.c: 99: SerTxStr(key);
+"99
+[e ( _SerTxStr (1 &U _key ]
+[; ;KeyValue.c: 101: for (y = 0; str[x + 1] != (0); y++)
+"101
+{
+[e = _y -> -> 0 `i `uc ]
 [e $U 362  ]
+"102
+[e :U 359 ]
+[; ;KeyValue.c: 102: {
+{
+[; ;KeyValue.c: 103: x++;
+"103
+[e ++ _x -> -> 1 `i `uc ]
+[; ;KeyValue.c: 105: value[y] = str[x];
+"105
+[e = *U + &U _value * -> _y `ux -> -> # *U &U _value `ui `ux *U + _str * -> _x `ux -> -> # *U _str `ui `ux ]
+"106
+}
+"101
+[e ++ _y -> -> 1 `i `uc ]
+[e :U 362 ]
+[e $ != -> *U + _str * -> + -> _x `i -> 1 `i `x -> -> # *U _str `i `x `i -> 0 `i 359  ]
+[e :U 360 ]
+"106
+}
+[; ;KeyValue.c: 106: }
+[; ;KeyValue.c: 107: SerTxStr("   Value: ");
+"107
+[e ( _SerTxStr (1 -> :s 2C `*uc ]
+[; ;KeyValue.c: 108: SerTxStr(value);
+"108
+[e ( _SerTxStr (1 &U _value ]
+[; ;KeyValue.c: 110: if ((strcmp(key, "POS") == 0) || (strcmp(key, "pos") == 0))
 "110
-[e :U 361 ]
-[; ;KeyValue.c: 110: else if ((strcmp(key, "KP") == 0) || (strcmp(key, "kp") == 0))
-[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 5C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 6C -> 0 `i 363  ]
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 3C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 4C -> 0 `i 363  ]
 [; ;KeyValue.c: 111: {
 "111
 {
-[; ;KeyValue.c: 112: StrippedKey = 0x05;
+[; ;KeyValue.c: 112: StrippedKey = 0x01;
 "112
-[e = _StrippedKey -> -> 5 `i `uc ]
+[e = _StrippedKey -> -> 1 `i `uc ]
 [; ;KeyValue.c: 113: SerTx(';');
 "113
 [e ( _SerTx (1 -> -> 59 `ui `uc ]
@@ -3182,14 +3194,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 364  ]
 "116
 [e :U 363 ]
-[; ;KeyValue.c: 116: else if ((strcmp(key, "KI") == 0) || (strcmp(key, "ki") == 0))
-[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 7C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 8C -> 0 `i 365  ]
+[; ;KeyValue.c: 116: else if ((strcmp(key, "KP") == 0) || (strcmp(key, "kp") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 5C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 6C -> 0 `i 365  ]
 [; ;KeyValue.c: 117: {
 "117
 {
-[; ;KeyValue.c: 118: StrippedKey = 0x07;
+[; ;KeyValue.c: 118: StrippedKey = 0x05;
 "118
-[e = _StrippedKey -> -> 7 `i `uc ]
+[e = _StrippedKey -> -> 5 `i `uc ]
 [; ;KeyValue.c: 119: SerTx(';');
 "119
 [e ( _SerTx (1 -> -> 59 `ui `uc ]
@@ -3199,14 +3211,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 366  ]
 "122
 [e :U 365 ]
-[; ;KeyValue.c: 122: else if ((strcmp(key, "KD") == 0) || (strcmp(key, "kd") == 0))
-[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 9C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 10C -> 0 `i 367  ]
+[; ;KeyValue.c: 122: else if ((strcmp(key, "KI") == 0) || (strcmp(key, "ki") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 7C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 8C -> 0 `i 367  ]
 [; ;KeyValue.c: 123: {
 "123
 {
-[; ;KeyValue.c: 124: StrippedKey = 0x09;
+[; ;KeyValue.c: 124: StrippedKey = 0x07;
 "124
-[e = _StrippedKey -> -> 9 `i `uc ]
+[e = _StrippedKey -> -> 7 `i `uc ]
 [; ;KeyValue.c: 125: SerTx(';');
 "125
 [e ( _SerTx (1 -> -> 59 `ui `uc ]
@@ -3216,89 +3228,89 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 368  ]
 "128
 [e :U 367 ]
-[; ;KeyValue.c: 128: else
+[; ;KeyValue.c: 128: else if ((strcmp(key, "KD") == 0) || (strcmp(key, "kd") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 9C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 10C -> 0 `i 369  ]
 [; ;KeyValue.c: 129: {
 "129
 {
-[; ;KeyValue.c: 130: SerTxStr("???");
+[; ;KeyValue.c: 130: StrippedKey = 0x09;
 "130
-[e ( _SerTxStr (1 -> :s 11C `*uc ]
-[; ;KeyValue.c: 131: StrippedKey = 0;
+[e = _StrippedKey -> -> 9 `i `uc ]
+[; ;KeyValue.c: 131: SerTx(';');
 "131
-[e = _StrippedKey -> -> 0 `i `uc ]
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
 "132
 }
+[; ;KeyValue.c: 132: }
+[e $U 370  ]
+"134
+[e :U 369 ]
+[; ;KeyValue.c: 134: else
+[; ;KeyValue.c: 135: {
+"135
+{
+[; ;KeyValue.c: 136: SerTxStr("???");
+"136
+[e ( _SerTxStr (1 -> :s 11C `*uc ]
+[; ;KeyValue.c: 137: StrippedKey = 0;
+"137
+[e = _StrippedKey -> -> 0 `i `uc ]
+"138
+}
+[e :U 370 ]
 [e :U 368 ]
 [e :U 366 ]
 [e :U 364 ]
-[e :U 362 ]
-"133
-}
-[; ;KeyValue.c: 132: }
-[; ;KeyValue.c: 133: }
-[e $U 369  ]
-"135
-[e :U 351 ]
-[; ;KeyValue.c: 135: else if (flag == 0)
-[e $ ! == -> _flag `i -> 0 `i 370  ]
-[; ;KeyValue.c: 136: {
-"136
-{
-[; ;KeyValue.c: 137: y = 0;
-"137
-[e = _y -> -> 0 `i `uc ]
-[; ;KeyValue.c: 138: while (str[y] != 0x0D)
-"138
-[e $U 371  ]
-[e :U 372 ]
-[; ;KeyValue.c: 139: {
 "139
-{
-[; ;KeyValue.c: 141: key[y] = str[y];
+}
+[; ;KeyValue.c: 138: }
+[; ;KeyValue.c: 139: }
+[e $U 371  ]
 "141
-[e = *U + &U _key * -> _y `ux -> -> # *U &U _key `ui `ux *U + _str * -> _y `ux -> -> # *U _str `ui `ux ]
-[; ;KeyValue.c: 142: y++;
+[e :U 353 ]
+[; ;KeyValue.c: 141: else if (flag == 0)
+[e $ ! == -> _flag `i -> 0 `i 372  ]
+[; ;KeyValue.c: 142: {
 "142
-[e ++ _y -> -> 1 `i `uc ]
-"143
-}
-[e :U 371 ]
-"138
-[e $ != -> *U + _str * -> _y `ux -> -> # *U _str `ui `ux `i -> 13 `i 372  ]
-[e :U 373 ]
-[; ;KeyValue.c: 143: }
-[; ;KeyValue.c: 145: SerTxStr("Key: ");
-"145
-[e ( _SerTxStr (1 -> :s 12C `*uc ]
-[; ;KeyValue.c: 146: SerTxStr(key);
-"146
-[e ( _SerTxStr (1 &U _key ]
-[; ;KeyValue.c: 148: if ((strcmp(key, "AZ") == 0) || (strcmp(key, "az") == 0))
-"148
-[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 13C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 14C -> 0 `i 374  ]
-[; ;KeyValue.c: 149: {
-"149
 {
-[; ;KeyValue.c: 150: AZEL = 1;
-"150
-[e = _AZEL -> -> 1 `i `uc ]
-[; ;KeyValue.c: 151: SerTx(';');
-"151
-[e ( _SerTx (1 -> -> 59 `ui `uc ]
-"152
-}
-[; ;KeyValue.c: 152: }
-[e $U 375  ]
-"154
+[; ;KeyValue.c: 143: y = 0;
+"143
+[e = _y -> -> 0 `i `uc ]
+[; ;KeyValue.c: 144: while (str[y] != 0x0D)
+"144
+[e $U 373  ]
 [e :U 374 ]
-[; ;KeyValue.c: 154: else if ((strcmp(key, "EL") == 0) || (strcmp(key, "el") == 0))
-[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 15C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 16C -> 0 `i 376  ]
+[; ;KeyValue.c: 145: {
+"145
+{
+[; ;KeyValue.c: 147: key[y] = str[y];
+"147
+[e = *U + &U _key * -> _y `ux -> -> # *U &U _key `ui `ux *U + _str * -> _y `ux -> -> # *U _str `ui `ux ]
+[; ;KeyValue.c: 148: y++;
+"148
+[e ++ _y -> -> 1 `i `uc ]
+"149
+}
+[e :U 373 ]
+"144
+[e $ != -> *U + _str * -> _y `ux -> -> # *U _str `ui `ux `i -> 13 `i 374  ]
+[e :U 375 ]
+[; ;KeyValue.c: 149: }
+[; ;KeyValue.c: 151: SerTxStr("Key: ");
+"151
+[e ( _SerTxStr (1 -> :s 12C `*uc ]
+[; ;KeyValue.c: 152: SerTxStr(key);
+"152
+[e ( _SerTxStr (1 &U _key ]
+[; ;KeyValue.c: 154: if ((strcmp(key, "AZ") == 0) || (strcmp(key, "az") == 0))
+"154
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 13C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 14C -> 0 `i 376  ]
 [; ;KeyValue.c: 155: {
 "155
 {
-[; ;KeyValue.c: 156: AZEL = 2;
+[; ;KeyValue.c: 156: AZEL = 1;
 "156
-[e = _AZEL -> -> 2 `i `uc ]
+[e = _AZEL -> -> 1 `i `uc ]
 [; ;KeyValue.c: 157: SerTx(';');
 "157
 [e ( _SerTx (1 -> -> 59 `ui `uc ]
@@ -3308,14 +3320,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 377  ]
 "160
 [e :U 376 ]
-[; ;KeyValue.c: 160: else if ((strcmp(key, "POS") == 0) || (strcmp(key, "pos") == 0))
-[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 17C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 18C -> 0 `i 378  ]
+[; ;KeyValue.c: 160: else if ((strcmp(key, "EL") == 0) || (strcmp(key, "el") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 15C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 16C -> 0 `i 378  ]
 [; ;KeyValue.c: 161: {
 "161
 {
-[; ;KeyValue.c: 162: StrippedKey = 0x02;
+[; ;KeyValue.c: 162: AZEL = 2;
 "162
-[e = _StrippedKey -> -> 2 `i `uc ]
+[e = _AZEL -> -> 2 `i `uc ]
 [; ;KeyValue.c: 163: SerTx(';');
 "163
 [e ( _SerTx (1 -> -> 59 `ui `uc ]
@@ -3325,14 +3337,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 379  ]
 "166
 [e :U 378 ]
-[; ;KeyValue.c: 166: else if((strcmp(key, "VEL") == 0) || (strcmp(key, "vel") == 0))
-[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 19C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 20C -> 0 `i 380  ]
+[; ;KeyValue.c: 166: else if ((strcmp(key, "POS") == 0) || (strcmp(key, "pos") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 17C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 18C -> 0 `i 380  ]
 [; ;KeyValue.c: 167: {
 "167
 {
-[; ;KeyValue.c: 168: StrippedKey = 0x03;
+[; ;KeyValue.c: 168: StrippedKey = 0x02;
 "168
-[e = _StrippedKey -> -> 3 `i `uc ]
+[e = _StrippedKey -> -> 2 `i `uc ]
 [; ;KeyValue.c: 169: SerTx(';');
 "169
 [e ( _SerTx (1 -> -> 59 `ui `uc ]
@@ -3342,14 +3354,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 381  ]
 "172
 [e :U 380 ]
-[; ;KeyValue.c: 172: else if ((strcmp(key, "KP") == 0) || (strcmp(key, "kp") == 0))
-[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 21C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 22C -> 0 `i 382  ]
+[; ;KeyValue.c: 172: else if ((strcmp(key, "VEL") == 0) || (strcmp(key, "vel") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 19C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 20C -> 0 `i 382  ]
 [; ;KeyValue.c: 173: {
 "173
 {
-[; ;KeyValue.c: 174: StrippedKey = 0x04;
+[; ;KeyValue.c: 174: StrippedKey = 0x03;
 "174
-[e = _StrippedKey -> -> 4 `i `uc ]
+[e = _StrippedKey -> -> 3 `i `uc ]
 [; ;KeyValue.c: 175: SerTx(';');
 "175
 [e ( _SerTx (1 -> -> 59 `ui `uc ]
@@ -3359,14 +3371,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 383  ]
 "178
 [e :U 382 ]
-[; ;KeyValue.c: 178: else if ((strcmp(key, "KI") == 0) || (strcmp(key, "ki") == 0))
-[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 23C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 24C -> 0 `i 384  ]
+[; ;KeyValue.c: 178: else if ((strcmp(key, "KP") == 0) || (strcmp(key, "kp") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 21C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 22C -> 0 `i 384  ]
 [; ;KeyValue.c: 179: {
 "179
 {
-[; ;KeyValue.c: 180: StrippedKey = 0x06;
+[; ;KeyValue.c: 180: StrippedKey = 0x04;
 "180
-[e = _StrippedKey -> -> 6 `i `uc ]
+[e = _StrippedKey -> -> 4 `i `uc ]
 [; ;KeyValue.c: 181: SerTx(';');
 "181
 [e ( _SerTx (1 -> -> 59 `ui `uc ]
@@ -3376,14 +3388,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 385  ]
 "184
 [e :U 384 ]
-[; ;KeyValue.c: 184: else if ((strcmp(key, "KD") == 0) || (strcmp(key, "kd") == 0))
-[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 25C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 26C -> 0 `i 386  ]
+[; ;KeyValue.c: 184: else if ((strcmp(key, "KI") == 0) || (strcmp(key, "ki") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 23C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 24C -> 0 `i 386  ]
 [; ;KeyValue.c: 185: {
 "185
 {
-[; ;KeyValue.c: 186: StrippedKey = 0x08;
+[; ;KeyValue.c: 186: StrippedKey = 0x06;
 "186
-[e = _StrippedKey -> -> 8 `i `uc ]
+[e = _StrippedKey -> -> 6 `i `uc ]
 [; ;KeyValue.c: 187: SerTx(';');
 "187
 [e ( _SerTx (1 -> -> 59 `ui `uc ]
@@ -3393,109 +3405,126 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 387  ]
 "190
 [e :U 386 ]
-[; ;KeyValue.c: 190: else
+[; ;KeyValue.c: 190: else if ((strcmp(key, "KD") == 0) || (strcmp(key, "kd") == 0))
+[e $ ! || == ( _strcmp (2 , -> &U _key `*Cuc :s 25C -> 0 `i == ( _strcmp (2 , -> &U _key `*Cuc :s 26C -> 0 `i 388  ]
 [; ;KeyValue.c: 191: {
 "191
 {
-[; ;KeyValue.c: 192: SerTxStr("???");
+[; ;KeyValue.c: 192: StrippedKey = 0x08;
 "192
-[e ( _SerTxStr (1 -> :s 27C `*uc ]
-[; ;KeyValue.c: 193: StrippedKey = 0;
+[e = _StrippedKey -> -> 8 `i `uc ]
+[; ;KeyValue.c: 193: SerTx(';');
 "193
-[e = _StrippedKey -> -> 0 `i `uc ]
+[e ( _SerTx (1 -> -> 59 `ui `uc ]
 "194
 }
+[; ;KeyValue.c: 194: }
+[e $U 389  ]
+"196
+[e :U 388 ]
+[; ;KeyValue.c: 196: else
+[; ;KeyValue.c: 197: {
+"197
+{
+[; ;KeyValue.c: 198: SerTxStr("???");
+"198
+[e ( _SerTxStr (1 -> :s 27C `*uc ]
+[; ;KeyValue.c: 199: StrippedKey = 0;
+"199
+[e = _StrippedKey -> -> 0 `i `uc ]
+"200
+}
+[e :U 389 ]
 [e :U 387 ]
 [e :U 385 ]
 [e :U 383 ]
 [e :U 381 ]
 [e :U 379 ]
 [e :U 377 ]
-[e :U 375 ]
-"195
-}
-[e :U 370 ]
-"197
-[e :U 369 ]
-[; ;KeyValue.c: 194: }
-[; ;KeyValue.c: 195: }
-[; ;KeyValue.c: 197: StrippedValue = strtod(value, &str_end);
-[e = _StrippedValue ( _strtod (2 , -> &U _value `*Cuc -> &U _str_end `**Cuc ]
-[; ;KeyValue.c: 201: for (x = 0; x < 5; x++)
 "201
-{
-[e = _x -> -> 0 `i `uc ]
-[e $ < -> _x `i -> 5 `i 388  ]
-[e $U 389  ]
-"202
-[e :U 388 ]
-[; ;KeyValue.c: 202: {
-{
-[; ;KeyValue.c: 203: key[x] = (0);
+}
+[e :U 372 ]
 "203
-[e = *U + &U _key * -> _x `ux -> -> # *U &U _key `ui `ux -> -> 0 `i `uc ]
-"204
-}
-"201
-[e ++ _x -> -> 1 `i `uc ]
-[e $ < -> _x `i -> 5 `i 388  ]
-[e :U 389 ]
-"204
-}
-[; ;KeyValue.c: 204: }
-[; ;KeyValue.c: 206: for (x = 0; x < 10; x++)
-"206
-{
-[e = _x -> -> 0 `i `uc ]
-[e $ < -> _x `i -> 10 `i 391  ]
-[e $U 392  ]
+[e :U 371 ]
+[; ;KeyValue.c: 200: }
+[; ;KeyValue.c: 201: }
+[; ;KeyValue.c: 203: StrippedValue = strtod(value, &str_end);
+[e = _StrippedValue ( _strtod (2 , -> &U _value `*Cuc -> &U _str_end `**Cuc ]
+[; ;KeyValue.c: 207: for (x = 0; x < 5; x++)
 "207
-[e :U 391 ]
-[; ;KeyValue.c: 207: {
-{
-[; ;KeyValue.c: 208: value[x] = (0);
-"208
-[e = *U + &U _value * -> _x `ux -> -> # *U &U _value `ui `ux -> -> 0 `i `uc ]
-"209
-}
-"206
-[e ++ _x -> -> 1 `i `uc ]
-[e $ < -> _x `i -> 10 `i 391  ]
-[e :U 392 ]
-"209
-}
-[; ;KeyValue.c: 209: }
-[; ;KeyValue.c: 211: for (x = 0; x < 30; x++)
-"211
 {
 [e = _x -> -> 0 `i `uc ]
-[e $ < -> _x `i -> 30 `i 394  ]
-[e $U 395  ]
-"212
-[e :U 394 ]
-[; ;KeyValue.c: 212: {
+[e $ < -> _x `i -> 5 `i 390  ]
+[e $U 391  ]
+"208
+[e :U 390 ]
+[; ;KeyValue.c: 208: {
 {
-[; ;KeyValue.c: 213: received[x] = (0);
-"213
-[e = *U + &U _received * -> _x `ux -> -> # *U &U _received `ui `ux -> -> 0 `i `uc ]
-"214
+[; ;KeyValue.c: 209: key[x] = (0);
+"209
+[e = *U + &U _key * -> _x `ux -> -> # *U &U _key `ui `ux -> -> 0 `i `uc ]
+"210
 }
-"211
+"207
 [e ++ _x -> -> 1 `i `uc ]
-[e $ < -> _x `i -> 30 `i 394  ]
-[e :U 395 ]
-"214
+[e $ < -> _x `i -> 5 `i 390  ]
+[e :U 391 ]
+"210
 }
-[; ;KeyValue.c: 214: }
-[; ;KeyValue.c: 215: flag = 0;
+[; ;KeyValue.c: 210: }
+[; ;KeyValue.c: 212: for (x = 0; x < 10; x++)
+"212
+{
+[e = _x -> -> 0 `i `uc ]
+[e $ < -> _x `i -> 10 `i 393  ]
+[e $U 394  ]
+"213
+[e :U 393 ]
+[; ;KeyValue.c: 213: {
+{
+[; ;KeyValue.c: 214: value[x] = (0);
+"214
+[e = *U + &U _value * -> _x `ux -> -> # *U &U _value `ui `ux -> -> 0 `i `uc ]
 "215
-[e = _flag -> -> 0 `i `uc ]
-[; ;KeyValue.c: 216: RCflag = 1;
-"216
-[e = _RCflag -> -> 1 `i `uc ]
-[; ;KeyValue.c: 217: }
+}
+"212
+[e ++ _x -> -> 1 `i `uc ]
+[e $ < -> _x `i -> 10 `i 393  ]
+[e :U 394 ]
+"215
+}
+[; ;KeyValue.c: 215: }
+[; ;KeyValue.c: 217: for (x = 0; x < 30; x++)
 "217
-[e :UE 345 ]
+{
+[e = _x -> -> 0 `i `uc ]
+[e $ < -> _x `i -> 30 `i 396  ]
+[e $U 397  ]
+"218
+[e :U 396 ]
+[; ;KeyValue.c: 218: {
+{
+[; ;KeyValue.c: 219: received[x] = (0);
+"219
+[e = *U + &U _received * -> _x `ux -> -> # *U &U _received `ui `ux -> -> 0 `i `uc ]
+"220
+}
+"217
+[e ++ _x -> -> 1 `i `uc ]
+[e $ < -> _x `i -> 30 `i 396  ]
+[e :U 397 ]
+"220
+}
+[; ;KeyValue.c: 220: }
+[; ;KeyValue.c: 221: flag = 0;
+"221
+[e = _flag -> -> 0 `i `uc ]
+[; ;KeyValue.c: 222: RCflag = 1;
+"222
+[e = _RCflag -> -> 1 `i `uc ]
+[; ;KeyValue.c: 223: }
+"223
+[e :UE 347 ]
 }
 [a 14C 97 122 0 ]
 [a 4C 112 111 115 0 ]
