@@ -15,22 +15,21 @@ double Kd;
 
 void SPIInit(void)
 {
+    TRISCbits.RC4 = 1;
+    TRISCbits.RC5 = 0;
+    TRISFbits.RF7 = 1;
     TRISCbits.RC6 = 0; //Set the SlaveReady pin as an output;
-    SlaveReady = 1;  //Start the Slave in the "Not Ready" position;
-    TRISDbits.RD7 = 1; //Set the SlaveSelect pin as an input (this might not be necessary if it conflicts with the SLV_SSON command of the following line);
     OpenSPI1(SLV_SSON, MODE_00, SMPMID);
     PIE1bits.SSP1IE = 1; //Enable the MSSP1 Interrupt on byte received;
-    IPR1bits.SSP1IP = 0; //SPI communication is low priority compared to the PID loop;
 }
 
 void SPIInt(void)
 {
-    Command = SSP2BUF;
+    Command = SSP1BUF;
     SlaveReady = 1; //Set the SlaveReady pin, stopping the master from initiating a transfer until the slave is ready;
     PIR1bits.SSP1IF = 0; //Clear the interrupt flag;
     PIE1bits.SSP1IE = 0; //Disable the interrupt so that subsequent transfers don't cause interrupts;
     SPIflag = 1; //Set the SPIflag;
-    PIR1bits.SSP1IF = 0; //Lower the interrupt flag;
 }
 
 void SendSPI1(unsigned char data)
@@ -38,9 +37,9 @@ void SendSPI1(unsigned char data)
     SSP1BUF = data; //Put the data into the SSPBUF;   
     unsigned char temp;
     PIR1bits.SSP1IF = 0; //Clear the MSSP2 Interrupt flag;
-    temp = SSP2BUF; //Clear the SSPBUF; 
+    temp = SSP1BUF; //Clear the SSPBUF; 
     while (!PIR1bits.SSP1IF); //Wait for the byte to be clocked out;
-    SSP2CON1bits.SSPOV2 = 0;
+    SSP1CON1bits.SSPOV1 = 0;
     PIR1bits.SSP1IF = 0; //Clear the flag;
 }
 

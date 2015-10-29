@@ -8487,8 +8487,7 @@ double SPIReassembleDouble(void);
 
 
 void initialize(void);
-void interrupt high_priority hISR(void);
-void interrupt low_priority lISR(void);
+void interrupt ISR(void);
 void INT0Int(void);
 void InitializeInterrupts(void);
 
@@ -8499,7 +8498,7 @@ unsigned char temporary, x = 0;
 initialize();
 
 PORTCbits.RC6 = 0;
-SSP2BUF = dummy_byte;
+SSP1BUF = dummy_byte;
 
 while (1)
 {
@@ -8606,7 +8605,7 @@ InitializeInterrupts();
 PORTAbits.RA3 = 1;
 }
 
-void interrupt high_priority hISR(void)
+void interrupt ISR(void)
 {
 PORTCbits.RC6 = 1;
 
@@ -8633,12 +8632,8 @@ if (PIR2bits.OSCFIF == 1)
 {
 asm("reset");
 
-# 173
+# 172
 }
-}
-
-void interrupt low_priority lISR(void)
-{
 if (PIR1bits.SSP1IF == 1)
 {
 SPIInt();
@@ -8666,7 +8661,6 @@ void InitializeInterrupts(void)
 {
 INTCONbits.GIE = 1;
 INTCONbits.PEIE = 1;
-RCONbits.IPEN = 1;
 
 PIE2bits.OSCFIE = 1;
 IPR2bits.OSCFIP = 1;

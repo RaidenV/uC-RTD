@@ -1,4 +1,3 @@
-
 #include "SPIMaster.h"
 
 unsigned char RCflag = 0;
@@ -8,9 +7,11 @@ unsigned char DoubleSPIM[4];
 
 void SPIInitM(void)
 {
-    OpenSPI(SPI_FOSC_4, MODE_00, SMPMID);
-    TRISAbits.RA1 = 1; //Set the SlaveReady pin as an input;
-    TRISAbits.RA3 = 0; //Set the SlaveSelect pin as an output;
+    OpenSPI(SPI_FOSC_64, MODE_00, SMPMID);
+    TRISBbits.RB1 = 1; //Set the SlaveReady pins as an input;
+    TRISBbits.RB2 = 1;
+    TRISBbits.RB3 = 0; //Set the SlaveSelect pins as an output;
+    TRISBbits.RB4 = 0; 
 }
 
 void MSendSPI(unsigned char data, unsigned char Slave)
@@ -18,7 +19,7 @@ void MSendSPI(unsigned char data, unsigned char Slave)
     if (Slave == 1)
     {
         SlaveSelect1 = 0; //Bring the SS to 0, enabling the slave;
-        Delay10TCYx(1); //delay for 10 clock cycles to ensure the slave is ready;
+        Delay10TCYx(10); //delay for 10 clock cycles to ensure the slave is ready;
         unsigned char tempChar;
         tempChar = SSPBUF;
         PIR1bits.SSPIF = 0;
@@ -62,7 +63,6 @@ void MReceiveStrSPI(unsigned char* str, unsigned char Slave)
         Delay10TCYx(25); //250 TCY Delay;
         for (x = 0; x < 4; x++)
             DoubleSPIM[x] = MReceiveSPI(); //Read data from slave;
-        breakDouble(SPIReassembleDouble()); //This function takes the double and converts it into readable characters on the screen;
         SlaveSelect1 = 1; //Set the SS, ending communication with the slave;
     }
     else if (Slave == 2)

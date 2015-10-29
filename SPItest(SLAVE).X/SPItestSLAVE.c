@@ -1,7 +1,7 @@
-#include <pic18f8722.h>
+#include <xc.h>
 #include <spi.h>
 #include <string.h>
-#include "LCD.h"
+#include "SerComm.h"
 #include "SPISlave.h"
 
 #pragma config OSC = HSPLL
@@ -17,9 +17,10 @@ void main(void)
     unsigned char temporary, x;
     initialize();
     SPIDisassembleDouble(355.89); //This is the double that will be sent if the slave does not understand anything;
+    CurrentAngle = 35.29;
 
     SlaveReady = 0; //Start the slave in the ready condition;
-    SSP2BUF = dummy_byte;
+    SSP1BUF = dummy_byte;
 
     while (1)
     {
@@ -41,7 +42,7 @@ void main(void)
                 SlaveReady = 0;
                 for (x = 0; x < 4; x++) //Test sending multiple bytes;
                     SendSPI1(DoubleSPIS[x]);
-                temporary = SSP2BUF;
+                temporary = SSP1BUF;
             }
             else if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
             {
@@ -50,70 +51,44 @@ void main(void)
                     DoubleSPIS[x] = ReceiveSPI1();
                 if (Command == 0x01)
                 {
-                    SetAngle = SPIReassembleDouble();
+                    CurrentAngle = SPIReassembleDouble();
                     PIDEnableFlag = 0x03; //This flag sets two bits.  Bit 0 will be used by the main loop to determine whether or not the PID is active.  Bit 1 will be used to determine whether or not this is a new angle that is being sent;
-                    LCDbreakDouble(SetAngle);
+                    breakDouble(SetAngle);
                 }
                 else if (Command == 0x05)
                 {
                     Kp = SPIReassembleDouble();
-                    LCDbreakDouble(Kp);
+                    breakDouble(Kp);
                 }
                 else if (Command == 0x07)
                 {
                     Ki = SPIReassembleDouble();
-                    LCDbreakDouble(Ki);
+                    breakDouble(Ki);
                 }
                 else if (Command == 0x09)
                 {
                     Kd = SPIReassembleDouble();
-                    LCDbreakDouble(Kd);
+                    breakDouble(Kd);
                 }
-                temporary = SSP2BUF;
+                temporary = SSP1BUF;
             }
-            PIE3bits.SSP2IE = 1;
+            PIE1bits.SSP1IE = 1;
         }
     }
 }
 
 void initialize(void)
 {
-    lcdInit();
     SPIInit();
+    SerInit();
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
 }
 
 void interrupt ISR(void)
 {
-    if (PIR3bits.SSP2IF == 1)
+    if (PIR1bits.SSP1IF == 1)
     {
         SPIInt();
     }
 }
-
-void LCDbreakDouble(double dubs)
-{
-    unsigned int temp1, temp2;
-    unsigned int tempDub;
-
-    lcdCommand(0x01);
-    lcdGoTo(0x40);
-    tempDub = dubs * 100;
-    temp1 = tempDub / 10000;
-    temp2 = tempDub % 10000;
-    if (temp1 != 0)
-        lcdChar(temp1 + 0x30);
-    temp1 = temp2 / 1000;
-    temp2 = temp2 % 1000;
-    if (temp1 != 0)
-        lcdChar(temp1 + 0x30);
-    temp1 = temp2 / 100;
-    temp2 = temp2 % 100;
-    lcdChar(temp1 + 0x30);
-    lcdChar('.');
-    temp1 = temp2 / 10;
-    temp2 = temp2 % 10;
-    lcdChar(temp1 + 0x30);
-    lcdChar(temp2 + 0x30);
-} 

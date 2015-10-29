@@ -8332,22 +8332,21 @@ double Kd;
 
 void SPIInit(void)
 {
+TRISCbits.RC4 = 1;
+TRISCbits.RC5 = 0;
+TRISFbits.RF7 = 1;
 TRISCbits.RC6 = 0;
-PORTCbits.RC6 = 1;
-TRISDbits.RD7 = 1;
 OpenSPI1(0b00000100, 0b00000000, 0b00000000);
 PIE1bits.SSP1IE = 1;
-IPR1bits.SSP1IP = 0;
 }
 
 void SPIInt(void)
 {
-Command = SSP2BUF;
+Command = SSP1BUF;
 PORTCbits.RC6 = 1;
 PIR1bits.SSP1IF = 0;
 PIE1bits.SSP1IE = 0;
 SPIflag = 1;
-PIR1bits.SSP1IF = 0;
 }
 
 void SendSPI1(unsigned char data)
@@ -8355,9 +8354,9 @@ void SendSPI1(unsigned char data)
 SSP1BUF = data;
 unsigned char temp;
 PIR1bits.SSP1IF = 0;
-temp = SSP2BUF;
+temp = SSP1BUF;
 while (!PIR1bits.SSP1IF);
-SSP2CON1bits.SSPOV2 = 0;
+SSP1CON1bits.SSPOV1 = 0;
 PIR1bits.SSP1IF = 0;
 }
 

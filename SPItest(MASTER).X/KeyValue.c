@@ -76,6 +76,7 @@ void keyValue(unsigned char* str, unsigned short length)
     unsigned char y = 0;
     unsigned char* str_end;
     unsigned char flag = 0; //The flag is used so that the program doesn't hang when the delimiter is not entered;
+    RCflag = 1;
 
     while ((str[x] != DELIMITER) && x < length) //Find the location of the delimiter;
     {
@@ -219,5 +220,5 @@ void keyValue(unsigned char* str, unsigned short length)
         received[x] = NULL;
     }
     flag = 0;
-    RCflag = 1;
+
 }

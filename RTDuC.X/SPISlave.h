@@ -16,7 +16,7 @@ extern "C" {
 #include <spi.h>
     
 #define SlaveReady PORTCbits.RC6
-#define SlaveSelect PORTDbits.RD7
+#define SlaveSelect PORTFbits.RF7
     
     extern unsigned char SPIflag;
     extern unsigned char Command;

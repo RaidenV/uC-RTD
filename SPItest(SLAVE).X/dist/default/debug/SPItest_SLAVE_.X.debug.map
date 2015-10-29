@@ -5,8 +5,8 @@ Linker command line:
 --edf=/opt/microchip/xc8/v1.34/dat/en_msgs.txt -cs \
   -h+dist/default/debug/SPItest_SLAVE_.X.debug.sym \
   --cmf=dist/default/debug/SPItest_SLAVE_.X.debug.cmf -z -Q18F8722 \
-  -o/tmp/cgt3VquHa -Mdist/default/debug/SPItest_SLAVE_.X.debug.map -E1 \
-  -ver=XC8 -ASTACK=066h-0eeeh -pstack=STACK -ACODE=00h-01FCFFh \
+  -o/tmp/cgt2Wx7vP -Mdist/default/debug/SPItest_SLAVE_.X.debug.map -E1 \
+  -ver=XC8 -ASTACK=06Bh-0eeeh -pstack=STACK -ACODE=00h-01FCFFh \
   -ACONST=00h-01FCFFh -ASMALLCONST=01000h-010FFhx493 \
   -AMEDIUMCONST=01000h-0FFFFh,011000h-01FCFFh -ACOMRAM=01h-05Fh \
   -AABS1=00h-0EEEh,0F00h-0F5Fh -ABIGRAM=01h-0EEEh,0F00h-0F5Fh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/cgthpedY2.obj dist/default/debug/SPItest_SLAVE_.X.debug.obj 
+  /tmp/cgt7l6iSc.obj dist/default/debug/SPItest_SLAVE_.X.debug.obj 
 
 Object code version is 3.11
 
@@ -38,43 +38,38 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/cgthpedY2.obj
+/tmp/cgt7l6iSc.obj
                 end_init                             18       18        4        4       0
                 reset_vec                             0        0        6        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/debug/SPItest_SLAVE_.X.debug.obj
                 intcode                               8        8       10        4       0
-                smallconst                         1000     1000       10      800       0
-                text24                             1A28     1A28       10      808       0
-                intcode_body                       1626     1626       72      808       0
-                text22                             1560     1560       C6      808       0
-                text21                             1382     1382       F8      808       0
-                text20                             147A     147A       E6      808       0
-                text19                             1698     1698       5C      808       0
-                text18                             17A0     17A0       4C      808       0
-                text17                             1A06     1A06       12      808       0
-                text16                             196A     196A       22      808       0
-                text15                             19C2     19C2       1A      808       0
-                text14                             18BE     18BE       3E      808       0
-                text13                             187A     187A       44      808       0
-                text12                             1A38     1A38        C      808       0
-                text11                             1210     1210      172      808       0
-                text10                             1A18     1A18       10      808       0
-                text9                              1938     1938       32      808       0
-                text8                              18FC     18FC       3C      808       0
-                text7                              1836     1836       44      808       0
-                text6                              19DC     19DC       18      808       0
-                text5                              174A     174A       56      808       0
-                text4                              16F4     16F4       56      808       0
-                text3                              19A8     19A8       1A      808       0
-                text2                              17EC     17EC       4A      808       0
-                text1                              198C     198C       1C      808       0
-                text0                              1010     1010      200      808       0
-                cstackCOMRAM                          1        1       38        1       1
-                cstackBANK0                          60       60        6       60       1
-                bssCOMRAM                            39       39       16        1       1
-                cinit                              19F4     19F4       12      808       0
+                smallconst                         1000     1000       26      800       0
+                text19                             1922     1922       10      813       0
+                intcode_body                       1654     1654       72      813       0
+                text17                             1912     1912       10      813       0
+                text16                             1878     1878       32      813       0
+                text15                             1808     1808       3C      813       0
+                text14                             17C4     17C4       44      813       0
+                text13                             18E8     18E8       18      813       0
+                text12                             1940     1940        E      813       0
+                text11                             158E     158E       C6      813       0
+                text10                             13B0     13B0       F8      813       0
+                text9                              14A8     14A8       E6      813       0
+                text8                              16C6     16C6       5C      813       0
+                text7                              1778     1778       4C      813       0
+                text6                              123E     123E      172      813       0
+                text5                              1722     1722       56      813       0
+                text4                              18CE     18CE       1A      813       0
+                text3                              1844     1844       34      813       0
+                text2                              18AA     18AA       24      813       0
+                text1                              1932     1932        E      813       0
+                text0                              1026     1026      218      813       0
+                cstackCOMRAM                          1        1       34        1       1
+                cstackBANK0                          60       60        B       60       1
+                bssCOMRAM                            35       35       1C        1       1
+                cinit                              1900     1900       12      813       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -83,43 +78,38 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                             18       18        4         0
                 intcode                               8        8       10         0
                 reset_vec                             0        0        6         0
-                text24                             1A28     1A28       10         0
-                intcode_body                       1626     1626       72         0
-                text22                             1560     1560       C6         0
-                text21                             1382     1382       F8         0
-                text20                             147A     147A       E6         0
-                text19                             1698     1698       5C         0
-                text18                             17A0     17A0       4C         0
-                text17                             1A06     1A06       12         0
-                text16                             196A     196A       22         0
-                text15                             19C2     19C2       1A         0
-                text14                             18BE     18BE       3E         0
-                text13                             187A     187A       44         0
-                text12                             1A38     1A38        C         0
-                text11                             1210     1210      172         0
-                text10                             1A18     1A18       10         0
-                text9                              1938     1938       32         0
-                text8                              18FC     18FC       3C         0
-                text7                              1836     1836       44         0
-                text6                              19DC     19DC       18         0
-                text5                              174A     174A       56         0
-                text4                              16F4     16F4       56         0
-                text3                              19A8     19A8       1A         0
-                text2                              17EC     17EC       4A         0
-                text1                              198C     198C       1C         0
-                text0                              1010     1010      200         0
-                cinit                              19F4     19F4       12         0
+                text19                             1922     1922       10         0
+                intcode_body                       1654     1654       72         0
+                text17                             1912     1912       10         0
+                text16                             1878     1878       32         0
+                text15                             1808     1808       3C         0
+                text14                             17C4     17C4       44         0
+                text13                             18E8     18E8       18         0
+                text12                             1940     1940        E         0
+                text11                             158E     158E       C6         0
+                text10                             13B0     13B0       F8         0
+                text9                              14A8     14A8       E6         0
+                text8                              16C6     16C6       5C         0
+                text7                              1778     1778       4C         0
+                text6                              123E     123E      172         0
+                text5                              1722     1722       56         0
+                text4                              18CE     18CE       1A         0
+                text3                              1844     1844       34         0
+                text2                              18AA     18AA       24         0
+                text1                              1932     1932        E         0
+                text0                              1026     1026      218         0
+                cinit                              1900     1900       12         0
 
         CLASS   CONST          
 
         CLASS   SMALLCONST     
-                smallconst                         1000     1000       10         0
+                smallconst                         1000     1000       26         0
 
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                          1        1       38         1
-                bssCOMRAM                            39       39       16         1
+                cstackCOMRAM                          1        1       34         1
+                bssCOMRAM                            35       35       1C         1
 
         CLASS   ABS1           
 
@@ -128,7 +118,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK0          
-                cstackBANK0                          60       60        6         1
+                cstackBANK0                          60       60        B         1
 
         CLASS   BANK1          
 
@@ -177,11 +167,11 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class
 
                 reset_vec                      000000  000006  000006         0       0  CODE    
-                cstackCOMRAM                   000001  00004E  00004F         1       1  COMRAM  
+                cstackCOMRAM                   000001  000050  000051         1       1  COMRAM  
                 intcode                        000008  000014  00001C         4       0  CODE    
-                cstackBANK0                    000060  000006  000066        60       1  BANK0   
-                smallconst                     001000  000010  001010       800       0  SMALLCON
-                text0                          001010  000A34  001A44       808       0  CODE    
+                cstackBANK0                    000060  00000B  00006B        60       1  BANK0   
+                smallconst                     001000  000026  001026       800       0  SMALLCON
+                text0                          001026  000928  00194E       813       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -189,7 +179,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            000066-0000FF               9A
+        BANK0            00006B-0000FF               95
         BANK1            000100-0001FF              100
         BANK10           000A00-000AFF              100
         BANK11           000B00-000BFF              100
@@ -205,20 +195,20 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           00004F-00005F               11
-                         000066-000EEE              E89
+        BIGRAM           000051-00005F                F
+                         00006B-000EEE              E84
                          000F00-000F5F               60
         CODE             000006-000007                2
                          00001C-000FFF              FE4
-                         001A44-01FCFF            1E2BC
-        COMRAM           00004F-00005F               11
+                         00194E-01FCFF            1E3B2
+        COMRAM           000051-00005F                F
         CONST            000006-000007                2
                          00001C-000FFF              FE4
-                         001A44-01FCFF            1E2BC
+                         00194E-01FCFF            1E3B2
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      001A44-00FFFF             E5BC
+        MEDIUMCONST      00194E-00FFFF             E6B2
                          011000-01FCFF             ED00
-        RAM              000066-000EEE              100
+        RAM              00006B-000EEE              100
                          000F00-000F5F               60
         SFR              000F60-000F9B               3C
                          000F9D-000FD3               37
@@ -226,8 +216,8 @@ UNUSED ADDRESS RANGES
                          000FE0-000FE2                3
                          000FE8-000FEA                3
                          000FF0-000FFB                C
-        SMALLCONST       001A44-01FCFF              100
-        STACK            000066-000EEE              E89
+        SMALLCONST       00194E-01FCFF              100
+        STACK            00006B-000EEE              E84
 
                                   Symbol Table
 
@@ -237,65 +227,60 @@ UNUSED ADDRESS RANGES
 ?___fttol                      cstackCOMRAM 000026
 ?___lwdiv                      cstackCOMRAM 00000F
 ?___lwmod                      cstackCOMRAM 00000F
-Delay10TCYx@unit               cstackCOMRAM 00000F
 GenerateChecksum@sum           cstackCOMRAM 00000F
 GenerateChecksum@y             cstackCOMRAM 000010
-LCDbreakDouble@dubs            cstackCOMRAM 000035
-LCDbreakDouble@temp1           cstackBANK0  000062
-LCDbreakDouble@temp2           cstackBANK0  000064
-LCDbreakDouble@tempDub         cstackBANK0  000060
 OpenSPI1@bus_mode              cstackCOMRAM 00000F
 OpenSPI1@smp_phase             cstackCOMRAM 000010
 OpenSPI1@sync_mode             cstackCOMRAM 000011
-OpenSPI2@bus_mode              cstackCOMRAM 00000F
-OpenSPI2@smp_phase             cstackCOMRAM 000010
-OpenSPI2@sync_mode             cstackCOMRAM 000011
 SPIDisassembleDouble@dub       cstackCOMRAM 000011
 SPIReassembleDouble@dub        cstackCOMRAM 000012
 SendSPI1@data                  cstackCOMRAM 000010
 SendSPI1@temp                  cstackCOMRAM 00000F
-WriteSPI1@TempVar              cstackCOMRAM 00000F
-WriteSPI1@data_out             cstackCOMRAM 000010
-_Command                       bssCOMRAM    00004B
-_Delay10TCYx                   text17       001A06
-_DoublePtr                     bssCOMRAM    000049
-_DoubleSPIS                    bssCOMRAM    000039
-_GenerateChecksum              text9        001938
+SerTx@c                        cstackCOMRAM 00000F
+SerTxStr@string                cstackCOMRAM 000010
+_BAUDCON                       (abs)        000F7E
+_Command                       bssCOMRAM    00004D
+_CurrentAngle                  bssCOMRAM    000039
+_CurrentVelocity               bssCOMRAM    00003C
+_DoublePtr                     bssCOMRAM    00004B
+_DoubleSPIS                    bssCOMRAM    000035
+_GenerateChecksum              text16       001878
 _INTCONbits                    (abs)        000FF2
+_IPR1bits                      (abs)        000F9F
 _ISR                           intcode      000008
-_Kd                            bssCOMRAM    00003D
-_Ki                            bssCOMRAM    000040
-_Kp                            bssCOMRAM    000043
-_LCDbreakDouble                text11       001210
-_OpenSPI1                      text4        0016F4
-_OpenSPI2                      text5        00174A
-_PIE3bits                      (abs)        000FA3
+_Kd                            bssCOMRAM    00003F
+_Ki                            bssCOMRAM    000042
+_Kp                            bssCOMRAM    000045
+_OpenSPI1                      text5        001722
+_PIDEnableFlag                 bssCOMRAM    00004E
+_PIE1bits                      (abs)        000F9D
 _PIR1bits                      (abs)        000F9E
-_PIR3bits                      (abs)        000FA4
-_PORTAbits                     (abs)        000F80
 _PORTCbits                     (abs)        000F82
-_ReceiveSPI1                   text10       001A18
-_SPIDisassembleDouble          text8        0018FC
-_SPIInt                        text24       001A28
-_SPIReassembleDouble           text7        001836
-_SPIflag                       bssCOMRAM    00004C
+_RCONbits                      (abs)        000FD0
+_RCREG1                        (abs)        000FAE
+_RCSTA1                        (abs)        000FAB
+_ReceiveSPI1                   text17       001912
+_SPBRG                         (abs)        000FAF
+_SPIDisassembleDouble          text15       001808
+_SPIInit                       text4        0018CE
+_SPIInt                        text19       001922
+_SPIReassembleDouble           text14       0017C4
+_SPIflag                       bssCOMRAM    00004F
 _SSP1BUF                       (abs)        000FC9
 _SSP1CON1                      (abs)        000FC6
 _SSP1CON1bits                  (abs)        000FC6
 _SSP1STAT                      (abs)        000FC7
 _SSP1STATbits                  (abs)        000FC7
-_SSP2BUF                       (abs)        000F66
-_SSP2CON1                      (abs)        000F63
-_SSP2CON1bits                  (abs)        000F63
-_SSP2STAT                      (abs)        000F64
-_SSP2STATbits                  (abs)        000F64
-_SendSPI1                      text6        0019DC
-_SetAngle                      bssCOMRAM    000046
-_TRISAbits                     (abs)        000F92
+_SendSPI1                      text13       0018E8
+_SerInit                       text2        0018AA
+_SerTx                         text12       001940
+_SerTxStr                      text3        001844
+_SetAngle                      bssCOMRAM    000048
 _TRISCbits                     (abs)        000F94
 _TRISDbits                     (abs)        000F95
 _TRISFbits                     (abs)        000F97
-_WriteSPI1                     text16       00196A
+_TXREG1                        (abs)        000FAD
+_TXSTA1                        (abs)        000FAC
 __CFG_FCMEN$OFF                (abs)        000000
 __CFG_OSC$HSPLL                (abs)        000000
 __CFG_WDT$OFF                  (abs)        000000
@@ -360,9 +345,9 @@ __Hrdata                       rdata        000000
 __Hreset_vec                   reset_vec    000006
 __Hrparam                      rparam       000000
 __Hsfr                         sfr          000000
-__Hsmallconst                  smallconst   001010
+__Hsmallconst                  smallconst   001026
 __Hspace_0                     (abs)        30000E
-__Hspace_1                     (abs)        000066
+__Hspace_1                     (abs)        00006B
 __Hspace_2                     (abs)        000000
 __Hstack                       stack        000000
 __Hstruct                      struct       000000
@@ -378,13 +363,8 @@ __Htext14                      text14       000000
 __Htext15                      text15       000000
 __Htext16                      text16       000000
 __Htext17                      text17       000000
-__Htext18                      text18       000000
 __Htext19                      text19       000000
 __Htext2                       text2        000000
-__Htext20                      text20       000000
-__Htext21                      text21       000000
-__Htext22                      text22       000000
-__Htext24                      text24       000000
 __Htext3                       text3        000000
 __Htext4                       text4        000000
 __Htext5                       text5        000000
@@ -471,13 +451,8 @@ __Ltext14                      text14       000000
 __Ltext15                      text15       000000
 __Ltext16                      text16       000000
 __Ltext17                      text17       000000
-__Ltext18                      text18       000000
 __Ltext19                      text19       000000
 __Ltext2                       text2        000000
-__Ltext20                      text20       000000
-__Ltext21                      text21       000000
-__Ltext22                      text22       000000
-__Ltext24                      text24       000000
 __Ltext3                       text3        000000
 __Ltext4                       text4        000000
 __Ltext5                       text5        000000
@@ -486,33 +461,33 @@ __Ltext7                       text7        000000
 __Ltext8                       text8        000000
 __Ltext9                       text9        000000
 __S0                           (abs)        30000E
-__S1                           (abs)        000066
+__S1                           (abs)        00006B
 __S2                           (abs)        000000
 ___extmem_base                 (abs)        020000
-___ftmul                       text21       001382
+___ftmul                       text10       0013B0
 ___ftmul@cntr                  cstackCOMRAM 000024
 ___ftmul@exp                   cstackCOMRAM 000020
 ___ftmul@f1                    cstackCOMRAM 000017
 ___ftmul@f2                    cstackCOMRAM 00001A
 ___ftmul@f3_as_product         cstackCOMRAM 000021
 ___ftmul@sign                  cstackCOMRAM 000025
-___ftpack                      text22       001560
+___ftpack                      text11       00158E
 ___ftpack@arg                  cstackCOMRAM 00000F
 ___ftpack@exp                  cstackCOMRAM 000012
 ___ftpack@sign                 cstackCOMRAM 000013
-___fttol                       text20       00147A
+___fttol                       text9        0014A8
 ___fttol@exp1                  cstackCOMRAM 000034
 ___fttol@f1                    cstackCOMRAM 000026
 ___fttol@lval                  cstackCOMRAM 000030
 ___fttol@sign1                 cstackCOMRAM 00002F
 ___inthi_sp                    stack        000000
 ___intlo_sp                    stack        000000
-___lwdiv                       text19       001698
+___lwdiv                       text8        0016C6
 ___lwdiv@counter               cstackCOMRAM 000013
 ___lwdiv@dividend              cstackCOMRAM 00000F
 ___lwdiv@divisor               cstackCOMRAM 000011
 ___lwdiv@quotient              cstackCOMRAM 000014
-___lwmod                       text18       0017A0
+___lwmod                       text7        001778
 ___lwmod@counter               cstackCOMRAM 000013
 ___lwmod@dividend              cstackCOMRAM 00000F
 ___lwmod@divisor               cstackCOMRAM 000011
@@ -521,152 +496,130 @@ ___rparam_used                 (abs)        000001
 ___sp                          stack        000000
 __accesstop                    (abs)        000060
 __activetblptr                 (abs)        000003
-__end_of_Delay10TCYx           text17       001A18
-__end_of_GenerateChecksum      text9        00196A
-__end_of_ISR                   intcode_body 001698
-__end_of_LCDbreakDouble        text11       001382
-__end_of_OpenSPI1              text4        00174A
-__end_of_OpenSPI2              text5        0017A0
-__end_of_ReceiveSPI1           text10       001A28
-__end_of_SPIDisassembleDouble  text8        001938
-__end_of_SPIInt                text24       001A38
-__end_of_SPIReassembleDouble   text7        00187A
-__end_of_SendSPI1              text6        0019F4
-__end_of_WriteSPI1             text16       00198C
-__end_of___ftmul               text21       00147A
-__end_of___ftpack              text22       001626
-__end_of___fttol               text20       001560
-__end_of___lwdiv               text19       0016F4
-__end_of___lwmod               text18       0017EC
-__end_of__initialization       cinit        001A00
-__end_of_initialize            text1        0019A8
-__end_of_lcdChar               text14       0018FC
-__end_of_lcdCommand            text13       0018BE
-__end_of_lcdGoTo               text12       001A44
-__end_of_lcdInit               text2        001836
-__end_of_main                  text0        001210
-__end_of_setGPIO               text15       0019DC
-__end_of_setIODIR              text3        0019C2
-__initialization               cinit        0019F4
+__end_of_GenerateChecksum      text16       0018AA
+__end_of_ISR                   intcode_body 0016C6
+__end_of_OpenSPI1              text5        001778
+__end_of_ReceiveSPI1           text17       001922
+__end_of_SPIDisassembleDouble  text15       001844
+__end_of_SPIInit               text4        0018E8
+__end_of_SPIInt                text19       001932
+__end_of_SPIReassembleDouble   text14       001808
+__end_of_SendSPI1              text13       001900
+__end_of_SerInit               text2        0018CE
+__end_of_SerTx                 text12       00194E
+__end_of_SerTxStr              text3        001878
+__end_of___ftmul               text10       0014A8
+__end_of___ftpack              text11       001654
+__end_of___fttol               text9        00158E
+__end_of___lwdiv               text8        001722
+__end_of___lwmod               text7        0017C4
+__end_of__initialization       cinit        00190C
+__end_of_breakDouble           text6        0013B0
+__end_of_initialize            text1        001940
+__end_of_main                  text0        00123E
+__initialization               cinit        001900
 __mediumconst                  mediumconst  000000
-__pbssCOMRAM                   bssCOMRAM    000039
-__pcinit                       cinit        0019F4
+__pbssCOMRAM                   bssCOMRAM    000035
+__pcinit                       cinit        001900
 __pcstackBANK0                 cstackBANK0  000060
 __pcstackCOMRAM                cstackCOMRAM 000001
 __pintcode                     intcode      000008
-__pintcode_body                intcode_body 001626
+__pintcode_body                intcode_body 001654
 __psmallconst                  smallconst   001000
-__ptext0                       text0        001010
-__ptext1                       text1        00198C
-__ptext10                      text10       001A18
-__ptext11                      text11       001210
-__ptext12                      text12       001A38
-__ptext13                      text13       00187A
-__ptext14                      text14       0018BE
-__ptext15                      text15       0019C2
-__ptext16                      text16       00196A
-__ptext17                      text17       001A06
-__ptext18                      text18       0017A0
-__ptext19                      text19       001698
-__ptext2                       text2        0017EC
-__ptext20                      text20       00147A
-__ptext21                      text21       001382
-__ptext22                      text22       001560
-__ptext24                      text24       001A28
-__ptext3                       text3        0019A8
-__ptext4                       text4        0016F4
-__ptext5                       text5        00174A
-__ptext6                       text6        0019DC
-__ptext7                       text7        001836
-__ptext8                       text8        0018FC
-__ptext9                       text9        001938
+__ptext0                       text0        001026
+__ptext1                       text1        001932
+__ptext10                      text10       0013B0
+__ptext11                      text11       00158E
+__ptext12                      text12       001940
+__ptext13                      text13       0018E8
+__ptext14                      text14       0017C4
+__ptext15                      text15       001808
+__ptext16                      text16       001878
+__ptext17                      text17       001912
+__ptext19                      text19       001922
+__ptext2                       text2        0018AA
+__ptext3                       text3        001844
+__ptext4                       text4        0018CE
+__ptext5                       text5        001722
+__ptext6                       text6        00123E
+__ptext7                       text7        001778
+__ptext8                       text8        0016C6
+__ptext9                       text9        0014A8
 __ramtop                       ramtop       001000
-__size_of_Delay10TCYx          (abs)        000000
 __size_of_GenerateChecksum     (abs)        000000
 __size_of_ISR                  (abs)        000000
-__size_of_LCDbreakDouble       (abs)        000000
 __size_of_OpenSPI1             (abs)        000000
-__size_of_OpenSPI2             (abs)        000000
 __size_of_ReceiveSPI1          (abs)        000000
 __size_of_SPIDisassembleDouble (abs)        000000
+__size_of_SPIInit              (abs)        000000
 __size_of_SPIInt               (abs)        000000
 __size_of_SPIReassembleDouble  (abs)        000000
 __size_of_SendSPI1             (abs)        000000
-__size_of_WriteSPI1            (abs)        000000
+__size_of_SerInit              (abs)        000000
+__size_of_SerTx                (abs)        000000
+__size_of_SerTxStr             (abs)        000000
 __size_of___ftmul              (abs)        000000
 __size_of___ftpack             (abs)        000000
 __size_of___fttol              (abs)        000000
 __size_of___lwdiv              (abs)        000000
 __size_of___lwmod              (abs)        000000
+__size_of_breakDouble          (abs)        000000
 __size_of_initialize           (abs)        000000
-__size_of_lcdChar              (abs)        000000
-__size_of_lcdCommand           (abs)        000000
-__size_of_lcdGoTo              (abs)        000000
-__size_of_lcdInit              (abs)        000000
 __size_of_main                 (abs)        000000
-__size_of_setGPIO              (abs)        000000
-__size_of_setIODIR             (abs)        000000
 __smallconst                   smallconst   001000
-_dummy_byte                    bssCOMRAM    00004D
-_initialize                    text1        00198C
-_lcdChar                       text14       0018BE
-_lcdCommand                    text13       00187A
-_lcdGoTo                       text12       001A38
-_lcdInit                       text2        0017EC
-_main                          text0        001010
-_setGPIO                       text15       0019C2
-_setIODIR                      text3        0019A8
-_x                             bssCOMRAM    00004E
-end_of_initialization          cinit        001A00
-int_func                       intcode_body 001626
+_breakDouble                   text6        00123E
+_dummy_byte                    bssCOMRAM    000050
+_initialize                    text1        001932
+_main                          text0        001026
+breakDouble@dubs               cstackBANK0  000060
+breakDouble@temp1              cstackBANK0  000065
+breakDouble@temp2              cstackBANK0  000067
+breakDouble@tempDub            cstackBANK0  000063
+end_of_initialization          cinit        00190C
+int_func                       intcode_body 001654
 intlevel0                      text         000000
 intlevel1                      text         000000
 intlevel2                      text         000000
 intlevel3                      text         000000
-lcdChar@letter                 cstackCOMRAM 000013
-lcdCommand@command             cstackCOMRAM 000013
-lcdGoTo@pos                    cstackCOMRAM 000014
-main@temporary                 cstackCOMRAM 000038
-setGPIO@address                cstackCOMRAM 000012
-setGPIO@value                  cstackCOMRAM 000011
-setIODIR@address               cstackCOMRAM 000012
-setIODIR@dir                   cstackCOMRAM 000011
+main@temporary                 cstackBANK0  000069
+main@x                         cstackBANK0  00006A
 stackhi                        (abs)        000EEE
-stacklo                        (abs)        000066
+stacklo                        (abs)        00006B
 start                          init         000018
-start_initialization           cinit        0019F4
+start_initialization           cinit        001900
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 37 in file "SPItestSLAVE.c"
+		line 15 in file "SPItestSLAVE.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  temporary       1   55[COMRAM] unsigned char 
+  x               1   10[BANK0 ] unsigned char 
+  temporary       1    9[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+		wreg, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels required when called:    7
+      Totals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels required when called:    6
  This function calls:
-		_LCDbreakDouble
 		_ReceiveSPI1
 		_SPIDisassembleDouble
 		_SPIReassembleDouble
 		_SendSPI1
+		_breakDouble
 		_initialize
  This function is called by:
 		Startup code after reset
@@ -675,7 +628,7 @@ Total ram usage:        1 bytes
 
  *************** function _initialize *****************
  Defined at:
-		line 102 in file "SPItestSLAVE.c"
+		line 80 in file "SPItestSLAVE.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -683,38 +636,7 @@ Total ram usage:        1 bytes
  Return value:  Size  Location     Type
 		None               void
  Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_OpenSPI2
-		_lcdInit
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _lcdInit *****************
- Defined at:
-		line 110 in file "LCD.h"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, status,2, status,0, cstack
+		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
@@ -728,43 +650,101 @@ Total ram usage:        0 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
  This function calls:
-		_OpenSPI1
-		_lcdCommand
-		_setGPIO
-		_setIODIR
+		_SPIInit
+		_SerInit
  This function is called by:
-		_initialize
+		_main
  This function uses a non-reentrant model
 
 
- *************** function _setIODIR *****************
+ *************** function _SerInit *****************
  Defined at:
-		line 43 in file "LCD.h"
+		line 19 in file "SerComm.c"
  Parameters:    Size  Location     Type
-  address         1    wreg     unsigned char 
-  dir             1   16[COMRAM] unsigned char 
+		None
  Auto vars:     Size  Location     Type
-  address         1   17[COMRAM] unsigned char 
+		None
  Return value:  Size  Location     Type
 		None               void
  Registers used:
-		wreg, status,2, cstack
+		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_SerTxStr
+ This function is called by:
+		_initialize
+ This function uses a non-reentrant model
+
+
+ *************** function _SerTxStr *****************
+ Defined at:
+		line 50 in file "SerComm.c"
+ Parameters:    Size  Location     Type
+  string          2   15[COMRAM] PTR unsigned char 
+		 -> STR_1(36), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        2 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    3
  This function calls:
-		_WriteSPI1
+		_SerTx
  This function is called by:
-		_lcdInit
+		_SerInit
+ This function uses a non-reentrant model
+
+
+ *************** function _SPIInit *****************
+ Defined at:
+		line 16 in file "SPISlave.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_OpenSPI1
+ This function is called by:
+		_initialize
  This function uses a non-reentrant model
 
 
@@ -796,203 +776,19 @@ Total ram usage:        3 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_lcdInit
+		_SPIInit
  This function uses a non-reentrant model
 
 
- *************** function _OpenSPI2 *****************
+ *************** function _breakDouble *****************
  Defined at:
-		line 14 in file "/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi2open.c"
+		line 80 in file "SerComm.c"
  Parameters:    Size  Location     Type
-  sync_mode       1    wreg     unsigned char 
-  bus_mode        1   14[COMRAM] unsigned char 
-  smp_phase       1   15[COMRAM] unsigned char 
+  dubs            3    0[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  sync_mode       1   16[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        3 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		Nothing
- This function is called by:
-		_initialize
- This function uses a non-reentrant model
-
-
- *************** function _SendSPI1 *****************
- Defined at:
-		line 129 in file "SPItestSLAVE.c"
- Parameters:    Size  Location     Type
-  data            1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  data            1   15[COMRAM] unsigned char 
-  temp            1   14[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _SPIReassembleDouble *****************
- Defined at:
-		line 164 in file "SPItestSLAVE.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  dub             3   17[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  3   14[COMRAM] unsigned char 
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        6 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _SPIDisassembleDouble *****************
- Defined at:
-		line 147 in file "SPItestSLAVE.c"
- Parameters:    Size  Location     Type
-  dub             3   16[COMRAM] unsigned char 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        3 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		_GenerateChecksum
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _GenerateChecksum *****************
- Defined at:
-		line 156 in file "SPItestSLAVE.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  y               1   15[COMRAM] unsigned char 
-  sum             1   14[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		Nothing
- This function is called by:
-		_SPIDisassembleDouble
- This function uses a non-reentrant model
-
-
- *************** function _ReceiveSPI1 *****************
- Defined at:
-		line 140 in file "SPItestSLAVE.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _LCDbreakDouble *****************
- Defined at:
-		line 175 in file "SPItestSLAVE.c"
- Parameters:    Size  Location     Type
-  dubs            3   52[COMRAM] unsigned char 
- Auto vars:     Size  Location     Type
-  temp2           2    4[BANK0 ] unsigned int 
-  temp1           2    2[BANK0 ] unsigned int 
-  tempDub         2    0[BANK0 ] unsigned int 
+  temp2           2    7[BANK0 ] unsigned int 
+  temp1           2    5[BANK0 ] unsigned int 
+  tempDub         2    3[BANK0 ] unsigned int 
  Return value:  Size  Location     Type
 		None               void
  Registers used:
@@ -1002,216 +798,21 @@ Total ram usage:        0 bytes
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Params:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Locals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         3       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       9       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:        9 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:    6
+ Hardware stack levels required when called:    4
  This function calls:
+		_SerTx
 		___ftmul
 		___fttol
 		___lwdiv
 		___lwmod
-		_lcdChar
-		_lcdCommand
-		_lcdGoTo
  This function is called by:
 		_main
- This function uses a non-reentrant model
-
-
- *************** function _lcdGoTo *****************
- Defined at:
-		line 76 in file "LCD.h"
- Parameters:    Size  Location     Type
-  pos             1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  pos             1   19[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, status,2, status,0, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_lcdCommand
- This function is called by:
-		_LCDbreakDouble
-		_lcdPrint
- This function uses a non-reentrant model
-
-
- *************** function _lcdCommand *****************
- Defined at:
-		line 52 in file "LCD.h"
- Parameters:    Size  Location     Type
-  command         1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  command         1   18[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, status,2, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		_Delay10TCYx
-		_setGPIO
- This function is called by:
-		_lcdGoTo
-		_lcdInit
-		_LCDbreakDouble
- This function uses a non-reentrant model
-
-
- *************** function _lcdChar *****************
- Defined at:
-		line 64 in file "LCD.h"
- Parameters:    Size  Location     Type
-  letter          1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  letter          1   18[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, status,2, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		_Delay10TCYx
-		_setGPIO
- This function is called by:
-		_LCDbreakDouble
-		_lcdWriteString
-		_lcdPrint
- This function uses a non-reentrant model
-
-
- *************** function _setGPIO *****************
- Defined at:
-		line 32 in file "LCD.h"
- Parameters:    Size  Location     Type
-  address         1    wreg     unsigned char 
-  value           1   16[COMRAM] unsigned char 
- Auto vars:     Size  Location     Type
-  address         1   17[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg, status,2, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		_WriteSPI1
- This function is called by:
-		_lcdCommand
-		_lcdChar
-		_lcdInit
- This function uses a non-reentrant model
-
-
- *************** function _WriteSPI1 *****************
- Defined at:
-		line 13 in file "/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1writ.c"
- Parameters:    Size  Location     Type
-  data_out        1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  data_out        1   15[COMRAM] unsigned char 
-  TempVar         1   14[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      char 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		Nothing
- This function is called by:
-		_setGPIO
-		_setIODIR
- This function uses a non-reentrant model
-
-
- *************** function _Delay10TCYx *****************
- Defined at:
-		line 8 in file "/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c"
- Parameters:    Size  Location     Type
-  unit            1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  unit            1   14[COMRAM] unsigned char 
- Return value:  Size  Location     Type
-		None               void
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		Nothing
- This function is called by:
-		_lcdCommand
-		_lcdChar
  This function uses a non-reentrant model
 
 
@@ -1242,7 +843,7 @@ Total ram usage:        5 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_LCDbreakDouble
+		_breakDouble
  This function uses a non-reentrant model
 
 
@@ -1274,7 +875,7 @@ Total ram usage:        7 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_LCDbreakDouble
+		_breakDouble
  This function uses a non-reentrant model
 
 
@@ -1306,7 +907,7 @@ Total ram usage:       15 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_LCDbreakDouble
+		_breakDouble
  This function uses a non-reentrant model
 
 
@@ -1340,7 +941,7 @@ Total ram usage:       15 bytes
  This function calls:
 		___ftpack
  This function is called by:
-		_LCDbreakDouble
+		_breakDouble
  This function uses a non-reentrant model
 
 
@@ -1376,9 +977,192 @@ Total ram usage:        8 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _SerTx *****************
+ Defined at:
+		line 41 in file "SerComm.c"
+ Parameters:    Size  Location     Type
+  c               1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  c               1   14[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        1 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_SerTxStr
+		_breakDouble
+ This function uses a non-reentrant model
+
+
+ *************** function _SendSPI1 *****************
+ Defined at:
+		line 35 in file "SPISlave.c"
+ Parameters:    Size  Location     Type
+  data            1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  data            1   15[COMRAM] unsigned char 
+  temp            1   14[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _SPIReassembleDouble *****************
+ Defined at:
+		line 70 in file "SPISlave.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  dub             3   17[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  3   14[COMRAM] unsigned char 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         6       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _SPIDisassembleDouble *****************
+ Defined at:
+		line 53 in file "SPISlave.c"
+ Parameters:    Size  Location     Type
+  dub             3   16[COMRAM] unsigned char 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         3       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		_GenerateChecksum
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _GenerateChecksum *****************
+ Defined at:
+		line 62 in file "SPISlave.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  y               1   15[COMRAM] unsigned char 
+  sum             1   14[COMRAM] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_SPIDisassembleDouble
+ This function uses a non-reentrant model
+
+
+ *************** function _ReceiveSPI1 *****************
+ Defined at:
+		line 46 in file "SPISlave.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    2
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
  *************** function _ISR *****************
  Defined at:
-		line 112 in file "SPItestSLAVE.c"
+		line 88 in file "SPItestSLAVE.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1408,7 +1192,7 @@ Total ram usage:       14 bytes
 
  *************** function _SPIInt *****************
  Defined at:
-		line 120 in file "SPItestSLAVE.c"
+		line 26 in file "SPISlave.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1439,77 +1223,64 @@ Total ram usage:        0 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
-LCD.h
-		_lcdCommand    		CODE           	187A	0000	69
-		_lcdChar       		CODE           	18BE	0000	63
-		_lcdGoTo       		CODE           	1A38	0000	13
-		_lcdInit       		CODE           	17EC	0000	75
-		_setGPIO       		CODE           	19C2	0000	27
-		_setIODIR      		CODE           	19A8	0000	27
-
-LCD.h estimated size: 274
-
 /opt/microchip/xc8/v1.34/sources/common/float.c
-		___ftpack      		CODE           	1560	0000	199
+		___ftpack      		CODE           	158E	0000	199
 
 /opt/microchip/xc8/v1.34/sources/common/float.c estimated size: 199
 
 /opt/microchip/xc8/v1.34/sources/common/lwmod.c
-		___lwmod       		CODE           	17A0	0000	77
+		___lwmod       		CODE           	1778	0000	77
 
 /opt/microchip/xc8/v1.34/sources/common/lwmod.c estimated size: 77
 
-/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi2open.c
-		_OpenSPI2      		CODE           	174A	0000	87
+SPISlave.c
+		_ReceiveSPI1   		CODE           	1912	0000	17
+		_GenerateChecks		CODE           	1878	0000	51
+		_SendSPI1      		CODE           	18E8	0000	25
+		_SPIReassembleD		CODE           	17C4	0000	69
+		_SPIDisassemble		CODE           	1808	0000	61
+		_SPIInt        		CODE           	1922	0000	17
+		_SPIInit       		CODE           	18CE	0000	27
 
-/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi2open.c estimated size: 87
+SPISlave.c estimated size: 267
 
 /opt/microchip/xc8/v1.34/sources/common/ftmul.c
-		___ftmul       		CODE           	1382	0000	249
+		___ftmul       		CODE           	13B0	0000	249
 
 /opt/microchip/xc8/v1.34/sources/common/ftmul.c estimated size: 249
 
 shared
-		__initializatio		CODE           	19F4	0000	13
+		__initializatio		CODE           	1900	0000	13
 
 shared estimated size: 13
 
 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-		_OpenSPI1      		CODE           	16F4	0000	87
+		_OpenSPI1      		CODE           	1722	0000	87
 
 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c estimated size: 87
 
 /opt/microchip/xc8/v1.34/sources/common/lwdiv.c
-		___lwdiv       		CODE           	1698	0000	93
+		___lwdiv       		CODE           	16C6	0000	93
 
 /opt/microchip/xc8/v1.34/sources/common/lwdiv.c estimated size: 93
 
 SPItestSLAVE.c
-		_LCDbreakDouble		CODE           	1210	0000	371
 		_ISR           		CODE           	0008	0000	131
-		_ReceiveSPI1   		CODE           	1A18	0000	17
-		_main          		CODE           	1010	0000	513
-		_GenerateChecks		CODE           	1938	0000	51
-		_SendSPI1      		CODE           	19DC	0000	25
-		_SPIReassembleD		CODE           	1836	0000	69
-		_SPIDisassemble		CODE           	18FC	0000	61
-		_initialize    		CODE           	198C	0000	29
-		_SPIInt        		CODE           	1A28	0000	17
+		_main          		CODE           	1026	0000	537
+		_initialize    		CODE           	1932	0000	15
 
-SPItestSLAVE.c estimated size: 1284
+SPItestSLAVE.c estimated size: 683
 
-/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1writ.c
-		_WriteSPI1     		CODE           	196A	0000	35
+SerComm.c
+		_SerInit       		CODE           	18AA	0000	37
+		_SerTxStr      		CODE           	1844	0000	53
+		_breakDouble   		CODE           	123E	0000	371
+		_SerTx         		CODE           	1940	0000	15
 
-/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1writ.c estimated size: 35
+SerComm.c estimated size: 476
 
 /opt/microchip/xc8/v1.34/sources/common/fttol.c
-		___fttol       		CODE           	147A	0000	231
+		___fttol       		CODE           	14A8	0000	231
 
 /opt/microchip/xc8/v1.34/sources/common/fttol.c estimated size: 231
-
-/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-		_Delay10TCYx   		CODE           	1A06	0000	19
-
-/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c estimated size: 19
 

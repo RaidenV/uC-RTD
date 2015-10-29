@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=SPItestSLAVE.c SPISlave.c
+SOURCEFILES_QUOTED_IF_SPACED=SPISlave.c SPItestSLAVE.c SerComm.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/SPItestSLAVE.p1 ${OBJECTDIR}/SPISlave.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/SPItestSLAVE.p1.d ${OBJECTDIR}/SPISlave.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/SPISlave.p1 ${OBJECTDIR}/SPItestSLAVE.p1 ${OBJECTDIR}/SerComm.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/SPISlave.p1.d ${OBJECTDIR}/SPItestSLAVE.p1.d ${OBJECTDIR}/SerComm.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/SPItestSLAVE.p1 ${OBJECTDIR}/SPISlave.p1
+OBJECTFILES=${OBJECTDIR}/SPISlave.p1 ${OBJECTDIR}/SPItestSLAVE.p1 ${OBJECTDIR}/SerComm.p1
 
 # Source Files
-SOURCEFILES=SPItestSLAVE.c SPISlave.c
+SOURCEFILES=SPISlave.c SPItestSLAVE.c SerComm.c
 
 
 CFLAGS=
@@ -81,14 +81,6 @@ MP_PROCESSOR_OPTION=18F8722
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/SPItestSLAVE.p1: SPItestSLAVE.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/SPItestSLAVE.p1.d 
-	@${RM} ${OBJECTDIR}/SPItestSLAVE.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/SPItestSLAVE.p1  SPItestSLAVE.c 
-	@-${MV} ${OBJECTDIR}/SPItestSLAVE.d ${OBJECTDIR}/SPItestSLAVE.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/SPItestSLAVE.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/SPISlave.p1: SPISlave.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/SPISlave.p1.d 
@@ -97,7 +89,31 @@ ${OBJECTDIR}/SPISlave.p1: SPISlave.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/SPISlave.d ${OBJECTDIR}/SPISlave.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/SPISlave.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/SPItestSLAVE.p1: SPItestSLAVE.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SPItestSLAVE.p1.d 
+	@${RM} ${OBJECTDIR}/SPItestSLAVE.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/SPItestSLAVE.p1  SPItestSLAVE.c 
+	@-${MV} ${OBJECTDIR}/SPItestSLAVE.d ${OBJECTDIR}/SPItestSLAVE.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/SPItestSLAVE.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/SerComm.p1: SerComm.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SerComm.p1.d 
+	@${RM} ${OBJECTDIR}/SerComm.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  -D__DEBUG=1 --debugger=pickit3  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/SerComm.p1  SerComm.c 
+	@-${MV} ${OBJECTDIR}/SerComm.d ${OBJECTDIR}/SerComm.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/SerComm.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
+${OBJECTDIR}/SPISlave.p1: SPISlave.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SPISlave.p1.d 
+	@${RM} ${OBJECTDIR}/SPISlave.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/SPISlave.p1  SPISlave.c 
+	@-${MV} ${OBJECTDIR}/SPISlave.d ${OBJECTDIR}/SPISlave.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/SPISlave.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/SPItestSLAVE.p1: SPItestSLAVE.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/SPItestSLAVE.p1.d 
@@ -106,13 +122,13 @@ ${OBJECTDIR}/SPItestSLAVE.p1: SPItestSLAVE.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/SPItestSLAVE.d ${OBJECTDIR}/SPItestSLAVE.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/SPItestSLAVE.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/SPISlave.p1: SPISlave.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/SerComm.p1: SerComm.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/SPISlave.p1.d 
-	@${RM} ${OBJECTDIR}/SPISlave.p1 
-	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/SPISlave.p1  SPISlave.c 
-	@-${MV} ${OBJECTDIR}/SPISlave.d ${OBJECTDIR}/SPISlave.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/SPISlave.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/SerComm.p1.d 
+	@${RM} ${OBJECTDIR}/SerComm.p1 
+	${MP_CC} --pass1 $(MP_EXTRA_CC_PRE) --chip=$(MP_PROCESSOR_OPTION) -Q -G  --double=24 --float=24 --emi=wordwrite --opt=default,+asm,+asmfile,-speed,+space,-debug --addrqual=ignore --mode=free -P -N255 --warn=0 --asmlist --summary=default,-psect,-class,+mem,-hex,-file --output=default,-inhx032 --runtime=default,+clear,+init,-keep,-no_startup,-download,+config,+clib,+plib --output=-mcof,+elf:multilocs --stack=compiled:auto:auto:auto "--errformat=%f:%l: error: (%n) %s" "--warnformat=%f:%l: warning: (%n) %s" "--msgformat=%f:%l: advisory: (%n) %s"    -o${OBJECTDIR}/SerComm.p1  SerComm.c 
+	@-${MV} ${OBJECTDIR}/SerComm.d ${OBJECTDIR}/SerComm.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/SerComm.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

@@ -8332,36 +8332,39 @@ double Kd;
 
 void SPIInit(void)
 {
-OpenSPI2(0b00000100, 0b00000000, 0b00000000);
+TRISCbits.RC4 = 1;
+TRISCbits.RC5 = 0;
+TRISDbits.RD7 = 1;
 TRISCbits.RC6 = 0;
-PIE3bits.SSP2IE = 1;
+OpenSPI1(0b00000100, 0b00000000, 0b00000000);
+PIE1bits.SSP1IE = 1;
 }
 
 void SPIInt(void)
 {
-Command = SSP2BUF;
-PORTCbits.RC6 = 0;
-PIR3bits.SSP2IF = 0;
-PIE3bits.SSP2IE = 0;
+Command = SSP1BUF;
+PORTCbits.RC6 = 1;
+PIR1bits.SSP1IF = 0;
+PIE1bits.SSP1IE = 0;
 SPIflag = 1;
 }
 
 void SendSPI1(unsigned char data)
 {
-SSP2BUF = data;
+SSP1BUF = data;
 unsigned char temp;
-PIR3bits.SSP2IF = 0;
-temp = SSP2BUF;
-while (!PIR3bits.SSP2IF);
-SSP2CON1bits.SSPOV2 = 0;
-PIR3bits.SSP2IF = 0;
+PIR1bits.SSP1IF = 0;
+temp = SSP1BUF;
+while (!PIR1bits.SSP1IF);
+SSP1CON1bits.SSPOV1 = 0;
+PIR1bits.SSP1IF = 0;
 }
 
 unsigned char ReceiveSPI1(void)
 {
-SSP2BUF = 0x00;
-while (SSP2STATbits.BF == 0);
-return SSP2BUF;
+SSP1BUF = 0x00;
+while (SSP1STATbits.BF == 0);
+return SSP1BUF;
 }
 
 void SPIDisassembleDouble(double dub)

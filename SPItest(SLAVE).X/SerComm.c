@@ -18,12 +18,18 @@
 
 void SerInit(void)
 {
+    //    TXSTA = 0x24; //Asynchronous, 8-bit, High Baud Rate, Sync Break Transmission Complete, Transmit enabled
+    //    RCSTA = 0x90; //Receive Enabled, Serial Port Enabled, Continuous Receive Enabled
+    //    BAUDCON = 0x00; //8-Bit Baud Rate Generator
+    //    SPBRG = 51;
 
     TXSTA1 = 0x24; //Asynchronous, 8-bit, High Baud Rate, Sync Break Transmission Complete, Transmit enabled
     RCSTA1 = 0x90; //Receive Enabled, Serial Port Enabled, Continuous Receive Enabled
     BAUDCON = 0x00; //8-Bit Baud Rate Generator
     SPBRG = 21;
 
+    RCONbits.IPEN = 1; //Enable interrupt priority;
+    IPR1bits.RCIP = 1; //Set the RCIP to high;
     PIE1bits.RC1IE = 1; //Enable the Receive interrupt;
 
     SerTxStr("Welcome to the world of tomorrow!!!");
@@ -50,12 +56,6 @@ void SerTxStr(unsigned char* string)
 /* SerRx
  * Receives a byte of data; 
  */
-
-void SerNL(void)
-{
-    SerTx(newLine);
-    SerTx(carriageReturn);
-}
 
 unsigned char SerRx(void)
 {
@@ -99,4 +99,6 @@ void breakDouble(double dubs)
     temp2 = temp2 % 10;
     SerTx(temp1 + 0x30);
     SerTx(temp2 + 0x30);
+    SerTx(newLine);
+    SerTx(carriageReturn);
 }

@@ -3769,6 +3769,7 @@ unsigned char x = 0;
 unsigned char y = 0;
 unsigned char* str_end;
 unsigned char flag = 0;
+RCflag = 1;
 
 while ((str[x] != '=') && x < length)
 {
@@ -3912,5 +3913,5 @@ for (x = 0; x < 30; x++)
 received[x] = (0);
 }
 flag = 0;
-RCflag = 1;
+
 }

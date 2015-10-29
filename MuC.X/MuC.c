@@ -47,6 +47,9 @@ void main(void)
                             CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
                             for (x = 0; x != 4; x++)
                                 DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+                            SerTxStr("Azimuth = ");
+                            breakDouble(CurrentAngle);
+                            SerNL();
                         }
                         else if (StrippedKey == 0x03)
                         {
@@ -55,6 +58,9 @@ void main(void)
                             CurrentVelocity = SPIReassembleDouble();
                             for (x = 0; x != 4; x++)
                                 DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+                            SerTxStr("Azimuth Velocity = ");
+                            breakDouble(CurrentVelocity);
+                            SerNL();
                         }
                         else if (StrippedKey == 0x04)
                         {
@@ -63,6 +69,9 @@ void main(void)
                             Kp = SPIReassembleDouble();
                             for (x = 0; x != 4; x++)
                                 DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+                            SerTxStr("Kp = ");
+                            breakDouble(Kp);
+                            SerNL();
                         }
                         else if (StrippedKey == 0x06)
                         {
@@ -71,6 +80,9 @@ void main(void)
                             Ki = SPIReassembleDouble();
                             for (x = 0; x != 4; x++)
                                 DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+                            SerTxStr("Ki = ");
+                            breakDouble(Ki);
+                            SerNL();
                         }
                         else if (StrippedKey == 0x08)
                         {
@@ -79,6 +91,9 @@ void main(void)
                             Kd = SPIReassembleDouble();
                             for (x = 0; x != 4; x++)
                                 DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+                            SerTxStr("Kd = ");
+                            breakDouble(Kd);
+                            SerNL();
                         }
                     }
                     while (!checksum()); //While the Checksum does not correlate with the received value;
@@ -109,6 +124,10 @@ void main(void)
                             CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
                             for (x = 0; x != 4; x++)
                                 DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+                            SerTxStr("Elevation = ");
+                            breakDouble(CurrentAngle);
+                            SerNL();
+
                         }
                         else if (StrippedKey == 0x03)
                         {
@@ -117,6 +136,9 @@ void main(void)
                             CurrentVelocity = SPIReassembleDouble();
                             for (x = 0; x != 4; x++)
                                 DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+                            SerTxStr("Elevation Velocity = ");
+                            breakDouble(CurrentVelocity);
+                            SerNL();
                         }
                         else if (StrippedKey == 0x04)
                         {
@@ -125,6 +147,9 @@ void main(void)
                             Kp = SPIReassembleDouble();
                             for (x = 0; x != 4; x++)
                                 DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+                            SerTxStr("Kp = ");
+                            breakDouble(Kp);
+                            SerNL();
                         }
                         else if (StrippedKey == 0x06)
                         {
@@ -133,6 +158,9 @@ void main(void)
                             Ki = SPIReassembleDouble();
                             for (x = 0; x != 4; x++)
                                 DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+                            SerTxStr("Ki = ");
+                            breakDouble(Ki);
+                            SerNL();
                         }
                         else if (StrippedKey == 0x08)
                         {
@@ -141,6 +169,9 @@ void main(void)
                             Kd = SPIReassembleDouble();
                             for (x = 0; x != 4; x++)
                                 DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+                            SerTxStr("Kd = ");
+                            breakDouble(Kd);
+                            SerNL();
                         }
                     }
                     while (!checksum()); //While the Checksum does not correlate with the received value;
@@ -162,34 +193,39 @@ void main(void)
 
         if (TMR0Flag == 1)
         {
-            INTCONbits.GIE = 0; //Disable interrupts for transmission;
-//            while (SlaveReady1); //Wait for the slave to be ready;
+            do
+            {
+                INTCONbits.GIE = 0; //Disable interrupts for transmission;
+                while (SlaveReady1); //Wait for the slave to be ready;
 
-            MSendSPI(0x02, 1); //Write the command byte to the slave;
+                MSendSPI(0x02, 1); //Write the command byte to the slave;
 
-//            while (SlaveReady1); //Wait for the slave to be ready;
-            MReceiveStrSPI(DoubleSPIM, 1); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
-            CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
-            for (x = 0; x != 4; x++)
-                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+                while (SlaveReady1); //Wait for the slave to be ready;
+                MReceiveStrSPI(DoubleSPIM, 1); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
+                CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
+                for (x = 0; x != 4; x++)
+                    DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+
+            }
+            while (!checksum());
 
             SerTxStr("Azimuth = ");
             breakDouble(CurrentAngle);
             SerNL();
 
-//            while (SlaveReady2); //Wait for the slave to be ready;
-//
-//            MSendSPI(0x02, 2); //Write the command byte to the slave;
-//
-//            while (SlaveReady2); //Wait for the slave to be ready;
-//            MReceiveStrSPI(DoubleSPIM, 2); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
-//            CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
-//            for (x = 0; x != 4; x++)
-//                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
-//
-//            SerTxStr("Elevation = ");
-//            breakDouble(CurrentAngle);
-//            SerNL();
+            //            while (SlaveReady2); //Wait for the slave to be ready;
+            //
+            //            MSendSPI(0x02, 2); //Write the command byte to the slave;
+            //
+            //            while (SlaveReady2); //Wait for the slave to be ready;
+            //            MReceiveStrSPI(DoubleSPIM, 2); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
+            //            CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
+            //            for (x = 0; x != 4; x++)
+            //                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
+            //
+            //            SerTxStr("Elevation = ");
+            //            breakDouble(CurrentAngle);
+            //            SerNL();
             INTCONbits.GIE = 1; //Enable interrupts after transmission;
 
             TMR0Flag = 0;
@@ -243,7 +279,7 @@ void interrupt ISR(void)
         TMR0L = timerLow;
         INTCONbits.TMR0IF = 0;
     }
-    
+
     if (PIR1bits.RCIF == 1)
     {
         RCInt();

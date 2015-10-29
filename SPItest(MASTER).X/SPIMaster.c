@@ -8,9 +8,10 @@ unsigned char DoubleSPIM[4];
 
 void SPIInitM(void)
 {
-    OpenSPI(SPI_FOSC_4, MODE_00, SMPMID);
-    TRISAbits.RA1 = 1; //Set the SlaveReady pin as an input;
-    TRISAbits.RA3 = 0; //Set the SlaveSelect pin as an output;
+    OpenSPI(SPI_FOSC_16, MODE_00, SMPMID);
+    TRISBbits.RB1 = 1; //Set the SlaveReady pin as an input;
+    TRISBbits.RB3 = 0; //Set the SlaveSelect pin as an output;
+    SlaveSelect1 = 1;
 }
 
 void MSendSPI(unsigned char data, unsigned char Slave)
@@ -38,7 +39,7 @@ void MSendSPI(unsigned char data, unsigned char Slave)
         SSPBUF = data;
         while (!PIR1bits.SSPIF);
         data = SSPBUF;
-        SlaveSelect1 = 2; //Set the SS, resetting the bit count of the slave;
+        SlaveSelect1 = 1; //Set the SS, resetting the bit count of the slave;
     }
 }
 

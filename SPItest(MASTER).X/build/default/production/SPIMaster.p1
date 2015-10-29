@@ -1,49 +1,34 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "584 /opt/microchip/xc8/v1.34/include/plib/spi.h
 [v _OpenSPI `(v ~T0 @X0 0 ef3`uc`uc`uc ]
-"1210 /opt/microchip/xc8/v1.34/include/pic18f2620.h
-[s S84 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S84 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"1220
-[s S85 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S85 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"1209
-[u S83 `S84 1 `S85 1 ]
-[n S83 . . . ]
-"1231
-[v _TRISAbits `VS83 ~T0 @X0 0 e@3986 ]
-"55
-[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"65
-[s S3 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S3 . . T0CKI AN4 ]
-"70
-[s S4 :5 `uc 1 :1 `uc 1 ]
-[n S4 . . SS ]
-"74
-[s S5 :5 `uc 1 :1 `uc 1 ]
-[n S5 . . NOT_SS ]
-"78
-[s S6 :5 `uc 1 :1 `uc 1 ]
-[n S6 . . nSS ]
-"82
-[s S7 :5 `uc 1 :1 `uc 1 ]
-[n S7 . . LVDIN ]
-"86
-[s S8 :5 `uc 1 :1 `uc 1 ]
-[n S8 . . HLVDIN ]
-"90
-[s S9 :7 `uc 1 :1 `uc 1 ]
-[n S9 . . RJPU ]
-"94
-[s S10 :1 `uc 1 ]
-[n S10 . ULPWUIN ]
-"54
-[u S1 `S2 1 `S3 1 `S4 1 `S5 1 `S6 1 `S7 1 `S8 1 `S9 1 `S10 1 ]
-[n S1 . . . . . . . . . . ]
-"98
-[v _PORTAbits `VS1 ~T0 @X0 0 e@3968 ]
+"1431 /opt/microchip/xc8/v1.34/include/pic18f2620.h
+[s S90 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S90 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"1441
+[s S91 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S91 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"1430
+[u S89 `S90 1 `S91 1 ]
+[n S89 . . . ]
+"1452
+[v _TRISBbits `VS89 ~T0 @X0 0 e@3987 ]
+"193
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"203
+[s S13 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S13 . INT0 INT1 INT2 CCP2 KBI0 KBI1 KBI2 KBI3 ]
+"213
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . AN12 AN10 AN8 AN9 AN11 PGM PGC PGD ]
+"223
+[s S15 :3 `uc 1 :1 `uc 1 ]
+[n S15 . . CCP2_PA2 ]
+"192
+[u S11 `S12 1 `S13 1 `S14 1 `S15 1 ]
+[n S11 . . . . . ]
+"228
+[v _PORTBbits `VS11 ~T0 @X0 0 e@3969 ]
 "19 /opt/microchip/xc8/v1.34/include/plib/delays.h
 [v _Delay10TCYx `(v ~T0 @X0 0 ef1`uc ]
 "4484 /opt/microchip/xc8/v1.34/include/pic18f2620.h
@@ -3571,412 +3556,415 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SPIMaster.c: 10: {
 [e :U _SPIInitM ]
 [f ]
-[; ;SPIMaster.c: 11: OpenSPI(0b00000000, 0b00000000, 0b00000000);
+[; ;SPIMaster.c: 11: OpenSPI(0b00000001, 0b00000000, 0b00000000);
 "11
-[e ( _OpenSPI (3 , , -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 12: TRISAbits.RA1 = 1;
+[e ( _OpenSPI (3 , , -> -> 1 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;SPIMaster.c: 12: TRISBbits.RB1 = 1;
 "12
-[e = . . _TRISAbits 1 1 -> -> 1 `i `uc ]
-[; ;SPIMaster.c: 13: TRISAbits.RA3 = 0;
+[e = . . _TRISBbits 1 1 -> -> 1 `i `uc ]
+[; ;SPIMaster.c: 13: TRISBbits.RB3 = 0;
 "13
-[e = . . _TRISAbits 1 3 -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 14: }
+[e = . . _TRISBbits 1 3 -> -> 0 `i `uc ]
+[; ;SPIMaster.c: 14: PORTBbits.RB3 = 1;
 "14
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+[; ;SPIMaster.c: 15: }
+"15
 [e :UE 363 ]
 }
-"16
-[v _MSendSPI `(v ~T0 @X0 1 ef2`uc`uc ]
 "17
+[v _MSendSPI `(v ~T0 @X0 1 ef2`uc`uc ]
+"18
 {
-[; ;SPIMaster.c: 16: void MSendSPI(unsigned char data, unsigned char Slave)
-[; ;SPIMaster.c: 17: {
+[; ;SPIMaster.c: 17: void MSendSPI(unsigned char data, unsigned char Slave)
+[; ;SPIMaster.c: 18: {
 [e :U _MSendSPI ]
-"16
+"17
 [v _data `uc ~T0 @X0 1 r1 ]
 [v _Slave `uc ~T0 @X0 1 r2 ]
-"17
-[f ]
-[; ;SPIMaster.c: 18: if (Slave == 1)
 "18
-[e $ ! == -> _Slave `i -> 1 `i 365  ]
-[; ;SPIMaster.c: 19: {
+[f ]
+[; ;SPIMaster.c: 19: if (Slave == 1)
 "19
-{
-[; ;SPIMaster.c: 20: PORTAbits.RA3 = 0;
+[e $ ! == -> _Slave `i -> 1 `i 365  ]
+[; ;SPIMaster.c: 20: {
 "20
-[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 21: Delay10TCYx(1);
+{
+[; ;SPIMaster.c: 21: PORTBbits.RB3 = 0;
 "21
-[e ( _Delay10TCYx (1 -> -> 1 `i `uc ]
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+[; ;SPIMaster.c: 22: Delay10TCYx(1);
 "22
-[v _tempChar `uc ~T0 @X0 1 a ]
-[; ;SPIMaster.c: 22: unsigned char tempChar;
-[; ;SPIMaster.c: 23: tempChar = SSPBUF;
+[e ( _Delay10TCYx (1 -> -> 1 `i `uc ]
 "23
-[e = _tempChar _SSPBUF ]
-[; ;SPIMaster.c: 24: PIR1bits.SSPIF = 0;
+[v _tempChar `uc ~T0 @X0 1 a ]
+[; ;SPIMaster.c: 23: unsigned char tempChar;
+[; ;SPIMaster.c: 24: tempChar = SSPBUF;
 "24
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 25: SSPBUF = data;
+[e = _tempChar _SSPBUF ]
+[; ;SPIMaster.c: 25: PIR1bits.SSPIF = 0;
 "25
-[e = _SSPBUF _data ]
-[; ;SPIMaster.c: 26: while (!PIR1bits.SSPIF);
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPIMaster.c: 26: SSPBUF = data;
 "26
+[e = _SSPBUF _data ]
+[; ;SPIMaster.c: 27: while (!PIR1bits.SSPIF);
+"27
 [e $U 366  ]
 [e :U 367 ]
 [e :U 366 ]
 [e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 367  ]
 [e :U 368 ]
-[; ;SPIMaster.c: 27: data = SSPBUF;
-"27
-[e = _data _SSPBUF ]
-[; ;SPIMaster.c: 28: PORTAbits.RA3 = 1;
+[; ;SPIMaster.c: 28: data = SSPBUF;
 "28
-[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
+[e = _data _SSPBUF ]
+[; ;SPIMaster.c: 29: PORTBbits.RB3 = 1;
 "29
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+"30
 }
-[; ;SPIMaster.c: 29: }
+[; ;SPIMaster.c: 30: }
 [e $U 369  ]
-"31
-[e :U 365 ]
-[; ;SPIMaster.c: 31: else if (Slave == 2)
-[e $ ! == -> _Slave `i -> 2 `i 370  ]
-[; ;SPIMaster.c: 32: {
 "32
-{
-[; ;SPIMaster.c: 33: PORTAbits.RA4 = 0;
+[e :U 365 ]
+[; ;SPIMaster.c: 32: else if (Slave == 2)
+[e $ ! == -> _Slave `i -> 2 `i 370  ]
+[; ;SPIMaster.c: 33: {
 "33
-[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 34: Delay10TCYx(1);
+{
+[; ;SPIMaster.c: 34: PORTBbits.RB4 = 0;
 "34
-[e ( _Delay10TCYx (1 -> -> 1 `i `uc ]
+[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+[; ;SPIMaster.c: 35: Delay10TCYx(1);
 "35
-[v _tempChar `uc ~T0 @X0 1 a ]
-[; ;SPIMaster.c: 35: unsigned char tempChar;
-[; ;SPIMaster.c: 36: tempChar = SSPBUF;
+[e ( _Delay10TCYx (1 -> -> 1 `i `uc ]
 "36
-[e = _tempChar _SSPBUF ]
-[; ;SPIMaster.c: 37: PIR1bits.SSPIF = 0;
+[v _tempChar `uc ~T0 @X0 1 a ]
+[; ;SPIMaster.c: 36: unsigned char tempChar;
+[; ;SPIMaster.c: 37: tempChar = SSPBUF;
 "37
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 38: SSPBUF = data;
+[e = _tempChar _SSPBUF ]
+[; ;SPIMaster.c: 38: PIR1bits.SSPIF = 0;
 "38
-[e = _SSPBUF _data ]
-[; ;SPIMaster.c: 39: while (!PIR1bits.SSPIF);
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPIMaster.c: 39: SSPBUF = data;
 "39
+[e = _SSPBUF _data ]
+[; ;SPIMaster.c: 40: while (!PIR1bits.SSPIF);
+"40
 [e $U 371  ]
 [e :U 372 ]
 [e :U 371 ]
 [e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 372  ]
 [e :U 373 ]
-[; ;SPIMaster.c: 40: data = SSPBUF;
-"40
-[e = _data _SSPBUF ]
-[; ;SPIMaster.c: 41: PORTAbits.RA3 = 2;
+[; ;SPIMaster.c: 41: data = SSPBUF;
 "41
-[e = . . _PORTAbits 0 3 -> -> 2 `i `uc ]
+[e = _data _SSPBUF ]
+[; ;SPIMaster.c: 42: PORTBbits.RB3 = 1;
 "42
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+"43
 }
 [e :U 370 ]
-"43
+"44
 [e :U 369 ]
-[; ;SPIMaster.c: 42: }
 [; ;SPIMaster.c: 43: }
+[; ;SPIMaster.c: 44: }
 [e :UE 364 ]
 }
-"45
-[v _MReceiveSPI `(uc ~T0 @X0 1 ef ]
 "46
+[v _MReceiveSPI `(uc ~T0 @X0 1 ef ]
+"47
 {
-[; ;SPIMaster.c: 45: unsigned char MReceiveSPI(void)
-[; ;SPIMaster.c: 46: {
+[; ;SPIMaster.c: 46: unsigned char MReceiveSPI(void)
+[; ;SPIMaster.c: 47: {
 [e :U _MReceiveSPI ]
 [f ]
-"47
-[v _tempCH `uc ~T0 @X0 1 a ]
-[; ;SPIMaster.c: 47: unsigned char tempCH;
-[; ;SPIMaster.c: 48: tempCH = SSPBUF;
 "48
-[e = _tempCH _SSPBUF ]
-[; ;SPIMaster.c: 49: PIR1bits.SSPIF = 0;
+[v _tempCH `uc ~T0 @X0 1 a ]
+[; ;SPIMaster.c: 48: unsigned char tempCH;
+[; ;SPIMaster.c: 49: tempCH = SSPBUF;
 "49
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 50: SSPBUF = 0x00;
+[e = _tempCH _SSPBUF ]
+[; ;SPIMaster.c: 50: PIR1bits.SSPIF = 0;
 "50
-[e = _SSPBUF -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 51: while (!PIR1bits.SSPIF);
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPIMaster.c: 51: SSPBUF = 0x00;
 "51
+[e = _SSPBUF -> -> 0 `i `uc ]
+[; ;SPIMaster.c: 52: while (!PIR1bits.SSPIF);
+"52
 [e $U 375  ]
 [e :U 376 ]
 [e :U 375 ]
 [e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 376  ]
 [e :U 377 ]
-[; ;SPIMaster.c: 52: return SSPBUF;
-"52
+[; ;SPIMaster.c: 53: return SSPBUF;
+"53
 [e ) _SSPBUF ]
 [e $UE 374  ]
-[; ;SPIMaster.c: 53: }
-"53
+[; ;SPIMaster.c: 54: }
+"54
 [e :UE 374 ]
 }
-"55
-[v _MReceiveStrSPI `(v ~T0 @X0 1 ef2`*uc`uc ]
 "56
+[v _MReceiveStrSPI `(v ~T0 @X0 1 ef2`*uc`uc ]
+"57
 {
-[; ;SPIMaster.c: 55: void MReceiveStrSPI(unsigned char* str, unsigned char Slave)
-[; ;SPIMaster.c: 56: {
+[; ;SPIMaster.c: 56: void MReceiveStrSPI(unsigned char* str, unsigned char Slave)
+[; ;SPIMaster.c: 57: {
 [e :U _MReceiveStrSPI ]
-"55
+"56
 [v _str `*uc ~T0 @X0 1 r1 ]
 [v _Slave `uc ~T0 @X0 1 r2 ]
-"56
-[f ]
-[; ;SPIMaster.c: 57: if (Slave == 1)
 "57
-[e $ ! == -> _Slave `i -> 1 `i 379  ]
-[; ;SPIMaster.c: 58: {
+[f ]
+[; ;SPIMaster.c: 58: if (Slave == 1)
 "58
-{
+[e $ ! == -> _Slave `i -> 1 `i 379  ]
+[; ;SPIMaster.c: 59: {
 "59
-[v _x `uc ~T0 @X0 1 a ]
-[; ;SPIMaster.c: 59: unsigned char x;
-[; ;SPIMaster.c: 60: PORTAbits.RA3 = 0;
+{
 "60
-[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 61: while (PORTAbits.RA1);
+[v _x `uc ~T0 @X0 1 a ]
+[; ;SPIMaster.c: 60: unsigned char x;
+[; ;SPIMaster.c: 61: PORTBbits.RB3 = 0;
 "61
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+[; ;SPIMaster.c: 62: while (PORTBbits.RB1);
+"62
 [e $U 380  ]
 [e :U 381 ]
 [e :U 380 ]
-[e $ != -> . . _PORTAbits 0 1 `i -> -> -> 0 `i `Vuc `i 381  ]
+[e $ != -> . . _PORTBbits 0 1 `i -> -> -> 0 `i `Vuc `i 381  ]
 [e :U 382 ]
-[; ;SPIMaster.c: 62: Delay10TCYx(25);
-"62
-[e ( _Delay10TCYx (1 -> -> 25 `i `uc ]
-[; ;SPIMaster.c: 63: for (x = 0; x < 4; x++)
+[; ;SPIMaster.c: 63: Delay10TCYx(25);
 "63
+[e ( _Delay10TCYx (1 -> -> 25 `i `uc ]
+[; ;SPIMaster.c: 64: for (x = 0; x < 4; x++)
+"64
 {
 [e = _x -> -> 0 `i `uc ]
 [e $ < -> _x `i -> 4 `i 383  ]
 [e $U 384  ]
-"64
+"65
 [e :U 383 ]
-[; ;SPIMaster.c: 64: DoubleSPIM[x] = MReceiveSPI();
+[; ;SPIMaster.c: 65: DoubleSPIM[x] = MReceiveSPI();
 [e = *U + &U _DoubleSPIM * -> _x `ux -> -> # *U &U _DoubleSPIM `ui `ux ( _MReceiveSPI ..  ]
-"63
+"64
 [e ++ _x -> -> 1 `i `uc ]
 [e $ < -> _x `i -> 4 `i 383  ]
 [e :U 384 ]
-"64
-}
-[; ;SPIMaster.c: 65: breakDouble(SPIReassembleDouble());
 "65
-[e ( _breakDouble (1 ( _SPIReassembleDouble ..  ]
-[; ;SPIMaster.c: 66: PORTAbits.RA3 = 1;
-"66
-[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-"67
 }
-[; ;SPIMaster.c: 67: }
-[e $U 386  ]
+[; ;SPIMaster.c: 66: breakDouble(SPIReassembleDouble());
+"66
+[e ( _breakDouble (1 ( _SPIReassembleDouble ..  ]
+[; ;SPIMaster.c: 67: PORTBbits.RB3 = 1;
+"67
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
 "68
-[e :U 379 ]
-[; ;SPIMaster.c: 68: else if (Slave == 2)
-[e $ ! == -> _Slave `i -> 2 `i 387  ]
-[; ;SPIMaster.c: 69: {
+}
+[; ;SPIMaster.c: 68: }
+[e $U 386  ]
 "69
-{
+[e :U 379 ]
+[; ;SPIMaster.c: 69: else if (Slave == 2)
+[e $ ! == -> _Slave `i -> 2 `i 387  ]
+[; ;SPIMaster.c: 70: {
 "70
-[v _x `uc ~T0 @X0 1 a ]
-[; ;SPIMaster.c: 70: unsigned char x;
-[; ;SPIMaster.c: 71: PORTAbits.RA4 = 0;
+{
 "71
-[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 72: while (PORTAbits.RA2);
+[v _x `uc ~T0 @X0 1 a ]
+[; ;SPIMaster.c: 71: unsigned char x;
+[; ;SPIMaster.c: 72: PORTBbits.RB4 = 0;
 "72
+[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+[; ;SPIMaster.c: 73: while (PORTBbits.RB2);
+"73
 [e $U 388  ]
 [e :U 389 ]
 [e :U 388 ]
-[e $ != -> . . _PORTAbits 0 2 `i -> -> -> 0 `i `Vuc `i 389  ]
+[e $ != -> . . _PORTBbits 0 2 `i -> -> -> 0 `i `Vuc `i 389  ]
 [e :U 390 ]
-[; ;SPIMaster.c: 73: Delay10TCYx(50);
-"73
-[e ( _Delay10TCYx (1 -> -> 50 `i `uc ]
-[; ;SPIMaster.c: 74: for (x = 0; x < 3; x++)
+[; ;SPIMaster.c: 74: Delay10TCYx(50);
 "74
+[e ( _Delay10TCYx (1 -> -> 50 `i `uc ]
+[; ;SPIMaster.c: 75: for (x = 0; x < 3; x++)
+"75
 {
 [e = _x -> -> 0 `i `uc ]
 [e $ < -> _x `i -> 3 `i 391  ]
 [e $U 392  ]
-"75
+"76
 [e :U 391 ]
-[; ;SPIMaster.c: 75: str[x] = MReceiveSPI();
+[; ;SPIMaster.c: 76: str[x] = MReceiveSPI();
 [e = *U + _str * -> _x `ux -> -> # *U _str `ui `ux ( _MReceiveSPI ..  ]
-"74
+"75
 [e ++ _x -> -> 1 `i `uc ]
 [e $ < -> _x `i -> 3 `i 391  ]
 [e :U 392 ]
-"75
-}
-[; ;SPIMaster.c: 76: Delay10TCYx(1);
 "76
-[e ( _Delay10TCYx (1 -> -> 1 `i `uc ]
-[; ;SPIMaster.c: 77: PORTAbits.RA4 = 1;
+}
+[; ;SPIMaster.c: 77: Delay10TCYx(1);
 "77
-[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+[e ( _Delay10TCYx (1 -> -> 1 `i `uc ]
+[; ;SPIMaster.c: 78: PORTBbits.RB4 = 1;
 "78
+[e = . . _PORTBbits 0 4 -> -> 1 `i `uc ]
+"79
 }
 [e :U 387 ]
-"79
+"80
 [e :U 386 ]
-[; ;SPIMaster.c: 78: }
 [; ;SPIMaster.c: 79: }
+[; ;SPIMaster.c: 80: }
 [e :UE 378 ]
 }
-"81
-[v _SPIReassembleDouble `(d ~T0 @X0 1 ef ]
 "82
+[v _SPIReassembleDouble `(d ~T0 @X0 1 ef ]
+"83
 {
-[; ;SPIMaster.c: 81: double SPIReassembleDouble(void)
-[; ;SPIMaster.c: 82: {
+[; ;SPIMaster.c: 82: double SPIReassembleDouble(void)
+[; ;SPIMaster.c: 83: {
 [e :U _SPIReassembleDouble ]
 [f ]
-"83
-[v _dub `d ~T0 @X0 1 a ]
-[; ;SPIMaster.c: 83: double dub;
-[; ;SPIMaster.c: 84: DoublePtr = (unsigned char*) &dub;
 "84
-[e = _DoublePtr -> &U _dub `*uc ]
-[; ;SPIMaster.c: 85: DoublePtr[0] = DoubleSPIM[0];
+[v _dub `d ~T0 @X0 1 a ]
+[; ;SPIMaster.c: 84: double dub;
+[; ;SPIMaster.c: 85: DoublePtr = (unsigned char*) &dub;
 "85
-[e = *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux ]
-[; ;SPIMaster.c: 86: DoublePtr[1] = DoubleSPIM[1];
+[e = _DoublePtr -> &U _dub `*uc ]
+[; ;SPIMaster.c: 86: DoublePtr[0] = DoubleSPIM[0];
 "86
-[e = *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux ]
-[; ;SPIMaster.c: 87: DoublePtr[2] = DoubleSPIM[2];
+[e = *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux ]
+[; ;SPIMaster.c: 87: DoublePtr[1] = DoubleSPIM[1];
 "87
-[e = *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIM * -> -> -> 2 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux ]
-[; ;SPIMaster.c: 88: return dub;
+[e = *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux ]
+[; ;SPIMaster.c: 88: DoublePtr[2] = DoubleSPIM[2];
 "88
+[e = *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIM * -> -> -> 2 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux ]
+[; ;SPIMaster.c: 89: return dub;
+"89
 [e ) _dub ]
 [e $UE 394  ]
-[; ;SPIMaster.c: 89: }
-"89
+[; ;SPIMaster.c: 90: }
+"90
 [e :UE 394 ]
 }
-"91
-[v _checksum `(uc ~T0 @X0 1 ef ]
 "92
+[v _checksum `(uc ~T0 @X0 1 ef ]
+"93
 {
-[; ;SPIMaster.c: 91: unsigned char checksum(void)
-[; ;SPIMaster.c: 92: {
+[; ;SPIMaster.c: 92: unsigned char checksum(void)
+[; ;SPIMaster.c: 93: {
 [e :U _checksum ]
 [f ]
-"93
+"94
 [v _y `uc ~T0 @X0 1 a ]
 [v _sum `uc ~T0 @X0 1 a ]
-[; ;SPIMaster.c: 93: unsigned char y, sum = 0;
+[; ;SPIMaster.c: 94: unsigned char y, sum = 0;
 [e = _sum -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 94: for (y = 0; y != 3; y++)
-"94
+[; ;SPIMaster.c: 95: for (y = 0; y != 3; y++)
+"95
 {
 [e = _y -> -> 0 `i `uc ]
 [e $ != -> _y `i -> 3 `i 396  ]
 [e $U 397  ]
-"95
+"96
 [e :U 396 ]
-[; ;SPIMaster.c: 95: sum += DoubleSPIM[y];
+[; ;SPIMaster.c: 96: sum += DoubleSPIM[y];
 [e =+ _sum *U + &U _DoubleSPIM * -> _y `ux -> -> # *U &U _DoubleSPIM `ui `ux ]
-"94
+"95
 [e ++ _y -> -> 1 `i `uc ]
 [e $ != -> _y `i -> 3 `i 396  ]
 [e :U 397 ]
-"95
-}
-[; ;SPIMaster.c: 96: if ((sum - DoubleSPIM[3]) == 0)
 "96
-[e $ ! == - -> _sum `i -> *U + &U _DoubleSPIM * -> -> -> 3 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux `i -> 0 `i 399  ]
-[; ;SPIMaster.c: 97: return 1;
+}
+[; ;SPIMaster.c: 97: if ((sum - DoubleSPIM[3]) == 0)
 "97
+[e $ ! == - -> _sum `i -> *U + &U _DoubleSPIM * -> -> -> 3 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux `i -> 0 `i 399  ]
+[; ;SPIMaster.c: 98: return 1;
+"98
 [e ) -> -> 1 `i `uc ]
 [e $UE 395  ]
 [e $U 400  ]
-"98
-[e :U 399 ]
-[; ;SPIMaster.c: 98: else
-[; ;SPIMaster.c: 99: return 0;
 "99
+[e :U 399 ]
+[; ;SPIMaster.c: 99: else
+[; ;SPIMaster.c: 100: return 0;
+"100
 [e ) -> -> 0 `i `uc ]
 [e $UE 395  ]
 [e :U 400 ]
-[; ;SPIMaster.c: 100: }
-"100
+[; ;SPIMaster.c: 101: }
+"101
 [e :UE 395 ]
 }
-"102
+"103
 [v _SPIDisassembleDouble `(v ~T0 @X0 1 ef1`d ]
-"103
-{
-[; ;SPIMaster.c: 102: void SPIDisassembleDouble(double dub)
-[; ;SPIMaster.c: 103: {
-[e :U _SPIDisassembleDouble ]
-"102
-[v _dub `d ~T0 @X0 1 r1 ]
-"103
-[f ]
-[; ;SPIMaster.c: 104: DoublePtr = (unsigned char*) &dub;
 "104
-[e = _DoublePtr -> &U _dub `*uc ]
-[; ;SPIMaster.c: 105: DoubleSPIM[0] = DoublePtr[0];
+{
+[; ;SPIMaster.c: 103: void SPIDisassembleDouble(double dub)
+[; ;SPIMaster.c: 104: {
+[e :U _SPIDisassembleDouble ]
+"103
+[v _dub `d ~T0 @X0 1 r1 ]
+"104
+[f ]
+[; ;SPIMaster.c: 105: DoublePtr = (unsigned char*) &dub;
 "105
-[e = *U + &U _DoubleSPIM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;SPIMaster.c: 106: DoubleSPIM[1] = DoublePtr[1];
+[e = _DoublePtr -> &U _dub `*uc ]
+[; ;SPIMaster.c: 106: DoubleSPIM[0] = DoublePtr[0];
 "106
-[e = *U + &U _DoubleSPIM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;SPIMaster.c: 107: DoubleSPIM[2] = DoublePtr[2];
+[e = *U + &U _DoubleSPIM * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;SPIMaster.c: 107: DoubleSPIM[1] = DoublePtr[1];
 "107
-[e = *U + &U _DoubleSPIM * -> -> -> 2 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;SPIMaster.c: 108: DoubleSPIM[3] = MGenerateChecksum();
+[e = *U + &U _DoubleSPIM * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;SPIMaster.c: 108: DoubleSPIM[2] = DoublePtr[2];
 "108
-[e = *U + &U _DoubleSPIM * -> -> -> 3 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux ( _MGenerateChecksum ..  ]
-[; ;SPIMaster.c: 109: }
+[e = *U + &U _DoubleSPIM * -> -> -> 2 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;SPIMaster.c: 109: DoubleSPIM[3] = MGenerateChecksum();
 "109
+[e = *U + &U _DoubleSPIM * -> -> -> 3 `i `ui `ux -> -> # *U &U _DoubleSPIM `ui `ux ( _MGenerateChecksum ..  ]
+[; ;SPIMaster.c: 110: }
+"110
 [e :UE 401 ]
 }
-"111
-[v _MGenerateChecksum `(uc ~T0 @X0 1 ef ]
 "112
+[v _MGenerateChecksum `(uc ~T0 @X0 1 ef ]
+"113
 {
-[; ;SPIMaster.c: 111: unsigned char MGenerateChecksum(void)
-[; ;SPIMaster.c: 112: {
+[; ;SPIMaster.c: 112: unsigned char MGenerateChecksum(void)
+[; ;SPIMaster.c: 113: {
 [e :U _MGenerateChecksum ]
 [f ]
-"113
+"114
 [v _z `uc ~T0 @X0 1 a ]
 [v _sum `uc ~T0 @X0 1 a ]
-[; ;SPIMaster.c: 113: unsigned char z, sum = 0;
+[; ;SPIMaster.c: 114: unsigned char z, sum = 0;
 [e = _sum -> -> 0 `i `uc ]
-[; ;SPIMaster.c: 114: for (z = 0; z != 3; z++)
-"114
+[; ;SPIMaster.c: 115: for (z = 0; z != 3; z++)
+"115
 {
 [e = _z -> -> 0 `i `uc ]
 [e $ != -> _z `i -> 3 `i 403  ]
 [e $U 404  ]
-"115
+"116
 [e :U 403 ]
-[; ;SPIMaster.c: 115: sum += DoubleSPIM[z];
+[; ;SPIMaster.c: 116: sum += DoubleSPIM[z];
 [e =+ _sum *U + &U _DoubleSPIM * -> _z `ux -> -> # *U &U _DoubleSPIM `ui `ux ]
-"114
+"115
 [e ++ _z -> -> 1 `i `uc ]
 [e $ != -> _z `i -> 3 `i 403  ]
 [e :U 404 ]
-"115
-}
-[; ;SPIMaster.c: 116: return sum;
 "116
+}
+[; ;SPIMaster.c: 117: return sum;
+"117
 [e ) _sum ]
 [e $UE 402  ]
-[; ;SPIMaster.c: 117: }
-"117
+[; ;SPIMaster.c: 118: }
+"118
 [e :UE 402 ]
 }

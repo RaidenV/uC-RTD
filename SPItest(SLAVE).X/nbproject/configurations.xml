@@ -4,9 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>../I2CDriver.X/LCD.h</itemPath>
       <itemPath>SPISlave.h</itemPath>
       <itemPath>SPISlave.c</itemPath>
+      <itemPath>SerComm.c</itemPath>
+      <itemPath>SerComm.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

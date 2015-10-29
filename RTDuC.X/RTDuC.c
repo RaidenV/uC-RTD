@@ -13,8 +13,7 @@
 #define STATUSLED PORTAbits.RA3
 
 void initialize(void);
-void interrupt high_priority hISR(void);
-void interrupt low_priority lISR(void);
+void interrupt ISR(void);
 void INT0Int(void); //Motor failed interrupt, attached to External Interrupt 0 (RB0);
 void InitializeInterrupts(void);
 
@@ -25,7 +24,7 @@ void main(void)
     initialize();
 
     SlaveReady = 0; //Start the slave in the ready condition;
-    SSP2BUF = dummy_byte; //The dummy byte is defined as 0x00;
+    SSP1BUF = dummy_byte; //The dummy byte is defined as 0x00;
 
     while (1)
     {
@@ -132,7 +131,7 @@ void initialize(void)
     STATUSLED = 1;
 }
 
-void interrupt high_priority hISR(void)
+void interrupt ISR(void)
 {
     SlaveReady = 1; //Set the slave in the Not Ready State so that the master is no longer allowed to transmit;
 
@@ -171,10 +170,6 @@ void interrupt high_priority hISR(void)
          * value, and figuring out a way to revert in the event that the oscillator comes back online;
          */
     }
-}
-
-void interrupt low_priority lISR(void)
-{
     if (PIR1bits.SSP1IF == 1) //The SPI interface is of low priority;
     {
         SPIInt();
@@ -202,7 +197,6 @@ void InitializeInterrupts(void)
 {
     INTCONbits.GIE = 1; //Enable General Interrupts;
     INTCONbits.PEIE = 1; //Enable Peripheral Interrupts;
-    RCONbits.IPEN = 1; //Enable Interrupt Priority;
 
     PIE2bits.OSCFIE = 1; //Enable the Oscillator Fail interrupt;
     IPR2bits.OSCFIP = 1; //High priority;
