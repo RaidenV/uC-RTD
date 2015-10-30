@@ -8363,7 +8363,8 @@ PIR1bits.SSP1IF = 0;
 unsigned char ReceiveSPI1(void)
 {
 SSP1BUF = 0x00;
-while (SSP1STATbits.BF == 0);
+while (!PIR1bits.SSP1IF);
+PIR1bits.SSP1IF = 0;
 return SSP1BUF;
 }
 

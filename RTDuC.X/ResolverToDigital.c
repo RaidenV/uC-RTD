@@ -46,6 +46,7 @@ unsigned int ReadRTDpos(void)
     //by the RTD chip.  At this point we have a stable reading from the chip and therefore do not require them
     //however, as the chip appears to utilize these functions, they must be implemented in the final design;
     {
+        INTCONbits.GIE = 0; //Turn off interrupts;
         RDVEL = 1; //Set the pin to read position;
         SAMPLE = 0; //Toggle the sample low;
         for (x = 0; x < 8; x++) //Wait 800 ns for the data before grabbing the data;
@@ -59,6 +60,7 @@ unsigned int ReadRTDpos(void)
         SAMPLE = 1; //Set the SAMPLE pin high, this allows the chip to start processing the angle again;
         FullPosition = LowPosition;
         FullPosition = FullPosition | ((HighPosition & 0x0F) << 8);
+        INTCONbits.GIE = 1; //Turn on interrupts;
         return FullPosition;
     }
 }

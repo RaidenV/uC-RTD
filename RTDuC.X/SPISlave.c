@@ -46,7 +46,8 @@ void SendSPI1(unsigned char data)
 unsigned char ReceiveSPI1(void)
 {
     SSP1BUF = 0x00; //Load dummy byte into SBUF;
-    while (SSP1STATbits.BF == 0); //Wait for transmission to complete;
+    while (!PIR1bits.SSP1IF); //Wait for transmission to complete;
+    PIR1bits.SSP1IF = 0; //Clear the flag;
     return SSP1BUF;
 }
 

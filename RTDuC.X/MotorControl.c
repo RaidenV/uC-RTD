@@ -1,8 +1,8 @@
 #include "MotorControl.h"
 
 unsigned char PIDEnableFlag;
-char DeadbandLow = -5;
-unsigned char DeadbandHigh = 5;
+int DeadbandLow = -200;
+int DeadbandHigh = 200;
 
 void MotorDriverInit(void)
 {
@@ -58,23 +58,30 @@ void ImplementPIDMotion(int PIDValue)
 void ImplementJSMotion(int JoystickValue)
 {
     unsigned int CCPinput;
-    PIDEnableFlag = 0; //Make damn sure that the PID loop is not being implemented;
     if (JoystickValue < DeadbandLow) //If the joystick value is less than DeadbandLow
     {
         CCP3CONbits.P3M1 = 1; //Set the Full-bridge output REVERSE
+        PIDEnableFlag = 0; //Make damn sure that the PID loop is not being implemented;
     }
     else if (JoystickValue > DeadbandHigh) //If the joystick value is greater than DeadbandHigh
     {
         CCP3CONbits.P3M1 = 0; //Set the Full-bridge output FORWARD
+        PIDEnableFlag = 0; //Make damn sure that the PID loop is not being implemented;
     }
-    else if (JoystickValue <= DeadbandHigh && JoystickValue >= DeadbandLow) //If the Joystick Module is activated, but it's not being moved, set the movement to 0;
+    else if ((JoystickValue <= DeadbandHigh) && (JoystickValue >= DeadbandLow) && (PIDEnableFlag == 0)) //If the Joystick Module is activated, but it's not being moved, set the movement to 0;
     {
         JoystickValue = 0;
+        CCPR3L = 0x00;
+        CCP3CONbits.DC3B1 = 0;
+        CCP3CONbits.DC3B0 = 0;
     }
 
-    JoystickValue = abs(JoystickValue); //As we already know the direction, we discard the sign;
-    CCPinput = JoystickValue * 2; 
-    CCPR3L = (CCPinput >> 2) & 0xFF;
-    CCP3CONbits.DC3B = (CCPinput & 0x03);
+    if ((JoystickValue < DeadbandLow) || (JoystickValue > DeadbandHigh))
+    {
+        JoystickValue = abs(JoystickValue); //As we already know the direction, we discard the sign;
+        CCPinput = JoystickValue * 2;
+        CCPR3L = (CCPinput >> 2) & 0xFF;
+        CCP3CONbits.DC3B = (CCPinput & 0x03);
+    }
 }
 

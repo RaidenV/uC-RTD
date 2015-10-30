@@ -140,6 +140,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PORTEbits `VS164 ~T0 @X0 0 e@3972 ]
 "13 /opt/microchip/xc8/v1.34/include/plib/delays.h
 [v _Delay1TCYx `(v ~T0 @X0 0 ef1`uc ]
+"13593 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[s S711 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S711 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"13603
+[s S712 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S712 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE GIE ]
+"13613
+[s S713 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S713 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE GIEL GIEH ]
+"13623
+[s S714 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S714 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"13633
+[s S715 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S715 . . GIEL GIEH ]
+"13592
+[u S710 `S711 1 `S712 1 `S713 1 `S714 1 `S715 1 ]
+[n S710 . . . . . . ]
+"13639
+[v _INTCONbits `VS710 ~T0 @X0 0 e@4082 ]
 "42 /opt/microchip/xc8/v1.34/include/pic18.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
@@ -6622,168 +6642,174 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ResolverToDigital.c: 48: {
 "48
 {
-[; ;ResolverToDigital.c: 49: PORTEbits.RE1 = 1;
+[; ;ResolverToDigital.c: 49: INTCONbits.GIE = 0;
 "49
-[e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 50: PORTEbits.RE0 = 0;
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;ResolverToDigital.c: 50: PORTEbits.RE1 = 1;
 "50
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 51: for (x = 0; x < 8; x++)
+[e = . . _PORTEbits 0 1 -> -> 1 `i `uc ]
+[; ;ResolverToDigital.c: 51: PORTEbits.RE0 = 0;
 "51
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
+[; ;ResolverToDigital.c: 52: for (x = 0; x < 8; x++)
+"52
 {
 [e = _x -> -> 0 `i `uc ]
 [e $ < -> _x `i -> 8 `i 760  ]
 [e $U 761  ]
-"52
+"53
 [e :U 760 ]
-[; ;ResolverToDigital.c: 52: __nop();
+[; ;ResolverToDigital.c: 53: __nop();
 [e ( ___nop ..  ]
-"51
+"52
 [e ++ _x -> -> 1 `i `uc ]
 [e $ < -> _x `i -> 8 `i 760  ]
 [e :U 761 ]
-"52
-}
-[; ;ResolverToDigital.c: 53: PORTEbits.RE2 = 1;
 "53
-[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 54: PORTEbits.RE2 = 0;
+}
+[; ;ResolverToDigital.c: 54: PORTEbits.RE2 = 1;
 "54
-[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 55: Delay10TCYx(1);
-"55
-[e ( _Delay10TCYx (1 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 56: HighPosition = PORTH;
-"56
-[e = _HighPosition _PORTH ]
-[; ;ResolverToDigital.c: 57: LowPosition = PORTD;
-"57
-[e = _LowPosition _PORTD ]
-[; ;ResolverToDigital.c: 58: PORTEbits.RE2 = 1;
-"58
 [e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 59: PORTEbits.RE0 = 1;
+[; ;ResolverToDigital.c: 55: PORTEbits.RE2 = 0;
+"55
+[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
+[; ;ResolverToDigital.c: 56: Delay10TCYx(1);
+"56
+[e ( _Delay10TCYx (1 -> -> 1 `i `uc ]
+[; ;ResolverToDigital.c: 57: HighPosition = PORTH;
+"57
+[e = _HighPosition _PORTH ]
+[; ;ResolverToDigital.c: 58: LowPosition = PORTD;
+"58
+[e = _LowPosition _PORTD ]
+[; ;ResolverToDigital.c: 59: PORTEbits.RE2 = 1;
 "59
-[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 60: FullPosition = LowPosition;
+[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
+[; ;ResolverToDigital.c: 60: PORTEbits.RE0 = 1;
 "60
-[e = _FullPosition -> _LowPosition `ui ]
-[; ;ResolverToDigital.c: 61: FullPosition = FullPosition | ((HighPosition & 0x0F) << 8);
+[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
+[; ;ResolverToDigital.c: 61: FullPosition = LowPosition;
 "61
-[e = _FullPosition | _FullPosition -> << & -> _HighPosition `i -> 15 `i -> 8 `i `ui ]
-[; ;ResolverToDigital.c: 62: return FullPosition;
+[e = _FullPosition -> _LowPosition `ui ]
+[; ;ResolverToDigital.c: 62: FullPosition = FullPosition | ((HighPosition & 0x0F) << 8);
 "62
+[e = _FullPosition | _FullPosition -> << & -> _HighPosition `i -> 15 `i -> 8 `i `ui ]
+[; ;ResolverToDigital.c: 63: INTCONbits.GIE = 1;
+"63
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;ResolverToDigital.c: 64: return FullPosition;
+"64
 [e ) _FullPosition ]
 [e $UE 759  ]
-"63
+"65
 }
-[; ;ResolverToDigital.c: 63: }
-[; ;ResolverToDigital.c: 64: }
-"64
+[; ;ResolverToDigital.c: 65: }
+[; ;ResolverToDigital.c: 66: }
+"66
 [e :UE 759 ]
 }
-"66
+"68
 [v _ReadRTDvel `(ui ~T0 @X0 1 ef ]
-"67
+"69
 {
-[; ;ResolverToDigital.c: 66: unsigned int ReadRTDvel(void)
-[; ;ResolverToDigital.c: 67: {
+[; ;ResolverToDigital.c: 68: unsigned int ReadRTDvel(void)
+[; ;ResolverToDigital.c: 69: {
 [e :U _ReadRTDvel ]
 [f ]
-"68
+"70
 [v _FullVelocity `ui ~T0 @X0 1 a ]
-"69
+"71
 [v _HighVelocity `uc ~T0 @X0 1 a ]
 [v _LowVelocity `uc ~T0 @X0 1 a ]
-"70
+"72
 [v _x `uc ~T0 @X0 1 a ]
-[; ;ResolverToDigital.c: 68: unsigned int FullVelocity;
-[; ;ResolverToDigital.c: 69: unsigned char HighVelocity, LowVelocity;
-[; ;ResolverToDigital.c: 70: unsigned char x;
-[; ;ResolverToDigital.c: 74: PORTEbits.RE1 = 0;
-"74
-[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 75: PORTEbits.RE0 = 0;
-"75
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 76: for (x = 0; x < 8; x++)
+[; ;ResolverToDigital.c: 70: unsigned int FullVelocity;
+[; ;ResolverToDigital.c: 71: unsigned char HighVelocity, LowVelocity;
+[; ;ResolverToDigital.c: 72: unsigned char x;
+[; ;ResolverToDigital.c: 76: PORTEbits.RE1 = 0;
 "76
+[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
+[; ;ResolverToDigital.c: 77: PORTEbits.RE0 = 0;
+"77
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
+[; ;ResolverToDigital.c: 78: for (x = 0; x < 8; x++)
+"78
 {
 [e = _x -> -> 0 `i `uc ]
 [e $ < -> _x `i -> 8 `i 764  ]
 [e $U 765  ]
-"77
+"79
 [e :U 764 ]
-[; ;ResolverToDigital.c: 77: __nop();
+[; ;ResolverToDigital.c: 79: __nop();
 [e ( ___nop ..  ]
-"76
+"78
 [e ++ _x -> -> 1 `i `uc ]
 [e $ < -> _x `i -> 8 `i 764  ]
 [e :U 765 ]
-"77
-}
-[; ;ResolverToDigital.c: 78: PORTEbits.RE2 = 0;
-"78
-[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
-[; ;ResolverToDigital.c: 79: HighVelocity = PORTH;
 "79
-[e = _HighVelocity _PORTH ]
-[; ;ResolverToDigital.c: 80: LowVelocity = PORTD;
+}
+[; ;ResolverToDigital.c: 80: PORTEbits.RE2 = 0;
 "80
-[e = _LowVelocity _PORTD ]
-[; ;ResolverToDigital.c: 81: PORTEbits.RE2 = 1;
+[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
+[; ;ResolverToDigital.c: 81: HighVelocity = PORTH;
 "81
-[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 82: PORTEbits.RE0 = 1;
+[e = _HighVelocity _PORTH ]
+[; ;ResolverToDigital.c: 82: LowVelocity = PORTD;
 "82
-[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
-[; ;ResolverToDigital.c: 83: FullVelocity = LowVelocity;
+[e = _LowVelocity _PORTD ]
+[; ;ResolverToDigital.c: 83: PORTEbits.RE2 = 1;
 "83
-[e = _FullVelocity -> _LowVelocity `ui ]
-[; ;ResolverToDigital.c: 84: FullVelocity = (HighVelocity & 0x0F) << 8;
+[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
+[; ;ResolverToDigital.c: 84: PORTEbits.RE0 = 1;
 "84
-[e = _FullVelocity -> << & -> _HighVelocity `i -> 15 `i -> 8 `i `ui ]
-[; ;ResolverToDigital.c: 86: return FullVelocity;
+[e = . . _PORTEbits 0 0 -> -> 1 `i `uc ]
+[; ;ResolverToDigital.c: 85: FullVelocity = LowVelocity;
+"85
+[e = _FullVelocity -> _LowVelocity `ui ]
+[; ;ResolverToDigital.c: 86: FullVelocity = (HighVelocity & 0x0F) << 8;
 "86
+[e = _FullVelocity -> << & -> _HighVelocity `i -> 15 `i -> 8 `i `ui ]
+[; ;ResolverToDigital.c: 88: return FullVelocity;
+"88
 [e ) _FullVelocity ]
 [e $UE 763  ]
-[; ;ResolverToDigital.c: 91: }
-"91
+[; ;ResolverToDigital.c: 93: }
+"93
 [e :UE 763 ]
 }
-"97
-[v _RTD2Angle `(d ~T0 @X0 1 ef1`ui ]
-"98
-{
-[; ;ResolverToDigital.c: 97: double RTD2Angle(unsigned int RTDAngle)
-[; ;ResolverToDigital.c: 98: {
-[e :U _RTD2Angle ]
-"97
-[v _RTDAngle `ui ~T0 @X0 1 r1 ]
-"98
-[f ]
-[; ;ResolverToDigital.c: 99: return 0.087890625 * RTDAngle;
 "99
+[v _RTD2Angle `(d ~T0 @X0 1 ef1`ui ]
+"100
+{
+[; ;ResolverToDigital.c: 99: double RTD2Angle(unsigned int RTDAngle)
+[; ;ResolverToDigital.c: 100: {
+[e :U _RTD2Angle ]
+"99
+[v _RTDAngle `ui ~T0 @X0 1 r1 ]
+"100
+[f ]
+[; ;ResolverToDigital.c: 101: return 0.087890625 * RTDAngle;
+"101
 [e ) * .0.087890625 -> _RTDAngle `d ]
 [e $UE 767  ]
-[; ;ResolverToDigital.c: 100: }
-"100
+[; ;ResolverToDigital.c: 102: }
+"102
 [e :UE 767 ]
 }
-[; ;ResolverToDigital.c: 101: double RTD2Velocity(unsigned int);
-"103
+[; ;ResolverToDigital.c: 103: double RTD2Velocity(unsigned int);
+"105
 [v _RTDdirection `(uc ~T0 @X0 1 ef ]
-"104
+"106
 {
-[; ;ResolverToDigital.c: 103: unsigned char RTDdirection(void)
-[; ;ResolverToDigital.c: 104: {
+[; ;ResolverToDigital.c: 105: unsigned char RTDdirection(void)
+[; ;ResolverToDigital.c: 106: {
 [e :U _RTDdirection ]
 [f ]
-[; ;ResolverToDigital.c: 105: return PORTEbits.RE5;
-"105
+[; ;ResolverToDigital.c: 107: return PORTEbits.RE5;
+"107
 [e ) . . _PORTEbits 0 5 ]
 [e $UE 768  ]
-[; ;ResolverToDigital.c: 106: }
-"106
+[; ;ResolverToDigital.c: 108: }
+"108
 [e :UE 768 ]
 }

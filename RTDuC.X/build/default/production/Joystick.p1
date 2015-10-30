@@ -109,10 +109,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
 "10609
 [v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
-"27 Joystick.h
-[v _DeadbandHigh `uc ~T0 @X0 0 e ]
-"26
-[v _DeadbandLow `uc ~T0 @X0 0 e ]
+"28 Joystick.h
+[v _DeadbandHigh `i ~T0 @X0 0 e ]
+"27
+[v _DeadbandLow `i ~T0 @X0 0 e ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
 [; ;pic18f8722.h: 49: extern volatile unsigned char SSP2CON2 @ 0xF62;
@@ -6554,11 +6554,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ResolverToDigital.h: 35: unsigned char RTDdirection(void);
 [; ;Joystick.h: 24: extern unsigned char PIDEnableFlag;
 [; ;Joystick.h: 25: extern unsigned char JSEnableFlag;
-[; ;Joystick.h: 26: extern char DeadbandLow;
-[; ;Joystick.h: 27: extern unsigned char DeadbandHigh;
-[; ;Joystick.h: 29: void JoystickInit(void);
-[; ;Joystick.h: 30: void DetectJoystick(void);
-[; ;Joystick.h: 31: int DetectMovement(void);
+[; ;Joystick.h: 26: extern double CurrentAngle;
+[; ;Joystick.h: 27: extern int DeadbandLow;
+[; ;Joystick.h: 28: extern int DeadbandHigh;
+[; ;Joystick.h: 30: void JoystickInit(void);
+[; ;Joystick.h: 31: void DetectJoystick(void);
+[; ;Joystick.h: 32: int DetectMovement(void);
 "3 Joystick.c
 [v _PIDEnableFlag `uc ~T0 @X0 1 e ]
 [; ;Joystick.c: 3: unsigned char PIDEnableFlag;
@@ -6713,7 +6714,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _JoystickResult -> - _ADCresult -> -> 512 `i `ui `i ]
 [; ;Joystick.c: 55: if ((JoystickResult > DeadbandHigh) || (JoystickResult < DeadbandLow))
 "55
-[e $ ! || > _JoystickResult -> _DeadbandHigh `i < _JoystickResult -> _DeadbandLow `i 774  ]
+[e $ ! || > _JoystickResult _DeadbandHigh < _JoystickResult _DeadbandLow 774  ]
 [; ;Joystick.c: 56: {
 "56
 {

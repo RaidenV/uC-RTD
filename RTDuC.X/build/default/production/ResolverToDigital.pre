@@ -8338,6 +8338,7 @@ unsigned char HighPosition, LowPosition;
 
 
 {
+INTCONbits.GIE = 0;
 PORTEbits.RE1 = 1;
 PORTEbits.RE0 = 0;
 for (x = 0; x < 8; x++)
@@ -8351,6 +8352,7 @@ PORTEbits.RE2 = 1;
 PORTEbits.RE0 = 1;
 FullPosition = LowPosition;
 FullPosition = FullPosition | ((HighPosition & 0x0F) << 8);
+INTCONbits.GIE = 1;
 return FullPosition;
 }
 }
@@ -8382,7 +8384,7 @@ return FullVelocity;
 
 }
 
-# 97
+# 99
 double RTD2Angle(unsigned int RTDAngle)
 {
 return 0.087890625 * RTDAngle;

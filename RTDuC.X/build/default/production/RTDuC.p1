@@ -38,7 +38,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Command `uc ~T0 @X0 0 e ]
 "37
 [v _SPIDisassembleDouble `(v ~T0 @X0 0 ef1`d ]
-"29 PID.h
+"26 Joystick.h
 [v _CurrentAngle `d ~T0 @X0 0 e ]
 "45 EEPROM.h
 [v _CurrentVelocity `d ~T0 @X0 0 e ]
@@ -93,11 +93,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S375 . . . ]
 "7763
 [v _PIE1bits `VS375 ~T0 @X0 0 e@3997 ]
-"30 Joystick.h
+"31 Joystick.h
 [v _DetectJoystick `(v ~T0 @X0 0 ef ]
 "28 MotorControl.h
 [v _ImplementJSMotion `(v ~T0 @X0 0 ef1`i ]
-"31 Joystick.h
+"32 Joystick.h
 [v _DetectMovement `(i ~T0 @X0 0 ef ]
 "24 PID.h
 [v _TMR0Flag `uc ~T0 @X0 0 e ]
@@ -141,7 +141,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RTDInit `(v ~T0 @X0 0 ef ]
 "34 SPISlave.h
 [v _SPIInit `(v ~T0 @X0 0 ef ]
-"29 Joystick.h
+"30 Joystick.h
 [v _JoystickInit `(v ~T0 @X0 0 ef ]
 "24 MotorControl.h
 [v _MotorDriverInit `(v ~T0 @X0 0 ef ]
@@ -174,6 +174,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S135 . . . . . . . ]
 "2678
 [v _PORTAbits `VS135 ~T0 @X0 0 e@3968 ]
+"7828
+[s S379 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S379 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF PSPIF ]
+"7838
+[s S380 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S380 . . SSPIF TXIF RCIF ]
+"7827
+[u S378 `S379 1 `S380 1 ]
+[n S378 . . . ]
+"7845
+[v _PIR1bits `VS378 ~T0 @X0 0 e@3998 ]
+"35 SPISlave.h
+[v _SPIInt `(v ~T0 @X0 0 ef ]
 "39 PID.h
 [v _TMR0Int `(v ~T0 @X0 0 ef ]
 "17 RTDuC.c
@@ -191,19 +204,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIR2bits `VS387 ~T0 @X0 0 e@4001 ]
 "58 EEPROM.h
 [v _HLVDInt `(v ~T0 @X0 0 ef ]
-"7828 /opt/microchip/xc8/v1.34/include/pic18f8722.h
-[s S379 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S379 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF PSPIF ]
-"7838
-[s S380 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S380 . . SSPIF TXIF RCIF ]
-"7827
-[u S378 `S379 1 `S380 1 ]
-[n S378 . . . ]
-"7845
-[v _PIR1bits `VS378 ~T0 @X0 0 e@3998 ]
-"35 SPISlave.h
-[v _SPIInt `(v ~T0 @X0 0 ef ]
 "25 MotorControl.h
 [v _KillMotors `(v ~T0 @X0 0 ef ]
 "7992 /opt/microchip/xc8/v1.34/include/pic18f8722.h
@@ -6669,19 +6669,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ResolverToDigital.h: 35: unsigned char RTDdirection(void);
 [; ;Joystick.h: 24: extern unsigned char PIDEnableFlag;
 [; ;Joystick.h: 25: extern unsigned char JSEnableFlag;
-[; ;Joystick.h: 26: extern char DeadbandLow;
-[; ;Joystick.h: 27: extern unsigned char DeadbandHigh;
-[; ;Joystick.h: 29: void JoystickInit(void);
-[; ;Joystick.h: 30: void DetectJoystick(void);
-[; ;Joystick.h: 31: int DetectMovement(void);
+[; ;Joystick.h: 26: extern double CurrentAngle;
+[; ;Joystick.h: 27: extern int DeadbandLow;
+[; ;Joystick.h: 28: extern int DeadbandHigh;
+[; ;Joystick.h: 30: void JoystickInit(void);
+[; ;Joystick.h: 31: void DetectJoystick(void);
+[; ;Joystick.h: 32: int DetectMovement(void);
 [; ;stdlib.h: 108: extern char * itoa(char * buf, int val, int base);
 [; ;stdlib.h: 109: extern char * utoa(char * buf, unsigned val, int base);
 [; ;stdlib.h: 114: extern char * ltoa(char * buf, long val, int base);
 [; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
 [; ;MotorControl.h: 20: extern unsigned char PIDEnableFlag;
-[; ;MotorControl.h: 21: extern char DeadbandLow;
-[; ;MotorControl.h: 22: extern unsigned char DeadbandHigh;
+[; ;MotorControl.h: 21: extern int DeadbandLow;
+[; ;MotorControl.h: 22: extern int DeadbandHigh;
 [; ;MotorControl.h: 24: void MotorDriverInit(void);
 [; ;MotorControl.h: 25: void KillMotors(void);
 [; ;MotorControl.h: 26: void StartMotors(void);
@@ -7146,79 +7147,79 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTDuC.c: 136: PORTCbits.RC6 = 1;
 "136
 [e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 138: if ((INTCONbits.TMR0IF == 1) && ((PIDEnableFlag | 0x01) == 0x01))
+[; ;RTDuC.c: 137: if (PIR1bits.SSP1IF == 1)
+"137
+[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 801  ]
+[; ;RTDuC.c: 138: {
 "138
-[e $ ! && == -> . . _INTCONbits 0 2 `i -> 1 `i == | -> _PIDEnableFlag `i -> 1 `i -> 1 `i 801  ]
-[; ;RTDuC.c: 139: {
-"139
 {
-[; ;RTDuC.c: 140: TMR0Int();
+[; ;RTDuC.c: 139: SPIInt();
+"139
+[e ( _SPIInt ..  ]
 "140
-[e ( _TMR0Int ..  ]
-[; ;RTDuC.c: 141: PORTCbits.RC6 = 0;
-"141
-[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-"142
 }
 [e :U 801 ]
-[; ;RTDuC.c: 142: }
-[; ;RTDuC.c: 144: if (INTCONbits.INT0IF == 1)
-"144
-[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 802  ]
-[; ;RTDuC.c: 145: {
-"145
+[; ;RTDuC.c: 140: }
+[; ;RTDuC.c: 142: if ((INTCONbits.TMR0IF == 1) && ((PIDEnableFlag | 0x01) == 0x01))
+"142
+[e $ ! && == -> . . _INTCONbits 0 2 `i -> 1 `i == | -> _PIDEnableFlag `i -> 1 `i -> 1 `i 802  ]
+[; ;RTDuC.c: 143: {
+"143
 {
-[; ;RTDuC.c: 146: INT0Int();
+[; ;RTDuC.c: 144: TMR0Int();
+"144
+[e ( _TMR0Int ..  ]
+[; ;RTDuC.c: 145: PORTCbits.RC6 = 0;
+"145
+[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
 "146
-[e ( _INT0Int ..  ]
-"147
 }
 [e :U 802 ]
-[; ;RTDuC.c: 147: }
-[; ;RTDuC.c: 149: if (PIR2bits.HLVDIF == 1)
+[; ;RTDuC.c: 146: }
+[; ;RTDuC.c: 148: if (INTCONbits.INT0IF == 1)
+"148
+[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 803  ]
+[; ;RTDuC.c: 149: {
 "149
-[e $ ! == -> . . _PIR2bits 0 2 `i -> 1 `i 803  ]
-[; ;RTDuC.c: 150: {
-"150
 {
-[; ;RTDuC.c: 151: PORTAbits.RA4 = 0;
+[; ;RTDuC.c: 150: INT0Int();
+"150
+[e ( _INT0Int ..  ]
 "151
-[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 152: PORTAbits.RA3 = 0;
-"152
-[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 153: PORTAbits.RA2 = 0;
-"153
-[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 154: HLVDInt();
-"154
-[e ( _HLVDInt ..  ]
-"155
 }
 [e :U 803 ]
-[; ;RTDuC.c: 155: }
-[; ;RTDuC.c: 157: if (PIR2bits.OSCFIF == 1)
-"157
-[e $ ! == -> . . _PIR2bits 0 7 `i -> 1 `i 804  ]
-[; ;RTDuC.c: 158: {
-"158
+[; ;RTDuC.c: 151: }
+[; ;RTDuC.c: 153: if (PIR2bits.HLVDIF == 1)
+"153
+[e $ ! == -> . . _PIR2bits 0 2 `i -> 1 `i 804  ]
+[; ;RTDuC.c: 154: {
+"154
 {
-[; ;RTDuC.c: 159: asm("reset");
+[; ;RTDuC.c: 155: PORTAbits.RA4 = 0;
+"155
+[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 156: PORTAbits.RA3 = 0;
+"156
+[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 157: PORTAbits.RA2 = 0;
+"157
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 158: HLVDInt();
+"158
+[e ( _HLVDInt ..  ]
 "159
-[; <" reset ;# ">
-"172
 }
 [e :U 804 ]
-[; ;RTDuC.c: 172: }
-[; ;RTDuC.c: 173: if (PIR1bits.SSP1IF == 1)
-"173
-[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 805  ]
-[; ;RTDuC.c: 174: {
-"174
+[; ;RTDuC.c: 159: }
+[; ;RTDuC.c: 161: if (PIR2bits.OSCFIF == 1)
+"161
+[e $ ! == -> . . _PIR2bits 0 7 `i -> 1 `i 805  ]
+[; ;RTDuC.c: 162: {
+"162
 {
-[; ;RTDuC.c: 175: SPIInt();
-"175
-[e ( _SPIInt ..  ]
+[; ;RTDuC.c: 163: asm("reset");
+"163
+[; <" reset ;# ">
 "176
 }
 [e :U 805 ]

@@ -8371,8 +8371,9 @@ unsigned char RTDdirection(void);
 # 24 "Joystick.h"
 extern unsigned char PIDEnableFlag;
 extern unsigned char JSEnableFlag;
-extern char DeadbandLow;
-extern unsigned char DeadbandHigh;
+extern double CurrentAngle;
+extern int DeadbandLow;
+extern int DeadbandHigh;
 
 void JoystickInit(void);
 void DetectJoystick(void);
@@ -8392,8 +8393,8 @@ extern char * ftoa(float f, int * status);
 
 # 20 "MotorControl.h"
 extern unsigned char PIDEnableFlag;
-extern char DeadbandLow;
-extern unsigned char DeadbandHigh;
+extern int DeadbandLow;
+extern int DeadbandHigh;
 
 void MotorDriverInit(void);
 void KillMotors(void);
@@ -8608,6 +8609,10 @@ PORTAbits.RA3 = 1;
 void interrupt ISR(void)
 {
 PORTCbits.RC6 = 1;
+if (PIR1bits.SSP1IF == 1)
+{
+SPIInt();
+}
 
 if ((INTCONbits.TMR0IF == 1) && ((PIDEnableFlag | 0x01) == 0x01))
 {
@@ -8632,11 +8637,7 @@ if (PIR2bits.OSCFIF == 1)
 {
 asm("reset");
 
-# 172
-}
-if (PIR1bits.SSP1IF == 1)
-{
-SPIInt();
+# 176
 }
 }
 

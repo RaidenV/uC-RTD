@@ -1,0 +1,8 @@
+$ cat .gitignore
+MiscProjects/
+/MuC.X/nbproject/private/
+/MuC.X/build/default/
+/MuC.X/dist/default/
+nbproject/
+build/
+debug/dist/

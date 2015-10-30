@@ -6484,8 +6484,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdlib.h: 115: extern char * ultoa(char * buf, unsigned long val, int base);
 [; ;stdlib.h: 117: extern char * ftoa(float f, int * status);
 [; ;MotorControl.h: 20: extern unsigned char PIDEnableFlag;
-[; ;MotorControl.h: 21: extern char DeadbandLow;
-[; ;MotorControl.h: 22: extern unsigned char DeadbandHigh;
+[; ;MotorControl.h: 21: extern int DeadbandLow;
+[; ;MotorControl.h: 22: extern int DeadbandHigh;
 [; ;MotorControl.h: 24: void MotorDriverInit(void);
 [; ;MotorControl.h: 25: void KillMotors(void);
 [; ;MotorControl.h: 26: void StartMotors(void);

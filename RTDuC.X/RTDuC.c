@@ -134,6 +134,10 @@ void initialize(void)
 void interrupt ISR(void)
 {
     SlaveReady = 1; //Set the slave in the Not Ready State so that the master is no longer allowed to transmit;
+    if (PIR1bits.SSP1IF == 1) //The SPI interface is of low priority;
+    {
+        SPIInt();
+    }
 
     if ((INTCONbits.TMR0IF == 1) && ((PIDEnableFlag | 0x01) == 0x01)) //If the TMR0 Interrupt is high, and the PID loop is enabled, run this;
     {
@@ -169,10 +173,6 @@ void interrupt ISR(void)
          * This would more or less involve changing anything related to timing, whether that's baud rate or the timer
          * value, and figuring out a way to revert in the event that the oscillator comes back online;
          */
-    }
-    if (PIR1bits.SSP1IF == 1) //The SPI interface is of low priority;
-    {
-        SPIInt();
     }
 }
 

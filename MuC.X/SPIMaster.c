@@ -7,7 +7,7 @@ unsigned char DoubleSPIM[4];
 
 void SPIInitM(void)
 {
-    OpenSPI(SPI_FOSC_64, MODE_00, SMPMID);
+    OpenSPI(SPI_FOSC_16, MODE_00, SMPMID);
     TRISBbits.RB1 = 1; //Set the SlaveReady pins as an input;
     TRISBbits.RB2 = 1;
     TRISBbits.RB3 = 0; //Set the SlaveSelect pins as an output;
@@ -50,6 +50,7 @@ unsigned char MReceiveSPI(void)
     PIR1bits.SSPIF = 0; //Clear the MSSP Interrupt Flag; 
     SSPBUF = 0x00; //Initiate communication by sending a dummy byte;
     while (!PIR1bits.SSPIF); // Wait until transmission is complete;
+    PIR1bits.SSPIF = 0;
     return SSPBUF; //Read/return the buffer;
 }
 
@@ -70,7 +71,7 @@ void MReceiveStrSPI(unsigned char* str, unsigned char Slave)
         unsigned char x;
         SlaveSelect2 = 0; //Clear the SS, enabling the slave; 
         while (SlaveReady2);
-        Delay10TCYx(50); //500 TCY Delay;
+        Delay10TCYx(25); //500 TCY Delay;
         for (x = 0; x < 3; x++)
             str[x] = MReceiveSPI(); //Read data from slave;
         Delay10TCYx(1);

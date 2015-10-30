@@ -13,17 +13,20 @@
  * - Serial Port Enabled
  * - Continuous Receive enabled
  * - 8-bit Baud Rate Generator
- * - 115200 Baud Rate
+ * - 115200 Baud Rate (this is considering the internal oscillator frequency being 8 MHz);
  */
 
 void SerInit(void)
 {
-    TXSTA = 0x24; //Asynchronous, 8-bit, High Baud Rate, Sync Break Transmission Complete, Transmit enabled
-    RCSTA = 0x90; //Receive Enabled, Serial Port Enabled, Continuous Receive Enabled
+
+    TXSTA1 = 0x24; //Asynchronous, 8-bit, High Baud Rate, Sync Break Transmission Complete, Transmit enabled
+    RCSTA1 = 0x90; //Receive Enabled, Serial Port Enabled, Continuous Receive Enabled
     BAUDCON = 0x00; //8-Bit Baud Rate Generator
     SPBRG = 21;
 
     PIE1bits.RC1IE = 1; //Enable the Receive interrupt;
+
+    SerTxStr("Welcome to the world of tomorrow!!!");
 }
 
 /* SerTx
@@ -31,7 +34,7 @@ void SerInit(void)
  */
 void SerTx(unsigned char c)
 {
-    TXREG = c;
+    TXREG1 = c;
     while (PIR1bits.TX1IF == 0);
 }
 
@@ -48,9 +51,15 @@ void SerTxStr(unsigned char* string)
  * Receives a byte of data; 
  */
 
+void SerNL(void)
+{
+    SerTx(newLine);
+    SerTx(carriageReturn);
+}
+
 unsigned char SerRx(void)
 {
-    return RCREG;
+    return RCREG1;
 }
 
 /* SerRxStr
@@ -61,9 +70,9 @@ void SerRxStr(unsigned char* str)
 {
     unsigned short length = sizeof (str) / sizeof (str[0]); //Checks length of string
     unsigned short x = 0;
-    while ((RCREG != carriageReturn) || (x != length))
+    while ((RCREG1 != carriageReturn) || (x != length))
     {
-        str[x] = RCREG;
+        str[x] = RCREG1;
         x++;
     }
 }
@@ -90,12 +99,4 @@ void breakDouble(double dubs)
     temp2 = temp2 % 10;
     SerTx(temp1 + 0x30);
     SerTx(temp2 + 0x30);
-    SerTx(newLine);
-    SerTx(carriageReturn);
-}
-
-void Sernl(void)
-{
-    SerTx(newLine);
-    SerTx(carriageReturn);
 }

@@ -23,8 +23,9 @@ extern "C" {
 
     extern unsigned char PIDEnableFlag;
     extern unsigned char JSEnableFlag;
-    extern char DeadbandLow;
-    extern unsigned char DeadbandHigh;
+    extern double CurrentAngle;
+    extern int DeadbandLow;
+    extern int DeadbandHigh;
 
     void JoystickInit(void);
     void DetectJoystick(void);

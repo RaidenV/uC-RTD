@@ -8382,8 +8382,8 @@ extern char * ftoa(float f, int * status);
 
 # 20 "MotorControl.h"
 extern unsigned char PIDEnableFlag;
-extern char DeadbandLow;
-extern unsigned char DeadbandHigh;
+extern int DeadbandLow;
+extern int DeadbandHigh;
 
 void MotorDriverInit(void);
 void KillMotors(void);

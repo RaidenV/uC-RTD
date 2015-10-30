@@ -11,23 +11,22 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-  
+
 #include <xc.h>
-    
+
 #define carriageReturn 0x0D
 #define newLine 0x0A
-    
+
     void SerInit(void);
     void SerTx(unsigned char);
     void SerTxStr(unsigned char*);
+    void SerNL(void);
     unsigned char SerRx(void);
     void SerRxStr(unsigned char*);
     void breakDouble(double);
-    void Sernl(void);
 
 #ifdef	__cplusplus
 }
 #endif
 
 #endif	/* SERCOMM_H */
-

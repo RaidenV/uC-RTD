@@ -17,8 +17,8 @@ void interrupt ISR(void);
 void TMR0Int(void);
 
 /*The following timer setting is controversial.  Is it necessary to have 1/4 second interrupts?*/
-unsigned char timerHigh = 0x26; //Set the timer to go off every quarter second with a prescaler of 256, this should equal: (0.25)/(1/10,000,000 * 256) = 9766, or 0x2626 in hex;
-unsigned char timerLow = 0x26;
+unsigned char timerHigh = 0xC6; //Set the timer to go off every quarter second with a prescaler of 256, this should equal: (0.25)/(1/10,000,000 * 256) = 9766, or 0x2626 in hex;
+unsigned char timerLow = 0xC6;
 unsigned char TMR0Flag = 0;
 
 void main(void)

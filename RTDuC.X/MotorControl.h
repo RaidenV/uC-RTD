@@ -18,8 +18,8 @@ extern "C" {
 #define MOTORFAILLED PORTAbits.RA4
 
     extern unsigned char PIDEnableFlag;
-    extern char DeadbandLow;
-    extern unsigned char DeadbandHigh;
+    extern int DeadbandLow;
+    extern int DeadbandHigh;
 
     void MotorDriverInit(void);
     void KillMotors(void);
