@@ -6498,7 +6498,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;PID.h: 27: extern double Kd;
 [; ;PID.h: 28: extern double SetAngle;
 [; ;PID.h: 29: extern double CurrentAngle;
-[; ;PID.h: 30: extern double err;
+[; ;PID.h: 30: extern double error;
 [; ;PID.h: 31: extern double prevErr;
 [; ;PID.h: 32: extern double intErr;
 [; ;PID.h: 33: extern double StartAngle;

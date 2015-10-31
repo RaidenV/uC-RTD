@@ -8422,7 +8422,7 @@ extern double Kp;
 extern double Kd;
 extern double SetAngle;
 extern double CurrentAngle;
-extern double err;
+extern double error;
 extern double prevErr;
 extern double intErr;
 extern double StartAngle;
@@ -8491,6 +8491,7 @@ void initialize(void);
 void interrupt ISR(void);
 void INT0Int(void);
 void InitializeInterrupts(void);
+void ZeroMotors(void);
 
 void main(void)
 {
@@ -8583,9 +8584,17 @@ CurrentAngle = RTD2Angle(ReadRTDpos());
 calculatePID(CurrentAngle, SetAngle);
 ImplementPIDMotion(motorInput);
 INTCONbits.GIE = 1;
-INTCONbits.TMR0IE = 1;
+
 T0CONbits.TMR0ON = 1;
 PORTCbits.RC6 = 0;
+}
+
+else if (TMR0Flag == 1)
+{
+INTCONbits.GIE = 0;
+CurrentAngle = RTD2Angle(ReadRTDpos());
+INTCONbits.GIE = 1;
+TMR0Flag = 0;
 }
 }
 }
@@ -8600,6 +8609,7 @@ JoystickInit();
 MotorDriverInit();
 PIDInit();
 EEPROMInit();
+ZeroMotors();
 
 InitializeInterrupts();
 
@@ -8614,7 +8624,7 @@ if (PIR1bits.SSP1IF == 1)
 SPIInt();
 }
 
-if ((INTCONbits.TMR0IF == 1) && ((PIDEnableFlag | 0x01) == 0x01))
+if (INTCONbits.TMR0IF == 1)
 {
 TMR0Int();
 PORTCbits.RC6 = 0;
@@ -8637,7 +8647,7 @@ if (PIR2bits.OSCFIF == 1)
 {
 asm("reset");
 
-# 176
+# 186
 }
 }
 
@@ -8663,6 +8673,37 @@ void InitializeInterrupts(void)
 INTCONbits.GIE = 1;
 INTCONbits.PEIE = 1;
 
+INTCONbits.TMR0IE = 1;
+T0CONbits.TMR0ON = 1;
+
 PIE2bits.OSCFIE = 1;
 IPR2bits.OSCFIP = 1;
+}
+
+void ZeroMotors(void)
+{
+CurrentAngle = 2;
+Ki = 1;
+Kp = 2;
+Kd = 0.05;
+TMR0H = 0xDB;
+TMR0L = 0x60;
+T0CONbits.TMR0ON = 1;
+PIDEnableFlag = 3;
+SetAngle = 0;
+do
+{
+CurrentAngle = RTD2Angle(ReadRTDpos());
+calculatePID(CurrentAngle, SetAngle);
+ImplementPIDMotion(motorInput);
+while (INTCONbits.TMR0IF == 0);
+INTCONbits.TMR0IF = 0;
+TMR0H = 0xDB;
+TMR0L = 0x60;
+}
+while (abs(error) > 1);
+
+Ki = 0;
+Kp = 0;
+Kd = 0;
 }

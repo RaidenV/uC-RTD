@@ -12,6 +12,7 @@ void SPIInitM(void)
     TRISBbits.RB2 = 1;
     TRISBbits.RB3 = 0; //Set the SlaveSelect pins as an output;
     TRISBbits.RB4 = 0; 
+    INTCON2bits.RBPU = 1;
 }
 
 void MSendSPI(unsigned char data, unsigned char Slave)

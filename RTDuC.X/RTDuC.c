@@ -16,6 +16,7 @@ void initialize(void);
 void interrupt ISR(void);
 void INT0Int(void); //Motor failed interrupt, attached to External Interrupt 0 (RB0);
 void InitializeInterrupts(void);
+void ZeroMotors(void);
 
 void main(void)
 {
@@ -108,9 +109,17 @@ void main(void)
             calculatePID(CurrentAngle, SetAngle);
             ImplementPIDMotion(motorInput);
             INTCONbits.GIE = 1;
-            INTCONbits.TMR0IE = 1; //If so, enable the PID loop;
+
             T0CONbits.TMR0ON = 1;
             SlaveReady = 0; // Allow master to transmit;
+        }
+
+        else if (TMR0Flag == 1)
+        {
+            INTCONbits.GIE = 0; //Disable interrupts while the PID loop runs;
+            CurrentAngle = RTD2Angle(ReadRTDpos());
+            INTCONbits.GIE = 1; //Enable interrupts;
+            TMR0Flag = 0;
         }
     }
 }
@@ -125,6 +134,7 @@ void initialize(void)
     MotorDriverInit();
     PIDInit();
     EEPROMInit();
+    ZeroMotors();
 
     InitializeInterrupts();
 
@@ -139,7 +149,7 @@ void interrupt ISR(void)
         SPIInt();
     }
 
-    if ((INTCONbits.TMR0IF == 1) && ((PIDEnableFlag | 0x01) == 0x01)) //If the TMR0 Interrupt is high, and the PID loop is enabled, run this;
+    if (INTCONbits.TMR0IF == 1) //If the TMR0 Interrupt is high, and the PID loop is enabled, run this;
     {
         TMR0Int();
         SlaveReady = 0; //Take it out of the Not Ready State to allow for SPI transmission;  This is the only high priority interrupt where the slave returns to normal operating conditions afterwards;
@@ -198,6 +208,37 @@ void InitializeInterrupts(void)
     INTCONbits.GIE = 1; //Enable General Interrupts;
     INTCONbits.PEIE = 1; //Enable Peripheral Interrupts;
 
+    INTCONbits.TMR0IE = 1; //If so, enable the PID loop;
+    T0CONbits.TMR0ON = 1;
+
     PIE2bits.OSCFIE = 1; //Enable the Oscillator Fail interrupt;
     IPR2bits.OSCFIP = 1; //High priority;
+}
+
+void ZeroMotors(void)
+{
+    CurrentAngle = 2;
+    Ki = 1;
+    Kp = 2;
+    Kd = 0.05;
+    TMR0H = timerHigh;
+    TMR0L = timerLow;
+    T0CONbits.TMR0ON = 1;
+    PIDEnableFlag = 3;
+    SetAngle = 0;
+    do
+    {
+        CurrentAngle = RTD2Angle(ReadRTDpos());
+        calculatePID(CurrentAngle, SetAngle);
+        ImplementPIDMotion(motorInput);
+        while (INTCONbits.TMR0IF == 0);
+        INTCONbits.TMR0IF = 0;
+        TMR0H = timerHigh;
+        TMR0L = timerLow;
+    }
+    while (abs(error) > 1);
+
+    Ki = 0;
+    Kp = 0;
+    Kd = 0;
 }

@@ -81,15 +81,20 @@ void breakDouble(double dubs)
 {
     unsigned int temp1, temp2;
     unsigned int tempDub;
+    unsigned char LeadingFlag = 0;
 
     tempDub = dubs * 100;
     temp1 = tempDub / 10000;
-    temp2 = tempDub % 10000;
     if (temp1 != 0)
+        LeadingFlag = 1;
+    temp2 = tempDub % 10000;
+    if (LeadingFlag)
         SerTx(temp1 + 0x30);
     temp1 = temp2 / 1000;
     temp2 = temp2 % 1000;
-    if (temp1 != 0)
+    if(temp1 != 0)
+        LeadingFlag = 1;
+    if (LeadingFlag)
         SerTx(temp1 + 0x30);
     temp1 = temp2 / 100;
     temp2 = temp2 % 100;

@@ -27,7 +27,7 @@ extern "C" {
     extern double Kd;
     extern double SetAngle;
     extern double CurrentAngle;
-    extern double err;
+    extern double error;
     extern double prevErr;
     extern double intErr;
     extern double StartAngle;
