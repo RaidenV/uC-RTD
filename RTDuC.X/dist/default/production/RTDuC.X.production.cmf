@@ -11,72 +11,72 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/cgtoOth9K.obj
+$/tmp/cgtiWtByo.obj
 idloc IDLOC 0 200000 200000 8 1
 reset_vec CODE 0 0 0 4 1
 end_init CODE 0 18 18 4 1
 config CONFIG 0 300000 300000 E 1
 $dist/default/production/RTDuC.X.production.obj
-cinit CODE 0 123C 123C 5C 1
-intcode_body CODE 0 1016 1016 A2 1
-text0 CODE 0 1C 1C 310 1
-text1 CODE 0 16B8 16B8 2A 1
-text2 CODE 0 AC6 AC6 124 1
-text3 CODE 0 32C 32C 2B6 1
-text4 CODE 0 994 994 132 1
-text5 CODE 0 13F4 13F4 50 1
-text6 CODE 0 5E2 5E2 27E 1
-text7 CODE 0 1708 1708 24 1
-text8 CODE 0 10B8 10B8 96 1
-text9 CODE 0 D0E D0E E2 1
-text10 CODE 0 1298 1298 5C 1
-text11 CODE 0 158E 158E 38 1
-text12 CODE 0 16E2 16E2 26 1
-text13 CODE 0 BEA BEA 124 1
-text14 CODE 0 DF0 DF0 C6 1
-text15 CODE 0 F6E F6E A8 1
-text16 CODE 0 17D8 17D8 1A 1
-text17 CODE 0 12F4 12F4 56 1
-text18 CODE 0 162E 162E 30 1
-text19 CODE 0 18A0 18A0 C 1
-text20 CODE 0 1838 1838 12 1
-text21 CODE 0 184A 184A 12 1
-text22 CODE 0 1444 1444 46 1
-text23 CODE 0 172C 172C 24 1
-text24 CODE 0 165E 165E 2E 1
-text25 CODE 0 1892 1892 E 1
-text26 CODE 0 1824 1824 14 1
-text27 CODE 0 114E 114E 80 1
-text28 CODE 0 134A 134A 56 1
-text29 CODE 0 148A 148A 44 1
-text30 CODE 0 18B6 18B6 8 1
-text31 CODE 0 17B8 17B8 20 1
-text32 CODE 0 17F2 17F2 1A 1
-text33 CODE 0 180C 180C 18 1
-text34 CODE 0 14CE 14CE 44 1
-text35 CODE 0 1552 1552 3C 1
-text36 CODE 0 15FC 15FC 32 1
-text37 CODE 0 185C 185C 12 1
-text38 CODE 0 860 860 134 1
-text39 CODE 0 168C 168C 2C 1
-text40 CODE 0 11CE 11CE 6E 1
-text41 CODE 0 1774 1774 22 1
-text43 CODE 0 186E 186E 12 1
-text44 CODE 0 1880 1880 12 1
-text45 CODE 0 1750 1750 24 1
-text46 CODE 0 18AC 18AC A 1
-text47 CODE 0 EB6 EB6 B8 1
-text48 CODE 0 13A0 13A0 54 1
-text49 CODE 0 15C6 15C6 36 1
-text50 CODE 0 1796 1796 22 1
-text51 CODE 0 18BE 18BE 8 1
-text52 CODE 0 1512 1512 40 1
-idataCOMRAM CODE 0 18C6 18C6 4 1
+cinit CODE 0 1272 1272 5C 1
+intcode_body CODE 0 104E 104E A0 1
+text0 CODE 0 1C 1C 348 1
+text1 CODE 0 16C2 16C2 2C 1
+text2 CODE 0 AFE AFE 124 1
+text3 CODE 0 364 364 2B6 1
+text4 CODE 0 9CC 9CC 132 1
+text5 CODE 0 142A 142A 50 1
+text6 CODE 0 61A 61A 27E 1
+text7 CODE 0 1740 1740 24 1
+text8 CODE 0 10EE 10EE 96 1
+text9 CODE 0 D46 D46 E2 1
+text10 CODE 0 12CE 12CE 5C 1
+text11 CODE 0 15C4 15C4 38 1
+text12 CODE 0 171A 171A 26 1
+text13 CODE 0 C22 C22 124 1
+text14 CODE 0 E28 E28 C6 1
+text15 CODE 0 FA6 FA6 A8 1
+text16 CODE 0 1810 1810 1A 1
+text17 CODE 0 132A 132A 56 1
+text18 CODE 0 1664 1664 30 1
+text19 CODE 0 18DA 18DA C 1
+text20 CODE 0 1884 1884 12 1
+text21 CODE 0 1896 1896 12 1
+text22 CODE 0 147A 147A 46 1
+text23 CODE 0 1764 1764 24 1
+text24 CODE 0 1694 1694 2E 1
+text25 CODE 0 18CC 18CC E 1
+text26 CODE 0 185C 185C 14 1
+text27 CODE 0 1184 1184 80 1
+text28 CODE 0 1380 1380 56 1
+text29 CODE 0 14C0 14C0 44 1
+text30 CODE 0 18F0 18F0 8 1
+text31 CODE 0 17F0 17F0 20 1
+text32 CODE 0 182A 182A 1A 1
+text33 CODE 0 1844 1844 18 1
+text34 CODE 0 1504 1504 44 1
+text35 CODE 0 1588 1588 3C 1
+text36 CODE 0 1632 1632 32 1
+text37 CODE 0 18A8 18A8 12 1
+text38 CODE 0 898 898 134 1
+text39 CODE 0 16EE 16EE 2C 1
+text40 CODE 0 1204 1204 6E 1
+text41 CODE 0 17AC 17AC 22 1
+text43 CODE 0 18BA 18BA 12 1
+text44 CODE 0 1870 1870 14 1
+text45 CODE 0 1788 1788 24 1
+text46 CODE 0 18E6 18E6 A 1
+text47 CODE 0 EEE EEE B8 1
+text48 CODE 0 13D6 13D6 54 1
+text49 CODE 0 15FC 15FC 36 1
+text50 CODE 0 17CE 17CE 22 1
+text51 CODE 0 18F8 18F8 8 1
+text52 CODE 0 1548 1548 40 1
+idataCOMRAM CODE 0 1900 1900 4 1
 cstackCOMRAM COMRAM 1 1 1 37 1
 cstackBANK0 BANK0 1 60 60 32 1
 bssBANK0 BANK0 1 92 92 20 1
 intcode CODE 0 8 8 10 1
-idataBANK0 CODE 0 18CA 18CA 3 1
+idataBANK0 CODE 0 1904 1904 3 1
 dataBANK0 BANK0 1 B2 B2 3 1
 dataCOMRAM COMRAM 1 44 44 4 1
 bssCOMRAM COMRAM 1 38 38 C 1
@@ -99,11 +99,11 @@ BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-7 1
-CONST 18CD-1FFFF 1
+CONST 1907-1FFFF 1
 STACK B5-F5F 1
-SMALLCONST 18CD-1FFFF 1
+SMALLCONST 1907-1FFFF 1
 CODE 4-7 1
-CODE 18CD-1FFFF 1
+CODE 1907-1FFFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
@@ -114,7 +114,7 @@ BIGRAM 48-5F 1
 BIGRAM B5-F5F 1
 COMRAM 48-5F 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST 18CD-FFFF 1
+MEDIUMCONST 1907-FFFF 1
 MEDIUMCONST 11000-1FFFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -131,745 +131,762 @@ MEDIUMCONST 11000-1FFFF 1
 %LINETAB
 $dist/default/production/RTDuC.X.production.obj
 8 intcode CODE >40:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-8 intcode CODE >144:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1C text0 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1C text0 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-22 text0 CODE >25:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-26 text0 CODE >27:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-28 text0 CODE >28:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2E text0 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-36 text0 CODE >34:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-3C text0 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-6E text0 CODE >37:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-78 text0 CODE >38:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-8A text0 CODE >39:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-94 text0 CODE >40:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-A6 text0 CODE >41:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B0 text0 CODE >42:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-C2 text0 CODE >43:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-CC text0 CODE >44:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-DE text0 CODE >45:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-E8 text0 CODE >46:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-F8 text0 CODE >47:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-FC text0 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-FE text0 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-108 text0 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-120 text0 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-12C text0 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-130 text0 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-132 text0 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-134 text0 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-15A text0 CODE >56:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-15C text0 CODE >57:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-15E text0 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-172 text0 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-18A text0 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-190 text0 CODE >60:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-192 text0 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-19A text0 CODE >63:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1AA text0 CODE >64:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1B0 text0 CODE >65:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1B6 text0 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1B8 text0 CODE >67:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1C2 text0 CODE >69:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1D2 text0 CODE >70:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1D4 text0 CODE >71:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1DE text0 CODE >73:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1EE text0 CODE >74:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1F0 text0 CODE >75:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1FA text0 CODE >77:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-20A text0 CODE >79:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-210 text0 CODE >80:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-212 text0 CODE >81:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-216 text0 CODE >84:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-21A text0 CODE >85:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-222 text0 CODE >87:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-234 text0 CODE >90:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-244 text0 CODE >92:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-246 text0 CODE >93:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-248 text0 CODE >94:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-264 text0 CODE >95:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-280 text0 CODE >96:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-28C text0 CODE >97:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-292 text0 CODE >98:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-294 text0 CODE >99:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-296 text0 CODE >102:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2A0 text0 CODE >104:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2A2 text0 CODE >105:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2A4 text0 CODE >106:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2A8 text0 CODE >107:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2AC text0 CODE >108:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2C8 text0 CODE >109:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2E4 text0 CODE >110:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2F0 text0 CODE >111:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2F2 text0 CODE >113:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2F4 text0 CODE >114:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2F6 text0 CODE >115:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2F8 text0 CODE >117:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-300 text0 CODE >119:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-302 text0 CODE >120:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-31E text0 CODE >121:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-320 text0 CODE >122:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-326 text0 CODE >30:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-328 text0 CODE >125:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-32C text3 CODE >30:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-32C text3 CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-336 text3 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-348 text3 CODE >36:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-35A text3 CODE >37:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-36C text3 CODE >38:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-374 text3 CODE >41:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-3AC text3 CODE >42:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-3CC text3 CODE >43:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-3FC text3 CODE >44:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-41C text3 CODE >45:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-44C text3 CODE >47:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-484 text3 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-4AC text3 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-4CC text3 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-4E0 text3 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-5D4 text3 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-5E0 text3 CODE >55:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-5E2 text6 CODE >86:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-5E2 text6 CODE >90:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-600 text6 CODE >91:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-61E text6 CODE >92:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-64A text6 CODE >93:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-658 text6 CODE >94:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-684 text6 CODE >95:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-692 text6 CODE >96:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-698 text6 CODE >97:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-69E text6 CODE >98:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-6A4 text6 CODE >99:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-6AA text6 CODE >100:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-6AE text6 CODE >101:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-6B2 text6 CODE >102:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-6C4 text6 CODE >103:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-6C8 text6 CODE >104:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-6DA text6 CODE >106:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-6E6 text6 CODE >110:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-6F0 text6 CODE >111:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-6F4 text6 CODE >112:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-714 text6 CODE >113:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-716 text6 CODE >114:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-720 text6 CODE >115:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-726 text6 CODE >113:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-734 text6 CODE >117:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-742 text6 CODE >121:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-74C text6 CODE >122:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-750 text6 CODE >123:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-770 text6 CODE >124:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-772 text6 CODE >125:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-77C text6 CODE >126:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-782 text6 CODE >124:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-792 text6 CODE >129:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-798 text6 CODE >131:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-7AA text6 CODE >132:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-7BC text6 CODE >133:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-7BC text6 CODE >134:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-7C2 text6 CODE >136:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-7D4 text6 CODE >137:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-7E8 text6 CODE >139:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-7EE text6 CODE >140:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-806 text6 CODE >141:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-80C text6 CODE >142:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-81E text6 CODE >143:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-830 text6 CODE >144:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-838 text6 CODE >146:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-85E text6 CODE >148:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-860 text38 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-860 text38 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-87C text38 CODE >63:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-87E text38 CODE >64:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-880 text38 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-89C text38 CODE >68:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-89E text38 CODE >69:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-8A4 text38 CODE >70:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-8A6 text38 CODE >71:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-8E6 text38 CODE >73:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-8F0 text38 CODE >74:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-8F4 text38 CODE >75:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-8F6 text38 CODE >76:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-8F8 text38 CODE >79:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-932 text38 CODE >81:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-946 text38 CODE >82:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-958 text38 CODE >83:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-976 text38 CODE >84:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-992 text38 CODE >86:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-994 text4 CODE >44:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-994 text4 CODE >49:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-9BA text4 CODE >50:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-9BE text4 CODE >51:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-9F2 text4 CODE >52:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-9F6 text4 CODE >53:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A08 text4 CODE >54:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A24 text4 CODE >55:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A2A text4 CODE >56:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A30 text4 CODE >57:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A3C text4 CODE >58:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A42 text4 CODE >60:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A4E text4 CODE >61:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A54 text4 CODE >62:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A56 text4 CODE >63:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A5E text4 CODE >64:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A72 text4 CODE >65:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A74 text4 CODE >66:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A80 text4 CODE >67:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A86 text4 CODE >65:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A94 text4 CODE >70:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-A9E text4 CODE >71:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-AB2 text4 CODE >72:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-AC4 text4 CODE >73:/opt/microchip/xc8/v1.34/sources/common/fttol.c
-AC6 text2 CODE >218:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-AC6 text2 CODE >220:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-AD8 text2 CODE >221:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-AEA text2 CODE >222:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-AFC text2 CODE >223:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B0E text2 CODE >224:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B12 text2 CODE >225:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B16 text2 CODE >226:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B18 text2 CODE >227:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B1E text2 CODE >228:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B2C text2 CODE >231:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B48 text2 CODE >232:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B64 text2 CODE >233:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B70 text2 CODE >234:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B76 text2 CODE >235:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B78 text2 CODE >236:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B7C text2 CODE >237:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-B80 text2 CODE >239:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-BB2 text2 CODE >241:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-BC4 text2 CODE >242:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-BD6 text2 CODE >243:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-BE8 text2 CODE >244:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-BEA text13 CODE >62:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-BEA text13 CODE >67:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C08 text13 CODE >68:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C0C text13 CODE >69:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C2A text13 CODE >70:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C38 text13 CODE >71:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C42 text13 CODE >72:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C46 text13 CODE >73:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C4C text13 CODE >74:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C52 text13 CODE >75:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C54 text13 CODE >77:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C56 text13 CODE >78:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C62 text13 CODE >79:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C74 text13 CODE >134:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C7C text13 CODE >136:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C80 text13 CODE >137:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C94 text13 CODE >138:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-C9C text13 CODE >139:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-CA4 text13 CODE >140:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-CAC text13 CODE >143:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-CB4 text13 CODE >145:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-CB8 text13 CODE >146:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-CCC text13 CODE >147:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-CD4 text13 CODE >148:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-CDE text13 CODE >149:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-CE6 text13 CODE >156:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-D0C text13 CODE >157:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
-D0E text9 CODE >54:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D0E text9 CODE >63:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D28 text9 CODE >64:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D2C text9 CODE >65:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D46 text9 CODE >66:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D54 text9 CODE >67:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D60 text9 CODE >68:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D66 text9 CODE >69:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D6A text9 CODE >70:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D6E text9 CODE >71:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D72 text9 CODE >72:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D74 text9 CODE >73:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D80 text9 CODE >74:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D82 text9 CODE >75:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D8E text9 CODE >76:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D94 text9 CODE >78:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-D9C text9 CODE >79:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-DAC text9 CODE >80:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-DB8 text9 CODE >81:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-DBA text9 CODE >82:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-DBA text9 CODE >83:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-DC2 text9 CODE >84:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-DC8 text9 CODE >85:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-DEE text9 CODE >86:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
-DF0 text14 CODE >62:/opt/microchip/xc8/v1.34/sources/common/float.c
-DF0 text14 CODE >64:/opt/microchip/xc8/v1.34/sources/common/float.c
-E00 text14 CODE >65:/opt/microchip/xc8/v1.34/sources/common/float.c
-E0E text14 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
-E10 text14 CODE >67:/opt/microchip/xc8/v1.34/sources/common/float.c
-E12 text14 CODE >68:/opt/microchip/xc8/v1.34/sources/common/float.c
-E1C text14 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
-E3A text14 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
-E3C text14 CODE >71:/opt/microchip/xc8/v1.34/sources/common/float.c
-E3E text14 CODE >72:/opt/microchip/xc8/v1.34/sources/common/float.c
-E4A text14 CODE >73:/opt/microchip/xc8/v1.34/sources/common/float.c
-E54 text14 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
-E72 text14 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
-E74 text14 CODE >76:/opt/microchip/xc8/v1.34/sources/common/float.c
-E76 text14 CODE >77:/opt/microchip/xc8/v1.34/sources/common/float.c
-E80 text14 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
-E8C text14 CODE >79:/opt/microchip/xc8/v1.34/sources/common/float.c
-E90 text14 CODE >80:/opt/microchip/xc8/v1.34/sources/common/float.c
-E94 text14 CODE >81:/opt/microchip/xc8/v1.34/sources/common/float.c
-E98 text14 CODE >82:/opt/microchip/xc8/v1.34/sources/common/float.c
-E9C text14 CODE >83:/opt/microchip/xc8/v1.34/sources/common/float.c
-EA2 text14 CODE >84:/opt/microchip/xc8/v1.34/sources/common/float.c
-EA6 text14 CODE >85:/opt/microchip/xc8/v1.34/sources/common/float.c
-EB4 text14 CODE >86:/opt/microchip/xc8/v1.34/sources/common/float.c
-EB6 text47 CODE >150:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-EB6 text47 CODE >152:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-EC8 text47 CODE >153:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-EDA text47 CODE >154:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-EEC text47 CODE >155:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-EFE text47 CODE >156:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F08 text47 CODE >157:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F12 text47 CODE >158:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F1C text47 CODE >159:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F26 text47 CODE >160:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F30 text47 CODE >161:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F3A text47 CODE >162:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F44 text47 CODE >163:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F4E text47 CODE >164:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F58 text47 CODE >165:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F62 text47 CODE >166:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F6C text47 CODE >167:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-F6E text15 CODE >40:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-F6E text15 CODE >42:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-F7C text15 CODE >43:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-F86 text15 CODE >44:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-F9A text15 CODE >45:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-FA6 text15 CODE >47:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-FAC text15 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-FB0 text15 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-FC4 text15 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-FC8 text15 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-FDC text15 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-FFA text15 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-1014 text15 CODE >56:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-1016 intcode_body CODE >144:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1044 intcode_body CODE >146:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1046 intcode_body CODE >147:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-104A intcode_body CODE >149:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1050 intcode_body CODE >152:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1054 intcode_body CODE >154:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1058 intcode_body CODE >155:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-105C intcode_body CODE >158:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1060 intcode_body CODE >160:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1066 intcode_body CODE >163:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-106A intcode_body CODE >165:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-106C intcode_body CODE >166:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-106E intcode_body CODE >167:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1070 intcode_body CODE >168:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1076 intcode_body CODE >171:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-107A intcode_body CODE >173:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-107E intcode_body CODE >187:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-10B8 text8 CODE >4:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-10B8 text8 CODE >6:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-10BC text8 CODE >7:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-10EA text8 CODE >8:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-10EE text8 CODE >9:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-111C text8 CODE >10:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-1128 text8 CODE >11:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-1134 text8 CODE >12:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-114C text8 CODE >13:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-114E text27 CODE >27:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-114E text27 CODE >29:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-115A text27 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-116C text27 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-117E text27 CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1190 text27 CODE >34:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-11A2 text27 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-11AC text27 CODE >36:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-11C4 text27 CODE >38:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-11CA text27 CODE >39:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-11CC text27 CODE >41:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-11CE text40 CODE >42:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-11CE text40 CODE >47:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-11D0 text40 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-11D6 text40 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-11DC text40 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-11E2 text40 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-11EC text40 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-11F8 text40 CODE >55:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1220 text40 CODE >57:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1226 text40 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-122E text40 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1230 text40 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-123A text40 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-123C cinit CODE >3174:/tmp/cgt8OceCd
-123C cinit CODE >3176:/tmp/cgt8OceCd
-123C cinit CODE >3179:/tmp/cgt8OceCd
-123C cinit CODE >3270:/tmp/cgt8OceCd
-1240 cinit CODE >3271:/tmp/cgt8OceCd
-1242 cinit CODE >3272:/tmp/cgt8OceCd
-1242 cinit CODE >3273:/tmp/cgt8OceCd
-1244 cinit CODE >3274:/tmp/cgt8OceCd
-1246 cinit CODE >3275:/tmp/cgt8OceCd
-1248 cinit CODE >3278:/tmp/cgt8OceCd
-124C cinit CODE >3279:/tmp/cgt8OceCd
-124E cinit CODE >3280:/tmp/cgt8OceCd
-124E cinit CODE >3281:/tmp/cgt8OceCd
-1250 cinit CODE >3282:/tmp/cgt8OceCd
-1252 cinit CODE >3283:/tmp/cgt8OceCd
-1254 cinit CODE >3288:/tmp/cgt8OceCd
-1256 cinit CODE >3289:/tmp/cgt8OceCd
-1258 cinit CODE >3290:/tmp/cgt8OceCd
-125A cinit CODE >3291:/tmp/cgt8OceCd
-125C cinit CODE >3292:/tmp/cgt8OceCd
-125E cinit CODE >3293:/tmp/cgt8OceCd
-1260 cinit CODE >3294:/tmp/cgt8OceCd
-1262 cinit CODE >3295:/tmp/cgt8OceCd
-1266 cinit CODE >3296:/tmp/cgt8OceCd
-1268 cinit CODE >3297:/tmp/cgt8OceCd
-126C cinit CODE >3298:/tmp/cgt8OceCd
-126E cinit CODE >3299:/tmp/cgt8OceCd
-1272 cinit CODE >3303:/tmp/cgt8OceCd
-1274 cinit CODE >3304:/tmp/cgt8OceCd
-1276 cinit CODE >3305:/tmp/cgt8OceCd
-1278 cinit CODE >3306:/tmp/cgt8OceCd
-127A cinit CODE >3307:/tmp/cgt8OceCd
-127C cinit CODE >3308:/tmp/cgt8OceCd
-127E cinit CODE >3309:/tmp/cgt8OceCd
-1282 cinit CODE >3310:/tmp/cgt8OceCd
-1286 cinit CODE >3311:/tmp/cgt8OceCd
-1286 cinit CODE >3312:/tmp/cgt8OceCd
-1288 cinit CODE >3313:/tmp/cgt8OceCd
-128C cinit CODE >3314:/tmp/cgt8OceCd
-128E cinit CODE >3315:/tmp/cgt8OceCd
-1290 cinit CODE >3316:/tmp/cgt8OceCd
-1292 cinit CODE >3322:/tmp/cgt8OceCd
-1292 cinit CODE >3323:/tmp/cgt8OceCd
-1294 cinit CODE >3324:/tmp/cgt8OceCd
-1298 text10 CODE >39:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1298 text10 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-129A text10 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-129C text10 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-129E text10 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12A6 text10 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12A8 text10 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12B0 text10 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12B2 text10 CODE >55:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12B4 text10 CODE >56:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12BA text10 CODE >57:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12BE text10 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12C2 text10 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12C4 text10 CODE >60:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12C6 text10 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12CC text10 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12E6 text10 CODE >63:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12E8 text10 CODE >64:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12F2 text10 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-12F4 text17 CODE >13:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-12F6 text17 CODE >15:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-12FA text17 CODE >16:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-12FE text17 CODE >17:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1302 text17 CODE >18:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1306 text17 CODE >20:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1308 text17 CODE >22:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1308 text17 CODE >23:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-130A text17 CODE >24:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-130C text17 CODE >25:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-130C text17 CODE >26:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-130E text17 CODE >29:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-130E text17 CODE >30:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1310 text17 CODE >34:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1312 text17 CODE >20:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1326 text17 CODE >35:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1328 text17 CODE >37:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1328 text17 CODE >42:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-132A text17 CODE >47:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-132A text17 CODE >48:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-132C text17 CODE >49:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-132E text17 CODE >51:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-132E text17 CODE >52:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1330 text17 CODE >54:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1332 text17 CODE >35:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1342 text17 CODE >54:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1342 text17 CODE >55:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1344 text17 CODE >56:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1346 text17 CODE >58:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-1348 text17 CODE >59:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
-134A text28 CODE >100:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-134C text28 CODE >104:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1352 text28 CODE >106:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-135E text28 CODE >108:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-137E text28 CODE >109:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1382 text28 CODE >106:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1386 text28 CODE >112:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-138C text28 CODE >114:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-139E text28 CODE >115:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-13A0 text48 CODE >77:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-13A2 text48 CODE >81:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-13B2 text48 CODE >83:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-13B8 text48 CODE >85:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-13C4 text48 CODE >87:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-13E2 text48 CODE >88:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-13E4 text48 CODE >89:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-13E8 text48 CODE >85:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-13EC text48 CODE >92:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-13F2 text48 CODE >93:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-13F4 text5 CODE >20:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
-13F4 text5 CODE >23:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
-1404 text5 CODE >24:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
-1418 text5 CODE >26:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
-1442 text5 CODE >27:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
-1444 text22 CODE >18:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-1444 text22 CODE >20:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-1456 text22 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-1468 text22 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-147A text22 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-147E text22 CODE >25:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-1482 text22 CODE >26:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-1486 text22 CODE >27:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-1488 text22 CODE >28:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-148A text29 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-148A text29 CODE >65:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1492 text29 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-149E text29 CODE >67:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-14AE text29 CODE >68:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-14BE text29 CODE >69:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-14CC text29 CODE >70:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-14CE text34 CODE >71:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-14CE text34 CODE >74:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-14D6 text34 CODE >75:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-14E2 text34 CODE >76:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-14F2 text34 CODE >77:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1502 text34 CODE >79:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1510 text34 CODE >80:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1512 text52 CODE >49:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1512 text52 CODE >51:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1516 text52 CODE >52:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-151C text52 CODE >53:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1520 text52 CODE >54:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1524 text52 CODE >55:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1526 text52 CODE >56:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1528 text52 CODE >57:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-152A text52 CODE >58:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1532 text52 CODE >59:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1534 text52 CODE >60:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1538 text52 CODE >61:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-153C text52 CODE >62:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-153E text52 CODE >63:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1544 text52 CODE >64:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-154E text52 CODE >65:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1550 text52 CODE >66:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
-1552 text35 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1552 text35 CODE >56:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-155A text35 CODE >57:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1566 text35 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1576 text35 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1586 text35 CODE >60:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-158C text35 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-158E text11 CODE >99:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-158E text11 CODE >101:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-15C4 text11 CODE >102:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-15C6 text49 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-15C6 text49 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-15CE text49 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-15DA text49 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-15EA text49 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-15FA text49 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-15FC text36 CODE >63:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-15FC text36 CODE >65:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1600 text36 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1610 text36 CODE >67:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1624 text36 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1628 text36 CODE >68:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-162C text36 CODE >69:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-162E text18 CODE >3:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-162E text18 CODE >5:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1630 text18 CODE >6:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1632 text18 CODE >7:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1634 text18 CODE >8:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1636 text18 CODE >9:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1638 text18 CODE >10:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-163A text18 CODE >11:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-163C text18 CODE >12:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-163E text18 CODE >13:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1640 text18 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1642 text18 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1648 text18 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-164A text18 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1650 text18 CODE >25:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1652 text18 CODE >26:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-1658 text18 CODE >27:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-165A text18 CODE >29:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-165C text18 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
-165E text24 CODE >6:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-165E text24 CODE >8:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1660 text24 CODE >9:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1662 text24 CODE >10:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1666 text24 CODE >12:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1668 text24 CODE >13:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-166C text24 CODE >15:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1670 text24 CODE >17:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1672 text24 CODE >18:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1678 text24 CODE >19:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-167A text24 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-167C text24 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1682 text24 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1686 text24 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-168A text24 CODE >25:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-168C text39 CODE >4:/opt/microchip/xc8/v1.34/sources/common/abs.c
-168C text39 CODE >6:/opt/microchip/xc8/v1.34/sources/common/abs.c
-1692 text39 CODE >7:/opt/microchip/xc8/v1.34/sources/common/abs.c
-16AE text39 CODE >8:/opt/microchip/xc8/v1.34/sources/common/abs.c
-16B6 text39 CODE >9:/opt/microchip/xc8/v1.34/sources/common/abs.c
-16B8 text1 CODE >127:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16B8 text1 CODE >129:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16BE text1 CODE >131:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16C2 text1 CODE >132:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16C6 text1 CODE >133:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16CA text1 CODE >134:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16CE text1 CODE >135:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16D2 text1 CODE >136:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16D6 text1 CODE >137:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16DA text1 CODE >139:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16DE text1 CODE >141:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16E0 text1 CODE >142:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-16E2 text12 CODE >28:/opt/microchip/xc8/v1.34/sources/common/lwtoft.c
-16E2 text12 CODE >30:/opt/microchip/xc8/v1.34/sources/common/lwtoft.c
-1706 text12 CODE >31:/opt/microchip/xc8/v1.34/sources/common/lwtoft.c
-1708 text7 CODE >15:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
-1708 text7 CODE >17:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
-1712 text7 CODE >18:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
-171E text7 CODE >19:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
-172A text7 CODE >20:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
-172C text23 CODE >7:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-172C text23 CODE >9:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-172E text23 CODE >10:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-1730 text23 CODE >11:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-1732 text23 CODE >12:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-1734 text23 CODE >14:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-1736 text23 CODE >16:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-1738 text23 CODE >18:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-173C text23 CODE >19:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-173E text23 CODE >20:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-1740 text23 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-1744 text23 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-1746 text23 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-174A text23 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-174E text23 CODE >26:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-1750 text45 CODE >189:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1750 text45 CODE >191:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1754 text45 CODE >192:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1756 text45 CODE >193:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1758 text45 CODE >194:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-175A text45 CODE >195:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-175E text45 CODE >198:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1762 text45 CODE >199:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1766 text45 CODE >200:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-176C text45 CODE >201:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-176E text45 CODE >202:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1770 text45 CODE >196:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1772 text45 CODE >204:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1774 text41 CODE >27:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1774 text41 CODE >29:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1778 text41 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-177A text41 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-177E text41 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-178A text41 CODE >37:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-178C text41 CODE >38:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1792 text41 CODE >39:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1794 text41 CODE >40:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-1796 text50 CODE >122:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1798 text50 CODE >124:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-179E text50 CODE >126:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-17AC text50 CODE >127:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-17B0 text50 CODE >129:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-17B6 text50 CODE >130:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-17B8 text31 CODE >136:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-17BA text31 CODE >140:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-17C0 text31 CODE >142:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-17CC text31 CODE >144:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-17D2 text31 CODE >146:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-17D6 text31 CODE >147:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-17D8 text16 CODE >16:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-17D8 text16 CODE >18:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-17DA text16 CODE >19:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-17DC text16 CODE >20:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-17DE text16 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-17E0 text16 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-17EE text16 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-17F0 text16 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-17F2 text32 CODE >35:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
-17F2 text32 CODE >37:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
-17F8 text32 CODE >38:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
-17FC text32 CODE >39:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
-17FE text32 CODE >40:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
-1800 text32 CODE >41:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
-1802 text32 CODE >42:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
-1804 text32 CODE >43:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
-1806 text32 CODE >44:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
-180A text32 CODE >45:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
-180C text33 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-180E text33 CODE >37:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1812 text33 CODE >39:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1814 text33 CODE >40:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1818 text33 CODE >41:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-181E text33 CODE >42:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1820 text33 CODE >43:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1822 text33 CODE >44:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1824 text26 CODE >13:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1824 text26 CODE >15:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1826 text26 CODE >16:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1828 text26 CODE >17:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-182A text26 CODE >19:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-182E text26 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1832 text26 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1834 text26 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1836 text26 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
-1838 text20 CODE >8:/opt/microchip/xc8/v1.34/sources/pic18/d1ktcyx.c
-183A text20 CODE >11:/opt/microchip/xc8/v1.34/sources/pic18/d1ktcyx.c
-1842 text20 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/d1ktcyx.c
-1848 text20 CODE >13:/opt/microchip/xc8/v1.34/sources/pic18/d1ktcyx.c
-184A text21 CODE >8:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-184C text21 CODE >11:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-1854 text21 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-185A text21 CODE >13:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
-185C text37 CODE >46:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-185C text37 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1860 text37 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1866 text37 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1868 text37 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-186C text37 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-186E text43 CODE >57:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-186E text43 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-1872 text43 CODE >60:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-1876 text43 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-187C text43 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-187E text43 CODE >63:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
-1880 text44 CODE >26:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1880 text44 CODE >28:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1884 text44 CODE >29:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1886 text44 CODE >30:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1888 text44 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-188A text44 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1890 text44 CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-1892 text25 CODE >206:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1892 text25 CODE >208:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1894 text25 CODE >209:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1896 text25 CODE >211:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1898 text25 CODE >212:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-189A text25 CODE >214:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-189C text25 CODE >215:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-189E text25 CODE >216:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-18A0 text19 CODE >4:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
-18A2 text19 CODE >6:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
-18A2 text19 CODE >7:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
-18A4 text19 CODE >8:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
-18AA text19 CODE >9:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
-18AC text46 CODE >28:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-18AC text46 CODE >30:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-18AE text46 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-18B4 text46 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-18B6 text30 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
-18B6 text30 CODE >14:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
-18BC text30 CODE >15:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
-18BE text51 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
-18BE text51 CODE >14:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
-18C4 text51 CODE >15:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
+8 intcode CODE >165:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1C text0 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1C text0 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+22 text0 CODE >26:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+26 text0 CODE >28:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2A text0 CODE >29:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E text0 CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+36 text0 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+3C text0 CODE >36:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+3E text0 CODE >37:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+70 text0 CODE >39:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+7A text0 CODE >40:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+8C text0 CODE >41:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+96 text0 CODE >42:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+A8 text0 CODE >43:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B2 text0 CODE >44:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+C4 text0 CODE >45:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+CE text0 CODE >46:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+E0 text0 CODE >47:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+EA text0 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+FA text0 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+FE text0 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+108 text0 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+120 text0 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+12C text0 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+130 text0 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+132 text0 CODE >55:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+134 text0 CODE >56:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+15A text0 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+15C text0 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+170 text0 CODE >60:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+188 text0 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+18E text0 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+190 text0 CODE >64:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+198 text0 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A8 text0 CODE >67:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1AE text0 CODE >68:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1B4 text0 CODE >69:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1B6 text0 CODE >70:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1C0 text0 CODE >72:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1D0 text0 CODE >73:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1D2 text0 CODE >74:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1DC text0 CODE >76:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1EC text0 CODE >77:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1EE text0 CODE >78:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1F8 text0 CODE >80:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+208 text0 CODE >82:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+20E text0 CODE >84:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+210 text0 CODE >86:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+212 text0 CODE >87:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+214 text0 CODE >88:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+216 text0 CODE >89:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+21E text0 CODE >91:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+220 text0 CODE >92:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+224 text0 CODE >93:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+226 text0 CODE >94:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+22C text0 CODE >95:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+234 text0 CODE >97:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+236 text0 CODE >98:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+238 text0 CODE >99:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+248 text0 CODE >100:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+24A text0 CODE >101:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+24C text0 CODE >102:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+254 text0 CODE >105:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+264 text0 CODE >107:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+266 text0 CODE >108:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+268 text0 CODE >109:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+284 text0 CODE >110:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2A0 text0 CODE >111:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2AC text0 CODE >112:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2B2 text0 CODE >113:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2B4 text0 CODE >114:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2B6 text0 CODE >115:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2BC text0 CODE >116:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2BE text0 CODE >118:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2C8 text0 CODE >120:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2CA text0 CODE >121:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2CC text0 CODE >122:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D0 text0 CODE >123:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D4 text0 CODE >124:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2F0 text0 CODE >125:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+30C text0 CODE >126:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+318 text0 CODE >127:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+31A text0 CODE >129:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+31C text0 CODE >130:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+31E text0 CODE >131:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+324 text0 CODE >132:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+326 text0 CODE >134:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+32E text0 CODE >136:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+330 text0 CODE >137:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+332 text0 CODE >138:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+34E text0 CODE >139:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+350 text0 CODE >140:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+356 text0 CODE >141:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+358 text0 CODE >142:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+35E text0 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+360 text0 CODE >145:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+364 text3 CODE >30:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+364 text3 CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+36E text3 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+380 text3 CODE >36:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+392 text3 CODE >37:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+3A4 text3 CODE >38:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+3AC text3 CODE >41:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+3E4 text3 CODE >42:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+404 text3 CODE >43:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+434 text3 CODE >44:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+454 text3 CODE >45:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+484 text3 CODE >47:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+4BC text3 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+4E4 text3 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+504 text3 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+518 text3 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+60C text3 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+618 text3 CODE >55:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+61A text6 CODE >86:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+61A text6 CODE >90:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+638 text6 CODE >91:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+656 text6 CODE >92:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+682 text6 CODE >93:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+690 text6 CODE >94:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+6BC text6 CODE >95:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+6CA text6 CODE >96:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+6D0 text6 CODE >97:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+6D6 text6 CODE >98:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+6DC text6 CODE >99:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+6E2 text6 CODE >100:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+6E6 text6 CODE >101:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+6EA text6 CODE >102:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+6FC text6 CODE >103:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+700 text6 CODE >104:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+712 text6 CODE >106:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+71E text6 CODE >110:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+728 text6 CODE >111:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+72C text6 CODE >112:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+74C text6 CODE >113:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+74E text6 CODE >114:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+758 text6 CODE >115:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+75E text6 CODE >113:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+76C text6 CODE >117:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+77A text6 CODE >121:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+784 text6 CODE >122:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+788 text6 CODE >123:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+7A8 text6 CODE >124:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+7AA text6 CODE >125:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+7B4 text6 CODE >126:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+7BA text6 CODE >124:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+7CA text6 CODE >129:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+7D0 text6 CODE >131:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+7E2 text6 CODE >132:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+7F4 text6 CODE >133:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+7F4 text6 CODE >134:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+7FA text6 CODE >136:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+80C text6 CODE >137:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+820 text6 CODE >139:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+826 text6 CODE >140:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+83E text6 CODE >141:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+844 text6 CODE >142:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+856 text6 CODE >143:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+868 text6 CODE >144:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+870 text6 CODE >146:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+896 text6 CODE >148:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
+898 text38 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+898 text38 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+8B4 text38 CODE >63:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+8B6 text38 CODE >64:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+8B8 text38 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+8D4 text38 CODE >68:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+8D6 text38 CODE >69:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+8DC text38 CODE >70:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+8DE text38 CODE >71:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+91E text38 CODE >73:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+928 text38 CODE >74:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+92C text38 CODE >75:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+92E text38 CODE >76:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+930 text38 CODE >79:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+96A text38 CODE >81:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+97E text38 CODE >82:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+990 text38 CODE >83:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+9AE text38 CODE >84:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+9CA text38 CODE >86:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+9CC text4 CODE >44:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+9CC text4 CODE >49:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+9F2 text4 CODE >50:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+9F6 text4 CODE >51:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A2A text4 CODE >52:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A2E text4 CODE >53:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A40 text4 CODE >54:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A5C text4 CODE >55:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A62 text4 CODE >56:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A68 text4 CODE >57:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A74 text4 CODE >58:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A7A text4 CODE >60:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A86 text4 CODE >61:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A8C text4 CODE >62:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A8E text4 CODE >63:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+A96 text4 CODE >64:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+AAA text4 CODE >65:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+AAC text4 CODE >66:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+AB8 text4 CODE >67:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+ABE text4 CODE >65:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+ACC text4 CODE >70:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+AD6 text4 CODE >71:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+AEA text4 CODE >72:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+AFC text4 CODE >73:/opt/microchip/xc8/v1.34/sources/common/fttol.c
+AFE text2 CODE >238:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+AFE text2 CODE >240:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B10 text2 CODE >241:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B22 text2 CODE >242:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B34 text2 CODE >243:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B46 text2 CODE >244:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B4A text2 CODE >245:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B4E text2 CODE >246:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B50 text2 CODE >247:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B56 text2 CODE >248:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B64 text2 CODE >251:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B80 text2 CODE >252:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+B9C text2 CODE >253:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+BA8 text2 CODE >254:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+BAE text2 CODE >255:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+BB0 text2 CODE >256:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+BB4 text2 CODE >257:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+BB8 text2 CODE >259:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+BEA text2 CODE >261:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+BFC text2 CODE >262:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+C0E text2 CODE >263:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+C20 text2 CODE >264:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+C22 text13 CODE >62:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C22 text13 CODE >67:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C40 text13 CODE >68:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C44 text13 CODE >69:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C62 text13 CODE >70:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C70 text13 CODE >71:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C7A text13 CODE >72:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C7E text13 CODE >73:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C84 text13 CODE >74:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C8A text13 CODE >75:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C8C text13 CODE >77:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C8E text13 CODE >78:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+C9A text13 CODE >79:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+CAC text13 CODE >134:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+CB4 text13 CODE >136:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+CB8 text13 CODE >137:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+CCC text13 CODE >138:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+CD4 text13 CODE >139:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+CDC text13 CODE >140:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+CE4 text13 CODE >143:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+CEC text13 CODE >145:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+CF0 text13 CODE >146:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+D04 text13 CODE >147:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+D0C text13 CODE >148:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+D16 text13 CODE >149:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+D1E text13 CODE >156:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+D44 text13 CODE >157:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
+D46 text9 CODE >54:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+D46 text9 CODE >63:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+D60 text9 CODE >64:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+D64 text9 CODE >65:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+D7E text9 CODE >66:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+D8C text9 CODE >67:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+D98 text9 CODE >68:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+D9E text9 CODE >69:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DA2 text9 CODE >70:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DA6 text9 CODE >71:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DAA text9 CODE >72:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DAC text9 CODE >73:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DB8 text9 CODE >74:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DBA text9 CODE >75:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DC6 text9 CODE >76:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DCC text9 CODE >78:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DD4 text9 CODE >79:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DE4 text9 CODE >80:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DF0 text9 CODE >81:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DF2 text9 CODE >82:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DF2 text9 CODE >83:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+DFA text9 CODE >84:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+E00 text9 CODE >85:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+E26 text9 CODE >86:/opt/microchip/xc8/v1.34/sources/common/ftdiv.c
+E28 text14 CODE >62:/opt/microchip/xc8/v1.34/sources/common/float.c
+E28 text14 CODE >64:/opt/microchip/xc8/v1.34/sources/common/float.c
+E38 text14 CODE >65:/opt/microchip/xc8/v1.34/sources/common/float.c
+E46 text14 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
+E48 text14 CODE >67:/opt/microchip/xc8/v1.34/sources/common/float.c
+E4A text14 CODE >68:/opt/microchip/xc8/v1.34/sources/common/float.c
+E54 text14 CODE >66:/opt/microchip/xc8/v1.34/sources/common/float.c
+E72 text14 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
+E74 text14 CODE >71:/opt/microchip/xc8/v1.34/sources/common/float.c
+E76 text14 CODE >72:/opt/microchip/xc8/v1.34/sources/common/float.c
+E82 text14 CODE >73:/opt/microchip/xc8/v1.34/sources/common/float.c
+E8C text14 CODE >70:/opt/microchip/xc8/v1.34/sources/common/float.c
+EAA text14 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
+EAC text14 CODE >76:/opt/microchip/xc8/v1.34/sources/common/float.c
+EAE text14 CODE >77:/opt/microchip/xc8/v1.34/sources/common/float.c
+EB8 text14 CODE >75:/opt/microchip/xc8/v1.34/sources/common/float.c
+EC4 text14 CODE >79:/opt/microchip/xc8/v1.34/sources/common/float.c
+EC8 text14 CODE >80:/opt/microchip/xc8/v1.34/sources/common/float.c
+ECC text14 CODE >81:/opt/microchip/xc8/v1.34/sources/common/float.c
+ED0 text14 CODE >82:/opt/microchip/xc8/v1.34/sources/common/float.c
+ED4 text14 CODE >83:/opt/microchip/xc8/v1.34/sources/common/float.c
+EDA text14 CODE >84:/opt/microchip/xc8/v1.34/sources/common/float.c
+EDE text14 CODE >85:/opt/microchip/xc8/v1.34/sources/common/float.c
+EEC text14 CODE >86:/opt/microchip/xc8/v1.34/sources/common/float.c
+EEE text47 CODE >150:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+EEE text47 CODE >152:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F00 text47 CODE >153:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F12 text47 CODE >154:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F24 text47 CODE >155:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F36 text47 CODE >156:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F40 text47 CODE >157:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F4A text47 CODE >158:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F54 text47 CODE >159:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F5E text47 CODE >160:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F68 text47 CODE >161:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F72 text47 CODE >162:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F7C text47 CODE >163:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F86 text47 CODE >164:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F90 text47 CODE >165:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+F9A text47 CODE >166:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+FA4 text47 CODE >167:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+FA6 text15 CODE >40:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+FA6 text15 CODE >42:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+FB4 text15 CODE >43:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+FBE text15 CODE >44:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+FD2 text15 CODE >45:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+FDE text15 CODE >47:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+FE4 text15 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+FE8 text15 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+FFC text15 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1000 text15 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1014 text15 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1032 text15 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+104C text15 CODE >56:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+104E intcode_body CODE >165:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+107C intcode_body CODE >167:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+107E intcode_body CODE >168:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1082 intcode_body CODE >170:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1088 intcode_body CODE >173:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+108C intcode_body CODE >175:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1092 intcode_body CODE >178:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1096 intcode_body CODE >180:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+109C intcode_body CODE >183:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10A0 intcode_body CODE >185:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10A2 intcode_body CODE >186:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10A4 intcode_body CODE >187:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10A6 intcode_body CODE >188:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10AC intcode_body CODE >191:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10B0 intcode_body CODE >193:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10B4 intcode_body CODE >207:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10EE text8 CODE >4:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+10EE text8 CODE >6:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+10F2 text8 CODE >7:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+1120 text8 CODE >8:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+1124 text8 CODE >9:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+1152 text8 CODE >10:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+115E text8 CODE >11:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+116A text8 CODE >12:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+1182 text8 CODE >13:/opt/microchip/xc8/v1.34/sources/common/ftge.c
+1184 text27 CODE >27:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1184 text27 CODE >29:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1190 text27 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+11A2 text27 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+11B4 text27 CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+11C6 text27 CODE >34:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+11D8 text27 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+11E2 text27 CODE >36:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+11FA text27 CODE >38:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1200 text27 CODE >39:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1202 text27 CODE >41:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1204 text40 CODE >42:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1204 text40 CODE >47:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1206 text40 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+120C text40 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1212 text40 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1218 text40 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1222 text40 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+122E text40 CODE >55:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1256 text40 CODE >57:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+125C text40 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1264 text40 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1266 text40 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1270 text40 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1272 cinit CODE >3175:/tmp/cgtC1vr84
+1272 cinit CODE >3177:/tmp/cgtC1vr84
+1272 cinit CODE >3180:/tmp/cgtC1vr84
+1272 cinit CODE >3271:/tmp/cgtC1vr84
+1276 cinit CODE >3272:/tmp/cgtC1vr84
+1278 cinit CODE >3273:/tmp/cgtC1vr84
+1278 cinit CODE >3274:/tmp/cgtC1vr84
+127A cinit CODE >3275:/tmp/cgtC1vr84
+127C cinit CODE >3276:/tmp/cgtC1vr84
+127E cinit CODE >3279:/tmp/cgtC1vr84
+1282 cinit CODE >3280:/tmp/cgtC1vr84
+1284 cinit CODE >3281:/tmp/cgtC1vr84
+1284 cinit CODE >3282:/tmp/cgtC1vr84
+1286 cinit CODE >3283:/tmp/cgtC1vr84
+1288 cinit CODE >3284:/tmp/cgtC1vr84
+128A cinit CODE >3289:/tmp/cgtC1vr84
+128C cinit CODE >3290:/tmp/cgtC1vr84
+128E cinit CODE >3291:/tmp/cgtC1vr84
+1290 cinit CODE >3292:/tmp/cgtC1vr84
+1292 cinit CODE >3293:/tmp/cgtC1vr84
+1294 cinit CODE >3294:/tmp/cgtC1vr84
+1296 cinit CODE >3295:/tmp/cgtC1vr84
+1298 cinit CODE >3296:/tmp/cgtC1vr84
+129C cinit CODE >3297:/tmp/cgtC1vr84
+129E cinit CODE >3298:/tmp/cgtC1vr84
+12A2 cinit CODE >3299:/tmp/cgtC1vr84
+12A4 cinit CODE >3300:/tmp/cgtC1vr84
+12A8 cinit CODE >3304:/tmp/cgtC1vr84
+12AA cinit CODE >3305:/tmp/cgtC1vr84
+12AC cinit CODE >3306:/tmp/cgtC1vr84
+12AE cinit CODE >3307:/tmp/cgtC1vr84
+12B0 cinit CODE >3308:/tmp/cgtC1vr84
+12B2 cinit CODE >3309:/tmp/cgtC1vr84
+12B4 cinit CODE >3310:/tmp/cgtC1vr84
+12B8 cinit CODE >3311:/tmp/cgtC1vr84
+12BC cinit CODE >3312:/tmp/cgtC1vr84
+12BC cinit CODE >3313:/tmp/cgtC1vr84
+12BE cinit CODE >3314:/tmp/cgtC1vr84
+12C2 cinit CODE >3315:/tmp/cgtC1vr84
+12C4 cinit CODE >3316:/tmp/cgtC1vr84
+12C6 cinit CODE >3317:/tmp/cgtC1vr84
+12C8 cinit CODE >3323:/tmp/cgtC1vr84
+12C8 cinit CODE >3324:/tmp/cgtC1vr84
+12CA cinit CODE >3325:/tmp/cgtC1vr84
+12CE text10 CODE >39:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12CE text10 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12D0 text10 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12D2 text10 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12D4 text10 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12DC text10 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12DE text10 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12E6 text10 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12E8 text10 CODE >55:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12EA text10 CODE >56:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12F0 text10 CODE >57:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12F4 text10 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12F8 text10 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12FA text10 CODE >60:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+12FC text10 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1302 text10 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+131C text10 CODE >63:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+131E text10 CODE >64:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1328 text10 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+132A text17 CODE >13:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+132C text17 CODE >15:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1330 text17 CODE >16:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1334 text17 CODE >17:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1338 text17 CODE >18:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+133C text17 CODE >20:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+133E text17 CODE >22:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+133E text17 CODE >23:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1340 text17 CODE >24:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1342 text17 CODE >25:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1342 text17 CODE >26:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1344 text17 CODE >29:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1344 text17 CODE >30:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1346 text17 CODE >34:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1348 text17 CODE >20:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+135C text17 CODE >35:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+135E text17 CODE >37:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+135E text17 CODE >42:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1360 text17 CODE >47:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1360 text17 CODE >48:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1362 text17 CODE >49:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1364 text17 CODE >51:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1364 text17 CODE >52:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1366 text17 CODE >54:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1368 text17 CODE >35:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1378 text17 CODE >54:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1378 text17 CODE >55:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+137A text17 CODE >56:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+137C text17 CODE >58:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+137E text17 CODE >59:/opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
+1380 text28 CODE >100:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1382 text28 CODE >104:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1388 text28 CODE >106:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1394 text28 CODE >108:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+13B4 text28 CODE >109:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+13B8 text28 CODE >106:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+13BC text28 CODE >112:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+13C2 text28 CODE >114:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+13D4 text28 CODE >115:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+13D6 text48 CODE >77:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+13D8 text48 CODE >81:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+13E8 text48 CODE >83:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+13EE text48 CODE >85:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+13FA text48 CODE >87:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1418 text48 CODE >88:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+141A text48 CODE >89:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+141E text48 CODE >85:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1422 text48 CODE >92:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1428 text48 CODE >93:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+142A text5 CODE >20:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
+142A text5 CODE >23:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
+143A text5 CODE >24:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
+144E text5 CODE >26:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
+1478 text5 CODE >27:/opt/microchip/xc8/v1.34/sources/common/ftsub.c
+147A text22 CODE >18:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+147A text22 CODE >20:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+148C text22 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+149E text22 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+14B0 text22 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+14B4 text22 CODE >25:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+14B8 text22 CODE >26:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+14BC text22 CODE >27:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+14BE text22 CODE >28:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+14C0 text29 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+14C0 text29 CODE >65:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+14C8 text29 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+14D4 text29 CODE >67:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+14E4 text29 CODE >68:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+14F4 text29 CODE >69:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1502 text29 CODE >70:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1504 text34 CODE >72:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1504 text34 CODE >75:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+150C text34 CODE >76:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1518 text34 CODE >77:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1528 text34 CODE >78:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1538 text34 CODE >80:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1546 text34 CODE >81:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1548 text52 CODE >49:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+1548 text52 CODE >51:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+154C text52 CODE >52:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+1552 text52 CODE >53:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+1556 text52 CODE >54:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+155A text52 CODE >55:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+155C text52 CODE >56:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+155E text52 CODE >57:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+1560 text52 CODE >58:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+1568 text52 CODE >59:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+156A text52 CODE >60:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+156E text52 CODE >61:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+1572 text52 CODE >62:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+1574 text52 CODE >63:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+157A text52 CODE >64:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+1584 text52 CODE >65:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+1586 text52 CODE >66:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/write_B.c
+1588 text35 CODE >55:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1588 text35 CODE >57:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1590 text35 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+159C text35 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+15AC text35 CODE >60:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+15BC text35 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+15C2 text35 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+15C4 text11 CODE >99:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+15C4 text11 CODE >101:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+15FA text11 CODE >102:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+15FC text49 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+15FC text49 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1604 text49 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1610 text49 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1620 text49 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1630 text49 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1632 text36 CODE >64:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1632 text36 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1636 text36 CODE >67:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1646 text36 CODE >68:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+165A text36 CODE >67:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+165E text36 CODE >69:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1662 text36 CODE >70:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1664 text18 CODE >3:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1664 text18 CODE >5:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1666 text18 CODE >6:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1668 text18 CODE >7:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+166A text18 CODE >8:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+166C text18 CODE >9:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+166E text18 CODE >10:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1670 text18 CODE >11:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1672 text18 CODE >12:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1674 text18 CODE >13:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1676 text18 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1678 text18 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+167E text18 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1680 text18 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1686 text18 CODE >25:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1688 text18 CODE >26:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+168E text18 CODE >27:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1690 text18 CODE >29:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1692 text18 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
+1694 text24 CODE >6:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1694 text24 CODE >8:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1696 text24 CODE >9:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+1698 text24 CODE >10:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+169C text24 CODE >12:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+169E text24 CODE >13:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+16A2 text24 CODE >15:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+16A6 text24 CODE >17:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+16A8 text24 CODE >18:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+16AE text24 CODE >19:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+16B0 text24 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+16B2 text24 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+16B8 text24 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+16BC text24 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+16C0 text24 CODE >25:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+16C2 text1 CODE >147:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16C2 text1 CODE >149:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16C8 text1 CODE >151:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16CC text1 CODE >152:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16CE text1 CODE >153:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16D2 text1 CODE >154:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16D6 text1 CODE >155:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16DA text1 CODE >156:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16DE text1 CODE >157:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16E2 text1 CODE >158:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16E6 text1 CODE >160:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16EA text1 CODE >162:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16EC text1 CODE >163:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+16EE text39 CODE >4:/opt/microchip/xc8/v1.34/sources/common/abs.c
+16EE text39 CODE >6:/opt/microchip/xc8/v1.34/sources/common/abs.c
+16F4 text39 CODE >7:/opt/microchip/xc8/v1.34/sources/common/abs.c
+1710 text39 CODE >8:/opt/microchip/xc8/v1.34/sources/common/abs.c
+1718 text39 CODE >9:/opt/microchip/xc8/v1.34/sources/common/abs.c
+171A text12 CODE >28:/opt/microchip/xc8/v1.34/sources/common/lwtoft.c
+171A text12 CODE >30:/opt/microchip/xc8/v1.34/sources/common/lwtoft.c
+173E text12 CODE >31:/opt/microchip/xc8/v1.34/sources/common/lwtoft.c
+1740 text7 CODE >15:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
+1740 text7 CODE >17:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
+174A text7 CODE >18:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
+1756 text7 CODE >19:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
+1762 text7 CODE >20:/opt/microchip/xc8/v1.34/sources/common/ftneg.c
+1764 text23 CODE >7:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1764 text23 CODE >9:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1766 text23 CODE >10:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1768 text23 CODE >11:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+176A text23 CODE >12:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+176C text23 CODE >14:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+176E text23 CODE >16:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1770 text23 CODE >18:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1774 text23 CODE >19:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1776 text23 CODE >20:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1778 text23 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+177C text23 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+177E text23 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1782 text23 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1786 text23 CODE >26:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+1788 text45 CODE >209:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1788 text45 CODE >211:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+178C text45 CODE >212:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+178E text45 CODE >213:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1790 text45 CODE >214:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1792 text45 CODE >215:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1796 text45 CODE >218:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+179A text45 CODE >219:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+179E text45 CODE >220:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+17A4 text45 CODE >221:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+17A6 text45 CODE >222:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+17A8 text45 CODE >216:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+17AA text45 CODE >224:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+17AC text41 CODE >27:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+17AC text41 CODE >29:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+17B0 text41 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+17B2 text41 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+17B6 text41 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+17C2 text41 CODE >37:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+17C4 text41 CODE >38:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+17CA text41 CODE >39:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+17CC text41 CODE >40:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
+17CE text50 CODE >122:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+17D0 text50 CODE >124:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+17D6 text50 CODE >126:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+17E4 text50 CODE >127:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+17E8 text50 CODE >129:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+17EE text50 CODE >130:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+17F0 text31 CODE >136:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+17F2 text31 CODE >140:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+17F8 text31 CODE >142:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1804 text31 CODE >144:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+180A text31 CODE >146:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+180E text31 CODE >147:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1810 text16 CODE >16:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1810 text16 CODE >18:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1812 text16 CODE >19:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1814 text16 CODE >20:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1816 text16 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1818 text16 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1826 text16 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1828 text16 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+182A text32 CODE >35:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+182A text32 CODE >37:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+1830 text32 CODE >38:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+1834 text32 CODE >39:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+1836 text32 CODE >40:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+1838 text32 CODE >41:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+183A text32 CODE >42:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+183C text32 CODE >43:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+183E text32 CODE >44:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+1842 text32 CODE >45:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/read_B.c
+1844 text33 CODE >36:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1846 text33 CODE >38:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+184A text33 CODE >40:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+184C text33 CODE >41:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1850 text33 CODE >42:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1856 text33 CODE >43:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1858 text33 CODE >44:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+185A text33 CODE >45:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+185C text26 CODE >13:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+185C text26 CODE >15:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+185E text26 CODE >16:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1860 text26 CODE >17:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1862 text26 CODE >19:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1866 text26 CODE >21:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+186A text26 CODE >22:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+186C text26 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+186E text26 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
+1870 text44 CODE >26:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1870 text44 CODE >28:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1872 text44 CODE >29:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1874 text44 CODE >30:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1878 text44 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+187A text44 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+187C text44 CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1882 text44 CODE >34:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+1884 text20 CODE >8:/opt/microchip/xc8/v1.34/sources/pic18/d1ktcyx.c
+1886 text20 CODE >11:/opt/microchip/xc8/v1.34/sources/pic18/d1ktcyx.c
+188E text20 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/d1ktcyx.c
+1894 text20 CODE >13:/opt/microchip/xc8/v1.34/sources/pic18/d1ktcyx.c
+1896 text21 CODE >8:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
+1898 text21 CODE >11:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
+18A0 text21 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
+18A6 text21 CODE >13:/opt/microchip/xc8/v1.34/sources/pic18/d10tcyx.c
+18A8 text37 CODE >47:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+18A8 text37 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+18AC text37 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+18B2 text37 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+18B4 text37 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+18B8 text37 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+18BA text43 CODE >57:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+18BA text43 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+18BE text43 CODE >60:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+18C2 text43 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+18C8 text43 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+18CA text43 CODE >63:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
+18CC text25 CODE >226:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+18CC text25 CODE >228:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+18CE text25 CODE >229:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+18D0 text25 CODE >231:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+18D2 text25 CODE >232:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+18D4 text25 CODE >234:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+18D6 text25 CODE >235:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+18D8 text25 CODE >236:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+18DA text19 CODE >4:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
+18DC text19 CODE >6:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
+18DC text19 CODE >7:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
+18DE text19 CODE >8:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
+18E4 text19 CODE >9:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
+18E6 text46 CODE >28:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+18E6 text46 CODE >30:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+18E8 text46 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+18EE text46 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
+18F0 text30 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
+18F0 text30 CODE >14:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
+18F6 text30 CODE >15:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
+18F8 text51 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
+18F8 text51 CODE >14:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
+18FE text51 CODE >15:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -888,32 +905,32 @@ __Hspace_0 30000E 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hspace_1 B5 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production/RTDuC.X.production.obj
-__end_of_initialize 16E2 0 CODE 0 text1 dist/default/production/RTDuC.X.production.obj
-_ReadRTDpos 1298 0 CODE 0 text10 dist/default/production/RTDuC.X.production.obj
+__end_of_initialize 16EE 0 CODE 0 text1 dist/default/production/RTDuC.X.production.obj
+_ReadRTDpos 12CE 0 CODE 0 text10 dist/default/production/RTDuC.X.production.obj
 _SSP1STATbits FC7 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 ___ftdiv@exp 2D 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/RTDuC.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtoOth9K.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtiWtByo.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/RTDuC.X.production.obj
-_Delay10TCYx 184A 0 CODE 0 text21 dist/default/production/RTDuC.X.production.obj
-_Delay1KTCYx 1838 0 CODE 0 text20 dist/default/production/RTDuC.X.production.obj
-_ImplementPIDMotion F6E 0 CODE 0 text15 dist/default/production/RTDuC.X.production.obj
+_Delay10TCYx 1896 0 CODE 0 text21 dist/default/production/RTDuC.X.production.obj
+_Delay1KTCYx 1884 0 CODE 0 text20 dist/default/production/RTDuC.X.production.obj
+_ImplementPIDMotion FA6 0 CODE 0 text15 dist/default/production/RTDuC.X.production.obj
 _Kd 98 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
 _Ki 9B 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
 _Kp 9E 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
-__end_of_DetectMovement 123C 0 CODE 0 text40 dist/default/production/RTDuC.X.production.obj
+__end_of_DetectMovement 1272 0 CODE 0 text40 dist/default/production/RTDuC.X.production.obj
 __size_of_RTDInit 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 ?_abs 81 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 __size_of_SendSPI1 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 main@x 91 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production/RTDuC.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/cgtoOth9K.obj
+___sp 0 0 STACK 2 stack /tmp/cgtiWtByo.obj
 _main 1C 0 CODE 0 text0 dist/default/production/RTDuC.X.production.obj
 abs@a 81 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 ___ftadd@f1 66 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 ___ftadd@f2 69 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 EEWriteDouble@x 9 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-start 18 0 CODE 0 init /tmp/cgtoOth9K.obj
+start 18 0 CODE 0 init /tmp/cgtiWtByo.obj
 Write_b_eep@badd 1 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 Write_b_eep@bdat 3 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __size_of___ftadd 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -922,7 +939,7 @@ __size_of___ftmul 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of___ftneg 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of___ftsub 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of___fttol 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_SPIReassembleDouble 14CE 0 CODE 0 text34 dist/default/production/RTDuC.X.production.obj
+_SPIReassembleDouble 1504 0 CODE 0 text34 dist/default/production/RTDuC.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 OpenSPI1@smp_phase 19 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/RTDuC.X.production.obj
@@ -933,8 +950,8 @@ ___ftdiv@f2 23 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.productio
 ___ftdiv@f3 2A 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 ReadRTDpos@HighPosition 1E 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production/RTDuC.X.production.obj
-_ZeroMotors AC6 0 CODE 0 text2 dist/default/production/RTDuC.X.production.obj
-__end_of_SPIInt 1892 0 CODE 0 text44 dist/default/production/RTDuC.X.production.obj
+_ZeroMotors AFE 0 CODE 0 text2 dist/default/production/RTDuC.X.production.obj
+__end_of_SPIInt 1884 0 CODE 0 text44 dist/default/production/RTDuC.X.production.obj
 EEWriteChar@location 6 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __Hpowerup 18 0 CODE 0 powerup dist/default/production/RTDuC.X.production.obj
 __size_of_EEBootUp 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -945,41 +962,41 @@ ___ftge@ff2 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.productio
 _T0CONbits FD5 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of_MotorDriverInit 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/RTDuC.X.production.obj
-_EEPROMInit 1824 0 CODE 0 text26 dist/default/production/RTDuC.X.production.obj
-__end_of_Write_b_eep 1552 0 CODE 0 text52 dist/default/production/RTDuC.X.production.obj
+_EEPROMInit 185C 0 CODE 0 text26 dist/default/production/RTDuC.X.production.obj
+__end_of_Write_b_eep 1588 0 CODE 0 text52 dist/default/production/RTDuC.X.production.obj
 _motorInput AA 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
-__accesstop 60 0 ABS 0 - /tmp/cgtoOth9K.obj
-intlevel0 0 0 CODE 0 text /tmp/cgtoOth9K.obj
-intlevel1 0 0 CODE 0 text /tmp/cgtoOth9K.obj
-intlevel2 0 0 CODE 0 text /tmp/cgtoOth9K.obj
-intlevel3 0 0 CODE 0 text /tmp/cgtoOth9K.obj
+__accesstop 60 0 ABS 0 - /tmp/cgtiWtByo.obj
+intlevel0 0 0 CODE 0 text /tmp/cgtiWtByo.obj
+intlevel1 0 0 CODE 0 text /tmp/cgtiWtByo.obj
+intlevel2 0 0 CODE 0 text /tmp/cgtiWtByo.obj
+intlevel3 0 0 CODE 0 text /tmp/cgtiWtByo.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/RTDuC.X.production.obj
-_TMR0Int 186E 0 CODE 0 text43 dist/default/production/RTDuC.X.production.obj
-_Read_b_eep 17F2 0 CODE 0 text32 dist/default/production/RTDuC.X.production.obj
+_TMR0Int 18BA 0 CODE 0 text43 dist/default/production/RTDuC.X.production.obj
+_Read_b_eep 182A 0 CODE 0 text32 dist/default/production/RTDuC.X.production.obj
 _OSCCONbits FD3 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/RTDuC.X.production.obj
-__end_of_ReadRTDpos 12F4 0 CODE 0 text10 dist/default/production/RTDuC.X.production.obj
-__end_of_ReceiveSPI1 186E 0 CODE 0 text37 dist/default/production/RTDuC.X.production.obj
+__end_of_ReadRTDpos 132A 0 CODE 0 text10 dist/default/production/RTDuC.X.production.obj
+__end_of_ReceiveSPI1 18BA 0 CODE 0 text37 dist/default/production/RTDuC.X.production.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/production/RTDuC.X.production.obj
-__end_of_HLVDInt F6E 0 CODE 0 text47 dist/default/production/RTDuC.X.production.obj
+__end_of_HLVDInt FA6 0 CODE 0 text47 dist/default/production/RTDuC.X.production.obj
 calculatePID@setpoint 84 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production/RTDuC.X.production.obj
 _DeadbandHigh 44 0 COMRAM 1 dataCOMRAM dist/default/production/RTDuC.X.production.obj
-_SendSPI1 180C 0 CODE 0 text33 dist/default/production/RTDuC.X.production.obj
-__pidataCOMRAM 18C6 0 CODE 0 idataCOMRAM dist/default/production/RTDuC.X.production.obj
+_SendSPI1 1844 0 CODE 0 text33 dist/default/production/RTDuC.X.production.obj
+__pidataCOMRAM 1900 0 CODE 0 idataCOMRAM dist/default/production/RTDuC.X.production.obj
 ___ftmul@f1 2F 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 ___ftmul@f2 32 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 ___ftneg@f1 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-_DetectJoystick 1774 0 CODE 0 text41 dist/default/production/RTDuC.X.production.obj
+_DetectJoystick 17AC 0 CODE 0 text41 dist/default/production/RTDuC.X.production.obj
 _ADCON0 FC2 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _ADCON1 FC1 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _ADCON2 FC0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _ADRESH FC4 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _ADRESL FC3 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _DoublePtr 42 0 COMRAM 1 bssCOMRAM dist/default/production/RTDuC.X.production.obj
-__end_of_SendSPI1 1824 0 CODE 0 text33 dist/default/production/RTDuC.X.production.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/cgtoOth9K.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/cgtoOth9K.obj
+__end_of_SendSPI1 185C 0 CODE 0 text33 dist/default/production/RTDuC.X.production.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/cgtiWtByo.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/cgtiWtByo.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/RTDuC.X.production.obj
 EEWriteChar@ch 5 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 _EECON1bits FA6 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -987,7 +1004,7 @@ _CCPR3L FB8 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production/RTDuC.X.production.obj
 _SetAngle 3F 0 COMRAM 1 bssCOMRAM dist/default/production/RTDuC.X.production.obj
 SPIReassembleDouble@dub 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-__end_of___ftge 114E 0 CODE 0 text8 dist/default/production/RTDuC.X.production.obj
+__end_of___ftge 1184 0 CODE 0 text8 dist/default/production/RTDuC.X.production.obj
 __size_of_EEDisassembleDouble 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of_Busy_eep 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 DetectMovement@ADCresult 1D 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
@@ -998,45 +1015,45 @@ EEReassembleDouble@dub 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/RTDuC.X.production.obj
 ___ftsub@f1 72 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 ___ftsub@f2 75 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
-_EEBootUp 114E 0 CODE 0 text27 dist/default/production/RTDuC.X.production.obj
-__end_of_RTDInit 165E 0 CODE 0 text18 dist/default/production/RTDuC.X.production.obj
+_EEBootUp 1184 0 CODE 0 text27 dist/default/production/RTDuC.X.production.obj
+__end_of_RTDInit 1694 0 CODE 0 text18 dist/default/production/RTDuC.X.production.obj
 ___fttol@f1 72 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
-__end_of_ZeroMotors BEA 0 CODE 0 text2 dist/default/production/RTDuC.X.production.obj
+__end_of_ZeroMotors C22 0 CODE 0 text2 dist/default/production/RTDuC.X.production.obj
 EEWriteDouble@location 8 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production/RTDuC.X.production.obj
 __Hintcodelo 18 0 CODE 0 intcodelo dist/default/production/RTDuC.X.production.obj
 Delay1KTCYx@unit 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-_KillMotors 18AC 0 CODE 0 text46 dist/default/production/RTDuC.X.production.obj
+_KillMotors 18E6 0 CODE 0 text46 dist/default/production/RTDuC.X.production.obj
 __size_of___ftpack 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_ofi2_Busy_eep 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-__end_of___ftadd 860 0 CODE 0 text6 dist/default/production/RTDuC.X.production.obj
-__end_of___ftdiv DF0 0 CODE 0 text9 dist/default/production/RTDuC.X.production.obj
-__end_of___ftmul D0E 0 CODE 0 text13 dist/default/production/RTDuC.X.production.obj
-__end_of___ftneg 172C 0 CODE 0 text7 dist/default/production/RTDuC.X.production.obj
-__end_of___ftsub 1444 0 CODE 0 text5 dist/default/production/RTDuC.X.production.obj
-__end_of___fttol AC6 0 CODE 0 text4 dist/default/production/RTDuC.X.production.obj
+__end_of___ftadd 898 0 CODE 0 text6 dist/default/production/RTDuC.X.production.obj
+__end_of___ftdiv E28 0 CODE 0 text9 dist/default/production/RTDuC.X.production.obj
+__end_of___ftmul D46 0 CODE 0 text13 dist/default/production/RTDuC.X.production.obj
+__end_of___ftneg 1764 0 CODE 0 text7 dist/default/production/RTDuC.X.production.obj
+__end_of___ftsub 147A 0 CODE 0 text5 dist/default/production/RTDuC.X.production.obj
+__end_of___fttol AFE 0 CODE 0 text4 dist/default/production/RTDuC.X.production.obj
 _DDouble 3C 0 COMRAM 1 bssCOMRAM dist/default/production/RTDuC.X.production.obj
-__end_of_EEPROMInit 1838 0 CODE 0 text26 dist/default/production/RTDuC.X.production.obj
+__end_of_EEPROMInit 1870 0 CODE 0 text26 dist/default/production/RTDuC.X.production.obj
 ReadRTDpos@x 22 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-__end_of_EEBootUp 11CE 0 CODE 0 text27 dist/default/production/RTDuC.X.production.obj
+__end_of_EEBootUp 1204 0 CODE 0 text27 dist/default/production/RTDuC.X.production.obj
 _loopTime B2 0 BANK0 1 dataBANK0 dist/default/production/RTDuC.X.production.obj
 _INTCON FF2 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 EEReadDouble@location 21 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-__end_of_SPIReassembleDouble 1512 0 CODE 0 text34 dist/default/production/RTDuC.X.production.obj
-__end_of_Read_b_eep 180C 0 CODE 0 text32 dist/default/production/RTDuC.X.production.obj
+__end_of_SPIReassembleDouble 1548 0 CODE 0 text34 dist/default/production/RTDuC.X.production.obj
+__end_of_Read_b_eep 1844 0 CODE 0 text32 dist/default/production/RTDuC.X.production.obj
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production/RTDuC.X.production.obj
 __size_of_INT0Int 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of_EEReadChar 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _INTCON2bits FF1 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of___lwtoft 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-__end_of_DetectJoystick 1796 0 CODE 0 text41 dist/default/production/RTDuC.X.production.obj
+__end_of_DetectJoystick 17CE 0 CODE 0 text41 dist/default/production/RTDuC.X.production.obj
 __Lintcodelo 18 0 CODE 0 intcodelo dist/default/production/RTDuC.X.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of_SPIInit 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 ?_EEReassembleDouble 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-start_initialization 123C 0 CODE 0 cinit dist/default/production/RTDuC.X.production.obj
-__end_of_ImplementJSMotion 994 0 CODE 0 text38 dist/default/production/RTDuC.X.production.obj
-_EEDisassembleDouble 15C6 0 CODE 0 text49 dist/default/production/RTDuC.X.production.obj
+start_initialization 1272 0 CODE 0 cinit dist/default/production/RTDuC.X.production.obj
+__end_of_ImplementJSMotion 9CC 0 CODE 0 text38 dist/default/production/RTDuC.X.production.obj
+_EEDisassembleDouble 15FC 0 CODE 0 text49 dist/default/production/RTDuC.X.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/RTDuC.X.production.obj
 __size_of_initialize 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _TRISAbits F92 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -1051,10 +1068,10 @@ calculatePID@angle 81 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.prod
 ___rparam_used 1 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 RTD2Angle@RTDAngle 66 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 _Command AC 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
-_Busy_eep 18B6 0 CODE 0 text30 dist/default/production/RTDuC.X.production.obj
+_Busy_eep 18F0 0 CODE 0 text30 dist/default/production/RTDuC.X.production.obj
 __size_of_PIDInit 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 Read_b_eep@badd 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-_SPIInt 1880 0 CODE 0 text44 dist/default/production/RTDuC.X.production.obj
+_SPIInt 1870 0 CODE 0 text44 dist/default/production/RTDuC.X.production.obj
 __pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 _IPR2bits FA2 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 ___fttol@exp1 80 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
@@ -1062,16 +1079,16 @@ ___fttol@lval 7C 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.productio
 _PIDEnableFlag AE 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
 SendSPI1@data 19 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 SendSPI1@temp 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-___ftpack DF0 0 CODE 0 text14 dist/default/production/RTDuC.X.production.obj
-__end_of_Busy_eep 18BE 0 CODE 0 text30 dist/default/production/RTDuC.X.production.obj
-__end_of_KillMotors 18B6 0 CODE 0 text46 dist/default/production/RTDuC.X.production.obj
+___ftpack E28 0 CODE 0 text14 dist/default/production/RTDuC.X.production.obj
+__end_of_Busy_eep 18F8 0 CODE 0 text30 dist/default/production/RTDuC.X.production.obj
+__end_of_KillMotors 18F0 0 CODE 0 text46 dist/default/production/RTDuC.X.production.obj
 ___ftpack@arg 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 ___ftpack@exp 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 calculatePID@derErr 87 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
-_Delay1TCYx 18A0 0 CODE 0 text19 dist/default/production/RTDuC.X.production.obj
+_Delay1TCYx 18DA 0 CODE 0 text19 dist/default/production/RTDuC.X.production.obj
 __size_of_Write_b_eep 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-__end_of_EEWriteChar 17B8 0 CODE 0 text50 dist/default/production/RTDuC.X.production.obj
-__end_of___ftpack EB6 0 CODE 0 text14 dist/default/production/RTDuC.X.production.obj
+__end_of_EEWriteChar 17F0 0 CODE 0 text50 dist/default/production/RTDuC.X.production.obj
+__end_of___ftpack EEE 0 CODE 0 text14 dist/default/production/RTDuC.X.production.obj
 __size_of_ImplementPIDMotion 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of_SPIDisassembleDouble 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 dist/default/production/RTDuC.X.production.obj
@@ -1086,7 +1103,7 @@ __Hbank8 0 0 ABS 0 bank8 dist/default/production/RTDuC.X.production.obj
 __Hbank9 0 0 ABS 0 bank9 dist/default/production/RTDuC.X.production.obj
 __Hcinit 0 0 ABS 0 cinit dist/default/production/RTDuC.X.production.obj
 __Hconst 0 0 CODE 0 const dist/default/production/RTDuC.X.production.obj
-__end_of_RTD2Angle 15C6 0 CODE 0 text11 dist/default/production/RTDuC.X.production.obj
+__end_of_RTD2Angle 15FC 0 CODE 0 text11 dist/default/production/RTDuC.X.production.obj
 __Hidata 0 0 CODE 0 idata dist/default/production/RTDuC.X.production.obj
 __Hidloc 200008 0 IDLOC 0 idloc dist/default/production/RTDuC.X.production.obj
 _JSEnableFlag AD 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
@@ -1114,14 +1131,14 @@ __Hbank15 0 0 ABS 0 bank15 dist/default/production/RTDuC.X.production.obj
 __size_of_RTD2Angle 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/RTDuC.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production/RTDuC.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst /tmp/cgtoOth9K.obj
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/cgtiWtByo.obj
 Write_b_eep@GIE_BIT_VAL 4 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __size_of_ReceiveSPI1 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production/RTDuC.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production/RTDuC.X.production.obj
-___lwtoft 16E2 0 CODE 0 text12 dist/default/production/RTDuC.X.production.obj
-__end_of_Delay10TCYx 185C 0 CODE 0 text21 dist/default/production/RTDuC.X.production.obj
-__end_of_Delay1KTCYx 184A 0 CODE 0 text20 dist/default/production/RTDuC.X.production.obj
+___lwtoft 171A 0 CODE 0 text12 dist/default/production/RTDuC.X.production.obj
+__end_of_Delay10TCYx 18A8 0 CODE 0 text21 dist/default/production/RTDuC.X.production.obj
+__end_of_Delay1KTCYx 1896 0 CODE 0 text20 dist/default/production/RTDuC.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/production/RTDuC.X.production.obj
 __Lbank1 0 0 ABS 0 bank1 dist/default/production/RTDuC.X.production.obj
 __Lbank2 0 0 ABS 0 bank2 dist/default/production/RTDuC.X.production.obj
@@ -1155,19 +1172,19 @@ __Ltext8 0 0 ABS 0 text8 dist/default/production/RTDuC.X.production.obj
 __Ltext9 0 0 ABS 0 text9 dist/default/production/RTDuC.X.production.obj
 _DoubleSPIS 38 0 COMRAM 1 bssCOMRAM dist/default/production/RTDuC.X.production.obj
 __size_of_InitializeInterrupts 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-__end_of_SPIDisassembleDouble 158E 0 CODE 0 text35 dist/default/production/RTDuC.X.production.obj
+__end_of_SPIDisassembleDouble 15C4 0 CODE 0 text35 dist/default/production/RTDuC.X.production.obj
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production/RTDuC.X.production.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production/RTDuC.X.production.obj
-__end_of___lwtoft 1708 0 CODE 0 text12 dist/default/production/RTDuC.X.production.obj
+__end_of___lwtoft 1740 0 CODE 0 text12 dist/default/production/RTDuC.X.production.obj
 _PORTAbits F80 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _PORTBbits F81 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _PORTCbits F82 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _PORTEbits F84 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _PORTJbits F88 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_calculatePID 32C 0 CODE 0 text3 dist/default/production/RTDuC.X.production.obj
+_calculatePID 364 0 CODE 0 text3 dist/default/production/RTDuC.X.production.obj
 __size_of_SPIInt 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _INTCONbits FF2 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_RTD2Angle 158E 0 CODE 0 text11 dist/default/production/RTDuC.X.production.obj
+_RTD2Angle 15C4 0 CODE 0 text11 dist/default/production/RTDuC.X.production.obj
 __size_of_ReadRTDpos 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Habs1 0 0 ABS 0 abs1 dist/default/production/RTDuC.X.production.obj
 __Hdata 0 0 ABS 0 data dist/default/production/RTDuC.X.production.obj
@@ -1185,10 +1202,10 @@ __Ltemp 0 0 COMRAM 1 temp dist/default/production/RTDuC.X.production.obj
 __Ltext 0 0 ABS 0 text dist/default/production/RTDuC.X.production.obj
 _SSP1CON1 FC6 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _SSP1STAT FC7 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-___ftge 10B8 0 CODE 0 text8 dist/default/production/RTDuC.X.production.obj
+___ftge 10EE 0 CODE 0 text8 dist/default/production/RTDuC.X.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 __size_of_DetectMovement 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-__end_of_INT0Int 1774 0 CODE 0 text45 dist/default/production/RTDuC.X.production.obj
+__end_of_INT0Int 17AC 0 CODE 0 text45 dist/default/production/RTDuC.X.production.obj
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __Hintret 0 0 ABS 0 intret dist/default/production/RTDuC.X.production.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/production/RTDuC.X.production.obj
@@ -1197,24 +1214,24 @@ _PR2 FCB 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __S0 30000E 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __S1 B5 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __S2 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_abs 168C 0 CODE 0 text39 dist/default/production/RTDuC.X.production.obj
+_abs 16EE 0 CODE 0 text39 dist/default/production/RTDuC.X.production.obj
 ?_ReadRTDpos 19 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-__end_of_InitializeInterrupts 18A0 0 CODE 0 text25 dist/default/production/RTDuC.X.production.obj
-__end_of_SPIInit 17F2 0 CODE 0 text16 dist/default/production/RTDuC.X.production.obj
-_ImplementJSMotion 860 0 CODE 0 text38 dist/default/production/RTDuC.X.production.obj
-_EEReadDouble 134A 0 CODE 0 text28 dist/default/production/RTDuC.X.production.obj
+__end_of_InitializeInterrupts 18DA 0 CODE 0 text25 dist/default/production/RTDuC.X.production.obj
+__end_of_SPIInit 182A 0 CODE 0 text16 dist/default/production/RTDuC.X.production.obj
+_ImplementJSMotion 898 0 CODE 0 text38 dist/default/production/RTDuC.X.production.obj
+_EEReadDouble 1380 0 CODE 0 text28 dist/default/production/RTDuC.X.production.obj
 _HLVDCON FD2 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_HLVDInt EB6 0 CODE 0 text47 dist/default/production/RTDuC.X.production.obj
-__end_of_EEDisassembleDouble 15FC 0 CODE 0 text49 dist/default/production/RTDuC.X.production.obj
+_HLVDInt EEE 0 CODE 0 text47 dist/default/production/RTDuC.X.production.obj
+__end_of_EEDisassembleDouble 1632 0 CODE 0 text49 dist/default/production/RTDuC.X.production.obj
 __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production/RTDuC.X.production.obj
-__end_of_Delay1TCYx 18AC 0 CODE 0 text19 dist/default/production/RTDuC.X.production.obj
+__end_of_Delay1TCYx 18E6 0 CODE 0 text19 dist/default/production/RTDuC.X.production.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production/RTDuC.X.production.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production/RTDuC.X.production.obj
-__end_of_PIDInit 148A 0 CODE 0 text22 dist/default/production/RTDuC.X.production.obj
-__end_of_ISR 10B8 0 CODE 0 intcode_body dist/default/production/RTDuC.X.production.obj
-__end_of_abs 16B8 0 CODE 0 text39 dist/default/production/RTDuC.X.production.obj
-__end_of_EEReassembleDouble 14CE 0 CODE 0 text29 dist/default/production/RTDuC.X.production.obj
-int_func 1016 0 CODE 0 intcode_body dist/default/production/RTDuC.X.production.obj
+__end_of_PIDInit 14C0 0 CODE 0 text22 dist/default/production/RTDuC.X.production.obj
+__end_of_ISR 10EE 0 CODE 0 intcode_body dist/default/production/RTDuC.X.production.obj
+__end_of_abs 171A 0 CODE 0 text39 dist/default/production/RTDuC.X.production.obj
+__end_of_EEReassembleDouble 1504 0 CODE 0 text29 dist/default/production/RTDuC.X.production.obj
+int_func 104E 0 CODE 0 intcode_body dist/default/production/RTDuC.X.production.obj
 __size_of_ZeroMotors 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/production/RTDuC.X.production.obj
 __size_of_calculatePID 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -1274,64 +1291,64 @@ __Htext52 0 0 ABS 0 text52 dist/default/production/RTDuC.X.production.obj
 __size_of_OpenSPI1 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of_Read_b_eep 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of_TMR0Int 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_calculatePID$3293 8A 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
-_calculatePID$3294 8D 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
+_calculatePID$3341 8A 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
+_calculatePID$3342 8D 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 _PIE1bits F9D 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _PIE2bits FA0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_EEWriteDouble 13A0 0 CODE 0 text48 dist/default/production/RTDuC.X.production.obj
-_RTDInit 162E 0 CODE 0 text18 dist/default/production/RTDuC.X.production.obj
+_EEWriteDouble 13D6 0 CODE 0 text48 dist/default/production/RTDuC.X.production.obj
+_RTDInit 1664 0 CODE 0 text18 dist/default/production/RTDuC.X.production.obj
 EEWriteDouble@dub 5 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __size_of_EEReadDouble 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _TMR0Flag B0 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
-__ptext10 1298 0 CODE 0 text10 dist/default/production/RTDuC.X.production.obj
-__ptext11 158E 0 CODE 0 text11 dist/default/production/RTDuC.X.production.obj
-__ptext12 16E2 0 CODE 0 text12 dist/default/production/RTDuC.X.production.obj
-__ptext13 BEA 0 CODE 0 text13 dist/default/production/RTDuC.X.production.obj
-__ptext14 DF0 0 CODE 0 text14 dist/default/production/RTDuC.X.production.obj
-__ptext15 F6E 0 CODE 0 text15 dist/default/production/RTDuC.X.production.obj
-__ptext16 17D8 0 CODE 0 text16 dist/default/production/RTDuC.X.production.obj
-__ptext17 12F4 0 CODE 0 text17 dist/default/production/RTDuC.X.production.obj
-__ptext18 162E 0 CODE 0 text18 dist/default/production/RTDuC.X.production.obj
-__ptext19 18A0 0 CODE 0 text19 dist/default/production/RTDuC.X.production.obj
-__ptext20 1838 0 CODE 0 text20 dist/default/production/RTDuC.X.production.obj
-__ptext21 184A 0 CODE 0 text21 dist/default/production/RTDuC.X.production.obj
-__ptext22 1444 0 CODE 0 text22 dist/default/production/RTDuC.X.production.obj
-__ptext23 172C 0 CODE 0 text23 dist/default/production/RTDuC.X.production.obj
-__ptext24 165E 0 CODE 0 text24 dist/default/production/RTDuC.X.production.obj
-__ptext25 1892 0 CODE 0 text25 dist/default/production/RTDuC.X.production.obj
-__ptext26 1824 0 CODE 0 text26 dist/default/production/RTDuC.X.production.obj
-__ptext27 114E 0 CODE 0 text27 dist/default/production/RTDuC.X.production.obj
-__ptext28 134A 0 CODE 0 text28 dist/default/production/RTDuC.X.production.obj
-__ptext29 148A 0 CODE 0 text29 dist/default/production/RTDuC.X.production.obj
-__ptext30 18B6 0 CODE 0 text30 dist/default/production/RTDuC.X.production.obj
-__ptext31 17B8 0 CODE 0 text31 dist/default/production/RTDuC.X.production.obj
-__ptext32 17F2 0 CODE 0 text32 dist/default/production/RTDuC.X.production.obj
-__ptext33 180C 0 CODE 0 text33 dist/default/production/RTDuC.X.production.obj
-__ptext34 14CE 0 CODE 0 text34 dist/default/production/RTDuC.X.production.obj
-__ptext35 1552 0 CODE 0 text35 dist/default/production/RTDuC.X.production.obj
-__ptext36 15FC 0 CODE 0 text36 dist/default/production/RTDuC.X.production.obj
-__ptext37 185C 0 CODE 0 text37 dist/default/production/RTDuC.X.production.obj
-__ptext38 860 0 CODE 0 text38 dist/default/production/RTDuC.X.production.obj
-__ptext39 168C 0 CODE 0 text39 dist/default/production/RTDuC.X.production.obj
-__ptext40 11CE 0 CODE 0 text40 dist/default/production/RTDuC.X.production.obj
-__ptext41 1774 0 CODE 0 text41 dist/default/production/RTDuC.X.production.obj
-__ptext43 186E 0 CODE 0 text43 dist/default/production/RTDuC.X.production.obj
-__ptext44 1880 0 CODE 0 text44 dist/default/production/RTDuC.X.production.obj
-__ptext45 1750 0 CODE 0 text45 dist/default/production/RTDuC.X.production.obj
-__ptext46 18AC 0 CODE 0 text46 dist/default/production/RTDuC.X.production.obj
-__ptext47 EB6 0 CODE 0 text47 dist/default/production/RTDuC.X.production.obj
-__ptext48 13A0 0 CODE 0 text48 dist/default/production/RTDuC.X.production.obj
-__ptext49 15C6 0 CODE 0 text49 dist/default/production/RTDuC.X.production.obj
-__ptext50 1796 0 CODE 0 text50 dist/default/production/RTDuC.X.production.obj
-__ptext51 18BE 0 CODE 0 text51 dist/default/production/RTDuC.X.production.obj
-__ptext52 1512 0 CODE 0 text52 dist/default/production/RTDuC.X.production.obj
-___ftadd 5E2 0 CODE 0 text6 dist/default/production/RTDuC.X.production.obj
-___ftdiv D0E 0 CODE 0 text9 dist/default/production/RTDuC.X.production.obj
-___ftmul BEA 0 CODE 0 text13 dist/default/production/RTDuC.X.production.obj
-___ftneg 1708 0 CODE 0 text7 dist/default/production/RTDuC.X.production.obj
-___ftsub 13F4 0 CODE 0 text5 dist/default/production/RTDuC.X.production.obj
-___fttol 994 0 CODE 0 text4 dist/default/production/RTDuC.X.production.obj
-__pintcode_body 1016 0 CODE 0 intcode_body dist/default/production/RTDuC.X.production.obj
+__ptext10 12CE 0 CODE 0 text10 dist/default/production/RTDuC.X.production.obj
+__ptext11 15C4 0 CODE 0 text11 dist/default/production/RTDuC.X.production.obj
+__ptext12 171A 0 CODE 0 text12 dist/default/production/RTDuC.X.production.obj
+__ptext13 C22 0 CODE 0 text13 dist/default/production/RTDuC.X.production.obj
+__ptext14 E28 0 CODE 0 text14 dist/default/production/RTDuC.X.production.obj
+__ptext15 FA6 0 CODE 0 text15 dist/default/production/RTDuC.X.production.obj
+__ptext16 1810 0 CODE 0 text16 dist/default/production/RTDuC.X.production.obj
+__ptext17 132A 0 CODE 0 text17 dist/default/production/RTDuC.X.production.obj
+__ptext18 1664 0 CODE 0 text18 dist/default/production/RTDuC.X.production.obj
+__ptext19 18DA 0 CODE 0 text19 dist/default/production/RTDuC.X.production.obj
+__ptext20 1884 0 CODE 0 text20 dist/default/production/RTDuC.X.production.obj
+__ptext21 1896 0 CODE 0 text21 dist/default/production/RTDuC.X.production.obj
+__ptext22 147A 0 CODE 0 text22 dist/default/production/RTDuC.X.production.obj
+__ptext23 1764 0 CODE 0 text23 dist/default/production/RTDuC.X.production.obj
+__ptext24 1694 0 CODE 0 text24 dist/default/production/RTDuC.X.production.obj
+__ptext25 18CC 0 CODE 0 text25 dist/default/production/RTDuC.X.production.obj
+__ptext26 185C 0 CODE 0 text26 dist/default/production/RTDuC.X.production.obj
+__ptext27 1184 0 CODE 0 text27 dist/default/production/RTDuC.X.production.obj
+__ptext28 1380 0 CODE 0 text28 dist/default/production/RTDuC.X.production.obj
+__ptext29 14C0 0 CODE 0 text29 dist/default/production/RTDuC.X.production.obj
+__ptext30 18F0 0 CODE 0 text30 dist/default/production/RTDuC.X.production.obj
+__ptext31 17F0 0 CODE 0 text31 dist/default/production/RTDuC.X.production.obj
+__ptext32 182A 0 CODE 0 text32 dist/default/production/RTDuC.X.production.obj
+__ptext33 1844 0 CODE 0 text33 dist/default/production/RTDuC.X.production.obj
+__ptext34 1504 0 CODE 0 text34 dist/default/production/RTDuC.X.production.obj
+__ptext35 1588 0 CODE 0 text35 dist/default/production/RTDuC.X.production.obj
+__ptext36 1632 0 CODE 0 text36 dist/default/production/RTDuC.X.production.obj
+__ptext37 18A8 0 CODE 0 text37 dist/default/production/RTDuC.X.production.obj
+__ptext38 898 0 CODE 0 text38 dist/default/production/RTDuC.X.production.obj
+__ptext39 16EE 0 CODE 0 text39 dist/default/production/RTDuC.X.production.obj
+__ptext40 1204 0 CODE 0 text40 dist/default/production/RTDuC.X.production.obj
+__ptext41 17AC 0 CODE 0 text41 dist/default/production/RTDuC.X.production.obj
+__ptext43 18BA 0 CODE 0 text43 dist/default/production/RTDuC.X.production.obj
+__ptext44 1870 0 CODE 0 text44 dist/default/production/RTDuC.X.production.obj
+__ptext45 1788 0 CODE 0 text45 dist/default/production/RTDuC.X.production.obj
+__ptext46 18E6 0 CODE 0 text46 dist/default/production/RTDuC.X.production.obj
+__ptext47 EEE 0 CODE 0 text47 dist/default/production/RTDuC.X.production.obj
+__ptext48 13D6 0 CODE 0 text48 dist/default/production/RTDuC.X.production.obj
+__ptext49 15FC 0 CODE 0 text49 dist/default/production/RTDuC.X.production.obj
+__ptext50 17CE 0 CODE 0 text50 dist/default/production/RTDuC.X.production.obj
+__ptext51 18F8 0 CODE 0 text51 dist/default/production/RTDuC.X.production.obj
+__ptext52 1548 0 CODE 0 text52 dist/default/production/RTDuC.X.production.obj
+___ftadd 61A 0 CODE 0 text6 dist/default/production/RTDuC.X.production.obj
+___ftdiv D46 0 CODE 0 text9 dist/default/production/RTDuC.X.production.obj
+___ftmul C22 0 CODE 0 text13 dist/default/production/RTDuC.X.production.obj
+___ftneg 1740 0 CODE 0 text7 dist/default/production/RTDuC.X.production.obj
+___ftsub 142A 0 CODE 0 text5 dist/default/production/RTDuC.X.production.obj
+___fttol 9CC 0 CODE 0 text4 dist/default/production/RTDuC.X.production.obj
+__pintcode_body 104E 0 CODE 0 intcode_body dist/default/production/RTDuC.X.production.obj
 __Lbank10 0 0 ABS 0 bank10 dist/default/production/RTDuC.X.production.obj
 __Lbank11 0 0 ABS 0 bank11 dist/default/production/RTDuC.X.production.obj
 __Lbank12 0 0 ABS 0 bank12 dist/default/production/RTDuC.X.production.obj
@@ -1340,23 +1357,23 @@ __Lbank14 0 0 ABS 0 bank14 dist/default/production/RTDuC.X.production.obj
 __Lbank15 0 0 ABS 0 bank15 dist/default/production/RTDuC.X.production.obj
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production/RTDuC.X.production.obj
 __Lbigram 0 0 ABS 0 bigram dist/default/production/RTDuC.X.production.obj
-__end_of_calculatePID 5E2 0 CODE 0 text3 dist/default/production/RTDuC.X.production.obj
+__end_of_calculatePID 61A 0 CODE 0 text3 dist/default/production/RTDuC.X.production.obj
 GenerateChecksum@y 19 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-_EEReassembleDouble 148A 0 CODE 0 text29 dist/default/production/RTDuC.X.production.obj
+_EEReassembleDouble 14C0 0 CODE 0 text29 dist/default/production/RTDuC.X.production.obj
 __Lcomram 0 0 ABS 0 comram dist/default/production/RTDuC.X.production.obj
 __Lconfig 300000 0 CONFIG 0 config dist/default/production/RTDuC.X.production.obj
 ?___ftpack 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-_JoystickInit 165E 0 CODE 0 text24 dist/default/production/RTDuC.X.production.obj
+_JoystickInit 1694 0 CODE 0 text24 dist/default/production/RTDuC.X.production.obj
 OpenSPI1@bus_mode 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production/RTDuC.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production/RTDuC.X.production.obj
 __size_of_EEWriteChar 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-__end_of_EEReadDouble 13A0 0 CODE 0 text28 dist/default/production/RTDuC.X.production.obj
+__end_of_EEReadDouble 13D6 0 CODE 0 text28 dist/default/production/RTDuC.X.production.obj
 ImplementPIDMotion@PIDValue 85 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 _CurrentAngle 92 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
 ___lwtoft@c 20 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-stackhi F5F 0 ABS 0 - /tmp/cgtoOth9K.obj
-stacklo B5 0 ABS 0 - /tmp/cgtoOth9K.obj
+stackhi F5F 0 ABS 0 - /tmp/cgtiWtByo.obj
+stacklo B5 0 ABS 0 - /tmp/cgtiWtByo.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production/RTDuC.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production/RTDuC.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production/RTDuC.X.production.obj
@@ -1370,9 +1387,9 @@ ___ftmul@cntr 64 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.productio
 __pbssCOMRAM 38 0 COMRAM 1 bssCOMRAM dist/default/production/RTDuC.X.production.obj
 ___ftmul@sign 65 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 __size_of_Delay10TCYx 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_OpenSPI1 12F4 0 CODE 0 text17 dist/default/production/RTDuC.X.production.obj
+_OpenSPI1 132A 0 CODE 0 text17 dist/default/production/RTDuC.X.production.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/RTDuC.X.production.obj
-_GenerateChecksum 15FC 0 CODE 0 text36 dist/default/production/RTDuC.X.production.obj
+_GenerateChecksum 1632 0 CODE 0 text36 dist/default/production/RTDuC.X.production.obj
 __size_of_Delay1KTCYx 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 ?_EEReadDouble 1E 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 _PIR1bits F9E 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -1380,11 +1397,11 @@ _PIR2bits FA1 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Lend_init 18 0 CODE 0 end_init dist/default/production/RTDuC.X.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 _dummy_byte B1 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
-_Write_b_eep 1512 0 CODE 0 text52 dist/default/production/RTDuC.X.production.obj
-end_of_initialization 1292 0 CODE 0 cinit dist/default/production/RTDuC.X.production.obj
+_Write_b_eep 1548 0 CODE 0 text52 dist/default/production/RTDuC.X.production.obj
+end_of_initialization 12C8 0 CODE 0 cinit dist/default/production/RTDuC.X.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production/RTDuC.X.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production/RTDuC.X.production.obj
-__end_of_OpenSPI1 134A 0 CODE 0 text17 dist/default/production/RTDuC.X.production.obj
+__end_of_OpenSPI1 1380 0 CODE 0 text17 dist/default/production/RTDuC.X.production.obj
 ?_SPIReassembleDouble 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __size_of_DetectJoystick 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 ?___ftadd 66 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
@@ -1396,23 +1413,23 @@ __size_of_DetectJoystick 0 0 ABS 0 - dist/default/production/RTDuC.X.production.
 __size_of_JoystickInit 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 DetectMovement@JoystickResult 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production/RTDuC.X.production.obj
-_ReceiveSPI1 185C 0 CODE 0 text37 dist/default/production/RTDuC.X.production.obj
+_ReceiveSPI1 18A8 0 CODE 0 text37 dist/default/production/RTDuC.X.production.obj
 __HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production/RTDuC.X.production.obj
 __Lramtop 1000 0 RAM 0 ramtop dist/default/production/RTDuC.X.production.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production/RTDuC.X.production.obj
-__pcinit 123C 0 CODE 0 cinit dist/default/production/RTDuC.X.production.obj
+__pcinit 1272 0 CODE 0 cinit dist/default/production/RTDuC.X.production.obj
 EEDisassembleDouble@dub 1 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __ptext0 1C 0 CODE 0 text0 dist/default/production/RTDuC.X.production.obj
-__ptext1 16B8 0 CODE 0 text1 dist/default/production/RTDuC.X.production.obj
-__ptext2 AC6 0 CODE 0 text2 dist/default/production/RTDuC.X.production.obj
-__ptext3 32C 0 CODE 0 text3 dist/default/production/RTDuC.X.production.obj
-__ptext4 994 0 CODE 0 text4 dist/default/production/RTDuC.X.production.obj
-__ptext5 13F4 0 CODE 0 text5 dist/default/production/RTDuC.X.production.obj
-__ptext6 5E2 0 CODE 0 text6 dist/default/production/RTDuC.X.production.obj
-__ptext7 1708 0 CODE 0 text7 dist/default/production/RTDuC.X.production.obj
-__ptext8 10B8 0 CODE 0 text8 dist/default/production/RTDuC.X.production.obj
-__ptext9 D0E 0 CODE 0 text9 dist/default/production/RTDuC.X.production.obj
-__end_of_TMR0Int 1880 0 CODE 0 text43 dist/default/production/RTDuC.X.production.obj
+__ptext1 16C2 0 CODE 0 text1 dist/default/production/RTDuC.X.production.obj
+__ptext2 AFE 0 CODE 0 text2 dist/default/production/RTDuC.X.production.obj
+__ptext3 364 0 CODE 0 text3 dist/default/production/RTDuC.X.production.obj
+__ptext4 9CC 0 CODE 0 text4 dist/default/production/RTDuC.X.production.obj
+__ptext5 142A 0 CODE 0 text5 dist/default/production/RTDuC.X.production.obj
+__ptext6 61A 0 CODE 0 text6 dist/default/production/RTDuC.X.production.obj
+__ptext7 1740 0 CODE 0 text7 dist/default/production/RTDuC.X.production.obj
+__ptext8 10EE 0 CODE 0 text8 dist/default/production/RTDuC.X.production.obj
+__ptext9 D46 0 CODE 0 text9 dist/default/production/RTDuC.X.production.obj
+__end_of_TMR0Int 18CC 0 CODE 0 text43 dist/default/production/RTDuC.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production/RTDuC.X.production.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/production/RTDuC.X.production.obj
 __Ltext11 0 0 ABS 0 text11 dist/default/production/RTDuC.X.production.obj
@@ -1456,48 +1473,48 @@ __Ltext49 0 0 ABS 0 text49 dist/default/production/RTDuC.X.production.obj
 __Ltext50 0 0 ABS 0 text50 dist/default/production/RTDuC.X.production.obj
 __Ltext51 0 0 ABS 0 text51 dist/default/production/RTDuC.X.production.obj
 __Ltext52 0 0 ABS 0 text52 dist/default/production/RTDuC.X.production.obj
-__ramtop 1000 0 RAM 0 ramtop /tmp/cgtoOth9K.obj
+__ramtop 1000 0 RAM 0 ramtop /tmp/cgtiWtByo.obj
 __size_of_EEWriteDouble 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Lpowerup 18 0 CODE 0 powerup dist/default/production/RTDuC.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/RTDuC.X.production.obj
 GenerateChecksum@sum 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-i2_Busy_eep 18BE 0 CODE 0 text51 dist/default/production/RTDuC.X.production.obj
-__end_of_JoystickInit 168C 0 CODE 0 text24 dist/default/production/RTDuC.X.production.obj
+i2_Busy_eep 18F8 0 CODE 0 text51 dist/default/production/RTDuC.X.production.obj
+__end_of_JoystickInit 16C2 0 CODE 0 text24 dist/default/production/RTDuC.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production/RTDuC.X.production.obj
-__end_of_MotorDriverInit 1750 0 CODE 0 text23 dist/default/production/RTDuC.X.production.obj
+__end_of_MotorDriverInit 1788 0 CODE 0 text23 dist/default/production/RTDuC.X.production.obj
 Delay10TCYx@unit 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 _CCP3CONbits FB7 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 ___param_bank 10 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __CFG_WDT$OFF 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production/RTDuC.X.production.obj
 ___ftmul@exp 60 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
-__end_of__initialization 1292 0 CODE 0 cinit dist/default/production/RTDuC.X.production.obj
+__end_of__initialization 12C8 0 CODE 0 cinit dist/default/production/RTDuC.X.production.obj
 __size_of_Delay1TCYx 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_INT0Int 1750 0 CODE 0 text45 dist/default/production/RTDuC.X.production.obj
+_INT0Int 1788 0 CODE 0 text45 dist/default/production/RTDuC.X.production.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production/RTDuC.X.production.obj
-__pidataBANK0 18CA 0 CODE 0 idataBANK0 dist/default/production/RTDuC.X.production.obj
-_EEReadChar 17B8 0 CODE 0 text31 dist/default/production/RTDuC.X.production.obj
+__pidataBANK0 1904 0 CODE 0 idataBANK0 dist/default/production/RTDuC.X.production.obj
+_EEReadChar 17F0 0 CODE 0 text31 dist/default/production/RTDuC.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production/RTDuC.X.production.obj
 ImplementJSMotion@CCPinput 89 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 _SSP1CON1bits FC6 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __CFG_OSC$HSPLL 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_SPIInit 17D8 0 CODE 0 text16 dist/default/production/RTDuC.X.production.obj
+_SPIInit 1810 0 CODE 0 text16 dist/default/production/RTDuC.X.production.obj
 _SPIflag AF 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
 ReadRTDpos@FullPosition 20 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 ___ftpack@sign 1C 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 EEReadChar@ch 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-__end_of_EEWriteDouble 13F4 0 CODE 0 text48 dist/default/production/RTDuC.X.production.obj
-_SPIDisassembleDouble 1552 0 CODE 0 text35 dist/default/production/RTDuC.X.production.obj
+__end_of_EEWriteDouble 142A 0 CODE 0 text48 dist/default/production/RTDuC.X.production.obj
+_SPIDisassembleDouble 1588 0 CODE 0 text35 dist/default/production/RTDuC.X.production.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 ___ftdiv@cntr 29 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 ___ftdiv@sign 2E 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-_initialize 16B8 0 CODE 0 text1 dist/default/production/RTDuC.X.production.obj
-__end_of_GenerateChecksum 162E 0 CODE 0 text36 dist/default/production/RTDuC.X.production.obj
+_initialize 16C2 0 CODE 0 text1 dist/default/production/RTDuC.X.production.obj
+__end_of_GenerateChecksum 1664 0 CODE 0 text36 dist/default/production/RTDuC.X.production.obj
 _SSP1BUF FC9 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hend_init 1C 0 CODE 0 end_init dist/default/production/RTDuC.X.production.obj
-_PIDInit 1444 0 CODE 0 text22 dist/default/production/RTDuC.X.production.obj
+_PIDInit 147A 0 CODE 0 text22 dist/default/production/RTDuC.X.production.obj
 _prevErr A7 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
-__end_of_main 32C 0 CODE 0 text0 dist/default/production/RTDuC.X.production.obj
+__end_of_main 364 0 CODE 0 text0 dist/default/production/RTDuC.X.production.obj
 __pintcode 8 0 CODE 0 intcode dist/default/production/RTDuC.X.production.obj
 __size_of_GenerateChecksum 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _EEADR FA9 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -1517,7 +1534,7 @@ _TMR0H FD7 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _TMR0L FD6 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _TRISD F95 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _TRISH F99 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_InitializeInterrupts 1892 0 CODE 0 text25 dist/default/production/RTDuC.X.production.obj
+_InitializeInterrupts 18CC 0 CODE 0 text25 dist/default/production/RTDuC.X.production.obj
 __HRAM 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hbss 0 0 RAM 1 bss dist/default/production/RTDuC.X.production.obj
 __Hram 0 0 ABS 0 ram dist/default/production/RTDuC.X.production.obj
@@ -1527,18 +1544,18 @@ __Lbss 0 0 RAM 1 bss dist/default/production/RTDuC.X.production.obj
 __Lram 0 0 ABS 0 ram dist/default/production/RTDuC.X.production.obj
 __Lsfr 0 0 ABS 0 sfr dist/default/production/RTDuC.X.production.obj
 _error A1 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
-_DetectMovement 11CE 0 CODE 0 text40 dist/default/production/RTDuC.X.production.obj
-___extmem_base 20000 0 ABS 0 - /tmp/cgtoOth9K.obj
-_MotorDriverInit 172C 0 CODE 0 text23 dist/default/production/RTDuC.X.production.obj
+_DetectMovement 1204 0 CODE 0 text40 dist/default/production/RTDuC.X.production.obj
+___extmem_base 20000 0 ABS 0 - /tmp/cgtiWtByo.obj
+_MotorDriverInit 1764 0 CODE 0 text23 dist/default/production/RTDuC.X.production.obj
 _CCP3CON FB7 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 ___fttol@sign1 7B 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 ReadRTDpos@LowPosition 1F 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __size_of_ISR 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of_abs 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-__end_ofi2_Busy_eep 18C6 0 CODE 0 text51 dist/default/production/RTDuC.X.production.obj
+__end_ofi2_Busy_eep 1900 0 CODE 0 text51 dist/default/production/RTDuC.X.production.obj
 __HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production/RTDuC.X.production.obj
-__initialization 123C 0 CODE 0 cinit dist/default/production/RTDuC.X.production.obj
-__end_of_ImplementPIDMotion 1016 0 CODE 0 text15 dist/default/production/RTDuC.X.production.obj
+__initialization 1272 0 CODE 0 cinit dist/default/production/RTDuC.X.production.obj
+__end_of_ImplementPIDMotion 104E 0 CODE 0 text15 dist/default/production/RTDuC.X.production.obj
 ImplementJSMotion@JoystickValue 85 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 __pbssBANK0 92 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
 __pdataCOMRAM 44 0 COMRAM 1 dataCOMRAM dist/default/production/RTDuC.X.production.obj
@@ -1548,14 +1565,14 @@ __Hfardata 0 0 FARRAM 0 fardata dist/default/production/RTDuC.X.production.obj
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production/RTDuC.X.production.obj
 __size_of_HLVDInt 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Lifardata 0 0 CODE 0 ifardata dist/default/production/RTDuC.X.production.obj
-__end_of_EEReadChar 17D8 0 CODE 0 text31 dist/default/production/RTDuC.X.production.obj
+__end_of_EEReadChar 1810 0 CODE 0 text31 dist/default/production/RTDuC.X.production.obj
 __size_of_EEReassembleDouble 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/RTDuC.X.production.obj
 __Hintcode 18 0 CODE 0 intcode dist/default/production/RTDuC.X.production.obj
 ?_RTD2Angle 66 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 ___ftmul@f3_as_product 61 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 EEReadChar@location 1A 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-_EEWriteChar 1796 0 CODE 0 text50 dist/default/production/RTDuC.X.production.obj
+_EEWriteChar 17CE 0 CODE 0 text50 dist/default/production/RTDuC.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -1584,5 +1601,5 @@ idloc 0 200000 200000 8 1
 cstackCOMRAM 1 1 1 47 1
 cstackBANK0 1 60 60 55 1
 reset_vec 0 0 0 4 1
-intcode 0 8 8 18C5 1
+intcode 0 8 8 18FF 1
 config 0 300000 300000 E 1

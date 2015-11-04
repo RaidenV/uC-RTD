@@ -30,7 +30,7 @@ extern "C" {
     extern unsigned char DoubleSPIM[4];
 
     void SPIInitM(void);
-    unsigned char MReceiveSPI(void);
+    unsigned char MReceiveSPI(unsigned char);
     double SPIReassembleDouble(void);
     void MSendSPI(unsigned char, unsigned char);
     void MReceiveStrSPI(unsigned char*, unsigned char);

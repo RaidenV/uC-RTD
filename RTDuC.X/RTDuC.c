@@ -1,4 +1,5 @@
 #include <xc.h>
+#include <delays.h>
 #include "Joystick.h"
 #include "MotorControl.h"
 #include "PID.h"
@@ -24,14 +25,15 @@ void main(void)
 
     initialize();
 
-    SlaveReady = 0; //Start the slave in the ready condition;
     SSP1BUF = dummy_byte; //The dummy byte is defined as 0x00;
+    SlaveReady = 0; //Start the slave in the ready condition;
 
     while (1)
     {
         if (SPIflag == 1)
         {
             SPIflag = 0;
+            INTCONbits.GIE = 0; //Turn interrupts off during transmission;
             if ((Command == 0x02) || (Command == 0x03) || (Command == 0x04) || (Command == 0x06) || (Command == 0x08))
             {
                 if (Command == 0x02)
@@ -44,20 +46,21 @@ void main(void)
                     SPIDisassembleDouble(Ki);
                 else if (Command == 0x08)
                     SPIDisassembleDouble(Kd);
-                INTCONbits.GIE = 0; //Turn interrupts off during transmission;  This is somewhat of a last-minute design idea.  The idea is that the transmission time between master and slave will prove insignificant to the 30 ms PID loop time;
+
                 SlaveReady = 0;
                 for (x = 0; x < 4; x++) //Test sending multiple bytes;
                     SendSPI1(DoubleSPIS[x]);
                 temporary = SSP1BUF;
-                INTCONbits.GIE = 1; //Turn interrupts back on;
+                SlaveReady = 1;
             }
             else if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
             {
-                INTCONbits.GIE = 0; //Turn interrupts off during transmission;
                 SlaveReady = 0;
                 for (x = 0; x != 4; x++)
                     DoubleSPIS[x] = ReceiveSPI1();
-                INTCONbits.GIE = 1; //Turn interrupts back on;
+                
+                SlaveReady = 1;
+                
                 if (Command == 0x01)
                 {
                     SetAngle = SPIReassembleDouble();
@@ -77,14 +80,26 @@ void main(void)
                     Kd = SPIReassembleDouble();
                 }
                 temporary = SSP1BUF;
-            }
-            PIE1bits.SSP1IE = 1;
-        }
 
+            }
+
+            INTCONbits.GIE = 1; //Turn interrupts back on;
+            PIE1bits.SSP1IE = 1;
+            SlaveReady = 0;
+            Delay10TCYx(10);
+        }
+        SlaveReady = 1;
         DetectJoystick();
+        SlaveReady = 0;
+        Delay10TCYx(10);
         if (JSEnableFlag == 1)
         {
+            SlaveReady = 1;
+            INTCONbits.GIE = 0;
             ImplementJSMotion(DetectMovement()); //This function should guarantee that the PID loop is only stopped if the Joystick actually causes the motors to move;
+            INTCONbits.GIE = 1;
+            SlaveReady = 0;
+            Delay10TCYx(10);
         }
 
         if (PIDEnableFlag == 1 && TMR0Flag == 1) //This is the option which will run more frequently, therefore it should come first to avoid an instruction cycle of testing the PIDEnableFlag for the less likely value of '3';
@@ -97,6 +112,7 @@ void main(void)
             TMR0Flag = 0; //Lower the timer flag so that this doesn't repeat before the timer has expired;
             INTCONbits.GIE = 1; //Enable interrupts;
             SlaveReady = 0; //Allow master to transmit;
+            Delay10TCYx(10);
         }
 
         else if (PIDEnableFlag == 3) //Tests if the bit has been set by the StrippedKey = 0x01 in the KeyValue code;
@@ -112,14 +128,18 @@ void main(void)
 
             T0CONbits.TMR0ON = 1;
             SlaveReady = 0; // Allow master to transmit;
+            Delay10TCYx(10);
         }
 
         else if (TMR0Flag == 1)
         {
+            SlaveReady = 1;
             INTCONbits.GIE = 0; //Disable interrupts while the PID loop runs;
             CurrentAngle = RTD2Angle(ReadRTDpos());
             INTCONbits.GIE = 1; //Enable interrupts;
             TMR0Flag = 0;
+            SlaveReady = 0;
+            Delay10TCYx(10);
         }
     }
 }
@@ -129,6 +149,7 @@ void initialize(void)
     while (OSCCONbits.OSTS == 0); //Wait here while the Oscillator stabilizes;
 
     RTDInit(); //Initialize all modules;
+    SlaveReady = 1;
     SPIInit();
     JoystickInit();
     MotorDriverInit();
@@ -152,7 +173,6 @@ void interrupt ISR(void)
     if (INTCONbits.TMR0IF == 1) //If the TMR0 Interrupt is high, and the PID loop is enabled, run this;
     {
         TMR0Int();
-        SlaveReady = 0; //Take it out of the Not Ready State to allow for SPI transmission;  This is the only high priority interrupt where the slave returns to normal operating conditions afterwards;
     }
 
     if (INTCONbits.INT0IF == 1) //If the motor has failed, run this;

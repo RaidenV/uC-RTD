@@ -8480,7 +8480,7 @@ unsigned char checksum(void);
 double SPIReassembleDouble(void);
 
 
-# 9 "RTDuC.c"
+# 10 "RTDuC.c"
 #pragma config OSC = HSPLL
 #pragma config WDT = OFF
 #pragma config FCMEN = OFF
@@ -8499,14 +8499,15 @@ unsigned char temporary, x = 0;
 
 initialize();
 
-PORTCbits.RC6 = 0;
 SSP1BUF = dummy_byte;
+PORTCbits.RC6 = 0;
 
 while (1)
 {
 if (SPIflag == 1)
 {
 SPIflag = 0;
+INTCONbits.GIE = 0;
 if ((Command == 0x02) || (Command == 0x03) || (Command == 0x04) || (Command == 0x06) || (Command == 0x08))
 {
 if (Command == 0x02)
@@ -8519,20 +8520,21 @@ else if (Command == 0x06)
 SPIDisassembleDouble(Ki);
 else if (Command == 0x08)
 SPIDisassembleDouble(Kd);
-INTCONbits.GIE = 0;
+
 PORTCbits.RC6 = 0;
 for (x = 0; x < 4; x++)
 SendSPI1(DoubleSPIS[x]);
 temporary = SSP1BUF;
-INTCONbits.GIE = 1;
+PORTCbits.RC6 = 1;
 }
 else if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
 {
-INTCONbits.GIE = 0;
 PORTCbits.RC6 = 0;
 for (x = 0; x != 4; x++)
 DoubleSPIS[x] = ReceiveSPI1();
-INTCONbits.GIE = 1;
+
+PORTCbits.RC6 = 1;
+
 if (Command == 0x01)
 {
 SetAngle = SPIReassembleDouble();
@@ -8552,14 +8554,26 @@ else if (Command == 0x09)
 Kd = SPIReassembleDouble();
 }
 temporary = SSP1BUF;
-}
-PIE1bits.SSP1IE = 1;
+
 }
 
+INTCONbits.GIE = 1;
+PIE1bits.SSP1IE = 1;
+PORTCbits.RC6 = 0;
+Delay10TCYx(10);
+}
+PORTCbits.RC6 = 1;
 DetectJoystick();
+PORTCbits.RC6 = 0;
+Delay10TCYx(10);
 if (JSEnableFlag == 1)
 {
+PORTCbits.RC6 = 1;
+INTCONbits.GIE = 0;
 ImplementJSMotion(DetectMovement());
+INTCONbits.GIE = 1;
+PORTCbits.RC6 = 0;
+Delay10TCYx(10);
 }
 
 if (PIDEnableFlag == 1 && TMR0Flag == 1)
@@ -8572,6 +8586,7 @@ ImplementPIDMotion(motorInput);
 TMR0Flag = 0;
 INTCONbits.GIE = 1;
 PORTCbits.RC6 = 0;
+Delay10TCYx(10);
 }
 
 else if (PIDEnableFlag == 3)
@@ -8587,14 +8602,18 @@ INTCONbits.GIE = 1;
 
 T0CONbits.TMR0ON = 1;
 PORTCbits.RC6 = 0;
+Delay10TCYx(10);
 }
 
 else if (TMR0Flag == 1)
 {
+PORTCbits.RC6 = 1;
 INTCONbits.GIE = 0;
 CurrentAngle = RTD2Angle(ReadRTDpos());
 INTCONbits.GIE = 1;
 TMR0Flag = 0;
+PORTCbits.RC6 = 0;
+Delay10TCYx(10);
 }
 }
 }
@@ -8604,6 +8623,7 @@ void initialize(void)
 while (OSCCONbits.OSTS == 0);
 
 RTDInit();
+PORTCbits.RC6 = 1;
 SPIInit();
 JoystickInit();
 MotorDriverInit();
@@ -8627,7 +8647,6 @@ SPIInt();
 if (INTCONbits.TMR0IF == 1)
 {
 TMR0Int();
-PORTCbits.RC6 = 0;
 }
 
 if (INTCONbits.INT0IF == 1)
@@ -8647,7 +8666,7 @@ if (PIR2bits.OSCFIF == 1)
 {
 asm("reset");
 
-# 186
+# 206
 }
 }
 

@@ -25,8 +25,9 @@ void SPIInit(void)
 
 void SPIInt(void)
 {
-    Command = SSP1BUF;
     SlaveReady = 1; //Set the SlaveReady pin, stopping the master from initiating a transfer until the slave is ready;
+    INTCONbits.GIE = 0; //Turn off interrupts immediately;
+    Command = SSP1BUF;
     PIR1bits.SSP1IF = 0; //Clear the interrupt flag;
     PIE1bits.SSP1IE = 0; //Disable the interrupt so that subsequent transfers don't cause interrupts;
     SPIflag = 1; //Set the SPIflag;

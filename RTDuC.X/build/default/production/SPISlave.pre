@@ -8342,8 +8342,9 @@ PIE1bits.SSP1IE = 1;
 
 void SPIInt(void)
 {
-Command = SSP1BUF;
 PORTCbits.RC6 = 1;
+INTCONbits.GIE = 0;
+Command = SSP1BUF;
 PIR1bits.SSP1IF = 0;
 PIE1bits.SSP1IE = 0;
 SPIflag = 1;

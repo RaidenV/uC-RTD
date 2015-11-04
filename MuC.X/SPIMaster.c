@@ -8,11 +8,13 @@ unsigned char DoubleSPIM[4];
 void SPIInitM(void)
 {
     OpenSPI(SPI_FOSC_16, MODE_00, SMPMID);
+    ADCON1 = 0x0F; //Switch all pins related to the ADC to digital I/O's
     TRISBbits.RB1 = 1; //Set the SlaveReady pins as an input;
     TRISBbits.RB2 = 1;
     TRISBbits.RB3 = 0; //Set the SlaveSelect pins as an output;
-    TRISBbits.RB4 = 0; 
+    TRISBbits.RB4 = 0;
     INTCON2bits.RBPU = 1;
+
 }
 
 void MSendSPI(unsigned char data, unsigned char Slave)
@@ -20,10 +22,11 @@ void MSendSPI(unsigned char data, unsigned char Slave)
     if (Slave == 1)
     {
         SlaveSelect1 = 0; //Bring the SS to 0, enabling the slave;
-        Delay10TCYx(10); //delay for 10 clock cycles to ensure the slave is ready;
+        Delay10TCYx(1); //delay for 10 clock cycles to ensure the slave is ready;
         unsigned char tempChar;
         tempChar = SSPBUF;
         PIR1bits.SSPIF = 0;
+        while(SlaveReady1);
         SSPBUF = data;
         while (!PIR1bits.SSPIF);
         data = SSPBUF;
@@ -37,6 +40,7 @@ void MSendSPI(unsigned char data, unsigned char Slave)
         unsigned char tempChar;
         tempChar = SSPBUF;
         PIR1bits.SSPIF = 0;
+        while(SlaveReady2);
         SSPBUF = data;
         while (!PIR1bits.SSPIF);
         data = SSPBUF;
@@ -44,11 +48,15 @@ void MSendSPI(unsigned char data, unsigned char Slave)
     }
 }
 
-unsigned char MReceiveSPI(void)
+unsigned char MReceiveSPI(unsigned char Slaves)
 {
     unsigned char tempCH;
     tempCH = SSPBUF; //Clear the buffer;
     PIR1bits.SSPIF = 0; //Clear the MSSP Interrupt Flag; 
+    if(Slaves == 1)
+        while(SlaveReady1);
+    else if(Slaves == 2)
+        while(SlaveReady2);
     SSPBUF = 0x00; //Initiate communication by sending a dummy byte;
     while (!PIR1bits.SSPIF); // Wait until transmission is complete;
     PIR1bits.SSPIF = 0;
@@ -61,20 +69,18 @@ void MReceiveStrSPI(unsigned char* str, unsigned char Slave)
     {
         unsigned char x;
         SlaveSelect1 = 0; //Clear the SS, enabling the slave; 
-        while (SlaveReady1);
-        Delay10TCYx(25); //250 TCY Delay;
+        Delay10TCYx(30); //250 TCY Delay;
         for (x = 0; x < 4; x++)
-            DoubleSPIM[x] = MReceiveSPI(); //Read data from slave;
+            DoubleSPIM[x] = MReceiveSPI(1); //Read data from slave;
         SlaveSelect1 = 1; //Set the SS, ending communication with the slave;
     }
     else if (Slave == 2)
     {
         unsigned char x;
         SlaveSelect2 = 0; //Clear the SS, enabling the slave; 
-        while (SlaveReady2);
         Delay10TCYx(25); //500 TCY Delay;
         for (x = 0; x < 3; x++)
-            str[x] = MReceiveSPI(); //Read data from slave;
+            str[x] = MReceiveSPI(2); //Read data from slave;
         Delay10TCYx(1);
         SlaveSelect2 = 1;
     }

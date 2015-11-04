@@ -188,6 +188,10 @@ void main(void)
                     SlaveSelect2 = 1;
                 }
             }
+            TMR0H = timerHigh;
+            TMR0L = timerLow;
+            TMR0Flag = 0;
+            INTCONbits.TMR0IF = 0;
             INTCONbits.GIE = 1; //Turn interrupts back on after communication with slave;
         }
 
@@ -196,11 +200,11 @@ void main(void)
             do
             {
                 INTCONbits.GIE = 0; //Disable interrupts for transmission;
-                while (SlaveReady1); //Wait for the slave to be ready;
+                while (SlaveReady1 == 1); //Wait for the slave to be ready;
 
                 MSendSPI(0x02, 1); //Write the command byte to the slave;
 
-                while (SlaveReady1); //Wait for the slave to be ready;
+                while (SlaveReady1 == 1); //Wait for the slave to be ready;
                 MReceiveStrSPI(DoubleSPIM, 1); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
                 CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
                 for (x = 0; x != 4; x++)
@@ -258,7 +262,6 @@ void InitializeInterrupts(void)
 
     INTCONbits.GIE = 1; //Enable general interrupts;
     INTCONbits.PEIE = 1; //Enable Peripheral interrupts;
-
 }
 
 void TMR0Init(void)
@@ -272,6 +275,7 @@ void TMR0Init(void)
 
 void interrupt ISR(void)
 {
+    INTCONbits.GIE = 0;
     if (INTCONbits.TMR0IF == 1)
     {
         TMR0Flag = 1;

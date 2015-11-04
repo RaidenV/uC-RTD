@@ -34,8 +34,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S375 . . . ]
 "7763
 [v _PIE1bits `VS375 ~T0 @X0 0 e@3997 ]
-"12321
-[v _SSP1BUF `Vuc ~T0 @X0 0 e@4041 ]
 "2941
 [s S150 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S150 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
@@ -62,6 +60,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S149 . . . . . . . . ]
 "3000
 [v _PORTCbits `VS149 ~T0 @X0 0 e@3970 ]
+"13593
+[s S711 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S711 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"13603
+[s S712 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S712 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE GIE ]
+"13613
+[s S713 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S713 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE GIEL GIEH ]
+"13623
+[s S714 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S714 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"13633
+[s S715 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S715 . . GIEL GIEH ]
+"13592
+[u S710 `S711 1 `S712 1 `S713 1 `S714 1 `S715 1 ]
+[n S710 . . . . . . ]
+"13639
+[v _INTCONbits `VS710 ~T0 @X0 0 e@4082 ]
+"12321
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@4041 ]
 "7828
 [s S379 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S379 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF PSPIF ]
@@ -6591,189 +6611,192 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SPISlave.c: 27: {
 [e :U _SPIInt ]
 [f ]
-[; ;SPISlave.c: 28: Command = SSP1BUF;
+[; ;SPISlave.c: 28: PORTCbits.RC6 = 1;
 "28
-[e = _Command _SSP1BUF ]
-[; ;SPISlave.c: 29: PORTCbits.RC6 = 1;
-"29
 [e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-[; ;SPISlave.c: 30: PIR1bits.SSP1IF = 0;
+[; ;SPISlave.c: 29: INTCONbits.GIE = 0;
+"29
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 30: Command = SSP1BUF;
 "30
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;SPISlave.c: 31: PIE1bits.SSP1IE = 0;
+[e = _Command _SSP1BUF ]
+[; ;SPISlave.c: 31: PIR1bits.SSP1IF = 0;
 "31
-[e = . . _PIE1bits 0 3 -> -> 0 `i `uc ]
-[; ;SPISlave.c: 32: SPIflag = 1;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 32: PIE1bits.SSP1IE = 0;
 "32
-[e = _SPIflag -> -> 1 `i `uc ]
-[; ;SPISlave.c: 33: }
+[e = . . _PIE1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 33: SPIflag = 1;
 "33
+[e = _SPIflag -> -> 1 `i `uc ]
+[; ;SPISlave.c: 34: }
+"34
 [e :UE 759 ]
 }
-"35
+"36
 [v _SendSPI1 `(v ~T0 @X0 1 ef1`uc ]
-"36
-{
-[; ;SPISlave.c: 35: void SendSPI1(unsigned char data)
-[; ;SPISlave.c: 36: {
-[e :U _SendSPI1 ]
-"35
-[v _data `uc ~T0 @X0 1 r1 ]
-"36
-[f ]
-[; ;SPISlave.c: 37: SSP1BUF = data;
 "37
-[e = _SSP1BUF _data ]
+{
+[; ;SPISlave.c: 36: void SendSPI1(unsigned char data)
+[; ;SPISlave.c: 37: {
+[e :U _SendSPI1 ]
+"36
+[v _data `uc ~T0 @X0 1 r1 ]
+"37
+[f ]
+[; ;SPISlave.c: 38: SSP1BUF = data;
 "38
-[v _temp `uc ~T0 @X0 1 a ]
-[; ;SPISlave.c: 38: unsigned char temp;
-[; ;SPISlave.c: 39: PIR1bits.SSP1IF = 0;
+[e = _SSP1BUF _data ]
 "39
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;SPISlave.c: 40: temp = SSP1BUF;
+[v _temp `uc ~T0 @X0 1 a ]
+[; ;SPISlave.c: 39: unsigned char temp;
+[; ;SPISlave.c: 40: PIR1bits.SSP1IF = 0;
 "40
-[e = _temp _SSP1BUF ]
-[; ;SPISlave.c: 41: while (!PIR1bits.SSP1IF);
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 41: temp = SSP1BUF;
 "41
+[e = _temp _SSP1BUF ]
+[; ;SPISlave.c: 42: while (!PIR1bits.SSP1IF);
+"42
 [e $U 761  ]
 [e :U 762 ]
 [e :U 761 ]
 [e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 762  ]
 [e :U 763 ]
-[; ;SPISlave.c: 42: SSP1CON1bits.SSPOV1 = 0;
-"42
-[e = . . _SSP1CON1bits 8 1 -> -> 0 `i `uc ]
-[; ;SPISlave.c: 43: PIR1bits.SSP1IF = 0;
+[; ;SPISlave.c: 43: SSP1CON1bits.SSPOV1 = 0;
 "43
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;SPISlave.c: 44: }
+[e = . . _SSP1CON1bits 8 1 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 44: PIR1bits.SSP1IF = 0;
 "44
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 45: }
+"45
 [e :UE 760 ]
 }
-"46
-[v _ReceiveSPI1 `(uc ~T0 @X0 1 ef ]
 "47
+[v _ReceiveSPI1 `(uc ~T0 @X0 1 ef ]
+"48
 {
-[; ;SPISlave.c: 46: unsigned char ReceiveSPI1(void)
-[; ;SPISlave.c: 47: {
+[; ;SPISlave.c: 47: unsigned char ReceiveSPI1(void)
+[; ;SPISlave.c: 48: {
 [e :U _ReceiveSPI1 ]
 [f ]
-[; ;SPISlave.c: 48: SSP1BUF = 0x00;
-"48
-[e = _SSP1BUF -> -> 0 `i `uc ]
-[; ;SPISlave.c: 49: while (!PIR1bits.SSP1IF);
+[; ;SPISlave.c: 49: SSP1BUF = 0x00;
 "49
+[e = _SSP1BUF -> -> 0 `i `uc ]
+[; ;SPISlave.c: 50: while (!PIR1bits.SSP1IF);
+"50
 [e $U 765  ]
 [e :U 766 ]
 [e :U 765 ]
 [e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 766  ]
 [e :U 767 ]
-[; ;SPISlave.c: 50: PIR1bits.SSP1IF = 0;
-"50
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;SPISlave.c: 51: return SSP1BUF;
+[; ;SPISlave.c: 51: PIR1bits.SSP1IF = 0;
 "51
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;SPISlave.c: 52: return SSP1BUF;
+"52
 [e ) _SSP1BUF ]
 [e $UE 764  ]
-[; ;SPISlave.c: 52: }
-"52
+[; ;SPISlave.c: 53: }
+"53
 [e :UE 764 ]
 }
-"54
+"55
 [v _SPIDisassembleDouble `(v ~T0 @X0 1 ef1`d ]
-"55
-{
-[; ;SPISlave.c: 54: void SPIDisassembleDouble(double dub)
-[; ;SPISlave.c: 55: {
-[e :U _SPIDisassembleDouble ]
-"54
-[v _dub `d ~T0 @X0 1 r1 ]
-"55
-[f ]
-[; ;SPISlave.c: 56: DoublePtr = (unsigned char*) &dub;
 "56
-[e = _DoublePtr -> &U _dub `*uc ]
-[; ;SPISlave.c: 57: DoubleSPIS[0] = DoublePtr[0];
+{
+[; ;SPISlave.c: 55: void SPIDisassembleDouble(double dub)
+[; ;SPISlave.c: 56: {
+[e :U _SPIDisassembleDouble ]
+"55
+[v _dub `d ~T0 @X0 1 r1 ]
+"56
+[f ]
+[; ;SPISlave.c: 57: DoublePtr = (unsigned char*) &dub;
 "57
-[e = *U + &U _DoubleSPIS * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;SPISlave.c: 58: DoubleSPIS[1] = DoublePtr[1];
+[e = _DoublePtr -> &U _dub `*uc ]
+[; ;SPISlave.c: 58: DoubleSPIS[0] = DoublePtr[0];
 "58
-[e = *U + &U _DoubleSPIS * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;SPISlave.c: 59: DoubleSPIS[2] = DoublePtr[2];
+[e = *U + &U _DoubleSPIS * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;SPISlave.c: 59: DoubleSPIS[1] = DoublePtr[1];
 "59
-[e = *U + &U _DoubleSPIS * -> -> -> 2 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;SPISlave.c: 60: DoubleSPIS[3] = GenerateChecksum();
+[e = *U + &U _DoubleSPIS * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;SPISlave.c: 60: DoubleSPIS[2] = DoublePtr[2];
 "60
-[e = *U + &U _DoubleSPIS * -> -> -> 3 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ( _GenerateChecksum ..  ]
-[; ;SPISlave.c: 61: }
+[e = *U + &U _DoubleSPIS * -> -> -> 2 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;SPISlave.c: 61: DoubleSPIS[3] = GenerateChecksum();
 "61
+[e = *U + &U _DoubleSPIS * -> -> -> 3 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ( _GenerateChecksum ..  ]
+[; ;SPISlave.c: 62: }
+"62
 [e :UE 768 ]
 }
-"63
-[v _GenerateChecksum `(uc ~T0 @X0 1 ef ]
 "64
+[v _GenerateChecksum `(uc ~T0 @X0 1 ef ]
+"65
 {
-[; ;SPISlave.c: 63: unsigned char GenerateChecksum(void)
-[; ;SPISlave.c: 64: {
+[; ;SPISlave.c: 64: unsigned char GenerateChecksum(void)
+[; ;SPISlave.c: 65: {
 [e :U _GenerateChecksum ]
 [f ]
-"65
+"66
 [v _y `uc ~T0 @X0 1 a ]
 [v _sum `uc ~T0 @X0 1 a ]
-[; ;SPISlave.c: 65: unsigned char y, sum = 0;
+[; ;SPISlave.c: 66: unsigned char y, sum = 0;
 [e = _sum -> -> 0 `i `uc ]
-[; ;SPISlave.c: 66: for (y = 0; y != 3; y++)
-"66
+[; ;SPISlave.c: 67: for (y = 0; y != 3; y++)
+"67
 {
 [e = _y -> -> 0 `i `uc ]
 [e $ != -> _y `i -> 3 `i 770  ]
 [e $U 771  ]
-"67
+"68
 [e :U 770 ]
-[; ;SPISlave.c: 67: sum += DoubleSPIS[y];
+[; ;SPISlave.c: 68: sum += DoubleSPIS[y];
 [e =+ _sum *U + &U _DoubleSPIS * -> _y `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
-"66
+"67
 [e ++ _y -> -> 1 `i `uc ]
 [e $ != -> _y `i -> 3 `i 770  ]
 [e :U 771 ]
-"67
-}
-[; ;SPISlave.c: 68: return sum;
 "68
+}
+[; ;SPISlave.c: 69: return sum;
+"69
 [e ) _sum ]
 [e $UE 769  ]
-[; ;SPISlave.c: 69: }
-"69
+[; ;SPISlave.c: 70: }
+"70
 [e :UE 769 ]
 }
-"71
-[v _SPIReassembleDouble `(d ~T0 @X0 1 ef ]
 "72
+[v _SPIReassembleDouble `(d ~T0 @X0 1 ef ]
+"73
 {
-[; ;SPISlave.c: 71: double SPIReassembleDouble(void)
-[; ;SPISlave.c: 72: {
+[; ;SPISlave.c: 72: double SPIReassembleDouble(void)
+[; ;SPISlave.c: 73: {
 [e :U _SPIReassembleDouble ]
 [f ]
-"73
-[v _dub `d ~T0 @X0 1 a ]
-[; ;SPISlave.c: 73: double dub;
-[; ;SPISlave.c: 74: DoublePtr = (unsigned char*) &dub;
 "74
-[e = _DoublePtr -> &U _dub `*uc ]
-[; ;SPISlave.c: 75: DoublePtr[0] = DoubleSPIS[0];
+[v _dub `d ~T0 @X0 1 a ]
+[; ;SPISlave.c: 74: double dub;
+[; ;SPISlave.c: 75: DoublePtr = (unsigned char*) &dub;
 "75
-[e = *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIS * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
-[; ;SPISlave.c: 76: DoublePtr[1] = DoubleSPIS[1];
+[e = _DoublePtr -> &U _dub `*uc ]
+[; ;SPISlave.c: 76: DoublePtr[0] = DoubleSPIS[0];
 "76
-[e = *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIS * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
-[; ;SPISlave.c: 77: DoublePtr[2] = DoubleSPIS[2];
+[e = *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIS * -> -> -> 0 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
+[; ;SPISlave.c: 77: DoublePtr[1] = DoubleSPIS[1];
 "77
+[e = *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIS * -> -> -> 1 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
+[; ;SPISlave.c: 78: DoublePtr[2] = DoubleSPIS[2];
+"78
 [e = *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DoubleSPIS * -> -> -> 2 `i `ui `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
-[; ;SPISlave.c: 79: return dub;
-"79
+[; ;SPISlave.c: 80: return dub;
+"80
 [e ) _dub ]
 [e $UE 773  ]
-[; ;SPISlave.c: 80: }
-"80
+[; ;SPISlave.c: 81: }
+"81
 [e :UE 773 ]
 }
