@@ -49,7 +49,7 @@ extern "C" {
     void EEWriteChar(unsigned char, unsigned char);
     char EEReadChar(unsigned char);
 
-    void HLVDInt(void);
+    void SaveAll(void);
 
 #ifdef	__cplusplus
 }

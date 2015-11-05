@@ -21,7 +21,8 @@ void ZeroMotors(void);
 
 void main(void)
 {
-    unsigned char temporary, x = 0;
+    unsigned char trash, x = 0;
+    unsigned char dtime = 10;
 
     initialize();
 
@@ -50,7 +51,8 @@ void main(void)
                 SlaveReady = 0;
                 for (x = 0; x < 4; x++) //Test sending multiple bytes;
                     SendSPI1(DoubleSPIS[x]);
-                temporary = SSP1BUF;
+                trash = SSP1BUF;
+                PIR1bits.SSP1IF = 0;
                 SlaveReady = 1;
             }
             else if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
@@ -58,9 +60,9 @@ void main(void)
                 SlaveReady = 0;
                 for (x = 0; x != 4; x++)
                     DoubleSPIS[x] = ReceiveSPI1();
-                
+
                 SlaveReady = 1;
-                
+
                 if (Command == 0x01)
                 {
                     SetAngle = SPIReassembleDouble();
@@ -79,14 +81,20 @@ void main(void)
                 {
                     Kd = SPIReassembleDouble();
                 }
-                temporary = SSP1BUF;
-
+                trash = SSP1BUF;
+                PIR1bits.SSP1IF = 0;
+                SaveAll();
+            }
+            else //If the command was not understood...;
+            {
+                trash = SSP1BUF; //Clear the buffer;
+                PIR1bits.SSP1IF = 0; //Lower the flag to prepare for a fresh transfer;
             }
 
             INTCONbits.GIE = 1; //Turn interrupts back on;
             PIE1bits.SSP1IE = 1;
             SlaveReady = 0;
-            Delay10TCYx(10);
+            Delay10TCYx(dtime); //I've decided to add slight delays (100 Tcy (may need to be longer)) to try to avoid the case where the master polls the slave directly after the slave is ready, but the slave has already entered into another routine which prohibits the master sending data; 
         }
         SlaveReady = 1;
         DetectJoystick();
@@ -94,12 +102,12 @@ void main(void)
         Delay10TCYx(10);
         if (JSEnableFlag == 1)
         {
-            SlaveReady = 1;
-            INTCONbits.GIE = 0;
+            SlaveReady = 1; //Disallow master transmission;
+            INTCONbits.GIE = 0; //Disable interrupts while the PID loop runs;
             ImplementJSMotion(DetectMovement()); //This function should guarantee that the PID loop is only stopped if the Joystick actually causes the motors to move;
-            INTCONbits.GIE = 1;
-            SlaveReady = 0;
-            Delay10TCYx(10);
+            INTCONbits.GIE = 1; //Enable interrupts;
+            SlaveReady = 0; //Alow the master to transmit;
+            Delay10TCYx(dtime);
         }
 
         if (PIDEnableFlag == 1 && TMR0Flag == 1) //This is the option which will run more frequently, therefore it should come first to avoid an instruction cycle of testing the PIDEnableFlag for the less likely value of '3';
@@ -112,7 +120,7 @@ void main(void)
             TMR0Flag = 0; //Lower the timer flag so that this doesn't repeat before the timer has expired;
             INTCONbits.GIE = 1; //Enable interrupts;
             SlaveReady = 0; //Allow master to transmit;
-            Delay10TCYx(10);
+            Delay10TCYx(dtime);
         }
 
         else if (PIDEnableFlag == 3) //Tests if the bit has been set by the StrippedKey = 0x01 in the KeyValue code;
@@ -128,7 +136,7 @@ void main(void)
 
             T0CONbits.TMR0ON = 1;
             SlaveReady = 0; // Allow master to transmit;
-            Delay10TCYx(10);
+            Delay10TCYx(dtime);
         }
 
         else if (TMR0Flag == 1)
@@ -139,7 +147,7 @@ void main(void)
             INTCONbits.GIE = 1; //Enable interrupts;
             TMR0Flag = 0;
             SlaveReady = 0;
-            Delay10TCYx(10);
+            Delay10TCYx(dtime);
         }
     }
 }
@@ -147,9 +155,9 @@ void main(void)
 void initialize(void)
 {
     while (OSCCONbits.OSTS == 0); //Wait here while the Oscillator stabilizes;
-
-    RTDInit(); //Initialize all modules;
     SlaveReady = 1;
+    
+    RTDInit(); //Initialize all modules;
     SPIInit();
     JoystickInit();
     MotorDriverInit();
@@ -185,7 +193,7 @@ void interrupt ISR(void)
         MOTORFAILLED = 0; //If the system is powering down, quickly turn off all the LEDs;
         STATUSLED = 0;
         JOYSTICKLED = 0;
-        HLVDInt(); //Run the save routine;
+        SaveAll(); //Run the save routine;
     }
 
     if (PIR2bits.OSCFIF == 1) //If this Oscillator failed, run this;
@@ -228,11 +236,10 @@ void InitializeInterrupts(void)
     INTCONbits.GIE = 1; //Enable General Interrupts;
     INTCONbits.PEIE = 1; //Enable Peripheral Interrupts;
 
-    INTCONbits.TMR0IE = 1; //If so, enable the PID loop;
+    INTCONbits.TMR0IE = 1; //Enable the Timer 0 Interrupt;
     T0CONbits.TMR0ON = 1;
 
     PIE2bits.OSCFIE = 1; //Enable the Oscillator Fail interrupt;
-    IPR2bits.OSCFIP = 1; //High priority;
 }
 
 void ZeroMotors(void)

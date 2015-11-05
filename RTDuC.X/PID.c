@@ -24,7 +24,6 @@ void PIDInit(void)
     T0CON = 0x04; //Enable Timer 0, 32:1 prescaler;
     TMR0H = timerHigh; //Offset the timer by 0xDB60 to allow for a 0.03 second timer loop;
     TMR0L = timerLow; //Calculation: 0xffff - ((0.03/(1/10e6))/32);
-    INTCON2bits.TMR0IP = 1; //High Priority;
 }
 
 void calculatePID(double angle, double setpoint)

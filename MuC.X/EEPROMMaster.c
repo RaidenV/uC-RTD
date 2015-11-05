@@ -23,6 +23,10 @@ void EEPROMInit(void)
     IPR2bits.HLVDIP = 1; //Set the HLVD to high priority;
 }
 
+/* EEBootUp
+ * This function checks the SAVEDloc.  If a true bit is returned, the values previously loaded in the various
+ * registers are refreshed.
+ */
 #pragma interrupt_level 1 //According to the XC8 user's guide, this guarantees that there is no duplication of the interrupt in the event that all interrupts are turned off, which is the case with this function and those hereafter;
 void EEBootUp(void) //This function restores variables that were lost;
 {
@@ -147,7 +151,7 @@ char EEReadChar(unsigned char location)
 }
 
 #pragma interrupt_level 1
-void HLVDInt(void) //This is the shutdown routine;
+void SaveAll(void) //This is the save routine;
 {
     EEWriteDouble(LASTCOMPOSloc, SetAngle);
     EEWriteDouble(KPPARAMloc, Kp);

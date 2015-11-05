@@ -108,6 +108,7 @@ void main(void)
                     for (x = 0; x != 4; x++)
                         MSendSPI(DoubleSPIM[x], 1);
                     SlaveSelect1 = 1;
+                    SaveAll();
                 }
             }
 
@@ -186,6 +187,7 @@ void main(void)
                     for (x = 0; x != 4; x++)
                         MSendSPI(DoubleSPIM[x], 2);
                     SlaveSelect2 = 1;
+                    SaveAll();
                 }
             }
             TMR0H = timerHigh;
@@ -200,11 +202,11 @@ void main(void)
             do
             {
                 INTCONbits.GIE = 0; //Disable interrupts for transmission;
-                while (SlaveReady1 == 1); //Wait for the slave to be ready;
+                while (SlaveReady1); //Wait for the slave to be ready;
 
                 MSendSPI(0x02, 1); //Write the command byte to the slave;
 
-                while (SlaveReady1 == 1); //Wait for the slave to be ready;
+                while (SlaveReady1); //Wait for the slave to be ready;
                 MReceiveStrSPI(DoubleSPIM, 1); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
                 CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
                 for (x = 0; x != 4; x++)
@@ -241,15 +243,39 @@ void initialize(void)
 {
     while (OSCCONbits.OSTS == 0); //Wait here while the Oscillator stabilizes;
 
-    SPIInitM(); //Initialize all modules;
-    SerInit();
-    EEPROMInit();
-    TMR0Init();
-    InitializeInterrupts();
 
-    Delay10TCYx(10); //Give a slight delay to allow for the Slaves to come up;
+    SerInit();
+    SerTxStr("Serial Communications Initialized...");
+    SerNL();
+
+    SPIInitM(); //Initialize all modules;
+    SerTxStr("SPI Initialized...");
+    SerNL();
+
+    EEPROMInit();
+    SerTxStr("EEPROM Initialized...");
+    SerNL();
+
+    TMR0Init();
+    SerTxStr("Timers Initialized...");
+    SerNL();
+
+    InitializeInterrupts();
+    SerTxStr("Interrupts Initialized...");
+    SerNL();
+
+    SerTxStr("Waiting for Slaves...");
+    SerNL();
+
+    Delay10TCYx(10); //Give a slight delay to allow for the Slaves to come up and zero themselves;
 
     while (SlaveReady1 || SlaveReady2); //While both slaves are not ready;
+    SerTxStr("Slaves ready...");
+    SerNL();
+    SerTxStr("System Ready");
+    SerNL();
+
+    STATUSLED = 1;
 
 }
 
@@ -262,6 +288,8 @@ void InitializeInterrupts(void)
 
     INTCONbits.GIE = 1; //Enable general interrupts;
     INTCONbits.PEIE = 1; //Enable Peripheral interrupts;
+
+    PIE2bits.OSCFIE = 1; //Enable the Oscillator Fail interrupt;
 }
 
 void TMR0Init(void)
@@ -287,6 +315,12 @@ void interrupt ISR(void)
     if (PIR1bits.RCIF == 1)
     {
         RCInt();
+    }
+
+    if (PIR2bits.OSCFIF == 1) //If this Oscillator failed, run this;
+    {
+        STATUSLED = 0;
+        RESET(); //If the Oscillator flag has been raised, there's a serious issue with the oscillator, so reset the device, understanding that the first part of the initialization routine checks the oscillator;
     }
     INTCONbits.GIE = 1;
 }

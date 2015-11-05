@@ -8314,7 +8314,7 @@ double EEReadDouble(unsigned char);
 void EEWriteChar(unsigned char, unsigned char);
 char EEReadChar(unsigned char);
 
-void HLVDInt(void);
+void SaveAll(void);
 
 # 3 "EEPROM.c"
 unsigned char DDouble[3];
@@ -8350,9 +8350,9 @@ Kp = EEReadDouble(0x03);
 Ki = EEReadDouble(0x06);
 Kd = EEReadDouble(0x09);
 PIDEnableFlag = EEReadChar(0x15);
-if((PIDEnableFlag | 0x01) == 0x01)
+if(PIDEnableFlag == 1)
 {
-PIDEnableFlag = 0x03;
+PIDEnableFlag = 3;
 }
 }
 }
@@ -8452,7 +8452,7 @@ return ch;
 }
 
 #pragma interrupt_level 1
-void HLVDInt(void)
+void SaveAll(void)
 {
 EEWriteDouble(0x00, SetAngle);
 EEWriteDouble(0x03, Kp);

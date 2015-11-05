@@ -33,9 +33,9 @@ void EEBootUp(void) //This function restores variables that were lost;
         Ki = EEReadDouble(KIPARAMloc);
         Kd = EEReadDouble(KDPARAMloc);
         PIDEnableFlag = EEReadChar(PIDENABLEloc);
-        if((PIDEnableFlag | 0x01) == 0x01) //If the PID loop is enabled;
+        if(PIDEnableFlag == 1) //If the PID loop is enabled;
         {
-            PIDEnableFlag = 0x03; //Let the PID Loop handle the set angle as if it is a newly entered angle;
+            PIDEnableFlag = 3; //Let the PID Loop handle the set angle as if it is a newly entered angle;
         }
     }
 }
@@ -147,7 +147,7 @@ char EEReadChar(unsigned char location)
 }
 
 #pragma interrupt_level 1
-void HLVDInt(void) //This is the shutdown routine;
+void SaveAll(void) //This is the shutdown routine;
 {
     EEWriteDouble(LASTCOMPOSloc, SetAngle);
     EEWriteDouble(KPPARAMloc, Kp);

@@ -27,6 +27,7 @@ void SerInit(void)
     PIE1bits.RC1IE = 1; //Enable the Receive interrupt;
 
     SerTxStr("Welcome to the world of tomorrow!!!");
+    SerNL();
 }
 
 /* SerTx

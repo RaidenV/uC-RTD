@@ -5,20 +5,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
 "13138
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"13501
-[s S707 :7 `uc 1 :1 `uc 1 ]
-[n S707 . . NOT_RBPU ]
-"13505
-[s S708 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S708 . RBIP INT3IP TMR0IP INTEDG3 INTEDG2 INTEDG1 INTEDG0 nRBPU ]
-"13515
-[s S709 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
-[n S709 . . INT3P T0IP . RBPU ]
-"13500
-[u S706 `S707 1 `S708 1 `S709 1 ]
-[n S706 . . . . ]
-"13523
-[v _INTCON2bits `VS706 ~T0 @X0 0 e@4081 ]
 "13593
 [s S711 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S711 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
@@ -6575,113 +6561,110 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;PID.c: 26: TMR0L = 0x60;
 "26
 [e = _TMR0L -> -> 96 `i `uc ]
-[; ;PID.c: 27: INTCON2bits.TMR0IP = 1;
+[; ;PID.c: 27: }
 "27
-[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
-[; ;PID.c: 28: }
-"28
 [e :UE 762 ]
 }
-"30
+"29
 [v _calculatePID `(v ~T0 @X0 1 ef2`d`d ]
-"31
-{
-[; ;PID.c: 30: void calculatePID(double angle, double setpoint)
-[; ;PID.c: 31: {
-[e :U _calculatePID ]
 "30
+{
+[; ;PID.c: 29: void calculatePID(double angle, double setpoint)
+[; ;PID.c: 30: {
+[e :U _calculatePID ]
+"29
 [v _angle `d ~T0 @X0 1 r1 ]
 [v _setpoint `d ~T0 @X0 1 r2 ]
-"31
+"30
 [f ]
-"32
+"31
 [v _derErr `d ~T0 @X0 1 a ]
-[; ;PID.c: 32: double derErr;
-[; ;PID.c: 33: if (PIDEnableFlag == 3)
-"33
+[; ;PID.c: 31: double derErr;
+[; ;PID.c: 32: if (PIDEnableFlag == 3)
+"32
 [e $ ! == -> _PIDEnableFlag `i -> 3 `i 764  ]
-[; ;PID.c: 34: {
-"34
+[; ;PID.c: 33: {
+"33
 {
-[; ;PID.c: 35: error = 0;
-"35
+[; ;PID.c: 34: error = 0;
+"34
 [e = _error -> -> 0 `i `d ]
-[; ;PID.c: 36: prevErr = 0;
-"36
+[; ;PID.c: 35: prevErr = 0;
+"35
 [e = _prevErr -> -> 0 `i `d ]
-[; ;PID.c: 37: intErr = 0;
-"37
+[; ;PID.c: 36: intErr = 0;
+"36
 [e = _intErr -> -> 0 `i `d ]
-[; ;PID.c: 38: PIDEnableFlag = 1;
-"38
+[; ;PID.c: 37: PIDEnableFlag = 1;
+"37
 [e = _PIDEnableFlag -> -> 1 `i `uc ]
-"39
+"38
 }
 [e :U 764 ]
-[; ;PID.c: 39: }
-[; ;PID.c: 41: error = setpoint - angle;
-"41
+[; ;PID.c: 38: }
+[; ;PID.c: 40: error = setpoint - angle;
+"40
 [e = _error - _setpoint _angle ]
-[; ;PID.c: 42: if (error > 180)
-"42
+[; ;PID.c: 41: if (error > 180)
+"41
 [e $ ! > _error -> -> 180 `i `d 765  ]
-[; ;PID.c: 43: error -= 360;
-"43
+[; ;PID.c: 42: error -= 360;
+"42
 [e =- _error -> -> 360 `i `d ]
 [e $U 766  ]
-"44
+"43
 [e :U 765 ]
-[; ;PID.c: 44: else if (error < -180)
+[; ;PID.c: 43: else if (error < -180)
 [e $ ! < _error -> -U -> 180 `i `d 767  ]
-[; ;PID.c: 45: error += 360;
-"45
+[; ;PID.c: 44: error += 360;
+"44
 [e =+ _error -> -> 360 `i `d ]
 [e :U 767 ]
-"47
+"46
 [e :U 766 ]
-[; ;PID.c: 47: derErr = error - prevErr;
+[; ;PID.c: 46: derErr = error - prevErr;
 [e = _derErr - _error _prevErr ]
-[; ;PID.c: 48: intErr += error;
-"48
+[; ;PID.c: 47: intErr += error;
+"47
 [e =+ _intErr _error ]
-[; ;PID.c: 49: if (intErr > 2000)
-"49
+[; ;PID.c: 48: if (intErr > 2000)
+"48
 [e $ ! > _intErr -> -> 2000 `i `d 768  ]
-[; ;PID.c: 50: intErr = 2000;
-"50
+[; ;PID.c: 49: intErr = 2000;
+"49
 [e = _intErr -> -> 2000 `i `d ]
 [e :U 768 ]
-[; ;PID.c: 52: motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
-"52
+[; ;PID.c: 51: motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
+"51
 [e = _motorInput -> + + * _Kp _error * * _Ki _intErr _loopTime * _Kd / _derErr _loopTime `i ]
-[; ;PID.c: 54: prevErr = error;
-"54
+[; ;PID.c: 53: prevErr = error;
+"53
 [e = _prevErr _error ]
-[; ;PID.c: 55: }
-"55
+[; ;PID.c: 54: }
+"54
 [e :UE 763 ]
 }
-"57
+"56
 [v _TMR0Int `(v ~T0 @X0 1 ef ]
-"58
+"57
 {
-[; ;PID.c: 57: void TMR0Int(void)
-[; ;PID.c: 58: {
+[; ;PID.c: 56: void TMR0Int(void)
+[; ;PID.c: 57: {
 [e :U _TMR0Int ]
 [f ]
-[; ;PID.c: 59: TMR0H = 0xDB;
-"59
+[; ;PID.c: 58: TMR0H = 0xDB;
+"58
 [e = _TMR0H -> -> 219 `i `uc ]
-[; ;PID.c: 60: TMR0L = 0x60;
-"60
+[; ;PID.c: 59: TMR0L = 0x60;
+"59
 [e = _TMR0L -> -> 96 `i `uc ]
-[; ;PID.c: 61: TMR0Flag = 1;
-"61
+[; ;PID.c: 60: TMR0Flag = 1;
+"60
 [e = _TMR0Flag -> -> 1 `i `uc ]
-[; ;PID.c: 62: INTCONbits.TMR0IF = 0;
-"62
+[; ;PID.c: 61: INTCONbits.TMR0IF = 0;
+"61
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;PID.c: 63: }
-"63
+[; ;PID.c: 62: }
+"62
 [e :UE 769 ]
 }

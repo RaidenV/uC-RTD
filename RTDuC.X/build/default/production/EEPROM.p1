@@ -6467,7 +6467,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;EEPROM.h: 53: double EEReadDouble(unsigned char);
 [; ;EEPROM.h: 55: void EEWriteChar(unsigned char, unsigned char);
 [; ;EEPROM.h: 56: char EEReadChar(unsigned char);
-[; ;EEPROM.h: 58: void HLVDInt(void);
+[; ;EEPROM.h: 58: void SaveAll(void);
 "3 EEPROM.c
 [v _DDouble `uc ~T0 @X0 -> 3 `i e ]
 [; ;EEPROM.c: 3: unsigned char DDouble[3];
@@ -6559,13 +6559,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;EEPROM.c: 35: PIDEnableFlag = EEReadChar(0x15);
 "35
 [e = _PIDEnableFlag ( _EEReadChar (1 -> -> 21 `i `uc ]
-[; ;EEPROM.c: 36: if((PIDEnableFlag | 0x01) == 0x01)
+[; ;EEPROM.c: 36: if(PIDEnableFlag == 1)
 "36
-[e $ ! == | -> _PIDEnableFlag `i -> 1 `i -> 1 `i 761  ]
+[e $ ! == -> _PIDEnableFlag `i -> 1 `i 761  ]
 [; ;EEPROM.c: 37: {
 "37
 {
-[; ;EEPROM.c: 38: PIDEnableFlag = 0x03;
+[; ;EEPROM.c: 38: PIDEnableFlag = 3;
 "38
 [e = _PIDEnableFlag -> -> 3 `i `uc ]
 "39
@@ -6821,12 +6821,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 "149
 [p l 1 ]
 "150
-[v _HLVDInt `(v ~T0 @X0 1 ef ]
+[v _SaveAll `(v ~T0 @X0 1 ef ]
 "151
 {
-[; ;EEPROM.c: 150: void HLVDInt(void)
+[; ;EEPROM.c: 150: void SaveAll(void)
 [; ;EEPROM.c: 151: {
-[e :U _HLVDInt ]
+[e :U _SaveAll ]
 [f ]
 [; ;EEPROM.c: 152: EEWriteDouble(0x00, SetAngle);
 "152

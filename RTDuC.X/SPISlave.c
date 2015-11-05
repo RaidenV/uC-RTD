@@ -1,4 +1,5 @@
 #include "SPISlave.h"
+#include <xc.h>
 
 unsigned char SPIflag;
 unsigned char Command;
@@ -12,6 +13,9 @@ double CurrentVelocity;
 double Kp;
 double Ki;
 double Kd;
+
+unsigned char timer1High = 0xC0;
+unsigned char timer1Low = 0x00;
 
 void SPIInit(void)
 {
@@ -39,7 +43,18 @@ void SendSPI1(unsigned char data)
     unsigned char temp;
     PIR1bits.SSP1IF = 0; //Clear the MSSP2 Interrupt flag;
     temp = SSP1BUF; //Clear the SSPBUF; 
-    while (!PIR1bits.SSP1IF); //Wait for the byte to be clocked out;
+    PIR1bits.TMR1IF = 0;
+    T1CONbits.TMR1ON = 1;
+    TMR1H = timer1High;
+    TMR1L = timer1Low;
+    while (!PIR1bits.SSP1IF) //Wait for the byte to be clocked out;
+    {
+        if (PIR1bits.TMR1IF == 1) //This is sort of a last shot.  I've noticed that the program repeatedly hangs at this point for whatever reason.  If the program takes too long to respond, I break from this while routine by setting the flag high;
+        {
+            PIR1bits.SSPIF = 1;
+            temp = SSP1BUF;
+        }
+    }
     SSP1CON1bits.SSPOV1 = 0;
     PIR1bits.SSP1IF = 0; //Clear the flag;
 }
@@ -47,8 +62,17 @@ void SendSPI1(unsigned char data)
 unsigned char ReceiveSPI1(void)
 {
     SSP1BUF = 0x00; //Load dummy byte into SBUF;
-    while (!PIR1bits.SSP1IF); //Wait for transmission to complete;
+    PIR1bits.TMR1IF = 0;
+    T1CONbits.TMR1ON = 1;
+    TMR1H = timer1High;
+    TMR1L = timer1Low;
+    while (!PIR1bits.SSP1IF) //Wait for transmission to complete;
+    {
+        if (PIR1bits.TMR1IF == 1)
+            PIR1bits.SSPIF = 1;
+    }
     PIR1bits.SSP1IF = 0; //Clear the flag;
+    SSP1CON1bits.SSPOV1 = 0;
     return SSP1BUF;
 }
 
@@ -63,10 +87,15 @@ void SPIDisassembleDouble(double dub)
 
 unsigned char GenerateChecksum(void)
 {
-    unsigned char y, sum = 0;
-    for (y = 0; y != 3; y++)
-        sum += DoubleSPIS[y];
-    return sum;
+    if ((Command > 0x00) && (Command < 0x0A)) //This has to be revised...  This may be a method of correcting for errors, but if the command is not understood by the slave and it happens to be the master sending data to the slave, there could be an issue.  On top of that, I've already handled this case elsewhere in the code, so the code actually never makes it here;
+    {
+        unsigned char y, sum = 0;
+        for (y = 0; y != 3; y++)
+            sum += DoubleSPIS[y];
+        return sum;
+    }
+    else
+        return 0xFF;
 }
 
 double SPIReassembleDouble(void)

@@ -8316,7 +8316,7 @@ unsigned char ReceiveSPI1(void);
 unsigned char checksum(void);
 double SPIReassembleDouble(void);
 
-# 3 "SPISlave.c"
+# 4 "SPISlave.c"
 unsigned char SPIflag;
 unsigned char Command;
 unsigned char dummy_byte = 0x00;
@@ -8329,6 +8329,9 @@ double CurrentVelocity;
 double Kp;
 double Ki;
 double Kd;
+
+unsigned char timer1High = 0xC0;
+unsigned char timer1Low = 0x00;
 
 void SPIInit(void)
 {
@@ -8356,7 +8359,18 @@ SSP1BUF = data;
 unsigned char temp;
 PIR1bits.SSP1IF = 0;
 temp = SSP1BUF;
-while (!PIR1bits.SSP1IF);
+PIR1bits.TMR1IF = 0;
+T1CONbits.TMR1ON = 1;
+TMR1H = timer1High;
+TMR1L = timer1Low;
+while (!PIR1bits.SSP1IF)
+{
+if (PIR1bits.TMR1IF == 1)
+{
+PIR1bits.SSPIF = 1;
+temp = SSP1BUF;
+}
+}
 SSP1CON1bits.SSPOV1 = 0;
 PIR1bits.SSP1IF = 0;
 }
@@ -8364,8 +8378,17 @@ PIR1bits.SSP1IF = 0;
 unsigned char ReceiveSPI1(void)
 {
 SSP1BUF = 0x00;
-while (!PIR1bits.SSP1IF);
+PIR1bits.TMR1IF = 0;
+T1CONbits.TMR1ON = 1;
+TMR1H = timer1High;
+TMR1L = timer1Low;
+while (!PIR1bits.SSP1IF)
+{
+if (PIR1bits.TMR1IF == 1)
+PIR1bits.SSPIF = 1;
+}
 PIR1bits.SSP1IF = 0;
+SSP1CON1bits.SSPOV1 = 0;
 return SSP1BUF;
 }
 
@@ -8380,10 +8403,15 @@ DoubleSPIS[3] = GenerateChecksum();
 
 unsigned char GenerateChecksum(void)
 {
+if ((Command > 0x00) && (Command < 0x0A))
+{
 unsigned char y, sum = 0;
 for (y = 0; y != 3; y++)
 sum += DoubleSPIS[y];
 return sum;
+}
+else
+return 0xFF;
 }
 
 double SPIReassembleDouble(void)
