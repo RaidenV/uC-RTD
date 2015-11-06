@@ -7,7 +7,8 @@ unsigned char AZEL = 1; //This identifies which PIC will be addressed;
 unsigned char key[5]; //This is the storage variable for the key;
 unsigned char value[10]; //This is the storage variable for the value;
 unsigned char received[30]; // this is the storage variable for the received bytes from the computer;
-unsigned char RCflag;
+unsigned char RCFlag;
+unsigned char RECFlag;
 
 double Kp;
 double Ki;
@@ -192,6 +193,16 @@ void keyValue(unsigned char* str, unsigned short length)
             StrippedKey = 0x08; //If so, the stripped key indicates the return KD command;
             SerTx(';');
         }
+        
+        else if((strcmp(key, "REC") == 0) || (strcmp(key, "rec") == 0))
+        {
+            StrippedKey = 0x0A;
+            SerTx(';');
+            SerNL();
+            SerTxStr("The system will now begin the PID loop analysis...");
+            SerNL();
+            RECFlag = 1;
+        }
 
         else
         {
@@ -219,5 +230,5 @@ void keyValue(unsigned char* str, unsigned short length)
         received[x] = NULL;
     }
     flag = 0;
-    RCflag = 1;
+    RCFlag = 1;
 }

@@ -24,16 +24,20 @@ extern "C" {
 #define SlaveSelect1 PORTBbits.RB3
 #define SlaveSelect2 PORTBbits.RB4
 
-    extern unsigned char RCflag;
+    extern unsigned char RCFlag;
     extern unsigned char ReceivedChar;
     extern unsigned char* DoublePtr;
     extern unsigned char DoubleSPIM[4];
+    extern unsigned char DataLode[300];
+    extern double ResultLode[100];
 
     void SPIInitM(void);
     unsigned char MReceiveSPI(unsigned char);
     double SPIReassembleDouble(void);
+    void SPIReassembleLode(void);
     void MSendSPI(unsigned char, unsigned char);
-    void MReceiveStrSPI(unsigned char*, unsigned char);
+    void MReceiveStrSPI(unsigned char);
+    void MReceiveLodeSPI(unsigned char);
     unsigned char checksum(void);
 
     void SPIDisassembleDouble(double dub);

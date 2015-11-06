@@ -39,7 +39,8 @@ extern "C" {
     extern unsigned char key[5];
     extern unsigned char value[10];
     extern unsigned char received[30];
-    extern unsigned char RCflag;
+    extern unsigned char RCFlag;
+    extern unsigned char RECFlag;
 
     void RCInt(void);
     void keyValue(unsigned char*, unsigned short);

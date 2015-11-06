@@ -1,9 +1,11 @@
 #include "SPIMaster.h"
 
-unsigned char RCflag = 0;
+unsigned char RCFlag = 0;
 unsigned char ReceivedChar;
 unsigned char* DoublePtr;
 unsigned char DoubleSPIM[4];
+unsigned char DataLode[300];
+double ResultLode[100];
 
 void SPIInitM(void)
 {
@@ -26,7 +28,7 @@ void MSendSPI(unsigned char data, unsigned char Slave)
         unsigned char tempChar;
         tempChar = SSPBUF;
         PIR1bits.SSPIF = 0;
-        while(SlaveReady1);
+        while (SlaveReady1);
         SSPBUF = data;
         while (!PIR1bits.SSPIF);
         data = SSPBUF;
@@ -40,7 +42,7 @@ void MSendSPI(unsigned char data, unsigned char Slave)
         unsigned char tempChar;
         tempChar = SSPBUF;
         PIR1bits.SSPIF = 0;
-        while(SlaveReady2);
+        while (SlaveReady2);
         SSPBUF = data;
         while (!PIR1bits.SSPIF);
         data = SSPBUF;
@@ -53,17 +55,17 @@ unsigned char MReceiveSPI(unsigned char Slaves)
     unsigned char tempCH;
     tempCH = SSPBUF; //Clear the buffer;
     PIR1bits.SSPIF = 0; //Clear the MSSP Interrupt Flag; 
-    if(Slaves == 1)
-        while(SlaveReady1);
-    else if(Slaves == 2)
-        while(SlaveReady2);
+    if (Slaves == 1)
+        while (SlaveReady1);
+    else if (Slaves == 2)
+        while (SlaveReady2);
     SSPBUF = 0x00; //Initiate communication by sending a dummy byte;
     while (!PIR1bits.SSPIF); // Wait until transmission is complete;
     PIR1bits.SSPIF = 0;
     return SSPBUF; //Read/return the buffer;
 }
 
-void MReceiveStrSPI(unsigned char* str, unsigned char Slave)
+void MReceiveStrSPI(unsigned char Slave)
 {
     if (Slave == 1)
     {
@@ -80,7 +82,30 @@ void MReceiveStrSPI(unsigned char* str, unsigned char Slave)
         SlaveSelect2 = 0; //Clear the SS, enabling the slave; 
         Delay10TCYx(25); //500 TCY Delay;
         for (x = 0; x < 3; x++)
-            str[x] = MReceiveSPI(2); //Read data from slave;
+            DoubleSPIM[x] = MReceiveSPI(2); //Read data from slave;
+        Delay10TCYx(1);
+        SlaveSelect2 = 1;
+    }
+}
+
+void MReceiveLodeSPI(unsigned char Slave)
+{
+    if (Slave == 1)
+    {
+        unsigned short x;
+        SlaveSelect1 = 0; //Clear the SS, enabling the slave; 
+        Delay10TCYx(30); //250 TCY Delay;
+        for (x = 0; x < 300; x++)
+            DataLode[x] = MReceiveSPI(1); //Read data from slave;
+        SlaveSelect1 = 1; //Set the SS, ending communication with the slave;
+    }
+    else if (Slave == 2)
+    {
+        unsigned short x;
+        SlaveSelect2 = 0; //Clear the SS, enabling the slave; 
+        Delay10TCYx(30); //500 TCY Delay;
+        for (x = 0; x < 300; x++)
+            DataLode[x] = MReceiveSPI(2); //Read data from slave;
         Delay10TCYx(1);
         SlaveSelect2 = 1;
     }
@@ -94,6 +119,24 @@ double SPIReassembleDouble(void)
     DoublePtr[1] = DoubleSPIM[1]; //This way, whenever the double is operated upon, the referenced double is not altered;
     DoublePtr[2] = DoubleSPIM[2];
     return dub; //Return the reconstructed double;
+}
+
+void SPIReassembleLode(void)
+{
+    unsigned short z = 0;
+    unsigned char y = 0;
+    double dub;
+    DoublePtr = (unsigned char*) &dub;
+    for (z = 0; z != 300; z += 3)
+    {
+        DoublePtr[0] = DataLode[z];
+        DoublePtr[1] = DataLode[z + 1];
+        DoublePtr[2] = DataLode[z + 2];
+
+        ResultLode[y] = dub;
+        y++;
+        dub = 0;
+    }
 }
 
 unsigned char checksum(void)
