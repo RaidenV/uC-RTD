@@ -5,9 +5,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
 "13138
 [v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
-"104 /opt/microchip/xc8/v1.34/include/stdlib.h
-[v _abs `(i ~T0 @X0 0 ef1`i ]
-"13593 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+"13593
 [s S711 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S711 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
 "13603
@@ -6636,48 +6634,37 @@ Version 3.2 HI-TECH Software Intermediate Code
 "49
 [e = _intErr -> -> 2000 `i `d ]
 [e :U 768 ]
-[; ;PID.c: 51: if (abs(error) > 1)
+[; ;PID.c: 51: motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
 "51
-[e $ ! > ( _abs (1 -> _error `i -> 1 `i 769  ]
-[; ;PID.c: 52: motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
-"52
 [e = _motorInput -> + + * _Kp _error * * _Ki _intErr _loopTime * _Kd / _derErr _loopTime `i ]
-[e $U 770  ]
+[; ;PID.c: 53: prevErr = error;
 "53
-[e :U 769 ]
-[; ;PID.c: 53: else
-[; ;PID.c: 54: motorInput = Kp * error + (1.2 * Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
-"54
-[e = _motorInput -> + + * _Kp _error * * * .1.2 _Ki _intErr _loopTime * _Kd / _derErr _loopTime `i ]
-[e :U 770 ]
-[; ;PID.c: 56: prevErr = error;
-"56
 [e = _prevErr _error ]
-[; ;PID.c: 57: }
-"57
+[; ;PID.c: 54: }
+"54
 [e :UE 763 ]
 }
-"59
+"56
 [v _TMR0Int `(v ~T0 @X0 1 ef ]
-"60
+"57
 {
-[; ;PID.c: 59: void TMR0Int(void)
-[; ;PID.c: 60: {
+[; ;PID.c: 56: void TMR0Int(void)
+[; ;PID.c: 57: {
 [e :U _TMR0Int ]
 [f ]
-[; ;PID.c: 61: TMR0H = 0xDB;
-"61
+[; ;PID.c: 58: TMR0H = 0xDB;
+"58
 [e = _TMR0H -> -> 219 `i `uc ]
-[; ;PID.c: 62: TMR0L = 0x60;
-"62
+[; ;PID.c: 59: TMR0L = 0x60;
+"59
 [e = _TMR0L -> -> 96 `i `uc ]
-[; ;PID.c: 63: TMR0Flag = 1;
-"63
+[; ;PID.c: 60: TMR0Flag = 1;
+"60
 [e = _TMR0Flag -> -> 1 `i `uc ]
-[; ;PID.c: 64: INTCONbits.TMR0IF = 0;
-"64
+[; ;PID.c: 61: INTCONbits.TMR0IF = 0;
+"61
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;PID.c: 65: }
-"65
-[e :UE 771 ]
+[; ;PID.c: 62: }
+"62
+[e :UE 769 ]
 }

@@ -4,8 +4,10 @@ unsigned char RCFlag = 0;
 unsigned char ReceivedChar;
 unsigned char* DoublePtr;
 unsigned char DoubleSPIM[4];
-unsigned char DataLode[300];
-double ResultLode[100];
+const unsigned int ReceiveLodeSize = 1800;
+const unsigned int DataLodeSize = 600;
+unsigned char ReceiveLode[1800];
+double DataLode[600];
 
 void SPIInitM(void)
 {
@@ -81,7 +83,7 @@ void MReceiveStrSPI(unsigned char Slave)
         unsigned char x;
         SlaveSelect2 = 0; //Clear the SS, enabling the slave; 
         Delay10TCYx(25); //500 TCY Delay;
-        for (x = 0; x < 3; x++)
+        for (x = 0; x < 4; x++)
             DoubleSPIM[x] = MReceiveSPI(2); //Read data from slave;
         Delay10TCYx(1);
         SlaveSelect2 = 1;
@@ -92,20 +94,20 @@ void MReceiveLodeSPI(unsigned char Slave)
 {
     if (Slave == 1)
     {
-        unsigned short x;
+        unsigned int x;
         SlaveSelect1 = 0; //Clear the SS, enabling the slave; 
         Delay10TCYx(30); //250 TCY Delay;
-        for (x = 0; x < 300; x++)
-            DataLode[x] = MReceiveSPI(1); //Read data from slave;
+        for (x = 0; x < ReceiveLodeSize; x++)
+            ReceiveLode[x] = MReceiveSPI(1); //Read data from slave;
         SlaveSelect1 = 1; //Set the SS, ending communication with the slave;
     }
     else if (Slave == 2)
     {
-        unsigned short x;
+        unsigned int x;
         SlaveSelect2 = 0; //Clear the SS, enabling the slave; 
         Delay10TCYx(30); //500 TCY Delay;
-        for (x = 0; x < 300; x++)
-            DataLode[x] = MReceiveSPI(2); //Read data from slave;
+        for (x = 0; x < ReceiveLodeSize; x++)
+            ReceiveLode[x] = MReceiveSPI(2); //Read data from slave;
         Delay10TCYx(1);
         SlaveSelect2 = 1;
     }
@@ -123,17 +125,17 @@ double SPIReassembleDouble(void)
 
 void SPIReassembleLode(void)
 {
-    unsigned short z = 0;
-    unsigned char y = 0;
+    unsigned int z = 0;
+    unsigned int y = 0;
     double dub;
     DoublePtr = (unsigned char*) &dub;
-    for (z = 0; z != 300; z += 3)
+    for (z = 0; z != ReceiveLodeSize; z += 3)
     {
-        DoublePtr[0] = DataLode[z];
-        DoublePtr[1] = DataLode[z + 1];
-        DoublePtr[2] = DataLode[z + 2];
+        DoublePtr[0] = ReceiveLode[z];
+        DoublePtr[1] = ReceiveLode[z + 1];
+        DoublePtr[2] = ReceiveLode[z + 2];
 
-        ResultLode[y] = dub;
+        DataLode[y] = dub;
         y++;
         dub = 0;
     }

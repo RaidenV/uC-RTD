@@ -107,20 +107,16 @@ void breakDouble(double dubs)
     SerTx(temp2 + 0x30);
 }
 
-void SendLode(double* Deliverables)
+void SendLode(double* Deliverables, unsigned int size)
 {
-    unsigned char z;
+    unsigned int z;
     unsigned int limit;
     double time = 0;
-    double multiplier = 0.03;
-    Deliverables[0] = 20;
-    Deliverables[1] = 30;
-    
-    limit = sizeof(Deliverables); //The size, in bytes, of the double array, divided by 3 (3 bytes per double), will give the exact size of the array;
+    double multiplier = 0.005;
     
     SerTxStr("-=Begin=-");
     SerNL();
-    for( z = 0; z < limit; z ++)
+    for( z = 0; z < size; z ++)
     {
         time = multiplier * z;
         breakDouble(time);

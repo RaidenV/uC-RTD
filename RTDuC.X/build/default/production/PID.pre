@@ -8457,10 +8457,7 @@ intErr += error;
 if (intErr > 2000)
 intErr = 2000;
 
-if (abs(error) > 1)
 motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
-else
-motorInput = Kp * error + (1.2 * Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
 
 prevErr = error;
 }

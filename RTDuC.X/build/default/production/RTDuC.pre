@@ -8463,6 +8463,7 @@ extern unsigned char dummy_byte;
 extern unsigned char* DoublePtr;
 extern unsigned char DoubleSPIS[4];
 extern unsigned char PIDEnableFlag;
+extern unsigned char RECFlag;
 extern double SetAngle;
 extern double CurrentAngle;
 extern double CurrentVelocity;
@@ -8474,6 +8475,7 @@ void SPIInit(void);
 void SPIInt(void);
 void SendSPI1(unsigned char);
 void SPIDisassembleDouble(double);
+void SPIDisassembleLode(double*, unsigned char*);
 unsigned char GenerateChecksum(void);
 unsigned char ReceiveSPI1(void);
 unsigned char checksum(void);
@@ -8485,18 +8487,23 @@ double SPIReassembleDouble(void);
 #pragma config WDT = OFF
 #pragma config FCMEN = OFF
 
-
-
+# 18
 void initialize(void);
 void interrupt ISR(void);
 void INT0Int(void);
+void RecTmrInit(void);
 void InitializeInterrupts(void);
 void ZeroMotors(void);
+const unsigned int DataLodeSize = 600;
+const unsigned int TransmitLodeSize = 1800;
+double DataLode[600];
+unsigned char TransmitLode[1800];
 
 void main(void)
 {
+const unsigned char dtime = 10;
 unsigned char trash, x = 0;
-unsigned char dtime = 10;
+unsigned int counter = 0;
 
 initialize();
 
@@ -8623,6 +8630,70 @@ TMR0Flag = 0;
 PORTCbits.RC6 = 0;
 Delay10TCYx(dtime);
 }
+
+if (RECFlag == 1)
+{
+PORTCbits.RC6 = 1;
+double saveKp = Kp,
+saveKi = Ki,
+saveKd = Kd;
+
+INTCONbits.GIE = 0;
+INTCONbits.TMR0IE = 0;
+
+
+
+ZeroMotors();
+Kp = saveKp;
+Ki = saveKi;
+Kd = saveKd;
+
+T0CONbits.TMR0ON = 0;
+TMR0H = 0xDB;
+TMR0L = 0x60;
+TMR3H = 0xE7;
+TMR3L = 0x96;
+
+
+PIDEnableFlag = 3;
+SetAngle = 60;
+counter = 0;
+
+T0CONbits.TMR0ON = 1;
+T3CONbits.TMR3ON = 1;
+
+while (counter < 600)
+{
+CurrentAngle = RTD2Angle(ReadRTDpos());
+calculatePID(CurrentAngle, SetAngle);
+ImplementPIDMotion(motorInput);
+while (INTCONbits.TMR0IF == 0)
+{
+DataLode[counter] = RTD2Angle(ReadRTDpos());
+while (PIR2bits.TMR3IF == 0);
+PIR2bits.TMR3IF = 0;
+TMR3H = 0xE7;
+TMR3L = 0x96;
+counter++;
+}
+INTCONbits.TMR0IF = 0;
+TMR0H = 0xDB;
+TMR0L = 0x60;
+}
+SPIDisassembleLode(DataLode, TransmitLode);
+(SSP1CON1 &=0xDF);
+OpenSPI1(0b00000100, 0b00000000, 0b00000000);
+PORTCbits.RC6 = 0;
+for (counter = 0; counter != 1800; counter++)
+SendSPI1(TransmitLode[counter]);
+trash = SSP1BUF;
+PIR1bits.SSP1IF = 0;
+RECFlag = 0;
+INTCONbits.GIE = 1;
+INTCONbits.PEIE = 1;
+INTCONbits.TMR0IE = 1;
+PORTCbits.RC6 = 1;
+}
 }
 }
 
@@ -8636,8 +8707,8 @@ SPIInit();
 JoystickInit();
 MotorDriverInit();
 PIDInit();
-EEPROMInit();
 ZeroMotors();
+EEPROMInit();
 
 InitializeInterrupts();
 
@@ -8674,7 +8745,7 @@ if (PIR2bits.OSCFIF == 1)
 {
 asm("reset");
 
-# 214
+# 286
 }
 }
 
@@ -8695,6 +8766,12 @@ INTCONbits.TMR0IF = 0;
 }
 }
 
+void RecTmrInit(void)
+{
+T3CONbits.T3CKPS = 0x3;
+T3CONbits.TMR3CS = 0;
+}
+
 void InitializeInterrupts(void)
 {
 INTCONbits.GIE = 1;
@@ -8711,12 +8788,14 @@ void ZeroMotors(void)
 CurrentAngle = 2;
 Ki = 1;
 Kp = 2;
-Kd = 0.05;
+Kd = 0;
 TMR0H = 0xDB;
 TMR0L = 0x60;
 T0CONbits.TMR0ON = 1;
 PIDEnableFlag = 3;
 SetAngle = 0;
+INTCONbits.GIE = 0;
+INTCONbits.PEIE = 0;
 do
 {
 CurrentAngle = RTD2Angle(ReadRTDpos());

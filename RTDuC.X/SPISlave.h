@@ -24,6 +24,7 @@ extern "C" {
     extern unsigned char* DoublePtr;
     extern unsigned char DoubleSPIS[4];
     extern unsigned char PIDEnableFlag;
+    extern unsigned char RECFlag;
     extern double SetAngle;
     extern double CurrentAngle;
     extern double CurrentVelocity;
@@ -35,6 +36,7 @@ extern "C" {
     void SPIInt(void);
     void SendSPI1(unsigned char);
     void SPIDisassembleDouble(double);
+    void SPIDisassembleLode(double*, unsigned char*);
     unsigned char GenerateChecksum(void);
     unsigned char ReceiveSPI1(void);
     unsigned char checksum(void);

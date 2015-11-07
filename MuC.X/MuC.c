@@ -30,7 +30,7 @@ void main(void)
 
     while (1)
     {
-        if ((RCFlag == 1) && (RECFlag == 0))
+        if (RCFlag == 1)
         {
             INTCONbits.GIE = 0; //Turn interrupts off for the transmission segment;
             RCFlag = 0;
@@ -197,7 +197,7 @@ void main(void)
             INTCONbits.GIE = 1; //Turn interrupts back on after communication with slave;
         }
 
-        if ((RCFlag == 1) && (RECFlag == 1))
+        if (RECFlag == 1)
         {
             INTCONbits.GIE = 0; //Turn interrupts off for the transmission segment;
             RCFlag = 0;
@@ -216,7 +216,7 @@ void main(void)
                 SPIReassembleLode(); //The master then converts the received value into a known value using the first three bytes of the received data;
                 SerTxStr("Data reassembled; Transmitting now...");
                 SerNL();
-                SendLode(ResultLode);
+                SendLode(DataLode, DataLodeSize);
             }
             else if (AZEL == 2)
             {
@@ -231,7 +231,7 @@ void main(void)
                 SPIReassembleLode(); //The master then converts the received value into a known value using the first three bytes of the received data;
                 SerTxStr("Data reassembled; Transmitting now...");
                 SerNL();
-                SendLode(ResultLode);
+                SendLode(DataLode, DataLodeSize);
             }
             TMR0H = timerHigh;
             TMR0L = timerLow;

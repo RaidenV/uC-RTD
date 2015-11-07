@@ -193,8 +193,8 @@ void keyValue(unsigned char* str, unsigned short length)
             StrippedKey = 0x08; //If so, the stripped key indicates the return KD command;
             SerTx(';');
         }
-        
-        else if((strcmp(key, "REC") == 0) || (strcmp(key, "rec") == 0))
+
+        else if ((strcmp(key, "REC") == 0) || (strcmp(key, "rec") == 0))
         {
             StrippedKey = 0x0A;
             SerTx(';');
@@ -230,5 +230,8 @@ void keyValue(unsigned char* str, unsigned short length)
         received[x] = NULL;
     }
     flag = 0;
-    RCFlag = 1;
+    if (RECFlag == 1)
+        RCFlag = 0;
+    else
+        RCFlag = 1;
 }

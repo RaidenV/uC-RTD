@@ -1,6 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"16 RTDuC.c
+"18 RTDuC.c
 [v _initialize `(v ~T0 @X0 0 ef ]
 "12321 /opt/microchip/xc8/v1.34/include/pic18f8722.h
 [v _SSP1BUF `Vuc ~T0 @X0 0 e@4041 ]
@@ -56,7 +56,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _INTCONbits `VS710 ~T0 @X0 0 e@4082 ]
 "22 SPISlave.h
 [v _Command `uc ~T0 @X0 0 e ]
-"37
+"38
 [v _SPIDisassembleDouble `(v ~T0 @X0 0 ef1`d ]
 "26 Joystick.h
 [v _CurrentAngle `d ~T0 @X0 0 e ]
@@ -68,7 +68,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Ki `d ~T0 @X0 0 e ]
 "27
 [v _Kd `d ~T0 @X0 0 e ]
-"36 SPISlave.h
+"37 SPISlave.h
 [v _SendSPI1 `(v ~T0 @X0 0 ef1`uc ]
 "25
 [v _DoubleSPIS `uc ~T0 @X0 -> 0 `x e ]
@@ -83,11 +83,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S378 . . . ]
 "7845
 [v _PIR1bits `VS378 ~T0 @X0 0 e@3998 ]
-"39 SPISlave.h
+"41 SPISlave.h
 [v _ReceiveSPI1 `(uc ~T0 @X0 0 ef ]
 "28 PID.h
 [v _SetAngle `d ~T0 @X0 0 e ]
-"41 SPISlave.h
+"43 SPISlave.h
 [v _SPIReassembleDouble `(d ~T0 @X0 0 ef ]
 "24 Joystick.h
 [v _PIDEnableFlag `uc ~T0 @X0 0 e ]
@@ -141,7 +141,58 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S694 . . . ]
 "13078
 [v _T0CONbits `VS694 ~T0 @X0 0 e@4053 ]
-"12981
+"27 SPISlave.h
+[v _RECFlag `uc ~T0 @X0 0 e ]
+"23 RTDuC.c
+[v _ZeroMotors `(v ~T0 @X0 0 ef ]
+"9384 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[v _TMR3H `Vuc ~T0 @X0 0 e@4019 ]
+"9378
+[v _TMR3L `Vuc ~T0 @X0 0 e@4018 ]
+"9256
+[s S444 :2 `uc 1 :1 `uc 1 ]
+[n S444 . . NOT_T3SYNC ]
+"9260
+[s S445 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S445 . TMR3ON TMR3CS nT3SYNC T3CCP1 T3CKPS T3CCP2 RD16 ]
+"9269
+[s S446 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S446 . . T3SYNC . T3CKPS0 T3CKPS1 ]
+"9276
+[s S447 :2 `uc 1 :1 `uc 1 ]
+[n S447 . . T3INSYNC ]
+"9280
+[s S448 :7 `uc 1 :1 `uc 1 ]
+[n S448 . . RD163 ]
+"9284
+[s S449 :3 `uc 1 :1 `uc 1 ]
+[n S449 . . SOSCEN3 ]
+"9288
+[s S450 :7 `uc 1 :1 `uc 1 ]
+[n S450 . . T3RD16 ]
+"9255
+[u S443 `S444 1 `S445 1 `S446 1 `S447 1 `S448 1 `S449 1 `S450 1 ]
+[n S443 . . . . . . . . ]
+"9293
+[v _T3CONbits `VS443 ~T0 @X0 0 e@4017 ]
+"8063
+[s S388 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S388 . CCP2IF TMR3IF HLVDIF BCL1IF EEIF . CMIF OSCFIF ]
+"8073
+[s S389 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S389 . . LVDIF BCLIF ]
+"8062
+[u S387 `S388 1 `S389 1 ]
+[n S387 . . . ]
+"8079
+[v _PIR2bits `VS387 ~T0 @X0 0 e@4001 ]
+"39 SPISlave.h
+[v _SPIDisassembleLode `(v ~T0 @X0 0 ef2`*d`*uc ]
+"11064 /opt/microchip/xc8/v1.34/include/pic18f8722.h
+[v _SSP1CON1 `Vuc ~T0 @X0 0 e@4038 ]
+"236 /opt/microchip/xc8/v1.34/include/plib/spi.h
+[v _OpenSPI1 `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"12981 /opt/microchip/xc8/v1.34/include/pic18f8722.h
 [s S692 :2 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
 [n S692 . SCS IOFS OSTS IRCF IDLEN ]
 "12988
@@ -154,7 +205,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OSCCONbits `VS691 ~T0 @X0 0 e@4051 ]
 "30 ResolverToDigital.h
 [v _RTDInit `(v ~T0 @X0 0 ef ]
-"34 SPISlave.h
+"35 SPISlave.h
 [v _SPIInit `(v ~T0 @X0 0 ef ]
 "30 Joystick.h
 [v _JoystickInit `(v ~T0 @X0 0 ef ]
@@ -164,9 +215,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PIDInit `(v ~T0 @X0 0 ef ]
 "48 EEPROM.h
 [v _EEPROMInit `(v ~T0 @X0 0 ef ]
-"20 RTDuC.c
-[v _ZeroMotors `(v ~T0 @X0 0 ef ]
-"19
+"22 RTDuC.c
 [v _InitializeInterrupts `(v ~T0 @X0 0 ef ]
 "2641 /opt/microchip/xc8/v1.34/include/pic18f8722.h
 [s S136 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -191,23 +240,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S135 . . . . . . . ]
 "2678
 [v _PORTAbits `VS135 ~T0 @X0 0 e@3968 ]
-"35 SPISlave.h
+"36 SPISlave.h
 [v _SPIInt `(v ~T0 @X0 0 ef ]
 "39 PID.h
 [v _TMR0Int `(v ~T0 @X0 0 ef ]
-"18 RTDuC.c
+"20 RTDuC.c
 [v _INT0Int `(v ~T0 @X0 0 ef ]
-"8063 /opt/microchip/xc8/v1.34/include/pic18f8722.h
-[s S388 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S388 . CCP2IF TMR3IF HLVDIF BCL1IF EEIF . CMIF OSCFIF ]
-"8073
-[s S389 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S389 . . LVDIF BCLIF ]
-"8062
-[u S387 `S388 1 `S389 1 ]
-[n S387 . . . ]
-"8079
-[v _PIR2bits `VS387 ~T0 @X0 0 e@4001 ]
 "25 MotorControl.h
 [v _KillMotors `(v ~T0 @X0 0 ef ]
 "7992 /opt/microchip/xc8/v1.34/include/pic18f8722.h
@@ -6730,769 +6768,1008 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SPISlave.h: 24: extern unsigned char* DoublePtr;
 [; ;SPISlave.h: 25: extern unsigned char DoubleSPIS[4];
 [; ;SPISlave.h: 26: extern unsigned char PIDEnableFlag;
-[; ;SPISlave.h: 27: extern double SetAngle;
-[; ;SPISlave.h: 28: extern double CurrentAngle;
-[; ;SPISlave.h: 29: extern double CurrentVelocity;
-[; ;SPISlave.h: 30: extern double Kp;
-[; ;SPISlave.h: 31: extern double Ki;
-[; ;SPISlave.h: 32: extern double Kd;
-[; ;SPISlave.h: 34: void SPIInit(void);
-[; ;SPISlave.h: 35: void SPIInt(void);
-[; ;SPISlave.h: 36: void SendSPI1(unsigned char);
-[; ;SPISlave.h: 37: void SPIDisassembleDouble(double);
-[; ;SPISlave.h: 38: unsigned char GenerateChecksum(void);
-[; ;SPISlave.h: 39: unsigned char ReceiveSPI1(void);
-[; ;SPISlave.h: 40: unsigned char checksum(void);
-[; ;SPISlave.h: 41: double SPIReassembleDouble(void);
+[; ;SPISlave.h: 27: extern unsigned char RECFlag;
+[; ;SPISlave.h: 28: extern double SetAngle;
+[; ;SPISlave.h: 29: extern double CurrentAngle;
+[; ;SPISlave.h: 30: extern double CurrentVelocity;
+[; ;SPISlave.h: 31: extern double Kp;
+[; ;SPISlave.h: 32: extern double Ki;
+[; ;SPISlave.h: 33: extern double Kd;
+[; ;SPISlave.h: 35: void SPIInit(void);
+[; ;SPISlave.h: 36: void SPIInt(void);
+[; ;SPISlave.h: 37: void SendSPI1(unsigned char);
+[; ;SPISlave.h: 38: void SPIDisassembleDouble(double);
+[; ;SPISlave.h: 39: void SPIDisassembleLode(double*, unsigned char*);
+[; ;SPISlave.h: 40: unsigned char GenerateChecksum(void);
+[; ;SPISlave.h: 41: unsigned char ReceiveSPI1(void);
+[; ;SPISlave.h: 42: unsigned char checksum(void);
+[; ;SPISlave.h: 43: double SPIReassembleDouble(void);
 "10 RTDuC.c
 [p x OSC=HSPLL ]
 "11
 [p x WDT=OFF ]
 "12
 [p x FCMEN=OFF ]
-[; ;RTDuC.c: 16: void initialize(void);
-[; ;RTDuC.c: 17: void interrupt ISR(void);
-[; ;RTDuC.c: 18: void INT0Int(void);
-[; ;RTDuC.c: 19: void InitializeInterrupts(void);
-[; ;RTDuC.c: 20: void ZeroMotors(void);
-"22
+[; ;RTDuC.c: 18: void initialize(void);
+[; ;RTDuC.c: 19: void interrupt ISR(void);
+[; ;RTDuC.c: 20: void INT0Int(void);
+[; ;RTDuC.c: 21: void RecTmrInit(void);
+[; ;RTDuC.c: 22: void InitializeInterrupts(void);
+[; ;RTDuC.c: 23: void ZeroMotors(void);
+"24
+[v _DataLodeSize `Cui ~T0 @X0 1 e ]
+[i _DataLodeSize
+-> -> 600 `i `ui
+]
+[; ;RTDuC.c: 24: const unsigned int DataLodeSize = 600;
+"25
+[v _TransmitLodeSize `Cui ~T0 @X0 1 e ]
+[i _TransmitLodeSize
+-> -> 1800 `i `ui
+]
+[; ;RTDuC.c: 25: const unsigned int TransmitLodeSize = 1800;
+"26
+[v _DataLode `d ~T0 @X0 -> 600 `i e ]
+[; ;RTDuC.c: 26: double DataLode[600];
+"27
+[v _TransmitLode `uc ~T0 @X0 -> 1800 `i e ]
+[; ;RTDuC.c: 27: unsigned char TransmitLode[1800];
+"29
 [v _main `(v ~T0 @X0 1 ef ]
-"23
+"30
 {
-[; ;RTDuC.c: 22: void main(void)
-[; ;RTDuC.c: 23: {
+[; ;RTDuC.c: 29: void main(void)
+[; ;RTDuC.c: 30: {
 [e :U _main ]
 [f ]
-"24
+"31
+[v _dtime `Cuc ~T0 @X0 1 a ]
+[; ;RTDuC.c: 31: const unsigned char dtime = 10;
+[e = _dtime -> -> 10 `i `uc ]
+"32
 [v _trash `uc ~T0 @X0 1 a ]
 [v _x `uc ~T0 @X0 1 a ]
-[; ;RTDuC.c: 24: unsigned char trash, x = 0;
+[; ;RTDuC.c: 32: unsigned char trash, x = 0;
 [e = _x -> -> 0 `i `uc ]
-"25
-[v _dtime `uc ~T0 @X0 1 a ]
-[; ;RTDuC.c: 25: unsigned char dtime = 10;
-[e = _dtime -> -> 10 `i `uc ]
-[; ;RTDuC.c: 27: initialize();
-"27
-[e ( _initialize ..  ]
-[; ;RTDuC.c: 29: SSP1BUF = dummy_byte;
-"29
-[e = _SSP1BUF _dummy_byte ]
-[; ;RTDuC.c: 30: PORTCbits.RC6 = 0;
-"30
-[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 32: while (1)
-"32
-[e :U 764 ]
-[; ;RTDuC.c: 33: {
 "33
-{
-[; ;RTDuC.c: 34: if (SPIflag == 1)
-"34
-[e $ ! == -> _SPIflag `i -> 1 `i 766  ]
-[; ;RTDuC.c: 35: {
+[v _counter `ui ~T0 @X0 1 a ]
+[; ;RTDuC.c: 33: unsigned int counter = 0;
+[e = _counter -> -> 0 `i `ui ]
+[; ;RTDuC.c: 35: initialize();
 "35
-{
-[; ;RTDuC.c: 36: SPIflag = 0;
-"36
-[e = _SPIflag -> -> 0 `i `uc ]
-[; ;RTDuC.c: 37: INTCONbits.GIE = 0;
+[e ( _initialize ..  ]
+[; ;RTDuC.c: 37: SSP1BUF = dummy_byte;
 "37
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 38: if ((Command == 0x02) || (Command == 0x03) || (Command == 0x04) || (Command == 0x06) || (Command == 0x08))
+[e = _SSP1BUF _dummy_byte ]
+[; ;RTDuC.c: 38: PORTCbits.RC6 = 0;
 "38
-[e $ ! || || || || == -> _Command `i -> 2 `i == -> _Command `i -> 3 `i == -> _Command `i -> 4 `i == -> _Command `i -> 6 `i == -> _Command `i -> 8 `i 767  ]
-[; ;RTDuC.c: 39: {
-"39
-{
-[; ;RTDuC.c: 40: if (Command == 0x02)
+[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 40: while (1)
 "40
-[e $ ! == -> _Command `i -> 2 `i 768  ]
-[; ;RTDuC.c: 41: SPIDisassembleDouble(CurrentAngle);
+[e :U 764 ]
+[; ;RTDuC.c: 41: {
 "41
+{
+[; ;RTDuC.c: 42: if (SPIflag == 1)
+"42
+[e $ ! == -> _SPIflag `i -> 1 `i 766  ]
+[; ;RTDuC.c: 43: {
+"43
+{
+[; ;RTDuC.c: 44: SPIflag = 0;
+"44
+[e = _SPIflag -> -> 0 `i `uc ]
+[; ;RTDuC.c: 45: INTCONbits.GIE = 0;
+"45
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 46: if ((Command == 0x02) || (Command == 0x03) || (Command == 0x04) || (Command == 0x06) || (Command == 0x08))
+"46
+[e $ ! || || || || == -> _Command `i -> 2 `i == -> _Command `i -> 3 `i == -> _Command `i -> 4 `i == -> _Command `i -> 6 `i == -> _Command `i -> 8 `i 767  ]
+[; ;RTDuC.c: 47: {
+"47
+{
+[; ;RTDuC.c: 48: if (Command == 0x02)
+"48
+[e $ ! == -> _Command `i -> 2 `i 768  ]
+[; ;RTDuC.c: 49: SPIDisassembleDouble(CurrentAngle);
+"49
 [e ( _SPIDisassembleDouble (1 _CurrentAngle ]
 [e $U 769  ]
-"42
+"50
 [e :U 768 ]
-[; ;RTDuC.c: 42: else if (Command == 0x03)
+[; ;RTDuC.c: 50: else if (Command == 0x03)
 [e $ ! == -> _Command `i -> 3 `i 770  ]
-[; ;RTDuC.c: 43: SPIDisassembleDouble(CurrentVelocity);
-"43
+[; ;RTDuC.c: 51: SPIDisassembleDouble(CurrentVelocity);
+"51
 [e ( _SPIDisassembleDouble (1 _CurrentVelocity ]
 [e $U 771  ]
-"44
+"52
 [e :U 770 ]
-[; ;RTDuC.c: 44: else if (Command == 0x04)
+[; ;RTDuC.c: 52: else if (Command == 0x04)
 [e $ ! == -> _Command `i -> 4 `i 772  ]
-[; ;RTDuC.c: 45: SPIDisassembleDouble(Kp);
-"45
+[; ;RTDuC.c: 53: SPIDisassembleDouble(Kp);
+"53
 [e ( _SPIDisassembleDouble (1 _Kp ]
 [e $U 773  ]
-"46
+"54
 [e :U 772 ]
-[; ;RTDuC.c: 46: else if (Command == 0x06)
+[; ;RTDuC.c: 54: else if (Command == 0x06)
 [e $ ! == -> _Command `i -> 6 `i 774  ]
-[; ;RTDuC.c: 47: SPIDisassembleDouble(Ki);
-"47
+[; ;RTDuC.c: 55: SPIDisassembleDouble(Ki);
+"55
 [e ( _SPIDisassembleDouble (1 _Ki ]
 [e $U 775  ]
-"48
+"56
 [e :U 774 ]
-[; ;RTDuC.c: 48: else if (Command == 0x08)
+[; ;RTDuC.c: 56: else if (Command == 0x08)
 [e $ ! == -> _Command `i -> 8 `i 776  ]
-[; ;RTDuC.c: 49: SPIDisassembleDouble(Kd);
-"49
+[; ;RTDuC.c: 57: SPIDisassembleDouble(Kd);
+"57
 [e ( _SPIDisassembleDouble (1 _Kd ]
 [e :U 776 ]
-"51
+"59
 [e :U 775 ]
 [e :U 773 ]
 [e :U 771 ]
 [e :U 769 ]
-[; ;RTDuC.c: 51: PORTCbits.RC6 = 0;
+[; ;RTDuC.c: 59: PORTCbits.RC6 = 0;
 [e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 52: for (x = 0; x < 4; x++)
-"52
+[; ;RTDuC.c: 60: for (x = 0; x < 4; x++)
+"60
 {
 [e = _x -> -> 0 `i `uc ]
 [e $ < -> _x `i -> 4 `i 777  ]
 [e $U 778  ]
-"53
+"61
 [e :U 777 ]
-[; ;RTDuC.c: 53: SendSPI1(DoubleSPIS[x]);
+[; ;RTDuC.c: 61: SendSPI1(DoubleSPIS[x]);
 [e ( _SendSPI1 (1 *U + &U _DoubleSPIS * -> _x `ux -> -> # *U &U _DoubleSPIS `ui `ux ]
-"52
+"60
 [e ++ _x -> -> 1 `i `uc ]
 [e $ < -> _x `i -> 4 `i 777  ]
 [e :U 778 ]
-"53
-}
-[; ;RTDuC.c: 54: trash = SSP1BUF;
-"54
-[e = _trash _SSP1BUF ]
-[; ;RTDuC.c: 55: PIR1bits.SSP1IF = 0;
-"55
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 56: PORTCbits.RC6 = 1;
-"56
-[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-"57
-}
-[; ;RTDuC.c: 57: }
-[e $U 780  ]
-"58
-[e :U 767 ]
-[; ;RTDuC.c: 58: else if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
-[e $ ! || || || == -> _Command `i -> 1 `i == -> _Command `i -> 5 `i == -> _Command `i -> 7 `i == -> _Command `i -> 9 `i 781  ]
-[; ;RTDuC.c: 59: {
-"59
-{
-[; ;RTDuC.c: 60: PORTCbits.RC6 = 0;
-"60
-[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 61: for (x = 0; x != 4; x++)
 "61
+}
+[; ;RTDuC.c: 62: trash = SSP1BUF;
+"62
+[e = _trash _SSP1BUF ]
+[; ;RTDuC.c: 63: PIR1bits.SSP1IF = 0;
+"63
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 64: PORTCbits.RC6 = 1;
+"64
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+"65
+}
+[; ;RTDuC.c: 65: }
+[e $U 780  ]
+"66
+[e :U 767 ]
+[; ;RTDuC.c: 66: else if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
+[e $ ! || || || == -> _Command `i -> 1 `i == -> _Command `i -> 5 `i == -> _Command `i -> 7 `i == -> _Command `i -> 9 `i 781  ]
+[; ;RTDuC.c: 67: {
+"67
+{
+[; ;RTDuC.c: 68: PORTCbits.RC6 = 0;
+"68
+[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 69: for (x = 0; x != 4; x++)
+"69
 {
 [e = _x -> -> 0 `i `uc ]
 [e $ != -> _x `i -> 4 `i 782  ]
 [e $U 783  ]
-"62
+"70
 [e :U 782 ]
-[; ;RTDuC.c: 62: DoubleSPIS[x] = ReceiveSPI1();
+[; ;RTDuC.c: 70: DoubleSPIS[x] = ReceiveSPI1();
 [e = *U + &U _DoubleSPIS * -> _x `ux -> -> # *U &U _DoubleSPIS `ui `ux ( _ReceiveSPI1 ..  ]
-"61
+"69
 [e ++ _x -> -> 1 `i `uc ]
 [e $ != -> _x `i -> 4 `i 782  ]
 [e :U 783 ]
-"62
-}
-[; ;RTDuC.c: 64: PORTCbits.RC6 = 1;
-"64
-[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 66: if (Command == 0x01)
-"66
-[e $ ! == -> _Command `i -> 1 `i 785  ]
-[; ;RTDuC.c: 67: {
-"67
-{
-[; ;RTDuC.c: 68: SetAngle = SPIReassembleDouble();
-"68
-[e = _SetAngle ( _SPIReassembleDouble ..  ]
-[; ;RTDuC.c: 69: PIDEnableFlag = 3;
-"69
-[e = _PIDEnableFlag -> -> 3 `i `uc ]
-[; ;RTDuC.c: 70: JSEnableFlag = 0;
 "70
-[e = _JSEnableFlag -> -> 0 `i `uc ]
-"71
 }
-[; ;RTDuC.c: 71: }
-[e $U 786  ]
+[; ;RTDuC.c: 72: PORTCbits.RC6 = 1;
 "72
-[e :U 785 ]
-[; ;RTDuC.c: 72: else if (Command == 0x05)
-[e $ ! == -> _Command `i -> 5 `i 787  ]
-[; ;RTDuC.c: 73: {
-"73
-{
-[; ;RTDuC.c: 74: Kp = SPIReassembleDouble();
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 74: if (Command == 0x01)
 "74
-[e = _Kp ( _SPIReassembleDouble ..  ]
+[e $ ! == -> _Command `i -> 1 `i 785  ]
+[; ;RTDuC.c: 75: {
 "75
-}
-[; ;RTDuC.c: 75: }
-[e $U 788  ]
-"76
-[e :U 787 ]
-[; ;RTDuC.c: 76: else if (Command == 0x07)
-[e $ ! == -> _Command `i -> 7 `i 789  ]
-[; ;RTDuC.c: 77: {
-"77
 {
-[; ;RTDuC.c: 78: Ki = SPIReassembleDouble();
+[; ;RTDuC.c: 76: SetAngle = SPIReassembleDouble();
+"76
+[e = _SetAngle ( _SPIReassembleDouble ..  ]
+[; ;RTDuC.c: 77: PIDEnableFlag = 3;
+"77
+[e = _PIDEnableFlag -> -> 3 `i `uc ]
+[; ;RTDuC.c: 78: JSEnableFlag = 0;
 "78
-[e = _Ki ( _SPIReassembleDouble ..  ]
+[e = _JSEnableFlag -> -> 0 `i `uc ]
 "79
 }
 [; ;RTDuC.c: 79: }
-[e $U 790  ]
+[e $U 786  ]
 "80
-[e :U 789 ]
-[; ;RTDuC.c: 80: else if (Command == 0x09)
-[e $ ! == -> _Command `i -> 9 `i 791  ]
+[e :U 785 ]
+[; ;RTDuC.c: 80: else if (Command == 0x05)
+[e $ ! == -> _Command `i -> 5 `i 787  ]
 [; ;RTDuC.c: 81: {
 "81
 {
-[; ;RTDuC.c: 82: Kd = SPIReassembleDouble();
+[; ;RTDuC.c: 82: Kp = SPIReassembleDouble();
 "82
-[e = _Kd ( _SPIReassembleDouble ..  ]
+[e = _Kp ( _SPIReassembleDouble ..  ]
 "83
 }
-[e :U 791 ]
-"84
-[e :U 790 ]
-[e :U 788 ]
-[e :U 786 ]
 [; ;RTDuC.c: 83: }
-[; ;RTDuC.c: 84: trash = SSP1BUF;
-[e = _trash _SSP1BUF ]
-[; ;RTDuC.c: 85: PIR1bits.SSP1IF = 0;
+[e $U 788  ]
+"84
+[e :U 787 ]
+[; ;RTDuC.c: 84: else if (Command == 0x07)
+[e $ ! == -> _Command `i -> 7 `i 789  ]
+[; ;RTDuC.c: 85: {
 "85
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 86: SaveAll();
+{
+[; ;RTDuC.c: 86: Ki = SPIReassembleDouble();
 "86
-[e ( _SaveAll ..  ]
+[e = _Ki ( _SPIReassembleDouble ..  ]
 "87
 }
 [; ;RTDuC.c: 87: }
-[e $U 792  ]
+[e $U 790  ]
 "88
-[e :U 781 ]
-[; ;RTDuC.c: 88: else
+[e :U 789 ]
+[; ;RTDuC.c: 88: else if (Command == 0x09)
+[e $ ! == -> _Command `i -> 9 `i 791  ]
 [; ;RTDuC.c: 89: {
 "89
 {
-[; ;RTDuC.c: 90: trash = SSP1BUF;
+[; ;RTDuC.c: 90: Kd = SPIReassembleDouble();
 "90
-[e = _trash _SSP1BUF ]
-[; ;RTDuC.c: 91: PIR1bits.SSP1IF = 0;
+[e = _Kd ( _SPIReassembleDouble ..  ]
 "91
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+}
+[e :U 791 ]
 "92
+[e :U 790 ]
+[e :U 788 ]
+[e :U 786 ]
+[; ;RTDuC.c: 91: }
+[; ;RTDuC.c: 92: trash = SSP1BUF;
+[e = _trash _SSP1BUF ]
+[; ;RTDuC.c: 93: PIR1bits.SSP1IF = 0;
+"93
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 94: SaveAll();
+"94
+[e ( _SaveAll ..  ]
+"95
+}
+[; ;RTDuC.c: 95: }
+[e $U 792  ]
+"96
+[e :U 781 ]
+[; ;RTDuC.c: 96: else
+[; ;RTDuC.c: 97: {
+"97
+{
+[; ;RTDuC.c: 98: trash = SSP1BUF;
+"98
+[e = _trash _SSP1BUF ]
+[; ;RTDuC.c: 99: PIR1bits.SSP1IF = 0;
+"99
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"100
 }
 [e :U 792 ]
 [e :U 780 ]
-[; ;RTDuC.c: 92: }
-[; ;RTDuC.c: 94: INTCONbits.GIE = 1;
-"94
+[; ;RTDuC.c: 100: }
+[; ;RTDuC.c: 102: INTCONbits.GIE = 1;
+"102
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 95: PIE1bits.SSP1IE = 1;
-"95
+[; ;RTDuC.c: 103: PIE1bits.SSP1IE = 1;
+"103
 [e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 96: PORTCbits.RC6 = 0;
-"96
+[; ;RTDuC.c: 104: PORTCbits.RC6 = 0;
+"104
 [e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 97: Delay10TCYx(dtime);
-"97
+[; ;RTDuC.c: 105: Delay10TCYx(dtime);
+"105
 [e ( _Delay10TCYx (1 _dtime ]
-"98
+"106
 }
 [e :U 766 ]
-[; ;RTDuC.c: 98: }
-[; ;RTDuC.c: 99: PORTCbits.RC6 = 1;
-"99
-[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 100: DetectJoystick();
-"100
-[e ( _DetectJoystick ..  ]
-[; ;RTDuC.c: 101: PORTCbits.RC6 = 0;
-"101
-[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 102: Delay10TCYx(10);
-"102
-[e ( _Delay10TCYx (1 -> -> 10 `i `uc ]
-[; ;RTDuC.c: 103: if (JSEnableFlag == 1)
-"103
-[e $ ! == -> _JSEnableFlag `i -> 1 `i 793  ]
-[; ;RTDuC.c: 104: {
-"104
-{
-[; ;RTDuC.c: 105: PORTCbits.RC6 = 1;
-"105
-[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 106: INTCONbits.GIE = 0;
-"106
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 107: ImplementJSMotion(DetectMovement());
+[; ;RTDuC.c: 106: }
+[; ;RTDuC.c: 107: PORTCbits.RC6 = 1;
 "107
-[e ( _ImplementJSMotion (1 ( _DetectMovement ..  ]
-[; ;RTDuC.c: 108: INTCONbits.GIE = 1;
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 108: DetectJoystick();
 "108
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[e ( _DetectJoystick ..  ]
 [; ;RTDuC.c: 109: PORTCbits.RC6 = 0;
 "109
 [e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 110: Delay10TCYx(dtime);
+[; ;RTDuC.c: 110: Delay10TCYx(10);
 "110
-[e ( _Delay10TCYx (1 _dtime ]
+[e ( _Delay10TCYx (1 -> -> 10 `i `uc ]
+[; ;RTDuC.c: 111: if (JSEnableFlag == 1)
 "111
+[e $ ! == -> _JSEnableFlag `i -> 1 `i 793  ]
+[; ;RTDuC.c: 112: {
+"112
+{
+[; ;RTDuC.c: 113: PORTCbits.RC6 = 1;
+"113
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 114: INTCONbits.GIE = 0;
+"114
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 115: ImplementJSMotion(DetectMovement());
+"115
+[e ( _ImplementJSMotion (1 ( _DetectMovement ..  ]
+[; ;RTDuC.c: 116: INTCONbits.GIE = 1;
+"116
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 117: PORTCbits.RC6 = 0;
+"117
+[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 118: Delay10TCYx(dtime);
+"118
+[e ( _Delay10TCYx (1 _dtime ]
+"119
 }
 [e :U 793 ]
-[; ;RTDuC.c: 111: }
-[; ;RTDuC.c: 113: if (PIDEnableFlag == 1 && TMR0Flag == 1)
-"113
-[e $ ! && == -> _PIDEnableFlag `i -> 1 `i == -> _TMR0Flag `i -> 1 `i 794  ]
-[; ;RTDuC.c: 114: {
-"114
-{
-[; ;RTDuC.c: 115: PORTCbits.RC6 = 1;
-"115
-[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 116: INTCONbits.GIE = 0;
-"116
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 117: CurrentAngle = RTD2Angle(ReadRTDpos());
-"117
-[e = _CurrentAngle ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
-[; ;RTDuC.c: 118: calculatePID(CurrentAngle, SetAngle);
-"118
-[e ( _calculatePID (2 , _CurrentAngle _SetAngle ]
-[; ;RTDuC.c: 119: ImplementPIDMotion(motorInput);
-"119
-[e ( _ImplementPIDMotion (1 _motorInput ]
-[; ;RTDuC.c: 120: TMR0Flag = 0;
-"120
-[e = _TMR0Flag -> -> 0 `i `uc ]
-[; ;RTDuC.c: 121: INTCONbits.GIE = 1;
+[; ;RTDuC.c: 119: }
+[; ;RTDuC.c: 121: if (PIDEnableFlag == 1 && TMR0Flag == 1)
 "121
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 122: PORTCbits.RC6 = 0;
+[e $ ! && == -> _PIDEnableFlag `i -> 1 `i == -> _TMR0Flag `i -> 1 `i 794  ]
+[; ;RTDuC.c: 122: {
 "122
-[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 123: Delay10TCYx(dtime);
+{
+[; ;RTDuC.c: 123: PORTCbits.RC6 = 1;
 "123
-[e ( _Delay10TCYx (1 _dtime ]
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 124: INTCONbits.GIE = 0;
 "124
-}
-[; ;RTDuC.c: 124: }
-[e $U 795  ]
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 125: CurrentAngle = RTD2Angle(ReadRTDpos());
+"125
+[e = _CurrentAngle ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
+[; ;RTDuC.c: 126: calculatePID(CurrentAngle, SetAngle);
 "126
-[e :U 794 ]
-[; ;RTDuC.c: 126: else if (PIDEnableFlag == 3)
-[e $ ! == -> _PIDEnableFlag `i -> 3 `i 796  ]
-[; ;RTDuC.c: 127: {
-"127
-{
-[; ;RTDuC.c: 128: PORTCbits.RC6 = 1;
-"128
-[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 129: INTCONbits.GIE = 0;
-"129
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 130: TMR0H = 0xDB;
-"130
-[e = _TMR0H -> -> 219 `i `uc ]
-[; ;RTDuC.c: 131: TMR0L = 0x60;
-"131
-[e = _TMR0L -> -> 96 `i `uc ]
-[; ;RTDuC.c: 132: CurrentAngle = RTD2Angle(ReadRTDpos());
-"132
-[e = _CurrentAngle ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
-[; ;RTDuC.c: 133: calculatePID(CurrentAngle, SetAngle);
-"133
 [e ( _calculatePID (2 , _CurrentAngle _SetAngle ]
-[; ;RTDuC.c: 134: ImplementPIDMotion(motorInput);
-"134
+[; ;RTDuC.c: 127: ImplementPIDMotion(motorInput);
+"127
 [e ( _ImplementPIDMotion (1 _motorInput ]
-[; ;RTDuC.c: 135: INTCONbits.GIE = 1;
-"135
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 137: T0CONbits.TMR0ON = 1;
-"137
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 138: PORTCbits.RC6 = 0;
-"138
-[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 139: Delay10TCYx(dtime);
-"139
-[e ( _Delay10TCYx (1 _dtime ]
-"140
-}
-[; ;RTDuC.c: 140: }
-[e $U 797  ]
-"142
-[e :U 796 ]
-[; ;RTDuC.c: 142: else if (TMR0Flag == 1)
-[e $ ! == -> _TMR0Flag `i -> 1 `i 798  ]
-[; ;RTDuC.c: 143: {
-"143
-{
-[; ;RTDuC.c: 144: PORTCbits.RC6 = 1;
-"144
-[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 145: INTCONbits.GIE = 0;
-"145
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 146: CurrentAngle = RTD2Angle(ReadRTDpos());
-"146
-[e = _CurrentAngle ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
-[; ;RTDuC.c: 147: INTCONbits.GIE = 1;
-"147
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 148: TMR0Flag = 0;
-"148
+[; ;RTDuC.c: 128: TMR0Flag = 0;
+"128
 [e = _TMR0Flag -> -> 0 `i `uc ]
-[; ;RTDuC.c: 149: PORTCbits.RC6 = 0;
-"149
+[; ;RTDuC.c: 129: INTCONbits.GIE = 1;
+"129
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 130: PORTCbits.RC6 = 0;
+"130
 [e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 150: Delay10TCYx(dtime);
-"150
+[; ;RTDuC.c: 131: Delay10TCYx(dtime);
+"131
 [e ( _Delay10TCYx (1 _dtime ]
+"132
+}
+[; ;RTDuC.c: 132: }
+[e $U 795  ]
+"134
+[e :U 794 ]
+[; ;RTDuC.c: 134: else if (PIDEnableFlag == 3)
+[e $ ! == -> _PIDEnableFlag `i -> 3 `i 796  ]
+[; ;RTDuC.c: 135: {
+"135
+{
+[; ;RTDuC.c: 136: PORTCbits.RC6 = 1;
+"136
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 137: INTCONbits.GIE = 0;
+"137
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 138: TMR0H = 0xDB;
+"138
+[e = _TMR0H -> -> 219 `i `uc ]
+[; ;RTDuC.c: 139: TMR0L = 0x60;
+"139
+[e = _TMR0L -> -> 96 `i `uc ]
+[; ;RTDuC.c: 140: CurrentAngle = RTD2Angle(ReadRTDpos());
+"140
+[e = _CurrentAngle ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
+[; ;RTDuC.c: 141: calculatePID(CurrentAngle, SetAngle);
+"141
+[e ( _calculatePID (2 , _CurrentAngle _SetAngle ]
+[; ;RTDuC.c: 142: ImplementPIDMotion(motorInput);
+"142
+[e ( _ImplementPIDMotion (1 _motorInput ]
+[; ;RTDuC.c: 143: INTCONbits.GIE = 1;
+"143
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 145: T0CONbits.TMR0ON = 1;
+"145
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 146: PORTCbits.RC6 = 0;
+"146
+[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 147: Delay10TCYx(dtime);
+"147
+[e ( _Delay10TCYx (1 _dtime ]
+"148
+}
+[; ;RTDuC.c: 148: }
+[e $U 797  ]
+"150
+[e :U 796 ]
+[; ;RTDuC.c: 150: else if (TMR0Flag == 1)
+[e $ ! == -> _TMR0Flag `i -> 1 `i 798  ]
+[; ;RTDuC.c: 151: {
 "151
+{
+[; ;RTDuC.c: 152: PORTCbits.RC6 = 1;
+"152
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 153: INTCONbits.GIE = 0;
+"153
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 154: CurrentAngle = RTD2Angle(ReadRTDpos());
+"154
+[e = _CurrentAngle ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
+[; ;RTDuC.c: 155: INTCONbits.GIE = 1;
+"155
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 156: TMR0Flag = 0;
+"156
+[e = _TMR0Flag -> -> 0 `i `uc ]
+[; ;RTDuC.c: 157: PORTCbits.RC6 = 0;
+"157
+[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 158: Delay10TCYx(dtime);
+"158
+[e ( _Delay10TCYx (1 _dtime ]
+"159
 }
 [e :U 798 ]
-"152
+"161
 [e :U 797 ]
 [e :U 795 ]
-}
-[e :U 763 ]
-"32
-[e $U 764  ]
-[e :U 765 ]
-[; ;RTDuC.c: 151: }
-[; ;RTDuC.c: 152: }
-[; ;RTDuC.c: 153: }
-"153
-[e :UE 762 ]
-}
-"155
-[v _initialize `(v ~T0 @X0 1 ef ]
-"156
+[; ;RTDuC.c: 159: }
+[; ;RTDuC.c: 161: if (RECFlag == 1)
+[e $ ! == -> _RECFlag `i -> 1 `i 799  ]
+[; ;RTDuC.c: 162: {
+"162
 {
-[; ;RTDuC.c: 155: void initialize(void)
-[; ;RTDuC.c: 156: {
-[e :U _initialize ]
-[f ]
-[; ;RTDuC.c: 157: while (OSCCONbits.OSTS == 0);
-"157
+[; ;RTDuC.c: 163: PORTCbits.RC6 = 1;
+"163
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+"164
+[v _saveKp `d ~T0 @X0 1 a ]
+[; ;RTDuC.c: 164: double saveKp = Kp,
+[e = _saveKp _Kp ]
+"165
+[v _saveKi `d ~T0 @X0 1 a ]
+[; ;RTDuC.c: 165: saveKi = Ki,
+[e = _saveKi _Ki ]
+"166
+[v _saveKd `d ~T0 @X0 1 a ]
+[; ;RTDuC.c: 166: saveKd = Kd;
+[e = _saveKd _Kd ]
+[; ;RTDuC.c: 168: INTCONbits.GIE = 0;
+"168
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 169: INTCONbits.TMR0IE = 0;
+"169
+[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 173: ZeroMotors();
+"173
+[e ( _ZeroMotors ..  ]
+[; ;RTDuC.c: 174: Kp = saveKp;
+"174
+[e = _Kp _saveKp ]
+[; ;RTDuC.c: 175: Ki = saveKi;
+"175
+[e = _Ki _saveKi ]
+[; ;RTDuC.c: 176: Kd = saveKd;
+"176
+[e = _Kd _saveKd ]
+[; ;RTDuC.c: 178: T0CONbits.TMR0ON = 0;
+"178
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 179: TMR0H = 0xDB;
+"179
+[e = _TMR0H -> -> 219 `i `uc ]
+[; ;RTDuC.c: 180: TMR0L = 0x60;
+"180
+[e = _TMR0L -> -> 96 `i `uc ]
+[; ;RTDuC.c: 181: TMR3H = 0xE7;
+"181
+[e = _TMR3H -> -> 231 `i `uc ]
+[; ;RTDuC.c: 182: TMR3L = 0x96;
+"182
+[e = _TMR3L -> -> 150 `i `uc ]
+[; ;RTDuC.c: 185: PIDEnableFlag = 3;
+"185
+[e = _PIDEnableFlag -> -> 3 `i `uc ]
+[; ;RTDuC.c: 186: SetAngle = 60;
+"186
+[e = _SetAngle -> -> 60 `i `d ]
+[; ;RTDuC.c: 187: counter = 0;
+"187
+[e = _counter -> -> 0 `i `ui ]
+[; ;RTDuC.c: 189: T0CONbits.TMR0ON = 1;
+"189
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 190: T3CONbits.TMR3ON = 1;
+"190
+[e = . . _T3CONbits 1 0 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 192: while (counter < 600)
+"192
 [e $U 800  ]
 [e :U 801 ]
-[e :U 800 ]
-[e $ == -> . . _OSCCONbits 0 2 `i -> 0 `i 801  ]
-[e :U 802 ]
-[; ;RTDuC.c: 158: PORTCbits.RC6 = 1;
-"158
-[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 160: RTDInit();
-"160
-[e ( _RTDInit ..  ]
-[; ;RTDuC.c: 161: SPIInit();
-"161
-[e ( _SPIInit ..  ]
-[; ;RTDuC.c: 162: JoystickInit();
-"162
-[e ( _JoystickInit ..  ]
-[; ;RTDuC.c: 163: MotorDriverInit();
-"163
-[e ( _MotorDriverInit ..  ]
-[; ;RTDuC.c: 164: PIDInit();
-"164
-[e ( _PIDInit ..  ]
-[; ;RTDuC.c: 165: EEPROMInit();
-"165
-[e ( _EEPROMInit ..  ]
-[; ;RTDuC.c: 166: ZeroMotors();
-"166
-[e ( _ZeroMotors ..  ]
-[; ;RTDuC.c: 168: InitializeInterrupts();
-"168
-[e ( _InitializeInterrupts ..  ]
-[; ;RTDuC.c: 170: PORTAbits.RA3 = 1;
-"170
-[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 171: }
-"171
-[e :UE 799 ]
-}
-[v F7333 `(v ~T0 @X0 1 tf ]
-"173
-[v _ISR `IF7333 ~T0 @X0 1 e ]
-"174
-{
-[; ;RTDuC.c: 173: void interrupt ISR(void)
-[; ;RTDuC.c: 174: {
-[e :U _ISR ]
-[f ]
-[; ;RTDuC.c: 175: PORTCbits.RC6 = 1;
-"175
-[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 176: if (PIR1bits.SSP1IF == 1)
-"176
-[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 804  ]
-[; ;RTDuC.c: 177: {
-"177
-{
-[; ;RTDuC.c: 178: SPIInt();
-"178
-[e ( _SPIInt ..  ]
-"179
-}
-[e :U 804 ]
-[; ;RTDuC.c: 179: }
-[; ;RTDuC.c: 181: if (INTCONbits.TMR0IF == 1)
-"181
-[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 805  ]
-[; ;RTDuC.c: 182: {
-"182
-{
-[; ;RTDuC.c: 183: TMR0Int();
-"183
-[e ( _TMR0Int ..  ]
-"184
-}
-[e :U 805 ]
-[; ;RTDuC.c: 184: }
-[; ;RTDuC.c: 186: if (INTCONbits.INT0IF == 1)
-"186
-[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 806  ]
-[; ;RTDuC.c: 187: {
-"187
-{
-[; ;RTDuC.c: 188: INT0Int();
-"188
-[e ( _INT0Int ..  ]
-"189
-}
-[e :U 806 ]
-[; ;RTDuC.c: 189: }
-[; ;RTDuC.c: 191: if (PIR2bits.HLVDIF == 1)
-"191
-[e $ ! == -> . . _PIR2bits 0 2 `i -> 1 `i 807  ]
-[; ;RTDuC.c: 192: {
-"192
-{
-[; ;RTDuC.c: 193: PORTAbits.RA4 = 0;
+[; ;RTDuC.c: 193: {
 "193
-[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 194: PORTAbits.RA3 = 0;
+{
+[; ;RTDuC.c: 194: CurrentAngle = RTD2Angle(ReadRTDpos());
 "194
-[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 195: PORTAbits.RA2 = 0;
+[e = _CurrentAngle ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
+[; ;RTDuC.c: 195: calculatePID(CurrentAngle, SetAngle);
 "195
-[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 196: SaveAll();
+[e ( _calculatePID (2 , _CurrentAngle _SetAngle ]
+[; ;RTDuC.c: 196: ImplementPIDMotion(motorInput);
 "196
-[e ( _SaveAll ..  ]
+[e ( _ImplementPIDMotion (1 _motorInput ]
+[; ;RTDuC.c: 197: while (INTCONbits.TMR0IF == 0)
 "197
-}
-[e :U 807 ]
-[; ;RTDuC.c: 197: }
-[; ;RTDuC.c: 199: if (PIR2bits.OSCFIF == 1)
+[e $U 803  ]
+[e :U 804 ]
+[; ;RTDuC.c: 198: {
+"198
+{
+[; ;RTDuC.c: 199: DataLode[counter] = RTD2Angle(ReadRTDpos());
 "199
-[e $ ! == -> . . _PIR2bits 0 7 `i -> 1 `i 808  ]
-[; ;RTDuC.c: 200: {
+[e = *U + &U _DataLode * -> _counter `ux -> -> # *U &U _DataLode `ui `ux ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
+[; ;RTDuC.c: 200: while (PIR2bits.TMR3IF == 0);
 "200
-{
-[; ;RTDuC.c: 201: asm("reset");
-"201
-[; <" reset ;# ">
-"214
-}
+[e $U 806  ]
+[e :U 807 ]
+[e :U 806 ]
+[e $ == -> . . _PIR2bits 0 1 `i -> 0 `i 807  ]
 [e :U 808 ]
-[; ;RTDuC.c: 214: }
-[; ;RTDuC.c: 215: }
-"215
-[e :UE 803 ]
+[; ;RTDuC.c: 201: PIR2bits.TMR3IF = 0;
+"201
+[e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 202: TMR3H = 0xE7;
+"202
+[e = _TMR3H -> -> 231 `i `uc ]
+[; ;RTDuC.c: 203: TMR3L = 0x96;
+"203
+[e = _TMR3L -> -> 150 `i `uc ]
+[; ;RTDuC.c: 204: counter++;
+"204
+[e ++ _counter -> -> 1 `i `ui ]
+"205
 }
+[e :U 803 ]
+"197
+[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 804  ]
+[e :U 805 ]
+[; ;RTDuC.c: 205: }
+[; ;RTDuC.c: 206: INTCONbits.TMR0IF = 0;
+"206
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 207: TMR0H = 0xDB;
+"207
+[e = _TMR0H -> -> 219 `i `uc ]
+[; ;RTDuC.c: 208: TMR0L = 0x60;
+"208
+[e = _TMR0L -> -> 96 `i `uc ]
+"209
+}
+[e :U 800 ]
+"192
+[e $ < _counter -> -> 600 `i `ui 801  ]
+[e :U 802 ]
+[; ;RTDuC.c: 209: }
+[; ;RTDuC.c: 210: SPIDisassembleLode(DataLode, TransmitLode);
+"210
+[e ( _SPIDisassembleLode (2 , &U _DataLode &U _TransmitLode ]
+[; ;RTDuC.c: 211: (SSP1CON1 &=0xDF);
+"211
+[e =& _SSP1CON1 -> -> 223 `i `uc ]
+[; ;RTDuC.c: 212: OpenSPI1(0b00000100, 0b00000000, 0b00000000);
+"212
+[e ( _OpenSPI1 (3 , , -> -> 4 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;RTDuC.c: 213: PORTCbits.RC6 = 0;
+"213
+[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 214: for (counter = 0; counter != 1800; counter++)
+"214
+{
+[e = _counter -> -> 0 `i `ui ]
+[e $ != _counter -> -> 1800 `i `ui 809  ]
+[e $U 810  ]
+"215
+[e :U 809 ]
+[; ;RTDuC.c: 215: SendSPI1(TransmitLode[counter]);
+[e ( _SendSPI1 (1 *U + &U _TransmitLode * -> _counter `ux -> -> # *U &U _TransmitLode `ui `ux ]
+"214
+[e ++ _counter -> -> 1 `i `ui ]
+[e $ != _counter -> -> 1800 `i `ui 809  ]
+[e :U 810 ]
+"215
+}
+[; ;RTDuC.c: 216: trash = SSP1BUF;
+"216
+[e = _trash _SSP1BUF ]
+[; ;RTDuC.c: 217: PIR1bits.SSP1IF = 0;
 "217
-[v _INT0Int `(v ~T0 @X0 1 ef ]
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 218: RECFlag = 0;
 "218
-{
-[; ;RTDuC.c: 217: void INT0Int(void)
-[; ;RTDuC.c: 218: {
-[e :U _INT0Int ]
-[f ]
-[; ;RTDuC.c: 219: KillMotors();
+[e = _RECFlag -> -> 0 `i `uc ]
+[; ;RTDuC.c: 219: INTCONbits.GIE = 1;
 "219
-[e ( _KillMotors ..  ]
-[; ;RTDuC.c: 220: PORTAbits.RA3 = 0;
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 220: INTCONbits.PEIE = 1;
 "220
-[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 221: T0CONbits.TMR0ON = 1;
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 221: INTCONbits.TMR0IE = 1;
 "221
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 222: INTCONbits.GIE = 0;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 222: PORTCbits.RC6 = 1;
 "222
-[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 223: PORTAbits.RA4 = 1;
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
 "223
-[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 224: while (1)
+}
+[e :U 799 ]
 "224
-[e :U 811 ]
-[; ;RTDuC.c: 225: {
+}
+[e :U 763 ]
+"40
+[e $U 764  ]
+[e :U 765 ]
+[; ;RTDuC.c: 223: }
+[; ;RTDuC.c: 224: }
+[; ;RTDuC.c: 225: }
 "225
-{
-[; ;RTDuC.c: 226: TMR0H = 0x00;
-"226
-[e = _TMR0H -> -> 0 `i `uc ]
-[; ;RTDuC.c: 227: TMR0L = 0x00;
+[e :UE 762 ]
+}
 "227
-[e = _TMR0L -> -> 0 `i `uc ]
-[; ;RTDuC.c: 228: while (!INTCONbits.TMR0IF);
+[v _initialize `(v ~T0 @X0 1 ef ]
 "228
+{
+[; ;RTDuC.c: 227: void initialize(void)
+[; ;RTDuC.c: 228: {
+[e :U _initialize ]
+[f ]
+[; ;RTDuC.c: 229: while (OSCCONbits.OSTS == 0);
+"229
 [e $U 813  ]
 [e :U 814 ]
 [e :U 813 ]
-[e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 814  ]
+[e $ == -> . . _OSCCONbits 0 2 `i -> 0 `i 814  ]
 [e :U 815 ]
-[; ;RTDuC.c: 229: INTCONbits.TMR0IF = 0;
-"229
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 230: ~PORTAbits.RA4;
+[; ;RTDuC.c: 230: PORTCbits.RC6 = 1;
 "230
-[e ~ -> . . _PORTAbits 0 4 `i ]
-"231
-}
-[e :U 810 ]
-"224
-[e $U 811  ]
-[e :U 812 ]
-[; ;RTDuC.c: 231: }
-[; ;RTDuC.c: 232: }
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 232: RTDInit();
 "232
-[e :UE 809 ]
-}
+[e ( _RTDInit ..  ]
+[; ;RTDuC.c: 233: SPIInit();
+"233
+[e ( _SPIInit ..  ]
+[; ;RTDuC.c: 234: JoystickInit();
 "234
-[v _InitializeInterrupts `(v ~T0 @X0 1 ef ]
+[e ( _JoystickInit ..  ]
+[; ;RTDuC.c: 235: MotorDriverInit();
 "235
-{
-[; ;RTDuC.c: 234: void InitializeInterrupts(void)
-[; ;RTDuC.c: 235: {
-[e :U _InitializeInterrupts ]
-[f ]
-[; ;RTDuC.c: 236: INTCONbits.GIE = 1;
+[e ( _MotorDriverInit ..  ]
+[; ;RTDuC.c: 236: PIDInit();
 "236
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 237: INTCONbits.PEIE = 1;
+[e ( _PIDInit ..  ]
+[; ;RTDuC.c: 237: ZeroMotors();
 "237
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 239: INTCONbits.TMR0IE = 1;
-"239
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 240: T0CONbits.TMR0ON = 1;
+[e ( _ZeroMotors ..  ]
+[; ;RTDuC.c: 238: EEPROMInit();
+"238
+[e ( _EEPROMInit ..  ]
+[; ;RTDuC.c: 240: InitializeInterrupts();
 "240
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 242: PIE2bits.OSCFIE = 1;
+[e ( _InitializeInterrupts ..  ]
+[; ;RTDuC.c: 242: PORTAbits.RA3 = 1;
 "242
-[e = . . _PIE2bits 0 7 -> -> 1 `i `uc ]
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
 [; ;RTDuC.c: 243: }
 "243
-[e :UE 816 ]
+[e :UE 812 ]
 }
+[v F7337 `(v ~T0 @X0 1 tf ]
 "245
-[v _ZeroMotors `(v ~T0 @X0 1 ef ]
+[v _ISR `IF7337 ~T0 @X0 1 e ]
 "246
 {
-[; ;RTDuC.c: 245: void ZeroMotors(void)
+[; ;RTDuC.c: 245: void interrupt ISR(void)
 [; ;RTDuC.c: 246: {
+[e :U _ISR ]
+[f ]
+[; ;RTDuC.c: 247: PORTCbits.RC6 = 1;
+"247
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 248: if (PIR1bits.SSP1IF == 1)
+"248
+[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 817  ]
+[; ;RTDuC.c: 249: {
+"249
+{
+[; ;RTDuC.c: 250: SPIInt();
+"250
+[e ( _SPIInt ..  ]
+"251
+}
+[e :U 817 ]
+[; ;RTDuC.c: 251: }
+[; ;RTDuC.c: 253: if (INTCONbits.TMR0IF == 1)
+"253
+[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 818  ]
+[; ;RTDuC.c: 254: {
+"254
+{
+[; ;RTDuC.c: 255: TMR0Int();
+"255
+[e ( _TMR0Int ..  ]
+"256
+}
+[e :U 818 ]
+[; ;RTDuC.c: 256: }
+[; ;RTDuC.c: 258: if (INTCONbits.INT0IF == 1)
+"258
+[e $ ! == -> . . _INTCONbits 0 1 `i -> 1 `i 819  ]
+[; ;RTDuC.c: 259: {
+"259
+{
+[; ;RTDuC.c: 260: INT0Int();
+"260
+[e ( _INT0Int ..  ]
+"261
+}
+[e :U 819 ]
+[; ;RTDuC.c: 261: }
+[; ;RTDuC.c: 263: if (PIR2bits.HLVDIF == 1)
+"263
+[e $ ! == -> . . _PIR2bits 0 2 `i -> 1 `i 820  ]
+[; ;RTDuC.c: 264: {
+"264
+{
+[; ;RTDuC.c: 265: PORTAbits.RA4 = 0;
+"265
+[e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 266: PORTAbits.RA3 = 0;
+"266
+[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 267: PORTAbits.RA2 = 0;
+"267
+[e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 268: SaveAll();
+"268
+[e ( _SaveAll ..  ]
+"269
+}
+[e :U 820 ]
+[; ;RTDuC.c: 269: }
+[; ;RTDuC.c: 271: if (PIR2bits.OSCFIF == 1)
+"271
+[e $ ! == -> . . _PIR2bits 0 7 `i -> 1 `i 821  ]
+[; ;RTDuC.c: 272: {
+"272
+{
+[; ;RTDuC.c: 273: asm("reset");
+"273
+[; <" reset ;# ">
+"286
+}
+[e :U 821 ]
+[; ;RTDuC.c: 286: }
+[; ;RTDuC.c: 287: }
+"287
+[e :UE 816 ]
+}
+"289
+[v _INT0Int `(v ~T0 @X0 1 ef ]
+"290
+{
+[; ;RTDuC.c: 289: void INT0Int(void)
+[; ;RTDuC.c: 290: {
+[e :U _INT0Int ]
+[f ]
+[; ;RTDuC.c: 291: KillMotors();
+"291
+[e ( _KillMotors ..  ]
+[; ;RTDuC.c: 292: PORTAbits.RA3 = 0;
+"292
+[e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 293: T0CONbits.TMR0ON = 1;
+"293
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 294: INTCONbits.GIE = 0;
+"294
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 295: PORTAbits.RA4 = 1;
+"295
+[e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 296: while (1)
+"296
+[e :U 824 ]
+[; ;RTDuC.c: 297: {
+"297
+{
+[; ;RTDuC.c: 298: TMR0H = 0x00;
+"298
+[e = _TMR0H -> -> 0 `i `uc ]
+[; ;RTDuC.c: 299: TMR0L = 0x00;
+"299
+[e = _TMR0L -> -> 0 `i `uc ]
+[; ;RTDuC.c: 300: while (!INTCONbits.TMR0IF);
+"300
+[e $U 826  ]
+[e :U 827 ]
+[e :U 826 ]
+[e $ ! != -> . . _INTCONbits 0 2 `i -> -> -> 0 `i `Vuc `i 827  ]
+[e :U 828 ]
+[; ;RTDuC.c: 301: INTCONbits.TMR0IF = 0;
+"301
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 302: ~PORTAbits.RA4;
+"302
+[e ~ -> . . _PORTAbits 0 4 `i ]
+"303
+}
+[e :U 823 ]
+"296
+[e $U 824  ]
+[e :U 825 ]
+[; ;RTDuC.c: 303: }
+[; ;RTDuC.c: 304: }
+"304
+[e :UE 822 ]
+}
+"306
+[v _RecTmrInit `(v ~T0 @X0 1 ef ]
+"307
+{
+[; ;RTDuC.c: 306: void RecTmrInit(void)
+[; ;RTDuC.c: 307: {
+[e :U _RecTmrInit ]
+[f ]
+[; ;RTDuC.c: 308: T3CONbits.T3CKPS = 0x3;
+"308
+[e = . . _T3CONbits 1 4 -> -> 3 `i `uc ]
+[; ;RTDuC.c: 309: T3CONbits.TMR3CS = 0;
+"309
+[e = . . _T3CONbits 1 1 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 310: }
+"310
+[e :UE 829 ]
+}
+"312
+[v _InitializeInterrupts `(v ~T0 @X0 1 ef ]
+"313
+{
+[; ;RTDuC.c: 312: void InitializeInterrupts(void)
+[; ;RTDuC.c: 313: {
+[e :U _InitializeInterrupts ]
+[f ]
+[; ;RTDuC.c: 314: INTCONbits.GIE = 1;
+"314
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 315: INTCONbits.PEIE = 1;
+"315
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 317: INTCONbits.TMR0IE = 1;
+"317
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 318: T0CONbits.TMR0ON = 1;
+"318
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 320: PIE2bits.OSCFIE = 1;
+"320
+[e = . . _PIE2bits 0 7 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 321: }
+"321
+[e :UE 830 ]
+}
+"323
+[v _ZeroMotors `(v ~T0 @X0 1 ef ]
+"324
+{
+[; ;RTDuC.c: 323: void ZeroMotors(void)
+[; ;RTDuC.c: 324: {
 [e :U _ZeroMotors ]
 [f ]
-[; ;RTDuC.c: 247: CurrentAngle = 2;
-"247
+[; ;RTDuC.c: 325: CurrentAngle = 2;
+"325
 [e = _CurrentAngle -> -> 2 `i `d ]
-[; ;RTDuC.c: 248: Ki = 1;
-"248
+[; ;RTDuC.c: 326: Ki = 1;
+"326
 [e = _Ki -> -> 1 `i `d ]
-[; ;RTDuC.c: 249: Kp = 2;
-"249
+[; ;RTDuC.c: 327: Kp = 2;
+"327
 [e = _Kp -> -> 2 `i `d ]
-[; ;RTDuC.c: 250: Kd = 0.05;
-"250
-[e = _Kd .0.05 ]
-[; ;RTDuC.c: 251: TMR0H = 0xDB;
-"251
-[e = _TMR0H -> -> 219 `i `uc ]
-[; ;RTDuC.c: 252: TMR0L = 0x60;
-"252
-[e = _TMR0L -> -> 96 `i `uc ]
-[; ;RTDuC.c: 253: T0CONbits.TMR0ON = 1;
-"253
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;RTDuC.c: 254: PIDEnableFlag = 3;
-"254
-[e = _PIDEnableFlag -> -> 3 `i `uc ]
-[; ;RTDuC.c: 255: SetAngle = 0;
-"255
-[e = _SetAngle -> -> 0 `i `d ]
-[; ;RTDuC.c: 256: do
-"256
-[e :U 820 ]
-[; ;RTDuC.c: 257: {
-"257
-{
-[; ;RTDuC.c: 258: CurrentAngle = RTD2Angle(ReadRTDpos());
-"258
-[e = _CurrentAngle ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
-[; ;RTDuC.c: 259: calculatePID(CurrentAngle, SetAngle);
-"259
-[e ( _calculatePID (2 , _CurrentAngle _SetAngle ]
-[; ;RTDuC.c: 260: ImplementPIDMotion(motorInput);
-"260
-[e ( _ImplementPIDMotion (1 _motorInput ]
-[; ;RTDuC.c: 261: while (INTCONbits.TMR0IF == 0);
-"261
-[e $U 821  ]
-[e :U 822 ]
-[e :U 821 ]
-[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 822  ]
-[e :U 823 ]
-[; ;RTDuC.c: 262: INTCONbits.TMR0IF = 0;
-"262
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;RTDuC.c: 263: TMR0H = 0xDB;
-"263
-[e = _TMR0H -> -> 219 `i `uc ]
-[; ;RTDuC.c: 264: TMR0L = 0x60;
-"264
-[e = _TMR0L -> -> 96 `i `uc ]
-"265
-}
-[; ;RTDuC.c: 265: }
-[; ;RTDuC.c: 266: while (abs(error) > 1);
-"266
-[e $ > ( _abs (1 -> _error `i -> 1 `i 820  ]
-[e :U 819 ]
-[; ;RTDuC.c: 268: Ki = 0;
-"268
-[e = _Ki -> -> 0 `i `d ]
-[; ;RTDuC.c: 269: Kp = 0;
-"269
-[e = _Kp -> -> 0 `i `d ]
-[; ;RTDuC.c: 270: Kd = 0;
-"270
+[; ;RTDuC.c: 328: Kd = 0;
+"328
 [e = _Kd -> -> 0 `i `d ]
-[; ;RTDuC.c: 271: }
-"271
-[e :UE 817 ]
+[; ;RTDuC.c: 329: TMR0H = 0xDB;
+"329
+[e = _TMR0H -> -> 219 `i `uc ]
+[; ;RTDuC.c: 330: TMR0L = 0x60;
+"330
+[e = _TMR0L -> -> 96 `i `uc ]
+[; ;RTDuC.c: 331: T0CONbits.TMR0ON = 1;
+"331
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;RTDuC.c: 332: PIDEnableFlag = 3;
+"332
+[e = _PIDEnableFlag -> -> 3 `i `uc ]
+[; ;RTDuC.c: 333: SetAngle = 0;
+"333
+[e = _SetAngle -> -> 0 `i `d ]
+[; ;RTDuC.c: 334: INTCONbits.GIE = 0;
+"334
+[e = . . _INTCONbits 1 7 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 335: INTCONbits.PEIE = 0;
+"335
+[e = . . _INTCONbits 1 6 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 336: do
+"336
+[e :U 834 ]
+[; ;RTDuC.c: 337: {
+"337
+{
+[; ;RTDuC.c: 338: CurrentAngle = RTD2Angle(ReadRTDpos());
+"338
+[e = _CurrentAngle ( _RTD2Angle (1 ( _ReadRTDpos ..  ]
+[; ;RTDuC.c: 339: calculatePID(CurrentAngle, SetAngle);
+"339
+[e ( _calculatePID (2 , _CurrentAngle _SetAngle ]
+[; ;RTDuC.c: 340: ImplementPIDMotion(motorInput);
+"340
+[e ( _ImplementPIDMotion (1 _motorInput ]
+[; ;RTDuC.c: 341: while (INTCONbits.TMR0IF == 0);
+"341
+[e $U 835  ]
+[e :U 836 ]
+[e :U 835 ]
+[e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 836  ]
+[e :U 837 ]
+[; ;RTDuC.c: 342: INTCONbits.TMR0IF = 0;
+"342
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;RTDuC.c: 343: TMR0H = 0xDB;
+"343
+[e = _TMR0H -> -> 219 `i `uc ]
+[; ;RTDuC.c: 344: TMR0L = 0x60;
+"344
+[e = _TMR0L -> -> 96 `i `uc ]
+"345
+}
+[; ;RTDuC.c: 345: }
+[; ;RTDuC.c: 346: while (abs(error) > 1);
+"346
+[e $ > ( _abs (1 -> _error `i -> 1 `i 834  ]
+[e :U 833 ]
+[; ;RTDuC.c: 348: Ki = 0;
+"348
+[e = _Ki -> -> 0 `i `d ]
+[; ;RTDuC.c: 349: Kp = 0;
+"349
+[e = _Kp -> -> 0 `i `d ]
+[; ;RTDuC.c: 350: Kd = 0;
+"350
+[e = _Kd -> -> 0 `i `d ]
+[; ;RTDuC.c: 351: }
+"351
+[e :UE 831 ]
 }

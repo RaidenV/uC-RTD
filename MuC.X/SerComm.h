@@ -24,7 +24,7 @@ extern "C" {
     unsigned char SerRx(void);
     void SerRxStr(unsigned char*);
     void breakDouble(double);
-    void SendLode(double*);
+    void SendLode(double*, unsigned int);
 
 #ifdef	__cplusplus
 }

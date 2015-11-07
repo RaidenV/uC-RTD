@@ -7,6 +7,7 @@ unsigned char dummy_byte = 0x00;
 unsigned char* DoublePtr;
 unsigned char DoubleSPIS[4];
 unsigned char PIDEnableFlag;
+unsigned char RECFlag;
 double SetAngle;
 double CurrentAngle;
 double CurrentVelocity;
@@ -34,7 +35,10 @@ void SPIInt(void)
     Command = SSP1BUF;
     PIR1bits.SSP1IF = 0; //Clear the interrupt flag;
     PIE1bits.SSP1IE = 0; //Disable the interrupt so that subsequent transfers don't cause interrupts;
-    SPIflag = 1; //Set the SPIflag;
+    if (Command == 0x0A)
+        RECFlag = 1;
+    else
+        SPIflag = 1; //Set the SPIflag;
 }
 
 void SendSPI1(unsigned char data)
@@ -83,6 +87,20 @@ void SPIDisassembleDouble(double dub)
     DoubleSPIS[1] = DoublePtr[1]; //This way, whenever the double is operated upon, the referenced double is not altered;
     DoubleSPIS[2] = DoublePtr[2];
     DoubleSPIS[3] = GenerateChecksum();
+}
+
+void SPIDisassembleLode(double* Data, unsigned char* Transmit)
+{
+    unsigned int y = 0;
+    double dub;
+    DoublePtr = (unsigned char*) &dub;
+    for (y = 0; y != 1800; y += 3)
+    {
+        dub = Data[y / 3];
+        Transmit[y] = DoublePtr[0];
+        Transmit[y + 1] = DoublePtr[1];
+        Transmit[y + 2] = DoublePtr[2];
+    }
 }
 
 unsigned char GenerateChecksum(void)

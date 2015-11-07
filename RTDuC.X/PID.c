@@ -20,8 +20,8 @@ void PIDInit(void)
     error = 0;
     prevErr = 0;
     intErr = 0;
-
-    T0CON = 0x04; //Enable Timer 0, 32:1 prescaler;
+    
+    T0CON = 0x04; //Timer 0 32:1 prescaler;
     TMR0H = timerHigh; //Offset the timer by 0xDB60 to allow for a 0.03 second timer loop;
     TMR0L = timerLow; //Calculation: 0xffff - ((0.03/(1/10e6))/32);
 }
@@ -48,10 +48,7 @@ void calculatePID(double angle, double setpoint)
     if (intErr > 2000)
         intErr = 2000; //Put a cap on the integral error.  Allowing it to run away too far creates a loss of control;
 
-    if (abs(error) > 1)
-        motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
-    else
-        motorInput = Kp * error + (1.2 * Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
+    motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
 
     prevErr = error;
 }

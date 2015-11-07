@@ -28,8 +28,10 @@ extern "C" {
     extern unsigned char ReceivedChar;
     extern unsigned char* DoublePtr;
     extern unsigned char DoubleSPIM[4];
-    extern unsigned char DataLode[300];
-    extern double ResultLode[100];
+    extern const unsigned int ReceiveLodeSize;
+    extern const unsigned int DataLodeSize;
+    extern unsigned char ReceiveLode[1800];
+    extern double DataLode[600];
 
     void SPIInitM(void);
     unsigned char MReceiveSPI(unsigned char);

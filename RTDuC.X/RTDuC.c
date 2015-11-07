@@ -12,17 +12,25 @@
 #pragma config FCMEN = OFF
 
 #define STATUSLED PORTAbits.RA3
+#define timer3High 0xE7 //This will provide a 5 ms delay;
+#define timer3Low 0x96 // 65536 - (0.005 / (8/10e6)) = 59286 = 0xE796;
 
 void initialize(void);
 void interrupt ISR(void);
 void INT0Int(void); //Motor failed interrupt, attached to External Interrupt 0 (RB0);
+void RecTmrInit(void); //Initialize Timer 3 for recording data;
 void InitializeInterrupts(void);
 void ZeroMotors(void);
+const unsigned int DataLodeSize = 600;
+const unsigned int TransmitLodeSize = 1800;
+double DataLode[600];
+unsigned char TransmitLode[1800];
 
 void main(void)
 {
+    const unsigned char dtime = 10;
     unsigned char trash, x = 0;
-    unsigned char dtime = 10;
+    unsigned int counter = 0;
 
     initialize();
 
@@ -149,6 +157,70 @@ void main(void)
             SlaveReady = 0;
             Delay10TCYx(dtime);
         }
+
+        if (RECFlag == 1)
+        {
+            SlaveReady = 1;
+            double saveKp = Kp,
+                    saveKi = Ki,
+                    saveKd = Kd;
+
+            INTCONbits.GIE = 0;
+            INTCONbits.TMR0IE = 0;
+
+
+
+            ZeroMotors();
+            Kp = saveKp;
+            Ki = saveKi;
+            Kd = saveKd;
+
+            T0CONbits.TMR0ON = 0;
+            TMR0H = timerHigh;
+            TMR0L = timerLow;
+            TMR3H = timer3High;
+            TMR3L = timer3Low;
+
+
+            PIDEnableFlag = 3;
+            SetAngle = 60;
+            counter = 0;
+
+            T0CONbits.TMR0ON = 1;
+            T3CONbits.TMR3ON = 1;
+
+            while (counter < 600)
+            {
+                CurrentAngle = RTD2Angle(ReadRTDpos());
+                calculatePID(CurrentAngle, SetAngle);
+                ImplementPIDMotion(motorInput);
+                while (INTCONbits.TMR0IF == 0)
+                {
+                    DataLode[counter] = RTD2Angle(ReadRTDpos());
+                    while (PIR2bits.TMR3IF == 0);
+                    PIR2bits.TMR3IF = 0;
+                    TMR3H = timer3High;
+                    TMR3L = timer3Low;
+                    counter++;
+                }
+                INTCONbits.TMR0IF = 0;
+                TMR0H = timerHigh;
+                TMR0L = timerLow;
+            }
+            SPIDisassembleLode(DataLode, TransmitLode);
+            CloseSPI1();
+            OpenSPI1(SLV_SSON, MODE_00, SMPMID);
+            SlaveReady = 0;
+            for (counter = 0; counter != 1800; counter++) //Send all gathered data;
+                SendSPI1(TransmitLode[counter]);
+            trash = SSP1BUF;
+            PIR1bits.SSP1IF = 0;
+            RECFlag = 0;
+            INTCONbits.GIE = 1;
+            INTCONbits.PEIE = 1;
+            INTCONbits.TMR0IE = 1;
+            SlaveReady = 1;
+        }
     }
 }
 
@@ -156,14 +228,14 @@ void initialize(void)
 {
     while (OSCCONbits.OSTS == 0); //Wait here while the Oscillator stabilizes;
     SlaveReady = 1;
-    
+
     RTDInit(); //Initialize all modules;
     SPIInit();
     JoystickInit();
     MotorDriverInit();
     PIDInit();
-    EEPROMInit();
     ZeroMotors();
+    EEPROMInit();
 
     InitializeInterrupts();
 
@@ -231,6 +303,12 @@ void INT0Int(void)
     }
 }
 
+void RecTmrInit(void)
+{
+    T3CONbits.T3CKPS = 0x3; //Prescaler of 1:8;
+    T3CONbits.TMR3CS = 0; //Clock source, Fosc/4;
+}
+
 void InitializeInterrupts(void)
 {
     INTCONbits.GIE = 1; //Enable General Interrupts;
@@ -247,12 +325,14 @@ void ZeroMotors(void)
     CurrentAngle = 2;
     Ki = 1;
     Kp = 2;
-    Kd = 0.05;
+    Kd = 0;
     TMR0H = timerHigh;
     TMR0L = timerLow;
     T0CONbits.TMR0ON = 1;
     PIDEnableFlag = 3;
     SetAngle = 0;
+    INTCONbits.GIE = 0;
+    INTCONbits.PEIE = 0;
     do
     {
         CurrentAngle = RTD2Angle(ReadRTDpos());
