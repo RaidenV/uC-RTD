@@ -80,27 +80,30 @@ void SerRxStr(unsigned char* str)
 
 void breakDouble(double dubs)
 {
-    unsigned int temp1, temp2;
-    unsigned int tempDub;
+    unsigned short long temp1, temp2;
+    unsigned short long tempDub;
     unsigned char LeadingFlag = 0;
 
-    tempDub = dubs * 100;
-    temp1 = tempDub / 10000;
+    tempDub = dubs * 1000;
+    temp1 = tempDub / 100000;
     if (temp1 != 0)
         LeadingFlag = 1;
-    temp2 = tempDub % 10000;
+    temp2 = tempDub % 100000;
     if (LeadingFlag)
         SerTx(temp1 + 0x30);
-    temp1 = temp2 / 1000;
-    temp2 = temp2 % 1000;
+    temp1 = temp2 / 10000;
+    temp2 = temp2 % 10000;
     if(temp1 != 0)
         LeadingFlag = 1;
     if (LeadingFlag)
         SerTx(temp1 + 0x30);
+    temp1 = temp2 / 1000;
+    temp2 = temp2 % 1000;
+    SerTx(temp1 + 0x30);
+    SerTx('.');
     temp1 = temp2 / 100;
     temp2 = temp2 % 100;
     SerTx(temp1 + 0x30);
-    SerTx('.');
     temp1 = temp2 / 10;
     temp2 = temp2 % 10;
     SerTx(temp1 + 0x30);
@@ -112,7 +115,7 @@ void SendLode(double* Deliverables, unsigned int size)
     unsigned int z;
     unsigned int limit;
     double time = 0;
-    double multiplier = 0.005;
+    double multiplier = 0.002;
     
     SerTxStr("-=Begin=-");
     SerNL();

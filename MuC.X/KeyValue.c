@@ -233,5 +233,8 @@ void keyValue(unsigned char* str, unsigned short length)
     if (RECFlag == 1)
         RCFlag = 0;
     else
+    {
         RCFlag = 1;
+        RECFlag = 0;
+    }
 }

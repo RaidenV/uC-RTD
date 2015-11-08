@@ -55,8 +55,7 @@ void SendSPI1(unsigned char data)
     {
         if (PIR1bits.TMR1IF == 1) //This is sort of a last shot.  I've noticed that the program repeatedly hangs at this point for whatever reason.  If the program takes too long to respond, I break from this while routine by setting the flag high;
         {
-            PIR1bits.SSPIF = 1;
-            temp = SSP1BUF;
+            SPIRestart();
         }
     }
     SSP1CON1bits.SSPOV1 = 0;
@@ -73,7 +72,9 @@ unsigned char ReceiveSPI1(void)
     while (!PIR1bits.SSP1IF) //Wait for transmission to complete;
     {
         if (PIR1bits.TMR1IF == 1)
-            PIR1bits.SSPIF = 1;
+        {
+            SPIRestart();
+        }
     }
     PIR1bits.SSP1IF = 0; //Clear the flag;
     SSP1CON1bits.SSPOV1 = 0;
@@ -105,7 +106,7 @@ void SPIDisassembleLode(double* Data, unsigned char* Transmit)
 
 unsigned char GenerateChecksum(void)
 {
-    if ((Command > 0x00) && (Command < 0x0A)) //This has to be revised...  This may be a method of correcting for errors, but if the command is not understood by the slave and it happens to be the master sending data to the slave, there could be an issue.  On top of that, I've already handled this case elsewhere in the code, so the code actually never makes it here;
+    if ((Command > 0x00) && (Command < 0x0B)) //This has to be revised...  This may be a method of correcting for errors, but if the command is not understood by the slave and it happens to be the master sending data to the slave, there could be an issue.  On top of that, I've already handled this case elsewhere in the code, so the code actually never makes it here;
     {
         unsigned char y, sum = 0;
         for (y = 0; y != 3; y++)
@@ -125,4 +126,13 @@ double SPIReassembleDouble(void)
     DoublePtr[2] = DoubleSPIS[2];
 
     return dub;
+}
+
+void SPIRestart(void)
+{
+    unsigned char temp;
+    PIR1bits.SSPIF = 1;
+    temp = SSP1BUF;
+    CloseSPI1();
+    OpenSPI1(SLV_SSON, MODE_00, SMPMID);
 }

@@ -12,8 +12,8 @@
 #pragma config FCMEN = OFF
 
 #define STATUSLED PORTAbits.RA3
-#define timer3High 0xE7 //This will provide a 5 ms delay;
-#define timer3Low 0x96 // 65536 - (0.005 / (8/10e6)) = 59286 = 0xE796;
+#define timer3High 0xF6 //This will provide a 5 ms delay;
+#define timer3Low 0x3C // 65536 - (0.005 / (8/10e6)) = 59286 = 0xE796;
 
 void initialize(void);
 void interrupt ISR(void);
@@ -21,10 +21,10 @@ void INT0Int(void); //Motor failed interrupt, attached to External Interrupt 0 (
 void RecTmrInit(void); //Initialize Timer 3 for recording data;
 void InitializeInterrupts(void);
 void ZeroMotors(void);
-const unsigned int DataLodeSize = 600;
-const unsigned int TransmitLodeSize = 1800;
-double DataLode[600];
-unsigned char TransmitLode[1800];
+const unsigned int DataLodeSize = 603;
+const unsigned int TransmitLodeSize = 1809;
+double DataLode[603];
+unsigned char TransmitLode[1809];
 
 void main(void)
 {
@@ -59,8 +59,7 @@ void main(void)
                 SlaveReady = 0;
                 for (x = 0; x < 4; x++) //Test sending multiple bytes;
                     SendSPI1(DoubleSPIS[x]);
-                trash = SSP1BUF;
-                PIR1bits.SSP1IF = 0;
+                SPIRestart();
                 SlaveReady = 1;
             }
             else if ((Command == 0x01) || (Command == 0x05) || (Command == 0x07) || (Command == 0x09))
@@ -89,8 +88,7 @@ void main(void)
                 {
                     Kd = SPIReassembleDouble();
                 }
-                trash = SSP1BUF;
-                PIR1bits.SSP1IF = 0;
+                SPIRestart();
                 SaveAll();
             }
             else //If the command was not understood...;
@@ -161,65 +159,68 @@ void main(void)
         if (RECFlag == 1)
         {
             SlaveReady = 1;
-            double saveKp = Kp,
+            double saveKp = Kp, //Save the current Kp, Ki, and Kd values as the ZeroMotors() function overwrites it;
                     saveKi = Ki,
-                    saveKd = Kd;
+                    saveKd = Kd,
+                    saveSP = SetAngle;
 
-            INTCONbits.GIE = 0;
-            INTCONbits.TMR0IE = 0;
+            INTCONbits.GIE = 0; //Disable interrupts;
+            INTCONbits.TMR0IE = 0; //This is notable: in order to utilize the timer in any other situation other than interrupt, the interrupt specific to this timer must be disabled;
+            T0CONbits.TMR0ON = 0; //Turn the timer off in case it was running prior to this;
 
-
-
-            ZeroMotors();
-            Kp = saveKp;
+            ZeroMotors(); //Start with the motors zeroed;
+            Kp = saveKp; //Reload the Kp, Ki, and Kd values to be tested;
             Ki = saveKi;
             Kd = saveKd;
 
-            T0CONbits.TMR0ON = 0;
             TMR0H = timerHigh;
             TMR0L = timerLow;
-            TMR3H = timer3High;
-            TMR3L = timer3Low;
 
+            PIDEnableFlag = 3; //Set the PIDEnable flag, letting the loop know that there is a new angle entered;
+            SetAngle = 60; //60 degrees is an arbitrary angle used to test the PID loop.  This could be anything, but as I've seen with servo amplifiers such as those from AMC, a set degree difference is used to repeatedly test the success of the PID loop;
+            counter = 0; //Set the event counter to 0;
 
-            PIDEnableFlag = 3;
-            SetAngle = 60;
-            counter = 0;
-
-            T0CONbits.TMR0ON = 1;
+            T0CONbits.TMR0ON = 1; //Start the timers;
             T3CONbits.TMR3ON = 1;
+            
+            STATUSLED = 0;
 
-            while (counter < 600)
+            while (counter < DataLodeSize)
             {
-                CurrentAngle = RTD2Angle(ReadRTDpos());
-                calculatePID(CurrentAngle, SetAngle);
-                ImplementPIDMotion(motorInput);
-                while (INTCONbits.TMR0IF == 0)
+                CurrentAngle = RTD2Angle(ReadRTDpos()); //Read the current position;
+                calculatePID(CurrentAngle, SetAngle); //Calculate the loop output which generates the motorInput variable;
+                ImplementPIDMotion(motorInput); //Implement the PID motion;
+                while (INTCONbits.TMR0IF == 0) //I'm using the outer timer loop to replicate the PID loop;
                 {
-                    DataLode[counter] = RTD2Angle(ReadRTDpos());
-                    while (PIR2bits.TMR3IF == 0);
-                    PIR2bits.TMR3IF = 0;
+                    STATUSLED = 1;
                     TMR3H = timer3High;
                     TMR3L = timer3Low;
-                    counter++;
+                    DataLode[counter] = RTD2Angle(ReadRTDpos());
+                    STATUSLED = 0;
+                    while (PIR2bits.TMR3IF == 0); //I'm using this inner loop to record data more frequently than every PID update.  This is primarily due to our god-awful gear ratio of 4:1 which gives a terrible mechanical constant on the order of milliseconds rather than seconds :( ;
+                    PIR2bits.TMR3IF = 0;
+                    if (counter < DataLodeSize) //We're going to be counting this number of events.  This is to prevent the counter from overrunning and writing angles into locations not included in the DataLode[] array;
+                        counter++;
                 }
                 INTCONbits.TMR0IF = 0;
                 TMR0H = timerHigh;
                 TMR0L = timerLow;
             }
-            SPIDisassembleLode(DataLode, TransmitLode);
-            CloseSPI1();
-            OpenSPI1(SLV_SSON, MODE_00, SMPMID);
-            SlaveReady = 0;
-            for (counter = 0; counter != 1800; counter++) //Send all gathered data;
+            SPIDisassembleLode(DataLode, TransmitLode); //Prepare the data for transfer;
+            SPIRestart(); //Restart the module to clear any errors;
+            SlaveReady = 0; //Slave is ready to transmit;
+            for (counter = 0; counter != TransmitLodeSize; counter++) //Send all gathered data;
                 SendSPI1(TransmitLode[counter]);
-            trash = SSP1BUF;
-            PIR1bits.SSP1IF = 0;
-            RECFlag = 0;
-            INTCONbits.GIE = 1;
-            INTCONbits.PEIE = 1;
-            INTCONbits.TMR0IE = 1;
             SlaveReady = 1;
+            SPIRestart(); //Clear the module;
+            RECFlag = 0;
+            INTCONbits.TMR0IE = 1;
+            INTCONbits.PEIE = 1;
+            INTCONbits.GIE = 1;
+            SetAngle = saveSP;
+            PIDEnableFlag = 3;
+
+
         }
     }
 }
@@ -236,9 +237,10 @@ void initialize(void)
     PIDInit();
     ZeroMotors();
     EEPROMInit();
+    RecTmrInit();
 
     InitializeInterrupts();
-
+    TRISAbits.RA3 = 0;
     STATUSLED = 1;
 }
 
@@ -322,17 +324,17 @@ void InitializeInterrupts(void)
 
 void ZeroMotors(void)
 {
-    CurrentAngle = 2;
-    Ki = 1;
-    Kp = 2;
+    double average, PrevAngle;
+    Ki = 2; //I've found that these values create a pretty smooth motion;
+    Kp = 0.5;
     Kd = 0;
-    TMR0H = timerHigh;
+    TMR0H = timerHigh; //We will use the standard PID loop time of 30 ms;
     TMR0L = timerLow;
-    T0CONbits.TMR0ON = 1;
     PIDEnableFlag = 3;
     SetAngle = 0;
     INTCONbits.GIE = 0;
     INTCONbits.PEIE = 0;
+    T0CONbits.TMR0ON = 1;
     do
     {
         CurrentAngle = RTD2Angle(ReadRTDpos());
@@ -342,10 +344,8 @@ void ZeroMotors(void)
         INTCONbits.TMR0IF = 0;
         TMR0H = timerHigh;
         TMR0L = timerLow;
+        average = (PrevAngle + CurrentAngle) / 2;
+        PrevAngle = CurrentAngle;
     }
-    while (abs(error) > 1);
-
-    Ki = 0;
-    Kp = 0;
-    Kd = 0;
+    while ((average > 1) && (abs(error) > 1)); //Get within 1 degree of zero;
 }

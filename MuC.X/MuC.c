@@ -45,8 +45,6 @@ void main(void)
                             MSendSPI(StrippedKey, 1); //Write the command byte to the slave;
                             MReceiveStrSPI(1); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
                             CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
-                            for (x = 0; x != 4; x++)
-                                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
                             SerTxStr("Azimuth = ");
                             breakDouble(CurrentAngle);
                             SerNL();
@@ -56,8 +54,6 @@ void main(void)
                             MSendSPI(StrippedKey, 1); //Write the command byte to the slave;
                             MReceiveStrSPI(1);
                             CurrentVelocity = SPIReassembleDouble();
-                            for (x = 0; x != 4; x++)
-                                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
                             SerTxStr("Azimuth Velocity = ");
                             breakDouble(CurrentVelocity);
                             SerNL();
@@ -67,8 +63,6 @@ void main(void)
                             MSendSPI(StrippedKey, 1); //Write the command byte to the slave;
                             MReceiveStrSPI(1);
                             Kp = SPIReassembleDouble();
-                            for (x = 0; x != 4; x++)
-                                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
                             SerTxStr("Kp = ");
                             breakDouble(Kp);
                             SerNL();
@@ -78,8 +72,6 @@ void main(void)
                             MSendSPI(StrippedKey, 1); //Write the command byte to the slave;
                             MReceiveStrSPI(1);
                             Ki = SPIReassembleDouble();
-                            for (x = 0; x != 4; x++)
-                                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
                             SerTxStr("Ki = ");
                             breakDouble(Ki);
                             SerNL();
@@ -89,8 +81,6 @@ void main(void)
                             MSendSPI(StrippedKey, 1); //Write the command byte to the slave;
                             MReceiveStrSPI(1);
                             Kd = SPIReassembleDouble();
-                            for (x = 0; x != 4; x++)
-                                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
                             SerTxStr("Kd = ");
                             breakDouble(Kd);
                             SerNL();
@@ -175,7 +165,7 @@ void main(void)
                             SerNL();
                         }
                     }
-                    while (!checksum()); //While the Checksum does not correlate with the received value;
+                    while (checksum() == 0); //While the Checksum does not correlate with the received value;
                 }
                 else if ((StrippedKey == 0x01) || (StrippedKey == 0x05) || (StrippedKey == 0x07) || (StrippedKey == 0x09)) //If the key is something that requires the master to send data;
                 {
@@ -197,7 +187,7 @@ void main(void)
             INTCONbits.GIE = 1; //Turn interrupts back on after communication with slave;
         }
 
-        if (RECFlag == 1)
+        else if ((RECFlag == 1) && (RCFlag == 0)) //Something truly odd occurred here.  If the parameter (RCFlag == 0) is not included, the program will, from time to time, enter this loop regardless of the RECFlag.  For that reason, this condition is now included;
         {
             INTCONbits.GIE = 0; //Turn interrupts off for the transmission segment;
             RCFlag = 0;
@@ -252,11 +242,9 @@ void main(void)
                 while (SlaveReady1); //Wait for the slave to be ready;
                 MReceiveStrSPI(1); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
                 CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
-                for (x = 0; x != 4; x++)
-                    DoubleSPIM[x] = '\0'; //Clear the characters in the array;
 
             }
-            while (!checksum());
+            while (checksum() == 0);
 
             SerTxStr("Azimuth = ");
             breakDouble(CurrentAngle);

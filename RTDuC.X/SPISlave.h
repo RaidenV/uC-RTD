@@ -41,6 +41,7 @@ extern "C" {
     unsigned char ReceiveSPI1(void);
     unsigned char checksum(void);
     double SPIReassembleDouble(void);
+    void SPIRestart(void);
 
 
 #ifdef	__cplusplus

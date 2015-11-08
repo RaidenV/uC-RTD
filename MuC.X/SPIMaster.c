@@ -143,9 +143,11 @@ void SPIReassembleLode(void)
 
 unsigned char checksum(void)
 {
-    unsigned char y, sum = 0;
+    unsigned char y;
+    int sum = 0;
     for (y = 0; y != 3; y++)
         sum += DoubleSPIM[y];
+    sum = sum & 0xFF; //Truncate the int;
     if ((sum - DoubleSPIM[3]) == 0)
         return 1;
     else
