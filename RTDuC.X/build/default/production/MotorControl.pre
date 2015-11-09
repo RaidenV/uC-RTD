@@ -8397,18 +8397,21 @@ T2CON = 0x04;
 
 }
 
+# 31
 void KillMotors(void)
 {
 PORTAbits.RA4 = 1;
 CCP3CON = CCP3CON & 0xF0;
 }
 
+# 40
 void StartMotors(void)
 {
 PORTAbits.RA4 = 0;
 CCP3CON = CCP3CON = 0x4C;
 }
 
+# 50
 void ImplementPIDMotion(int PIDValue)
 {
 if (PIDValue > 255)
@@ -8427,6 +8430,7 @@ CCP3CONbits.DC3B = (PIDValue & 0x03);
 
 }
 
+# 71
 void ImplementJSMotion(int JoystickValue)
 {
 unsigned int CCPinput;

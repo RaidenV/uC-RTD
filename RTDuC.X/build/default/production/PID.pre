@@ -8435,6 +8435,7 @@ TMR0H = 0xDB;
 TMR0L = 0x60;
 }
 
+# 33
 void calculatePID(double angle, double setpoint)
 {
 double derErr;
@@ -8462,6 +8463,7 @@ motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
 prevErr = error;
 }
 
+# 63
 void TMR0Int(void)
 {
 TMR0H = 0xDB;

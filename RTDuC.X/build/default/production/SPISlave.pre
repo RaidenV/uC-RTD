@@ -8334,8 +8334,7 @@ double Kp;
 double Ki;
 double Kd;
 
-unsigned char timer1High = 0xC0;
-unsigned char timer1Low = 0x00;
+unsigned char timer4 = 0x00;
 
 void SPIInit(void)
 {
@@ -8345,8 +8344,10 @@ TRISFbits.RF7 = 1;
 TRISCbits.RC6 = 0;
 OpenSPI1(0b00000100, 0b00000000, 0b00000000);
 PIE1bits.SSP1IE = 1;
+T4CONbits.T4CKPS = 0x3;
 }
 
+# 34
 void SPIInt(void)
 {
 PORTCbits.RC6 = 1;
@@ -8360,19 +8361,19 @@ else
 SPIflag = 1;
 }
 
+# 50
 void SendSPI1(unsigned char data)
 {
 SSP1BUF = data;
 unsigned char temp;
 PIR1bits.SSP1IF = 0;
 temp = SSP1BUF;
-PIR1bits.TMR1IF = 0;
-T1CONbits.TMR1ON = 1;
-TMR1H = timer1High;
-TMR1L = timer1Low;
+PIR3bits.TMR4IF = 0;
+T4CONbits.TMR4ON = 1;
+TMR4 = timer4;
 while (!PIR1bits.SSP1IF)
 {
-if (PIR1bits.TMR1IF == 1)
+if (PIR3bits.TMR4IF == 1)
 {
 SPIRestart();
 }
@@ -8381,16 +8382,16 @@ SSP1CON1bits.SSPOV1 = 0;
 PIR1bits.SSP1IF = 0;
 }
 
+# 73
 unsigned char ReceiveSPI1(void)
 {
 SSP1BUF = 0x00;
-PIR1bits.TMR1IF = 0;
-T1CONbits.TMR1ON = 1;
-TMR1H = timer1High;
-TMR1L = timer1Low;
+PIR3bits.TMR4IF = 0;
+T4CONbits.TMR4ON = 1;
+TMR4 = timer4;
 while (!PIR1bits.SSP1IF)
 {
-if (PIR1bits.TMR1IF == 1)
+if (PIR3bits.TMR4IF == 1)
 {
 SPIRestart();
 }
@@ -8414,7 +8415,7 @@ void SPIDisassembleLode(double* Data, unsigned char* Transmit)
 unsigned int y = 0;
 double dub;
 DoublePtr = (unsigned char*) &dub;
-for (y = 0; y != 1800; y += 3)
+for (y = 0; y != 1809; y += 3)
 {
 dub = Data[y / 3];
 Transmit[y] = DoublePtr[0];

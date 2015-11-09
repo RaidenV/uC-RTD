@@ -4,10 +4,10 @@ unsigned char RCFlag = 0;
 unsigned char ReceivedChar;
 unsigned char* DoublePtr;
 unsigned char DoubleSPIM[4];
-const unsigned int ReceiveLodeSize = 1800;
-const unsigned int DataLodeSize = 600;
-unsigned char ReceiveLode[1800];
-double DataLode[600];
+const unsigned int ReceiveLodeSize = 1809;
+const unsigned int DataLodeSize = 603;
+unsigned char ReceiveLode[1809];
+double DataLode[603];
 
 void SPIInitM(void)
 {

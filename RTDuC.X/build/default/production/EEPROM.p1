@@ -6530,350 +6530,350 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "26
 [p l 1 ]
-"27
+"32
 [v _EEBootUp `(v ~T0 @X0 1 ef ]
-"28
+"33
 {
-[; ;EEPROM.c: 27: void EEBootUp(void)
-[; ;EEPROM.c: 28: {
+[; ;EEPROM.c: 32: void EEBootUp(void)
+[; ;EEPROM.c: 33: {
 [e :U _EEBootUp ]
 [f ]
-[; ;EEPROM.c: 29: if (EEReadChar(0x16))
-"29
-[e $ ! != -> ( _EEReadChar (1 -> -> 22 `i `uc `i -> -> -> 0 `i `uc `i 760  ]
-[; ;EEPROM.c: 30: {
-"30
-{
-[; ;EEPROM.c: 31: SetAngle = EEReadDouble(0x00);
-"31
-[e = _SetAngle ( _EEReadDouble (1 -> -> 0 `i `uc ]
-[; ;EEPROM.c: 32: Kp = EEReadDouble(0x03);
-"32
-[e = _Kp ( _EEReadDouble (1 -> -> 3 `i `uc ]
-[; ;EEPROM.c: 33: Ki = EEReadDouble(0x06);
-"33
-[e = _Ki ( _EEReadDouble (1 -> -> 6 `i `uc ]
-[; ;EEPROM.c: 34: Kd = EEReadDouble(0x09);
+[; ;EEPROM.c: 34: if (EEReadChar(0x16))
 "34
-[e = _Kd ( _EEReadDouble (1 -> -> 9 `i `uc ]
-[; ;EEPROM.c: 35: PIDEnableFlag = EEReadChar(0x15);
+[e $ ! != -> ( _EEReadChar (1 -> -> 22 `i `uc `i -> -> -> 0 `i `uc `i 760  ]
+[; ;EEPROM.c: 35: {
 "35
-[e = _PIDEnableFlag ( _EEReadChar (1 -> -> 21 `i `uc ]
-[; ;EEPROM.c: 36: if(PIDEnableFlag == 1)
-"36
-[e $ ! == -> _PIDEnableFlag `i -> 1 `i 761  ]
-[; ;EEPROM.c: 37: {
-"37
 {
-[; ;EEPROM.c: 38: PIDEnableFlag = 3;
+[; ;EEPROM.c: 36: SetAngle = EEReadDouble(0x00);
+"36
+[e = _SetAngle ( _EEReadDouble (1 -> -> 0 `i `uc ]
+[; ;EEPROM.c: 37: Kp = EEReadDouble(0x03);
+"37
+[e = _Kp ( _EEReadDouble (1 -> -> 3 `i `uc ]
+[; ;EEPROM.c: 38: Ki = EEReadDouble(0x06);
 "38
-[e = _PIDEnableFlag -> -> 3 `i `uc ]
+[e = _Ki ( _EEReadDouble (1 -> -> 6 `i `uc ]
+[; ;EEPROM.c: 39: Kd = EEReadDouble(0x09);
 "39
+[e = _Kd ( _EEReadDouble (1 -> -> 9 `i `uc ]
+[; ;EEPROM.c: 40: PIDEnableFlag = EEReadChar(0x15);
+"40
+[e = _PIDEnableFlag ( _EEReadChar (1 -> -> 21 `i `uc ]
+[; ;EEPROM.c: 41: if(PIDEnableFlag == 1)
+"41
+[e $ ! == -> _PIDEnableFlag `i -> 1 `i 761  ]
+[; ;EEPROM.c: 42: {
+"42
+{
+[; ;EEPROM.c: 43: PIDEnableFlag = 3;
+"43
+[e = _PIDEnableFlag -> -> 3 `i `uc ]
+"44
 }
 [e :U 761 ]
-"40
+"45
 }
 [e :U 760 ]
-[; ;EEPROM.c: 39: }
-[; ;EEPROM.c: 40: }
-[; ;EEPROM.c: 41: }
-"41
+[; ;EEPROM.c: 44: }
+[; ;EEPROM.c: 45: }
+[; ;EEPROM.c: 46: }
+"46
 [e :UE 759 ]
 }
-"47
-[p l 1 ]
-"48
-[v _EEDisassembleDouble `(v ~T0 @X0 1 ef1`d ]
-"49
-{
-[; ;EEPROM.c: 48: void EEDisassembleDouble(double dub)
-[; ;EEPROM.c: 49: {
-[e :U _EEDisassembleDouble ]
-"48
-[v _dub `d ~T0 @X0 1 r1 ]
-"49
-[f ]
-[; ;EEPROM.c: 50: DoublePtr = (unsigned char*) &dub;
-"50
-[e = _DoublePtr -> &U _dub `*uc ]
-[; ;EEPROM.c: 51: DDouble[0] = DoublePtr[0];
-"51
-[e = *U + &U _DDouble * -> -> -> 0 `i `ui `ux -> -> # *U &U _DDouble `ui `ux *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;EEPROM.c: 52: DDouble[1] = DoublePtr[1];
 "52
-[e = *U + &U _DDouble * -> -> -> 1 `i `ui `ux -> -> # *U &U _DDouble `ui `ux *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;EEPROM.c: 53: DDouble[2] = DoublePtr[2];
+[p l 1 ]
 "53
-[e = *U + &U _DDouble * -> -> -> 2 `i `ui `ux -> -> # *U &U _DDouble `ui `ux *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x ]
-[; ;EEPROM.c: 54: }
+[v _EEDisassembleDouble `(v ~T0 @X0 1 ef1`d ]
 "54
+{
+[; ;EEPROM.c: 53: void EEDisassembleDouble(double dub)
+[; ;EEPROM.c: 54: {
+[e :U _EEDisassembleDouble ]
+"53
+[v _dub `d ~T0 @X0 1 r1 ]
+"54
+[f ]
+[; ;EEPROM.c: 55: DoublePtr = (unsigned char*) &dub;
+"55
+[e = _DoublePtr -> &U _dub `*uc ]
+[; ;EEPROM.c: 56: DDouble[0] = DoublePtr[0];
+"56
+[e = *U + &U _DDouble * -> -> -> 0 `i `ui `ux -> -> # *U &U _DDouble `ui `ux *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;EEPROM.c: 57: DDouble[1] = DoublePtr[1];
+"57
+[e = *U + &U _DDouble * -> -> -> 1 `i `ui `ux -> -> # *U &U _DDouble `ui `ux *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;EEPROM.c: 58: DDouble[2] = DoublePtr[2];
+"58
+[e = *U + &U _DDouble * -> -> -> 2 `i `ui `ux -> -> # *U &U _DDouble `ui `ux *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x ]
+[; ;EEPROM.c: 59: }
+"59
 [e :UE 762 ]
 }
-"61
+"66
 [p l 1 ]
-"62
+"67
 [v _EEReassembleDouble `(d ~T0 @X0 1 ef ]
-"63
+"68
 {
-[; ;EEPROM.c: 62: double EEReassembleDouble(void)
-[; ;EEPROM.c: 63: {
+[; ;EEPROM.c: 67: double EEReassembleDouble(void)
+[; ;EEPROM.c: 68: {
 [e :U _EEReassembleDouble ]
 [f ]
-"64
-[v _dub `d ~T0 @X0 1 a ]
-[; ;EEPROM.c: 64: double dub;
-[; ;EEPROM.c: 65: DoublePtr = (unsigned char*) &dub;
-"65
-[e = _DoublePtr -> &U _dub `*uc ]
-[; ;EEPROM.c: 66: DoublePtr[0] = DDouble[0];
-"66
-[e = *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DDouble * -> -> -> 0 `i `ui `ux -> -> # *U &U _DDouble `ui `ux ]
-[; ;EEPROM.c: 67: DoublePtr[1] = DDouble[1];
-"67
-[e = *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DDouble * -> -> -> 1 `i `ui `ux -> -> # *U &U _DDouble `ui `ux ]
-[; ;EEPROM.c: 68: DoublePtr[2] = DDouble[2];
-"68
-[e = *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DDouble * -> -> -> 2 `i `ui `ux -> -> # *U &U _DDouble `ui `ux ]
-[; ;EEPROM.c: 69: return dub;
 "69
+[v _dub `d ~T0 @X0 1 a ]
+[; ;EEPROM.c: 69: double dub;
+[; ;EEPROM.c: 70: DoublePtr = (unsigned char*) &dub;
+"70
+[e = _DoublePtr -> &U _dub `*uc ]
+[; ;EEPROM.c: 71: DoublePtr[0] = DDouble[0];
+"71
+[e = *U + _DoublePtr * -> -> 0 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DDouble * -> -> -> 0 `i `ui `ux -> -> # *U &U _DDouble `ui `ux ]
+[; ;EEPROM.c: 72: DoublePtr[1] = DDouble[1];
+"72
+[e = *U + _DoublePtr * -> -> 1 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DDouble * -> -> -> 1 `i `ui `ux -> -> # *U &U _DDouble `ui `ux ]
+[; ;EEPROM.c: 73: DoublePtr[2] = DDouble[2];
+"73
+[e = *U + _DoublePtr * -> -> 2 `i `x -> -> # *U _DoublePtr `i `x *U + &U _DDouble * -> -> -> 2 `i `ui `ux -> -> # *U &U _DDouble `ui `ux ]
+[; ;EEPROM.c: 74: return dub;
+"74
 [e ) _dub ]
 [e $UE 763  ]
-[; ;EEPROM.c: 70: }
-"70
+[; ;EEPROM.c: 75: }
+"75
 [e :UE 763 ]
 }
-"76
+"81
 [p l 1 ]
-"77
+"82
 [v _EEWriteDouble `(v ~T0 @X0 1 ef2`uc`d ]
-"78
+"83
 {
-[; ;EEPROM.c: 77: void EEWriteDouble(unsigned char location, double dub)
-[; ;EEPROM.c: 78: {
+[; ;EEPROM.c: 82: void EEWriteDouble(unsigned char location, double dub)
+[; ;EEPROM.c: 83: {
 [e :U _EEWriteDouble ]
-"77
+"82
 [v _location `uc ~T0 @X0 1 r1 ]
 [v _dub `d ~T0 @X0 1 r2 ]
-"78
-[f ]
-"79
-[v _x `uc ~T0 @X0 1 a ]
-[; ;EEPROM.c: 79: unsigned char x;
-[; ;EEPROM.c: 81: EEDisassembleDouble(dub);
-"81
-[e ( _EEDisassembleDouble (1 _dub ]
-[; ;EEPROM.c: 83: INTCON = INTCON & 0x3F;
 "83
+[f ]
+"84
+[v _x `uc ~T0 @X0 1 a ]
+[; ;EEPROM.c: 84: unsigned char x;
+[; ;EEPROM.c: 86: EEDisassembleDouble(dub);
+"86
+[e ( _EEDisassembleDouble (1 _dub ]
+[; ;EEPROM.c: 88: INTCON = INTCON & 0x3F;
+"88
 [e = _INTCON -> & -> _INTCON `i -> 63 `i `uc ]
-[; ;EEPROM.c: 85: for (x = 0; x < 3; x++)
-"85
+[; ;EEPROM.c: 90: for (x = 0; x < 3; x++)
+"90
 {
 [e = _x -> -> 0 `i `uc ]
 [e $ < -> _x `i -> 3 `i 765  ]
 [e $U 766  ]
-"86
+"91
 [e :U 765 ]
-[; ;EEPROM.c: 86: {
+[; ;EEPROM.c: 91: {
 {
-[; ;EEPROM.c: 87: Write_b_eep(location, DDouble[x]);
-"87
+[; ;EEPROM.c: 92: Write_b_eep(location, DDouble[x]);
+"92
 [e ( _Write_b_eep (2 , -> _location `ui *U + &U _DDouble * -> _x `ux -> -> # *U &U _DDouble `ui `ux ]
-[; ;EEPROM.c: 88: location++;
-"88
+[; ;EEPROM.c: 93: location++;
+"93
 [e ++ _location -> -> 1 `i `uc ]
-[; ;EEPROM.c: 89: Busy_eep();
-"89
+[; ;EEPROM.c: 94: Busy_eep();
+"94
 [e ( _Busy_eep ..  ]
-"90
+"95
 }
-"85
+"90
 [e ++ _x -> -> 1 `i `uc ]
 [e $ < -> _x `i -> 3 `i 765  ]
 [e :U 766 ]
-"90
+"95
 }
-[; ;EEPROM.c: 90: }
-[; ;EEPROM.c: 92: INTCON = INTCON | 0xC0;
-"92
+[; ;EEPROM.c: 95: }
+[; ;EEPROM.c: 97: INTCON = INTCON | 0xC0;
+"97
 [e = _INTCON -> | -> _INTCON `i -> 192 `i `uc ]
-[; ;EEPROM.c: 93: }
-"93
+[; ;EEPROM.c: 98: }
+"98
 [e :UE 764 ]
 }
-"99
-[p l 1 ]
-"100
-[v _EEReadDouble `(d ~T0 @X0 1 ef1`uc ]
-"101
-{
-[; ;EEPROM.c: 100: double EEReadDouble(unsigned char location)
-[; ;EEPROM.c: 101: {
-[e :U _EEReadDouble ]
-"100
-[v _location `uc ~T0 @X0 1 r1 ]
-"101
-[f ]
-"102
-[v _x `uc ~T0 @X0 1 a ]
-[; ;EEPROM.c: 102: unsigned char x;
-[; ;EEPROM.c: 104: INTCON = INTCON & 0x3F;
 "104
-[e = _INTCON -> & -> _INTCON `i -> 63 `i `uc ]
-[; ;EEPROM.c: 106: for (x = 0; x < 3; x++)
+[p l 1 ]
+"105
+[v _EEReadDouble `(d ~T0 @X0 1 ef1`uc ]
 "106
+{
+[; ;EEPROM.c: 105: double EEReadDouble(unsigned char location)
+[; ;EEPROM.c: 106: {
+[e :U _EEReadDouble ]
+"105
+[v _location `uc ~T0 @X0 1 r1 ]
+"106
+[f ]
+"107
+[v _x `uc ~T0 @X0 1 a ]
+[; ;EEPROM.c: 107: unsigned char x;
+[; ;EEPROM.c: 109: INTCON = INTCON & 0x3F;
+"109
+[e = _INTCON -> & -> _INTCON `i -> 63 `i `uc ]
+[; ;EEPROM.c: 111: for (x = 0; x < 3; x++)
+"111
 {
 [e = _x -> -> 0 `i `uc ]
 [e $ < -> _x `i -> 3 `i 769  ]
 [e $U 770  ]
-"107
+"112
 [e :U 769 ]
-[; ;EEPROM.c: 107: {
+[; ;EEPROM.c: 112: {
 {
-[; ;EEPROM.c: 108: DDouble[x] = Read_b_eep(location + x);
-"108
+[; ;EEPROM.c: 113: DDouble[x] = Read_b_eep(location + x);
+"113
 [e = *U + &U _DDouble * -> _x `ux -> -> # *U &U _DDouble `ui `ux ( _Read_b_eep (1 -> + -> _location `i -> _x `i `ui ]
-[; ;EEPROM.c: 109: Busy_eep();
-"109
+[; ;EEPROM.c: 114: Busy_eep();
+"114
 [e ( _Busy_eep ..  ]
-"110
+"115
 }
-"106
+"111
 [e ++ _x -> -> 1 `i `uc ]
 [e $ < -> _x `i -> 3 `i 769  ]
 [e :U 770 ]
-"110
+"115
 }
-[; ;EEPROM.c: 110: }
-[; ;EEPROM.c: 112: INTCON = INTCON | 0xC0;
-"112
+[; ;EEPROM.c: 115: }
+[; ;EEPROM.c: 117: INTCON = INTCON | 0xC0;
+"117
 [e = _INTCON -> | -> _INTCON `i -> 192 `i `uc ]
-[; ;EEPROM.c: 114: return EEReassembleDouble();
-"114
+[; ;EEPROM.c: 119: return EEReassembleDouble();
+"119
 [e ) ( _EEReassembleDouble ..  ]
 [e $UE 768  ]
-[; ;EEPROM.c: 115: }
-"115
+[; ;EEPROM.c: 120: }
+"120
 [e :UE 768 ]
 }
-"121
+"126
 [p l 1 ]
-"122
+"127
 [v _EEWriteChar `(v ~T0 @X0 1 ef2`uc`uc ]
-"123
+"128
 {
-[; ;EEPROM.c: 122: void EEWriteChar(unsigned char location, unsigned char ch)
-[; ;EEPROM.c: 123: {
+[; ;EEPROM.c: 127: void EEWriteChar(unsigned char location, unsigned char ch)
+[; ;EEPROM.c: 128: {
 [e :U _EEWriteChar ]
-"122
+"127
 [v _location `uc ~T0 @X0 1 r1 ]
 [v _ch `uc ~T0 @X0 1 r2 ]
-"123
+"128
 [f ]
-[; ;EEPROM.c: 124: INTCON = INTCON & 0x3F;
-"124
-[e = _INTCON -> & -> _INTCON `i -> 63 `i `uc ]
-[; ;EEPROM.c: 126: Write_b_eep(location, ch);
-"126
-[e ( _Write_b_eep (2 , -> _location `ui _ch ]
-[; ;EEPROM.c: 127: Busy_eep();
-"127
-[e ( _Busy_eep ..  ]
-[; ;EEPROM.c: 129: INTCON = INTCON | 0xC0;
+[; ;EEPROM.c: 129: INTCON = INTCON & 0x3F;
 "129
+[e = _INTCON -> & -> _INTCON `i -> 63 `i `uc ]
+[; ;EEPROM.c: 131: Write_b_eep(location, ch);
+"131
+[e ( _Write_b_eep (2 , -> _location `ui _ch ]
+[; ;EEPROM.c: 132: Busy_eep();
+"132
+[e ( _Busy_eep ..  ]
+[; ;EEPROM.c: 134: INTCON = INTCON | 0xC0;
+"134
 [e = _INTCON -> | -> _INTCON `i -> 192 `i `uc ]
-[; ;EEPROM.c: 130: }
-"130
+[; ;EEPROM.c: 135: }
+"135
 [e :UE 772 ]
 }
-"135
-[p l 1 ]
-"136
-[v _EEReadChar `(uc ~T0 @X0 1 ef1`uc ]
-"137
-{
-[; ;EEPROM.c: 136: char EEReadChar(unsigned char location)
-[; ;EEPROM.c: 137: {
-[e :U _EEReadChar ]
-"136
-[v _location `uc ~T0 @X0 1 r1 ]
-"137
-[f ]
-"138
-[v _ch `uc ~T0 @X0 1 a ]
-[; ;EEPROM.c: 138: unsigned char ch;
-[; ;EEPROM.c: 140: INTCON = INTCON & 0x3F;
 "140
-[e = _INTCON -> & -> _INTCON `i -> 63 `i `uc ]
-[; ;EEPROM.c: 142: ch = Read_b_eep(location);
+[p l 1 ]
+"141
+[v _EEReadChar `(uc ~T0 @X0 1 ef1`uc ]
 "142
+{
+[; ;EEPROM.c: 141: char EEReadChar(unsigned char location)
+[; ;EEPROM.c: 142: {
+[e :U _EEReadChar ]
+"141
+[v _location `uc ~T0 @X0 1 r1 ]
+"142
+[f ]
+"143
+[v _ch `uc ~T0 @X0 1 a ]
+[; ;EEPROM.c: 143: unsigned char ch;
+[; ;EEPROM.c: 145: INTCON = INTCON & 0x3F;
+"145
+[e = _INTCON -> & -> _INTCON `i -> 63 `i `uc ]
+[; ;EEPROM.c: 147: ch = Read_b_eep(location);
+"147
 [e = _ch ( _Read_b_eep (1 -> _location `ui ]
-[; ;EEPROM.c: 144: INTCON = INTCON | 0xC0;
-"144
+[; ;EEPROM.c: 149: INTCON = INTCON | 0xC0;
+"149
 [e = _INTCON -> | -> _INTCON `i -> 192 `i `uc ]
-[; ;EEPROM.c: 146: return ch;
-"146
+[; ;EEPROM.c: 151: return ch;
+"151
 [e ) _ch ]
 [e $UE 773  ]
-[; ;EEPROM.c: 147: }
-"147
+[; ;EEPROM.c: 152: }
+"152
 [e :UE 773 ]
 }
-"149
+"160
 [p l 1 ]
-"150
+"161
 [v _SaveAll `(v ~T0 @X0 1 ef ]
-"151
+"162
 {
-[; ;EEPROM.c: 150: void SaveAll(void)
-[; ;EEPROM.c: 151: {
+[; ;EEPROM.c: 161: void SaveAll(void)
+[; ;EEPROM.c: 162: {
 [e :U _SaveAll ]
 [f ]
-[; ;EEPROM.c: 152: EEWriteDouble(0x00, SetAngle);
-"152
-[e ( _EEWriteDouble (2 , -> -> 0 `i `uc _SetAngle ]
-[; ;EEPROM.c: 153: EEWriteDouble(0x03, Kp);
-"153
-[e ( _EEWriteDouble (2 , -> -> 3 `i `uc _Kp ]
-[; ;EEPROM.c: 154: EEWriteDouble(0x06, Ki);
-"154
-[e ( _EEWriteDouble (2 , -> -> 6 `i `uc _Ki ]
-[; ;EEPROM.c: 155: EEWriteDouble(0x09, Kd);
-"155
-[e ( _EEWriteDouble (2 , -> -> 9 `i `uc _Kd ]
-[; ;EEPROM.c: 156: EEWriteChar(0x0C, PORTA);
-"156
-[e ( _EEWriteChar (2 , -> -> 12 `i `uc _PORTA ]
-[; ;EEPROM.c: 157: EEWriteChar(0x0D, PORTB);
-"157
-[e ( _EEWriteChar (2 , -> -> 13 `i `uc _PORTB ]
-[; ;EEPROM.c: 158: EEWriteChar(0x0E, PORTC);
-"158
-[e ( _EEWriteChar (2 , -> -> 14 `i `uc _PORTC ]
-[; ;EEPROM.c: 159: EEWriteChar(0x0F, PORTD);
-"159
-[e ( _EEWriteChar (2 , -> -> 15 `i `uc _PORTD ]
-[; ;EEPROM.c: 160: EEWriteChar(0x10, PORTE);
-"160
-[e ( _EEWriteChar (2 , -> -> 16 `i `uc _PORTE ]
-[; ;EEPROM.c: 161: EEWriteChar(0x11, PORTF);
-"161
-[e ( _EEWriteChar (2 , -> -> 17 `i `uc _PORTF ]
-[; ;EEPROM.c: 162: EEWriteChar(0x12, PORTG);
-"162
-[e ( _EEWriteChar (2 , -> -> 18 `i `uc _PORTG ]
-[; ;EEPROM.c: 163: EEWriteChar(0x13, PORTH);
+[; ;EEPROM.c: 163: EEWriteDouble(0x00, SetAngle);
 "163
-[e ( _EEWriteChar (2 , -> -> 19 `i `uc _PORTH ]
-[; ;EEPROM.c: 164: EEWriteChar(0x14, PORTJ);
+[e ( _EEWriteDouble (2 , -> -> 0 `i `uc _SetAngle ]
+[; ;EEPROM.c: 164: EEWriteDouble(0x03, Kp);
 "164
-[e ( _EEWriteChar (2 , -> -> 20 `i `uc _PORTJ ]
-[; ;EEPROM.c: 165: EEWriteChar(0x15, PIDEnableFlag);
+[e ( _EEWriteDouble (2 , -> -> 3 `i `uc _Kp ]
+[; ;EEPROM.c: 165: EEWriteDouble(0x06, Ki);
 "165
-[e ( _EEWriteChar (2 , -> -> 21 `i `uc _PIDEnableFlag ]
-[; ;EEPROM.c: 166: EEWriteChar(0x16, 0x01);
+[e ( _EEWriteDouble (2 , -> -> 6 `i `uc _Ki ]
+[; ;EEPROM.c: 166: EEWriteDouble(0x09, Kd);
 "166
-[e ( _EEWriteChar (2 , -> -> 22 `i `uc -> -> 1 `i `uc ]
-[; ;EEPROM.c: 167: }
+[e ( _EEWriteDouble (2 , -> -> 9 `i `uc _Kd ]
+[; ;EEPROM.c: 167: EEWriteChar(0x0C, PORTA);
 "167
+[e ( _EEWriteChar (2 , -> -> 12 `i `uc _PORTA ]
+[; ;EEPROM.c: 168: EEWriteChar(0x0D, PORTB);
+"168
+[e ( _EEWriteChar (2 , -> -> 13 `i `uc _PORTB ]
+[; ;EEPROM.c: 169: EEWriteChar(0x0E, PORTC);
+"169
+[e ( _EEWriteChar (2 , -> -> 14 `i `uc _PORTC ]
+[; ;EEPROM.c: 170: EEWriteChar(0x0F, PORTD);
+"170
+[e ( _EEWriteChar (2 , -> -> 15 `i `uc _PORTD ]
+[; ;EEPROM.c: 171: EEWriteChar(0x10, PORTE);
+"171
+[e ( _EEWriteChar (2 , -> -> 16 `i `uc _PORTE ]
+[; ;EEPROM.c: 172: EEWriteChar(0x11, PORTF);
+"172
+[e ( _EEWriteChar (2 , -> -> 17 `i `uc _PORTF ]
+[; ;EEPROM.c: 173: EEWriteChar(0x12, PORTG);
+"173
+[e ( _EEWriteChar (2 , -> -> 18 `i `uc _PORTG ]
+[; ;EEPROM.c: 174: EEWriteChar(0x13, PORTH);
+"174
+[e ( _EEWriteChar (2 , -> -> 19 `i `uc _PORTH ]
+[; ;EEPROM.c: 175: EEWriteChar(0x14, PORTJ);
+"175
+[e ( _EEWriteChar (2 , -> -> 20 `i `uc _PORTJ ]
+[; ;EEPROM.c: 176: EEWriteChar(0x15, PIDEnableFlag);
+"176
+[e ( _EEWriteChar (2 , -> -> 21 `i `uc _PIDEnableFlag ]
+[; ;EEPROM.c: 177: EEWriteChar(0x16, 0x01);
+"177
+[e ( _EEWriteChar (2 , -> -> 22 `i `uc -> -> 1 `i `uc ]
+[; ;EEPROM.c: 178: }
+"178
 [e :UE 774 ]
 }

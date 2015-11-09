@@ -24,7 +24,12 @@ void EEPROMInit(void)
 }
 
 #pragma interrupt_level 1 //According to the XC8 user's guide, this guarantees that there is no duplication of the interrupt in the event that all interrupts are turned off, which is the case with this function and those hereafter;
-void EEBootUp(void) //This function restores variables that were lost;
+
+/* EEBootUp
+ * This function tests for saved data.  If there is saved data, it loads it into
+ * the necessary registers;
+ */
+void EEBootUp(void)
 {
     if (EEReadChar(SAVEDloc)) //If the SAVEDloc indicates that this is not the first time that the chip has booted or data has been entered, proceed by loading the data;
     {
@@ -146,6 +151,12 @@ char EEReadChar(unsigned char location)
     return ch; //Return the character;
 }
 
+/* SaveALl
+ * This code saves all of the variables previously entered by the user into 
+ * their respective locations.  I have no particular reason for including
+ * the ports, other than PORTA which contains values concerning the various
+ * status LEDs.
+ */
 #pragma interrupt_level 1
 void SaveAll(void) //This is the shutdown routine;
 {
@@ -163,5 +174,5 @@ void SaveAll(void) //This is the shutdown routine;
     EEWriteChar(PORTHloc, PORTH);
     EEWriteChar(PORTJloc, PORTJ);
     EEWriteChar(PIDENABLEloc, PIDEnableFlag);
-    EEWriteChar(SAVEDloc, 0x01);
+    EEWriteChar(SAVEDloc, 0x01); //This value will be used if the unit is restarted to test if there is any saved data;
 }

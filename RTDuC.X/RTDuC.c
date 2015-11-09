@@ -12,8 +12,8 @@
 #pragma config FCMEN = OFF
 
 #define STATUSLED PORTAbits.RA3
-#define timer3High 0xF6 //This will provide a 5 ms delay;
-#define timer3Low 0x3C // 65536 - (0.005 / (8/10e6)) = 59286 = 0xE796;
+#define timer3High 0xF6 //This will provide a 2 ms delay;
+#define timer3Low 0x3C // 65536 - (0.002 / (8/10e6)) = 63036 = 0xF63C;
 
 void initialize(void);
 void interrupt ISR(void);
@@ -21,16 +21,16 @@ void INT0Int(void); //Motor failed interrupt, attached to External Interrupt 0 (
 void RecTmrInit(void); //Initialize Timer 3 for recording data;
 void InitializeInterrupts(void);
 void ZeroMotors(void);
-const unsigned int DataLodeSize = 603;
+const unsigned int DataLodeSize = 603; //This value and the following value are used for loops throughout the code;
 const unsigned int TransmitLodeSize = 1809;
-double DataLode[603];
+double DataLode[603]; //Arrays for saving/transmitting the data;
 unsigned char TransmitLode[1809];
 
 void main(void)
 {
-    const unsigned char dtime = 10;
-    unsigned char trash, x = 0;
-    unsigned int counter = 0;
+    const unsigned char dtime = 10; //Delay time after setting the SlaveReady low;
+    unsigned char trash, x = 0; //Trash/loop variable;
+    unsigned int counter = 0; //Counter for the Recording algorithm;
 
     initialize();
 
@@ -159,6 +159,8 @@ void main(void)
         if (RECFlag == 1)
         {
             SlaveReady = 1;
+            RECFlag = 0;
+            
             double saveKp = Kp, //Save the current Kp, Ki, and Kd values as the ZeroMotors() function overwrites it;
                     saveKi = Ki,
                     saveKd = Kd,
@@ -182,8 +184,6 @@ void main(void)
 
             T0CONbits.TMR0ON = 1; //Start the timers;
             T3CONbits.TMR3ON = 1;
-            
-            STATUSLED = 0;
 
             while (counter < DataLodeSize)
             {
@@ -192,11 +192,9 @@ void main(void)
                 ImplementPIDMotion(motorInput); //Implement the PID motion;
                 while (INTCONbits.TMR0IF == 0) //I'm using the outer timer loop to replicate the PID loop;
                 {
-                    STATUSLED = 1;
                     TMR3H = timer3High;
                     TMR3L = timer3Low;
                     DataLode[counter] = RTD2Angle(ReadRTDpos());
-                    STATUSLED = 0;
                     while (PIR2bits.TMR3IF == 0); //I'm using this inner loop to record data more frequently than every PID update.  This is primarily due to our god-awful gear ratio of 4:1 which gives a terrible mechanical constant on the order of milliseconds rather than seconds :( ;
                     PIR2bits.TMR3IF = 0;
                     if (counter < DataLodeSize) //We're going to be counting this number of events.  This is to prevent the counter from overrunning and writing angles into locations not included in the DataLode[] array;
@@ -206,21 +204,21 @@ void main(void)
                 TMR0H = timerHigh;
                 TMR0L = timerLow;
             }
+            DataLode[600] = Kp; //Couldn't think of an elegant way to deliver these three values, which are pertinent to the C++ utility for extracting the data.  This tacks them onto the DataLode;
+            DataLode[601] = Ki;
+            DataLode[602] = Kd;
             SPIDisassembleLode(DataLode, TransmitLode); //Prepare the data for transfer;
             SPIRestart(); //Restart the module to clear any errors;
             SlaveReady = 0; //Slave is ready to transmit;
             for (counter = 0; counter != TransmitLodeSize; counter++) //Send all gathered data;
                 SendSPI1(TransmitLode[counter]);
-            SlaveReady = 1;
+            SlaveReady = 1; //Disallow master transmission;
             SPIRestart(); //Clear the module;
-            RECFlag = 0;
             INTCONbits.TMR0IE = 1;
             INTCONbits.PEIE = 1;
             INTCONbits.GIE = 1;
-            SetAngle = saveSP;
+            SetAngle = saveSP; //After running the test, set the motor to return to the angle previously set by the user;
             PIDEnableFlag = 3;
-
-
         }
     }
 }
@@ -240,8 +238,8 @@ void initialize(void)
     RecTmrInit();
 
     InitializeInterrupts();
-    TRISAbits.RA3 = 0;
-    STATUSLED = 1;
+    TRISAbits.RA3 = 0; //Set the Status LED as an output.  Configuration of the Analog pins is handled by the JoyStickInit() routine;
+    STATUSLED = 1; //When the unit is booted, trigger the LED;
 }
 
 void interrupt ISR(void)
@@ -273,21 +271,13 @@ void interrupt ISR(void)
     if (PIR2bits.OSCFIF == 1) //If this Oscillator failed, run this;
     {
         RESET(); //If the Oscillator flag has been raised, there's a serious issue with the oscillator, so reset the device, understanding that the first part of the initialization routine checks the oscillator;
-        /*
-         * Understandably, the oscillator issue can be fixed by writing a bunch of alternate code which handles the event
-         * that the external oscillator goes down.  The FCMEN monitors the quality of the external oscillator and allows
-         * for such handling.  This would, however, require a substantial amount of code to be loaded onto the PIC and,
-         * at this point, I'm not sure it's that important.  That, and the code would involve ifs, which will take up
-         * loop time.
-         * 
-         * On second thought, after writing the body of the code, it would appear that, if all goes well in testing,
-         * there is plenty of space left to write alternate code in the event that the Oscillator crashes.
-         * This would more or less involve changing anything related to timing, whether that's baud rate or the timer
-         * value, and figuring out a way to revert in the event that the oscillator comes back online;
-         */
     }
 }
 
+/* INT0Int
+ * This interrupt is associated with the motor fail bit of the H-bridge driver
+ * chip;  it kills the motors and causes the motor fail LED to blink;
+ */
 void INT0Int(void)
 {
     KillMotors();
@@ -305,6 +295,9 @@ void INT0Int(void)
     }
 }
 
+/* RecTmrInit
+ * Sets up the timer used for recording the PID data;
+ */
 void RecTmrInit(void)
 {
     T3CONbits.T3CKPS = 0x3; //Prescaler of 1:8;
@@ -326,26 +319,30 @@ void ZeroMotors(void)
 {
     double average, PrevAngle;
     Ki = 2; //I've found that these values create a pretty smooth motion;
-    Kp = 0.5;
+    Kp = 0.65;
     Kd = 0;
     TMR0H = timerHigh; //We will use the standard PID loop time of 30 ms;
     TMR0L = timerLow;
-    PIDEnableFlag = 3;
-    SetAngle = 0;
-    INTCONbits.GIE = 0;
+    PIDEnableFlag = 3; //Setting this let's the PID loop algorithm know that a new angle is being presented;
+    SetAngle = 0; //Set angle to zero;
+    INTCONbits.GIE = 0; //Disable interrupts for this process;
     INTCONbits.PEIE = 0;
-    T0CONbits.TMR0ON = 1;
-    do
+    T0CONbits.TMR0ON = 1; //Turn the timer on;
+    do //The standard PID algorithm...;
     {
         CurrentAngle = RTD2Angle(ReadRTDpos());
         calculatePID(CurrentAngle, SetAngle);
         ImplementPIDMotion(motorInput);
-        while (INTCONbits.TMR0IF == 0);
+        while (INTCONbits.TMR0IF == 0); //The exception to the standard use of the PID algorithm is that we're ignoring other interrupts and polling the Timer;
         INTCONbits.TMR0IF = 0;
         TMR0H = timerHigh;
         TMR0L = timerLow;
-        average = (PrevAngle + CurrentAngle) / 2;
+        average = (PrevAngle + CurrentAngle) / 2; //I've found that simply because the motor passes through the 0 to 1 range, it doesn't guarantee that the motor is zeroed, so I've implemented a two-angle averaging routine to see if I can make these results more consistent;
         PrevAngle = CurrentAngle;
     }
     while ((average > 1) && (abs(error) > 1)); //Get within 1 degree of zero;
+
+    Kp = 0; //These lines were debatable.  I've decided to implement this because the user should, under no circumstance, experience motion when not expecting to experience that motion, which is not guaranteed if I don't remove the Kp, Ki, and Kd values previously set by this algorithm;
+    Ki = 0;
+    Kd = 0;
 }

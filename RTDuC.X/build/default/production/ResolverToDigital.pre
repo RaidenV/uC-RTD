@@ -8314,7 +8314,6 @@ TRISEbits.RE5 = 1;
 TRISEbits.RE6 = 1;
 TRISEbits.RE7 = 1;
 
-# 21
 PORTJbits.RJ0 = 0;
 Delay10TCYx(10);
 PORTJbits.RJ0 = 1;
@@ -8322,22 +8321,17 @@ Delay1KTCYx(20);
 PORTEbits.RE0 = 0;
 Delay1TCYx(1);
 PORTEbits.RE0 = 1;
-
 PORTEbits.RE2 = 0;
 
 }
 
-# 39
+# 33
 unsigned int ReadRTDpos(void)
 {
 unsigned char x;
 unsigned int FullPosition, helloworld;
 unsigned char HighPosition, LowPosition;
 
-
-
-
-{
 INTCONbits.GIE = 0;
 PORTEbits.RE1 = 1;
 PORTEbits.RE0 = 0;
@@ -8355,42 +8349,40 @@ FullPosition = FullPosition | ((HighPosition & 0x0F) << 8);
 INTCONbits.GIE = 1;
 return FullPosition;
 }
-}
 
+# 64
 unsigned int ReadRTDvel(void)
 {
 unsigned int FullVelocity;
 unsigned char HighVelocity, LowVelocity;
 unsigned char x;
 
-
-
-PORTEbits.RE1 = 0;
+INTCONbits.GIE = 0;
+PORTEbits.RE1 = 1;
 PORTEbits.RE0 = 0;
 for (x = 0; x < 8; x++)
 __nop();
+PORTEbits.RE2 = 1;
 PORTEbits.RE2 = 0;
+Delay10TCYx(1);
 HighVelocity = PORTH;
 LowVelocity = PORTD;
 PORTEbits.RE2 = 1;
 PORTEbits.RE0 = 1;
 FullVelocity = LowVelocity;
-FullVelocity = (HighVelocity & 0x0F) << 8;
-
+FullVelocity = FullVelocity | ((HighVelocity & 0x0F) << 8);
+INTCONbits.GIE = 1;
 return FullVelocity;
-
-
-
-
 }
 
-# 99
+# 92
 double RTD2Angle(unsigned int RTDAngle)
 {
 return 0.087890625 * RTDAngle;
 }
 double RTD2Velocity(unsigned int);
 
+# 101
 unsigned char RTDdirection(void)
 {
 return PORTEbits.RE5;

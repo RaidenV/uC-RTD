@@ -6565,106 +6565,106 @@ Version 3.2 HI-TECH Software Intermediate Code
 "27
 [e :UE 762 ]
 }
-"29
+"33
 [v _calculatePID `(v ~T0 @X0 1 ef2`d`d ]
-"30
+"34
 {
-[; ;PID.c: 29: void calculatePID(double angle, double setpoint)
-[; ;PID.c: 30: {
+[; ;PID.c: 33: void calculatePID(double angle, double setpoint)
+[; ;PID.c: 34: {
 [e :U _calculatePID ]
-"29
+"33
 [v _angle `d ~T0 @X0 1 r1 ]
 [v _setpoint `d ~T0 @X0 1 r2 ]
-"30
-[f ]
-"31
-[v _derErr `d ~T0 @X0 1 a ]
-[; ;PID.c: 31: double derErr;
-[; ;PID.c: 32: if (PIDEnableFlag == 3)
-"32
-[e $ ! == -> _PIDEnableFlag `i -> 3 `i 764  ]
-[; ;PID.c: 33: {
-"33
-{
-[; ;PID.c: 34: error = 0;
 "34
-[e = _error -> -> 0 `i `d ]
-[; ;PID.c: 35: prevErr = 0;
+[f ]
 "35
-[e = _prevErr -> -> 0 `i `d ]
-[; ;PID.c: 36: intErr = 0;
+[v _derErr `d ~T0 @X0 1 a ]
+[; ;PID.c: 35: double derErr;
+[; ;PID.c: 36: if (PIDEnableFlag == 3)
 "36
-[e = _intErr -> -> 0 `i `d ]
-[; ;PID.c: 37: PIDEnableFlag = 1;
+[e $ ! == -> _PIDEnableFlag `i -> 3 `i 764  ]
+[; ;PID.c: 37: {
 "37
-[e = _PIDEnableFlag -> -> 1 `i `uc ]
+{
+[; ;PID.c: 38: error = 0;
 "38
+[e = _error -> -> 0 `i `d ]
+[; ;PID.c: 39: prevErr = 0;
+"39
+[e = _prevErr -> -> 0 `i `d ]
+[; ;PID.c: 40: intErr = 0;
+"40
+[e = _intErr -> -> 0 `i `d ]
+[; ;PID.c: 41: PIDEnableFlag = 1;
+"41
+[e = _PIDEnableFlag -> -> 1 `i `uc ]
+"42
 }
 [e :U 764 ]
-[; ;PID.c: 38: }
-[; ;PID.c: 40: error = setpoint - angle;
-"40
+[; ;PID.c: 42: }
+[; ;PID.c: 44: error = setpoint - angle;
+"44
 [e = _error - _setpoint _angle ]
-[; ;PID.c: 41: if (error > 180)
-"41
+[; ;PID.c: 45: if (error > 180)
+"45
 [e $ ! > _error -> -> 180 `i `d 765  ]
-[; ;PID.c: 42: error -= 360;
-"42
+[; ;PID.c: 46: error -= 360;
+"46
 [e =- _error -> -> 360 `i `d ]
 [e $U 766  ]
-"43
+"47
 [e :U 765 ]
-[; ;PID.c: 43: else if (error < -180)
+[; ;PID.c: 47: else if (error < -180)
 [e $ ! < _error -> -U -> 180 `i `d 767  ]
-[; ;PID.c: 44: error += 360;
-"44
+[; ;PID.c: 48: error += 360;
+"48
 [e =+ _error -> -> 360 `i `d ]
 [e :U 767 ]
-"46
+"50
 [e :U 766 ]
-[; ;PID.c: 46: derErr = error - prevErr;
+[; ;PID.c: 50: derErr = error - prevErr;
 [e = _derErr - _error _prevErr ]
-[; ;PID.c: 47: intErr += error;
-"47
+[; ;PID.c: 51: intErr += error;
+"51
 [e =+ _intErr _error ]
-[; ;PID.c: 48: if (intErr > 2000)
-"48
+[; ;PID.c: 52: if (intErr > 2000)
+"52
 [e $ ! > _intErr -> -> 2000 `i `d 768  ]
-[; ;PID.c: 49: intErr = 2000;
-"49
+[; ;PID.c: 53: intErr = 2000;
+"53
 [e = _intErr -> -> 2000 `i `d ]
 [e :U 768 ]
-[; ;PID.c: 51: motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
-"51
+[; ;PID.c: 55: motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
+"55
 [e = _motorInput -> + + * _Kp _error * * _Ki _intErr _loopTime * _Kd / _derErr _loopTime `i ]
-[; ;PID.c: 53: prevErr = error;
-"53
+[; ;PID.c: 57: prevErr = error;
+"57
 [e = _prevErr _error ]
-[; ;PID.c: 54: }
-"54
+[; ;PID.c: 58: }
+"58
 [e :UE 763 ]
 }
-"56
+"63
 [v _TMR0Int `(v ~T0 @X0 1 ef ]
-"57
+"64
 {
-[; ;PID.c: 56: void TMR0Int(void)
-[; ;PID.c: 57: {
+[; ;PID.c: 63: void TMR0Int(void)
+[; ;PID.c: 64: {
 [e :U _TMR0Int ]
 [f ]
-[; ;PID.c: 58: TMR0H = 0xDB;
-"58
+[; ;PID.c: 65: TMR0H = 0xDB;
+"65
 [e = _TMR0H -> -> 219 `i `uc ]
-[; ;PID.c: 59: TMR0L = 0x60;
-"59
+[; ;PID.c: 66: TMR0L = 0x60;
+"66
 [e = _TMR0L -> -> 96 `i `uc ]
-[; ;PID.c: 60: TMR0Flag = 1;
-"60
+[; ;PID.c: 67: TMR0Flag = 1;
+"67
 [e = _TMR0Flag -> -> 1 `i `uc ]
-[; ;PID.c: 61: INTCONbits.TMR0IF = 0;
-"61
+[; ;PID.c: 68: INTCONbits.TMR0IF = 0;
+"68
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;PID.c: 62: }
-"62
+[; ;PID.c: 69: }
+"69
 [e :UE 769 ]
 }

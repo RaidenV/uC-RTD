@@ -30,8 +30,8 @@ extern "C" {
     extern unsigned char DoubleSPIM[4];
     extern const unsigned int ReceiveLodeSize;
     extern const unsigned int DataLodeSize;
-    extern unsigned char ReceiveLode[1800];
-    extern double DataLode[600];
+    extern unsigned char ReceiveLode[1809];
+    extern double DataLode[603];
 
     void SPIInitM(void);
     unsigned char MReceiveSPI(unsigned char);

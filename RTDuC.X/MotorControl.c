@@ -15,7 +15,7 @@ void MotorDriverInit(void)
 
     TRISAbits.RA4 = 0; //Motor Fault LED;
 
-    CCPR3L = 0x00; //Start with the motors off;
+    CCPR3L = 0x00; //Start with the motors off (set all values to zero);
     CCP3CONbits.DC3B0 = 0;
     CCP3CONbits.DC3B1 = 0;
     CCP3CON = 0x4C; //Set Full-bridge mode, all outputs active high;
@@ -25,18 +25,28 @@ void MotorDriverInit(void)
 
 }
 
+/* KillMotors
+ * Self-explanatory; stops the motors if an error is detected;
+ */
 void KillMotors(void)
 {
     MOTORFAILLED = 1; //Turn the Motor Failed LED;
     CCP3CON = CCP3CON & 0xF0; //Shut the PWM module down;
 }
 
+/* StartMotors
+ * Allows the motors to be (re)started;
+ */
 void StartMotors(void)
 {
     MOTORFAILLED = 0;
     CCP3CON = CCP3CON = 0x4C; //Set Full-bridge mode, all outputs active high;
 }
 
+/* ImplementPIDMotion
+ * This module is fused to the PID loop algorithm in the PID.h/.c library; it
+ * uses the output of the PID algorithm to move the motors;
+ */
 void ImplementPIDMotion(int PIDValue)
 {
     if (PIDValue > 255) //Set the limits so that input is not greater than the possible motor input;
@@ -55,6 +65,9 @@ void ImplementPIDMotion(int PIDValue)
 
 }
 
+/* ImplementJSMotion
+ * This module moves the motors in accordance with the output of the joystick;
+ */
 void ImplementJSMotion(int JoystickValue)
 {
     unsigned int CCPinput;
@@ -79,7 +92,7 @@ void ImplementJSMotion(int JoystickValue)
     if ((JoystickValue < DeadbandLow) || (JoystickValue > DeadbandHigh))
     {
         JoystickValue = abs(JoystickValue); //As we already know the direction, we discard the sign;
-        CCPinput = JoystickValue * 2;
+        CCPinput = JoystickValue * 2; //As there are 10 bits available to us in the PWM duty cycle, we multiply the maximum/minimum joystick value (512) by 2;
         CCPR3L = (CCPinput >> 2) & 0xFF;
         CCP3CONbits.DC3B = (CCPinput & 0x03);
     }

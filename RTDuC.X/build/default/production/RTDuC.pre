@@ -8495,10 +8495,10 @@ void INT0Int(void);
 void RecTmrInit(void);
 void InitializeInterrupts(void);
 void ZeroMotors(void);
-const unsigned int DataLodeSize = 600;
-const unsigned int TransmitLodeSize = 1800;
-double DataLode[600];
-unsigned char TransmitLode[1800];
+const unsigned int DataLodeSize = 603;
+const unsigned int TransmitLodeSize = 1809;
+double DataLode[603];
+unsigned char TransmitLode[1809];
 
 void main(void)
 {
@@ -8633,6 +8633,8 @@ Delay10TCYx(dtime);
 if (RECFlag == 1)
 {
 PORTCbits.RC6 = 1;
+RECFlag = 0;
+
 double saveKp = Kp,
 saveKi = Ki,
 saveKd = Kd,
@@ -8657,8 +8659,6 @@ counter = 0;
 T0CONbits.TMR0ON = 1;
 T3CONbits.TMR3ON = 1;
 
-PORTAbits.RA3 = 0;
-
 while (counter < DataLodeSize)
 {
 CurrentAngle = RTD2Angle(ReadRTDpos());
@@ -8666,11 +8666,9 @@ calculatePID(CurrentAngle, SetAngle);
 ImplementPIDMotion(motorInput);
 while (INTCONbits.TMR0IF == 0)
 {
-PORTAbits.RA3 = 1;
 TMR3H = 0xF6;
 TMR3L = 0x3C;
 DataLode[counter] = RTD2Angle(ReadRTDpos());
-PORTAbits.RA3 = 0;
 while (PIR2bits.TMR3IF == 0);
 PIR2bits.TMR3IF = 0;
 if (counter < DataLodeSize)
@@ -8680,6 +8678,9 @@ INTCONbits.TMR0IF = 0;
 TMR0H = 0xDB;
 TMR0L = 0x60;
 }
+DataLode[600] = Kp;
+DataLode[601] = Ki;
+DataLode[602] = Kd;
 SPIDisassembleLode(DataLode, TransmitLode);
 SPIRestart();
 PORTCbits.RC6 = 0;
@@ -8687,14 +8688,11 @@ for (counter = 0; counter != TransmitLodeSize; counter++)
 SendSPI1(TransmitLode[counter]);
 PORTCbits.RC6 = 1;
 SPIRestart();
-RECFlag = 0;
 INTCONbits.TMR0IE = 1;
 INTCONbits.PEIE = 1;
 INTCONbits.GIE = 1;
 SetAngle = saveSP;
 PIDEnableFlag = 3;
-
-
 }
 }
 }
@@ -8747,8 +8745,6 @@ SaveAll();
 if (PIR2bits.OSCFIF == 1)
 {
 asm("reset");
-
-# 288
 }
 }
 
@@ -8790,7 +8786,7 @@ void ZeroMotors(void)
 {
 double average, PrevAngle;
 Ki = 2;
-Kp = 0.5;
+Kp = 0.65;
 Kd = 0;
 TMR0H = 0xDB;
 TMR0L = 0x60;
@@ -8812,4 +8808,8 @@ average = (PrevAngle + CurrentAngle) / 2;
 PrevAngle = CurrentAngle;
 }
 while ((average > 1) && (abs(error) > 1));
+
+Kp = 0;
+Ki = 0;
+Kd = 0;
 }

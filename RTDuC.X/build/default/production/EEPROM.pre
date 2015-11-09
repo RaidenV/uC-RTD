@@ -8341,6 +8341,8 @@ IPR2bits.HLVDIP = 1;
 }
 
 #pragma interrupt_level 1
+
+# 32
 void EEBootUp(void)
 {
 if (EEReadChar(0x16))
@@ -8358,7 +8360,7 @@ PIDEnableFlag = 3;
 }
 
 
-# 47
+# 52
 #pragma interrupt_level 1
 void EEDisassembleDouble(double dub)
 {
@@ -8369,7 +8371,7 @@ DDouble[2] = DoublePtr[2];
 }
 
 
-# 61
+# 66
 #pragma interrupt_level 1
 double EEReassembleDouble(void)
 {
@@ -8382,7 +8384,7 @@ return dub;
 }
 
 
-# 76
+# 81
 #pragma interrupt_level 1
 void EEWriteDouble(unsigned char location, double dub)
 {
@@ -8403,7 +8405,7 @@ INTCON = INTCON | 0xC0;
 }
 
 
-# 99
+# 104
 #pragma interrupt_level 1
 double EEReadDouble(unsigned char location)
 {
@@ -8423,7 +8425,7 @@ return EEReassembleDouble();
 }
 
 
-# 121
+# 126
 #pragma interrupt_level 1
 void EEWriteChar(unsigned char location, unsigned char ch)
 {
@@ -8436,7 +8438,7 @@ INTCON = INTCON | 0xC0;
 }
 
 
-# 135
+# 140
 #pragma interrupt_level 1
 char EEReadChar(unsigned char location)
 {
@@ -8451,6 +8453,8 @@ INTCON = INTCON | 0xC0;
 return ch;
 }
 
+
+# 160
 #pragma interrupt_level 1
 void SaveAll(void)
 {

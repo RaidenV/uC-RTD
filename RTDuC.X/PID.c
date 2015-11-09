@@ -26,6 +26,10 @@ void PIDInit(void)
     TMR0L = timerLow; //Calculation: 0xffff - ((0.03/(1/10e6))/32);
 }
 
+/* calculatePID
+ * Calculates the output of the PID equation based on the Kp, Ki, and Kd entered
+ * by the user;
+ */
 void calculatePID(double angle, double setpoint)
 {
     double derErr; //Generate derivative variable;
@@ -48,11 +52,14 @@ void calculatePID(double angle, double setpoint)
     if (intErr > 2000)
         intErr = 2000; //Put a cap on the integral error.  Allowing it to run away too far creates a loss of control;
 
-    motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime));
+    motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime)); //Standard PID equation;
 
     prevErr = error;
 }
 
+/* TMR0Int
+ * Handles the timer0 interrupt;
+ */
 void TMR0Int(void)
 {
     TMR0H = timerHigh; //Set the timer count;

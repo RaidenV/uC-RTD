@@ -119,7 +119,7 @@ void SendLode(double* Deliverables, unsigned int size)
     
     SerTxStr("-=Begin=-");
     SerNL();
-    for( z = 0; z < size; z ++)
+    for( z = 0; z < size - 3; z ++)
     {
         time = multiplier * z;
         breakDouble(time);
@@ -127,6 +127,12 @@ void SendLode(double* Deliverables, unsigned int size)
         breakDouble(Deliverables[z]);
         SerNL();
     }
+    breakDouble(Deliverables[size - 3]);
+    SerNL();
+    breakDouble(Deliverables[size - 2]);
+    SerNL();
+    breakDouble(Deliverables[size - 1]);
+    SerNL();
     SerTxStr("-=End=-");
     SerNL();
 }
