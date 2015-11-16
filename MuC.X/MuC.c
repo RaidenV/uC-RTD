@@ -21,6 +21,9 @@ unsigned char timerHigh = 0xC6; //Set the timer to go off every quarter second w
 unsigned char timerLow = 0xC6;
 unsigned char TMR0Flag = 0;
 
+double ELlast;
+double AZlast;
+
 void main(void)
 {
     unsigned char x = 0;
@@ -98,6 +101,7 @@ void main(void)
                     for (x = 0; x != 4; x++)
                         MSendSPI(DoubleSPIM[x], 1);
                     SlaveSelect1 = 1;
+                    AZlast = StrippedValue;
                     SaveAll();
                 }
             }
@@ -230,7 +234,7 @@ void main(void)
             INTCONbits.GIE = 1; //Turn interrupts back on after communication with slave;
         }
 
-        if (TMR0Flag == 1)
+        if (TMR0Flag == 1 && (AZFlowFlag == 1 || ELFlowFlag == 1))
         {
             do
             {
@@ -244,11 +248,14 @@ void main(void)
                 CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
 
             }
-            while (checksum() == 0);
+            while ((checksum() == 0) || ((AZlast != 0) && (CurrentAngle == 0)));
 
-            SerTxStr("Azimuth = ");
-            breakDouble(CurrentAngle);
-            SerNL();
+            if (AZFlowFlag == 1)
+            {
+                SerTxStr("Azimuth = ");
+                breakDouble(CurrentAngle);
+                SerNL();
+            }
 
             //            while (SlaveReady2); //Wait for the slave to be ready;
             //
@@ -306,8 +313,9 @@ void initialize(void)
     SerTxStr("System Ready");
     SerNL();
 
-    STATUSLED = 1;
+    TRISBbits.RB0 = 0;
 
+    STATUSLED = 1;
 }
 
 void InitializeInterrupts(void)

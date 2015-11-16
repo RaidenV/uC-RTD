@@ -8707,6 +8707,7 @@ SPIInit();
 JoystickInit();
 MotorDriverInit();
 PIDInit();
+Delay10TCYx(100);
 ZeroMotors();
 EEPROMInit();
 RecTmrInit();
@@ -8748,6 +8749,7 @@ asm("reset");
 }
 }
 
+# 282
 void INT0Int(void)
 {
 KillMotors();
@@ -8765,6 +8767,7 @@ INTCONbits.TMR0IF = 0;
 }
 }
 
+# 302
 void RecTmrInit(void)
 {
 T3CONbits.T3CKPS = 0x3;

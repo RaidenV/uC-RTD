@@ -9,6 +9,8 @@ unsigned char value[10]; //This is the storage variable for the value;
 unsigned char received[30]; // this is the storage variable for the received bytes from the computer;
 unsigned char RCFlag;
 unsigned char RECFlag;
+unsigned char AZFlowFlag = 1;
+unsigned char ELFlowFlag = 1;
 
 double Kp;
 double Ki;
@@ -102,7 +104,6 @@ void keyValue(unsigned char* str, unsigned short length)
         for (y = 0; str[x + 1] != NULL; y++) //The str[x+1] is to avoid an off-by-one error where x is increased to null;
         {
             x++;
-            // if (isspace(str[x]) == 0) //If the character is not a space, tab, line feed, or carriage return;
             value[y] = str[x]; //The value is equal to the contents of the "received" string after the delimiter, but before the end of the string (when str[x+1] = NULL);
         }
         SerTxStr("   Value: ");
@@ -144,8 +145,8 @@ void keyValue(unsigned char* str, unsigned short length)
         y = 0;
         while (str[y] != carriageReturn)
         {
-            //  if (isspace(str[y]) == 0) //If the character is not a space, tab, line feed, or carriage return;
-            key[y] = str[y]; // The key is equal to the contents of the "received" string before the delimiter;
+            if (isspace(str[y]) == 0) //If the character is not a space, tab, line feed, or carriage return;
+                key[y] = str[y]; // The key is equal to the contents of the "received" string before the delimiter;
             y++;
         }
 
@@ -204,10 +205,47 @@ void keyValue(unsigned char* str, unsigned short length)
             RECFlag = 1;
         }
 
+        else if ((strcmp(key, "-h") == 0) || (strcmp(key, "help") == 0))
+        {
+            StrippedKey = 0;
+            SerTx(';');
+            HelpString();
+
+        }
+
+        else if ((strcmp(key, "aoff") == 0) || (strcmp(key, "AOFF") == 0))
+        {
+            StrippedKey = 0;
+            AZFlowFlag = 0;
+            SerTx(';');
+        }
+
+        else if ((strcmp(key, "eoff") == 0) || (strcmp(key, "EOFF") == 0))
+        {
+            StrippedKey = 0;
+            ELFlowFlag = 0;
+            SerTx(';');
+        }
+
+        else if ((strcmp(key, "aon") == 0) || (strcmp(key, "AON") == 0))
+        {
+            StrippedKey = 0;
+            AZFlowFlag = 1;
+            SerTx(';');
+        }
+
+        else if ((strcmp(key, "eon") == 0) || (strcmp(key, "EON") == 0))
+        {
+            StrippedKey = 0;
+            ELFlowFlag = 1;
+            SerTx(';');
+        }
+
         else
         {
-            SerTxStr("???");
             StrippedKey = 0;
+            SerTxStr("???");
+            SerTx(';');
         }
     }
 
@@ -237,4 +275,45 @@ void keyValue(unsigned char* str, unsigned short length)
         RCFlag = 1;
         RECFlag = 0;
     }
+}
+
+void HelpString(void)
+{
+    unsigned char read;
+    SerNL();
+    SerTxStr("-----------------------------------------------------");
+    SerNL();
+    SerTxStr("All Commands are directed towards last selected motor");
+    SerNL();
+    SerNL();
+    SerTxStr("az              -Switches to Azimuth motor");
+    SerNL();
+    SerTxStr("el              -Switches to Elevation motor");
+    SerNL();
+    SerTxStr("pos             -Returns the current angle");
+    SerNL();
+    SerTxStr("kp              -Returns the proportional constant");
+    SerNL();
+    SerTxStr("ki              -Returns the integral constant");
+    SerNL();
+    SerTxStr("kd              -Returns the derivative constant");
+    SerNL();
+    SerTxStr("pos=XXX.XX      -Commands motor to angle");
+    SerNL();
+    SerTxStr("kp=X.XX         -Changes proportional constant");
+    SerNL();
+    SerTxStr("ki=X.XX         -Changes integral constant");
+    SerNL();
+    SerTxStr("kd=X.XX         -Changes derivative constant");
+    SerNL();
+    SerTxStr("aoff            -Turns Azimuth data output off");
+    SerNL();
+    SerTxStr("eoff            -Turns Elevation data output off");
+    SerNL();
+    SerTxStr("aon             -Turns Azimuth data output on");
+    SerNL();
+    SerTxStr("eon             -Turns Elevation data output on");
+    SerNL();
+    SerTxStr("-----------------------------------------------------");
+    SerNL();
 }

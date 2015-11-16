@@ -41,9 +41,12 @@ extern "C" {
     extern unsigned char received[30];
     extern unsigned char RCFlag;
     extern unsigned char RECFlag;
+    extern unsigned char AZFlowFlag;
+    extern unsigned char ELFlowFlag;
 
     void RCInt(void);
     void keyValue(unsigned char*, unsigned short);
+    void HelpString(void);
 
 
 #ifdef	__cplusplus

@@ -50,7 +50,7 @@ void calculatePID(double angle, double setpoint)
     derErr = error - prevErr; //Calculate the derivative error;
     intErr += error; //Calculate the integral error;
     if (intErr > 2000)
-        intErr = 2000; //Put a cap on the integral error.  Allowing it to run away too far creates a loss of control;
+        intErr = 2000; //Put a cap on the integral error.  Allowing it to run away too far creates a loss of control (this is known as Integral Windup and is a prime source of overshooting/undershooting);
 
     motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime)); //Standard PID equation;
 

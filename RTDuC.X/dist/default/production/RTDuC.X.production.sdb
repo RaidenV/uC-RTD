@@ -107,15 +107,15 @@
 [v _main main `(v  1 e 0 0 ]
 "226
 [v _initialize initialize `(v  1 e 0 0 ]
-"245
+"246
 [v _ISR ISR `II(v  1 e 0 0 ]
-"277
+"282
 [v _INT0Int INT0Int `(v  1 e 0 0 ]
-"294
+"302
 [v _RecTmrInit RecTmrInit `(v  1 e 0 0 ]
-"300
+"308
 [v _InitializeInterrupts InitializeInterrupts `(v  1 e 0 0 ]
-"311
+"319
 [v _ZeroMotors ZeroMotors `(v  1 e 0 0 ]
 "20 /home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
 [v _SPIInit SPIInit `(v  1 e 0 0 ]
@@ -125,15 +125,15 @@
 [v _SendSPI1 SendSPI1 `(v  1 e 0 0 ]
 "73
 [v _ReceiveSPI1 ReceiveSPI1 `(uc  1 e 1 0 ]
-"91
+"95
 [v _SPIDisassembleDouble SPIDisassembleDouble `(v  1 e 0 0 ]
-"100
+"108
 [v _SPIDisassembleLode SPIDisassembleLode `(v  1 e 0 0 ]
-"114
+"126
 [v _GenerateChecksum GenerateChecksum `(uc  1 e 1 0 ]
-"127
+"143
 [v _SPIReassembleDouble SPIReassembleDouble `(d  1 e 3 0 ]
-"138
+"160
 [v _SPIRestart SPIRestart `(v  1 e 0 0 ]
 [s S1328 . 1 `uc 1 T4CKPS 1 0 :2:0 
 `uc 1 TMR4ON 1 0 :1:2 
@@ -1070,15 +1070,15 @@
 "226
 [v _initialize initialize `(v  1 e 0 0 ]
 {
-"243
+"244
 } 0
-"311
+"319
 [v _ZeroMotors ZeroMotors `(v  1 e 0 0 ]
 {
-"313
+"321
 [v ZeroMotors@PrevAngle PrevAngle `d  1 a 3 54 ]
 [v ZeroMotors@average average `d  1 a 3 51 ]
-"341
+"349
 } 0
 "33 /home/raidenv/MPLABXProjects/RTDuC.X/PID.c
 [v _calculatePID calculatePID `(v  1 e 0 0 ]
@@ -1205,10 +1205,10 @@
 {
 "29
 } 0
-"294 /home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+"302 /home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 [v _RecTmrInit RecTmrInit `(v  1 e 0 0 ]
 {
-"298
+"306
 } 0
 "3 /home/raidenv/MPLABXProjects/RTDuC.X/ResolverToDigital.c
 [v _RTDInit RTDInit `(v  1 e 0 0 ]
@@ -1255,10 +1255,10 @@
 {
 "25
 } 0
-"300 /home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+"308 /home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 [v _InitializeInterrupts InitializeInterrupts `(v  1 e 0 0 ]
 {
-"309
+"317
 } 0
 "13 /home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
 [v _EEPROMInit EEPROMInit `(v  1 e 0 0 ]
@@ -1368,24 +1368,24 @@
 {
 "15
 } 0
-"127 /home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+"143 /home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
 [v _SPIReassembleDouble SPIReassembleDouble `(d  1 e 3 0 ]
 {
-"129
+"145
 [v SPIReassembleDouble@dub dub `d  1 a 3 26 ]
-"136
+"152
 } 0
-"100
+"108
 [v _SPIDisassembleLode SPIDisassembleLode `(v  1 e 0 0 ]
 {
-"103
+"111
 [v SPIDisassembleLode@dub dub `d  1 a 3 44 ]
-"102
+"110
 [v SPIDisassembleLode@y y `ui  1 a 2 42 ]
-"100
+"108
 [v SPIDisassembleLode@Data Data `*.39d  1 p 2 36 ]
 [v SPIDisassembleLode@Transmit Transmit `*.39uc  1 p 2 38 ]
-"112
+"120
 } 0
 "15 /opt/microchip/xc8/v1.34/sources/common/Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -1409,31 +1409,31 @@
 [v ___lwdiv@divisor divisor `ui  1 p 2 25 ]
 "31
 } 0
-"91 /home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
+"95 /home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
 [v _SPIDisassembleDouble SPIDisassembleDouble `(v  1 e 0 0 ]
 {
 [v SPIDisassembleDouble@dub dub `d  1 p 3 25 ]
-"98
+"102
 } 0
-"114
+"126
 [v _GenerateChecksum GenerateChecksum `(uc  1 e 1 0 ]
 {
-"118
+"130
 [v GenerateChecksum@y y `uc  1 a 1 24 ]
 [v GenerateChecksum@sum sum `uc  1 a 1 23 ]
-"125
+"137
 } 0
 "73
 [v _ReceiveSPI1 ReceiveSPI1 `(uc  1 e 1 0 ]
 {
 "89
 } 0
-"138
+"160
 [v _SPIRestart SPIRestart `(v  1 e 0 0 ]
 {
-"140
+"162
 [v SPIRestart@temp temp `uc  1 a 1 26 ]
-"145
+"167
 } 0
 "13 /opt/microchip/xc8/v1.34/sources/pic18/plib/SPI/spi1open.c
 [v _OpenSPI1 OpenSPI1 `(v  1 e 0 0 ]
@@ -1475,10 +1475,10 @@
 {
 "44
 } 0
-"245 /home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+"246 /home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 [v _ISR ISR `II(v  1 e 0 0 ]
 {
-"275
+"276
 } 0
 "161 /home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
 [v i2_SaveAll SaveAll `(v  1 e 0 0 ]
@@ -1535,10 +1535,10 @@
 {
 "45
 } 0
-"277 /home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+"282 /home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 [v _INT0Int INT0Int `(v  1 e 0 0 ]
 {
-"292
+"297
 } 0
 "31 /home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
 [v _KillMotors KillMotors `(v  1 e 0 0 ]

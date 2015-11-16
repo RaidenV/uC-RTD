@@ -233,6 +233,7 @@ void initialize(void)
     JoystickInit();
     MotorDriverInit();
     PIDInit();
+    Delay10TCYx(100); //Delay to ensure that the RTD chip has come up fully;
     ZeroMotors();
     EEPROMInit();
     RecTmrInit();

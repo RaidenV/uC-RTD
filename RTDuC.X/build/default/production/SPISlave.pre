@@ -8401,6 +8401,7 @@ SSP1CON1bits.SSPOV1 = 0;
 return SSP1BUF;
 }
 
+# 95
 void SPIDisassembleDouble(double dub)
 {
 DoublePtr = (unsigned char*) &dub;
@@ -8410,6 +8411,7 @@ DoubleSPIS[2] = DoublePtr[2];
 DoubleSPIS[3] = GenerateChecksum();
 }
 
+# 108
 void SPIDisassembleLode(double* Data, unsigned char* Transmit)
 {
 unsigned int y = 0;
@@ -8424,6 +8426,7 @@ Transmit[y + 2] = DoublePtr[2];
 }
 }
 
+# 126
 unsigned char GenerateChecksum(void)
 {
 if ((Command > 0x00) && (Command < 0x0B))
@@ -8437,6 +8440,7 @@ else
 return 0xFF;
 }
 
+# 143
 double SPIReassembleDouble(void)
 {
 double dub;
@@ -8448,6 +8452,7 @@ DoublePtr[2] = DoubleSPIS[2];
 return dub;
 }
 
+# 160
 void SPIRestart(void)
 {
 unsigned char temp;

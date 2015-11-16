@@ -48,7 +48,7 @@ void MSendSPI(unsigned char data, unsigned char Slave)
         SSPBUF = data;
         while (!PIR1bits.SSPIF);
         data = SSPBUF;
-        SlaveSelect1 = 2; //Set the SS, resetting the bit count of the slave;
+        SlaveSelect1 = 1; //Set the SS, resetting the bit count of the slave;
     }
 }
 
