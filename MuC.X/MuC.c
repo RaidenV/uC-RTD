@@ -7,6 +7,7 @@
 #pragma config OSC = HSPLL
 #pragma config WDT = OFF
 #pragma config FCMEN = OFF
+#pragma config PWRT = ON
 
 #define STATUSLED PORTBbits.RB0
 
@@ -20,6 +21,7 @@ void TMR0Int(void);
 unsigned char timerHigh = 0xC6; //Set the timer to go off every quarter second with a prescaler of 256, this should equal: (0.25)/(1/10,000,000 * 256) = 9766, or 0x2626 in hex;
 unsigned char timerLow = 0xC6;
 unsigned char TMR0Flag = 0;
+unsigned char checkSumTry;
 
 double ELlast;
 double AZlast;
@@ -117,20 +119,15 @@ void main(void)
                             MSendSPI(StrippedKey, 2); //Write the command byte to the slave;
                             MReceiveStrSPI(2); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
                             CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
-                            for (x = 0; x != 4; x++)
-                                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
                             SerTxStr("Elevation = ");
                             breakDouble(CurrentAngle);
                             SerNL();
-
                         }
                         else if (StrippedKey == 0x03)
                         {
                             MSendSPI(StrippedKey, 2); //Write the command byte to the slave;
                             MReceiveStrSPI(2);
                             CurrentVelocity = SPIReassembleDouble();
-                            for (x = 0; x != 4; x++)
-                                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
                             SerTxStr("Elevation Velocity = ");
                             breakDouble(CurrentVelocity);
                             SerNL();
@@ -140,8 +137,6 @@ void main(void)
                             MSendSPI(StrippedKey, 2); //Write the command byte to the slave;
                             MReceiveStrSPI(2);
                             Kp = SPIReassembleDouble();
-                            for (x = 0; x != 4; x++)
-                                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
                             SerTxStr("Kp = ");
                             breakDouble(Kp);
                             SerNL();
@@ -151,8 +146,6 @@ void main(void)
                             MSendSPI(StrippedKey, 2); //Write the command byte to the slave;
                             MReceiveStrSPI(2);
                             Ki = SPIReassembleDouble();
-                            for (x = 0; x != 4; x++)
-                                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
                             SerTxStr("Ki = ");
                             breakDouble(Ki);
                             SerNL();
@@ -162,14 +155,12 @@ void main(void)
                             MSendSPI(StrippedKey, 2); //Write the command byte to the slave;
                             MReceiveStrSPI(2);
                             Kd = SPIReassembleDouble();
-                            for (x = 0; x != 4; x++)
-                                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
                             SerTxStr("Kd = ");
                             breakDouble(Kd);
                             SerNL();
                         }
                     }
-                    while (checksum() == 0); //While the Checksum does not correlate with the received value;
+                    while (!checksum()); //While the Checksum does not correlate with the received value;
                 }
                 else if ((StrippedKey == 0x01) || (StrippedKey == 0x05) || (StrippedKey == 0x07) || (StrippedKey == 0x09)) //If the key is something that requires the master to send data;
                 {
@@ -181,6 +172,7 @@ void main(void)
                     for (x = 0; x != 4; x++)
                         MSendSPI(DoubleSPIM[x], 2);
                     SlaveSelect2 = 1;
+                    ELlast = StrippedValue;
                     SaveAll();
                 }
             }
@@ -257,19 +249,26 @@ void main(void)
                 SerNL();
             }
 
-            //            while (SlaveReady2); //Wait for the slave to be ready;
-            //
-            //            MSendSPI(0x02, 2); //Write the command byte to the slave;
-            //
-            //            while (SlaveReady2); //Wait for the slave to be ready;
-            //            MReceiveStrSPI(DoubleSPIM, 2); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
-            //            CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
-            //            for (x = 0; x != 4; x++)
-            //                DoubleSPIM[x] = '\0'; //Clear the characters in the array;
-            //
-            //            SerTxStr("Elevation = ");
-            //            breakDouble(CurrentAngle);
-            //            SerNL();
+            do
+            {
+                INTCONbits.GIE = 0; //Disable interrupts for transmission;
+                while (SlaveReady2); //Wait for the slave to be ready;
+
+                MSendSPI(0x02, 2); //Write the command byte to the slave;
+
+                while (SlaveReady2); //Wait for the slave to be ready;
+                MReceiveStrSPI(2); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
+                CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
+
+            }
+            while ((checksum() == 0) || ((ELlast != 0) && (CurrentAngle == 0)));
+
+            if (ELFlowFlag == 1)
+            {
+                SerTxStr("Elevation = ");
+                breakDouble(CurrentAngle);
+                SerNL();
+            }
             INTCONbits.GIE = 1; //Enable interrupts after transmission;
 
             TMR0Flag = 0;
@@ -283,29 +282,43 @@ void initialize(void)
 
 
     SerInit();
-    SerTxStr("Serial Communications Initialized...");
-    SerNL();
+
+    Delay10TCYx(1);
 
     SPIInitM(); //Initialize all modules;
     SerTxStr("SPI Initialized...");
     SerNL();
 
-    EEPROMInit();
-    SerTxStr("EEPROM Initialized...");
-    SerNL();
+    Delay10TCYx(1);
 
     TMR0Init();
-    SerTxStr("Timers Initialized...");
-    SerNL();
+
+    Delay10TCYx(1);
 
     InitializeInterrupts();
+
+
+    Delay10TCYx(1);
+
+    EEPROMInit();
+
+
+    Delay10TCYx(1);
+
+
+    SerTxStr("Serial Communications Initialized...");
+    SerNL();
+    SerTxStr("Timers Initialized...");
+    SerNL();
     SerTxStr("Interrupts Initialized...");
     SerNL();
-
+    SerTxStr("EEPROM Initialized...");
+    SerNL();
     SerTxStr("Waiting for Slaves...");
     SerNL();
 
-    Delay10TCYx(10); //Give a slight delay to allow for the Slaves to come up and zero themselves;
+
+    Delay10TCYx(1000); //Give a slight delay to allow for the Slaves to come up and zero themselves;
 
     while (SlaveReady1 || SlaveReady2); //While both slaves are not ready;
     SerTxStr("Slaves ready...");
@@ -313,9 +326,11 @@ void initialize(void)
     SerTxStr("System Ready");
     SerNL();
 
-    TRISBbits.RB0 = 0;
+    TRISBbits.RB0 = 0; //Set the Status LED as an output;
 
     STATUSLED = 1;
+
+    T0CONbits.TMR0ON = 1;
 }
 
 void InitializeInterrupts(void)
@@ -333,7 +348,7 @@ void InitializeInterrupts(void)
 
 void TMR0Init(void)
 {
-    T0CON = 0x87; //Prescaler of 256 enabled;
+    T0CON = 0x07; //Prescaler of 256 enabled;
     TMR0H = timerHigh;
     TMR0L = timerLow;
 

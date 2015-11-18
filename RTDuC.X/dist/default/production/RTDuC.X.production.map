@@ -5,7 +5,7 @@ Linker command line:
 --edf=/opt/microchip/xc8/v1.34/dat/en_msgs.txt -cs \
   -h+dist/default/production/RTDuC.X.production.sym \
   --cmf=dist/default/production/RTDuC.X.production.cmf -z -Q18F8722 \
-  -o/tmp/cgtVDxfqI -Mdist/default/production/RTDuC.X.production.map -E1 \
+  -o/tmp/cgtKVFe4Q -Mdist/default/production/RTDuC.X.production.map -E1 \
   -ver=XC8 -ASTACK=0EEFh-0f5fh -pstack=STACK -ACODE=00h-01FFFFh \
   -ACONST=00h-01FFFFh -ASMALLCONST=01000h-010FFhx496 \
   -AMEDIUMCONST=01000h-0FFFFh,011000h-01FFFFh -ACOMRAM=01h-05Fh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/cgtCIGj40.obj dist/default/production/RTDuC.X.production.obj 
+  /tmp/cgtbowBzw.obj dist/default/production/RTDuC.X.production.obj 
 
 Object code version is 3.11
 
@@ -38,7 +38,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/cgtCIGj40.obj
+/tmp/cgtbowBzw.obj
                 end_init                             18       18        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -489,6 +489,7 @@ _Write_b_eep                    text37       0029DA
 _ZeroMotors                     text2        0019EE
 __CFG_FCMEN$OFF                 (abs)        000000
 __CFG_OSC$HSPLL                 (abs)        000000
+__CFG_PWRT$ON                   (abs)        000000
 __CFG_WDT$OFF                   (abs)        000000
 __HRAM                          (abs)        000000
 __Habs1                         abs1         000000
@@ -1033,8 +1034,8 @@ __size_ofi2_Write_b_eep         (abs)        000000
 __smallconst                    smallconst   001000
 _abs                            text49       002C00
 _calculatePID                   text3        001580
-_calculatePID$3489              cstackBANK0  00008D
-_calculatePID$3490              cstackBANK0  000090
+_calculatePID$3511              cstackBANK0  00008D
+_calculatePID$3512              cstackBANK0  000090
 _dummy_byte                     bssBANK0     0000C9
 _error                          bssBANK0     0000B9
 _initialize                     text1        002AD4
@@ -1087,7 +1088,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 29 in file "RTDuC.c"
+		line 30 in file "RTDuC.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1140,7 +1141,7 @@ Total ram usage:       17 bytes
 
  *************** function _initialize *****************
  Defined at:
-		line 226 in file "RTDuC.c"
+		line 227 in file "RTDuC.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1162,7 +1163,6 @@ Total ram usage:        0 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    9
  This function calls:
-		_Delay10TCYx
 		_EEPROMInit
 		_InitializeInterrupts
 		_JoystickInit
@@ -1179,7 +1179,7 @@ Total ram usage:        0 bytes
 
  *************** function _ZeroMotors *****************
  Defined at:
-		line 319 in file "RTDuC.c"
+		line 322 in file "RTDuC.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1681,7 +1681,7 @@ Total ram usage:        0 bytes
 
  *************** function _RecTmrInit *****************
  Defined at:
-		line 302 in file "RTDuC.c"
+		line 305 in file "RTDuC.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1830,7 +1830,6 @@ Total ram usage:        1 bytes
 		_RTDInit
 		_ReadRTDpos
 		_main
-		_initialize
 		_ReadRTDvel
  This function uses a non-reentrant model
 
@@ -1927,7 +1926,7 @@ Total ram usage:        0 bytes
 
  *************** function _InitializeInterrupts *****************
  Defined at:
-		line 308 in file "RTDuC.c"
+		line 311 in file "RTDuC.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2773,7 +2772,7 @@ Total ram usage:        0 bytes
 
  *************** function _ISR *****************
  Defined at:
-		line 246 in file "RTDuC.c"
+		line 249 in file "RTDuC.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3051,7 +3050,7 @@ Total ram usage:        0 bytes
 
  *************** function _INT0Int *****************
  Defined at:
-		line 282 in file "RTDuC.c"
+		line 285 in file "RTDuC.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

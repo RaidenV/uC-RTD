@@ -10,6 +10,7 @@
 #pragma config OSC = HSPLL
 #pragma config WDT = OFF
 #pragma config FCMEN = OFF
+#pragma config PWRT = ON
 
 #define STATUSLED PORTAbits.RA3
 #define timer3High 0xF6 //This will provide a 2 ms delay;
@@ -160,7 +161,7 @@ void main(void)
         {
             SlaveReady = 1;
             RECFlag = 0;
-            
+
             double saveKp = Kp, //Save the current Kp, Ki, and Kd values as the ZeroMotors() function overwrites it;
                     saveKi = Ki,
                     saveKd = Kd,
@@ -226,6 +227,7 @@ void main(void)
 void initialize(void)
 {
     while (OSCCONbits.OSTS == 0); //Wait here while the Oscillator stabilizes;
+    TRISCbits.RC6 = 0;
     SlaveReady = 1;
 
     RTDInit(); //Initialize all modules;
@@ -233,10 +235,11 @@ void initialize(void)
     JoystickInit();
     MotorDriverInit();
     PIDInit();
-    Delay10TCYx(100); //Delay to ensure that the RTD chip has come up fully;
-    ZeroMotors();
     EEPROMInit();
     RecTmrInit();
+
+    ZeroMotors();
+    ZeroMotors();
 
     InitializeInterrupts();
     TRISAbits.RA3 = 0; //Set the Status LED as an output.  Configuration of the Analog pins is handled by the JoyStickInit() routine;
@@ -263,9 +266,9 @@ void interrupt ISR(void)
 
     if (PIR2bits.HLVDIF == 1) //If this unit is being powered down, run this;
     {
-        MOTORFAILLED = 0; //If the system is powering down, quickly turn off all the LEDs;
-        STATUSLED = 0;
-        JOYSTICKLED = 0;
+        MOTORFAILLED = 1; //If the system is powering down, quickly turn off all the LEDs;
+        STATUSLED = 1;
+        JOYSTICKLED = 1;
         SaveAll(); //Run the save routine;
     }
 

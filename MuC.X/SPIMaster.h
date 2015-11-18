@@ -41,6 +41,8 @@ extern "C" {
     void MReceiveStrSPI(unsigned char);
     void MReceiveLodeSPI(unsigned char);
     unsigned char checksum(void);
+    
+    void RestartSPI(void);
 
     void SPIDisassembleDouble(double dub);
     unsigned char MGenerateChecksum(void);

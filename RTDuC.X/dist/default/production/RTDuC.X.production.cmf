@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/cgtCIGj40.obj
+$/tmp/cgtbowBzw.obj
 idloc IDLOC 0 200000 200000 8 1
 reset_vec CODE 0 0 0 4 1
 end_init CODE 0 18 18 4 1
@@ -131,165 +131,165 @@ MEDIUMCONST 11000-1FFFF 1
 %LINETAB
 $dist/default/production/RTDuC.X.production.obj
 8 intcode CODE >44:/home/raidenv/MPLABXProjects/RTDuC.X/Joystick.c
-8 intcode CODE >246:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1006 text0 CODE >29:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1006 text0 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-100C text0 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1012 text0 CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-101C text0 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1020 text0 CODE >37:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1024 text0 CODE >38:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1028 text0 CODE >42:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1030 text0 CODE >44:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1036 text0 CODE >45:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1038 text0 CODE >46:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1060 text0 CODE >48:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1068 text0 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-107A text0 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1082 text0 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1094 text0 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-109C text0 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-10AE text0 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-10B6 text0 CODE >55:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-10C8 text0 CODE >56:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-10D0 text0 CODE >57:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-10E0 text0 CODE >59:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-10E4 text0 CODE >60:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-10F4 text0 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-110C text0 CODE >60:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1112 text0 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1116 text0 CODE >63:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1118 text0 CODE >64:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-111A text0 CODE >65:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1138 text0 CODE >67:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-113A text0 CODE >68:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-114E text0 CODE >69:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1166 text0 CODE >68:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-116C text0 CODE >71:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-116E text0 CODE >73:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1174 text0 CODE >75:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1184 text0 CODE >76:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-118A text0 CODE >77:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1190 text0 CODE >78:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1192 text0 CODE >79:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-119A text0 CODE >81:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11AA text0 CODE >82:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11AC text0 CODE >83:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11B4 text0 CODE >85:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11C4 text0 CODE >86:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11C6 text0 CODE >87:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11CE text0 CODE >89:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11DE text0 CODE >91:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11E4 text0 CODE >92:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11E8 text0 CODE >93:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11EA text0 CODE >94:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11EA text0 CODE >96:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11EE text0 CODE >97:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11F2 text0 CODE >98:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11F2 text0 CODE >100:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11F4 text0 CODE >101:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11F6 text0 CODE >102:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-11F8 text0 CODE >103:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1202 text0 CODE >105:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1204 text0 CODE >106:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1208 text0 CODE >107:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-120A text0 CODE >108:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1210 text0 CODE >109:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1218 text0 CODE >111:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-121A text0 CODE >112:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-121C text0 CODE >113:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-122C text0 CODE >114:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-122E text0 CODE >115:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1230 text0 CODE >116:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-123A text0 CODE >119:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-124A text0 CODE >121:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-124C text0 CODE >122:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-124E text0 CODE >123:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-126A text0 CODE >124:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1286 text0 CODE >125:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1292 text0 CODE >126:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1298 text0 CODE >127:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-129A text0 CODE >128:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-129C text0 CODE >129:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-12A4 text0 CODE >130:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-12A6 text0 CODE >132:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-12B0 text0 CODE >134:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-12B2 text0 CODE >135:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-12B4 text0 CODE >136:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-12B8 text0 CODE >137:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-12BC text0 CODE >138:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-12D8 text0 CODE >139:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-12F4 text0 CODE >140:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1300 text0 CODE >141:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1302 text0 CODE >143:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1304 text0 CODE >144:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1306 text0 CODE >145:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-130E text0 CODE >146:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1310 text0 CODE >148:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1318 text0 CODE >150:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-131A text0 CODE >151:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-131C text0 CODE >152:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1338 text0 CODE >153:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-133A text0 CODE >154:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1340 text0 CODE >155:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1342 text0 CODE >156:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-134A text0 CODE >157:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-134C text0 CODE >159:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1354 text0 CODE >161:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1356 text0 CODE >162:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-135C text0 CODE >164:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1368 text0 CODE >165:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1374 text0 CODE >166:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1380 text0 CODE >167:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-138C text0 CODE >169:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-138E text0 CODE >170:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1390 text0 CODE >171:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1392 text0 CODE >173:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1396 text0 CODE >174:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-13A2 text0 CODE >175:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-13AE text0 CODE >176:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-13BA text0 CODE >178:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-13BE text0 CODE >179:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-13C2 text0 CODE >181:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-13C8 text0 CODE >182:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-13D4 text0 CODE >183:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-13DE text0 CODE >185:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-13E0 text0 CODE >186:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-13E2 text0 CODE >188:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-13E4 text0 CODE >190:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1400 text0 CODE >191:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-141C text0 CODE >192:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1428 text0 CODE >193:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-142A text0 CODE >195:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-142E text0 CODE >196:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1432 text0 CODE >197:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-146E text0 CODE >198:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1474 text0 CODE >199:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1476 text0 CODE >200:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1496 text0 CODE >201:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-149E text0 CODE >193:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-14A2 text0 CODE >203:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-14A4 text0 CODE >204:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-14A8 text0 CODE >205:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-14AE text0 CODE >188:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-14CE text0 CODE >207:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-14DA text0 CODE >208:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-14E6 text0 CODE >209:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-14F2 text0 CODE >210:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1506 text0 CODE >211:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-150A text0 CODE >212:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-150C text0 CODE >213:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-153C text0 CODE >214:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1552 text0 CODE >213:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-155C text0 CODE >215:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-155E text0 CODE >216:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1562 text0 CODE >217:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1564 text0 CODE >218:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1566 text0 CODE >219:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1568 text0 CODE >220:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1574 text0 CODE >221:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-157A text0 CODE >40:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-157C text0 CODE >224:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+8 intcode CODE >249:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1006 text0 CODE >30:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1006 text0 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+100C text0 CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1012 text0 CODE >34:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+101C text0 CODE >36:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1020 text0 CODE >38:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1024 text0 CODE >39:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1028 text0 CODE >43:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1030 text0 CODE >45:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1036 text0 CODE >46:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1038 text0 CODE >47:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1060 text0 CODE >49:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1068 text0 CODE >50:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+107A text0 CODE >51:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1082 text0 CODE >52:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1094 text0 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+109C text0 CODE >54:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10AE text0 CODE >55:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10B6 text0 CODE >56:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10C8 text0 CODE >57:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10D0 text0 CODE >58:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10E0 text0 CODE >60:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10E4 text0 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+10F4 text0 CODE >62:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+110C text0 CODE >61:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1112 text0 CODE >63:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1116 text0 CODE >64:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1118 text0 CODE >65:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+111A text0 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1138 text0 CODE >68:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+113A text0 CODE >69:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+114E text0 CODE >70:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1166 text0 CODE >69:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+116C text0 CODE >72:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+116E text0 CODE >74:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1174 text0 CODE >76:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1184 text0 CODE >77:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+118A text0 CODE >78:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1190 text0 CODE >79:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1192 text0 CODE >80:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+119A text0 CODE >82:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11AA text0 CODE >83:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11AC text0 CODE >84:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11B4 text0 CODE >86:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11C4 text0 CODE >87:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11C6 text0 CODE >88:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11CE text0 CODE >90:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11DE text0 CODE >92:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11E4 text0 CODE >93:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11E8 text0 CODE >94:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11EA text0 CODE >95:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11EA text0 CODE >97:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11EE text0 CODE >98:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11F2 text0 CODE >99:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11F2 text0 CODE >101:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11F4 text0 CODE >102:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11F6 text0 CODE >103:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+11F8 text0 CODE >104:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1202 text0 CODE >106:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1204 text0 CODE >107:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1208 text0 CODE >108:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+120A text0 CODE >109:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1210 text0 CODE >110:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1218 text0 CODE >112:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+121A text0 CODE >113:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+121C text0 CODE >114:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+122C text0 CODE >115:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+122E text0 CODE >116:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1230 text0 CODE >117:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+123A text0 CODE >120:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+124A text0 CODE >122:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+124C text0 CODE >123:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+124E text0 CODE >124:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+126A text0 CODE >125:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1286 text0 CODE >126:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1292 text0 CODE >127:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1298 text0 CODE >128:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+129A text0 CODE >129:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+129C text0 CODE >130:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+12A4 text0 CODE >131:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+12A6 text0 CODE >133:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+12B0 text0 CODE >135:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+12B2 text0 CODE >136:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+12B4 text0 CODE >137:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+12B8 text0 CODE >138:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+12BC text0 CODE >139:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+12D8 text0 CODE >140:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+12F4 text0 CODE >141:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1300 text0 CODE >142:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1302 text0 CODE >144:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1304 text0 CODE >145:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1306 text0 CODE >146:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+130E text0 CODE >147:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1310 text0 CODE >149:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1318 text0 CODE >151:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+131A text0 CODE >152:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+131C text0 CODE >153:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1338 text0 CODE >154:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+133A text0 CODE >155:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1340 text0 CODE >156:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1342 text0 CODE >157:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+134A text0 CODE >158:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+134C text0 CODE >160:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1354 text0 CODE >162:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1356 text0 CODE >163:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+135C text0 CODE >165:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1368 text0 CODE >166:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1374 text0 CODE >167:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1380 text0 CODE >168:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+138C text0 CODE >170:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+138E text0 CODE >171:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1390 text0 CODE >172:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1392 text0 CODE >174:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1396 text0 CODE >175:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+13A2 text0 CODE >176:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+13AE text0 CODE >177:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+13BA text0 CODE >179:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+13BE text0 CODE >180:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+13C2 text0 CODE >182:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+13C8 text0 CODE >183:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+13D4 text0 CODE >184:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+13DE text0 CODE >186:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+13E0 text0 CODE >187:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+13E2 text0 CODE >189:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+13E4 text0 CODE >191:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1400 text0 CODE >192:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+141C text0 CODE >193:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1428 text0 CODE >194:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+142A text0 CODE >196:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+142E text0 CODE >197:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1432 text0 CODE >198:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+146E text0 CODE >199:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1474 text0 CODE >200:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1476 text0 CODE >201:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1496 text0 CODE >202:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+149E text0 CODE >194:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+14A2 text0 CODE >204:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+14A4 text0 CODE >205:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+14A8 text0 CODE >206:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+14AE text0 CODE >189:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+14CE text0 CODE >208:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+14DA text0 CODE >209:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+14E6 text0 CODE >210:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+14F2 text0 CODE >211:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1506 text0 CODE >212:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+150A text0 CODE >213:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+150C text0 CODE >214:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+153C text0 CODE >215:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1552 text0 CODE >214:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+155C text0 CODE >216:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+155E text0 CODE >217:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1562 text0 CODE >218:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1564 text0 CODE >219:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1566 text0 CODE >220:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1568 text0 CODE >221:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1574 text0 CODE >222:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+157A text0 CODE >41:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+157C text0 CODE >225:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 1580 text3 CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
 1580 text3 CODE >36:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
 158A text3 CODE >38:/home/raidenv/MPLABXProjects/RTDuC.X/PID.c
@@ -355,31 +355,31 @@ $dist/default/production/RTDuC.X.production.obj
 19C0 text6 CODE >144:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
 19C6 text6 CODE >146:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
 19EC text6 CODE >148:/opt/microchip/xc8/v1.34/sources/common/ftadd.c
-19EE text2 CODE >319:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 19EE text2 CODE >322:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A00 text2 CODE >323:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A12 text2 CODE >324:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A24 text2 CODE >325:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A28 text2 CODE >326:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A2C text2 CODE >327:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A32 text2 CODE >328:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A3E text2 CODE >329:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A40 text2 CODE >330:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A42 text2 CODE >331:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A46 text2 CODE >334:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A62 text2 CODE >335:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A7E text2 CODE >336:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A8A text2 CODE >337:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A90 text2 CODE >338:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A92 text2 CODE >339:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A96 text2 CODE >340:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1A9A text2 CODE >341:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1ADE text2 CODE >342:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1AEA text2 CODE >344:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1B40 text2 CODE >346:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1B52 text2 CODE >347:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1B64 text2 CODE >348:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-1B76 text2 CODE >349:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+19EE text2 CODE >325:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A00 text2 CODE >326:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A12 text2 CODE >327:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A24 text2 CODE >328:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A28 text2 CODE >329:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A2C text2 CODE >330:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A32 text2 CODE >331:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A3E text2 CODE >332:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A40 text2 CODE >333:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A42 text2 CODE >334:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A46 text2 CODE >337:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A62 text2 CODE >338:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A7E text2 CODE >339:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A8A text2 CODE >340:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A90 text2 CODE >341:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A92 text2 CODE >342:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A96 text2 CODE >343:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1A9A text2 CODE >344:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1ADE text2 CODE >345:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1AEA text2 CODE >347:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1B40 text2 CODE >349:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1B52 text2 CODE >350:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1B64 text2 CODE >351:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+1B76 text2 CODE >352:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 1B78 text13 CODE >62:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
 1B78 text13 CODE >67:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
 1B9E text13 CODE >68:/opt/microchip/xc8/v1.34/sources/common/ftmul.c
@@ -555,22 +555,22 @@ $dist/default/production/RTDuC.X.production.obj
 23BE text15 CODE >63:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
 23DC text15 CODE >64:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
 23F6 text15 CODE >66:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-23F8 intcode_body CODE >246:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2426 intcode_body CODE >248:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2428 intcode_body CODE >249:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-242C intcode_body CODE >251:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2432 intcode_body CODE >254:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2436 intcode_body CODE >256:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-243C intcode_body CODE >259:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2440 intcode_body CODE >261:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2446 intcode_body CODE >264:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-244A intcode_body CODE >266:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-244C intcode_body CODE >267:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-244E intcode_body CODE >268:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2450 intcode_body CODE >269:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2456 intcode_body CODE >272:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-245A intcode_body CODE >274:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-245E intcode_body CODE >276:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+23F8 intcode_body CODE >249:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2426 intcode_body CODE >251:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2428 intcode_body CODE >252:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+242C intcode_body CODE >254:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2432 intcode_body CODE >257:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2436 intcode_body CODE >259:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+243C intcode_body CODE >262:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2440 intcode_body CODE >264:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2446 intcode_body CODE >267:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+244A intcode_body CODE >269:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+244C intcode_body CODE >270:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+244E intcode_body CODE >271:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2450 intcode_body CODE >272:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2456 intcode_body CODE >275:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+245A intcode_body CODE >277:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+245E intcode_body CODE >279:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 2498 text8 CODE >4:/opt/microchip/xc8/v1.34/sources/common/ftge.c
 2498 text8 CODE >6:/opt/microchip/xc8/v1.34/sources/common/ftge.c
 249C text8 CODE >7:/opt/microchip/xc8/v1.34/sources/common/ftge.c
@@ -580,59 +580,59 @@ $dist/default/production/RTDuC.X.production.obj
 2508 text8 CODE >11:/opt/microchip/xc8/v1.34/sources/common/ftge.c
 2514 text8 CODE >12:/opt/microchip/xc8/v1.34/sources/common/ftge.c
 252C text8 CODE >13:/opt/microchip/xc8/v1.34/sources/common/ftge.c
-252E cinit CODE >3232:/tmp/cgtsHlSBg
-252E cinit CODE >3234:/tmp/cgtsHlSBg
-252E cinit CODE >3237:/tmp/cgtsHlSBg
-252E cinit CODE >3343:/tmp/cgtsHlSBg
-2532 cinit CODE >3344:/tmp/cgtsHlSBg
-2536 cinit CODE >3345:/tmp/cgtsHlSBg
-2536 cinit CODE >3346:/tmp/cgtsHlSBg
-2538 cinit CODE >3347:/tmp/cgtsHlSBg
-253A cinit CODE >3348:/tmp/cgtsHlSBg
-253C cinit CODE >3349:/tmp/cgtsHlSBg
-253E cinit CODE >3350:/tmp/cgtsHlSBg
-2540 cinit CODE >3351:/tmp/cgtsHlSBg
-2542 cinit CODE >3354:/tmp/cgtsHlSBg
-2546 cinit CODE >3355:/tmp/cgtsHlSBg
-2548 cinit CODE >3356:/tmp/cgtsHlSBg
-2548 cinit CODE >3357:/tmp/cgtsHlSBg
-254A cinit CODE >3358:/tmp/cgtsHlSBg
-254C cinit CODE >3359:/tmp/cgtsHlSBg
-254E cinit CODE >3362:/tmp/cgtsHlSBg
-2552 cinit CODE >3363:/tmp/cgtsHlSBg
-2554 cinit CODE >3364:/tmp/cgtsHlSBg
-2554 cinit CODE >3365:/tmp/cgtsHlSBg
-2556 cinit CODE >3366:/tmp/cgtsHlSBg
-2558 cinit CODE >3367:/tmp/cgtsHlSBg
-255A cinit CODE >3372:/tmp/cgtsHlSBg
-255C cinit CODE >3373:/tmp/cgtsHlSBg
-255E cinit CODE >3374:/tmp/cgtsHlSBg
-2560 cinit CODE >3375:/tmp/cgtsHlSBg
-2562 cinit CODE >3376:/tmp/cgtsHlSBg
-2564 cinit CODE >3377:/tmp/cgtsHlSBg
-2566 cinit CODE >3378:/tmp/cgtsHlSBg
-2568 cinit CODE >3379:/tmp/cgtsHlSBg
-256C cinit CODE >3380:/tmp/cgtsHlSBg
-256E cinit CODE >3381:/tmp/cgtsHlSBg
-2572 cinit CODE >3382:/tmp/cgtsHlSBg
-2574 cinit CODE >3383:/tmp/cgtsHlSBg
-2578 cinit CODE >3387:/tmp/cgtsHlSBg
-257A cinit CODE >3388:/tmp/cgtsHlSBg
-257C cinit CODE >3389:/tmp/cgtsHlSBg
-257E cinit CODE >3390:/tmp/cgtsHlSBg
-2580 cinit CODE >3391:/tmp/cgtsHlSBg
-2582 cinit CODE >3392:/tmp/cgtsHlSBg
-2584 cinit CODE >3393:/tmp/cgtsHlSBg
-2588 cinit CODE >3394:/tmp/cgtsHlSBg
-258C cinit CODE >3395:/tmp/cgtsHlSBg
-258C cinit CODE >3396:/tmp/cgtsHlSBg
-258E cinit CODE >3397:/tmp/cgtsHlSBg
-2592 cinit CODE >3398:/tmp/cgtsHlSBg
-2594 cinit CODE >3399:/tmp/cgtsHlSBg
-2596 cinit CODE >3400:/tmp/cgtsHlSBg
-2598 cinit CODE >3406:/tmp/cgtsHlSBg
-2598 cinit CODE >3407:/tmp/cgtsHlSBg
-259A cinit CODE >3408:/tmp/cgtsHlSBg
+252E cinit CODE >3233:/tmp/cgt3GY1Kc
+252E cinit CODE >3235:/tmp/cgt3GY1Kc
+252E cinit CODE >3238:/tmp/cgt3GY1Kc
+252E cinit CODE >3344:/tmp/cgt3GY1Kc
+2532 cinit CODE >3345:/tmp/cgt3GY1Kc
+2536 cinit CODE >3346:/tmp/cgt3GY1Kc
+2536 cinit CODE >3347:/tmp/cgt3GY1Kc
+2538 cinit CODE >3348:/tmp/cgt3GY1Kc
+253A cinit CODE >3349:/tmp/cgt3GY1Kc
+253C cinit CODE >3350:/tmp/cgt3GY1Kc
+253E cinit CODE >3351:/tmp/cgt3GY1Kc
+2540 cinit CODE >3352:/tmp/cgt3GY1Kc
+2542 cinit CODE >3355:/tmp/cgt3GY1Kc
+2546 cinit CODE >3356:/tmp/cgt3GY1Kc
+2548 cinit CODE >3357:/tmp/cgt3GY1Kc
+2548 cinit CODE >3358:/tmp/cgt3GY1Kc
+254A cinit CODE >3359:/tmp/cgt3GY1Kc
+254C cinit CODE >3360:/tmp/cgt3GY1Kc
+254E cinit CODE >3363:/tmp/cgt3GY1Kc
+2552 cinit CODE >3364:/tmp/cgt3GY1Kc
+2554 cinit CODE >3365:/tmp/cgt3GY1Kc
+2554 cinit CODE >3366:/tmp/cgt3GY1Kc
+2556 cinit CODE >3367:/tmp/cgt3GY1Kc
+2558 cinit CODE >3368:/tmp/cgt3GY1Kc
+255A cinit CODE >3373:/tmp/cgt3GY1Kc
+255C cinit CODE >3374:/tmp/cgt3GY1Kc
+255E cinit CODE >3375:/tmp/cgt3GY1Kc
+2560 cinit CODE >3376:/tmp/cgt3GY1Kc
+2562 cinit CODE >3377:/tmp/cgt3GY1Kc
+2564 cinit CODE >3378:/tmp/cgt3GY1Kc
+2566 cinit CODE >3379:/tmp/cgt3GY1Kc
+2568 cinit CODE >3380:/tmp/cgt3GY1Kc
+256C cinit CODE >3381:/tmp/cgt3GY1Kc
+256E cinit CODE >3382:/tmp/cgt3GY1Kc
+2572 cinit CODE >3383:/tmp/cgt3GY1Kc
+2574 cinit CODE >3384:/tmp/cgt3GY1Kc
+2578 cinit CODE >3388:/tmp/cgt3GY1Kc
+257A cinit CODE >3389:/tmp/cgt3GY1Kc
+257C cinit CODE >3390:/tmp/cgt3GY1Kc
+257E cinit CODE >3391:/tmp/cgt3GY1Kc
+2580 cinit CODE >3392:/tmp/cgt3GY1Kc
+2582 cinit CODE >3393:/tmp/cgt3GY1Kc
+2584 cinit CODE >3394:/tmp/cgt3GY1Kc
+2588 cinit CODE >3395:/tmp/cgt3GY1Kc
+258C cinit CODE >3396:/tmp/cgt3GY1Kc
+258C cinit CODE >3397:/tmp/cgt3GY1Kc
+258E cinit CODE >3398:/tmp/cgt3GY1Kc
+2592 cinit CODE >3399:/tmp/cgt3GY1Kc
+2594 cinit CODE >3400:/tmp/cgt3GY1Kc
+2596 cinit CODE >3401:/tmp/cgt3GY1Kc
+2598 cinit CODE >3407:/tmp/cgt3GY1Kc
+2598 cinit CODE >3408:/tmp/cgt3GY1Kc
+259A cinit CODE >3409:/tmp/cgt3GY1Kc
 259E text27 CODE >32:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
 259E text27 CODE >34:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
 25AA text27 CODE >36:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
@@ -833,22 +833,23 @@ $dist/default/production/RTDuC.X.production.obj
 2ABC text43 CODE >100:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
 2ACC text43 CODE >101:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
 2AD2 text43 CODE >102:/home/raidenv/MPLABXProjects/RTDuC.X/SPISlave.c
-2AD4 text1 CODE >226:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2AD4 text1 CODE >228:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2ADA text1 CODE >229:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2AD4 text1 CODE >227:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2AD4 text1 CODE >229:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2ADA text1 CODE >230:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 2ADC text1 CODE >231:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2AE0 text1 CODE >232:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2AE4 text1 CODE >233:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2AE8 text1 CODE >234:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2AEC text1 CODE >235:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2AF0 text1 CODE >236:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2AF6 text1 CODE >237:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2AFA text1 CODE >238:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2AFE text1 CODE >239:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2B02 text1 CODE >241:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2B06 text1 CODE >242:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2B08 text1 CODE >243:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2B0A text1 CODE >244:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2ADE text1 CODE >233:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2AE2 text1 CODE >234:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2AE6 text1 CODE >235:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2AEA text1 CODE >236:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2AEE text1 CODE >237:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2AF2 text1 CODE >238:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2AF6 text1 CODE >239:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2AFA text1 CODE >241:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2AFE text1 CODE >242:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2B02 text1 CODE >244:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2B06 text1 CODE >245:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2B08 text1 CODE >246:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2B0A text1 CODE >247:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 2B0C text35 CODE >53:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
 2B0C text35 CODE >55:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
 2B14 text35 CODE >56:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
@@ -968,19 +969,19 @@ $dist/default/production/RTDuC.X.production.obj
 2D02 text23 CODE >23:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
 2D06 text23 CODE >24:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
 2D0A text23 CODE >26:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-2D0C text61 CODE >282:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D0C text61 CODE >284:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D10 text61 CODE >285:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D12 text61 CODE >286:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D14 text61 CODE >287:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D16 text61 CODE >288:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D1A text61 CODE >291:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D1E text61 CODE >292:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D22 text61 CODE >293:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D28 text61 CODE >294:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D2A text61 CODE >295:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D2C text61 CODE >289:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2D2E text61 CODE >297:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D0C text61 CODE >285:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D0C text61 CODE >287:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D10 text61 CODE >288:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D12 text61 CODE >289:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D14 text61 CODE >290:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D16 text61 CODE >291:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D1A text61 CODE >294:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D1E text61 CODE >295:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D22 text61 CODE >296:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D28 text61 CODE >297:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D2A text61 CODE >298:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D2C text61 CODE >292:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2D2E text61 CODE >300:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 2D30 text36 CODE >127:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
 2D32 text36 CODE >129:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
 2D38 text36 CODE >131:/home/raidenv/MPLABXProjects/RTDuC.X/EEPROM.c
@@ -1061,21 +1062,21 @@ $dist/default/production/RTDuC.X.production.obj
 2E52 text19 CODE >7:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
 2E54 text19 CODE >8:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
 2E5A text19 CODE >9:/opt/microchip/xc8/v1.34/sources/pic18/d1tcyx.c
-2E5C text25 CODE >308:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2E5C text25 CODE >310:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2E5E text25 CODE >311:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2E60 text25 CODE >313:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2E62 text25 CODE >314:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2E64 text25 CODE >316:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2E66 text25 CODE >317:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E5C text25 CODE >311:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E5C text25 CODE >313:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E5E text25 CODE >314:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E60 text25 CODE >316:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E62 text25 CODE >317:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E64 text25 CODE >319:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E66 text25 CODE >320:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 2E68 text62 CODE >31:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
 2E68 text62 CODE >33:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
 2E6A text62 CODE >34:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
 2E70 text62 CODE >35:/home/raidenv/MPLABXProjects/RTDuC.X/MotorControl.c
-2E72 text17 CODE >302:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2E72 text17 CODE >304:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2E76 text17 CODE >305:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
-2E78 text17 CODE >306:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E72 text17 CODE >305:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E72 text17 CODE >307:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E76 text17 CODE >308:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
+2E78 text17 CODE >309:/home/raidenv/MPLABXProjects/RTDuC.X/RTDuC.c
 2E7A text38 CODE >12:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
 2E7A text38 CODE >14:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
 2E80 text38 CODE >15:/opt/microchip/xc8/v1.34/sources/pic18/plib/EEP/busy_eep.c
@@ -1108,7 +1109,7 @@ ___ftdiv@exp 64 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production
 i2Write_b_eep@badd 1 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 i2Write_b_eep@bdat 3 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/RTDuC.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtCIGj40.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/cgtbowBzw.obj
 _SaveAll 21E0 0 CODE 0 text33 dist/default/production/RTDuC.X.production.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/RTDuC.X.production.obj
 _Delay10TCYx 2E2C 0 CODE 0 text21 dist/default/production/RTDuC.X.production.obj
@@ -1125,14 +1126,14 @@ __size_of_SendSPI1 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 main@x A9 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 __Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production/RTDuC.X.production.obj
 _TMR4 F78 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/cgtCIGj40.obj
+___sp 0 0 STACK 2 stack /tmp/cgtbowBzw.obj
 _main 1006 0 CODE 0 text0 dist/default/production/RTDuC.X.production.obj
 abs@a 84 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 ___ftadd@f1 20 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 ___ftadd@f2 23 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __HbssBIGRAM 0 0 ABS 0 bssBIGRAM dist/default/production/RTDuC.X.production.obj
 EEWriteDouble@x 20 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-start 18 0 CODE 0 init /tmp/cgtCIGj40.obj
+start 18 0 CODE 0 init /tmp/cgtbowBzw.obj
 Write_b_eep@badd 18 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 Write_b_eep@bdat 1A 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __size_of___ftadd 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -1175,11 +1176,11 @@ _EEPROMInit 2E06 0 CODE 0 text26 dist/default/production/RTDuC.X.production.obj
 __LbssBIGRAM 0 0 ABS 0 bssBIGRAM dist/default/production/RTDuC.X.production.obj
 __end_of_Write_b_eep 2A1A 0 CODE 0 text37 dist/default/production/RTDuC.X.production.obj
 _motorInput C2 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
-__accesstop 60 0 ABS 0 - /tmp/cgtCIGj40.obj
-intlevel0 0 0 CODE 0 text /tmp/cgtCIGj40.obj
-intlevel1 0 0 CODE 0 text /tmp/cgtCIGj40.obj
-intlevel2 0 0 CODE 0 text /tmp/cgtCIGj40.obj
-intlevel3 0 0 CODE 0 text /tmp/cgtCIGj40.obj
+__accesstop 60 0 ABS 0 - /tmp/cgtbowBzw.obj
+intlevel0 0 0 CODE 0 text /tmp/cgtbowBzw.obj
+intlevel1 0 0 CODE 0 text /tmp/cgtbowBzw.obj
+intlevel2 0 0 CODE 0 text /tmp/cgtbowBzw.obj
+intlevel3 0 0 CODE 0 text /tmp/cgtbowBzw.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/RTDuC.X.production.obj
 _TMR0Int 2E3E 0 CODE 0 text59 dist/default/production/RTDuC.X.production.obj
 _Read_b_eep 2DD4 0 CODE 0 text31 dist/default/production/RTDuC.X.production.obj
@@ -1209,8 +1210,8 @@ _ADRESH FC4 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _ADRESL FC3 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _DoublePtr 41 0 COMRAM 1 bssCOMRAM dist/default/production/RTDuC.X.production.obj
 __end_of_SendSPI1 2C00 0 CODE 0 text32 dist/default/production/RTDuC.X.production.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/cgtCIGj40.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/cgtCIGj40.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/cgtbowBzw.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/cgtbowBzw.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/RTDuC.X.production.obj
 EEWriteChar@ch 1C 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 _EECON1bits FA6 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -1359,7 +1360,7 @@ __Hbank15 0 0 ABS 0 bank15 dist/default/production/RTDuC.X.production.obj
 __size_of_RTD2Angle 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/RTDuC.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production/RTDuC.X.production.obj
-__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/cgtCIGj40.obj
+__smallconst 1000 0 SMALLCONST 0 smallconst /tmp/cgtbowBzw.obj
 Write_b_eep@GIE_BIT_VAL 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __size_of_ReceiveSPI1 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production/RTDuC.X.production.obj
@@ -1539,8 +1540,8 @@ __Htext62 0 0 ABS 0 text62 dist/default/production/RTDuC.X.production.obj
 __size_of_OpenSPI1 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of_Read_b_eep 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __size_of_TMR0Int 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
-_calculatePID$3489 8D 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
-_calculatePID$3490 90 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
+_calculatePID$3511 8D 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
+_calculatePID$3512 90 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 _PIE1bits F9D 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _PIE2bits FA0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 _EEWriteDouble 27E0 0 CODE 0 text34 dist/default/production/RTDuC.X.production.obj
@@ -1639,8 +1640,8 @@ __end_of_EEReadDouble 278A 0 CODE 0 text28 dist/default/production/RTDuC.X.produ
 ImplementPIDMotion@PIDValue 86 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj
 _CurrentAngle AA 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
 ___lwtoft@c 20 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
-stackhi F5F 0 ABS 0 - /tmp/cgtCIGj40.obj
-stacklo EEF 0 ABS 0 - /tmp/cgtCIGj40.obj
+stackhi F5F 0 ABS 0 - /tmp/cgtbowBzw.obj
+stacklo EEF 0 ABS 0 - /tmp/cgtbowBzw.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production/RTDuC.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production/RTDuC.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production/RTDuC.X.production.obj
@@ -1757,7 +1758,7 @@ __Ltext59 0 0 ABS 0 text59 dist/default/production/RTDuC.X.production.obj
 __Ltext60 0 0 ABS 0 text60 dist/default/production/RTDuC.X.production.obj
 __Ltext61 0 0 ABS 0 text61 dist/default/production/RTDuC.X.production.obj
 __Ltext62 0 0 ABS 0 text62 dist/default/production/RTDuC.X.production.obj
-__ramtop 1000 0 RAM 0 ramtop /tmp/cgtCIGj40.obj
+__ramtop 1000 0 RAM 0 ramtop /tmp/cgtbowBzw.obj
 __size_of_EEWriteDouble 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 i2EEWriteChar@ch 5 0 COMRAM 1 cstackCOMRAM dist/default/production/RTDuC.X.production.obj
 __Lpowerup 18 0 CODE 0 powerup dist/default/production/RTDuC.X.production.obj
@@ -1811,6 +1812,7 @@ __Hend_init 1C 0 CODE 0 end_init dist/default/production/RTDuC.X.production.obj
 _PIDInit 28CC 0 CODE 0 text22 dist/default/production/RTDuC.X.production.obj
 _TransmitLodeSize 1003 0 SMALLCONST 0 smallconst dist/default/production/RTDuC.X.production.obj
 _prevErr BF 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
+__CFG_PWRT$ON 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 __end_of_main 1580 0 CODE 0 text0 dist/default/production/RTDuC.X.production.obj
 __pintcode 8 0 CODE 0 intcode dist/default/production/RTDuC.X.production.obj
 __size_of_GenerateChecksum 0 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
@@ -1844,7 +1846,7 @@ __Lram 0 0 ABS 0 ram dist/default/production/RTDuC.X.production.obj
 __Lsfr 0 0 ABS 0 sfr dist/default/production/RTDuC.X.production.obj
 _error B9 0 BANK0 1 bssBANK0 dist/default/production/RTDuC.X.production.obj
 _DetectMovement 260E 0 CODE 0 text50 dist/default/production/RTDuC.X.production.obj
-___extmem_base 20000 0 ABS 0 - /tmp/cgtCIGj40.obj
+___extmem_base 20000 0 ABS 0 - /tmp/cgtbowBzw.obj
 _MotorDriverInit 2CE8 0 CODE 0 text23 dist/default/production/RTDuC.X.production.obj
 _CCP3CON FB7 0 ABS 0 - dist/default/production/RTDuC.X.production.obj
 ___fttol@sign1 7E 0 BANK0 1 cstackBANK0 dist/default/production/RTDuC.X.production.obj

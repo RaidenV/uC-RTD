@@ -8487,8 +8487,9 @@ void SPIRestart(void);
 #pragma config OSC = HSPLL
 #pragma config WDT = OFF
 #pragma config FCMEN = OFF
+#pragma config PWRT = ON
 
-# 18
+# 19
 void initialize(void);
 void interrupt ISR(void);
 void INT0Int(void);
@@ -8700,6 +8701,7 @@ PIDEnableFlag = 3;
 void initialize(void)
 {
 while (OSCCONbits.OSTS == 0);
+TRISCbits.RC6 = 0;
 PORTCbits.RC6 = 1;
 
 RTDInit();
@@ -8707,10 +8709,11 @@ SPIInit();
 JoystickInit();
 MotorDriverInit();
 PIDInit();
-Delay10TCYx(100);
-ZeroMotors();
 EEPROMInit();
 RecTmrInit();
+
+ZeroMotors();
+ZeroMotors();
 
 InitializeInterrupts();
 TRISAbits.RA3 = 0;
@@ -8737,9 +8740,9 @@ INT0Int();
 
 if (PIR2bits.HLVDIF == 1)
 {
-PORTAbits.RA4 = 0;
-PORTAbits.RA3 = 0;
-PORTAbits.RA2 = 0;
+PORTAbits.RA4 = 1;
+PORTAbits.RA3 = 1;
+PORTAbits.RA2 = 1;
 SaveAll();
 }
 
@@ -8749,7 +8752,7 @@ asm("reset");
 }
 }
 
-# 282
+# 285
 void INT0Int(void)
 {
 KillMotors();
@@ -8767,7 +8770,7 @@ INTCONbits.TMR0IF = 0;
 }
 }
 
-# 302
+# 305
 void RecTmrInit(void)
 {
 T3CONbits.T3CKPS = 0x3;

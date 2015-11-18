@@ -48,7 +48,7 @@ void MSendSPI(unsigned char data, unsigned char Slave)
         SSPBUF = data;
         while (!PIR1bits.SSPIF);
         data = SSPBUF;
-        SlaveSelect1 = 1; //Set the SS, resetting the bit count of the slave;
+        SlaveSelect2 = 1; //Set the SS, resetting the bit count of the slave;
     }
 }
 
@@ -82,11 +82,10 @@ void MReceiveStrSPI(unsigned char Slave)
     {
         unsigned char x;
         SlaveSelect2 = 0; //Clear the SS, enabling the slave; 
-        Delay10TCYx(25); //500 TCY Delay;
+        Delay10TCYx(30); //250 TCY Delay;
         for (x = 0; x < 4; x++)
             DoubleSPIM[x] = MReceiveSPI(2); //Read data from slave;
-        Delay10TCYx(1);
-        SlaveSelect2 = 1;
+        SlaveSelect2 = 1; //Set the SS, ending communication with the slave;
     }
 }
 
@@ -105,11 +104,10 @@ void MReceiveLodeSPI(unsigned char Slave)
     {
         unsigned int x;
         SlaveSelect2 = 0; //Clear the SS, enabling the slave; 
-        Delay10TCYx(30); //500 TCY Delay;
+        Delay10TCYx(30); //250 TCY Delay;
         for (x = 0; x < ReceiveLodeSize; x++)
             ReceiveLode[x] = MReceiveSPI(2); //Read data from slave;
-        Delay10TCYx(1);
-        SlaveSelect2 = 1;
+        SlaveSelect2 = 1; //Set the SS, ending communication with the slave;
     }
 }
 
@@ -152,6 +150,12 @@ unsigned char checksum(void)
         return 1;
     else
         return 0;
+}
+
+void RestartSPI(void)
+{
+    CloseSPI();
+    OpenSPI(SPI_FOSC_16, MODE_00, SMPMID);
 }
 
 void SPIDisassembleDouble(double dub)
