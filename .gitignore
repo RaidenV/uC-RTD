@@ -8,3 +8,7 @@ build/
 debug/
 dist/
 ServoLoop Driver Programs/
+*.save
+.gitignore~
+pkglist
+ipe.properties
