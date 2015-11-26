@@ -1,0 +1,4 @@
+send "rec"
+expect "-=Begin=-"
+expect "-=End=-"
+! killall minicom

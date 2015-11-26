@@ -84,30 +84,63 @@ void breakDouble(double dubs)
     unsigned short long tempDub;
     unsigned char LeadingFlag = 0;
 
-    tempDub = dubs * 1000;
-    temp1 = tempDub / 100000;
-    if (temp1 != 0)
-        LeadingFlag = 1;
-    temp2 = tempDub % 100000;
-    if (LeadingFlag)
+    if (dubs >= 0)
+    {
+        tempDub = dubs * 1000;
+        temp1 = tempDub / 100000;
+        if (temp1 != 0)
+            LeadingFlag = 1;
+        temp2 = tempDub % 100000;
+        if (LeadingFlag)
+            SerTx(temp1 + 0x30);
+        temp1 = temp2 / 10000;
+        temp2 = temp2 % 10000;
+        if (temp1 != 0)
+            LeadingFlag = 1;
+        if (LeadingFlag)
+            SerTx(temp1 + 0x30);
+        temp1 = temp2 / 1000;
+        temp2 = temp2 % 1000;
         SerTx(temp1 + 0x30);
-    temp1 = temp2 / 10000;
-    temp2 = temp2 % 10000;
-    if(temp1 != 0)
-        LeadingFlag = 1;
-    if (LeadingFlag)
+        SerTx('.');
+        temp1 = temp2 / 100;
+        temp2 = temp2 % 100;
         SerTx(temp1 + 0x30);
-    temp1 = temp2 / 1000;
-    temp2 = temp2 % 1000;
-    SerTx(temp1 + 0x30);
-    SerTx('.');
-    temp1 = temp2 / 100;
-    temp2 = temp2 % 100;
-    SerTx(temp1 + 0x30);
-    temp1 = temp2 / 10;
-    temp2 = temp2 % 10;
-    SerTx(temp1 + 0x30);
-    SerTx(temp2 + 0x30);
+        temp1 = temp2 / 10;
+        temp2 = temp2 % 10;
+        SerTx(temp1 + 0x30);
+        SerTx(temp2 + 0x30);
+    }
+
+    else if (dubs < 0)
+    {
+        dubs = dubs * -1;
+        tempDub = dubs * 1000;
+        temp1 = tempDub / 100000;
+        SerTx('-');
+        if (temp1 != 0)
+            LeadingFlag = 1;
+        temp2 = tempDub % 100000;
+        if (LeadingFlag)
+            SerTx(temp1 + 0x30);
+        temp1 = temp2 / 10000;
+        temp2 = temp2 % 10000;
+        if (temp1 != 0)
+            LeadingFlag = 1;
+        if (LeadingFlag)
+            SerTx(temp1 + 0x30);
+        temp1 = temp2 / 1000;
+        temp2 = temp2 % 1000;
+        SerTx(temp1 + 0x30);
+        SerTx('.');
+        temp1 = temp2 / 100;
+        temp2 = temp2 % 100;
+        SerTx(temp1 + 0x30);
+        temp1 = temp2 / 10;
+        temp2 = temp2 % 10;
+        SerTx(temp1 + 0x30);
+        SerTx(temp2 + 0x30);
+    }
 }
 
 void SendLode(double* Deliverables, unsigned int size)
@@ -116,10 +149,10 @@ void SendLode(double* Deliverables, unsigned int size)
     unsigned int limit;
     double time = 0;
     double multiplier = 0.002;
-    
+
     SerTxStr("-=Begin=-");
     SerNL();
-    for( z = 0; z < size - 3; z ++)
+    for (z = 0; z < size - 3; z++)
     {
         time = multiplier * z;
         breakDouble(time);

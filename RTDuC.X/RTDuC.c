@@ -238,10 +238,11 @@ void initialize(void)
     EEPROMInit();
     RecTmrInit();
 
-    ZeroMotors();
-    ZeroMotors();
+  //  ZeroMotors();
+  //  ZeroMotors();
 
     InitializeInterrupts();
+    T0CONbits.TMR0ON = 1;
     TRISAbits.RA3 = 0; //Set the Status LED as an output.  Configuration of the Analog pins is handled by the JoyStickInit() routine;
     STATUSLED = 1; //When the unit is booted, trigger the LED;
 }

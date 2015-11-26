@@ -1,0 +1,7 @@
+send "kp=0"
+send "ki=0"
+send "kd=0"
+send "rec"
+expect "-=Begin=-"
+expect "-=End=-"
+! killall minicom
