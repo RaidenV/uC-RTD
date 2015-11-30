@@ -24,6 +24,13 @@ extern "C" {
 #define SlaveSelect1 PORTBbits.RB3
 #define SlaveSelect2 PORTBbits.RB4
 
+    extern double Kp;
+    extern double Ki;
+    extern double Kd;
+    extern double CurrentAngle;
+    extern double CurrentVelocity;
+    extern double AZlast;
+    extern double ELlast;
     extern unsigned char RCFlag;
     extern unsigned char ReceivedChar;
     extern unsigned char* DoublePtr;
@@ -35,16 +42,22 @@ extern "C" {
 
     void SPIInitM(void);
     unsigned char MReceiveSPI(unsigned char);
-    double SPIReassembleDouble(void);
-    void SPIReassembleLode(void);
-    void MSendSPI(unsigned char, unsigned char);
     void MReceiveStrSPI(unsigned char);
+    void MSendSPI(unsigned char, unsigned char);
+    double SPIReassembleDouble(void);
+    void SPIDisassembleDouble(double);
+    void SPIReassembleLode(void);
     void MReceiveLodeSPI(unsigned char);
-    unsigned char checksum(void);
-    
-    void RestartSPI(void);
 
-    void SPIDisassembleDouble(double dub);
+    void MSPIRoutine(unsigned char, unsigned char, double);
+    void MSPIRecRoutine(unsigned char, unsigned char);
+
+    void RestartSPI(void);
+    void SelectSlaveStart(unsigned char);
+    void SelectSlaveEnd(unsigned char);
+    unsigned char SlaveQuery(unsigned char);
+
+    unsigned char checksum(void);
     unsigned char MGenerateChecksum(void);
 
 

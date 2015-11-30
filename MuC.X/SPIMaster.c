@@ -1,5 +1,12 @@
 #include "SPIMaster.h"
 
+double Kp;
+double Ki;
+double Kd;
+double CurrentAngle;
+double CurrentVelocity;
+double AZlast;
+double ELlast;
 unsigned char RCFlag = 0;
 unsigned char ReceivedChar;
 unsigned char* DoublePtr;
@@ -23,44 +30,25 @@ void SPIInitM(void)
 
 void MSendSPI(unsigned char data, unsigned char Slave)
 {
-    if (Slave == 1)
-    {
-        SlaveSelect1 = 0; //Bring the SS to 0, enabling the slave;
-        Delay10TCYx(1); //delay for 10 clock cycles to ensure the slave is ready;
-        unsigned char tempChar;
-        tempChar = SSPBUF;
-        PIR1bits.SSPIF = 0;
-        while (SlaveReady1);
-        SSPBUF = data;
-        while (!PIR1bits.SSPIF);
-        data = SSPBUF;
-        SlaveSelect1 = 1; //Set the SS, resetting the bit count of the slave;
-    }
 
-    else if (Slave == 2)
-    {
-        SlaveSelect2 = 0; //Bring the SS to 0, enabling the slave;
-        Delay10TCYx(1); //delay for 10 clock cycles to ensure the slave is ready;
-        unsigned char tempChar;
-        tempChar = SSPBUF;
-        PIR1bits.SSPIF = 0;
-        while (SlaveReady2);
-        SSPBUF = data;
-        while (!PIR1bits.SSPIF);
-        data = SSPBUF;
-        SlaveSelect2 = 1; //Set the SS, resetting the bit count of the slave;
-    }
+    SelectSlaveStart(Slave);
+    Delay10TCYx(1); //delay for 10 clock cycles to ensure the slave is ready;
+    unsigned char tempChar;
+    tempChar = SSPBUF;
+    PIR1bits.SSPIF = 0;
+    while (SlaveQuery(Slave));
+    SSPBUF = data;
+    while (!PIR1bits.SSPIF);
+    data = SSPBUF;
+    SelectSlaveEnd(Slave);
 }
 
-unsigned char MReceiveSPI(unsigned char Slaves)
+unsigned char MReceiveSPI(unsigned char Slave)
 {
     unsigned char tempCH;
     tempCH = SSPBUF; //Clear the buffer;
     PIR1bits.SSPIF = 0; //Clear the MSSP Interrupt Flag; 
-    if (Slaves == 1)
-        while (SlaveReady1);
-    else if (Slaves == 2)
-        while (SlaveReady2);
+    while (SlaveQuery(Slave));
     SSPBUF = 0x00; //Initiate communication by sending a dummy byte;
     while (!PIR1bits.SSPIF); // Wait until transmission is complete;
     PIR1bits.SSPIF = 0;
@@ -69,46 +57,133 @@ unsigned char MReceiveSPI(unsigned char Slaves)
 
 void MReceiveStrSPI(unsigned char Slave)
 {
+    unsigned char x;
+
+    SelectSlaveStart(Slave);
+    Delay10TCYx(30); //250 TCY Delay;
+    for (x = 0; x < 4; x++)
+        DoubleSPIM[x] = MReceiveSPI(Slave); //Read data from slave;
+    SelectSlaveEnd(Slave);
+}
+
+void MSPIRoutine(unsigned char Slave, unsigned char key, double value)
+{
+    unsigned char x;
+    double SetAngle;
+    if ((key == 0x02) || (key == 0x03) || (key == 0x04) || (key == 0x06) || key == 0x08 || key == 0x0B)
+    {
+        do
+        {
+            if (key == 0x02)
+            {
+                MSendSPI(key, Slave); //Write the command byte to the slave;
+                MReceiveStrSPI(Slave); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
+                CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
+                if (Slave == 1)
+                    SerTxStr("Azimuth = ");
+                else if (Slave == 2)
+                    SerTxStr("Elevation = ");
+                breakDouble(CurrentAngle);
+                SerNL();
+            }
+            else if (key == 0x03)
+            {
+                MSendSPI(key, Slave); //Write the command byte to the slave;
+                MReceiveStrSPI(Slave);
+                CurrentVelocity = SPIReassembleDouble();
+                if (Slave == 1)
+                    SerTxStr("Azimuth Velocity = ");
+                else if (Slave == 2)
+                    SerTxStr("Elevation Velocity = ");
+                breakDouble(CurrentVelocity);
+                SerNL();
+            }
+            else if (key == 0x04)
+            {
+                MSendSPI(key, Slave); //Write the command byte to the slave;
+                MReceiveStrSPI(Slave);
+                Kp = SPIReassembleDouble();
+                SerTxStr("Kp = ");
+                breakDouble(Kp);
+                SerNL();
+            }
+            else if (key == 0x06)
+            {
+                MSendSPI(key, Slave); //Write the command byte to the slave;
+                MReceiveStrSPI(Slave);
+                Ki = SPIReassembleDouble();
+                SerTxStr("Ki = ");
+                breakDouble(Ki);
+                SerNL();
+            }
+            else if (key == 0x08)
+            {
+                MSendSPI(key, Slave); //Write the command byte to the slave;
+                MReceiveStrSPI(Slave);
+                Kd = SPIReassembleDouble();
+                SerTxStr("Kd = ");
+                breakDouble(Kd);
+                SerNL();
+            }
+
+            else if (key == 0x0B)
+            {
+                MSendSPI(key, Slave);
+                MReceiveStrSPI(Slave);
+                SetAngle = SPIReassembleDouble();
+                SerTxStr("Set Angle = ");
+                breakDouble(SetAngle);
+                SerNL();
+            }
+        }
+        while (!checksum()); //While the Checksum does not correlate with the received value;
+    }
+    else if ((key == 0x01) || (key == 0x05) || (key == 0x07) || (key == 0x09)) //If the key is something that requires the master to send data;
+    {
+        MSendSPI(key, Slave); //Send the stripped key;
+        SPIDisassembleDouble(value); //While we wait for the slave to be ready we'll break down the double;
+        SelectSlaveStart(Slave);
+        while (SlaveQuery(Slave));
+        Delay10TCYx(50);
+        for (x = 0; x != 4; x++)
+            MSendSPI(DoubleSPIM[x], Slave);
+        SelectSlaveEnd(Slave);
+        if (key == 0x01 && Slave == 1)
+            AZlast = value;
+        else if (key == 0x01 && Slave == 2)
+            ELlast = value;
+    }
+
+}
+
+void MSPIRecRoutine(unsigned char Slave, unsigned char key)
+{
     if (Slave == 1)
-    {
-        unsigned char x;
-        SlaveSelect1 = 0; //Clear the SS, enabling the slave; 
-        Delay10TCYx(30); //250 TCY Delay;
-        for (x = 0; x < 4; x++)
-            DoubleSPIM[x] = MReceiveSPI(1); //Read data from slave;
-        SlaveSelect1 = 1; //Set the SS, ending communication with the slave;
-    }
+        SerTxStr("Sending command to Azimuth slave...");
     else if (Slave == 2)
-    {
-        unsigned char x;
-        SlaveSelect2 = 0; //Clear the SS, enabling the slave; 
-        Delay10TCYx(30); //250 TCY Delay;
-        for (x = 0; x < 4; x++)
-            DoubleSPIM[x] = MReceiveSPI(2); //Read data from slave;
-        SlaveSelect2 = 1; //Set the SS, ending communication with the slave;
-    }
+        SerTxStr("Sending command to Elevation slave...");
+    SerNL();
+    MSendSPI(key, Slave); //Write the command byte to the slave;
+    SerTxStr("Waiting on slave...");
+    SerNL();
+    while (SlaveQuery(Slave));
+    MReceiveLodeSPI(Slave); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
+    SerTxStr("Data received; Reassembling data...");
+    SerNL();
+    SPIReassembleLode(); //The master then converts the received value into a known value using the first three bytes of the received data;
+    SerTxStr("Data reassembled; Transmitting now...");
+    SerNL();
+    SendLode(DataLode, DataLodeSize);
 }
 
 void MReceiveLodeSPI(unsigned char Slave)
 {
-    if (Slave == 1)
-    {
-        unsigned int x;
-        SlaveSelect1 = 0; //Clear the SS, enabling the slave; 
-        Delay10TCYx(30); //250 TCY Delay;
-        for (x = 0; x < ReceiveLodeSize; x++)
-            ReceiveLode[x] = MReceiveSPI(1); //Read data from slave;
-        SlaveSelect1 = 1; //Set the SS, ending communication with the slave;
-    }
-    else if (Slave == 2)
-    {
-        unsigned int x;
-        SlaveSelect2 = 0; //Clear the SS, enabling the slave; 
-        Delay10TCYx(30); //250 TCY Delay;
-        for (x = 0; x < ReceiveLodeSize; x++)
-            ReceiveLode[x] = MReceiveSPI(2); //Read data from slave;
-        SlaveSelect2 = 1; //Set the SS, ending communication with the slave;
-    }
+    unsigned int x;
+    SelectSlaveStart(Slave);
+    Delay10TCYx(30); //250 TCY Delay;
+    for (x = 0; x < ReceiveLodeSize; x++)
+        ReceiveLode[x] = MReceiveSPI(Slave); //Read data from slave;
+    SelectSlaveEnd(Slave);
 }
 
 double SPIReassembleDouble(void)
@@ -156,6 +231,30 @@ void RestartSPI(void)
 {
     CloseSPI();
     OpenSPI(SPI_FOSC_16, MODE_00, SMPMID);
+}
+
+void SelectSlaveStart(unsigned char Slave)
+{
+    if (Slave == 1)
+        SlaveSelect1 = 0;
+    else if (Slave == 2)
+        SlaveSelect2 = 0;
+}
+
+void SelectSlaveEnd(unsigned char Slave)
+{
+    if (Slave == 1)
+        SlaveSelect1 = 1;
+    else if (Slave == 2)
+        SlaveSelect2 = 1;
+}
+
+unsigned char SlaveQuery(unsigned char Slave)
+{
+    if (Slave == 1)
+        return SlaveReady1;
+    else if (Slave == 2)
+        return SlaveReady2;
 }
 
 void SPIDisassembleDouble(double dub)

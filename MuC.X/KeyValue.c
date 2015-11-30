@@ -46,13 +46,7 @@ void RCInt(void)
 
     if (StrippedKey == 0x01)
     {
-        if (SetAngle != StrippedValue) //This is to safeguard against the user reentering the same angle and it restarting the PID loop;
-        {
-            SetAngle = StrippedValue;
-            PIDEnableFlag = 0x03; //If this is indeed a new angle, let the PID loop know that it is a new angle;
-        }
-        else
-            PIDEnableFlag = 0x01; //Else, simply ensure that the PID loop flag is raised;
+        SetAngle = StrippedValue;
     }
 
     else if (StrippedKey == 0x05)
@@ -168,6 +162,12 @@ void keyValue(unsigned char* str, unsigned short length)
         else if ((strcmp(key, "POS") == 0) || (strcmp(key, "pos") == 0))
         {
             StrippedKey = 0x02;
+            SerTx(';');
+        }
+
+        else if ((strcmp(key, "SET") == 0) || (strcmp(key, "set") == 0))
+        {
+            StrippedKey = 0x0B;
             SerTx(';');
         }
 
@@ -292,6 +292,8 @@ void HelpString(void)
     SerNL();
     SerTxStr("pos             -Returns the current angle");
     SerNL();
+    SerTxStr("set             -Returns the last Setpoint of the motor");
+    SerNL();
     SerTxStr("kp              -Returns the proportional constant");
     SerNL();
     SerTxStr("ki              -Returns the integral constant");
@@ -306,13 +308,13 @@ void HelpString(void)
     SerNL();
     SerTxStr("kd=X.XX         -Changes derivative constant");
     SerNL();
-    SerTxStr("aoff            -Turns Azimuth data output off");
-    SerNL();
-    SerTxStr("eoff            -Turns Elevation data output off");
-    SerNL();
     SerTxStr("aon             -Turns Azimuth data output on");
     SerNL();
     SerTxStr("eon             -Turns Elevation data output on");
+    SerNL();
+    SerTxStr("aoff            -Turns Azimuth data output off");
+    SerNL();
+    SerTxStr("eoff            -Turns Elevation data output off");
     SerNL();
     SerTxStr("-----------------------------------------------------");
     SerNL();

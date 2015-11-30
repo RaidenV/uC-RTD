@@ -38,147 +38,20 @@ void main(void)
         {
             INTCONbits.GIE = 0; //Turn interrupts off for the transmission segment;
             RCFlag = 0;
-            if (AZEL == 1)
-            {
-                if ((StrippedKey == 0x02) || (StrippedKey == 0x03) || (StrippedKey == 0x04) || (StrippedKey == 0x06) || StrippedKey == 0x08)
-                {
-                    do
-                    {
-                        if (StrippedKey == 0x02)
-                        {
-                            MSendSPI(StrippedKey, 1); //Write the command byte to the slave;
-                            MReceiveStrSPI(1); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
-                            CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
-                            SerTxStr("Azimuth = ");
-                            breakDouble(CurrentAngle);
-                            SerNL();
-                        }
-                        else if (StrippedKey == 0x03)
-                        {
-                            MSendSPI(StrippedKey, 1); //Write the command byte to the slave;
-                            MReceiveStrSPI(1);
-                            CurrentVelocity = SPIReassembleDouble();
-                            SerTxStr("Azimuth Velocity = ");
-                            breakDouble(CurrentVelocity);
-                            SerNL();
-                        }
-                        else if (StrippedKey == 0x04)
-                        {
-                            MSendSPI(StrippedKey, 1); //Write the command byte to the slave;
-                            MReceiveStrSPI(1);
-                            Kp = SPIReassembleDouble();
-                            SerTxStr("Kp = ");
-                            breakDouble(Kp);
-                            SerNL();
-                        }
-                        else if (StrippedKey == 0x06)
-                        {
-                            MSendSPI(StrippedKey, 1); //Write the command byte to the slave;
-                            MReceiveStrSPI(1);
-                            Ki = SPIReassembleDouble();
-                            SerTxStr("Ki = ");
-                            breakDouble(Ki);
-                            SerNL();
-                        }
-                        else if (StrippedKey == 0x08)
-                        {
-                            MSendSPI(StrippedKey, 1); //Write the command byte to the slave;
-                            MReceiveStrSPI(1);
-                            Kd = SPIReassembleDouble();
-                            SerTxStr("Kd = ");
-                            breakDouble(Kd);
-                            SerNL();
-                        }
-                    }
-                    while (!checksum()); //While the Checksum does not correlate with the received value;
-                }
-                else if ((StrippedKey == 0x01) || (StrippedKey == 0x05) || (StrippedKey == 0x07) || (StrippedKey == 0x09)) //If the key is something that requires the master to send data;
-                {
-                    MSendSPI(StrippedKey, 1); //Send the stripped key;
-                    SPIDisassembleDouble(StrippedValue); //While we wait for the slave to be ready we'll break down the double;
-                    SlaveSelect1 = 0;
-                    while (SlaveReady1);
-                    Delay10TCYx(50);
-                    for (x = 0; x != 4; x++)
-                        MSendSPI(DoubleSPIM[x], 1);
-                    SlaveSelect1 = 1;
-                    AZlast = StrippedValue;
-                    SaveAll();
-                }
-            }
 
-            else if (AZEL == 2)
-            {
-                if ((StrippedKey == 0x02) || (StrippedKey == 0x03) || (StrippedKey == 0x04) || (StrippedKey == 0x06) || StrippedKey == 0x08)
-                {
-                    do
-                    {
-                        if (StrippedKey == 0x02)
-                        {
-                            MSendSPI(StrippedKey, 2); //Write the command byte to the slave;
-                            MReceiveStrSPI(2); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
-                            CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
-                            SerTxStr("Elevation = ");
-                            breakDouble(CurrentAngle);
-                            SerNL();
-                        }
-                        else if (StrippedKey == 0x03)
-                        {
-                            MSendSPI(StrippedKey, 2); //Write the command byte to the slave;
-                            MReceiveStrSPI(2);
-                            CurrentVelocity = SPIReassembleDouble();
-                            SerTxStr("Elevation Velocity = ");
-                            breakDouble(CurrentVelocity);
-                            SerNL();
-                        }
-                        else if (StrippedKey == 0x04)
-                        {
-                            MSendSPI(StrippedKey, 2); //Write the command byte to the slave;
-                            MReceiveStrSPI(2);
-                            Kp = SPIReassembleDouble();
-                            SerTxStr("Kp = ");
-                            breakDouble(Kp);
-                            SerNL();
-                        }
-                        else if (StrippedKey == 0x06)
-                        {
-                            MSendSPI(StrippedKey, 2); //Write the command byte to the slave;
-                            MReceiveStrSPI(2);
-                            Ki = SPIReassembleDouble();
-                            SerTxStr("Ki = ");
-                            breakDouble(Ki);
-                            SerNL();
-                        }
-                        else if (StrippedKey == 0x08)
-                        {
-                            MSendSPI(StrippedKey, 2); //Write the command byte to the slave;
-                            MReceiveStrSPI(2);
-                            Kd = SPIReassembleDouble();
-                            SerTxStr("Kd = ");
-                            breakDouble(Kd);
-                            SerNL();
-                        }
-                    }
-                    while (!checksum()); //While the Checksum does not correlate with the received value;
-                }
-                else if ((StrippedKey == 0x01) || (StrippedKey == 0x05) || (StrippedKey == 0x07) || (StrippedKey == 0x09)) //If the key is something that requires the master to send data;
-                {
-                    MSendSPI(StrippedKey, 2); //Send the stripped key;
-                    SPIDisassembleDouble(StrippedValue); //While we wait for the slave to be ready we'll break down the double;
-                    SlaveSelect2 = 0;
-                    while (SlaveReady2);
-                    Delay10TCYx(50);
-                    for (x = 0; x != 4; x++)
-                        MSendSPI(DoubleSPIM[x], 2);
-                    SlaveSelect2 = 1;
-                    ELlast = StrippedValue;
-                    SaveAll();
-                }
-            }
-            TMR0H = timerHigh;
+            MSPIRoutine(AZEL, StrippedKey, StrippedValue);
+            
+            if ((StrippedKey == 0x01) || (StrippedKey == 0x05) || (StrippedKey == 0x07) || (StrippedKey == 0x09)) //If the value is a newly entered one from the user, save it;
+                SaveAll();
+
+            StrippedKey = 0; //Clear the received values;
+            StrippedValue = 0;
+            
+            TMR0H = timerHigh; //Reset the timer;
             TMR0L = timerLow;
             TMR0Flag = 0;
             INTCONbits.TMR0IF = 0;
+            
             INTCONbits.GIE = 1; //Turn interrupts back on after communication with slave;
         }
 
@@ -187,41 +60,14 @@ void main(void)
             INTCONbits.GIE = 0; //Turn interrupts off for the transmission segment;
             RCFlag = 0;
             RECFlag = 0;
-            if (AZEL == 1)
-            {
-                SerTxStr("Sending command to Azimuth slave...");
-                SerNL();
-                MSendSPI(StrippedKey, 1); //Write the command byte to the slave;
-                SerTxStr("Waiting on slave...");
-                SerNL();
-                while (SlaveReady1);
-                MReceiveLodeSPI(1); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
-                SerTxStr("Data received; Reassembling data...");
-                SerNL();
-                SPIReassembleLode(); //The master then converts the received value into a known value using the first three bytes of the received data;
-                SerTxStr("Data reassembled; Transmitting now...");
-                SerNL();
-                SendLode(DataLode, DataLodeSize);
-            }
-            else if (AZEL == 2)
-            {
-                SerTxStr("Sending command to Elevation slave...");
-                MSendSPI(StrippedKey, 2); //Write the command byte to the slave;
-                SerTxStr("Waiting on slave...");
-                SerNL();
-                while (SlaveReady2);
-                MReceiveLodeSPI(2); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
-                SerTxStr("Data received; Reassembling data...");
-                SerNL();
-                SPIReassembleLode(); //The master then converts the received value into a known value using the first three bytes of the received data;
-                SerTxStr("Data reassembled; Transmitting now...");
-                SerNL();
-                SendLode(DataLode, DataLodeSize);
-            }
-            TMR0H = timerHigh;
+            
+            MSPIRecRoutine(AZEL, StrippedKey); ///Run the Record Routine;
+            
+            TMR0H = timerHigh; //Reset the timer;
             TMR0L = timerLow;
             TMR0Flag = 0;
             INTCONbits.TMR0IF = 0;
+            
             INTCONbits.GIE = 1; //Turn interrupts back on after communication with slave;
         }
 
@@ -230,11 +76,11 @@ void main(void)
             do
             {
                 INTCONbits.GIE = 0; //Disable interrupts for transmission;
-                while (SlaveReady1); //Wait for the slave to be ready;
+                while (SlaveQuery(1)); //Wait for the slave to be ready;
 
                 MSendSPI(0x02, 1); //Write the command byte to the slave;
 
-                while (SlaveReady1); //Wait for the slave to be ready;
+                while (SlaveQuery(1)); //Wait for the slave to be ready;
                 MReceiveStrSPI(1); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
                 CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
 
@@ -251,11 +97,11 @@ void main(void)
             do
             {
                 INTCONbits.GIE = 0; //Disable interrupts for transmission;
-                while (SlaveReady2); //Wait for the slave to be ready;
+                while (SlaveQuery(2)); //Wait for the slave to be ready;
 
                 MSendSPI(0x02, 2); //Write the command byte to the slave;
 
-                while (SlaveReady2); //Wait for the slave to be ready;
+                while (SlaveQuery(2)); //Wait for the slave to be ready;
                 MReceiveStrSPI(2); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
                 CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
 
@@ -281,45 +127,27 @@ void initialize(void)
 
 
     SerInit();
-
+    SerTxStr("Serial Communications Initialized...");
+    SerNL();
     Delay10TCYx(1);
 
     SPIInitM(); //Initialize all modules;
     SerTxStr("SPI Initialized...");
     SerNL();
-
-    Delay10TCYx(1);
-
     TMR0Init();
-
-    Delay10TCYx(1);
-
-    InitializeInterrupts();
-
-
-    Delay10TCYx(1);
-
-    EEPROMInit();
-
-
-    Delay10TCYx(1);
-
-
-    SerTxStr("Serial Communications Initialized...");
-    SerNL();
     SerTxStr("Timers Initialized...");
     SerNL();
+    InitializeInterrupts();
     SerTxStr("Interrupts Initialized...");
     SerNL();
+    EEPROMInit();
     SerTxStr("EEPROM Initialized...");
     SerNL();
     SerTxStr("Waiting for Slaves...");
     SerNL();
+    Delay10TCYx(100); //Give a slight delay to allow for the Slaves to come up and zero themselves;
 
-
-    Delay10TCYx(1000); //Give a slight delay to allow for the Slaves to come up and zero themselves;
-
-    while (SlaveReady1 || SlaveReady2); //While both slaves are not ready;
+    while (SlaveQuery(1) || SlaveQuery(2)); //While both slaves are not ready;
     SerTxStr("Slaves ready...");
     SerNL();
     SerTxStr("System Ready");

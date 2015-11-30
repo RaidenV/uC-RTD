@@ -44,7 +44,7 @@ void main(void)
         {
             SPIflag = 0;
             INTCONbits.GIE = 0; //Turn interrupts off during transmission;
-            if ((Command == 0x02) || (Command == 0x03) || (Command == 0x04) || (Command == 0x06) || (Command == 0x08))
+            if ((Command == 0x02) || (Command == 0x03) || (Command == 0x04) || (Command == 0x06) || (Command == 0x08) || (Command == 0x0B))
             {
                 if (Command == 0x02)
                     SPIDisassembleDouble(CurrentAngle);
@@ -56,9 +56,11 @@ void main(void)
                     SPIDisassembleDouble(Ki);
                 else if (Command == 0x08)
                     SPIDisassembleDouble(Kd);
+                else if (Command == 0x0B)
+                    SPIDisassembleDouble(SetAngle);
 
                 SlaveReady = 0;
-                for (x = 0; x < 4; x++) //Test sending multiple bytes;
+                for (x = 0; x < 4; x++) //Send multiple bytes to the Master;
                     SendSPI1(DoubleSPIS[x]);
                 SPIRestart();
                 SlaveReady = 1;
@@ -162,25 +164,23 @@ void main(void)
             SlaveReady = 1;
             RECFlag = 0;
 
-            double saveKp = Kp, //Save the current Kp, Ki, and Kd values as the ZeroMotors() function overwrites it;
-                    saveKi = Ki,
-                    saveKd = Kd,
-                    saveSP = SetAngle;
+            double saveSP = SetAngle;
 
             INTCONbits.GIE = 0; //Disable interrupts;
             INTCONbits.TMR0IE = 0; //This is notable: in order to utilize the timer in any other situation other than interrupt, the interrupt specific to this timer must be disabled;
             T0CONbits.TMR0ON = 0; //Turn the timer off in case it was running prior to this;
 
-            ZeroMotors(); //Start with the motors zeroed;
-            Kp = saveKp; //Reload the Kp, Ki, and Kd values to be tested;
-            Ki = saveKi;
-            Kd = saveKd;
-
             TMR0H = timerHigh;
             TMR0L = timerLow;
 
             PIDEnableFlag = 3; //Set the PIDEnable flag, letting the loop know that there is a new angle entered;
-            SetAngle = 60; //60 degrees is an arbitrary angle used to test the PID loop.  This could be anything, but as I've seen with servo amplifiers such as those from AMC, a set degree difference is used to repeatedly test the success of the PID loop;
+            CurrentAngle = RTD2Angle(ReadRTDpos());
+            
+            if((CurrentAngle + 60) > 360) //This little algorithm should set the set angle 60 degrees from the current point;
+                SetAngle = (CurrentAngle + 60) - 360;
+            else
+                SetAngle = CurrentAngle + 60;
+           
             counter = 0; //Set the event counter to 0;
 
             T0CONbits.TMR0ON = 1; //Start the timers;
@@ -205,19 +205,24 @@ void main(void)
                 TMR0H = timerHigh;
                 TMR0L = timerLow;
             }
+            
             DataLode[600] = Kp; //Couldn't think of an elegant way to deliver these three values, which are pertinent to the C++ utility for extracting the data.  This tacks them onto the DataLode;
             DataLode[601] = Ki;
             DataLode[602] = Kd;
+            
             SPIDisassembleLode(DataLode, TransmitLode); //Prepare the data for transfer;
             SPIRestart(); //Restart the module to clear any errors;
+            
             SlaveReady = 0; //Slave is ready to transmit;
             for (counter = 0; counter != TransmitLodeSize; counter++) //Send all gathered data;
                 SendSPI1(TransmitLode[counter]);
             SlaveReady = 1; //Disallow master transmission;
             SPIRestart(); //Clear the module;
+            
             INTCONbits.TMR0IE = 1;
             INTCONbits.PEIE = 1;
             INTCONbits.GIE = 1;
+            
             SetAngle = saveSP; //After running the test, set the motor to return to the angle previously set by the user;
             PIDEnableFlag = 3;
         }
@@ -237,9 +242,8 @@ void initialize(void)
     PIDInit();
     EEPROMInit();
     RecTmrInit();
-
-  //  ZeroMotors();
-  //  ZeroMotors();
+    
+    ZeroMotors();
 
     InitializeInterrupts();
     T0CONbits.TMR0ON = 1;
