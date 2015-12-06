@@ -30,7 +30,6 @@ void SPIInitM(void)
 
 void MSendSPI(unsigned char data, unsigned char Slave)
 {
-
     SelectSlaveStart(Slave);
     Delay10TCYx(1); //delay for 10 clock cycles to ensure the slave is ready;
     unsigned char tempChar;
@@ -60,7 +59,7 @@ void MReceiveStrSPI(unsigned char Slave)
     unsigned char x;
 
     SelectSlaveStart(Slave);
-    Delay10TCYx(30); //250 TCY Delay;
+    Delay10TCYx(30); //300 TCY Delay;
     for (x = 0; x < 4; x++)
         DoubleSPIM[x] = MReceiveSPI(Slave); //Read data from slave;
     SelectSlaveEnd(Slave);
@@ -167,7 +166,7 @@ void MSPIRecRoutine(unsigned char Slave, unsigned char key)
     SerTxStr("Waiting on slave...");
     SerNL();
     while (SlaveQuery(Slave));
-    MReceiveLodeSPI(Slave); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
+    MReceiveLodeSPI(Slave);
     SerTxStr("Data received; Reassembling data...");
     SerNL();
     SPIReassembleLode(); //The master then converts the received value into a known value using the first three bytes of the received data;

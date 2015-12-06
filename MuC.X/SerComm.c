@@ -13,12 +13,11 @@
  * - Serial Port Enabled
  * - Continuous Receive enabled
  * - 8-bit Baud Rate Generator
- * - 115200 Baud Rate (this is considering the internal oscillator frequency being 8 MHz);
+ * - 115200 Baud Rate (this is considering the external oscillator frequency is a set 10 MHz);
  */
 
 void SerInit(void)
 {
-
     TXSTA1 = 0x24; //Asynchronous, 8-bit, High Baud Rate, Sync Break Transmission Complete, Transmit enabled
     RCSTA1 = 0x90; //Receive Enabled, Serial Port Enabled, Continuous Receive Enabled
     BAUDCON = 0x00; //8-Bit Baud Rate Generator
@@ -26,7 +25,7 @@ void SerInit(void)
 
     PIE1bits.RC1IE = 1; //Enable the Receive interrupt;
 
-    SerTxStr("Welcome to the world of tomorrow!!!");
+    SerTxStr("Welcome to the world of tomorrow!!!");  //Emerge from your cryo-tube circa 3000 AD;
     SerNL();
 }
 
@@ -148,9 +147,9 @@ void SendLode(double* Deliverables, unsigned int size)
     unsigned int z;
     unsigned int limit;
     double time = 0;
-    double multiplier = 0.002;
+    double multiplier = 0.002; //Knowing the clock which the slave is set to record data at, this is a time multiplier;
 
-    SerTxStr("-=Begin=-");
+    SerTxStr("-=Begin=-"); //Begin sentinel;
     SerNL();
     for (z = 0; z < size - 3; z++)
     {
@@ -166,6 +165,6 @@ void SendLode(double* Deliverables, unsigned int size)
     SerNL();
     breakDouble(Deliverables[size - 1]);
     SerNL();
-    SerTxStr("-=End=-");
+    SerTxStr("-=End=-"); //End sentinel;
     SerNL();
 }

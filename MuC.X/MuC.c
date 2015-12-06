@@ -4,10 +4,10 @@
 #include "SPIMaster.h"
 #include "EEPROMMaster.h"
 
-#pragma config OSC = HSPLL
-#pragma config WDT = OFF
-#pragma config FCMEN = OFF
-#pragma config PWRT = ON
+#pragma config OSC = HSPLL //With an external clock of 10 MHz;
+#pragma config WDT = OFF //Turn off the WDT;
+#pragma config FCMEN = OFF //Since there exists not the code to handle two speeds of communication and the slave and master are not synchronized on a single clock, there is no need for this;
+#pragma config PWRT = ON //Utilize the Power-on Reset Timer, holding the uC in reset until the power input stabilizes;
 
 #define STATUSLED PORTBbits.RB0
 
@@ -18,11 +18,11 @@ void interrupt ISR(void);
 void TMR0Int(void);
 
 /*The following timer setting is controversial.  Is it necessary to have 1/4 second interrupts?*/
-unsigned char timerHigh = 0xC6; //Set the timer to go off every quarter second with a prescaler of 256, this should equal: (0.25)/(1/10,000,000 * 256) = 9766, or 0x2626 in hex;
+unsigned char timerHigh = 0xC6; //Set the timer to go off every 0.375 seconds with a prescaler of 256, this should equal: (0.375)/(1/10,000,000 * 256) = 14650, or 0xC6C6 in hex;
 unsigned char timerLow = 0xC6;
 unsigned char TMR0Flag = 0;
 
-double ELlast;
+double ELlast; //Saves the last position to which the Azimuth and Elevation were commanded;
 double AZlast;
 
 void main(void)
@@ -40,18 +40,18 @@ void main(void)
             RCFlag = 0;
 
             MSPIRoutine(AZEL, StrippedKey, StrippedValue);
-            
+
             if ((StrippedKey == 0x01) || (StrippedKey == 0x05) || (StrippedKey == 0x07) || (StrippedKey == 0x09)) //If the value is a newly entered one from the user, save it;
                 SaveAll();
 
             StrippedKey = 0; //Clear the received values;
             StrippedValue = 0;
-            
+
             TMR0H = timerHigh; //Reset the timer;
             TMR0L = timerLow;
             TMR0Flag = 0;
             INTCONbits.TMR0IF = 0;
-            
+
             INTCONbits.GIE = 1; //Turn interrupts back on after communication with slave;
         }
 
@@ -60,14 +60,14 @@ void main(void)
             INTCONbits.GIE = 0; //Turn interrupts off for the transmission segment;
             RCFlag = 0;
             RECFlag = 0;
-            
+
             MSPIRecRoutine(AZEL, StrippedKey); ///Run the Record Routine;
-            
+
             TMR0H = timerHigh; //Reset the timer;
             TMR0L = timerLow;
             TMR0Flag = 0;
             INTCONbits.TMR0IF = 0;
-            
+
             INTCONbits.GIE = 1; //Turn interrupts back on after communication with slave;
         }
 
@@ -81,13 +81,13 @@ void main(void)
                 MSendSPI(0x02, 1); //Write the command byte to the slave;
 
                 while (SlaveQuery(1)); //Wait for the slave to be ready;
-                MReceiveStrSPI(1); //Understanding that I know how long the array will be, the Receive function requires two inputs, the variable which the data is received to, and the Slave which the master communicates with;
+                MReceiveStrSPI(1); //Understanding that I know how long the array will be and that I have created a global variable to handle this reception, the Receive function requires a single input: the Slave which the master communicates with;
                 CurrentAngle = SPIReassembleDouble(); //The master then converts the received value into a known value using the first three bytes of the received data;
 
             }
-            while ((checksum() == 0) || ((AZlast != 0) && (CurrentAngle == 0)));
+            while ((checksum() == 0) || ((AZlast != 0) && (CurrentAngle == 0))); //A slight VW;
 
-            if (AZFlowFlag == 1)
+            if (AZFlowFlag == 1) //AZ and EL flow flags are handled by the KeyValue header and it's respective source.  This denotes whether or not this should be transmitted to the computer;
             {
                 SerTxStr("Azimuth = ");
                 breakDouble(CurrentAngle);
@@ -126,12 +126,10 @@ void initialize(void)
     while (OSCCONbits.OSTS == 0); //Wait here while the Oscillator stabilizes;
 
 
-    SerInit();
+    SerInit(); //Initialize all modules;
     SerTxStr("Serial Communications Initialized...");
     SerNL();
-    Delay10TCYx(1);
-
-    SPIInitM(); //Initialize all modules;
+    SPIInitM();
     SerTxStr("SPI Initialized...");
     SerNL();
     TMR0Init();
