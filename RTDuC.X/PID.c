@@ -10,10 +10,10 @@ double Kd;
 double SetAngle;
 double CurrentAngle;
 double error;
-double prevErr;
-double intErr;
-int motorInput;
-double loopTime = 0.03;
+double prevErr; //Previous error;
+double intErr; //The integral, or accumulated, error;
+int motorInput; //The output of the PID algorithm;
+double loopTime = 0.03; //The loop time of the PID algorithm;
 
 void PIDInit(void)
 {
@@ -26,10 +26,12 @@ void PIDInit(void)
     TMR0L = timerLow; //Calculation: 0xffff - ((0.03/(1/10e6))/32);
 }
 
-/* calculatePID
- * Calculates the output of the PID equation based on the Kp, Ki, and Kd entered
- * by the user;
- */
+/*--------------------------------------------------------\
+| calculatePID                                             |
+|     													   |
+| Calculates the output of the PID equation based on the   |
+| Kp, Ki, and Kd entered by the user;                      |
+\---------------------------------------------------------*/ 
 void calculatePID(double angle, double setpoint)
 {
     double derErr; //Generate derivative variable;
@@ -49,19 +51,22 @@ void calculatePID(double angle, double setpoint)
 
     derErr = error - prevErr; //Calculate the derivative error;
     intErr += error; //Calculate the integral error;
-    if (intErr > 2000)
-        intErr = 2000; //Put a cap on the integral error.  Allowing it to run away too far creates a loss of control (this is known as Integral Windup and is a prime source of overshooting/undershooting);
-    else if(intErr < -2000)
-        intErr = -2000;
+    if (intErr > 500)
+        intErr = 500; //Put a cap on the integral error.  Allowing it to run away too far creates a loss of control (this is known as Integral Windup and is a prime source of overshooting/undershooting);
+    else if(intErr < -500)
+        intErr = -500;
 
     motorInput = Kp * error + (Ki * intErr * loopTime) + (Kd * (derErr / loopTime)); //Standard PID equation;
 
     prevErr = error;
 }
 
-/* TMR0Int
- * Handles the timer0 interrupt;
- */
+/*--------------------------------------------------------\
+| TMR0Int                                                  |
+|     													   |
+| Handles the Timer 0 interrupt which is primarily respons-|
+| ible for the PID loop;                                   |
+\---------------------------------------------------------*/ 
 void TMR0Int(void)
 {
     TMR0H = timerHigh; //Set the timer count;

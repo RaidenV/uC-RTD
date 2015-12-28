@@ -23,13 +23,16 @@ void RTDInit(void)
 
 }
 
-/* ReadRTDpos
- * This function reads the RTD's position and returns that value;
- * I spoke with Analog Devices, discovered that the spec sheet out to be, considering T2,
- * 6 * (1/Fosc) + 20ns, where the result is in seconds;  This gives us a delay of 300 ns
- * for T1, which is a doubtable characteristic as I don't think this time span is notable,
- * and roughly 800 ns for T2;
- */
+/*--------------------------------------------------------\
+| ReadRTDpos                                               |
+|     													   |
+| This function reads the RTD's position and returns that  |
+| value; I spoke with Analog Devices, discovered that the  |
+| spec sheet ought to be:                                  |
+| 6 * (1/Fosc) + 20ns, where the result is in seconds;     |
+| This gives us a delay of 300 ns for T1: and roughly      |
+| 800 ns for T2;                                           |
+\---------------------------------------------------------*/ 
 unsigned int ReadRTDpos(void)
 {
     unsigned char x;
@@ -54,13 +57,17 @@ unsigned int ReadRTDpos(void)
         return FullPosition;
 }
 
-/* ReadRTDvel
- * Reads the velocity value output by the resolver to digital converter;
- * This section of code isn't used at the moment and is simply included in the
- * event that some sort of expansion is required.  As far as I'm concerned, the
- * accompanying C++ utility can use the Position to calculate velocity well
- * enough that this may not ever be necessary;
- */
+/*--------------------------------------------------------\
+| ReadRTDvel                                               |
+|     													   |
+| Reads the velocity value output by the resolver to digit-|
+| al converter; This section of code isn't used at the mom-|
+| ent and is simply included in the event that some sort of|
+| expansion is required.  As far as I'm concerned, the     |
+| accompanying C++ utility can use the Position to calcul- |
+| ate velocity well enough that this may not ever be neces-|
+| sary;                                                    |
+\---------------------------------------------------------*/ 
 unsigned int ReadRTDvel(void)
 {
     unsigned int FullVelocity;
@@ -85,19 +92,19 @@ unsigned int ReadRTDvel(void)
         return FullVelocity;
 }
 
-/* RTD2Angle
- * This function converts the value returned by the ReadRTDpos to an angle 
- * between 0 and 360 degrees; 
- */
+/*--------------------------------------------------------\
+| RTD2Angle                                                |
+|     													   |
+| This function converts the value returned by the         |
+| ReadRTDpos to an angle between 0 and 360 degrees;        |
+\---------------------------------------------------------*/ 
 double RTD2Angle(unsigned int RTDAngle)
 {
     return ANGLERATIO * RTDAngle;
 }
+
 double RTD2Velocity(unsigned int); //The contents of this function need to be decided once the radial velocity is considered;
 
-/* RTDdirection
- * I'm not sure if this ever needs to be used, but here it is;
- */
 unsigned char RTDdirection(void)
 {
     return DIR;

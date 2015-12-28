@@ -23,11 +23,14 @@ void JoystickInit(void)
     ADCON1 = 0x0D; //Set the Analog Channel to 0, every other input is enabled as a digital value, use internal reference voltage);
     ADCON2 = 0xB4; //Set register: Right Justified, 16 Tad, Fosc/4;
 }
-
-/* DetectJoystick
- * The most frequently run code from this library, this simply tests for joystick
- * connectivity;
- */
+ 
+/*--------------------------------------------------------\
+| DetectJoystick                                           |
+|     													   |
+| Detects whether a joystick is connected to the axis by   |
+| utilizing a jumper on the joystick connector which sets a|
+| pin high hen it's connected;                             |
+\---------------------------------------------------------*/ 
 void DetectJoystick(void)
 {
     if (PORTBbits.RB1 == 0)
@@ -43,12 +46,16 @@ void DetectJoystick(void)
     }
 }
 
-/* DetectMovement
- * This section of code allows us to both render the voltage at the AN0 pin as 
- * well as determine whether that voltage is enough to warrant moving the motors.
- * This also allows us to adjust the deadband levels to serve joysticks who rest
- * off-center (output a voltage other than zero when left alone);
- */
+/*--------------------------------------------------------\
+| DetectJoystick                                           |
+|     													   |
+| This section of code allows us to both render the voltage|
+| at the AN0 pin as well as determine whether that voltage |
+| is enough to warrant moving the motors. This also allows |
+| us to adjust the deadband levels to serve joysticks who  |
+| rest off-center (output a voltage other than zero when   |
+| left alone);                                             |
+\---------------------------------------------------------*/ 
 int DetectMovement(void)
 {
     unsigned int ADCresult;

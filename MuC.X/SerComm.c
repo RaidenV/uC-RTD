@@ -29,54 +29,72 @@ void SerInit(void)
     SerNL();
 }
 
-/* SerTx
- * Serially sends a single byte;
- */
+/*--------------------------------------------------------\
+| SerTx                                                    |
+|     													   |
+| Sends a single byte;                                     |
+\---------------------------------------------------------*/
 void SerTx(unsigned char c)
 {
     TXREG1 = c;
     while (PIR1bits.TX1IF == 0);
 }
 
-/* SerTxStr
- * Serially sends a string of data;
- */
+/*--------------------------------------------------------\
+| SerTxStr                                                 |
+|     													   |
+| Sends a string of bytes;                                 |
+\---------------------------------------------------------*/
 void SerTxStr(unsigned char* string)
 {
     while (*string)
         SerTx(*string++);
 }
 
-/* SerRx
- * Receives a byte of data; 
- */
-
+/*--------------------------------------------------------\
+| SerNL                                                    |
+|     													   |
+| Simple function for writing a generating a new line;     |
+\---------------------------------------------------------*/
 void SerNL(void)
 {
     SerTx(newLine);
     SerTx(carriageReturn);
 }
 
+/*--------------------------------------------------------\
+| SerRx                                                    |
+|     													   |
+| Receives a single byte;                                  |
+\---------------------------------------------------------*/
 unsigned char SerRx(void)
 {
     return RCREG1;
 }
 
-/* SerRxStr
- * Serially receives a string of data with bounds checking;
- */
-
+/*--------------------------------------------------------\
+| SerRxStr                                                 |
+|     													   |
+| Receives a string of bytes;                              |
+\---------------------------------------------------------*/
 void SerRxStr(unsigned char* str)
 {
-    unsigned short length = sizeof (str) / sizeof (str[0]); //Checks length of string
     unsigned short x = 0;
-    while ((RCREG1 != carriageReturn) || (x != length))
+    while ((RCREG1 != carriageReturn) || (x != strlen(str)))
     {
         str[x] = RCREG1;
         x++;
     }
 }
 
+/*--------------------------------------------------------\
+| breakDouble                                              |
+|     													   |
+| Takes a double and breaks it down to a set of characters |
+| for transmission, with three digits of precision.  Also  |
+| eliminates leading zeros.  This algorithm considers that |
+| the maximum double is 360, as this is reporting angle.   |
+\---------------------------------------------------------*/
 void breakDouble(double dubs)
 {
     unsigned short long temp1, temp2;
@@ -142,6 +160,12 @@ void breakDouble(double dubs)
     }
 }
 
+/*--------------------------------------------------------\
+| SendLode                                                 |
+|     													   |
+| Repeated application of several of the aforementioned fu-|
+| nctions.  Adds the sentinels "-=Begin=-" and "-=End=-".  |
+\---------------------------------------------------------*/
 void SendLode(double* Deliverables, unsigned int size)
 {
     unsigned int z;
@@ -159,11 +183,11 @@ void SendLode(double* Deliverables, unsigned int size)
         breakDouble(Deliverables[z]);
         SerNL();
     }
-    breakDouble(Deliverables[size - 3]);
+    breakDouble(Deliverables[size - 3]); //Kp;
     SerNL();
-    breakDouble(Deliverables[size - 2]);
+    breakDouble(Deliverables[size - 2]); //Ki;
     SerNL();
-    breakDouble(Deliverables[size - 1]);
+    breakDouble(Deliverables[size - 1]); //Kd;
     SerNL();
     SerTxStr("-=End=-"); //End sentinel;
     SerNL();

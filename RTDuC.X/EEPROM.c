@@ -25,10 +25,13 @@ void EEPROMInit(void)
 
 #pragma interrupt_level 1 //According to the XC8 user's guide, this guarantees that there is no duplication of the interrupt in the event that all interrupts are turned off, which is the case with this function and those hereafter;
 
-/* EEBootUp
- * This function tests for saved data.  If there is saved data, it loads it into
- * the necessary registers;
- */
+ /*--------------------------------------------------------\
+| EEBootUp                                                 |
+|     													   |
+| This function checks the SAVEDloc.  If a true bit is ret-|
+| urned, the values previously loaded in the various regis-|
+| ters are refreshed.                                      |
+\---------------------------------------------------------*/
 void EEBootUp(void)
 {
     if (EEReadChar(SAVEDloc)) //If the SAVEDloc indicates that this is not the first time that the chip has booted or data has been entered, proceed by loading the data;
@@ -45,10 +48,12 @@ void EEBootUp(void)
     }
 }
 
-/* DisassembleDouble
- * This takes a double variable and breaks it into 8 parts.  Note that this can 
- * be used for SPI communication as well;
- */
+/*--------------------------------------------------------\
+| EEDisassembleDouble                                      |
+|     													   |
+| This takes a double variable and breaks it into 3 parts. |
+| Note that this can be used for SPI communication as well;|
+\---------------------------------------------------------*/ 
 #pragma interrupt_level 1
 void EEDisassembleDouble(double dub)
 {
@@ -58,11 +63,13 @@ void EEDisassembleDouble(double dub)
     DDouble[2] = DoublePtr[2];
 }
 
-/* ReassembleDouble
- * This takes a double which was broken down into 8 parts and reassembles it 
- * into a double variable.  Note that this can be used for SPI communication as 
- * well;
- */
+ /*--------------------------------------------------------\
+| EEReassembleDouble                                       |
+|     													   |
+| This takes a double which was broken down into 8 parts   |
+| and reassembles it into a double variable.  Note that    |
+| this can be used for SPI communication as well;          |
+\---------------------------------------------------------*/ 
 #pragma interrupt_level 1
 double EEReassembleDouble(void)
 {
@@ -74,10 +81,13 @@ double EEReassembleDouble(void)
     return dub; //Return the reconstructed double;
 }
 
-/* WriteDouble
- * This function includes the DisassembleDouble function.  It uses that function
- * to first break the double down, then write it the given location;
- */
+/*--------------------------------------------------------\
+| EEWriteDouble                                            |
+|     													   |
+| This function includes the DisassembleDouble function.   |
+| It uses that function to first break the double down,    |
+| then write it the given location;                        |
+\---------------------------------------------------------*/ 
 #pragma interrupt_level 1
 void EEWriteDouble(unsigned char location, double dub)
 {
@@ -97,10 +107,13 @@ void EEWriteDouble(unsigned char location, double dub)
     INTCON = INTCON | 0xC0; //Turn on interrupts;
 }
 
-/* ReadDouble
- * Used to read a double from a location; implements the ReassembleDouble
- * function;  Returns the reassembled double;
- */
+/*--------------------------------------------------------\
+| EEReadDouble                                             |
+|     													   |
+| Used to read a double from a location; implements the    |
+| ReassembleDouble function;  Returns the reassembled      |
+| double;                                                  |
+\---------------------------------------------------------*/
 #pragma interrupt_level 1
 double EEReadDouble(unsigned char location)
 {
@@ -119,10 +132,12 @@ double EEReadDouble(unsigned char location)
     return EEReassembleDouble(); //Reassemble & Return;
 }
 
-/* WriteChar
- * Self-explanatory;  Uses predefined library functions to write a char to a
- * location in memory;
- */
+/*--------------------------------------------------------\
+| EEWriteChar                                              |
+|     													   |
+| Self-explanatory;  Uses predefined library functions to  |
+| write a char to a location in memory;                    |
+\---------------------------------------------------------*/ 
 #pragma interrupt_level 1
 void EEWriteChar(unsigned char location, unsigned char ch)
 {
@@ -134,9 +149,12 @@ void EEWriteChar(unsigned char location, unsigned char ch)
     INTCON = INTCON | 0xC0; //Turn on interrupts;
 }
 
-/* ReadChar
- * Use predefined library functions to read a char from a location in memory;
- */
+/*--------------------------------------------------------\
+| EEReadChar                                               |
+|     													   |
+| Use predefined library functions to read a char from a   |
+| location in memory;                                      |
+\---------------------------------------------------------*/ 
 #pragma interrupt_level 1
 char EEReadChar(unsigned char location)
 {
@@ -151,14 +169,15 @@ char EEReadChar(unsigned char location)
     return ch; //Return the character;
 }
 
-/* SaveALl
- * This code saves all of the variables previously entered by the user into 
- * their respective locations.  I have no particular reason for including
- * the ports, other than PORTA which contains values concerning the various
- * status LEDs.
- */
+/*--------------------------------------------------------\
+| SaveAll                                                  |
+|     													   |
+| Saves all the data associated with the PIC to the EEPROM.|
+| This usually takes place whenever shutdown is imminent or|
+| a new value has been entered into the PIC.               |
+\---------------------------------------------------------*/ 
 #pragma interrupt_level 1
-void SaveAll(void) //This is the shutdown routine;
+void SaveAll(void)
 {
     EEWriteDouble(LASTCOMPOSloc, SetAngle);
     EEWriteDouble(KPPARAMloc, Kp);

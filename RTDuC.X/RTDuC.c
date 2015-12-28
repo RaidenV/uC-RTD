@@ -7,10 +7,10 @@
 #include "EEPROM.h"
 #include "SPISlave.h"
 
-#pragma config OSC = HSPLL
-#pragma config WDT = OFF
-#pragma config FCMEN = OFF
-#pragma config PWRT = ON
+#pragma config OSC = HSPLL //High Speed PLL enabled, giving a 40 MHz Tcy;
+#pragma config WDT = OFF //Watch dog timer off;
+#pragma config FCMEN = OFF //Fail-safe clock monitor off;
+#pragma config PWRT = ON //Power-on reset timer enabled, holding the PIC in reset until the input power stabilizes;
 
 #define STATUSLED PORTAbits.RA3
 #define timer3High 0xF6 //This will provide a 2 ms delay;
@@ -252,6 +252,24 @@ void initialize(void)
     STATUSLED = 1; //When the unit is booted, trigger the LED;
 }
 
+void InitializeInterrupts(void)
+{
+    INTCONbits.GIE = 1; //Enable General Interrupts;
+    INTCONbits.PEIE = 1; //Enable Peripheral Interrupts;
+
+    INTCONbits.TMR0IE = 1; //Enable the Timer 0 Interrupt;
+    T0CONbits.TMR0ON = 1;
+
+    PIE2bits.OSCFIE = 1; //Enable the Oscillator Fail interrupt;
+}
+
+/*--------------------------------------------------------\
+| ISR                                                      |
+|     													   |
+| The interrupt service routine (ISR) handles all of the   |
+| interrupts which require servicing; the order of the int-|
+| errupts detremines the priority.                         |
+\---------------------------------------------------------*/ 
 void interrupt ISR(void)
 {
     SlaveReady = 1; //Set the slave in the Not Ready State so that the master is no longer allowed to transmit;
@@ -260,7 +278,7 @@ void interrupt ISR(void)
         SPIInt();
     }
 
-    if (INTCONbits.TMR0IF == 1) //If the TMR0 Interrupt is high, and the PID loop is enabled, run this;
+    if (INTCONbits.TMR0IF == 1) //If the TMR0 Interrupt is high, run this;
     {
         TMR0Int();
     }
@@ -289,11 +307,14 @@ void interrupt ISR(void)
          */
     }
 }
-
-/* INT0Int
- * This interrupt is associated with the motor fail bit of the H-bridge driver
- * chip;  it kills the motors and causes the motor fail LED to blink;
- */
+ 
+/*--------------------------------------------------------\
+| INT0Int                                                  |
+|     													   |
+| This interrupt is associated with the motor fail bit of  |
+| the H-bridge driver chip;  it kills the motors and causes|
+| the motor fail LED to blink;                             |
+\---------------------------------------------------------*/
 void INT0Int(void)
 {
     KillMotors();
@@ -311,26 +332,27 @@ void INT0Int(void)
     }
 }
 
-/* RecTmrInit
- * Sets up the timer used for recording the PID data;
- */
+/*--------------------------------------------------------\
+| RecTmrInit                                               |
+|     													   |
+| Sets up the timer used for recording the PID data;       |
+\---------------------------------------------------------*/
 void RecTmrInit(void)
 {
     T3CONbits.T3CKPS = 0x3; //Prescaler of 1:8;
     T3CONbits.TMR3CS = 0; //Clock source, Fosc/4;
 }
 
-void InitializeInterrupts(void)
-{
-    INTCONbits.GIE = 1; //Enable General Interrupts;
-    INTCONbits.PEIE = 1; //Enable Peripheral Interrupts;
-
-    INTCONbits.TMR0IE = 1; //Enable the Timer 0 Interrupt;
-    T0CONbits.TMR0ON = 1;
-
-    PIE2bits.OSCFIE = 1; //Enable the Oscillator Fail interrupt;
-}
-
+/*--------------------------------------------------------\
+| ZeroMotors                                               |
+|     													   |
+| Motor Zeroing routine.  This need to be revised substant-|
+| ially for various reasons, the most obvious being that if|
+| it is run initially from startup, the Kp, Ki, and Kd must|
+| somehow be determined which this algorithm fails to cons-|
+| ider; once the proper proportional constants are found   |
+| the algorithm should function properly;                  |
+\---------------------------------------------------------*/
 void ZeroMotors(void)
 {
     double average, PrevAngle;

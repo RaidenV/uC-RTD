@@ -21,8 +21,8 @@ extern "C" {
 #define JOYSTICKDETECT PORTBbits.RB1
 #define JSOFFSET 512
 
-    extern unsigned char PIDEnableFlag;
-    extern unsigned char JSEnableFlag;
+    extern unsigned char PIDEnableFlag; //Global variable used to disable the PID loop when the Joystick is enabled;
+    extern unsigned char JSEnableFlag; //Global variable to enable the Joystick motion detection algorithm;
     extern double CurrentAngle;
     extern int DeadbandLow;
     extern int DeadbandHigh;

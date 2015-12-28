@@ -18,14 +18,13 @@ extern "C" {
 #include <ctype.h>
 #include "SerComm.h"
 
-#define DELIMITER '='
-#define KEYLENGTH 5
-#define VALUELENGTH 10
-#define LENGTH 30
-#define carriageReturn 0x0D
+#define DELIMITER '=' //Defines the delimiting character, posted here in single-quotes for clarity;
+#define KEYLENGTH 5 //Arbitrary maximum key length, posted here so that it can change in the future;
+#define VALUELENGTH 10 //Arbitrary maximum value length based on the amount of precision that the system is capable of (10 digits would far exceed it);
+#define LENGTH 30 //Arbitrary length of the received string, with plenty of buffer room for spaces and whatnot;
+#define carriageReturn 0x0D 
 #define newLine 0x0A
 
-    //These Variables are here temporarily in order to drive the SPI routine;
     extern double Kp;
     extern double Ki;
     extern double Kd;
@@ -36,8 +35,8 @@ extern "C" {
     extern double StrippedValue;
     extern unsigned char StrippedKey;
     extern unsigned char AZEL; //This should either be 0 for Azimuth or 1 for Elevation.  Use this variable to determine which SPI CS to use in communication;
-    extern unsigned char key[5];
-    extern unsigned char value[10];
+    extern unsigned char key[KEYLENGTH];
+    extern unsigned char value[VALUELENGTH];
     extern unsigned char received[30];
     extern unsigned char RCFlag;
     extern unsigned char RECFlag;
@@ -54,4 +53,3 @@ extern "C" {
 #endif
 
 #endif	/* KEYVALUE_H */
-

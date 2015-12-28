@@ -15,10 +15,8 @@ extern "C" {
 #include <xc.h>
 #include <EEP.h>
     
-/* The following definitions allow more flexibility in the main body of code in
- * the event, let's say, that a double does not happen to be 8 bytes (there's
- * no guarantee of the size of the double);
- */
+// The following definitions allow more flexibility in the main body of code.
+
 #define LASTCOMPOSloc 0x00
 #define KPPARAMloc 0x03
 #define KIPARAMloc 0x06
@@ -29,7 +27,7 @@ extern "C" {
 #define PIDENABLEloc 0x15
 #define SAVEDloc 0x16 //This lets us know whether or not the unit has settings saved;
     
-    extern unsigned char DDouble[3];
+    extern unsigned char DDouble[3]; //Variable used for breaking the double variables into bytes for writing to the EEPROM;
     extern unsigned char* DoublePtr;
     extern double Kp;
     extern double Ki;

@@ -15,10 +15,6 @@ extern "C" {
 #include <xc.h>
 #include <EEP.h>
     
-/* The following definitions allow more flexibility in the main body of code in
- * the event, let's say, that a double does not happen to be 8 bytes (there's
- * no guarantee of the size of the double);
- */
 #define LASTCOMPOSloc 0x00
 #define KPPARAMloc 0x03
 #define KIPARAMloc 0x06
@@ -47,8 +43,10 @@ extern "C" {
 
     void EEPROMInit(void);
     void EEBootUp(void);
+    
     void EEDisassembleDouble(double);
     double EEReassembleDouble(void);
+    
     void EEWriteDouble(unsigned char, double);
     double EEReadDouble(unsigned char);
 

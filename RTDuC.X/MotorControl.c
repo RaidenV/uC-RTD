@@ -1,14 +1,14 @@
 #include "MotorControl.h"
 
 unsigned char PIDEnableFlag;
-int DeadbandLow = -200;
+int DeadbandLow = -200; //Joystick deadband variables;
 int DeadbandHigh = 200;
 
 void MotorDriverInit(void)
 {
     TRISGbits.RG0 = 0; //ECCP3 Enhanced PWM output Channel: A, AHI (MOSFET Driver Chip)
     TRISEbits.RE4 = 0; //ECCP3 Enhanced PWM output Channel: B, BHI (MOSFET Driver Chip)
-    TRISEbits.RE3 = 0; //ECCP3 Enhanced PWM output Channel: C, ALO (MOSFET DRIVER CHIP)
+    TRISEbits.RE3 = 0; //ECCP3 Enhanced PWM output Channel: C, ALO (MOSFET Driver Chip)
     TRISGbits.RG3 = 0; //ECCP3 Enhanced PWM output Channel: D, BLO (MOSFET Driver Chip)
 
     TRISBbits.RB0 = 1; //FAULT Pin Falling-edge Interrupt (MOSFET Dr)
@@ -24,29 +24,37 @@ void MotorDriverInit(void)
     T2CON = 0x04; //Timer2 is set with neither prescaler nor postscaler;             
 
 }
-
-/* KillMotors
- * Self-explanatory; stops the motors if an error is detected;
- */
+ 
+/*--------------------------------------------------------\
+| KillMotors                                               |
+|     													   |
+| Self-explanatory; stops the motors if an error is detect-|
+| ed;                                                      |
+\---------------------------------------------------------*/ 
 void KillMotors(void)
 {
     MOTORFAILLED = 1; //Turn the Motor Failed LED;
     CCP3CON = CCP3CON & 0xF0; //Shut the PWM module down;
 }
 
-/* StartMotors
- * Allows the motors to be (re)started;
- */
+/*--------------------------------------------------------\
+| StartMotors                                              |
+|     													   |
+| Allows the motors to be (re)started;                     |
+\---------------------------------------------------------*/ 
 void StartMotors(void)
 {
     MOTORFAILLED = 0;
     CCP3CON = CCP3CON = 0x4C; //Set Full-bridge mode, all outputs active high;
 }
 
-/* ImplementPIDMotion
- * This module is fused to the PID loop algorithm in the PID.h/.c library; it
- * uses the output of the PID algorithm to move the motors;
- */
+/*--------------------------------------------------------\
+| ImplementPIDMotion                                       |
+|     													   |
+| This module is fused to the PID loop algorithm in the    | 
+| PID.h/.c library; it uses the output of the PID algorithm|
+| to move the motors;                                      |
+\---------------------------------------------------------*/ 
 void ImplementPIDMotion(int PIDValue)
 {
     if (PIDValue > 255) //Set the limits so that input is not greater than the possible motor input;
@@ -65,9 +73,12 @@ void ImplementPIDMotion(int PIDValue)
 
 }
 
-/* ImplementJSMotion
- * This module moves the motors in accordance with the output of the joystick;
- */
+/*--------------------------------------------------------\
+| ImplementJSMotion                                        |
+|     													   |
+| This module moves the motors in accordance with the      |
+| output of the joystick;                                  |
+\---------------------------------------------------------*/ 
 void ImplementJSMotion(int JoystickValue)
 {
     unsigned int CCPinput;

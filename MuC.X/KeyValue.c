@@ -4,13 +4,13 @@ double StrippedValue; //This is going to be the value outgoing to the slave;
 unsigned char PIDEnableFlag = 0;
 unsigned char StrippedKey; //This is going to be the command, whether it's internal to the master or outward to the slave;  this is simply updated by the keyvalue function, it must be acted upon by the master;
 unsigned char AZEL = 1; //This identifies which PIC will be addressed;
-unsigned char key[5]; //This is the storage variable for the key;
-unsigned char value[10]; //This is the storage variable for the value;
-unsigned char received[30]; // this is the storage variable for the received bytes from the computer;
-unsigned char RCFlag;
-unsigned char RECFlag;
-unsigned char AZFlowFlag = 1;
-unsigned char ELFlowFlag = 1;
+unsigned char key[KEYLENGTH]; //This is the storage variable for the key;
+unsigned char value[VALUELENGTH]; //This is the storage variable for the value;
+unsigned char received[LENGTH]; // this is the storage variable for the received bytes from the computer;
+unsigned char RCFlag; //Flag which signals a command received from the computer;
+unsigned char RECFlag; //Special flag denoting that a data recording routine should follow;
+unsigned char AZFlowFlag = 1; //Flag which toggles the data output for a specific axis;
+unsigned char ELFlowFlag = 1; //Start with these flags set to 1, or the data being toggled on;
 
 double Kp;
 double Ki;
@@ -19,6 +19,12 @@ double SetAngle = 0;
 double CurrentAngle;
 double CurrentVelocity;
 
+/*--------------------------------------------------------\
+| RCInt                                                    |
+|     							   |						   |
+| Handles the stripping of the key and the value from the  |
+| received string.                                         |
+\---------------------------------------------------------*/
 void RCInt(void)
 {
     unsigned char counter = 0; //Initialize a counter variable;
@@ -38,11 +44,9 @@ void RCInt(void)
     }
     while (RCREG != carriageReturn); //Do this process while the received byte is not ENTER;
 
-    SerTx(newLine); //Go to a new line;
-    SerTx(carriageReturn); //Return to the base position;
+    SerNL();
     keyValue(received, LENGTH); //Strip the key and the value from the received byte;
-    SerTx(newLine); //Go to a new line;
-    SerTx(carriageReturn); //Return to the base position;
+    SerNL();
 
     if (StrippedKey == 0x01)
     {
@@ -67,6 +71,15 @@ void RCInt(void)
     PIR1bits.RCIF = 0; //Clear the RX flag;
 }
 
+/*--------------------------------------------------------\
+| keyValue                                                 |
+|                                                          |
+| Extracts the key and value from a received string.       |
+| Places the results into two global variables, StrippedKey|
+| , which becomes the command issued to the slave or handl-|                                                
+| ed internally by the master, and StrippedValue which bec-|
+| omes the value issued to the slave.                      |
+\---------------------------------------------------------*/
 void keyValue(unsigned char* str, unsigned short length)
 {
     unsigned char x = 0;
@@ -249,7 +262,7 @@ void keyValue(unsigned char* str, unsigned short length)
         }
     }
 
-    StrippedValue = strtod(value, &str_end);
+    StrippedValue = strtod(value, &str_end); //Extract the value as a double into the StrippedValue variable;
 
     //The following three blocks clear all of the variables used;         
 
@@ -277,6 +290,12 @@ void keyValue(unsigned char* str, unsigned short length)
     }
 }
 
+/*--------------------------------------------------------\
+| HelpString                                               |
+|     													   |
+| A simple function which displays the definition and impl-|
+| ementation of the various functions hardcoded in the PIC.|
+\---------------------------------------------------------*/
 void HelpString(void)
 {
     unsigned char read;
